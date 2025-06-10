@@ -4,13 +4,13 @@
 
 
 {% block content %}
-<section class="relative overflow-hidden pt-2 pb-10 lg:pt-2 lg:pb-10">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
+<section class="relative overflow-hidden ">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-center items-center min-h-[60vh]">
+        <div class="grid lg:grid-cols-2 gap-12 items-center text-center">
             <div class="text-center lg:text-left" data-aos="fade-right">
-                <h1
-                    class="font-montserrat font-extrabold text-4xl sm:text-5xl lg:text-6xl text-brand-dark tracking-tight" data-aos="fade-down">
-                    <span class="relative">
+                <h1 class="font-montserrat font-extrabold text-4xl sm:text-5xl lg:text-6xl text-brand-dark tracking-tight"
+                    data-aos="fade-down">
+                    <span class="relative inline-block">
                         <i
                             class="ri-double-quotes-l absolute -top-4 -left-6 sm:-left-8 text-4xl sm:text-5xl text-brand-primary opacity-30"></i>
                         Get Quick<br>
@@ -31,8 +31,8 @@
                 </a>
             </div>
             <div class="relative hidden lg:block" data-aos="fade-left">
-            <img src="{{ url_for('static', filename='images/header-bg.png') }}"
-                alt="Healthcare Banner" class="w-auto h-auto rounded-full" loading="lazy"/>
+                <img src="{{ url_for('static', filename='images/header-bg.png') }}" alt="Healthcare Banner"
+                    class="w-auto h-auto rounded-full mx-auto" loading="lazy" />
             </div>
         </div>
     </div>
@@ -147,7 +147,7 @@
                     <circle cx="360" cy="220" r="15" fill="#008ba3" />
                 </svg> -->
                 <img src="{{url_for('static', filename='images/surgery.jpg')}}" alt="Healthcare Dashboard"
-                    class="w-full h-auto max-w-md mx-auto lg:max-w-none" loading="lazy"/>
+                    class="w-full h-auto max-w-md mx-auto lg:max-w-none" loading="lazy" />
             </div>
         </div>
     </div>
