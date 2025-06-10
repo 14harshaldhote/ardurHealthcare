@@ -1,0 +1,251 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Ardur Healthcare{% endblock %}</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <script>
+        // Custom Tailwind CSS Configuration
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-dark': '#013237', // Slightly darker and richer
+                        'brand-primary': '#008ba3',
+                        'brand-secondary': '#e0f7fa',
+                        'brand-light': '#f5fafb', // Softer light background
+                        'brand-accent': '#00a9c7',
+                    }
+                },
+            },
+        }
+    </script>
+    
+    <style>
+        /* General Body Styling */
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #334155; /* Slate-700 for better readability */
+        }
+
+        /* Navigation Link Styling */
+        .nav-link {
+            position: relative;
+            padding-bottom: 8px;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #008ba3;
+            transition: width 0.3s ease-in-out;
+        }
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: #008ba3;
+        }
+
+        /* Dropdown & Mega Menu Styling */
+        .dropdown .dropdown-menu {
+            display: none;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Prevents body scroll when mobile menu is open */
+        .overflow-hidden {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="bg-brand-light" x-data="{ mobileMenuOpen: false }" :class="{ 'overflow-hidden': mobileMenuOpen }">
+
+    <header class="bg-white/90 backdrop-blur-lg shadow-md w-full fixed top-0 left-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="/">
+                    <img src="{{ url_for('static', filename='images/logo2.png') }}" alt="Ardur Healthcare" class="h-16 transition-transform duration-300 hover:scale-105">
+                </a>
+
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <a href="{{ url_for('main.home') }}" class="nav-link active text-brand-primary">Home</a>
+                    <a href="{{ url_for('main.about') }}" class="nav-link">About Us</a>
+                    
+                    <div class="relative dropdown">
+                        <a href="{{ url_for('main.specialities') }}" class="nav-link flex items-center">
+                            Specialities <i class="ri-arrow-down-s-line ml-1"></i>
+                        </a>
+                        <div class="absolute mt-3 w-72 bg-white rounded-lg shadow-xl py-4 z-20 dropdown-menu">
+                            <h3 class="font-bold text-brand-dark px-5 pb-2">Our Medical Fields</h3>
+                            <a href="#" class="flex items-center px-5 py-3 text-sm hover:bg-brand-secondary"><i class="ri-heart-pulse-line mr-3 text-brand-primary text-lg"></i> Family Practice</a>
+                            <a href="#" class="flex items-center px-5 py-3 text-sm hover:bg-brand-secondary"><i class="ri-user-heart-line mr-3 text-brand-primary text-lg"></i> Dermatology</a>
+                            <a href="#" class="flex items-center px-5 py-3 text-sm hover:bg-brand-secondary"><i class="ri-eye-line mr-3 text-brand-primary text-lg"></i> Optometry</a>
+                            <a href="#" class="flex items-center px-5 py-3 text-sm hover:bg-brand-secondary"><i class="ri-body-scan-line mr-3 text-brand-primary text-lg"></i> Orthopedic</a>
+                            <a href="#" class="flex items-center px-5 py-3 text-sm hover:bg-brand-secondary"><i class="ri-first-aid-kit-line mr-3 text-brand-primary text-lg"></i> Wound Care</a>
+                            <a href="#" class="flex items-center px-5 py-3 text-sm hover:bg-brand-secondary"><i class="ri-scissors-line mr-3 text-brand-primary text-lg"></i> General Surgery</a>
+                        </div>
+                    </div>
+
+                    <div class="relative dropdown">
+                        <a href="{{ url_for('main.services') }}" class="nav-link flex items-center">
+                            Services <i class="ri-arrow-down-s-line ml-1"></i>
+                        </a>
+                        <div class="absolute mt-3 w-80 bg-white rounded-lg shadow-xl p-5 z-20 dropdown-menu">
+                            <h3 class="font-bold text-brand-dark pb-2">Revenue Cycle Management</h3>
+                            <p class="text-xs text-slate-500 mb-4">Streamline your practice with our expert financial services.</p>
+                             <a href="#" class="block px-4 py-2 text-sm rounded-md hover:bg-brand-secondary">Provider Credentialing</a>
+                             <a href="#" class="block px-4 py-2 text-sm rounded-md hover:bg-brand-secondary">Eligibility Verification</a>
+                             <a href="#" class="block px-4 py-2 text-sm rounded-md hover:bg-brand-secondary">Medical Billing & Coding</a>
+                             <a href="#" class="block px-4 py-2 text-sm rounded-md hover:bg-brand-secondary">Accounts Receivable</a>
+                             <a href="#" class="block px-4 py-2 text-sm rounded-md hover:bg-brand-secondary">Denial Management</a>
+                             <a href="#" class="block px-4 py-2 text-sm rounded-md hover:bg-brand-secondary">Payment Posting</a>
+                        </div>
+                    </div>
+                    
+                    <a href="{{ url_for('main.resources') }}" class="nav-link">Resources</a>
+                </nav>
+
+                <div class="flex items-center">
+                    <div class="hidden lg:block">
+                         <a href="{{ url_for('contact.contact') }}" class="bg-brand-primary text-white font-montserrat font-semibold px-6 py-3 rounded-full hover:scale-105 hover:bg-brand-dark shadow-md hover:shadow-lg transition-all duration-300">Contact Us</a>
+                    </div>
+                    <div class="lg:hidden ml-4">
+                        <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-brand-dark focus:outline-none">
+                            <i class="ri-menu-3-line text-3xl" x-show="!mobileMenuOpen"></i>
+                            <i class="ri-close-line text-3xl" x-show="mobileMenuOpen"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="lg:hidden fixed inset-0 bg-white z-40 pt-20">
+            <nav class="flex flex-col items-center h-full p-6 space-y-6">
+                <a href="{{ url_for('main.home') }}" class="text-2xl font-montserrat font-semibold text-brand-dark">Home</a>
+                <a href="{{ url_for('main.about') }}" class="text-2xl font-montserrat font-semibold text-slate-600">About</a>
+                <a href="{{ url_for('main.specialities') }}" class="text-2xl font-montserrat font-semibold text-slate-600">Specialities</a>
+                <a href="{{ url_for('main.services') }}" class="text-2xl font-montserrat font-semibold text-slate-600">Services</a>
+                <a href="{{ url_for('main.resources') }}" class="text-2xl font-montserrat font-semibold text-slate-600">Resources</a>
+                <a href="{{ url_for('contact.contact') }}" class="mt-8 bg-brand-primary text-white font-montserrat font-semibold px-8 py-4 rounded-full text-lg">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="h-20"></div>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="bg-brand-secondary border-l-4 border-brand-primary text-brand-primary p-4 mb-8 rounded-r-lg" role="alert">
+                    {% for message in messages %}
+                        <p class="font-semibold">{{ message }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+        
+        {% block content %}
+        <div class="text-center">
+            <h1 class="text-4xl md:text-5xl font-bold font-montserrat text-brand-dark mb-4">Empowering Healthcare Providers</h1>
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+                With innovative technology and dedicated support, we streamline your revenue cycle management, so you can focus on what matters most: patient care.
+            </p>
+        </div>
+        {% endblock %}
+    </main>
+
+    <footer class="bg-brand-dark text-white font-montserrat">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div class="md:col-span-2 lg:col-span-1">
+                    <img src="{{ url_for('static', filename='images/white-logo.png') }}" alt="Ardur Healthcare Logo" class="h-12 mb-5">
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Technology-enabled medical billing and revenue cycle management services for healthcare providers globally.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-5 tracking-wide">Quick Links</h4>
+                    <ul class="space-y-3 text-gray-300">
+                        <li><a href="{{ url_for('main.home') }}" class="hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="{{ url_for('main.about') }}" class="hover:text-white transition duration-300">About Us</a></li>
+                        <li><a href="{{ url_for('main.services') }}" class="hover:text-white transition duration-300">Services</a></li>
+                        <li><a href="{{ url_for('main.resources') }}" class="hover:text-white transition duration-300">Resources</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-5 tracking-wide">Our Services</h4>
+                    <ul class="space-y-3 text-gray-300">
+                        <li><a href="#" class="hover:text-white transition duration-300">Medical Billing</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-300">Credentialing</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-300">Accounts Receivable</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-300">Denial Management</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-5 tracking-wide">Contact Us</h4>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start">
+                            <i class="ri-mail-send-line mr-3 mt-1 text-brand-primary"></i>
+                            <a href="mailto:info@ardurhealthcare.com" class="hover:text-white transition duration-300">info@ardurhealthcare.com</a>
+                        </li>
+                        <li class="flex items-start">
+                             <i class="ri-phone-line mr-3 mt-1 text-brand-primary"></i>
+                            <a href="tel:+1 (702) 809-2713" class="hover:text-white transition duration-300">+1 (702) 809-2713</a>
+                        </li>
+                    </ul>
+                    <div class="flex space-x-5 mt-6">
+                        <a href="#" class="text-xl text-gray-400 hover:text-white transition duration-300"><i class="ri-facebook-circle-fill"></i></a>
+                        <a href="#" class="text-xl text-gray-400 hover:text-white transition duration-300"><i class="ri-linkedin-box-fill"></i></a>
+                        <a href="#" class="text-xl text-gray-400 hover:text-white transition duration-300"><i class="ri-instagram-fill"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-black/20 py-5">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400 text-sm">
+                <p>&copy; 2025 Ardur Healthcare. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('nav-toggle').addEventListener('click', function() {
+            var navContent = document.getElementById('nav-content');
+            navContent.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

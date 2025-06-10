@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+
+{% block title %}Healthcare Resources - Ardur Healthcare{% endblock %}
+
+{% block content %}
+<main class="min-h-screen">
+
+    <section class="text-center py-16 md:py-24 bg-brand-light">
+        <div class="max-w-4xl mx-auto px-4">
+            <h1 class="text-4xl md:text-6xl font-bold font-montserrat text-brand-dark mb-4" data-aos="fade-down">
+                Healthcare Knowledge <span class="text-brand-primary">Hub</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                Explore expert insights, billing best practices, case studies, and the latest healthcare trends to stay informed and empowered.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark" data-aos="fade-up">Explore Our Resources</h2>
+                <p class="text-lg text-gray-600 mt-2" data-aos="fade-up" data-aos-delay="100">Find the information you need, organized by category.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <a href="#" class="block p-8 bg-white rounded-lg shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center justify-center h-20 w-20 bg-brand-secondary rounded-full mx-auto mb-6">
+                        <i class="ri-newspaper-line text-4xl text-brand-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold font-montserrat text-brand-dark mb-3 text-center">Articles & News</h3>
+                    <p class="text-gray-600 text-center">Expert-written pieces on modern healthcare challenges and opportunities.</p>
+                </a>
+
+                <a href="#" class="block p-8 bg-white rounded-lg shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center justify-center h-20 w-20 bg-brand-secondary rounded-full mx-auto mb-6">
+                        <i class="ri-line-chart-line text-4xl text-brand-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold font-montserrat text-brand-dark mb-3 text-center">Case Studies</h3>
+                    <p class="text-gray-600 text-center">Real-world success stories showcasing how Ardur Healthcare delivers results.</p>
+                </a>
+
+                <a href="#" class="block p-8 bg-white rounded-lg shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex items-center justify-center h-20 w-20 bg-brand-secondary rounded-full mx-auto mb-6">
+                        <i class="ri-book-open-line text-4xl text-brand-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold font-montserrat text-brand-dark mb-3 text-center">Billing Guides</h3>
+                    <p class="text-gray-600 text-center">Access accurate, up-to-date billing and coding rules and references.</p>
+                </a>
+
+                <a href="#" class="block p-8 bg-white rounded-lg shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center justify-center h-20 w-20 bg-brand-secondary rounded-full mx-auto mb-6">
+                        <i class="ri-slideshow-3-line text-4xl text-brand-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold font-montserrat text-brand-dark mb-3 text-center">Webinars</h3>
+                    <p class="text-gray-600 text-center">Join our live and on-demand video sessions led by industry experts.</p>
+                </a>
+                
+                <a href="#" class="block p-8 bg-white rounded-lg shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center justify-center h-20 w-20 bg-brand-secondary rounded-full mx-auto mb-6">
+                        <i class="ri-tools-line text-4xl text-brand-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold font-montserrat text-brand-dark mb-3 text-center">Templates & Tools</h3>
+                    <p class="text-gray-600 text-center">Downloadable checklists, templates, and calculators to streamline your work.</p>
+                </a>
+
+                <a href="#" class="block p-8 bg-white rounded-lg shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex items-center justify-center h-20 w-20 bg-brand-secondary rounded-full mx-auto mb-6">
+                        <i class="ri-megaphone-line text-4xl text-brand-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold font-montserrat text-brand-dark mb-3 text-center">Press Releases</h3>
+                    <p class="text-gray-600 text-center">Read our official updates, strategic partnerships, and company announcements.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-brand-light">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="flex items-center justify-center" data-aos="fade-right">
+                  <img src="{{ url_for('static', filename='images/doctor.jpg') }}" alt="Healthcare Resources" class="w-full h-auto rounded-lg shadow-lg"/>
+                </div>
+                <div data-aos="fade-left">
+                    <h2 class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark mb-6">Latest Insights</h2>
+                    <div class="space-y-6">
+                        <a href="#" class="block p-6 bg-white rounded-lg shadow-sm hover:shadow-xl transition-shadow duration-300">
+                            <h4 class="text-xl font-semibold font-montserrat text-brand-dark mb-1">Guide: Simplifying Healthcare Billing in 2025</h4>
+                            <p class="text-gray-600">Learn effective strategies to streamline operations and boost your reimbursement rates this year.</p>
+                        </a>
+                        <a href="#" class="block p-6 bg-white rounded-lg shadow-sm hover:shadow-xl transition-shadow duration-300">
+                            <h4 class="text-xl font-semibold font-montserrat text-brand-dark mb-1">Webinar: Navigating the Latest HIPAA Updates</h4>
+                            <p class="text-gray-600">Join our experts as they break down recent changes to compliance and data security.</p>
+                        </a>
+                        <a href="#" class="block p-6 bg-white rounded-lg shadow-sm hover:shadow-xl transition-shadow duration-300">
+                            <h4 class="text-xl font-semibold font-montserrat text-brand-dark mb-1">Case Study: How We Boosted Clinic Revenue by 25%</h4>
+                            <p class="text-gray-600">Discover the RCM strategies we implemented to achieve significant financial growth for a partner clinic.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-brand-secondary">
+        <div class="container mx-auto px-4 text-center" data-aos="fade-up">
+            <h2 class="text-3xl font-bold font-montserrat text-brand-dark mb-4">Stay Informed</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto mb-8">
+                Subscribe to our newsletter to receive the latest articles, guides, and healthcare industry news directly in your inbox.
+            </p>
+            <form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+                <input type="email" placeholder="Enter your email address" class="flex-grow px-5 py-3 rounded-full border-2 border-transparent focus:border-brand-primary focus:ring-0 transition-all" required>
+                <button type="submit" class="bg-brand-primary text-white font-montserrat font-semibold px-8 py-3 rounded-full hover:scale-105 hover:bg-brand-dark hover:shadow-xl transition duration-300">
+                    Subscribe
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+    </script>
+</main>
+{% endblock %}

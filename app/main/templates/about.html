@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+
+{% block title %}About Us - Ardur Healthcare{% endblock %}
+
+{% block content %}
+
+<section class="text-center py-16 md:py-24">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-4xl md:text-6xl font-bold font-montserrat text-brand-dark mb-4" data-aos="fade-down">
+            Your Partners in <span class="text-brand-primary">Healthcare Success</span>
+        </h1>
+        <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+            We are a leading provider of technology-enabled healthcare services, dedicated to strengthening the financial performance of your practice. Our mission is to streamline your revenue cycle, so you can focus on what matters most: exceptional patient care.
+        </p>
+    </div>
+</section>
+
+<section class="py-16 md:py-24 bg-white">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div data-aos="fade-right ">
+            <img src="{{ url_for('static', filename='images/ar.webp') }}" alt="About Ardur Healthcare" class="w-full h-auto shadow-2xl ">
+        </div>
+        <div data-aos="fade-left">
+            <h2 class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark mb-6">
+                Our Mission: Simplifying Your Success
+            </h2>
+            <p class="text-gray-600 mb-4 leading-relaxed">
+                Our main aim is to bolster the financial strength of your business, which is directly correlated to timely billing and reimbursement. We provide a stress-free partnership, allowing you to dedicate your full attention to providing outstanding medical care.
+            </p>
+            <p class="text-gray-600 leading-relaxed">
+                We are committed to delivering top-notch services that ensure accurate reimbursement, reduce administrative burdens, and optimize your revenue cycle, all while maintaining the highest standards of regulatory compliance.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="py-16 md:py-24 bg-brand-light">
+    <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark">Our Core Values</h2>
+        <p class="text-lg text-gray-600 mt-2">The principles that guide our partnership.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8 text-center">
+        <div class="p-8 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+            <div class="flex justify-center items-center h-20 w-20 bg-brand-secondary rounded-full mx-auto mb-6">
+                <i class="ri-shield-check-line text-4xl text-brand-primary"></i>
+            </div>
+            <h3 class="text-xl font-bold font-montserrat text-brand-dark mb-2">Integrity</h3>
+            <p class="text-gray-600">Delivering transparent, ethical, and dependable service you can count on.</p>
+        </div>
+        
+        <div class="p-8 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+            <div class="flex justify-center items-center h-20 w-20 bg-brand-secondary rounded-full mx-auto mb-6">
+                <i class="ri-award-line text-4xl text-brand-primary"></i>
+            </div>
+            <h3 class="text-xl font-bold font-montserrat text-brand-dark mb-2">Excellence</h3>
+            <p class="text-gray-600">Upholding the highest professional standards to ensure consistent accuracy and efficiency.</p>
+        </div>
+
+        <div class="p-8 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+            <div class="flex justify-center items-center h-20 w-20 bg-brand-secondary rounded-full mx-auto mb-6">
+                <i class="ri-lock-2-line text-4xl text-brand-primary"></i>
+            </div>
+            <h3 class="text-xl font-bold font-montserrat text-brand-dark mb-2">Confidentiality</h3>
+            <p class="text-gray-600">Adhering strictly to data privacy and compliance regulations to protect your information.</p>
+        </div>
+    </div>
+</section>
+
+<section class="py-16 md:py-24">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div data-aos="fade-right">
+            <h2 class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark mb-6">
+                Why Choose Ardur Healthcare?
+            </h2>
+            <ul class="space-y-4">
+                <li class="flex items-start">
+                    <i class="ri-check-double-line text-brand-primary text-2xl mr-3"></i>
+                    <span class="text-gray-600"><strong>Certified & Experienced Team:</strong> Our certified coders and billing specialists are experts in the field.</span>
+                </li>
+                <li class="flex items-start">
+                    <i class="ri-check-double-line text-brand-primary text-2xl mr-3"></i>
+                    <span class="text-gray-600"><strong>Reduce Denials:</strong> Our proactive approach and expertise significantly reduce claim denials.</span>
+                </li>
+                <li class="flex items-start">
+                    <i class="ri-check-double-line text-brand-primary text-2xl mr-3"></i>
+                    <span class="text-gray-600"><strong>Ensure Accurate Reimbursement:</strong> We help you avoid costly back-billing and ensure complete, accurate payments.</span>
+                </li>
+                <li class="flex items-start">
+                    <i class="ri-check-double-line text-brand-primary text-2xl mr-3"></i>
+                    <span class="text-gray-600"><strong>Compliance Focused:</strong> We stay ahead of changing regulations so you don't have to.</span>
+                </li>
+            </ul>
+        </div>
+        <div data-aos="fade-left">
+            <img src="{{ url_for('static', filename='images/why.jpg') }}" alt="About Ardur Healthcare" class="w-full h-auto rounded-lg shadow-lg">
+        </div>
+    </div>
+</section>
+
+<section class="py-16 md:py-24 bg-brand-secondary text-center">
+    <h2 class="text-3xl font-bold font-montserrat text-brand-dark mb-4">Ready to Optimize Your Revenue Cycle?</h2>
+    <p class="text-gray-600 max-w-2xl mx-auto mb-8">Let's discuss how Ardur Healthcare can support your practice. Get in touch with our team today for a complimentary consultation.</p>
+    <a href="{{ url_for('contact.contact') }}" class="bg-brand-primary text-white font-montserrat font-semibold px-8 py-4 rounded-full hover:scale-105 hover:bg-brand-dark hover:shadow-xl transition duration-300 inline-block">
+        Contact Us Today
+    </a>
+</section>
+
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true,
+  });
+</script>
+
+{% endblock %}

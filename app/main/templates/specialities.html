@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+{% block title %}Medical Specialties - Ardur Healthcare{% endblock %}
+
+{% block content %}
+<main class="min-h-screen">
+
+    <section class="text-center py-16 md:py-24 bg-brand-light">
+        <div class="max-w-4xl mx-auto px-4">
+            <h1 class="text-4xl md:text-6xl font-bold font-montserrat text-brand-dark mb-4" data-aos="fade-down">
+                Specialized Care for <span class="text-brand-primary">Every Need</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                We provide a comprehensive range of medical specialties, combining advanced technology with compassionate care to support your health journey.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark" data-aos="fade-up">Our Medical Specialties</h2>
+                <p class="text-lg text-gray-600 mt-2" data-aos="fade-up" data-aos-delay="100">Expert care across a wide range of fields.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="p-8 bg-white rounded-lg shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex justify-center items-center h-20 w-20 bg-brand-secondary rounded-full mx-auto mb-6">
+                        <i class="ri-heart-pulse-line text-4xl text-brand-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold font-montserrat text-brand-dark mb-3 text-center">Cardiology</h3>
+                    <p class="text-gray-600 mb-6 text-center">Specialized care for heart and vascular conditions, focusing on prevention and treatment.</p>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start"><i class="ri-check-line text-brand-primary mt-1 mr-2"></i><span>Diagnostic Testing</span></li>
+                        <li class="flex items-start"><i class="ri-check-line text-brand-primary mt-1 mr-2"></i><span>Heart Disease Management</span></li>
+                        <li class="flex items-start"><i class="ri-check-line text-brand-primary mt-1 mr-2"></i><span>Cardiac Rehabilitation</span></li>
+                    </ul>
+                </div>
+
+                <div class="p-8 bg-white rounded-lg shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex justify-center items-center h-20 w-20 bg-brand-secondary rounded-full mx-auto mb-6">
+                        <i class="ri-brain-line text-4xl text-brand-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold font-montserrat text-brand-dark mb-3 text-center">Neurology</h3>
+                    <p class="text-gray-600 mb-6 text-center">Comprehensive care for disorders of the nervous system, from headaches to complex conditions.</p>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start"><i class="ri-check-line text-brand-primary mt-1 mr-2"></i><span>Stroke Recovery</span></li>
+                        <li class="flex items-start"><i class="ri-check-line text-brand-primary mt-1 mr-2"></i><span>Movement Disorder Care</span></li>
+                        <li class="flex items-start"><i class="ri-check-line text-brand-primary mt-1 mr-2"></i><span>Headache & Migraine Treatment</span></li>
+                    </ul>
+                </div>
+
+                <div class="p-8 bg-white rounded-lg shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex justify-center items-center h-20 w-20 bg-brand-secondary rounded-full mx-auto mb-6">
+                        <i class="ri-body-scan-line text-4xl text-brand-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold font-montserrat text-brand-dark mb-3 text-center">Orthopedics</h3>
+                    <p class="text-gray-600 mb-6 text-center">Expert treatment for injuries and diseases of the musculoskeletal system.</p>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start"><i class="ri-check-line text-brand-primary mt-1 mr-2"></i><span>Sports Medicine</span></li>
+                        <li class="flex items-start"><i class="ri-check-line text-brand-primary mt-1 mr-2"></i><span>Joint Replacement Surgery</span></li>
+                        <li class="flex items-start"><i class="ri-check-line text-brand-primary mt-1 mr-2"></i><span>Physical Therapy</span></li>
+                    </ul>
+                </div>
+                
+                <div class="p-8 bg-white rounded-lg shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex justify-center items-center h-20 w-20 bg-brand-secondary rounded-full mx-auto mb-6">
+                        <i class="ri-group-2-line text-4xl text-brand-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold font-montserrat text-brand-dark mb-3 text-center">Family Medicine</h3>
+                    <p class="text-gray-600 mb-6 text-center">Continuous and comprehensive healthcare for individuals and families across all ages.</p>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start"><i class="ri-check-line text-brand-primary mt-1 mr-2"></i><span>Preventive Care & Wellness</span></li>
+                        <li class="flex items-start"><i class="ri-check-line text-brand-primary mt-1 mr-2"></i><span>Chronic Disease Management</span></li>
+                        <li class="flex items-start"><i class="ri-check-line text-brand-primary mt-1 mr-2"></i><span>Annual Physical Exams</span></li>
+                    </ul>
+                </div>
+
+                <div class="p-8 bg-white rounded-lg shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex justify-center items-center h-20 w-20 bg-brand-secondary rounded-full mx-auto mb-6">
+                        <i class="ri-user-heart-line text-4xl text-brand-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold font-montserrat text-brand-dark mb-3 text-center">Dermatology</h3>
+                    <p class="text-gray-600 mb-6 text-center">Advanced solutions for skin, hair, and nail conditions for both medical and cosmetic concerns.</p>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start"><i class="ri-check-line text-brand-primary mt-1 mr-2"></i><span>Skin Cancer Screenings</span></li>
+                        <li class="flex items-start"><i class="ri-check-line text-brand-primary mt-1 mr-2"></i><span>Acne & Eczema Treatment</span></li>
+                        <li class="flex items-start"><i class="ri-check-line text-brand-primary mt-1 mr-2"></i><span>Cosmetic Dermatology</span></li>
+                    </ul>
+                </div>
+
+                <div class="p-8 bg-white rounded-lg shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex justify-center items-center h-20 w-20 bg-brand-secondary rounded-full mx-auto mb-6">
+                        <i class="ri-parent-line text-4xl text-brand-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold font-montserrat text-brand-dark mb-3 text-center">Pediatrics</h3>
+                    <p class="text-gray-600 mb-6 text-center">Compassionate and complete medical care for infants, children, and adolescents.</p>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start"><i class="ri-check-line text-brand-primary mt-1 mr-2"></i><span>Well-Child Visits</span></li>
+                        <li class="flex items-start"><i class="ri-check-line text-brand-primary mt-1 mr-2"></i><span>Immunizations & Vaccinations</span></li>
+                        <li class="flex items-start"><i class="ri-check-line text-brand-primary mt-1 mr-2"></i><span>Developmental Screenings</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-brand-light">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark mb-6"> The Ardur Advantage in Specialized Care </h2>
+                    <p class="text-gray-600 mb-6">Our specialists are leaders in their fields, dedicated to providing personalized treatment plans that leverage the latest medical advancements. We partner with you for better health outcomes.</p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="ri-check-double-line text-brand-primary text-2xl mr-3"></i>
+                            <span class="text-gray-600"><strong>Collaborative Approach:</strong> Our specialists work together to provide comprehensive, integrated care.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-double-line text-brand-primary text-2xl mr-3"></i>
+                            <span class="text-gray-600"><strong>Advanced Technology:</strong> We use state-of-the-art diagnostic and treatment tools for greater precision.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-double-line text-brand-primary text-2xl mr-3"></i>
+                            <span class="text-gray-600"><strong>Patient-Centered Focus:</strong> Your unique needs and health goals are at the core of every treatment plan.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-double-line text-brand-primary text-2xl mr-3"></i>
+                            <span class="text-gray-600"><strong>Focus on Education:</strong> We empower you with the knowledge to make informed decisions about your health.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex items-center justify-center" data-aos="fade-left">
+                   <img src="{{ url_for('static', filename='images/optometry.jpg') }}" alt="Specialized Care" class="w-full h-auto rounded-lg shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-brand-secondary text-center">
+        <div class="container mx-auto px-4" data-aos="fade-up">
+            <h2 class="text-3xl font-bold font-montserrat text-brand-dark mb-4">Ready to Experience Specialized Care?</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto mb-8">
+                Connect with our team today to learn more about how our expert specialists can support your health journey.
+            </p>
+            <a href="{{ url_for('contact.contact') }}" class="bg-brand-primary text-white font-montserrat font-semibold px-8 py-4 rounded-full hover:scale-105 hover:bg-brand-dark hover:shadow-xl transition duration-300 inline-block">
+                Contact Our Specialists
+            </a>
+        </div>
+    </section>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+    </script>
+</main>
+{% endblock %}

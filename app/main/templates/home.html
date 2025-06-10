@@ -1,0 +1,246 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Ardur Healthcare{% endblock %}
+
+
+{% block content %}
+<section class="relative overflow-hidden pt-2 pb-10 lg:pt-2 lg:pb-10">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="text-center lg:text-left" data-aos="fade-right">
+                <h1
+                    class="font-montserrat font-extrabold text-4xl sm:text-5xl lg:text-6xl text-brand-dark tracking-tight" data-aos="fade-down">
+                    <span class="relative">
+                        <i
+                            class="ri-double-quotes-l absolute -top-4 -left-6 sm:-left-8 text-4xl sm:text-5xl text-brand-primary opacity-30"></i>
+                        Get Quick<br>
+                        <span class="text-brand-primary">Medical Services</span>
+                        <i
+                            class="ri-double-quotes-r absolute -bottom-4 -right-2 sm:-right-4 text-4xl sm:text-5xl text-brand-primary opacity-30"></i>
+                    </span>
+                </h1>
+                <p class="mt-6 max-w-xl mx-auto lg:mx-0 text-lg text-gray-600 leading-relaxed">
+                    We are one of the leading global providers of technology-enabled healthcare services designed to
+                    deliver end-to-end solutions.
+                </p>
+                <a href="/contact" class="inline-block mt-8 bg-brand-primary text-white font-montserrat font-semibold px-8 py-3 rounded-full text-lg
+          shadow-lg transform
+          transition-all duration-300 ease-in-out
+          hover:scale-105 hover:bg-brand-dark hover:shadow-xl">
+                    Get Started <i class="ri-arrow-right-line ml-2"></i>
+                </a>
+            </div>
+            <div class="relative hidden lg:block" data-aos="fade-left">
+            <img src="{{ url_for('static', filename='images/header-bg.png') }}"
+                alt="Healthcare Banner" class="w-auto h-auto rounded-full" loading="lazy"/>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-16 lg:py-24 bg-white " data-aos="fade-up">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div class="text-center">
+            <h2 class="font-montserrat font-bold text-3xl sm:text-4xl text-brand-dark">
+                <span class="text-brand-primary">Comprehensive Services</span><br> Tailored to Your Healthcare Needs
+            </h2>
+        </div>
+        <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <div
+                class="bg-brand-light p-8 rounded-lg shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                <div class="inline-block bg-brand-secondary text-brand-primary p-4 rounded-full mb-4">
+                    <i class="ri-user-settings-line text-3xl"></i>
+                </div>
+                <h4 class="font-montserrat font-semibold text-xl text-brand-dark mb-2">Provider Credentialing</h4>
+                <p class="text-gray-600">Streamline provider enrollment to ensure seamless integration with payers.</p>
+            </div>
+            <div
+                class="bg-brand-light p-8 rounded-lg shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                <div class="inline-block bg-brand-secondary text-brand-primary p-4 rounded-full mb-4">
+                    <i class="ri-check-double-line text-3xl"></i>
+                </div>
+                <h4 class="font-montserrat font-semibold text-xl text-brand-dark mb-2">Eligibility Verification</h4>
+                <p class="text-gray-600">Proactively verify patient coverage to prevent downstream denials.</p>
+            </div>
+            <div
+                class="bg-brand-light p-8 rounded-lg shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                <div class="inline-block bg-brand-secondary text-brand-primary p-4 rounded-full mb-4">
+                    <i class="ri-file-list-3-line text-3xl"></i>
+                </div>
+                <h4 class="font-montserrat font-semibold text-xl text-brand-dark mb-2">Medical Billing</h4>
+                <p class="text-gray-600">Ensure accurate and timely claim submission for maximized revenue.</p>
+            </div>
+            <div
+                class="bg-brand-light p-8 rounded-lg shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                <div class="inline-block bg-brand-secondary text-brand-primary p-4 rounded-full mb-4">
+                    <i class="ri-bank-line text-3xl"></i>
+                </div>
+                <h4 class="font-montserrat font-semibold text-xl text-brand-dark mb-2">Accounts Receivable</h4>
+                <p class="text-gray-600">Diligent follow-ups and strategic appeals to reduce aging receivables.</p>
+            </div>
+            <div
+                class="bg-brand-light p-8 rounded-lg shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                <div class="inline-block bg-brand-secondary text-brand-primary p-4 rounded-full mb-4">
+                    <i class="ri-close-circle-line text-3xl"></i>
+                </div>
+                <h4 class="font-montserrat font-semibold text-xl text-brand-dark mb-2">Denial Management</h4>
+                <p class="text-gray-600">Identify root causes of denials to prevent recurrence and recover revenue.</p>
+            </div>
+            <div
+                class="bg-brand-light p-8 rounded-lg shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                <div class="inline-block bg-brand-secondary text-brand-primary p-4 rounded-full mb-4">
+                    <i class="ri-money-dollar-circle-line text-3xl"></i>
+                </div>
+                <h4 class="font-montserrat font-semibold text-xl text-brand-dark mb-2">Payment Posting</h4>
+                <p class="text-gray-600">Accurate posting of manual and electronic payments for clear financial records.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-16 lg:py-24" data-aos="fade-up">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div class="order-2 lg:order-1">
+                <h2 class="font-montserrat font-bold text-3xl sm:text-4xl text-brand-dark mb-6">
+                    <span class="text-orange-500">Who We Are</span><br>Empowering Healthcare Providers
+                </h2>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    We are a technology-enabled Revenue Cycle Management (RCM) partner dedicated to enhancing the
+                    financial health of healthcare practices. By managing medical coding, billing, and compliance, we
+                    help reduce labor costs, boost accuracy, and meet evolving regulatory requirements.
+                </p>
+                <ul class="space-y-4 text-gray-700">
+                    <li class="flex items-start">
+                        <i class="ri-check-line text-brand-primary text-xl mr-3 mt-1"></i>
+                        <span>A dedicated manager for smooth billing communication.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="ri-check-line text-brand-primary text-xl mr-3 mt-1"></i>
+                        <span>Optimized cash flow with advanced RCM tools.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="ri-check-line text-brand-primary text-xl mr-3 mt-1"></i>
+                        <span>Real-time customized dashboards to track your revenue cycle.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="ri-check-line text-brand-primary text-xl mr-3 mt-1"></i>
+                        <span>Workflow automation to enhance the collection cycle.</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="order-1 lg:order-2" data-aos="fade-left">
+                <!-- <svg viewBox="0 0 500 350" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="10" y="10" width="480" height="330" rx="20" ry="20" fill="#e0f7fa" />
+                    <rect x="30" y="30" width="150" height="290" rx="10" ry="10" fill="#FFFFFF" />
+                    <rect x="45" y="50" width="120" height="10" rx="5" ry="5" fill="#cae9f0" />
+                    <rect x="45" y="70" width="90" height="10" rx="5" ry="5" fill="#cae9f0" />
+                    <rect x="45" y="100" width="120" height="40" rx="5" ry="5" fill="#008ba3" />
+                    <rect x="45" y="150" width="120" height="10" rx="5" ry="5" fill="#cae9f0" />
+                    <rect x="45" y="170" width="70" height="10" rx="5" ry="5" fill="#cae9f0" />
+                    <path d="M220 120 C 260 80, 320 80, 360 120 L 450 210" stroke="#008ba3" stroke-width="12"
+                        fill="none" stroke-linecap="round" />
+                    <circle cx="360" cy="120" r="15" fill="#022b2e" />
+                    <path d="M220 220 C 260 180, 320 180, 360 220 L 450 310" stroke="#022b2e" stroke-width="12"
+                        fill="none" stroke-linecap="round" stroke-dasharray="1 20" />
+                    <circle cx="360" cy="220" r="15" fill="#008ba3" />
+                </svg> -->
+                <img src="{{url_for('static', filename='images/surgery.jpg')}}" alt="Healthcare Dashboard"
+                    class="w-full h-auto max-w-md mx-auto lg:max-w-none" loading="lazy"/>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-16 lg:py-24 bg-white" data-aos="zoom-in-up">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto">
+            <h2 class="font-montserrat font-bold text-3xl sm:text-4xl text-brand-dark">
+                <span class="text-brand-primary uppercase font-semibold text-2xl sm:text-3xl">Real-Time
+                    Insights</span><br>Monitor Your Healthcare Revenue
+            </h2>
+            <p class="mt-4 text-lg text-gray-600">Here’s a quick look at the kind of insights you’ll get inside your
+                account, providing clarity and control over your financial performance.</p>
+        </div>
+        <div class="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 dashboard-cards">
+            <div class="bg-brand-secondary text-center p-6 rounded-xl">
+                <i class="ri-file-list-3-line text-4xl text-brand-primary mb-2"></i>
+                <h4 class="font-montserrat font-semibold text-lg text-brand-dark">Claims Submitted</h4>
+                <p class="text-3xl sm:text-4xl font-bold text-brand-dark mt-2" data-target="1248">0</p>
+            </div>
+            <div class="bg-brand-secondary text-center p-6 rounded-xl">
+                <i class="ri-time-line text-4xl text-brand-primary mb-2"></i>
+                <h4 class="font-montserrat font-semibold text-lg text-brand-dark">Pending Claims</h4>
+                <p class="text-3xl sm:text-4xl font-bold text-brand-dark mt-2" data-target="52">0</p>
+            </div>
+            <div class="bg-brand-secondary text-center p-6 rounded-xl">
+                <i class="ri-close-circle-line text-4xl text-brand-primary mb-2"></i>
+                <h4 class="font-montserrat font-semibold text-lg text-brand-dark">Denied Claims</h4>
+                <p class="text-3xl sm:text-4xl font-bold text-brand-dark mt-2" data-target="11">0</p>
+            </div>
+            <div class="bg-brand-secondary text-center p-6 rounded-xl">
+                <i class="ri-money-dollar-circle-line text-4xl text-brand-primary mb-2"></i>
+                <h4 class="font-montserrat font-semibold text-lg text-brand-dark">Total Revenue</h4>
+                <p class="text-3xl sm:text-4xl font-bold text-brand-dark mt-2" data-target="54500">$0</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1000,
+        once: true,
+    });
+
+    const counters = document.querySelectorAll('.dashboard-cards .card p, .dashboard-cards p[data-target]');
+    const startCounter = (counter) => {
+        const target = +counter.getAttribute('data-target');
+        if (isNaN(target)) return;
+
+        let count = 0;
+        const increment = target / 200;
+
+        const updateCount = () => {
+            if (count < target) {
+                count += increment;
+                if (count > target) count = target;
+
+                const isCurrency = counter.innerText.includes('$');
+                let displayValue = Math.ceil(count).toLocaleString();
+                if (isCurrency) {
+                    displayValue = '$' + displayValue;
+                }
+                counter.innerText = displayValue;
+
+                requestAnimationFrame(updateCount);
+            } else {
+                const isCurrency = counter.getAttribute('data-target').includes('$');
+                let finalValue = target.toLocaleString();
+                if (isCurrency) {
+                    finalValue = '$' + finalValue;
+                }
+                counter.innerText = finalValue;
+            }
+        };
+        updateCount();
+    };
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                startCounter(entry.target);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.5
+    });
+
+    counters.forEach(counter => {
+        observer.observe(counter);
+    });
+</script>
+{% endblock %}
