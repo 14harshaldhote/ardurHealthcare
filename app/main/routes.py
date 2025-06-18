@@ -12,13 +12,13 @@ def about():
 
 @main.route('/services')
 def services():
-    return render_template('services.html')
+    return render_template('services.html', title='Services')
 
 @main.route('/resources')
 def resources():
-    return render_template('resources.html')
+    return render_template('resources.html', title='Resources')
 
 
 @main.route('/specialities')
 def specialities():
-    return render_template('specialities.html')
+    return render_template('specialities.html', title='Specialities')

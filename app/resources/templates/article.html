@@ -1,0 +1,285 @@
+{% extends "base.html" %}
+
+{% block title %}Articles - Ardur Healthcare{% endblock %}
+
+{% block content %}
+<main class="min-h-screen">
+
+    <section class="text-center py-16 md:py-24 bg-brand-light">
+        <div class="max-w-4xl mx-auto px-4">
+            <h1 class="text-4xl md:text-6xl font-bold font-montserrat text-brand-dark mb-4" data-aos="fade-down">
+                Healthcare <span class="text-brand-primary">Articles</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                Stay informed with the latest insights, trends, and best practices in healthcare revenue cycle management.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Featured Article -->
+                <div class="md:col-span-3" data-aos="fade-up">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="md:flex">
+                            <div class="md:w-1/3">
+                                <img src="{{ url_for('static', filename='images/featured_article.jpg') }}" alt="Featured Article" class="w-full h-full object-cover">
+                            </div>
+                            <div class="md:w-2/3 p-8">
+                                <div class="uppercase tracking-wide text-sm text-brand-primary font-semibold">Featured Article</div>
+                                <h2 class="mt-2 text-2xl font-bold font-montserrat text-brand-dark hover:text-brand-primary transition duration-300">
+                                    <a href="#">The Future of Medical Billing: AI and Automation Trends for 2023</a>
+                                </h2>
+                                <p class="mt-4 text-gray-600">
+                                    Artificial intelligence and automation are transforming the healthcare revenue cycle. Learn how these technologies are streamlining medical billing processes, reducing errors, and improving financial outcomes for healthcare providers.
+                                </p>
+                                <div class="mt-4 flex items-center">
+                                    <div class="flex-shrink-0">
+                                        <img class="h-10 w-10 rounded-full" src="{{ url_for('static', filename='images/author.jpg') }}" alt="Author">
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="text-sm font-medium text-gray-900">Sarah Johnson</p>
+                                        <p class="text-sm text-gray-500">June 15, 2023 · 10 min read</p>
+                                    </div>
+                                </div>
+                                <div class="mt-6">
+                                    <a href="#" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-brand-primary hover:bg-brand-dark transition duration-300">
+                                        Read More
+                                        <i class="ri-arrow-right-line ml-2"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <img src="{{ url_for('static', filename='images/article1.jpg') }}" alt="Article 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="uppercase tracking-wide text-xs text-brand-primary font-semibold">Medical Billing</div>
+                        <h3 class="mt-2 text-xl font-bold font-montserrat text-brand-dark hover:text-brand-primary transition duration-300">
+                            <a href="#">5 Strategies to Reduce Claim Denials</a>
+                        </h3>
+                        <p class="mt-3 text-gray-600 text-sm">
+                            Implement these proven strategies to minimize claim denials and improve your practice's revenue cycle performance.
+                        </p>
+                        <div class="mt-4 flex items-center">
+                            <div class="flex-shrink-0">
+                                <img class="h-8 w-8 rounded-full" src="{{ url_for('static', filename='images/author2.jpg') }}" alt="Author">
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-xs font-medium text-gray-900">Michael Chen</p>
+                                <p class="text-xs text-gray-500">May 22, 2023 · 5 min read</p>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <a href="#" class="text-sm font-medium text-brand-primary hover:text-brand-dark transition duration-300 flex items-center">
+                                Read More
+                                <i class="ri-arrow-right-line ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <img src="{{ url_for('static', filename='images/article2.jpg') }}" alt="Article 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="uppercase tracking-wide text-xs text-brand-primary font-semibold">Compliance</div>
+                        <h3 class="mt-2 text-xl font-bold font-montserrat text-brand-dark hover:text-brand-primary transition duration-300">
+                            <a href="#">2023 Coding Updates: What You Need to Know</a>
+                        </h3>
+                        <p class="mt-3 text-gray-600 text-sm">
+                            Stay compliant with the latest coding changes and updates that impact medical billing and reimbursement.
+                        </p>
+                        <div class="mt-4 flex items-center">
+                            <div class="flex-shrink-0">
+                                <img class="h-8 w-8 rounded-full" src="{{ url_for('static', filename='images/author3.jpg') }}" alt="Author">
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-xs font-medium text-gray-900">Jennifer Williams</p>
+                                <p class="text-xs text-gray-500">April 10, 2023 · 7 min read</p>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <a href="#" class="text-sm font-medium text-brand-primary hover:text-brand-dark transition duration-300 flex items-center">
+                                Read More
+                                <i class="ri-arrow-right-line ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                    <img src="{{ url_for('static', filename='images/article3.jpg') }}" alt="Article 3" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="uppercase tracking-wide text-xs text-brand-primary font-semibold">Technology</div>
+                        <h3 class="mt-2 text-xl font-bold font-montserrat text-brand-dark hover:text-brand-primary transition duration-300">
+                            <a href="#">Telehealth Billing: Navigating the New Normal</a>
+                        </h3>
+                        <p class="mt-3 text-gray-600 text-sm">
+                            Learn the best practices for telehealth billing and reimbursement in the post-pandemic healthcare landscape.
+                        </p>
+                        <div class="mt-4 flex items-center">
+                            <div class="flex-shrink-0">
+                                <img class="h-8 w-8 rounded-full" src="{{ url_for('static', filename='images/author4.jpg') }}" alt="Author">
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-xs font-medium text-gray-900">Robert Thompson</p>
+                                <p class="text-xs text-gray-500">March 18, 2023 · 6 min read</p>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <a href="#" class="text-sm font-medium text-brand-primary hover:text-brand-dark transition duration-300 flex items-center">
+                                Read More
+                                <i class="ri-arrow-right-line ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article 4 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="400">
+                    <img src="{{ url_for('static', filename='images/article4.jpg') }}" alt="Article 4" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="uppercase tracking-wide text-xs text-brand-primary font-semibold">Revenue Cycle</div>
+                        <h3 class="mt-2 text-xl font-bold font-montserrat text-brand-dark hover:text-brand-primary transition duration-300">
+                            <a href="#">Optimizing Patient Collections: A Guide for Practices</a>
+                        </h3>
+                        <p class="mt-3 text-gray-600 text-sm">
+                            Effective strategies to improve patient collections while maintaining positive patient relationships.
+                        </p>
+                        <div class="mt-4 flex items-center">
+                            <div class="flex-shrink-0">
+                                <img class="h-8 w-8 rounded-full" src="{{ url_for('static', filename='images/author5.jpg') }}" alt="Author">
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-xs font-medium text-gray-900">Amanda Rodriguez</p>
+                                <p class="text-xs text-gray-500">February 25, 2023 · 8 min read</p>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <a href="#" class="text-sm font-medium text-brand-primary hover:text-brand-dark transition duration-300 flex items-center">
+                                Read More
+                                <i class="ri-arrow-right-line ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article 5 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="500">
+                    <img src="{{ url_for('static', filename='images/article5.jpg') }}" alt="Article 5" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="uppercase tracking-wide text-xs text-brand-primary font-semibold">Best Practices</div>
+                        <h3 class="mt-2 text-xl font-bold font-montserrat text-brand-dark hover:text-brand-primary transition duration-300">
+                            <a href="#">The Complete Guide to Medical Credentialing</a>
+                        </h3>
+                        <p class="mt-3 text-gray-600 text-sm">
+                            Everything you need to know about the medical credentialing process and how to streamline it for your practice.
+                        </p>
+                        <div class="mt-4 flex items-center">
+                            <div class="flex-shrink-0">
+                                <img class="h-8 w-8 rounded-full" src="{{ url_for('static', filename='images/author6.jpg') }}" alt="Author">
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-xs font-medium text-gray-900">David Wilson</p>
+                                <p class="text-xs text-gray-500">January 12, 2023 · 9 min read</p>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <a href="#" class="text-sm font-medium text-brand-primary hover:text-brand-dark transition duration-300 flex items-center">
+                                Read More
+                                <i class="ri-arrow-right-line ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article 6 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="600">
+                    <img src="{{ url_for('static', filename='images/article6.jpg') }}" alt="Article 6" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="uppercase tracking-wide text-xs text-brand-primary font-semibold">Industry Insights</div>
+                        <h3 class="mt-2 text-xl font-bold font-montserrat text-brand-dark hover:text-brand-primary transition duration-300">
+                            <a href="#">Healthcare Payment Trends to Watch in 2023</a>
+                        </h3>
+                        <p class="mt-3 text-gray-600 text-sm">
+                            Explore the emerging payment models and trends that are reshaping healthcare reimbursement.
+                        </p>
+                        <div class="mt-4 flex items-center">
+                            <div class="flex-shrink-0">
+                                <img class="h-8 w-8 rounded-full" src="{{ url_for('static', filename='images/author7.jpg') }}" alt="Author">
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-xs font-medium text-gray-900">Lisa Martinez</p>
+                                <p class="text-xs text-gray-500">December 5, 2022 · 7 min read</p>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <a href="#" class="text-sm font-medium text-brand-primary hover:text-brand-dark transition duration-300 flex items-center">
+                                Read More
+                                <i class="ri-arrow-right-line ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="mt-12 flex justify-center" data-aos="fade-up">
+                <nav class="inline-flex rounded-md shadow">
+                    <a href="#" class="inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">
+                        <i class="ri-arrow-left-s-line mr-2"></i>
+                        Previous
+                    </a>
+                    <a href="#" class="inline-flex items-center px-4 py-2 border border-gray-300 bg-brand-primary text-sm font-medium text-white hover:bg-brand-dark">
+                        1
+                    </a>
+                    <a href="#" class="inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">
+                        2
+                    </a>
+                    <a href="#" class="inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">
+                        3
+                    </a>
+                    <a href="#" class="inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">
+                        Next
+                        <i class="ri-arrow-right-s-line ml-2"></i>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-brand-light">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark" data-aos="fade-up">Subscribe to Our Newsletter</h2>
+                <p class="text-lg text-gray-600 mt-2 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">Stay updated with the latest articles, industry insights, and best practices in healthcare revenue cycle management.</p>
+            </div>
+
+            <div class="max-w-xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                <form class="flex flex-col md:flex-row gap-4">
+                    <input type="email" placeholder="Enter your email address" class="flex-grow px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-primary">
+                    <button type="submit" class="bg-brand-primary text-white font-montserrat font-semibold px-6 py-3 rounded-lg hover:bg-brand-dark transition duration-300">
+                        Subscribe
+                    </button>
+                </form>
+                <p class="text-sm text-gray-500 mt-3 text-center">We respect your privacy. Unsubscribe at any time.</p>
+            </div>
+        </div>
+    </section>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+    </script>
+</main>
+{% endblock %}

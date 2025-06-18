@@ -1,0 +1,287 @@
+{% extends "base.html" %}
+
+{% block title %}Best Billing Practices - Ardur Healthcare{% endblock %}
+
+{% block content %}
+<main class="min-h-screen">
+
+    <section class="text-center py-16 md:py-24 bg-brand-light">
+        <div class="max-w-4xl mx-auto px-4">
+            <h1 class="text-4xl md:text-6xl font-bold font-montserrat text-brand-dark mb-4" data-aos="fade-down">
+                Best Billing <span class="text-brand-primary">Practices</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                Optimize your medical billing process with industry-leading best practices.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark mb-6">Maximize Your Revenue Cycle</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Implementing best billing practices is essential for healthcare providers looking to optimize their revenue cycle management. Our comprehensive guide provides actionable insights to help you streamline your billing process, reduce denials, and accelerate payments.
+                    </p>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        At Ardur Healthcare, we've helped numerous practices transform their billing operations through proven methodologies and industry best practices. The strategies outlined below are based on our extensive experience and success in the healthcare billing industry.
+                    </p>
+                </div>
+                <div class="flex items-center justify-center" data-aos="fade-left">
+                    <img src="{{ url_for('static', filename='images/best_practices.png') }}" alt="Best Billing Practices" class="w-full h-auto rounded-lg shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-brand-light">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark" data-aos="fade-up">Key Billing Best Practices</h2>
+                <p class="text-lg text-gray-600 mt-2" data-aos="fade-up" data-aos-delay="100">Implement these strategies to optimize your billing process.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="p-8 bg-white rounded-lg shadow-md hover:shadow-2xl transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-start mb-4">
+                        <div class="flex-shrink-0">
+                            <div class="flex justify-center items-center h-12 w-12 bg-brand-secondary rounded-full">
+                                <i class="ri-user-search-line text-xl text-brand-primary"></i>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-xl font-bold font-montserrat text-brand-dark mb-2">Verify Insurance Eligibility</h3>
+                            <p class="text-gray-600">
+                                Always verify patient insurance eligibility before providing services. This simple step can significantly reduce claim denials and improve your clean claim rate.
+                            </p>
+                            <ul class="mt-4 space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="ri-arrow-right-s-line text-brand-primary text-lg mr-2 mt-1"></i>
+                                    <span>Verify eligibility 2-3 days before scheduled appointments</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="ri-arrow-right-s-line text-brand-primary text-lg mr-2 mt-1"></i>
+                                    <span>Confirm coverage details, including copays and deductibles</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="ri-arrow-right-s-line text-brand-primary text-lg mr-2 mt-1"></i>
+                                    <span>Document verification details for future reference</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-8 bg-white rounded-lg shadow-md hover:shadow-2xl transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-start mb-4">
+                        <div class="flex-shrink-0">
+                            <div class="flex justify-center items-center h-12 w-12 bg-brand-secondary rounded-full">
+                                <i class="ri-file-code-line text-xl text-brand-primary"></i>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-xl font-bold font-montserrat text-brand-dark mb-2">Accurate Coding</h3>
+                            <p class="text-gray-600">
+                                Proper coding is the foundation of successful medical billing. Ensure your coding staff stays updated with the latest coding guidelines and regulations.
+                            </p>
+                            <ul class="mt-4 space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="ri-arrow-right-s-line text-brand-primary text-lg mr-2 mt-1"></i>
+                                    <span>Use the most specific diagnosis codes available</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="ri-arrow-right-s-line text-brand-primary text-lg mr-2 mt-1"></i>
+                                    <span>Ensure proper linkage between procedure and diagnosis codes</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="ri-arrow-right-s-line text-brand-primary text-lg mr-2 mt-1"></i>
+                                    <span>Implement regular coding audits to identify areas for improvement</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-8 bg-white rounded-lg shadow-md hover:shadow-2xl transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex items-start mb-4">
+                        <div class="flex-shrink-0">
+                            <div class="flex justify-center items-center h-12 w-12 bg-brand-secondary rounded-full">
+                                <i class="ri-timer-line text-xl text-brand-primary"></i>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-xl font-bold font-montserrat text-brand-dark mb-2">Timely Claim Submission</h3>
+                            <p class="text-gray-600">
+                                Submit claims as quickly as possible after service delivery to accelerate cash flow and avoid timely filing denials.
+                            </p>
+                            <ul class="mt-4 space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="ri-arrow-right-s-line text-brand-primary text-lg mr-2 mt-1"></i>
+                                    <span>Aim to submit claims within 24-48 hours of service</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="ri-arrow-right-s-line text-brand-primary text-lg mr-2 mt-1"></i>
+                                    <span>Maintain a calendar of payer-specific filing deadlines</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="ri-arrow-right-s-line text-brand-primary text-lg mr-2 mt-1"></i>
+                                    <span>Implement a tracking system for claim submission status</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-8 bg-white rounded-lg shadow-md hover:shadow-2xl transition-all duration-300" data-aos="fade-up" data-aos-delay="500">
+                    <div class="flex items-start mb-4">
+                        <div class="flex-shrink-0">
+                            <div class="flex justify-center items-center h-12 w-12 bg-brand-secondary rounded-full">
+                                <i class="ri-file-search-line text-xl text-brand-primary"></i>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-xl font-bold font-montserrat text-brand-dark mb-2">Claim Scrubbing</h3>
+                            <p class="text-gray-600">
+                                Implement a robust claim scrubbing process to identify and correct errors before submission to payers.
+                            </p>
+                            <ul class="mt-4 space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="ri-arrow-right-s-line text-brand-primary text-lg mr-2 mt-1"></i>
+                                    <span>Use automated claim scrubbing tools to identify potential issues</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="ri-arrow-right-s-line text-brand-primary text-lg mr-2 mt-1"></i>
+                                    <span>Review claims for common errors such as missing information or coding inconsistencies</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="ri-arrow-right-s-line text-brand-primary text-lg mr-2 mt-1"></i>
+                                    <span>Track and analyze rejection patterns to improve future submissions</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                <div class="p-8 bg-white rounded-lg shadow-md hover:shadow-2xl transition-all duration-300" data-aos="fade-up" data-aos-delay="600">
+                    <div class="flex items-start mb-4">
+                        <div class="flex-shrink-0">
+                            <div class="flex justify-center items-center h-12 w-12 bg-brand-secondary rounded-full">
+                                <i class="ri-file-damage-line text-xl text-brand-primary"></i>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-xl font-bold font-montserrat text-brand-dark mb-2">Proactive Denial Management</h3>
+                            <p class="text-gray-600">
+                                Implement a systematic approach to identify, address, and prevent claim denials.
+                            </p>
+                            <ul class="mt-4 space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="ri-arrow-right-s-line text-brand-primary text-lg mr-2 mt-1"></i>
+                                    <span>Analyze denial patterns to identify root causes</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="ri-arrow-right-s-line text-brand-primary text-lg mr-2 mt-1"></i>
+                                    <span>Develop specific action plans to address common denial reasons</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="ri-arrow-right-s-line text-brand-primary text-lg mr-2 mt-1"></i>
+                                    <span>Implement preventive measures to reduce future denials</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-8 bg-white rounded-lg shadow-md hover:shadow-2xl transition-all duration-300" data-aos="fade-up" data-aos-delay="700">
+                    <div class="flex items-start mb-4">
+                        <div class="flex-shrink-0">
+                            <div class="flex justify-center items-center h-12 w-12 bg-brand-secondary rounded-full">
+                                <i class="ri-team-line text-xl text-brand-primary"></i>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-xl font-bold font-montserrat text-brand-dark mb-2">Staff Training & Education</h3>
+                            <p class="text-gray-600">
+                                Invest in ongoing training and education for your billing staff to keep them updated with the latest industry changes.
+                            </p>
+                            <ul class="mt-4 space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="ri-arrow-right-s-line text-brand-primary text-lg mr-2 mt-1"></i>
+                                    <span>Provide regular training on coding updates and payer policy changes</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="ri-arrow-right-s-line text-brand-primary text-lg mr-2 mt-1"></i>
+                                    <span>Encourage certification and continuing education</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="ri-arrow-right-s-line text-brand-primary text-lg mr-2 mt-1"></i>
+                                    <span>Conduct regular performance reviews and provide constructive feedback</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark" data-aos="fade-up">Key Performance Indicators</h2>
+                <p class="text-lg text-gray-600 mt-2" data-aos="fade-up" data-aos-delay="100">Monitor these metrics to evaluate your billing performance.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-8 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-6">
+                        <i class="ri-percent-line text-2xl text-brand-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold font-montserrat text-brand-dark mb-3 text-center">Clean Claim Rate</h3>
+                    <p class="text-gray-600 text-center">Aim for a clean claim rate of 95% or higher. This indicates the percentage of claims that are accepted on first submission without rejection.</p>
+                </div>
+
+                <div class="p-8 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-6">
+                        <i class="ri-calendar-line text-2xl text-brand-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold font-montserrat text-brand-dark mb-3 text-center">Days in A/R</h3>
+                    <p class="text-gray-600 text-center">Keep your days in accounts receivable under 30-40 days. This measures how quickly you're collecting payments after service delivery.</p>
+                </div>
+
+                <div class="p-8 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-6">
+                        <i class="ri-file-damage-line text-2xl text-brand-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold font-montserrat text-brand-dark mb-3 text-center">Denial Rate</h3>
+                    <p class="text-gray-600 text-center">Maintain a denial rate below 5%. This represents the percentage of claims denied by payers relative to total claims submitted.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-brand-secondary text-center">
+        <div class="container mx-auto px-4" data-aos="fade-up">
+            <h2 class="text-3xl font-bold font-montserrat text-brand-dark mb-4">Need Help Implementing These Best Practices?</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto mb-8">
+                Our team of billing experts can help you optimize your revenue cycle management process and implement these best practices in your practice.
+            </p>
+            <a href="{{ url_for('contact.contact') }}" class="bg-brand-primary text-white font-montserrat font-semibold px-8 py-4 rounded-full hover:scale-105 hover:bg-brand-dark hover:shadow-xl transition duration-300 inline-block">
+                Request a Consultation
+            </a>
+        </div>
+    </section>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+    </script>
+</main>
+{% endblock %}

@@ -1,0 +1,211 @@
+{% extends "base.html" %}
+
+{% block title %}Payment Posting - Ardur Healthcare{% endblock %}
+
+{% block content %}
+<main class="min-h-screen">
+
+    <section class="text-center py-16 md:py-24 bg-brand-light">
+        <div class="max-w-4xl mx-auto px-4">
+            <h1 class="text-4xl md:text-6xl font-bold font-montserrat text-brand-dark mb-4" data-aos="fade-down">
+                Payment <span class="text-brand-primary">Posting</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                Accurate and timely payment posting services to maintain your practice's financial integrity.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark mb-6">Comprehensive Payment Posting</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Our payment posting team ensures accurate and timely posting of all payments, adjustments, and denials to maintain your practice's financial integrity.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="ri-check-double-line text-brand-primary text-2xl mr-3"></i>
+                            <span class="text-gray-600"><strong>ERA Processing:</strong> Automated posting of electronic remittance advice.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-double-line text-brand-primary text-2xl mr-3"></i>
+                            <span class="text-gray-600"><strong>EOB Processing:</strong> Manual posting of paper explanation of benefits.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-double-line text-brand-primary text-2xl mr-3"></i>
+                            <span class="text-gray-600"><strong>Patient Payments:</strong> Accurate posting of all patient payments.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-double-line text-brand-primary text-2xl mr-3"></i>
+                            <span class="text-gray-600"><strong>Denial Identification:</strong> Prompt identification and categorization of denials.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex items-center justify-center" data-aos="fade-left">
+                    <img src="{{ url_for('static', filename='images/payment_posting.png') }}" alt="Payment Posting" class="w-full h-auto rounded-lg shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-brand-light">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark" data-aos="fade-up">Our Payment Posting Process</h2>
+                <p class="text-lg text-gray-600 mt-2" data-aos="fade-up" data-aos-delay="100">A systematic approach to ensure accuracy and efficiency.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-8 bg-white rounded-lg shadow-md hover:shadow-2xl transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-6">
+                        <span class="text-2xl font-bold text-brand-primary">1</span>
+                    </div>
+                    <h3 class="text-xl font-bold font-montserrat text-brand-dark mb-3 text-center">Payment Receipt</h3>
+                    <p class="text-gray-600 text-center">Receipt and organization of all ERAs, EOBs, and patient payments.</p>
+                </div>
+
+                <div class="p-8 bg-white rounded-lg shadow-md hover:shadow-2xl transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-6">
+                        <span class="text-2xl font-bold text-brand-primary">2</span>
+                    </div>
+                    <h3 class="text-xl font-bold font-montserrat text-brand-dark mb-3 text-center">Payment Posting</h3>
+                    <p class="text-gray-600 text-center">Accurate posting of payments, adjustments, and denials to patient accounts.</p>
+                </div>
+
+                <div class="p-8 bg-white rounded-lg shadow-md hover:shadow-2xl transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-6">
+                        <span class="text-2xl font-bold text-brand-primary">3</span>
+                    </div>
+                    <h3 class="text-xl font-bold font-montserrat text-brand-dark mb-3 text-center">Reconciliation & Reporting</h3>
+                    <p class="text-gray-600 text-center">Reconciliation of payments and detailed reporting of posting activities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark" data-aos="fade-up">Benefits of Our Payment Posting Services</h2>
+                <p class="text-lg text-gray-600 mt-2" data-aos="fade-up" data-aos-delay="100">Experience the Ardur Healthcare difference.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-4">
+                        <i class="ri-timer-line text-2xl text-brand-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-bold font-montserrat text-brand-dark mb-2 text-center">Quick Turnaround</h3>
+                    <p class="text-gray-600 text-center text-sm">24-48 hour turnaround time for all payment posting activities.</p>
+                </div>
+
+                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-4">
+                        <i class="ri-check-double-line text-2xl text-brand-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-bold font-montserrat text-brand-dark mb-2 text-center">High Accuracy</h3>
+                    <p class="text-gray-600 text-center text-sm">99.5% accuracy rate in all payment posting activities.</p>
+                </div>
+
+                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-4">
+                        <i class="ri-line-chart-line text-2xl text-brand-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-bold font-montserrat text-brand-dark mb-2 text-center">Improved Cash Flow</h3>
+                    <p class="text-gray-600 text-center text-sm">Timely posting leads to faster identification of underpayments and denials.</p>
+                </div>
+
+                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="500">
+                    <div class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-4">
+                        <i class="ri-dashboard-line text-2xl text-brand-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-bold font-montserrat text-brand-dark mb-2 text-center">Detailed Reporting</h3>
+                    <p class="text-gray-600 text-center text-sm">Comprehensive reports on all posting activities and payment trends.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-brand-light">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark" data-aos="fade-up">Types of Payments We Process</h2>
+                <p class="text-lg text-gray-600 mt-2" data-aos="fade-up" data-aos-delay="100">Comprehensive coverage for all payment types.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-4">
+                        <i class="ri-file-list-3-line text-2xl text-brand-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-bold font-montserrat text-brand-dark mb-2 text-center">Electronic Remittance Advice (ERA)</h3>
+                    <p class="text-gray-600 text-center text-sm">Automated posting of electronic payments from insurance companies.</p>
+                </div>
+
+                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-4">
+                        <i class="ri-file-paper-2-line text-2xl text-brand-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-bold font-montserrat text-brand-dark mb-2 text-center">Paper EOBs</h3>
+                    <p class="text-gray-600 text-center text-sm">Manual posting of paper explanation of benefits from insurance companies.</p>
+                </div>
+
+                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-4">
+                        <i class="ri-user-line text-2xl text-brand-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-bold font-montserrat text-brand-dark mb-2 text-center">Patient Payments</h3>
+                    <p class="text-gray-600 text-center text-sm">Posting of all patient payments including copays, deductibles, and self-pay.</p>
+                </div>
+
+                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="500">
+                    <div class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-4">
+                        <i class="ri-bank-card-line text-2xl text-brand-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-bold font-montserrat text-brand-dark mb-2 text-center">Credit Card Payments</h3>
+                    <p class="text-gray-600 text-center text-sm">Processing and posting of all credit card payments.</p>
+                </div>
+
+                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="600">
+                    <div class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-4">
+                        <i class="ri-bank-line text-2xl text-brand-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-bold font-montserrat text-brand-dark mb-2 text-center">Electronic Funds Transfer (EFT)</h3>
+                    <p class="text-gray-600 text-center text-sm">Reconciliation and posting of electronic fund transfers.</p>
+                </div>
+
+                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="700">
+                    <div class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-4">
+                        <i class="ri-refund-2-line text-2xl text-brand-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-bold font-montserrat text-brand-dark mb-2 text-center">Refunds & Adjustments</h3>
+                    <p class="text-gray-600 text-center text-sm">Processing of all refunds and contractual adjustments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-brand-secondary text-center">
+        <div class="container mx-auto px-4" data-aos="fade-up">
+            <h2 class="text-3xl font-bold font-montserrat text-brand-dark mb-4">Ready to Streamline Your Payment Posting?</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto mb-8">
+                Let our experts handle your payment posting while you focus on providing exceptional patient care.
+            </p>
+            <a href="{{ url_for('contact.contact') }}" class="bg-brand-primary text-white font-montserrat font-semibold px-8 py-4 rounded-full hover:scale-105 hover:bg-brand-dark hover:shadow-xl transition duration-300 inline-block">
+                Request a Consultation
+            </a>
+        </div>
+    </section>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+    </script>
+</main>
+{% endblock %}

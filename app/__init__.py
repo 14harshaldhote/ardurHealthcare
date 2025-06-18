@@ -69,6 +69,18 @@ def create_app(config_class=Config):
         from .contact import contact as contact_blueprint
         app.register_blueprint(contact_blueprint)
         print("✅ Registered contact blueprint.")
+        
+        from .services import services as services_blueprint
+        app.register_blueprint(services_blueprint)
+        print("✅ Registered services blueprint.")
+        
+        from .resources import resources as resources_blueprint
+        app.register_blueprint(resources_blueprint)
+        print("✅ Registered resources blueprint.")
+        
+        from .specialities import specialities as specialities_blueprint
+        app.register_blueprint(specialities_blueprint)
+        print("✅ Registered specialities blueprint.")
     except Exception as e:
         raise RuntimeError(f"❌ Failed to register blueprints: {str(e)}")
 

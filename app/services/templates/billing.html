@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+
+{% block title %}Medical Billing - Ardur Healthcare{% endblock %}
+
+{% block content %}
+<main class="min-h-screen">
+
+    <section class="text-center py-16 md:py-24 bg-brand-light">
+        <div class="max-w-4xl mx-auto px-4">
+            <h1 class="text-4xl md:text-6xl font-bold font-montserrat text-brand-dark mb-4" data-aos="fade-down">
+                Medical <span class="text-brand-primary">Billing</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                Maximize your practice revenue with our comprehensive medical billing services.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark mb-6">Comprehensive Billing Solutions</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Our medical billing team ensures accurate claim submission, timely follow-up, and maximum reimbursement for your practice.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="ri-check-double-line text-brand-primary text-2xl mr-3"></i>
+                            <span class="text-gray-600"><strong>Charge Entry:</strong> Accurate and timely entry of all charges with proper coding.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-double-line text-brand-primary text-2xl mr-3"></i>
+                            <span class="text-gray-600"><strong>Claim Submission:</strong> Electronic submission to all payers with pre-submission scrubbing.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-double-line text-brand-primary text-2xl mr-3"></i>
+                            <span class="text-gray-600"><strong>Payment Posting:</strong> Accurate posting of all payments and adjustments.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-double-line text-brand-primary text-2xl mr-3"></i>
+                            <span class="text-gray-600"><strong>Denial Management:</strong> Proactive identification and resolution of denied claims.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex items-center justify-center" data-aos="fade-left">
+                    <img src="{{ url_for('static', filename='images/rcm_workflow.png') }}" alt="Medical Billing" class="w-full h-auto rounded-lg shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-brand-light">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark" data-aos="fade-up">Our Billing Process</h2>
+                <p class="text-lg text-gray-600 mt-2" data-aos="fade-up" data-aos-delay="100">A systematic approach to ensure maximum reimbursement.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-8 bg-white rounded-lg shadow-md hover:shadow-2xl transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-6">
+                        <span class="text-2xl font-bold text-brand-primary">1</span>
+                    </div>
+                    <h3 class="text-xl font-bold font-montserrat text-brand-dark mb-3 text-center">Pre-Billing</h3>
+                    <p class="text-gray-600 text-center">Verification of patient information, insurance eligibility, and coding accuracy.</p>
+                </div>
+
+                <div class="p-8 bg-white rounded-lg shadow-md hover:shadow-2xl transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-6">
+                        <span class="text-2xl font-bold text-brand-primary">2</span>
+                    </div>
+                    <h3 class="text-xl font-bold font-montserrat text-brand-dark mb-3 text-center">Claim Submission</h3>
+                    <p class="text-gray-600 text-center">Electronic submission with pre-submission scrubbing to identify potential issues.</p>
+                </div>
+
+                <div class="p-8 bg-white rounded-lg shadow-md hover:shadow-2xl transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-6">
+                        <span class="text-2xl font-bold text-brand-primary">3</span>
+                    </div>
+                    <h3 class="text-xl font-bold font-montserrat text-brand-dark mb-3 text-center">Follow-up & Monitoring</h3>
+                    <p class="text-gray-600 text-center">Active tracking of claims, denial management, and payment posting.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark" data-aos="fade-up">Why Choose Our Billing Services</h2>
+                <p class="text-lg text-gray-600 mt-2" data-aos="fade-up" data-aos-delay="100">Experience the Ardur Healthcare difference.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-4">
+                        <i class="ri-team-line text-2xl text-brand-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-bold font-montserrat text-brand-dark mb-2 text-center">Certified Specialists</h3>
+                    <p class="text-gray-600 text-center text-sm">Our team consists of certified billing specialists with extensive experience.</p>
+                </div>
+
+                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-4">
+                        <i class="ri-line-chart-line text-2xl text-brand-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-bold font-montserrat text-brand-dark mb-2 text-center">Increased Revenue</h3>
+                    <p class="text-gray-600 text-center text-sm">Our clients typically see a 15-20% increase in collections within 3 months.</p>
+                </div>
+
+                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-4">
+                        <i class="ri-shield-check-line text-2xl text-brand-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-bold font-montserrat text-brand-dark mb-2 text-center">Compliance Focused</h3>
+                    <p class="text-gray-600 text-center text-sm">We ensure all billing practices adhere to current regulations and guidelines.</p>
+                </div>
+
+                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="500">
+                    <div class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-4">
+                        <i class="ri-dashboard-line text-2xl text-brand-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-bold font-montserrat text-brand-dark mb-2 text-center">Transparent Reporting</h3>
+                    <p class="text-gray-600 text-center text-sm">Access real-time performance metrics through our intuitive dashboard.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-brand-secondary text-center">
+        <div class="container mx-auto px-4" data-aos="fade-up">
+            <h2 class="text-3xl font-bold font-montserrat text-brand-dark mb-4">Ready to Optimize Your Billing Process?</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto mb-8">
+                Let our experts handle your medical billing while you focus on providing exceptional patient care.
+            </p>
+            <a href="{{ url_for('contact.contact') }}" class="bg-brand-primary text-white font-montserrat font-semibold px-8 py-4 rounded-full hover:scale-105 hover:bg-brand-dark hover:shadow-xl transition duration-300 inline-block">
+                Request a Consultation
+            </a>
+        </div>
+    </section>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+    </script>
+</main>
+{% endblock %}

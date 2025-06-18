@@ -1,0 +1,296 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }} - Ardur Healthcare{% endblock %}
+
+{% block content %}
+<main class="min-h-screen">
+
+    <section class="text-center py-16 md:py-24 bg-brand-light">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-6xl mb-6 flex justify-center">
+                <i class="{{ icon }} text-brand-primary"></i>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold font-montserrat text-brand-dark mb-4" data-aos="fade-down">
+                {{ title }} <span class="text-brand-primary">Billing</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                {{ description }}
+            </p>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-lg shadow-lg p-8 mb-12" data-aos="fade-up">
+                    <h2 class="text-3xl font-bold font-montserrat text-brand-dark mb-6">{{ title }} Services</h2>
+                    <p class="text-gray-600 mb-8">
+                        At Ardur Healthcare, we understand the unique billing challenges faced by {{ title.lower() }} practices. Our specialized revenue cycle management services are designed to optimize your financial operations while you focus on providing exceptional patient care.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        {% for service in services %}
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-12 w-12 flex items-center justify-center rounded-full bg-brand-secondary text-brand-primary">
+                                <i class="ri-check-line text-2xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-xl font-semibold text-brand-dark mb-2">{{ service }}</h3>
+                                <p class="text-gray-600">
+                                    Our expert team provides comprehensive billing and coding support for {{ service.lower() }} services.
+                                </p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden mb-12" data-aos="fade-up">
+                    <div class="md:flex">
+                        <div class="md:w-1/2 p-8">
+                            <h2 class="text-2xl font-bold font-montserrat text-brand-dark mb-6">Common Billing Challenges</h2>
+                            <ul class="space-y-4">
+                                {% for challenge in billing_challenges %}
+                                <li class="flex items-start">
+                                    <div class="flex-shrink-0 h-6 w-6 flex items-center justify-center rounded-full bg-red-100 text-red-500">
+                                        <i class="ri-error-warning-line"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="text-gray-700">{{ challenge }}</p>
+                                    </div>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="md:w-1/2 bg-brand-secondary p-8">
+                            <h2 class="text-2xl font-bold font-montserrat text-brand-dark mb-6">Our Solutions</h2>
+                            <ul class="space-y-4">
+                                {% for solution in solutions %}
+                                <li class="flex items-start">
+                                    <div class="flex-shrink-0 h-6 w-6 flex items-center justify-center rounded-full bg-green-100 text-green-500">
+                                        <i class="ri-check-line"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="text-gray-700">{{ solution }}</p>
+                                    </div>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-8 mb-12" data-aos="fade-up">
+                    <h2 class="text-3xl font-bold font-montserrat text-brand-dark mb-6">Why Choose Ardur Healthcare for {{ title }} Billing?</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                        <div class="text-center p-6 bg-brand-light rounded-lg">
+                            <div class="text-4xl text-brand-primary mb-4">
+                                <i class="ri-user-star-line"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-brand-dark mb-2">Specialty Expertise</h3>
+                            <p class="text-gray-600">
+                                Our billing specialists are trained in {{ title.lower() }}-specific coding and billing requirements.
+                            </p>
+                        </div>
+                        
+                        <div class="text-center p-6 bg-brand-light rounded-lg">
+                            <div class="text-4xl text-brand-primary mb-4">
+                                <i class="ri-line-chart-line"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-brand-dark mb-2">Increased Revenue</h3>
+                            <p class="text-gray-600">
+                                Our clients typically see a 15-30% increase in collections within the first 6 months.
+                            </p>
+                        </div>
+                        
+                        <div class="text-center p-6 bg-brand-light rounded-lg">
+                            <div class="text-4xl text-brand-primary mb-4">
+                                <i class="ri-shield-check-line"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-brand-dark mb-2">Compliance Focus</h3>
+                            <p class="text-gray-600">
+                                We ensure all billing practices adhere to the latest regulations and payer requirements.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-brand-light rounded-lg shadow-lg p-8" data-aos="fade-up">
+                    <div class="md:flex items-center">
+                        <div class="md:w-2/3 mb-6 md:mb-0">
+                            <h2 class="text-2xl font-bold font-montserrat text-brand-dark mb-4">Ready to Optimize Your {{ title }} Practice's Revenue Cycle?</h2>
+                            <p class="text-gray-600">
+                                Contact us today for a free practice analysis and discover how our specialized {{ title.lower() }} billing services can help your practice thrive.
+                            </p>
+                        </div>
+                        <div class="md:w-1/3 md:pl-8 flex justify-center md:justify-end">
+                            <a href="/contact" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-brand-primary hover:bg-brand-dark transition duration-300">
+                                Schedule a Consultation
+                                <i class="ri-arrow-right-line ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-brand-secondary">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark mb-8" data-aos="fade-up">
+                    Our {{ title }} Billing Process
+                </h2>
+                
+                <div class="relative">
+                    <!-- Process Steps -->
+                    <div class="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-brand-primary transform -translate-y-1/2 z-0"></div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
+                        <!-- Step 1 -->
+                        <div class="bg-white rounded-lg shadow-lg p-6 text-center" data-aos="fade-up" data-aos-delay="100">
+                            <div class="w-12 h-12 rounded-full bg-brand-primary text-white flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+                                1
+                            </div>
+                            <h3 class="text-xl font-semibold text-brand-dark mb-2">Patient Registration</h3>
+                            <p class="text-gray-600">
+                                We verify insurance eligibility and collect accurate patient information.
+                            </p>
+                        </div>
+                        
+                        <!-- Step 2 -->
+                        <div class="bg-white rounded-lg shadow-lg p-6 text-center" data-aos="fade-up" data-aos-delay="200">
+                            <div class="w-12 h-12 rounded-full bg-brand-primary text-white flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+                                2
+                            </div>
+                            <h3 class="text-xl font-semibold text-brand-dark mb-2">Coding & Documentation</h3>
+                            <p class="text-gray-600">
+                                Our {{ title.lower() }} coding experts ensure accurate code assignment.
+                            </p>
+                        </div>
+                        
+                        <!-- Step 3 -->
+                        <div class="bg-white rounded-lg shadow-lg p-6 text-center" data-aos="fade-up" data-aos-delay="300">
+                            <div class="w-12 h-12 rounded-full bg-brand-primary text-white flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+                                3
+                            </div>
+                            <h3 class="text-xl font-semibold text-brand-dark mb-2">Claim Submission</h3>
+                            <p class="text-gray-600">
+                                We submit clean claims electronically with a 98%+ acceptance rate.
+                            </p>
+                        </div>
+                        
+                        <!-- Step 4 -->
+                        <div class="bg-white rounded-lg shadow-lg p-6 text-center" data-aos="fade-up" data-aos-delay="400">
+                            <div class="w-12 h-12 rounded-full bg-brand-primary text-white flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+                                4
+                            </div>
+                            <h3 class="text-xl font-semibold text-brand-dark mb-2">Payment Posting & A/R</h3>
+                            <p class="text-gray-600">
+                                We manage denials, appeals, and follow up on unpaid claims.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold font-montserrat text-brand-dark mb-8 text-center" data-aos="fade-up">
+                    Frequently Asked Questions
+                </h2>
+                
+                <div class="space-y-6">
+                    <!-- FAQ Item 1 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up">
+                        <button class="flex justify-between items-center w-full px-6 py-4 text-left">
+                            <span class="text-lg font-semibold text-brand-dark">What makes {{ title }} billing different from other specialties?</span>
+                            <i class="ri-arrow-down-s-line text-brand-primary text-2xl"></i>
+                        </button>
+                        <div class="px-6 pb-4">
+                            <p class="text-gray-600">
+                                {{ title }} billing involves specific coding requirements, documentation standards, and payer rules that differ from other specialties. Our team is trained in these specialty-specific requirements to ensure maximum reimbursement and compliance.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 2 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                        <button class="flex justify-between items-center w-full px-6 py-4 text-left">
+                            <span class="text-lg font-semibold text-brand-dark">How quickly can you implement your billing services for our {{ title }} practice?</span>
+                            <i class="ri-arrow-down-s-line text-brand-primary text-2xl"></i>
+                        </button>
+                        <div class="px-6 pb-4">
+                            <p class="text-gray-600">
+                                Our implementation process typically takes 2-4 weeks, depending on the size and complexity of your practice. We ensure a smooth transition with minimal disruption to your cash flow and operations.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 3 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                        <button class="flex justify-between items-center w-full px-6 py-4 text-left">
+                            <span class="text-lg font-semibold text-brand-dark">What technology do you use for {{ title }} billing?</span>
+                            <i class="ri-arrow-down-s-line text-brand-primary text-2xl"></i>
+                        </button>
+                        <div class="px-6 pb-4">
+                            <p class="text-gray-600">
+                                We use industry-leading practice management and billing software that integrates with most EHR systems. Our technology includes specialty-specific coding tools, claim scrubbing, and analytics dashboards to track your practice's financial performance.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 4 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                        <button class="flex justify-between items-center w-full px-6 py-4 text-left">
+                            <span class="text-lg font-semibold text-brand-dark">How do you stay current with {{ title }} billing changes and updates?</span>
+                            <i class="ri-arrow-down-s-line text-brand-primary text-2xl"></i>
+                        </button>
+                        <div class="px-6 pb-4">
+                            <p class="text-gray-600">
+                                Our team undergoes continuous education and training on the latest coding updates, payer policy changes, and regulatory requirements specific to {{ title.lower() }}. We maintain memberships in specialty-specific billing associations and regularly review payer bulletins and updates.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+        
+        // Simple accordion functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const accordionButtons = document.querySelectorAll('.rounded-lg button');
+            
+            accordionButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('i');
+                    
+                    // Toggle content visibility
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                        icon.classList.remove('ri-arrow-up-s-line');
+                        icon.classList.add('ri-arrow-down-s-line');
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                        icon.classList.remove('ri-arrow-down-s-line');
+                        icon.classList.add('ri-arrow-up-s-line');
+                    }
+                });
+            });
+        });
+    </script>
+</main>
+{% endblock %}

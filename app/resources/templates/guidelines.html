@@ -1,0 +1,289 @@
+{% extends "base.html" %}
+
+{% block title %}Billing Guidelines - Ardur Healthcare{% endblock %}
+
+{% block content %}
+<main class="min-h-screen">
+
+    <section class="text-center py-16 md:py-24 bg-brand-light">
+        <div class="max-w-4xl mx-auto px-4">
+            <h1 class="text-4xl md:text-6xl font-bold font-montserrat text-brand-dark mb-4" data-aos="fade-down">
+                Billing <span class="text-brand-primary">Guidelines</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                Essential information and best practices for effective healthcare billing and coding.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-lg shadow-lg p-8 mb-12" data-aos="fade-up">
+                    <h2 class="text-3xl font-bold font-montserrat text-brand-dark mb-6">Introduction to Medical Billing Guidelines</h2>
+                    <p class="text-gray-600 mb-4">
+                        Medical billing guidelines are essential for healthcare providers to ensure accurate claim submission, proper reimbursement, and compliance with payer requirements. These guidelines vary by payer (Medicare, Medicaid, commercial insurance) and are regularly updated to reflect changes in healthcare policies and regulations.
+                    </p>
+                    <p class="text-gray-600 mb-4">
+                        Following standardized billing guidelines helps minimize claim denials, reduce payment delays, and optimize revenue cycle management. This resource provides an overview of key billing guidelines across different specialties and payer types.
+                    </p>
+                    <div class="bg-brand-light p-4 rounded-md border-l-4 border-brand-primary mt-6">
+                        <p class="text-gray-700 italic">
+                            <strong>Note:</strong> The information provided here is for general guidance only. Always refer to the specific guidelines published by each payer for the most current and accurate information.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="space-y-12">
+                    <!-- Section 1: General Billing Guidelines -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up">
+                        <div class="p-8">
+                            <h2 class="text-2xl font-bold font-montserrat text-brand-dark mb-6">General Billing Guidelines</h2>
+                            
+                            <div class="space-y-6">
+                                <div>
+                                    <h3 class="text-xl font-semibold text-brand-primary mb-3">Clean Claim Submission</h3>
+                                    <p class="text-gray-600 mb-3">
+                                        A clean claim contains all the necessary information required for processing without the need for additional information from the provider or patient.
+                                    </p>
+                                    <ul class="list-disc pl-6 text-gray-600 space-y-2">
+                                        <li>Submit claims electronically whenever possible</li>
+                                        <li>Include all required patient demographic information</li>
+                                        <li>Verify insurance eligibility before service</li>
+                                        <li>Include accurate provider information (NPI, Tax ID)</li>
+                                        <li>Use current CPT, HCPCS, and ICD-10 codes</li>
+                                        <li>Include appropriate modifiers when necessary</li>
+                                        <li>Submit claims within the timely filing deadline</li>
+                                    </ul>
+                                </div>
+                                
+                                <div>
+                                    <h3 class="text-xl font-semibold text-brand-primary mb-3">Documentation Requirements</h3>
+                                    <p class="text-gray-600 mb-3">
+                                        Proper documentation is essential for supporting the medical necessity of services provided and the codes billed.
+                                    </p>
+                                    <ul class="list-disc pl-6 text-gray-600 space-y-2">
+                                        <li>Document all patient encounters thoroughly</li>
+                                        <li>Ensure documentation supports the level of service billed</li>
+                                        <li>Include start and stop times for time-based services</li>
+                                        <li>Document medical necessity for all services</li>
+                                        <li>Maintain signed consent forms and ABNs when applicable</li>
+                                        <li>Keep documentation for at least 7-10 years (varies by state)</li>
+                                    </ul>
+                                </div>
+                                
+                                <div>
+                                    <h3 class="text-xl font-semibold text-brand-primary mb-3">Coding Guidelines</h3>
+                                    <p class="text-gray-600 mb-3">
+                                        Accurate coding is critical for proper reimbursement and compliance.
+                                    </p>
+                                    <ul class="list-disc pl-6 text-gray-600 space-y-2">
+                                        <li>Use the most current code sets (CPT, HCPCS, ICD-10)</li>
+                                        <li>Code to the highest level of specificity</li>
+                                        <li>Assign codes based on documentation, not financial considerations</li>
+                                        <li>Follow correct coding initiative (CCI) edits</li>
+                                        <li>Use modifiers appropriately to indicate special circumstances</li>
+                                        <li>Avoid unbundling of services that should be billed together</li>
+                                        <li>Stay updated on coding changes and updates</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 2: Payer-Specific Guidelines -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up">
+                        <div class="p-8">
+                            <h2 class="text-2xl font-bold font-montserrat text-brand-dark mb-6">Payer-Specific Guidelines</h2>
+                            
+                            <div class="space-y-6">
+                                <div>
+                                    <h3 class="text-xl font-semibold text-brand-primary mb-3">Medicare Guidelines</h3>
+                                    <p class="text-gray-600 mb-3">
+                                        Medicare has specific billing requirements that providers must follow to receive proper reimbursement.
+                                    </p>
+                                    <ul class="list-disc pl-6 text-gray-600 space-y-2">
+                                        <li>Follow Medicare's National and Local Coverage Determinations (NCDs and LCDs)</li>
+                                        <li>Use Advance Beneficiary Notices (ABNs) when services may not be covered</li>
+                                        <li>Follow Medicare's specific documentation guidelines for E/M services</li>
+                                        <li>Adhere to Medicare's incident-to billing requirements</li>
+                                        <li>Submit claims within one year of the date of service</li>
+                                        <li>Follow Medicare's specific rules for telehealth services</li>
+                                        <li>Use appropriate place of service codes</li>
+                                    </ul>
+                                </div>
+                                
+                                <div>
+                                    <h3 class="text-xl font-semibold text-brand-primary mb-3">Medicaid Guidelines</h3>
+                                    <p class="text-gray-600 mb-3">
+                                        Medicaid guidelines vary by state, but there are some common requirements across programs.
+                                    </p>
+                                    <ul class="list-disc pl-6 text-gray-600 space-y-2">
+                                        <li>Verify patient eligibility monthly due to frequent changes</li>
+                                        <li>Follow state-specific billing guidelines and fee schedules</li>
+                                        <li>Be aware of service limitations and prior authorization requirements</li>
+                                        <li>Submit claims within state-specific timely filing deadlines</li>
+                                        <li>Follow state-specific rules for billing secondary to Medicare</li>
+                                        <li>Use state-specific forms and electronic formats when required</li>
+                                    </ul>
+                                </div>
+                                
+                                <div>
+                                    <h3 class="text-xl font-semibold text-brand-primary mb-3">Commercial Insurance Guidelines</h3>
+                                    <p class="text-gray-600 mb-3">
+                                        Commercial payers have their own specific billing requirements that may differ from Medicare and Medicaid.
+                                    </p>
+                                    <ul class="list-disc pl-6 text-gray-600 space-y-2">
+                                        <li>Follow payer-specific prior authorization requirements</li>
+                                        <li>Adhere to payer-specific timely filing deadlines</li>
+                                        <li>Be aware of payer-specific coverage policies and limitations</li>
+                                        <li>Follow payer-specific rules for modifiers and coding</li>
+                                        <li>Submit claims to the correct payer address or electronic payer ID</li>
+                                        <li>Follow payer-specific coordination of benefits rules</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 3: Specialty-Specific Guidelines -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up">
+                        <div class="p-8">
+                            <h2 class="text-2xl font-bold font-montserrat text-brand-dark mb-6">Specialty-Specific Guidelines</h2>
+                            
+                            <div class="space-y-6">
+                                <div>
+                                    <h3 class="text-xl font-semibold text-brand-primary mb-3">Family Practice</h3>
+                                    <ul class="list-disc pl-6 text-gray-600 space-y-2">
+                                        <li>Follow guidelines for preventive services and wellness visits</li>
+                                        <li>Understand rules for billing chronic care management</li>
+                                        <li>Follow guidelines for transitional care management</li>
+                                        <li>Properly document and code for vaccinations</li>
+                                        <li>Follow guidelines for billing same-day preventive and problem-focused visits</li>
+                                    </ul>
+                                </div>
+                                
+                                <div>
+                                    <h3 class="text-xl font-semibold text-brand-primary mb-3">Dermatology</h3>
+                                    <ul class="list-disc pl-6 text-gray-600 space-y-2">
+                                        <li>Follow guidelines for coding different types of biopsies</li>
+                                        <li>Understand rules for billing destruction of lesions</li>
+                                        <li>Follow guidelines for coding excisions based on size and location</li>
+                                        <li>Properly document and code for Mohs surgery</li>
+                                        <li>Follow guidelines for billing cosmetic vs. medically necessary procedures</li>
+                                    </ul>
+                                </div>
+                                
+                                <div>
+                                    <h3 class="text-xl font-semibold text-brand-primary mb-3">Orthopedics</h3>
+                                    <ul class="list-disc pl-6 text-gray-600 space-y-2">
+                                        <li>Follow guidelines for global surgical periods</li>
+                                        <li>Understand rules for billing fracture care</li>
+                                        <li>Follow guidelines for coding joint injections</li>
+                                        <li>Properly document and code for durable medical equipment</li>
+                                        <li>Follow guidelines for billing physical therapy services</li>
+                                    </ul>
+                                </div>
+                                
+                                <div>
+                                    <h3 class="text-xl font-semibold text-brand-primary mb-3">Optometry</h3>
+                                    <ul class="list-disc pl-6 text-gray-600 space-y-2">
+                                        <li>Follow guidelines for routine vs. medical eye exams</li>
+                                        <li>Understand rules for billing vision plans vs. medical insurance</li>
+                                        <li>Follow guidelines for coding refractions</li>
+                                        <li>Properly document and code for contact lens fittings</li>
+                                        <li>Follow guidelines for billing diagnostic tests</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 4: Compliance and Auditing -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up">
+                        <div class="p-8">
+                            <h2 class="text-2xl font-bold font-montserrat text-brand-dark mb-6">Compliance and Auditing</h2>
+                            
+                            <div class="space-y-6">
+                                <div>
+                                    <h3 class="text-xl font-semibold text-brand-primary mb-3">Compliance Program</h3>
+                                    <p class="text-gray-600 mb-3">
+                                        A robust compliance program helps ensure adherence to billing guidelines and regulations.
+                                    </p>
+                                    <ul class="list-disc pl-6 text-gray-600 space-y-2">
+                                        <li>Develop written policies and procedures for billing and coding</li>
+                                        <li>Designate a compliance officer or committee</li>
+                                        <li>Conduct regular staff training on billing guidelines</li>
+                                        <li>Implement a system for reporting potential compliance issues</li>
+                                        <li>Respond promptly to detected offenses and develop corrective action plans</li>
+                                        <li>Conduct regular internal monitoring and auditing</li>
+                                        <li>Enforce disciplinary standards through well-publicized guidelines</li>
+                                    </ul>
+                                </div>
+                                
+                                <div>
+                                    <h3 class="text-xl font-semibold text-brand-primary mb-3">Internal Auditing</h3>
+                                    <p class="text-gray-600 mb-3">
+                                        Regular internal audits help identify and correct billing errors before they become compliance issues.
+                                    </p>
+                                    <ul class="list-disc pl-6 text-gray-600 space-y-2">
+                                        <li>Conduct regular chart-to-claim audits</li>
+                                        <li>Review documentation for medical necessity and code selection</li>
+                                        <li>Analyze claim denial patterns and address root causes</li>
+                                        <li>Verify correct use of modifiers</li>
+                                        <li>Check for proper implementation of coding updates</li>
+                                        <li>Review proper use of time-based coding</li>
+                                        <li>Ensure compliance with incident-to billing requirements</li>
+                                    </ul>
+                                </div>
+                                
+                                <div>
+                                    <h3 class="text-xl font-semibold text-brand-primary mb-3">Responding to External Audits</h3>
+                                    <p class="text-gray-600 mb-3">
+                                        Knowing how to respond to payer audits is essential for protecting your practice.
+                                    </p>
+                                    <ul class="list-disc pl-6 text-gray-600 space-y-2">
+                                        <li>Respond to audit requests within the specified timeframe</li>
+                                        <li>Provide complete and organized documentation</li>
+                                        <li>Review documentation before submission to ensure it supports the services billed</li>
+                                        <li>Consider consulting with a healthcare attorney for significant audits</li>
+                                        <li>Appeal unfavorable audit findings when appropriate</li>
+                                        <li>Implement corrective actions based on audit findings</li>
+                                        <li>Document all communications with auditors</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 bg-brand-light rounded-lg shadow-lg p-8" data-aos="fade-up">
+                    <h2 class="text-2xl font-bold font-montserrat text-brand-dark mb-4">Need Help with Billing Compliance?</h2>
+                    <p class="text-gray-600 mb-6">
+                        Ardur Healthcare offers comprehensive revenue cycle management services, including billing compliance consulting, staff training, and audit support. Our team of certified coders and billing specialists can help ensure your practice follows all applicable billing guidelines and maximizes reimbursement while minimizing compliance risks.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="/contact" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-brand-primary hover:bg-brand-dark transition duration-300">
+                            Schedule a Consultation
+                            <i class="ri-calendar-line ml-2"></i>
+                        </a>
+                        <a href="#" class="inline-flex items-center justify-center px-6 py-3 border border-brand-primary text-base font-medium rounded-md text-brand-primary bg-white hover:bg-gray-50 transition duration-300">
+                            Download Billing Guidelines PDF
+                            <i class="ri-download-line ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+    </script>
+</main>
+{% endblock %}

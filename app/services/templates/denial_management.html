@@ -1,0 +1,176 @@
+{% extends "base.html" %}
+
+{% block title %}Denial Management - Ardur Healthcare{% endblock %}
+
+{% block content %}
+<main class="min-h-screen">
+
+    <section class="text-center py-16 md:py-24 bg-brand-light">
+        <div class="max-w-4xl mx-auto px-4">
+            <h1 class="text-4xl md:text-6xl font-bold font-montserrat text-brand-dark mb-4" data-aos="fade-down">
+                Denial <span class="text-brand-primary">Management</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                Recover lost revenue and prevent future denials with our comprehensive denial management services.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark mb-6">Comprehensive Denial Solutions</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Our denial management team ensures timely identification, resolution, and prevention of claim denials to maximize your practice revenue.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="ri-check-double-line text-brand-primary text-2xl mr-3"></i>
+                            <span class="text-gray-600"><strong>Root Cause Analysis:</strong> Identifying patterns and causes of denials.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-double-line text-brand-primary text-2xl mr-3"></i>
+                            <span class="text-gray-600"><strong>Denial Resolution:</strong> Systematic appeals and resubmission of denied claims.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-double-line text-brand-primary text-2xl mr-3"></i>
+                            <span class="text-gray-600"><strong>Prevention Strategies:</strong> Implementation of processes to prevent future denials.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-double-line text-brand-primary text-2xl mr-3"></i>
+                            <span class="text-gray-600"><strong>Performance Reporting:</strong> Detailed denial metrics and resolution performance reports.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex items-center justify-center" data-aos="fade-left">
+                    <img src="{{ url_for('static', filename='images/denial_management.png') }}" alt="Denial Management" class="w-full h-auto rounded-lg shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-brand-light">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark" data-aos="fade-up">Our Denial Management Process</h2>
+                <p class="text-lg text-gray-600 mt-2" data-aos="fade-up" data-aos-delay="100">A systematic approach to ensure maximum recovery and prevention.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="p-8 bg-white rounded-lg shadow-md hover:shadow-2xl transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-6">
+                        <span class="text-2xl font-bold text-brand-primary">1</span>
+                    </div>
+                    <h3 class="text-xl font-bold font-montserrat text-brand-dark mb-3 text-center">Identification</h3>
+                    <p class="text-gray-600 text-center">Prompt identification and categorization of all denied claims.</p>
+                </div>
+
+                <div class="p-8 bg-white rounded-lg shadow-md hover:shadow-2xl transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-6">
+                        <span class="text-2xl font-bold text-brand-primary">2</span>
+                    </div>
+                    <h3 class="text-xl font-bold font-montserrat text-brand-dark mb-3 text-center">Analysis</h3>
+                    <p class="text-gray-600 text-center">Root cause analysis to determine the reason for each denial.</p>
+                </div>
+
+                <div class="p-8 bg-white rounded-lg shadow-md hover:shadow-2xl transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-6">
+                        <span class="text-2xl font-bold text-brand-primary">3</span>
+                    </div>
+                    <h3 class="text-xl font-bold font-montserrat text-brand-dark mb-3 text-center">Resolution</h3>
+                    <p class="text-gray-600 text-center">Strategic appeals and resubmission of denied claims.</p>
+                </div>
+
+                <div class="p-8 bg-white rounded-lg shadow-md hover:shadow-2xl transition-all duration-300" data-aos="fade-up" data-aos-delay="500">
+                    <div class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-6">
+                        <span class="text-2xl font-bold text-brand-primary">4</span>
+                    </div>
+                    <h3 class="text-xl font-bold font-montserrat text-brand-dark mb-3 text-center">Prevention</h3>
+                    <p class="text-gray-600 text-center">Implementation of processes to prevent future denials.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark" data-aos="fade-up">Common Denial Types We Handle</h2>
+                <p class="text-lg text-gray-600 mt-2" data-aos="fade-up" data-aos-delay="100">Our expertise covers all types of claim denials.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-4">
+                        <i class="ri-file-list-3-line text-2xl text-brand-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-bold font-montserrat text-brand-dark mb-2 text-center">Missing Information</h3>
+                    <p class="text-gray-600 text-center text-sm">Claims denied due to incomplete or missing patient or provider information.</p>
+                </div>
+
+                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-4">
+                        <i class="ri-calendar-check-line text-2xl text-brand-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-bold font-montserrat text-brand-dark mb-2 text-center">Eligibility Issues</h3>
+                    <p class="text-gray-600 text-center text-sm">Claims denied due to patient eligibility, coverage, or benefit limitations.</p>
+                </div>
+
+                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-4">
+                        <i class="ri-file-code-line text-2xl text-brand-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-bold font-montserrat text-brand-dark mb-2 text-center">Coding Errors</h3>
+                    <p class="text-gray-600 text-center text-sm">Claims denied due to incorrect, missing, or incompatible procedure or diagnosis codes.</p>
+                </div>
+
+                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="500">
+                    <div class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-4">
+                        <i class="ri-time-line text-2xl text-brand-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-bold font-montserrat text-brand-dark mb-2 text-center">Timely Filing</h3>
+                    <p class="text-gray-600 text-center text-sm">Claims denied due to submission after the payer's filing deadline.</p>
+                </div>
+
+                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="600">
+                    <div class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-4">
+                        <i class="ri-file-paper-2-line text-2xl text-brand-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-bold font-montserrat text-brand-dark mb-2 text-center">Authorization Issues</h3>
+                    <p class="text-gray-600 text-center text-sm">Claims denied due to missing, invalid, or expired prior authorizations.</p>
+                </div>
+
+                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="700">
+                    <div class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-4">
+                        <i class="ri-file-damage-line text-2xl text-brand-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-bold font-montserrat text-brand-dark mb-2 text-center">Medical Necessity</h3>
+                    <p class="text-gray-600 text-center text-sm">Claims denied because the payer determined services were not medically necessary.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-brand-secondary text-center">
+        <div class="container mx-auto px-4" data-aos="fade-up">
+            <h2 class="text-3xl font-bold font-montserrat text-brand-dark mb-4">Ready to Reduce Your Denial Rate?</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto mb-8">
+                Let our experts handle your denial management while you focus on providing exceptional patient care.
+            </p>
+            <a href="{{ url_for('contact.contact') }}" class="bg-brand-primary text-white font-montserrat font-semibold px-8 py-4 rounded-full hover:scale-105 hover:bg-brand-dark hover:shadow-xl transition duration-300 inline-block">
+                Request a Consultation
+            </a>
+        </div>
+    </section>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+    </script>
+</main>
+{% endblock %}

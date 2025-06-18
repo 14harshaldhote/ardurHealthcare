@@ -1,0 +1,325 @@
+{% extends "base.html" %}
+
+{% block title %}Case Studies - Ardur Healthcare{% endblock %}
+
+{% block content %}
+<main class="min-h-screen">
+
+    <section class="text-center py-16 md:py-24 bg-brand-light">
+        <div class="max-w-4xl mx-auto px-4">
+            <h1 class="text-4xl md:text-6xl font-bold font-montserrat text-brand-dark mb-4" data-aos="fade-down">
+                Case <span class="text-brand-primary">Studies</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                Real-world examples of how Ardur Healthcare has helped medical practices optimize their revenue cycle management.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Case Study 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up">
+                    <div class="relative">
+                        <img src="{{ url_for('static', filename='images/case-study-1.jpg') }}" alt="Case Study" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-brand-primary text-white text-sm font-semibold py-1 px-3 rounded-full">
+                            Dermatology
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h2 class="text-2xl font-bold font-montserrat text-brand-dark mb-3">
+                            Reducing Claim Denials by 78%
+                        </h2>
+                        <p class="text-gray-600 mb-4">
+                            How a multi-location dermatology practice overcame persistent claim denials and improved their revenue cycle.
+                        </p>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center">
+                                <div class="text-brand-primary font-semibold">Results:</div>
+                            </div>
+                        </div>
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-center">
+                                <i class="ri-check-line text-green-500 mr-2"></i>
+                                <span class="text-gray-700">78% reduction in claim denials</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ri-check-line text-green-500 mr-2"></i>
+                                <span class="text-gray-700">32% increase in monthly collections</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ri-check-line text-green-500 mr-2"></i>
+                                <span class="text-gray-700">Days in A/R reduced from 45 to 21</span>
+                            </div>
+                        </div>
+                        <a href="#" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-brand-primary hover:bg-brand-dark transition duration-300">
+                            Read Full Case Study
+                            <i class="ri-arrow-right-line ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Case Study 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative">
+                        <img src="{{ url_for('static', filename='images/case-study-2.jpg') }}" alt="Case Study" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-brand-primary text-white text-sm font-semibold py-1 px-3 rounded-full">
+                            Orthopedic
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h2 class="text-2xl font-bold font-montserrat text-brand-dark mb-3">
+                            Streamlining Billing Operations
+                        </h2>
+                        <p class="text-gray-600 mb-4">
+                            How an orthopedic surgery center improved efficiency and reduced operational costs through outsourced billing.
+                        </p>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center">
+                                <div class="text-brand-primary font-semibold">Results:</div>
+                            </div>
+                        </div>
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-center">
+                                <i class="ri-check-line text-green-500 mr-2"></i>
+                                <span class="text-gray-700">42% reduction in billing staff costs</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ri-check-line text-green-500 mr-2"></i>
+                                <span class="text-gray-700">95% clean claim rate (up from 76%)</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ri-check-line text-green-500 mr-2"></i>
+                                <span class="text-gray-700">$1.2M additional revenue in first year</span>
+                            </div>
+                        </div>
+                        <a href="#" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-brand-primary hover:bg-brand-dark transition duration-300">
+                            Read Full Case Study
+                            <i class="ri-arrow-right-line ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Case Study 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative">
+                        <img src="{{ url_for('static', filename='images/case-study-3.jpg') }}" alt="Case Study" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-brand-primary text-white text-sm font-semibold py-1 px-3 rounded-full">
+                            Family Practice
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h2 class="text-2xl font-bold font-montserrat text-brand-dark mb-3">
+                            Accelerating Provider Credentialing
+                        </h2>
+                        <p class="text-gray-600 mb-4">
+                            How a growing family practice reduced credentialing time and eliminated revenue delays for new providers.
+                        </p>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center">
+                                <div class="text-brand-primary font-semibold">Results:</div>
+                            </div>
+                        </div>
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-center">
+                                <i class="ri-check-line text-green-500 mr-2"></i>
+                                <span class="text-gray-700">Credentialing time reduced by 65%</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ri-check-line text-green-500 mr-2"></i>
+                                <span class="text-gray-700">100% application acceptance rate</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ri-check-line text-green-500 mr-2"></i>
+                                <span class="text-gray-700">$85K saved in potential lost revenue</span>
+                            </div>
+                        </div>
+                        <a href="#" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-brand-primary hover:bg-brand-dark transition duration-300">
+                            Read Full Case Study
+                            <i class="ri-arrow-right-line ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Case Study 4 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up">
+                    <div class="relative">
+                        <img src="{{ url_for('static', filename='images/case-study-4.jpg') }}" alt="Case Study" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-brand-primary text-white text-sm font-semibold py-1 px-3 rounded-full">
+                            Optometry
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h2 class="text-2xl font-bold font-montserrat text-brand-dark mb-3">
+                            Optimizing Eligibility Verification
+                        </h2>
+                        <p class="text-gray-600 mb-4">
+                            How an optometry practice improved patient experience and reduced claim rejections through automated verification.
+                        </p>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center">
+                                <div class="text-brand-primary font-semibold">Results:</div>
+                            </div>
+                        </div>
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-center">
+                                <i class="ri-check-line text-green-500 mr-2"></i>
+                                <span class="text-gray-700">98% verification rate before appointments</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ri-check-line text-green-500 mr-2"></i>
+                                <span class="text-gray-700">67% reduction in eligibility-related denials</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ri-check-line text-green-500 mr-2"></i>
+                                <span class="text-gray-700">25% decrease in front desk workload</span>
+                            </div>
+                        </div>
+                        <a href="#" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-brand-primary hover:bg-brand-dark transition duration-300">
+                            Read Full Case Study
+                            <i class="ri-arrow-right-line ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Case Study 5 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative">
+                        <img src="{{ url_for('static', filename='images/case-study-5.jpg') }}" alt="Case Study" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-brand-primary text-white text-sm font-semibold py-1 px-3 rounded-full">
+                            Wound Care
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h2 class="text-2xl font-bold font-montserrat text-brand-dark mb-3">
+                            Recovering Aged Accounts Receivable
+                        </h2>
+                        <p class="text-gray-600 mb-4">
+                            How a wound care center recovered 85% of aged A/R and implemented processes to prevent future backlogs.
+                        </p>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center">
+                                <div class="text-brand-primary font-semibold">Results:</div>
+                            </div>
+                        </div>
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-center">
+                                <i class="ri-check-line text-green-500 mr-2"></i>
+                                <span class="text-gray-700">$780K recovered from accounts >120 days</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ri-check-line text-green-500 mr-2"></i>
+                                <span class="text-gray-700">A/R >90 days reduced from 32% to 8%</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ri-check-line text-green-500 mr-2"></i>
+                                <span class="text-gray-700">Ongoing A/R management system implemented</span>
+                            </div>
+                        </div>
+                        <a href="#" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-brand-primary hover:bg-brand-dark transition duration-300">
+                            Read Full Case Study
+                            <i class="ri-arrow-right-line ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Case Study 6 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative">
+                        <img src="{{ url_for('static', filename='images/case-study-6.jpg') }}" alt="Case Study" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-brand-primary text-white text-sm font-semibold py-1 px-3 rounded-full">
+                            General Surgery
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h2 class="text-2xl font-bold font-montserrat text-brand-dark mb-3">
+                            Implementing Effective Denial Management
+                        </h2>
+                        <p class="text-gray-600 mb-4">
+                            How a surgical practice transformed their approach to denials and improved their appeal success rate.
+                        </p>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center">
+                                <div class="text-brand-primary font-semibold">Results:</div>
+                            </div>
+                        </div>
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-center">
+                                <i class="ri-check-line text-green-500 mr-2"></i>
+                                <span class="text-gray-700">Appeal success rate increased to 87%</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ri-check-line text-green-500 mr-2"></i>
+                                <span class="text-gray-700">$450K additional revenue recovered</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ri-check-line text-green-500 mr-2"></i>
+                                <span class="text-gray-700">Denial rate reduced from 12% to 4%</span>
+                            </div>
+                        </div>
+                        <a href="#" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-brand-primary hover:bg-brand-dark transition duration-300">
+                            Read Full Case Study
+                            <i class="ri-arrow-right-line ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Pagination -->
+            <div class="mt-12 flex justify-center" data-aos="fade-up">
+                <nav class="inline-flex rounded-md shadow">
+                    <a href="#" class="inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">
+                        <i class="ri-arrow-left-s-line mr-2"></i>
+                        Previous
+                    </a>
+                    <a href="#" class="inline-flex items-center px-4 py-2 border border-gray-300 bg-brand-primary text-sm font-medium text-white hover:bg-brand-dark">
+                        1
+                    </a>
+                    <a href="#" class="inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">
+                        2
+                    </a>
+                    <a href="#" class="inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">
+                        Next
+                        <i class="ri-arrow-right-s-line ml-2"></i>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-brand-light">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark mb-6" data-aos="fade-up">
+                    Ready to Achieve Similar Results for Your Practice?
+                </h2>
+                <p class="text-lg text-gray-600 mb-8" data-aos="fade-up" data-aos-delay="100">
+                    Our team of revenue cycle management experts is ready to help you optimize your billing operations, reduce denials, and increase collections.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4" data-aos="fade-up" data-aos-delay="200">
+                    <a href="/contact" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-brand-primary hover:bg-brand-dark transition duration-300">
+                        Schedule a Consultation
+                        <i class="ri-calendar-line ml-2"></i>
+                    </a>
+                    <a href="#" class="inline-flex items-center justify-center px-6 py-3 border border-brand-primary text-base font-medium rounded-md text-brand-primary bg-white hover:bg-gray-50 transition duration-300">
+                        Download Case Studies
+                        <i class="ri-download-line ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+    </script>
+</main>
+{% endblock %}
