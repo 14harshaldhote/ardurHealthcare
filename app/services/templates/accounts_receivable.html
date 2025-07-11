@@ -1,17 +1,21 @@
-{% extends "base.html" %}
-
-{% block title %}Accounts Receivable - Ardur Healthcare{% endblock %}
-
-{% block content %}
+{% extends "base.html" %} {% block title %}Accounts Receivable - Ardur
+Healthcare{% endblock %} {% block content %}
 <main class="min-h-screen">
-
     <section class="text-center py-16 md:py-24 bg-brand-light">
         <div class="max-w-4xl mx-auto px-4">
-            <h1 class="text-4xl md:text-6xl font-bold font-montserrat text-brand-dark mb-4" data-aos="fade-down">
+            <h1
+                class="text-4xl md:text-6xl font-bold font-montserrat text-brand-dark mb-4"
+                data-aos="fade-down"
+            >
                 Accounts <span class="text-brand-primary">Receivable</span>
             </h1>
-            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-                Optimize your cash flow with our comprehensive accounts receivable management services.
+            <p
+                class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto"
+                data-aos="fade-up"
+                data-aos-delay="200"
+            >
+                Optimize your cash flow with our comprehensive accounts
+                receivable management services.
             </p>
         </div>
     </section>
@@ -20,31 +24,68 @@
         <div class="container mx-auto px-4">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div data-aos="fade-right">
-                    <h2 class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark mb-6">Comprehensive AR Management</h2>
+                    <h2
+                        class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark mb-6"
+                    >
+                        Comprehensive AR Management
+                    </h2>
                     <p class="text-gray-600 mb-6 leading-relaxed">
-                        Our accounts receivable team ensures timely follow-up, effective collections, and improved cash flow for your practice.
+                        Our accounts receivable team ensures timely follow-up,
+                        effective collections, and improved cash flow for your
+                        practice.
                     </p>
                     <ul class="space-y-4">
                         <li class="flex items-start">
-                            <i class="ri-check-double-line text-brand-primary text-2xl mr-3"></i>
-                            <span class="text-gray-600"><strong>Aging Analysis:</strong> Detailed review of outstanding claims by age category.</span>
+                            <i
+                                class="ri-check-double-line text-brand-primary text-2xl mr-3"
+                            ></i>
+                            <span class="text-gray-600"
+                                ><strong>Aging Analysis:</strong> Detailed
+                                review of outstanding claims by age
+                                category.</span
+                            >
                         </li>
                         <li class="flex items-start">
-                            <i class="ri-check-double-line text-brand-primary text-2xl mr-3"></i>
-                            <span class="text-gray-600"><strong>Payer Follow-up:</strong> Systematic follow-up on unpaid and partially paid claims.</span>
+                            <i
+                                class="ri-check-double-line text-brand-primary text-2xl mr-3"
+                            ></i>
+                            <span class="text-gray-600"
+                                ><strong>Payer Follow-up:</strong> Systematic
+                                follow-up on unpaid and partially paid
+                                claims.</span
+                            >
                         </li>
                         <li class="flex items-start">
-                            <i class="ri-check-double-line text-brand-primary text-2xl mr-3"></i>
-                            <span class="text-gray-600"><strong>Patient Collections:</strong> Professional and compliant patient balance collection.</span>
+                            <i
+                                class="ri-check-double-line text-brand-primary text-2xl mr-3"
+                            ></i>
+                            <span class="text-gray-600"
+                                ><strong>Patient Collections:</strong>
+                                Professional and compliant patient balance
+                                collection.</span
+                            >
                         </li>
                         <li class="flex items-start">
-                            <i class="ri-check-double-line text-brand-primary text-2xl mr-3"></i>
-                            <span class="text-gray-600"><strong>Performance Reporting:</strong> Detailed AR metrics and collection performance reports.</span>
+                            <i
+                                class="ri-check-double-line text-brand-primary text-2xl mr-3"
+                            ></i>
+                            <span class="text-gray-600"
+                                ><strong>Performance Reporting:</strong>
+                                Detailed AR metrics and collection performance
+                                reports.</span
+                            >
                         </li>
                     </ul>
                 </div>
-                <div class="flex items-center justify-center" data-aos="fade-left">
-                    <img src="{{ url_for('static', filename='images/accounts_receivable.png') }}" alt="Accounts Receivable Management" class="w-full h-auto rounded-lg shadow-lg">
+                <div
+                    class="flex items-center justify-center"
+                    data-aos="fade-left"
+                >
+                    <img
+                        src="{{ url_for('static', filename='images/accounts_receivable.png') }}"
+                        alt="Accounts Receivable Management"
+                        class="w-full h-auto rounded-lg shadow-lg"
+                    />
                 </div>
             </div>
         </div>
@@ -53,41 +94,111 @@
     <section class="py-16 md:py-24 bg-brand-light">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark" data-aos="fade-up">Our AR Process</h2>
-                <p class="text-lg text-gray-600 mt-2" data-aos="fade-up" data-aos-delay="100">A systematic approach to ensure maximum collections.</p>
+                <h2
+                    class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark"
+                    data-aos="fade-up"
+                >
+                    Our AR Process
+                </h2>
+                <p
+                    class="text-lg text-gray-600 mt-2"
+                    data-aos="fade-up"
+                    data-aos-delay="100"
+                >
+                    A systematic approach to ensure maximum collections.
+                </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div class="p-8 bg-white rounded-lg shadow-md hover:shadow-2xl transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
-                    <div class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-6">
-                        <span class="text-2xl font-bold text-brand-primary">1</span>
+                <div
+                    class="p-8 bg-white rounded-lg shadow-md hover:shadow-2xl transition-all duration-300"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                >
+                    <div
+                        class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-6"
+                    >
+                        <span class="text-2xl font-bold text-brand-primary"
+                            >1</span
+                        >
                     </div>
-                    <h3 class="text-xl font-bold font-montserrat text-brand-dark mb-3 text-center">Aging Analysis</h3>
-                    <p class="text-gray-600 text-center">Categorization and prioritization of outstanding claims by age.</p>
+                    <h3
+                        class="text-xl font-bold font-montserrat text-brand-dark mb-3 text-center"
+                    >
+                        Aging Analysis
+                    </h3>
+                    <p class="text-gray-600 text-center">
+                        Categorization and prioritization of outstanding claims
+                        by age.
+                    </p>
                 </div>
 
-                <div class="p-8 bg-white rounded-lg shadow-md hover:shadow-2xl transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
-                    <div class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-6">
-                        <span class="text-2xl font-bold text-brand-primary">2</span>
+                <div
+                    class="p-8 bg-white rounded-lg shadow-md hover:shadow-2xl transition-all duration-300"
+                    data-aos="fade-up"
+                    data-aos-delay="300"
+                >
+                    <div
+                        class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-6"
+                    >
+                        <span class="text-2xl font-bold text-brand-primary"
+                            >2</span
+                        >
                     </div>
-                    <h3 class="text-xl font-bold font-montserrat text-brand-dark mb-3 text-center">Payer Follow-up</h3>
-                    <p class="text-gray-600 text-center">Systematic outreach to insurance companies for claim resolution.</p>
+                    <h3
+                        class="text-xl font-bold font-montserrat text-brand-dark mb-3 text-center"
+                    >
+                        Payer Follow-up
+                    </h3>
+                    <p class="text-gray-600 text-center">
+                        Systematic outreach to insurance companies for claim
+                        resolution.
+                    </p>
                 </div>
 
-                <div class="p-8 bg-white rounded-lg shadow-md hover:shadow-2xl transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
-                    <div class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-6">
-                        <span class="text-2xl font-bold text-brand-primary">3</span>
+                <div
+                    class="p-8 bg-white rounded-lg shadow-md hover:shadow-2xl transition-all duration-300"
+                    data-aos="fade-up"
+                    data-aos-delay="400"
+                >
+                    <div
+                        class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-6"
+                    >
+                        <span class="text-2xl font-bold text-brand-primary"
+                            >3</span
+                        >
                     </div>
-                    <h3 class="text-xl font-bold font-montserrat text-brand-dark mb-3 text-center">Patient Collections</h3>
-                    <p class="text-gray-600 text-center">Professional outreach for patient responsibility balances.</p>
+                    <h3
+                        class="text-xl font-bold font-montserrat text-brand-dark mb-3 text-center"
+                    >
+                        Patient Collections
+                    </h3>
+                    <p class="text-gray-600 text-center">
+                        Professional outreach for patient responsibility
+                        balances.
+                    </p>
                 </div>
 
-                <div class="p-8 bg-white rounded-lg shadow-md hover:shadow-2xl transition-all duration-300" data-aos="fade-up" data-aos-delay="500">
-                    <div class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-6">
-                        <span class="text-2xl font-bold text-brand-primary">4</span>
+                <div
+                    class="p-8 bg-white rounded-lg shadow-md hover:shadow-2xl transition-all duration-300"
+                    data-aos="fade-up"
+                    data-aos-delay="500"
+                >
+                    <div
+                        class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-6"
+                    >
+                        <span class="text-2xl font-bold text-brand-primary"
+                            >4</span
+                        >
                     </div>
-                    <h3 class="text-xl font-bold font-montserrat text-brand-dark mb-3 text-center">Reporting & Analysis</h3>
-                    <p class="text-gray-600 text-center">Detailed performance metrics and actionable insights.</p>
+                    <h3
+                        class="text-xl font-bold font-montserrat text-brand-dark mb-3 text-center"
+                    >
+                        Reporting & Analysis
+                    </h3>
+                    <p class="text-gray-600 text-center">
+                        Detailed performance metrics and actionable insights.
+                    </p>
                 </div>
             </div>
         </div>
@@ -96,57 +207,154 @@
     <section class="py-16 md:py-24">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark" data-aos="fade-up">Benefits of Our AR Management</h2>
-                <p class="text-lg text-gray-600 mt-2" data-aos="fade-up" data-aos-delay="100">Experience the Ardur Healthcare difference.</p>
+                <h2
+                    class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark"
+                    data-aos="fade-up"
+                >
+                    Benefits of Our AR Management
+                </h2>
+                <p
+                    class="text-lg text-gray-600 mt-2"
+                    data-aos="fade-up"
+                    data-aos-delay="100"
+                >
+                    Experience the Ardur Healthcare difference.
+                </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
-                    <div class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-4">
-                        <i class="ri-money-dollar-circle-line text-2xl text-brand-primary"></i>
+                <div
+                    class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                >
+                    <div
+                        class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-4"
+                    >
+                        <i
+                            class="ri-money-dollar-circle-line text-2xl text-brand-primary"
+                        ></i>
                     </div>
-                    <h3 class="text-lg font-bold font-montserrat text-brand-dark mb-2 text-center">Improved Cash Flow</h3>
-                    <p class="text-gray-600 text-center text-sm">Accelerate collections and reduce days in AR to improve practice liquidity.</p>
+                    <h3
+                        class="text-lg font-bold font-montserrat text-brand-dark mb-2 text-center"
+                    >
+                        Improved Cash Flow
+                    </h3>
+                    <p class="text-gray-600 text-center text-sm">
+                        Accelerate collections and reduce days in AR to improve
+                        practice liquidity.
+                    </p>
                 </div>
 
-                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
-                    <div class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-4">
-                        <i class="ri-line-chart-line text-2xl text-brand-primary"></i>
+                <div
+                    class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300"
+                    data-aos="fade-up"
+                    data-aos-delay="300"
+                >
+                    <div
+                        class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-4"
+                    >
+                        <i
+                            class="ri-line-chart-line text-2xl text-brand-primary"
+                        ></i>
                     </div>
-                    <h3 class="text-lg font-bold font-montserrat text-brand-dark mb-2 text-center">Reduced Write-offs</h3>
-                    <p class="text-gray-600 text-center text-sm">Minimize unnecessary write-offs through persistent and effective follow-up.</p>
+                    <h3
+                        class="text-lg font-bold font-montserrat text-brand-dark mb-2 text-center"
+                    >
+                        Reduced Write-offs
+                    </h3>
+                    <p class="text-gray-600 text-center text-sm">
+                        Minimize unnecessary write-offs through persistent and
+                        effective follow-up.
+                    </p>
                 </div>
 
-                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
-                    <div class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-4">
-                        <i class="ri-shield-check-line text-2xl text-brand-primary"></i>
+                <div
+                    class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300"
+                    data-aos="fade-up"
+                    data-aos-delay="400"
+                >
+                    <div
+                        class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-4"
+                    >
+                        <i
+                            class="ri-shield-check-line text-2xl text-brand-primary"
+                        ></i>
                     </div>
-                    <h3 class="text-lg font-bold font-montserrat text-brand-dark mb-2 text-center">Compliance Focused</h3>
-                    <p class="text-gray-600 text-center text-sm">All collection activities adhere to current regulations and guidelines.</p>
+                    <h3
+                        class="text-lg font-bold font-montserrat text-brand-dark mb-2 text-center"
+                    >
+                        Compliance Focused
+                    </h3>
+                    <p class="text-gray-600 text-center text-sm">
+                        All collection activities adhere to current regulations
+                        and guidelines.
+                    </p>
                 </div>
 
-                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="500">
-                    <div class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-4">
-                        <i class="ri-dashboard-line text-2xl text-brand-primary"></i>
+                <div
+                    class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300"
+                    data-aos="fade-up"
+                    data-aos-delay="500"
+                >
+                    <div
+                        class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-4"
+                    >
+                        <i
+                            class="ri-dashboard-line text-2xl text-brand-primary"
+                        ></i>
                     </div>
-                    <h3 class="text-lg font-bold font-montserrat text-brand-dark mb-2 text-center">Transparent Reporting</h3>
-                    <p class="text-gray-600 text-center text-sm">Access real-time AR metrics through our intuitive dashboard.</p>
+                    <h3
+                        class="text-lg font-bold font-montserrat text-brand-dark mb-2 text-center"
+                    >
+                        Transparent Reporting
+                    </h3>
+                    <p class="text-gray-600 text-center text-sm">
+                        Access real-time AR metrics through our intuitive
+                        dashboard.
+                    </p>
                 </div>
 
-                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="600">
-                    <div class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-4">
+                <div
+                    class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300"
+                    data-aos="fade-up"
+                    data-aos-delay="600"
+                >
+                    <div
+                        class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-4"
+                    >
                         <i class="ri-team-line text-2xl text-brand-primary"></i>
                     </div>
-                    <h3 class="text-lg font-bold font-montserrat text-brand-dark mb-2 text-center">Dedicated AR Team</h3>
-                    <p class="text-gray-600 text-center text-sm">Experienced specialists focused solely on maximizing your collections.</p>
+                    <h3
+                        class="text-lg font-bold font-montserrat text-brand-dark mb-2 text-center"
+                    >
+                        Dedicated AR Team
+                    </h3>
+                    <p class="text-gray-600 text-center text-sm">
+                        Experienced specialists focused solely on maximizing
+                        your collections.
+                    </p>
                 </div>
 
-                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="700">
-                    <div class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-4">
+                <div
+                    class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300"
+                    data-aos="fade-up"
+                    data-aos-delay="700"
+                >
+                    <div
+                        class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-4"
+                    >
                         <i class="ri-time-line text-2xl text-brand-primary"></i>
                     </div>
-                    <h3 class="text-lg font-bold font-montserrat text-brand-dark mb-2 text-center">Staff Time Savings</h3>
-                    <p class="text-gray-600 text-center text-sm">Free your staff to focus on patient care rather than collections.</p>
+                    <h3
+                        class="text-lg font-bold font-montserrat text-brand-dark mb-2 text-center"
+                    >
+                        Staff Time Savings
+                    </h3>
+                    <p class="text-gray-600 text-center text-sm">
+                        Free your staff to focus on patient care rather than
+                        collections.
+                    </p>
                 </div>
             </div>
         </div>
@@ -154,17 +362,23 @@
 
     <section class="py-16 md:py-24 bg-brand-secondary text-center">
         <div class="container mx-auto px-4" data-aos="fade-up">
-            <h2 class="text-3xl font-bold font-montserrat text-brand-dark mb-4">Ready to Improve Your Cash Flow?</h2>
+            <h2 class="text-3xl font-bold font-montserrat text-brand-dark mb-4">
+                Ready to Improve Your Cash Flow?
+            </h2>
             <p class="text-gray-600 max-w-2xl mx-auto mb-8">
-                Let our experts handle your accounts receivable while you focus on providing exceptional patient care.
+                Let our experts handle your accounts receivable while you focus
+                on providing exceptional patient care.
             </p>
-            <a href="{{ url_for('contact.contact') }}" class="bg-brand-primary text-white font-montserrat font-semibold px-8 py-4 rounded-full hover:scale-105 hover:bg-brand-dark hover:shadow-xl transition duration-300 inline-block">
+            <a
+                href="{{ url_for('contact.contact_form') }}"
+                class="bg-brand-primary text-white font-montserrat font-semibold px-8 py-4 rounded-full hover:scale-105 hover:bg-brand-dark hover:shadow-xl transition duration-300 inline-block"
+            >
                 Request a Consultation
             </a>
         </div>
     </section>
 
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({

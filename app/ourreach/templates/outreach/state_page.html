@@ -7,8 +7,7 @@ Healthcare{% endblock %} {% block meta %}
 <link rel="canonical" href="{{ request.url }}" />
 {% endblock %} {% block content %}
 <div class="bg-white">
-    <!-- Hero Section -->
-    <section class="container mx-auto px-4 text-center py-16 md:py-24">
+    <section class="container px-4 text-center py-16 md:py-24">
         <div class="max-w-4xl mx-auto">
             <div
                 class="inline-flex items-center px-4 py-2 bg-brand-primary/10 rounded-full mb-6"
@@ -39,241 +38,386 @@ Healthcare{% endblock %} {% block meta %}
                 data-aos-delay="300"
             >
                 <a
-                    href="{{ url_for('contact.contact') }}"
+                    href="{{ url_for('contact.contact_form') }}"
                     class="bg-brand-primary text-white font-montserrat font-semibold px-8 py-4 rounded-full hover:scale-105 hover:bg-brand-dark hover:shadow-xl transition duration-300 inline-flex items-center justify-center"
                 >
-                    <i class="ri-phone-line mr-2"></i>
-                    Get Free Consultation
+                    <i class="ri-phone-line mr-2"></i> Get Free Consultation
                 </a>
                 <a
                     href="{{ url_for('ourreach.states_list') }}"
                     class="bg-white text-brand-primary border-2 border-brand-primary font-montserrat font-semibold px-8 py-4 rounded-full hover:bg-brand-primary hover:text-white transition duration-300 inline-flex items-center justify-center"
                 >
-                    <i class="ri-list-check mr-2"></i>
-                    View All States
+                    <i class="ri-list-check mr-2"></i> View All States
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Main Content with Two-Column Layout -->
     <section class="py-16 md:py-24 bg-brand-light">
         <div class="container mx-auto px-4">
             <div class="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto">
-                <!-- Left Column - Scrollable Content -->
-                <div class="flex-1 lg:w-2/3">
+                <div class="flex-1 lg:w-3/4 space-y-8">
                     <div
-                        class="space-y-8 text-gray-700 text-left text-base leading-relaxed"
+                        class="scrollable-content-card bg-white rounded-2xl shadow-lg overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+                        data-aos="fade-up"
                     >
-                        <!-- Introduction -->
-                        <div
-                            data-aos="fade-up"
-                            class="bg-white rounded-2xl p-8 shadow-lg"
-                        >
-                            <h2
-                                class="text-2xl md:text-3xl font-bold text-brand-dark mb-6"
-                            >
-                                {{ state.subtitle }}
-                            </h2>
-                            <p class="text-lg leading-relaxed">
-                                {{ state.description }}
-                            </p>
-                        </div>
-
-                        <!-- Why Choose Us -->
-                        <div
-                            data-aos="fade-up"
-                            class="bg-white rounded-2xl p-8 shadow-lg"
-                        >
-                            <h2
-                                class="text-2xl md:text-3xl font-bold text-brand-dark mb-6"
-                            >
-                                Why {{ state.name }} Providers Choose Ardur
-                                Healthcare
-                            </h2>
-                            <div class="grid md:grid-cols-2 gap-6">
-                                {% for reason in state.why_choose_us %}
-                                <div class="flex items-start space-x-3">
-                                    <div
-                                        class="w-6 h-6 bg-brand-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1"
-                                    >
-                                        <i
-                                            class="ri-check-line text-brand-primary text-sm"
-                                        ></i>
-                                    </div>
-                                    <p class="text-gray-700">{{ reason }}</p>
-                                </div>
-                                {% endfor %}
-                            </div>
-                        </div>
-
-                        <!-- Payers Section -->
-                        <div
-                            data-aos="fade-up"
-                            class="bg-white rounded-2xl p-8 shadow-lg"
-                        >
-                            <h2
-                                class="text-2xl md:text-3xl font-bold text-brand-dark mb-6"
-                            >
-                                Local Payer Knowledge That Drives Reimbursements
-                            </h2>
-                            <p class="text-lg mb-6">
-                                Billing policies and documentation standards
-                                vary across states. Ardur Healthcare stays
-                                current with {{ state.name }}'s payer guidelines
-                                to ensure clean, timely claims.
-                            </p>
-                            <p class="font-semibold text-brand-dark mb-4">
-                                We work with payers like:
-                            </p>
-                            <div
-                                class="grid md:grid-cols-2 lg:grid-cols-3 gap-3"
-                            >
-                                {% for payer in state.payers %}
-                                <div
-                                    class="flex items-center space-x-2 bg-brand-light p-3 rounded-lg"
+                        <div class="p-8 space-y-8">
+                            <div>
+                                <h2
+                                    class="text-2xl md:text-3xl font-bold text-brand-dark mb-6"
                                 >
-                                    <i
-                                        class="ri-building-line text-brand-primary flex-shrink-0"
-                                    ></i>
-                                    <span class="text-sm text-gray-700"
-                                        >{{ payer }}</span
-                                    >
-                                </div>
-                                {% endfor %}
+                                    {{ state.subtitle }}
+                                </h2>
+                                <p
+                                    class="text-lg leading-relaxed text-gray-700"
+                                >
+                                    {{ state.description }}
+                                </p>
                             </div>
-                        </div>
 
-                        <!-- Services Section -->
-                        <div
-                            data-aos="fade-up"
-                            class="bg-white rounded-2xl p-8 shadow-lg"
-                        >
-                            <h2
-                                class="text-2xl md:text-3xl font-bold text-brand-dark mb-6"
-                            >
-                                Our Medical Billing Services for {{ state.name
-                                }} Practices
-                            </h2>
-                            <div class="grid md:grid-cols-2 gap-6">
-                                {% for service in state.services %}
-                                <div class="flex items-start space-x-3">
-                                    <div
-                                        class="w-6 h-6 bg-brand-secondary/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1"
+                            <div>
+                                <h2
+                                    class="text-2xl md:text-3xl font-bold text-brand-dark mb-6"
+                                >
+                                    Why {{ state.name }} Providers Choose Ardur
+                                    Healthcare
+                                </h2>
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    {% for reason in state.why_choose_us %}
+                                    <div class="flex items-start space-x-3">
+                                        <div
+                                            class="w-6 h-6 bg-brand-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1"
+                                        >
+                                            <i
+                                                class="ri-check-line text-brand-primary text-sm"
+                                            ></i>
+                                        </div>
+                                        <p class="text-gray-700">
+                                            {{ reason }}
+                                        </p>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+
+                            <div>
+                                <h2
+                                    class="text-2xl md:text-3xl font-bold text-brand-dark mb-8"
+                                >
+                                    Comprehensive Medical Billing & Coding
+                                    Services
+                                </h2>
+                                <div class="mb-8">
+                                    <h3
+                                        class="text-xl font-semibold text-brand-dark mb-4 flex items-center"
                                     >
                                         <i
-                                            class="ri-service-line text-brand-primary text-sm"
+                                            class="ri-service-line text-brand-primary mr-2"
+                                        ></i>
+                                        Our Medical Billing Services for {{
+                                        state.name }} Practices
+                                    </h3>
+                                    <div class="grid md:grid-cols-2 gap-4">
+                                        {% for service in state.services %}
+                                        <div
+                                            class="flex items-start space-x-3 p-4 bg-brand-light rounded-lg"
+                                        >
+                                            <div
+                                                class="w-6 h-6 bg-brand-secondary/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1"
+                                            >
+                                                <i
+                                                    class="ri-check-double-line text-brand-primary text-sm"
+                                                ></i>
+                                            </div>
+                                            <div>
+                                                <h4
+                                                    class="font-semibold text-brand-dark mb-2"
+                                                >
+                                                    {{ service }}
+                                                </h4>
+                                                <p
+                                                    class="text-gray-600 text-sm"
+                                                >
+                                                    Professional {{
+                                                    service.lower() }} services
+                                                    tailored to {{ state.name }}
+                                                    healthcare providers.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <div class="grid md:grid-cols-2 gap-8">
+                                    <div class="bg-brand-light rounded-xl p-6">
+                                        <h3
+                                            class="text-lg font-semibold text-brand-dark mb-4 flex items-center"
+                                        >
+                                            <i
+                                                class="ri-focus-line text-brand-primary mr-2"
+                                            ></i>
+                                            Specialty Billing Expertise
+                                        </h3>
+                                        <p class="text-gray-600 mb-4 text-sm">
+                                            We support a wide range of
+                                            specialties across {{ state.name }}:
+                                        </p>
+                                        <div class="grid grid-cols-2 gap-2">
+                                            {% for specialty in
+                                            state.specialties %}
+                                            <div
+                                                class="flex items-center space-x-2 bg-white p-2 rounded-lg"
+                                            >
+                                                <i
+                                                    class="ri-stethoscope-line text-brand-primary text-sm"
+                                                ></i>
+                                                <span
+                                                    class="text-gray-700 capitalize text-sm"
+                                                    >{{ specialty }}</span
+                                                >
+                                            </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                    <div class="bg-brand-light rounded-xl p-6">
+                                        <h3
+                                            class="text-lg font-semibold text-brand-dark mb-4 flex items-center"
+                                        >
+                                            <i
+                                                class="ri-computer-line text-brand-primary mr-2"
+                                            ></i>
+                                            Software Compatibility
+                                        </h3>
+                                        <p class="text-gray-600 mb-4 text-sm">
+                                            We work with leading EHR platforms:
+                                        </p>
+                                        <div class="space-y-2">
+                                            {% for software in
+                                            state.software_compatibility %}
+                                            <div
+                                                class="flex items-center space-x-2 bg-white p-2 rounded-lg"
+                                            >
+                                                <i
+                                                    class="ri-settings-line text-brand-primary text-sm"
+                                                ></i>
+                                                <span
+                                                    class="text-gray-700 text-sm"
+                                                    >{{ software }}</span
+                                                >
+                                            </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h2
+                                    class="text-2xl md:text-3xl font-bold text-brand-dark mb-6"
+                                >
+                                    Local Payer Knowledge That Drives
+                                    Reimbursements
+                                </h2>
+                                <p class="text-lg mb-6 text-gray-700">
+                                    Billing policies and documentation standards
+                                    vary across states. Ardur Healthcare stays
+                                    current with {{ state.name }}'s payer
+                                    guidelines to ensure clean, timely claims.
+                                </p>
+                                <p class="font-semibold text-brand-dark mb-4">
+                                    We work with payers like:
+                                </p>
+                                <div
+                                    class="grid md:grid-cols-2 lg:grid-cols-3 gap-3"
+                                >
+                                    {% for payer in state.payers %}
+                                    <div
+                                        class="flex items-center space-x-2 bg-brand-light p-3 rounded-lg"
+                                    >
+                                        <i
+                                            class="ri-building-line text-brand-primary flex-shrink-0"
+                                        ></i>
+                                        <span class="text-sm text-gray-700"
+                                            >{{ payer }}</span
+                                        >
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        data-aos="fade-up"
+                        class="bg-gradient-to-r from-brand-primary/5 to-brand-secondary rounded-2xl p-8 shadow-lg"
+                    >
+                        <h2
+                            class="text-2xl md:text-3xl font-bold text-brand-dark mb-8 text-center"
+                        >
+                            What {{ state.name }} Healthcare Providers Say
+                        </h2>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div
+                                class="bg-white rounded-xl p-6 shadow-md testimonial-card"
+                            >
+                                <div class="flex items-center mb-4">
+                                    <div class="flex text-yellow-400">
+                                        <i class="ri-star-fill"></i
+                                        ><i class="ri-star-fill"></i
+                                        ><i class="ri-star-fill"></i
+                                        ><i class="ri-star-fill"></i
+                                        ><i class="ri-star-fill"></i>
+                                    </div>
+                                    <span class="ml-2 text-sm text-gray-600"
+                                        >5.0 Rating</span
+                                    >
+                                </div>
+                                <p class="text-gray-700 mb-4 italic">
+                                    "Ardur Healthcare transformed our billing
+                                    process. Our revenue increased by 25% and
+                                    claim denials dropped significantly. Their
+                                    team understands {{ state.name }} payer
+                                    requirements perfectly."
+                                </p>
+                                <div class="flex items-center">
+                                    <div
+                                        class="w-10 h-10 bg-brand-primary/10 rounded-full flex items-center justify-center"
+                                    >
+                                        <i
+                                            class="ri-user-line text-brand-primary"
                                         ></i>
                                     </div>
-                                    <div>
-                                        <h3
-                                            class="font-semibold text-brand-dark mb-2"
+                                    <div class="ml-3">
+                                        <p
+                                            class="font-semibold text-brand-dark"
                                         >
-                                            {{ service }}
-                                        </h3>
-                                        <p class="text-gray-600 text-sm">
-                                            Professional {{ service.lower() }}
-                                            services tailored to {{ state.name
-                                            }} healthcare providers.
+                                            Dr. Sarah Johnson
+                                        </p>
+                                        <p class="text-sm text-gray-600">
+                                            Family Medicine, {{ state.name }}
                                         </p>
                                     </div>
                                 </div>
-                                {% endfor %}
                             </div>
-                        </div>
-
-                        <!-- Specialties and Software -->
-                        <div class="grid md:grid-cols-2 gap-8">
-                            <!-- Specialties -->
                             <div
-                                data-aos="fade-up"
-                                class="bg-white rounded-2xl p-8 shadow-lg"
+                                class="bg-white rounded-xl p-6 shadow-md testimonial-card"
                             >
-                                <h2
-                                    class="text-xl md:text-2xl font-bold text-brand-dark mb-6"
-                                >
-                                    Specialty Billing Expertise
-                                </h2>
-                                <p class="text-gray-600 mb-4">
-                                    We support a wide range of specialties
-                                    across {{ state.name }}:
-                                </p>
-                                <div class="space-y-2">
-                                    {% for specialty in state.specialties %}
-                                    <div class="flex items-center space-x-2">
-                                        <i
-                                            class="ri-focus-line text-brand-primary text-sm"
-                                        ></i>
-                                        <span class="text-gray-700 capitalize"
-                                            >{{ specialty }}</span
-                                        >
+                                <div class="flex items-center mb-4">
+                                    <div class="flex text-yellow-400">
+                                        <i class="ri-star-fill"></i
+                                        ><i class="ri-star-fill"></i
+                                        ><i class="ri-star-fill"></i
+                                        ><i class="ri-star-fill"></i
+                                        ><i class="ri-star-fill"></i>
                                     </div>
-                                    {% endfor %}
-                                </div>
-                            </div>
-
-                            <!-- Software Compatibility -->
-                            <div
-                                data-aos="fade-up"
-                                class="bg-white rounded-2xl p-8 shadow-lg"
-                            >
-                                <h2
-                                    class="text-xl md:text-2xl font-bold text-brand-dark mb-6"
-                                >
-                                    Software Compatibility
-                                </h2>
-                                <p class="text-gray-600 mb-4">
-                                    We work with leading EHR platforms:
-                                </p>
-                                <div class="space-y-2">
-                                    {% for software in
-                                    state.software_compatibility %}
-                                    <div class="flex items-center space-x-2">
-                                        <i
-                                            class="ri-computer-line text-brand-primary text-sm"
-                                        ></i>
-                                        <span class="text-gray-700"
-                                            >{{ software }}</span
-                                        >
-                                    </div>
-                                    {% endfor %}
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- FAQs Section -->
-                        <div
-                            data-aos="fade-up"
-                            class="bg-white rounded-2xl p-8 shadow-lg"
-                        >
-                            <h2
-                                class="text-2xl md:text-3xl font-bold text-brand-dark mb-8"
-                            >
-                                FAQs for {{ state.name }} Healthcare Providers
-                            </h2>
-                            <div class="space-y-6">
-                                {% for faq in state.faqs %}
-                                <div
-                                    class="border-b border-gray-200 pb-4 last:border-b-0"
-                                >
-                                    <h3
-                                        class="font-semibold text-brand-dark mb-3 text-lg"
+                                    <span class="ml-2 text-sm text-gray-600"
+                                        >5.0 Rating</span
                                     >
-                                        {{ faq.question }}
-                                    </h3>
-                                    <p class="text-gray-600 leading-relaxed">
-                                        {{ faq.answer }}
+                                </div>
+                                <p class="text-gray-700 mb-4 italic">
+                                    "Professional, reliable, and results-driven.
+                                    Ardur Healthcare's expertise in {{
+                                    state.name }} billing regulations has been
+                                    invaluable for our practice growth."
+                                </p>
+                                <div class="flex items-center">
+                                    <div
+                                        class="w-10 h-10 bg-brand-primary/10 rounded-full flex items-center justify-center"
+                                    >
+                                        <i
+                                            class="ri-user-line text-brand-primary"
+                                        ></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p
+                                            class="font-semibold text-brand-dark"
+                                        >
+                                            Dr. Michael Chen
+                                        </p>
+                                        <p class="text-sm text-gray-600">
+                                            Cardiology Practice, {{ state.name
+                                            }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8 pt-6 border-t border-brand-primary/20">
+                            <div
+                                class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center"
+                            >
+                                <div>
+                                    <p
+                                        class="text-2xl font-bold text-brand-primary"
+                                    >
+                                        500+
+                                    </p>
+                                    <p class="text-sm text-gray-600">
+                                        Happy Clients
                                     </p>
                                 </div>
-                                {% endfor %}
+                                <div>
+                                    <p
+                                        class="text-2xl font-bold text-brand-primary"
+                                    >
+                                        99%
+                                    </p>
+                                    <p class="text-sm text-gray-600">
+                                        Claim Accuracy
+                                    </p>
+                                </div>
+                                <div>
+                                    <p
+                                        class="text-2xl font-bold text-brand-primary"
+                                    >
+                                        25%
+                                    </p>
+                                    <p class="text-sm text-gray-600">
+                                        Avg Revenue Increase
+                                    </p>
+                                </div>
+                                <div>
+                                    <p
+                                        class="text-2xl font-bold text-brand-primary"
+                                    >
+                                        24/7
+                                    </p>
+                                    <p class="text-sm text-gray-600">Support</p>
+                                </div>
                             </div>
+                        </div>
+                    </div>
+
+                    <div
+                        data-aos="fade-up"
+                        class="bg-white rounded-2xl p-8 shadow-lg"
+                    >
+                        <h2
+                            class="text-2xl md:text-3xl font-bold text-brand-dark mb-8"
+                        >
+                            FAQs for {{ state.name }} Healthcare Providers
+                        </h2>
+                        <div class="space-y-6">
+                            {% for faq in state.faqs %}
+                            <div
+                                class="border-b border-gray-200 pb-4 last:border-b-0"
+                            >
+                                <h3
+                                    class="font-semibold text-brand-dark mb-3 text-lg"
+                                >
+                                    {{ faq.question }}
+                                </h3>
+                                <p class="text-gray-600 leading-relaxed">
+                                    {{ faq.answer }}
+                                </p>
+                            </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
 
-                <!-- Right Column - Fixed Contact Panel -->
-                <div class="lg:w-1/3">
-                    <div class="lg:sticky lg:top-8">
+                <div class="lg:w-1/4">
+                    <div class="lg:sticky lg:top-32">
                         <div
                             data-aos="fade-up"
                             class="bg-gradient-to-br from-brand-primary to-brand-dark rounded-2xl p-8 text-white shadow-2xl"
@@ -294,19 +438,17 @@ Healthcare{% endblock %} {% block meta %}
                                     state.name }} billing experts
                                 </p>
                             </div>
-
-                            <!-- Contact Form -->
                             <form
                                 class="space-y-4"
-                                action="{{ url_for('contact.contact') }}"
-                                method="GET"
+                                action="{{ url_for('contact.contact_form') }}"
+                                method="POST"
                             >
                                 <div>
                                     <label
                                         class="block text-sm font-medium mb-2"
                                         for="name"
                                     >
-                                        Full Name
+                                        Full Name *
                                     </label>
                                     <input
                                         type="text"
@@ -322,7 +464,7 @@ Healthcare{% endblock %} {% block meta %}
                                         class="block text-sm font-medium mb-2"
                                         for="email"
                                     >
-                                        Email Address
+                                        Email Address *
                                     </label>
                                     <input
                                         type="email"
@@ -338,7 +480,7 @@ Healthcare{% endblock %} {% block meta %}
                                         class="block text-sm font-medium mb-2"
                                         for="phone"
                                     >
-                                        Phone Number
+                                        Phone Number *
                                     </label>
                                     <input
                                         type="tel"
@@ -354,7 +496,7 @@ Healthcare{% endblock %} {% block meta %}
                                         class="block text-sm font-medium mb-2"
                                         for="practice"
                                     >
-                                        Practice Name
+                                        Practice Name *
                                     </label>
                                     <input
                                         type="text"
@@ -362,14 +504,166 @@ Healthcare{% endblock %} {% block meta %}
                                         name="practice"
                                         class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
                                         placeholder="Enter your practice name"
+                                        required
                                     />
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-sm font-medium mb-2"
+                                        for="state_field"
+                                    >
+                                        State *
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="state_field"
+                                        name="state"
+                                        class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
+                                        placeholder="Enter your state"
+                                        value="{{ state.name }}"
+                                        required
+                                    />
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-sm font-medium mb-2"
+                                        for="specialties"
+                                    >
+                                        Specialties *
+                                    </label>
+                                    <select
+                                        id="specialties"
+                                        name="specialties"
+                                        multiple
+                                        class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-white/50"
+                                        required
+                                        size="4"
+                                    >
+                                        {% for specialty in state.specialties %}
+                                        <option
+                                            value="{{ specialty }}"
+                                            class="text-black bg-white"
+                                        >
+                                            {{ specialty|title }}
+                                        </option>
+                                        {% endfor %}
+                                        <option
+                                            value="family-medicine"
+                                            class="text-black bg-white"
+                                        >
+                                            Family Medicine
+                                        </option>
+                                        <option
+                                            value="internal-medicine"
+                                            class="text-black bg-white"
+                                        >
+                                            Internal Medicine
+                                        </option>
+                                        <option
+                                            value="pediatrics"
+                                            class="text-black bg-white"
+                                        >
+                                            Pediatrics
+                                        </option>
+                                        <option
+                                            value="orthopedics"
+                                            class="text-black bg-white"
+                                        >
+                                            Orthopedics
+                                        </option>
+                                        <option
+                                            value="dermatology"
+                                            class="text-black bg-white"
+                                        >
+                                            Dermatology
+                                        </option>
+                                        <option
+                                            value="gastroenterology"
+                                            class="text-black bg-white"
+                                        >
+                                            Gastroenterology
+                                        </option>
+                                        <option
+                                            value="other"
+                                            class="text-black bg-white"
+                                        >
+                                            Other
+                                        </option>
+                                    </select>
+                                    <p class="text-xs text-white/70 mt-1">
+                                        Hold Ctrl/Cmd to select multiple
+                                        specialties
+                                    </p>
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-sm font-medium mb-2"
+                                        for="service_type"
+                                    >
+                                        Service Type *
+                                    </label>
+                                    <select
+                                        id="service_type"
+                                        name="service_type"
+                                        class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-white/50"
+                                        required
+                                    >
+                                        <option
+                                            value=""
+                                            class="text-black bg-white"
+                                        >
+                                            Select service type
+                                        </option>
+                                        <option
+                                            value="medical-billing"
+                                            class="text-black bg-white"
+                                        >
+                                            Medical Billing
+                                        </option>
+                                        <option
+                                            value="coding-services"
+                                            class="text-black bg-white"
+                                        >
+                                            Coding Services
+                                        </option>
+                                        <option
+                                            value="credentialing"
+                                            class="text-black bg-white"
+                                        >
+                                            Provider Credentialing
+                                        </option>
+                                        <option
+                                            value="ar-management"
+                                            class="text-black bg-white"
+                                        >
+                                            AR Management
+                                        </option>
+                                        <option
+                                            value="denial-management"
+                                            class="text-black bg-white"
+                                        >
+                                            Denial Management
+                                        </option>
+                                        <option
+                                            value="full-service"
+                                            class="text-black bg-white"
+                                        >
+                                            Full Service Package
+                                        </option>
+                                        <option
+                                            value="consultation"
+                                            class="text-black bg-white"
+                                        >
+                                            Consultation
+                                        </option>
+                                    </select>
                                 </div>
                                 <div>
                                     <label
                                         class="block text-sm font-medium mb-2"
                                         for="message"
                                     >
-                                        Message
+                                        Message *
                                     </label>
                                     <textarea
                                         id="message"
@@ -377,18 +671,17 @@ Healthcare{% endblock %} {% block meta %}
                                         rows="3"
                                         class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
                                         placeholder="Tell us about your billing needs..."
+                                        required
                                     ></textarea>
                                 </div>
                                 <button
                                     type="submit"
                                     class="w-full bg-white text-brand-primary font-semibold py-4 rounded-lg hover:bg-gray-100 transition duration-300 flex items-center justify-center"
                                 >
-                                    <i class="ri-send-plane-line mr-2"></i>
-                                    Get Free Consultation
+                                    <i class="ri-send-plane-line mr-2"></i> Get
+                                    Free Consultation
                                 </button>
                             </form>
-
-                            <!-- Contact Info -->
                             <div class="mt-8 pt-6 border-t border-white/20">
                                 <div class="space-y-4">
                                     <div class="flex items-center space-x-3">
@@ -433,36 +726,6 @@ Healthcare{% endblock %} {% block meta %}
                                     </div>
                                 </div>
                             </div>
-
-                            <!-- Trust Indicators -->
-                            <div class="mt-6 pt-6 border-t border-white/20">
-                                <div class="grid grid-cols-2 gap-4 text-center">
-                                    <div>
-                                        <p class="text-2xl font-bold">500+</p>
-                                        <p class="text-xs text-white/80">
-                                            Happy Clients
-                                        </p>
-                                    </div>
-                                    <div>
-                                        <p class="text-2xl font-bold">99%</p>
-                                        <p class="text-xs text-white/80">
-                                            Claim Accuracy
-                                        </p>
-                                    </div>
-                                    <div>
-                                        <p class="text-2xl font-bold">15+</p>
-                                        <p class="text-xs text-white/80">
-                                            Years Experience
-                                        </p>
-                                    </div>
-                                    <div>
-                                        <p class="text-2xl font-bold">24/7</p>
-                                        <p class="text-xs text-white/80">
-                                            Support
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -470,7 +733,6 @@ Healthcare{% endblock %} {% block meta %}
         </div>
     </section>
 
-    <!-- Final CTA Section -->
     <section class="py-20 md:py-32 bg-brand-secondary text-center">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up">
             <h2
@@ -485,33 +747,27 @@ Healthcare{% endblock %} {% block meta %}
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                    href="{{ url_for('contact.contact') }}"
+                    href="{{ url_for('contact.contact_form') }}"
                     class="bg-brand-primary text-white font-montserrat font-semibold px-8 py-4 rounded-full hover:scale-105 hover:bg-brand-dark hover:shadow-xl transition duration-300 inline-flex items-center justify-center"
                 >
-                    <i class="ri-phone-line mr-2"></i>
-                    Call (214) 800-6161
+                    <i class="ri-phone-line mr-2"></i> Call (214) 800-6161
                 </a>
                 <a
                     href="{{ url_for('ourreach.index') }}"
                     class="bg-white text-brand-primary border-2 border-brand-primary font-montserrat font-semibold px-8 py-4 rounded-full hover:bg-brand-primary hover:text-white transition duration-300 inline-flex items-center justify-center"
                 >
-                    <i class="ri-map-pin-line mr-2"></i>
-                    View Interactive Map
+                    <i class="ri-map-pin-line mr-2"></i> View Interactive Map
                 </a>
             </div>
         </div>
     </section>
 </div>
 
-<!-- AOS CSS -->
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-<!-- Remix Icon CSS -->
 <link
     href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
     rel="stylesheet"
 />
-
-<!-- AOS JavaScript -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
     AOS.init({
@@ -520,33 +776,98 @@ Healthcare{% endblock %} {% block meta %}
     });
 </script>
 
-<!-- Custom Styles for Enhanced Layout -->
 <style>
+    /* Style for the new scrollable content card */
+    .scrollable-content-card {
+        max-height: 1200px; /* Adjust this value as needed */
+        overflow-y: auto;
+    }
+
+    /* Custom scrollbar for better aesthetics */
+    .scrollable-content-card::-webkit-scrollbar {
+        width: 8px;
+    }
+    .scrollable-content-card::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+    }
+    .scrollable-content-card::-webkit-scrollbar-thumb {
+        background: #008ba3; /* brand-primary */
+        border-radius: 10px;
+    }
+    .scrollable-content-card::-webkit-scrollbar-thumb:hover {
+        background: #005f6b; /* darker brand-primary */
+    }
+
+    /* Fix for sticky form scroll visibility - adjusted to account for navbar */
     @media (min-width: 1024px) {
         .lg\:sticky {
             position: -webkit-sticky;
             position: sticky;
         }
-        .lg\:top-8 {
-            top: 2rem;
+        .lg\:top-32 {
+            top: 8rem; /* Adjusted from 2rem to 8rem to avoid navbar overlap */
         }
     }
-
     /* Smooth scrolling for better UX */
     html {
         scroll-behavior: smooth;
     }
-
     /* Enhanced form styling */
     .form-input:focus {
         box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
     }
-
+    /* Multi-select styling */
+    select[multiple] {
+        background-image: none;
+    }
+    select[multiple] option {
+        padding: 8px;
+        border-radius: 4px;
+        margin: 2px 0;
+    }
+    select[multiple] option:checked {
+        background-color: #008ba3 !important;
+        color: white !important;
+    }
     /* Responsive improvements */
     @media (max-width: 1023px) {
         .lg\:sticky {
             position: static;
         }
+        .lg\:top-32 {
+            top: 0;
+        }
+        .scrollable-content-card {
+            max-height: none; /* Disable fixed height and scrolling on smaller screens */
+            overflow-y: visible;
+        }
+    }
+    /* Form field animations */
+    .form-field {
+        transition: all 0.3s ease;
+    }
+    .form-field:focus-within {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 139, 163, 0.15);
+    }
+    /* Enhanced testimonial cards */
+    .testimonial-card {
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+    }
+    .testimonial-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    /* Service card hover effects */
+    .service-card {
+        transition: all 0.3s ease;
+    }
+    .service-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(0, 139, 163, 0.15);
     }
 </style>
 {% endblock %}

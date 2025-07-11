@@ -25,7 +25,6 @@ endblock %} {% block content %}
     <!-- Redesigned Main Content -->
     <div class="bg-gradient-to-br from-gray-50 to-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Interactive Map Section -->
             <div
                 class="bg-white rounded-2xl shadow-xl overflow-hidden mb-12"
                 data-aos="fade-up"
@@ -41,8 +40,8 @@ endblock %} {% block content %}
                     </p>
                 </div>
 
-                <div class="p-6">
-                    <div class="map-container-fixed" id="map-container">
+                <div class="">
+                    <div class="map-container-fixed h-auto" id="map-container">
                         <div
                             id="map-loading"
                             class="map-loading"
@@ -73,7 +72,6 @@ endblock %} {% block content %}
                         <div id="map-tooltip" class="map-tooltip"></div>
                     </div>
 
-                    <!-- Map Legend -->
                     <div class="flex justify-center mt-6">
                         <div class="bg-gray-50 rounded-lg px-6 py-3">
                             <div class="flex items-center gap-6 text-sm">
@@ -335,7 +333,7 @@ endblock %} {% block content %}
                     organization's financial health across all U.S. time zones.
                 </p>
                 <a
-                    href="{{ url_for('contact.contact') }}"
+                    href="{{ url_for('contact.contact_form') }}"
                     class="bg-white text-brand-primary font-semibold px-8 py-3 rounded-full hover:bg-gray-100 transition-all duration-300 inline-flex items-center gap-2"
                 >
                     <span>Get in Touch</span>
@@ -349,10 +347,6 @@ endblock %} {% block content %}
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 <link
     href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
-    rel="stylesheet"
-/>
-<link
-    href="{{ url_for('static', filename='css/map-styles.css') }}"
     rel="stylesheet"
 />
 
@@ -627,36 +621,22 @@ endblock %} {% block content %}
 </script>
 
 <style>
-    /* Map Container - Fixed Height to Prevent Scroll */
-    /* Map Container - Fixed Height to Prevent Scroll */
-    /* Map Container - Fixed Height to Prevent Scroll */
+    /* ===== MAP CONTAINER STYLES ===== */
     .map-container-fixed {
         position: relative;
         width: 100%;
-        height: 600px;
+        height: 900px;
         overflow: hidden;
         background: #f8f9fa;
         border-radius: 12px;
     }
 
-    .map-wrapper {
-        width: 90%;
-        height: 100%;
-        overflow: hidden;
-        /* Add these lines to center the map */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
     .usa-map-object {
         width: 100%;
-        height: 120%;
+        height: 100%;
         object-fit: contain;
         object-position: center;
         display: block;
-        margin-left: auto;
-        margin-right: auto;
     }
 
     .map-fallback {
@@ -665,9 +645,10 @@ endblock %} {% block content %}
         justify-content: center;
         height: 100%;
         background: #f3f4f6;
+        color: #6b7280;
     }
 
-    /* Loading Overlay */
+    /* ===== LOADING OVERLAY STYLES ===== */
     .map-loading {
         position: absolute;
         top: 0;
@@ -706,10 +687,11 @@ endblock %} {% block content %}
         }
     }
 
+    /* ===== TOOLTIP STYLES ===== */
     .map-tooltip {
         position: absolute;
         backdrop-filter: blur(10px);
-        background: rgba(13, 148, 136, 0.85); /* 🟢 Teal background */
+        background: rgba(13, 148, 136, 0.85);
         color: #ffffff;
         padding: 10px 16px;
         border-radius: 10px;
@@ -736,13 +718,13 @@ endblock %} {% block content %}
         content: "";
         position: absolute;
         top: 100%;
-        left: 20px; /* ⬅️ Arrow moved to left */
+        left: 20px;
         transform: translateX(0);
         border: 6px solid transparent;
-        border-top-color: rgba(13, 148, 136, 0.85); /* 🟢 Same as tooltip bg */
+        border-top-color: rgba(13, 148, 136, 0.85);
     }
 
-    /* Responsive Design */
+    /* ===== RESPONSIVE DESIGN ===== */
     @media (max-width: 768px) {
         .map-container-fixed {
             height: 350px;
@@ -766,7 +748,54 @@ endblock %} {% block content %}
         }
     }
 
-    /* Custom Scrollbar */
+    /* ===== MAP STATE INTERACTION STYLES ===== */
+    .usa-map-object svg path,
+    .usa-map-object svg g {
+        cursor: pointer;
+        transition: all 0.3s ease;
+        fill: #e5e7eb;
+        stroke: #ffffff;
+        stroke-width: 1;
+    }
+
+    .usa-map-object svg path:hover,
+    .usa-map-object svg g:hover {
+        fill: #008ba3;
+        stroke: #ffffff;
+        stroke-width: 2;
+        filter: drop-shadow(0 4px 8px rgba(0, 139, 163, 0.3));
+    }
+
+    .usa-map-object svg path.featured,
+    .usa-map-object svg g.featured {
+        fill: #f59e0b;
+        stroke: #ffffff;
+        stroke-width: 1.5;
+    }
+
+    .usa-map-object svg path.featured:hover,
+    .usa-map-object svg g.featured:hover {
+        fill: #d97706;
+        stroke: #ffffff;
+        stroke-width: 2;
+        filter: drop-shadow(0 4px 8px rgba(245, 158, 11, 0.4));
+    }
+
+    .usa-map-object svg path.active,
+    .usa-map-object svg g.active {
+        fill: #065f46;
+        stroke: #ffffff;
+        stroke-width: 2;
+        filter: drop-shadow(0 4px 12px rgba(6, 95, 70, 0.5));
+    }
+
+    .usa-map-object svg path:focus,
+    .usa-map-object svg g:focus {
+        outline: 2px solid #008ba3;
+        outline-offset: 2px;
+    }
+
+    /* ===== CUSTOM SCROLLBAR ===== */
     ::-webkit-scrollbar {
         width: 8px;
     }

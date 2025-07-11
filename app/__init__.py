@@ -1,12 +1,15 @@
 # ardurHealthcare/app/__init__.py
 from flask import Flask, session, flash, render_template
 from flask_login import LoginManager
+from flask_mail import Mail
 from .config import Config
 import os
 
 login_manager = LoginManager()
-login_manager.login_view = 'auth.login'
+login_manager.login_view = 'auth.login'  # type: ignore
 login_manager.login_message_category = 'info'
+
+mail = Mail()
 
 def create_app(config_class=Config):
     print("🔧 Creating Flask app...")
@@ -43,6 +46,9 @@ def create_app(config_class=Config):
 
     print("🔐 Initializing Flask-Login...")
     login_manager.init_app(app)
+
+    print("📧 Initializing Flask-Mail...")
+    mail.init_app(app)
 
     @login_manager.user_loader
     def load_user(username):
@@ -85,6 +91,10 @@ def create_app(config_class=Config):
         from .ourreach import ourreach as ourreach_blueprint
         app.register_blueprint(ourreach_blueprint, url_prefix='/state')
         print("✅ Registered ourreach blueprint.")
+
+        from .analytics import analytics as analytics_blueprint
+        app.register_blueprint(analytics_blueprint)
+        print("✅ Registered analytics blueprint.")
     except Exception as e:
         raise RuntimeError(f"❌ Failed to register blueprints: {str(e)}")
 

@@ -1,0 +1,250 @@
+{% extends "base.html" %}
+{% block title %}Analytics Dashboard - Ardur Healthcare{% endblock %}
+{% block content %}
+<div class="container mx-auto px-4 py-8">
+    <!-- Header -->
+    <div class="mb-8">
+        <h1 class="text-3xl font-bold font-montserrat text-brand-dark mb-2">
+            Analytics Dashboard
+        </h1>
+        <p class="text-gray-600">
+            Form submission analytics and insights
+        </p>
+    </div>
+
+    {% if data.error %}
+    <!-- Error State -->
+    <div class="bg-red-50 border border-red-200 rounded-lg p-6 mb-8">
+        <div class="flex items-center">
+            <i class="ri-error-warning-line text-red-500 text-xl mr-3"></i>
+            <div>
+                <h3 class="text-red-800 font-semibold">Error Loading Data</h3>
+                <p class="text-red-600">{{ data.error }}</p>
+            </div>
+        </div>
+    </div>
+    {% else %}
+
+    <!-- Summary Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <!-- Total Submissions -->
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="text-sm text-gray-600 mb-1">Total Submissions</p>
+                    <p class="text-2xl font-bold text-brand-dark">{{ data.total_submissions or 0 }}</p>
+                </div>
+                <div class="w-12 h-12 bg-brand-primary/10 rounded-full flex items-center justify-center">
+                    <i class="ri-file-list-3-line text-brand-primary text-xl"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Submissions -->
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="text-sm text-gray-600 mb-1">Recent (30 days)</p>
+                    <p class="text-2xl font-bold text-brand-dark">{{ data.recent_submissions or 0 }}</p>
+                </div>
+                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                    <i class="ri-calendar-line text-green-600 text-xl"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Top State -->
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="text-sm text-gray-600 mb-1">Top State</p>
+                    <p class="text-2xl font-bold text-brand-dark">
+                        {% if data.top_states %}
+                            {{ data.top_states|list|first }}
+                        {% else %}
+                            N/A
+                        {% endif %}
+                    </p>
+                </div>
+                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                    <i class="ri-map-pin-line text-blue-600 text-xl"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Top Service -->
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="text-sm text-gray-600 mb-1">Top Service</p>
+                    <p class="text-lg font-bold text-brand-dark">
+                        {% if data.top_services %}
+                            {{ data.top_services|list|first|replace('-', ' ')|title }}
+                        {% else %}
+                            N/A
+                        {% endif %}
+                    </p>
+                </div>
+                <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+                    <i class="ri-service-line text-purple-600 text-xl"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Charts and Tables Row -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <!-- Top States Chart -->
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-lg font-semibold text-brand-dark mb-4 flex items-center">
+                <i class="ri-bar-chart-line text-brand-primary mr-2"></i>
+                Top States
+            </h3>
+            {% if data.top_states %}
+            <div class="space-y-3">
+                {% for state, count in data.top_states.items() %}
+                <div class="flex items-center justify-between">
+                    <span class="text-gray-700">{{ state }}</span>
+                    <div class="flex items-center">
+                        <div class="w-24 bg-gray-200 rounded-full h-2 mr-3">
+                            <div class="bg-brand-primary h-2 rounded-full" style="width: {{ (count / data.top_states.values()|list|max * 100)|round }}%"></div>
+                        </div>
+                        <span class="text-sm font-medium text-gray-600">{{ count }}</span>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <p class="text-gray-500 text-center py-8">No data available</p>
+            {% endif %}
+        </div>
+
+        <!-- Top Services Chart -->
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-lg font-semibold text-brand-dark mb-4 flex items-center">
+                <i class="ri-pie-chart-line text-brand-primary mr-2"></i>
+                Top Services
+            </h3>
+            {% if data.top_services %}
+            <div class="space-y-3">
+                {% for service, count in data.top_services.items() %}
+                <div class="flex items-center justify-between">
+                    <span class="text-gray-700">{{ service|replace('-', ' ')|title }}</span>
+                    <div class="flex items-center">
+                        <div class="w-24 bg-gray-200 rounded-full h-2 mr-3">
+                            <div class="bg-green-500 h-2 rounded-full" style="width: {{ (count / data.top_services.values()|list|max * 100)|round }}%"></div>
+                        </div>
+                        <span class="text-sm font-medium text-gray-600">{{ count }}</span>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <p class="text-gray-500 text-center py-8">No data available</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Top Specialties -->
+    <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+        <h3 class="text-lg font-semibold text-brand-dark mb-4 flex items-center">
+            <i class="ri-stethoscope-line text-brand-primary mr-2"></i>
+            Top Specialties
+        </h3>
+        {% if data.top_specialties %}
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {% for specialty, count in data.top_specialties.items() %}
+            <div class="bg-brand-light rounded-lg p-4">
+                <div class="flex items-center justify-between">
+                    <span class="text-gray-700 capitalize">{{ specialty|replace('-', ' ') }}</span>
+                    <span class="bg-brand-primary text-white text-sm px-2 py-1 rounded-full">{{ count }}</span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p class="text-gray-500 text-center py-8">No data available</p>
+        {% endif %}
+    </div>
+
+    <!-- Latest Submissions -->
+    <div class="bg-white rounded-lg shadow-md p-6">
+        <div class="flex items-center justify-between mb-4">
+            <h3 class="text-lg font-semibold text-brand-dark flex items-center">
+                <i class="ri-time-line text-brand-primary mr-2"></i>
+                Latest Submissions
+            </h3>
+            <a href="{{ url_for('analytics.export_csv') }}" class="bg-brand-primary text-white px-4 py-2 rounded-lg hover:bg-brand-dark transition duration-300 flex items-center">
+                <i class="ri-download-line mr-2"></i>
+                Export CSV
+            </a>
+        </div>
+        {% if data.latest_submissions %}
+        <div class="overflow-x-auto">
+            <table class="w-full">
+                <thead>
+                    <tr class="border-b border-gray-200">
+                        <th class="text-left py-3 text-sm font-medium text-gray-600">Date</th>
+                        <th class="text-left py-3 text-sm font-medium text-gray-600">State</th>
+                        <th class="text-left py-3 text-sm font-medium text-gray-600">Service Type</th>
+                        <th class="text-left py-3 text-sm font-medium text-gray-600">Specialties</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for submission in data.latest_submissions %}
+                    <tr class="border-b border-gray-100">
+                        <td class="py-3 text-sm text-gray-700">
+                            {{ submission.timestamp[:10] }}
+                        </td>
+                        <td class="py-3 text-sm text-gray-700">
+                            {{ submission.state }}
+                        </td>
+                        <td class="py-3 text-sm text-gray-700">
+                            {{ submission.service_type|replace('-', ' ')|title if submission.service_type else 'N/A' }}
+                        </td>
+                        <td class="py-3 text-sm text-gray-700">
+                            {% if submission.specialties %}
+                                <div class="flex flex-wrap gap-1">
+                                    {% for specialty in submission.specialties[:3] %}
+                                    <span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">{{ specialty|replace('-', ' ')|title }}</span>
+                                    {% endfor %}
+                                    {% if submission.specialties|length > 3 %}
+                                    <span class="text-xs text-gray-500">+{{ submission.specialties|length - 3 }} more</span>
+                                    {% endif %}
+                                </div>
+                            {% else %}
+                                N/A
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <p class="text-gray-500 text-center py-8">No submissions yet</p>
+        {% endif %}
+    </div>
+
+    <!-- Additional Reports -->
+    <div class="mt-8 flex justify-center">
+        <a href="{{ url_for('analytics.state_summary') }}" class="bg-brand-secondary text-brand-dark px-6 py-3 rounded-lg hover:bg-brand-primary hover:text-white transition duration-300 flex items-center">
+            <i class="ri-map-2-line mr-2"></i>
+            View State Summary Report
+        </a>
+    </div>
+
+    {% endif %}
+</div>
+
+<!-- Add some basic JavaScript for enhanced interactivity -->
+<script>
+    // Add any JavaScript for chart interactions or data refresh
+    document.addEventListener('DOMContentLoaded', function() {
+        // Auto-refresh every 5 minutes
+        setTimeout(function() {
+            location.reload();
+        }, 300000);
+    });
+</script>
+{% endblock %}

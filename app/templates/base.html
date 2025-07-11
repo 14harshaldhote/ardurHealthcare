@@ -47,29 +47,44 @@
                             "brand-light": "#f5fafb",
                             "brand-accent": "#00a9c7",
                         },
+                        spacing: {
+                            18: "4.5rem",
+                            88: "22rem",
+                        },
+                        maxWidth: {
+                            "8xl": "88rem",
+                        },
                     },
                 },
             };
         </script>
 
         <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
             body {
                 font-family: "Inter", sans-serif;
-                color: #334155; /* Slate-700 */
+                color: #334155;
                 -webkit-font-smoothing: antialiased;
                 -moz-osx-font-smoothing: grayscale;
-                padding-top: 6rem; /* Height of the fixed navbar */
+                line-height: 1.6;
             }
+
             .font-montserrat {
                 font-family: "Montserrat", sans-serif;
             }
 
             .nav-link {
                 position: relative;
-                padding-bottom: 0.5rem; /* 8px */
+                padding-bottom: 0.5rem;
                 transition: color 0.3s ease;
                 font-weight: 500;
             }
+
             .nav-link::after {
                 content: "";
                 position: absolute;
@@ -77,19 +92,20 @@
                 height: 2px;
                 bottom: 0;
                 left: 0;
-                background-color: #008ba3; /* brand-primary */
+                background-color: #008ba3;
                 transition: width 0.3s ease-in-out;
             }
+
             .nav-link:hover::after,
             .nav-link.active::after {
                 width: 100%;
             }
+
             .nav-link:hover,
             .nav-link.active {
-                color: #008ba3; /* brand-primary */
+                color: #008ba3;
             }
 
-            /* Desktop Dropdown Styling */
             .desktop-dropdown .dropdown-menu {
                 display: none;
                 opacity: 0;
@@ -98,43 +114,74 @@
                     opacity 0.3s ease,
                     transform 0.3s ease;
             }
+
             .desktop-dropdown:hover .dropdown-menu {
                 display: block;
                 opacity: 1;
                 transform: translateY(0);
             }
 
-            /* Mobile Menu Styling */
             .mobile-menu {
                 transition: transform 0.3s ease-in-out;
             }
+
             .mobile-menu-open {
                 transform: translateX(0);
             }
+
             .mobile-menu-closed {
                 transform: translateX(-100%);
             }
+
             .mobile-nav-link {
                 display: block;
-                padding: 0.75rem 1rem; /* py-3 px-4 */
-                border-bottom: 1px solid #e5e7eb; /* gray-200 */
+                padding: 0.75rem 1rem;
+                border-bottom: 1px solid #e5e7eb;
+                transition: all 0.3s ease;
             }
+
             .mobile-nav-link:hover {
-                background-color: #e0f7fa; /* brand-secondary */
+                background-color: #e0f7fa;
             }
+
             .mobile-dropdown-toggle svg {
                 transition: transform 0.3s ease;
             }
+
             .mobile-dropdown-open svg {
                 transform: rotate(180deg);
             }
+
             .mobile-dropdown-menu {
                 max-height: 0;
                 overflow: hidden;
                 transition: max-height 0.3s ease-in-out;
             }
+
             .mobile-dropdown-menu-open {
-                max-height: 500px; /* Adjust as needed */
+                max-height: 500px;
+            }
+
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 1rem;
+            }
+
+            @media (min-width: 640px) {
+                .container {
+                    padding: 0 1.5rem;
+                }
+            }
+
+            @media (min-width: 1024px) {
+                .container {
+                    padding: 0 2rem;
+                }
+            }
+
+            main {
+                min-height: calc(100vh - 80px);
             }
         </style>
     </head>
@@ -143,9 +190,9 @@
         x-data="{ mobileMenuOpen: false, openMobileDropdown: null }"
     >
         <header
-            class="bg-white/95 backdrop-blur-lg shadow-md w-full fixed top-0 left-0 z-50 h-24"
+            class="bg-white/95 backdrop-blur-lg shadow-md w-full fixed top-0 left-0 z-50 h-20"
         >
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8 h-full">
+            <div class="container h-full">
                 <div class="flex justify-between items-center h-full">
                     <div class="flex-shrink-0">
                         <a
@@ -156,10 +203,10 @@
                                 <img
                                     src="{{ url_for('static', filename='images/logo2.png') }}"
                                     alt="Ardur Healthcare Logo"
-                                    class="h-14 sm:h-16 transition-transform duration-300 group-hover:scale-105"
+                                    class="h-12 sm:h-14 transition-transform duration-300 group-hover:scale-105"
                                 />
                                 <span
-                                    class="mt-2 text-sm sm:text-base text-slate-600 font-medium tracking-wide group-hover:text-brand-accent transition-colors duration-300"
+                                    class="mt-1 text-xs sm:text-sm text-slate-600 font-medium tracking-wide group-hover:text-brand-accent transition-colors duration-300"
                                 >
                                     Quality Outcomes, Modern Healthcare
                                 </span>
@@ -168,9 +215,7 @@
                     </div>
 
                     <!-- Desktop Navigation -->
-                    <nav
-                        class="hidden lg:flex items-center space-x-6 xl:space-x-8"
-                    >
+                    <nav class="hidden lg:flex items-center space-x-6">
                         <a
                             href="{{ url_for('main.home') }}"
                             class="nav-link {% if request.endpoint == 'main.home' %}active{% endif %}"
@@ -191,7 +236,7 @@
                                 <i class="ri-arrow-down-s-line ml-1"></i>
                             </a>
                             <div
-                                class="absolute mt-2 w-72 bg-white rounded-lg shadow-xl p-5 z-20 dropdown-menu"
+                                class="absolute mt-2 w-64 bg-white rounded-lg shadow-xl p-4 z-20 dropdown-menu"
                             >
                                 <h3
                                     class="font-montserrat font-semibold text-brand-dark pb-2 border-b border-slate-200 mb-3"
@@ -264,7 +309,7 @@
                                 <i class="ri-arrow-down-s-line ml-1"></i>
                             </a>
                             <div
-                                class="absolute mt-2 w-80 bg-white rounded-lg shadow-xl p-5 z-20 dropdown-menu"
+                                class="absolute mt-2 w-72 bg-white rounded-lg shadow-xl p-4 z-20 dropdown-menu"
                             >
                                 <h3
                                     class="font-montserrat font-semibold text-brand-dark pb-2 border-b border-slate-200 mb-3"
@@ -337,7 +382,7 @@
                                 <i class="ri-arrow-down-s-line ml-1"></i>
                             </a>
                             <div
-                                class="absolute mt-2 w-72 bg-white rounded-lg shadow-xl p-5 z-20 dropdown-menu"
+                                class="absolute mt-2 w-64 bg-white rounded-lg shadow-xl p-4 z-20 dropdown-menu"
                             >
                                 <h3
                                     class="font-montserrat font-semibold text-brand-dark pb-2 border-b border-slate-200 mb-3"
@@ -381,22 +426,12 @@
                         >
 
                         <a
-                            href="{{ url_for('contact.contact') }}"
-                            class="px-4 py-2 rounded-full font-montserrat text-white transition-colors duration-300 {% if request.endpoint == 'contact.contact' %} bg-brand-primary {% else %} bg-brand-dark hover:bg-brand-accent {% endif %}"
+                            href="{{ url_for('contact.contact_form') }}"
+                            class="px-4 py-2 rounded-full font-montserrat text-white transition-colors duration-300 {% if request.endpoint == 'contact.contact_form' %} bg-brand-primary {% else %} bg-brand-dark hover:bg-brand-accent {% endif %}"
                         >
                             Contact Us
                         </a>
                     </nav>
-
-                    <!-- <div class="hidden lg:flex items-center ml-6">
-                    <a href="tel:+18887775555" class="text-sm font-medium text-brand-primary hover:text-brand-accent transition-colors duration-300 flex items-center">
-                        <i class="ri-phone-fill mr-2"></i> (888) 777-5555
-                    </a>
-                    <a href="{{ url_for('contact.contact') }}#get-a-quote"
-                       class="ml-4 px-5 py-2.5 text-sm font-medium text-white bg-brand-primary rounded-lg hover:bg-brand-accent focus:ring-4 focus:outline-none focus:ring-brand-secondary transition-colors duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
-                        Get a Quote
-                    </a>
-                </div> -->
 
                     <!-- Mobile Menu Button -->
                     <div class="lg:hidden">
@@ -406,11 +441,11 @@
                         >
                             <span class="sr-only">Open main menu</span>
                             <i
-                                class="ri-menu-3-line text-3xl"
+                                class="ri-menu-3-line text-2xl"
                                 x-show="!mobileMenuOpen"
                             ></i>
                             <i
-                                class="ri-close-line text-3xl"
+                                class="ri-close-line text-2xl"
                                 x-show="mobileMenuOpen"
                             ></i>
                         </button>
@@ -427,11 +462,11 @@
                 x-transition:leave="transition ease-in duration-300 transform"
                 x-transition:leave-start="opacity-100 translate-x-0"
                 x-transition:leave-end="opacity-0 -translate-x-full"
-                class="lg:hidden fixed inset-0 z-40 pt-24 bg-white shadow-xl mobile-menu"
+                class="lg:hidden fixed inset-0 z-40 pt-20 bg-white shadow-xl mobile-menu"
                 @click.away="mobileMenuOpen = false"
                 x-cloak
             >
-                <nav class="px-4 py-6 space-y-1">
+                <nav class="px-4 py-4 space-y-1">
                     <a
                         href="{{ url_for('main.home') }}"
                         class="mobile-nav-link text-gray-700 hover:text-brand-primary {% if request.endpoint == 'main.home' %}bg-brand-secondary text-brand-primary font-semibold{% endif %}"
@@ -582,21 +617,21 @@
                     >
 
                     <a
-                        href="{{ url_for('contact.contact') }}"
-                        class="mobile-nav-link text-gray-700 hover:text-brand-primary {% if request.endpoint == 'contact.contact' %}bg-brand-secondary text-brand-primary font-semibold{% endif %}"
+                        href="{{ url_for('contact.contact_form') }}"
+                        class="mobile-nav-link text-gray-700 hover:text-brand-primary {% if request.endpoint == 'contact.contact_form' %}bg-brand-secondary text-brand-primary font-semibold{% endif %}"
                         >Contact Us</a
                     >
 
-                    <div class="pt-6 px-4">
+                    <div class="pt-4 px-2">
                         <a
-                            href="{{ url_for('contact.contact') }}#get-a-quote"
-                            class="block w-full text-center px-5 py-3 text-base font-medium text-white bg-brand-primary rounded-lg hover:bg-brand-accent focus:ring-4 focus:outline-none focus:ring-brand-secondary transition-colors duration-300 shadow-md hover:shadow-lg"
+                            href="{{ url_for('contact.contact_form') }}#get-a-quote"
+                            class="block w-full text-center px-4 py-2 text-base font-medium text-white bg-brand-primary rounded-lg hover:bg-brand-accent transition-colors duration-300"
                         >
                             Get a Quote
                         </a>
                         <a
                             href="tel:+18887775555"
-                            class="mt-4 block w-full text-center text-base font-medium text-brand-primary hover:text-brand-accent transition-colors duration-300"
+                            class="mt-3 block w-full text-center text-base font-medium text-brand-primary hover:text-brand-accent transition-colors duration-300"
                         >
                             <i class="ri-phone-fill mr-2"></i> (888) 777-5555
                         </a>
@@ -605,12 +640,10 @@
             </div>
         </header>
 
-        <div class="h-20"></div>
-
-        <main class="container mx-auto py-12 md:py-16">
+        <main class="pt-20">
             {% with messages = get_flashed_messages() %} {% if messages %}
             <div
-                class="bg-brand-secondary border-l-4 border-brand-primary text-brand-primary p-4 mb-8 rounded-r-lg"
+                class="bg-brand-secondary border-l-4 border-brand-primary text-brand-primary p-4 mb-8 rounded-r-lg container"
                 role="alert"
             >
                 {% for message in messages %}
@@ -618,7 +651,7 @@
                 {% endfor %}
             </div>
             {% endif %} {% endwith %} {% block content %}
-            <div class="text-center">
+            <div class="container py-16 text-center">
                 <h1
                     class="text-4xl md:text-5xl font-bold font-montserrat text-brand-dark mb-4"
                 >
@@ -634,15 +667,15 @@
         </main>
 
         <footer class="bg-brand-dark text-white font-montserrat">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="container py-12">
                 <div
-                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12"
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
                 >
                     <div class="md:col-span-2 lg:col-span-1">
                         <img
                             src="{{ url_for('static', filename='images/white-logo.png') }}"
                             alt="Ardur Healthcare Logo"
-                            class="h-12 mb-5"
+                            class="h-10 mb-4"
                         />
                         <p class="text-gray-400 text-sm leading-relaxed">
                             Technology-enabled medical billing and revenue cycle
@@ -652,82 +685,90 @@
                     </div>
 
                     <div>
-                        <h4 class="font-semibold mb-5 tracking-wide">
+                        <h4 class="font-semibold mb-4 tracking-wide">
                             Quick Links
                         </h4>
-                        <ul class="space-y-3 text-gray-300">
+                        <ul class="space-y-2 text-gray-300">
                             <li>
                                 <a
                                     href="{{ url_for('main.home') }}"
                                     class="hover:text-white transition duration-300"
-                                    >Home</a
                                 >
+                                    Home
+                                </a>
                             </li>
                             <li>
                                 <a
                                     href="{{ url_for('main.about') }}"
                                     class="hover:text-white transition duration-300"
-                                    >About Us</a
                                 >
+                                    About Us
+                                </a>
                             </li>
                             <li>
                                 <a
                                     href="{{ url_for('main.services') }}"
                                     class="hover:text-white transition duration-300"
-                                    >Services</a
                                 >
+                                    Services
+                                </a>
                             </li>
                             <li>
                                 <a
                                     href="{{ url_for('main.resources') }}"
                                     class="hover:text-white transition duration-300"
-                                    >Resources</a
                                 >
+                                    Resources
+                                </a>
                             </li>
                         </ul>
                     </div>
 
                     <div>
-                        <h4 class="font-semibold mb-5 tracking-wide">
+                        <h4 class="font-semibold mb-4 tracking-wide">
                             Our Services
                         </h4>
-                        <ul class="space-y-3 text-gray-300">
+                        <ul class="space-y-2 text-gray-300">
                             <li>
                                 <a
                                     href="#"
                                     class="hover:text-white transition duration-300"
-                                    >Medical Billing</a
                                 >
+                                    Medical Billing
+                                </a>
                             </li>
                             <li>
                                 <a
                                     href="#"
                                     class="hover:text-white transition duration-300"
-                                    >Credentialing</a
                                 >
+                                    Credentialing
+                                </a>
                             </li>
                             <li>
                                 <a
                                     href="#"
                                     class="hover:text-white transition duration-300"
-                                    >Accounts Receivable</a
                                 >
+                                    Accounts Receivable
+                                </a>
                             </li>
                             <li>
                                 <a
                                     href="#"
                                     class="hover:text-white transition duration-300"
-                                    >Denial Management</a
                                 >
+                                    Denial Management
+                                </a>
                             </li>
                         </ul>
                     </div>
 
                     <div>
-                        <h4 class="font-semibold mb-5 tracking-wide">
+                        <h4 class="font-semibold mb-4 tracking-wide">
                             Contact Us
                         </h4>
-                        <ul class="space-y-3 text-gray-300">
+                        <ul class="space-y-2 text-gray-300">
                             <li class="flex items-start">
                                 <i
                                     class="ri-mail-send-line mr-3 mt-1 text-brand-primary"
@@ -735,8 +776,9 @@
                                 <a
                                     href="mailto:info@ardurhealthcare.com"
                                     class="hover:text-white transition duration-300"
-                                    >info@ardurhealthcare.com</a
                                 >
+                                    info@ardurhealthcare.com
+                                </a>
                             </li>
                             <li class="flex items-start">
                                 <i
@@ -745,69 +787,40 @@
                                 <a
                                     href="tel:+1 (702) 809-2713"
                                     class="hover:text-white transition duration-300"
-                                    >+1 (702) 809-2713</a
                                 >
+                                    +1 (702) 809-2713
+                                </a>
                             </li>
                         </ul>
-                        <div class="flex space-x-5 mt-6">
+                        <div class="flex space-x-4 mt-4">
                             <a
                                 href="#"
                                 class="text-xl text-gray-400 hover:text-white transition duration-300"
-                                ><i class="ri-facebook-circle-fill"></i
-                            ></a>
+                            >
+                                <i class="ri-facebook-circle-fill"></i>
+                            </a>
                             <a
                                 href="#"
                                 class="text-xl text-gray-400 hover:text-white transition duration-300"
-                                ><i class="ri-linkedin-box-fill"></i
-                            ></a>
+                            >
+                                <i class="ri-linkedin-box-fill"></i>
+                            </a>
                             <a
                                 href="#"
                                 class="text-xl text-gray-400 hover:text-white transition duration-300"
-                                ><i class="ri-instagram-fill"></i
-                            ></a>
+                            >
+                                <i class="ri-instagram-fill"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="bg-black/20 py-5">
-                <div
-                    class="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400 text-sm"
-                >
+            <div class="bg-black/20 py-4">
+                <div class="container text-center text-gray-400 text-sm">
                     <p>&copy; 2025 Ardur Healthcare. All rights reserved.</p>
                 </div>
             </div>
         </footer>
-
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                // Mobile menu toggle
-                const mobileMenuButton = document.getElementById("nav-toggle");
-                const mobileMenu = document.getElementById("nav-content");
-
-                if (mobileMenuButton && mobileMenu) {
-                    mobileMenuButton.addEventListener("click", function () {
-                        mobileMenu.classList.toggle("hidden");
-                    });
-                }
-
-                // Handle dropdown menus for mobile
-                const dropdowns = document.querySelectorAll(".dropdown");
-
-                dropdowns.forEach((dropdown) => {
-                    const link = dropdown.querySelector(".nav-link");
-                    const menu = dropdown.querySelector(".dropdown-menu");
-
-                    // Add click event for mobile
-                    link.addEventListener("click", function (e) {
-                        // Only prevent default if it's a mobile view
-                        if (window.innerWidth < 1024) {
-                            e.preventDefault();
-                            menu.classList.toggle("show-mobile-dropdown");
-                        }
-                    });
-                });
-            });
-        </script>
     </body>
 </html>

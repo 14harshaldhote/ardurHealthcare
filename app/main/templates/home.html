@@ -1,310 +1,611 @@
-{% extends "base.html" %}
-
-{% block title %}Home - Ardur Healthcare{% endblock %}
-
-
+{% extends "base.html" %} {% block title %}Home - Ardur Healthcare{% endblock %}
 {% block content %}
-<section class="relative overflow-hidden ">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-center items-center min-h-[70vh]">
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
+<!-- Hero Section -->
+<section
+    class="relative overflow-hidden bg-gradient-to-br from-brand-light to-white"
+>
+    <div class="container py-12 lg:py-16">
+        <div class="grid lg:grid-cols-2 gap-8 items-center">
             <div class="text-center lg:text-left" data-aos="fade-right">
-                <div class="inline-block bg-brand-primary/10 px-4 py-2 rounded-full mb-4">
-                    <span class="text-brand-primary font-semibold">Trusted by 500+ Healthcare Providers</span>
+                <div
+                    class="inline-block bg-brand-primary/10 px-3 py-1 rounded-full mb-4"
+                >
+                    <span class="text-brand-primary font-semibold text-sm"
+                        >Trusted by 500+ Healthcare Providers</span
+                    >
                 </div>
-                <h1 class="font-montserrat font-extrabold text-4xl sm:text-5xl lg:text-6xl text-brand-dark tracking-tight"
-                    data-aos="fade-down">
+                <h1
+                    class="font-montserrat font-extrabold text-3xl sm:text-4xl lg:text-5xl text-brand-dark tracking-tight mb-4"
+                >
                     <span class="relative inline-block">
-                        <i class="ri-double-quotes-l absolute -top-4 -left-6 sm:-left-8 text-4xl sm:text-5xl text-brand-primary opacity-30"></i>
-                        Maximize Your<br>
+                        <i
+                            class="ri-double-quotes-l absolute -top-3 -left-5 text-3xl text-brand-primary opacity-30"
+                        ></i>
+                        Maximize Your<br />
                         <span class="text-brand-primary">Revenue Cycle</span>
-                        <i class="ri-double-quotes-r absolute -bottom-4 -right-2 sm:-right-4 text-4xl sm:text-5xl text-brand-primary opacity-30"></i>
+                        <i
+                            class="ri-double-quotes-r absolute -bottom-3 -right-3 text-3xl text-brand-primary opacity-30"
+                        ></i>
                     </span>
                 </h1>
-                <p class="mt-6 max-w-xl mx-auto lg:mx-0 text-lg text-gray-600 leading-relaxed">
-                    Boost your practice's financial performance with our comprehensive revenue cycle management solutions. Our technology-enabled services deliver up to 30% increase in collections and 40% reduction in denials.
+                <p
+                    class="max-w-xl mx-auto lg:mx-0 text-base lg:text-lg text-gray-600 leading-relaxed mb-6"
+                >
+                    Boost your practice's financial performance with our
+                    comprehensive revenue cycle management solutions. Our
+                    technology-enabled services deliver up to 30% increase in
+                    collections and 40% reduction in denials.
                 </p>
-                <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                    <a href="/contact" class="inline-block bg-brand-primary text-white font-montserrat font-semibold px-8 py-3 rounded-full text-lg
-                    shadow-lg transform transition-all duration-300 ease-in-out hover:scale-105 hover:bg-brand-dark hover:shadow-xl">
-                        Free Consultation <i class="ri-arrow-right-line ml-2"></i>
+                <div
+                    class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-6"
+                >
+                    <a
+                        href="/contact"
+                        class="inline-block bg-brand-primary text-white font-montserrat font-semibold px-6 py-3 rounded-full shadow-lg transform transition-all duration-300 ease-in-out hover:scale-105 hover:bg-brand-dark hover:shadow-xl"
+                    >
+                        Free Consultation
+                        <i class="ri-arrow-right-line ml-2"></i>
                     </a>
-                    <a href="/services" class="inline-block bg-white text-brand-primary border-2 border-brand-primary font-montserrat font-semibold px-8 py-3 rounded-full text-lg
-                    shadow-sm transform transition-all duration-300 ease-in-out hover:scale-105 hover:bg-brand-secondary hover:shadow-md">
+                    <a
+                        href="/services"
+                        class="inline-block bg-white text-brand-primary border-2 border-brand-primary font-montserrat font-semibold px-6 py-3 rounded-full shadow-sm transform transition-all duration-300 ease-in-out hover:scale-105 hover:bg-brand-secondary hover:shadow-md"
+                    >
                         Explore Services <i class="ri-service-line ml-2"></i>
                     </a>
                 </div>
-                <div class="mt-8 flex items-center justify-center lg:justify-start">
-                    <div class="flex -space-x-4">
-                        <img src="{{ url_for('static', filename='images/testimonial-1.jpg') }}" alt="Client" class="w-10 h-10 rounded-full border-2 border-white" />
-                        <img src="{{ url_for('static', filename='images/testimonial-2.jpg') }}" alt="Client" class="w-10 h-10 rounded-full border-2 border-white" />
-                        <img src="{{ url_for('static', filename='images/testimonial-3.jpg') }}" alt="Client" class="w-10 h-10 rounded-full border-2 border-white" />
+                <div class="flex items-center justify-center lg:justify-start">
+                    <div class="flex -space-x-3">
+                        <img
+                            src="{{ url_for('static', filename='images/testimonial-1.jpg') }}"
+                            alt="Client"
+                            class="w-8 h-8 rounded-full border-2 border-white"
+                        />
+                        <img
+                            src="{{ url_for('static', filename='images/testimonial-2.jpg') }}"
+                            alt="Client"
+                            class="w-8 h-8 rounded-full border-2 border-white"
+                        />
+                        <img
+                            src="{{ url_for('static', filename='images/testimonial-3.jpg') }}"
+                            alt="Client"
+                            class="w-8 h-8 rounded-full border-2 border-white"
+                        />
                     </div>
-                    <div class="ml-4">
+                    <div class="ml-3">
                         <div class="flex items-center">
-                            <i class="ri-star-fill text-yellow-400"></i>
-                            <i class="ri-star-fill text-yellow-400"></i>
-                            <i class="ri-star-fill text-yellow-400"></i>
-                            <i class="ri-star-fill text-yellow-400"></i>
-                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                            <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                            <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                            <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                            <i class="ri-star-fill text-yellow-400 text-sm"></i>
                         </div>
-                        <p class="text-sm text-gray-600">Trusted by 500+ healthcare providers</p>
+                        <p class="text-xs text-gray-600">
+                            Trusted by 500+ providers
+                        </p>
                     </div>
                 </div>
             </div>
-            <div class="relative hidden lg:flex justify-center items-center" data-aos="fade-left">
-                <div class="absolute w-72 h-72 bg-brand-primary/20 rounded-full -z-10"></div>
-                <img src="{{ url_for('static', filename='images/header-bg.png') }}" alt="Healthcare Revenue Management" 
-                    class="w-auto h-auto max-w-lg rounded-2xl shadow-2xl mx-auto z-10" loading="lazy" />
+            <div
+                class="relative hidden lg:flex justify-center items-center"
+                data-aos="fade-left"
+            >
+                <div
+                    class="absolute w-64 h-64 bg-brand-primary/20 rounded-full -z-10"
+                ></div>
+                <img
+                    src="{{ url_for('static', filename='images/header-bg.png') }}"
+                    alt="Healthcare Revenue Management"
+                    class="w-auto h-auto max-w-md rounded-2xl shadow-2xl mx-auto z-10"
+                    loading="lazy"
+                />
             </div>
         </div>
     </div>
 </section>
 
-<section class="py-16 lg:py-24 bg-white" data-aos="fade-up">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div class="text-center max-w-3xl mx-auto">
-            <span class="inline-block bg-brand-secondary px-4 py-2 rounded-full text-brand-primary font-semibold text-sm mb-4">END-TO-END SOLUTIONS</span>
-            <h2 class="font-montserrat font-bold text-3xl sm:text-4xl text-brand-dark mb-4">
-                <span class="text-brand-primary">Comprehensive Services</span> Tailored to Your Healthcare Needs
+<!-- Services Section -->
+<section class="py-12 lg:py-16 bg-white" data-aos="fade-up">
+    <div class="container">
+        <div class="text-center max-w-3xl mx-auto mb-10">
+            <span
+                class="inline-block bg-brand-secondary px-3 py-1 rounded-full text-brand-primary font-semibold text-sm mb-3"
+                >END-TO-END SOLUTIONS</span
+            >
+            <h2
+                class="font-montserrat font-bold text-2xl sm:text-3xl text-brand-dark mb-3"
+            >
+                <span class="text-brand-primary">Comprehensive Services</span>
+                Tailored to Your Healthcare Needs
             </h2>
-            <p class="text-gray-600 mb-12">Our technology-enabled revenue cycle management services are designed to optimize your financial performance while you focus on providing exceptional patient care.</p>
+            <p class="text-gray-600 text-sm lg:text-base">
+                Our technology-enabled revenue cycle management services are
+                designed to optimize your financial performance while you focus
+                on providing exceptional patient care.
+            </p>
         </div>
-        
-        <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            <div class="group bg-white p-8 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-100">
-                <div class="inline-block bg-brand-secondary text-brand-primary p-4 rounded-full mb-6 group-hover:bg-brand-primary group-hover:text-white transition-all duration-300">
-                    <i class="ri-user-settings-line text-3xl"></i>
+
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div
+                class="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-100"
+            >
+                <div
+                    class="inline-block bg-brand-secondary text-brand-primary p-3 rounded-full mb-4 group-hover:bg-brand-primary group-hover:text-white transition-all duration-300"
+                >
+                    <i class="ri-user-settings-line text-2xl"></i>
                 </div>
-                <h4 class="font-montserrat font-semibold text-xl text-brand-dark mb-3">Provider Credentialing</h4>
-                <p class="text-gray-600 mb-4">Streamline provider enrollment to ensure seamless integration with payers and reduce time to reimbursement.</p>
-                <ul class="space-y-2 mb-6">
+                <h4
+                    class="font-montserrat font-semibold text-lg text-brand-dark mb-2"
+                >
+                    Provider Credentialing
+                </h4>
+                <p class="text-gray-600 text-sm mb-3">
+                    Streamline provider enrollment to ensure seamless
+                    integration with payers and reduce time to reimbursement.
+                </p>
+                <ul class="space-y-1 mb-4">
                     <li class="flex items-start">
-                        <i class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2"></i>
-                        <span class="text-sm text-gray-600">CAQH profile management</span>
+                        <i
+                            class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"
+                        ></i>
+                        <span class="text-xs text-gray-600"
+                            >CAQH profile management</span
+                        >
                     </li>
                     <li class="flex items-start">
-                        <i class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2"></i>
-                        <span class="text-sm text-gray-600">Payer enrollment tracking</span>
+                        <i
+                            class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"
+                        ></i>
+                        <span class="text-xs text-gray-600"
+                            >Payer enrollment tracking</span
+                        >
                     </li>
                     <li class="flex items-start">
-                        <i class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2"></i>
-                        <span class="text-sm text-gray-600">Credential expiration monitoring</span>
+                        <i
+                            class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"
+                        ></i>
+                        <span class="text-xs text-gray-600"
+                            >Credential expiration monitoring</span
+                        >
                     </li>
                 </ul>
-                <a href="/enrollment" class="inline-flex items-center text-brand-primary hover:text-brand-dark font-medium transition-colors">
+                <a
+                    href="/enrollment"
+                    class="inline-flex items-center text-brand-primary hover:text-brand-dark font-medium transition-colors text-sm"
+                >
                     Learn More <i class="ri-arrow-right-line ml-1"></i>
                 </a>
             </div>
-            
-            <div class="group bg-white p-8 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-100">
-                <div class="inline-block bg-brand-secondary text-brand-primary p-4 rounded-full mb-6 group-hover:bg-brand-primary group-hover:text-white transition-all duration-300">
-                    <i class="ri-check-double-line text-3xl"></i>
+
+            <div
+                class="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-100"
+            >
+                <div
+                    class="inline-block bg-brand-secondary text-brand-primary p-3 rounded-full mb-4 group-hover:bg-brand-primary group-hover:text-white transition-all duration-300"
+                >
+                    <i class="ri-check-double-line text-2xl"></i>
                 </div>
-                <h4 class="font-montserrat font-semibold text-xl text-brand-dark mb-3">Eligibility Verification</h4>
-                <p class="text-gray-600 mb-4">Proactively verify patient coverage to prevent downstream denials and improve cash flow.</p>
-                <ul class="space-y-2 mb-6">
+                <h4
+                    class="font-montserrat font-semibold text-lg text-brand-dark mb-2"
+                >
+                    Eligibility Verification
+                </h4>
+                <p class="text-gray-600 text-sm mb-3">
+                    Proactively verify patient coverage to prevent downstream
+                    denials and improve cash flow.
+                </p>
+                <ul class="space-y-1 mb-4">
                     <li class="flex items-start">
-                        <i class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2"></i>
-                        <span class="text-sm text-gray-600">Real-time benefit verification</span>
+                        <i
+                            class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"
+                        ></i>
+                        <span class="text-xs text-gray-600"
+                            >Real-time benefit verification</span
+                        >
                     </li>
                     <li class="flex items-start">
-                        <i class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2"></i>
-                        <span class="text-sm text-gray-600">Coverage details confirmation</span>
+                        <i
+                            class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"
+                        ></i>
+                        <span class="text-xs text-gray-600"
+                            >Coverage details confirmation</span
+                        >
                     </li>
                     <li class="flex items-start">
-                        <i class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2"></i>
-                        <span class="text-sm text-gray-600">Prior authorization management</span>
+                        <i
+                            class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"
+                        ></i>
+                        <span class="text-xs text-gray-600"
+                            >Prior authorization management</span
+                        >
                     </li>
                 </ul>
-                <a href="/verification" class="inline-flex items-center text-brand-primary hover:text-brand-dark font-medium transition-colors">
+                <a
+                    href="/verification"
+                    class="inline-flex items-center text-brand-primary hover:text-brand-dark font-medium transition-colors text-sm"
+                >
                     Learn More <i class="ri-arrow-right-line ml-1"></i>
                 </a>
             </div>
-            
-            <div class="group bg-white p-8 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-100">
-                <div class="inline-block bg-brand-secondary text-brand-primary p-4 rounded-full mb-6 group-hover:bg-brand-primary group-hover:text-white transition-all duration-300">
-                    <i class="ri-file-list-3-line text-3xl"></i>
+
+            <div
+                class="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-100"
+            >
+                <div
+                    class="inline-block bg-brand-secondary text-brand-primary p-3 rounded-full mb-4 group-hover:bg-brand-primary group-hover:text-white transition-all duration-300"
+                >
+                    <i class="ri-file-list-3-line text-2xl"></i>
                 </div>
-                <h4 class="font-montserrat font-semibold text-xl text-brand-dark mb-3">Medical Billing</h4>
-                <p class="text-gray-600 mb-4">Ensure accurate and timely claim submission for maximized revenue and reduced denials.</p>
-                <ul class="space-y-2 mb-6">
+                <h4
+                    class="font-montserrat font-semibold text-lg text-brand-dark mb-2"
+                >
+                    Medical Billing
+                </h4>
+                <p class="text-gray-600 text-sm mb-3">
+                    Ensure accurate and timely claim submission for maximized
+                    revenue and reduced denials.
+                </p>
+                <ul class="space-y-1 mb-4">
                     <li class="flex items-start">
-                        <i class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2"></i>
-                        <span class="text-sm text-gray-600">Charge entry & coding review</span>
+                        <i
+                            class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"
+                        ></i>
+                        <span class="text-xs text-gray-600"
+                            >Charge entry & coding review</span
+                        >
                     </li>
                     <li class="flex items-start">
-                        <i class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2"></i>
-                        <span class="text-sm text-gray-600">Claim scrubbing & submission</span>
+                        <i
+                            class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"
+                        ></i>
+                        <span class="text-xs text-gray-600"
+                            >Claim scrubbing & submission</span
+                        >
                     </li>
                     <li class="flex items-start">
-                        <i class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2"></i>
-                        <span class="text-sm text-gray-600">Rejection resolution</span>
+                        <i
+                            class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"
+                        ></i>
+                        <span class="text-xs text-gray-600"
+                            >Rejection resolution</span
+                        >
                     </li>
                 </ul>
-                <a href="/billing" class="inline-flex items-center text-brand-primary hover:text-brand-dark font-medium transition-colors">
+                <a
+                    href="/billing"
+                    class="inline-flex items-center text-brand-primary hover:text-brand-dark font-medium transition-colors text-sm"
+                >
                     Learn More <i class="ri-arrow-right-line ml-1"></i>
                 </a>
             </div>
-            
-            <div class="group bg-white p-8 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-100">
-                <div class="inline-block bg-brand-secondary text-brand-primary p-4 rounded-full mb-6 group-hover:bg-brand-primary group-hover:text-white transition-all duration-300">
-                    <i class="ri-bank-line text-3xl"></i>
+
+            <div
+                class="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-100"
+            >
+                <div
+                    class="inline-block bg-brand-secondary text-brand-primary p-3 rounded-full mb-4 group-hover:bg-brand-primary group-hover:text-white transition-all duration-300"
+                >
+                    <i class="ri-bank-line text-2xl"></i>
                 </div>
-                <h4 class="font-montserrat font-semibold text-xl text-brand-dark mb-3">Accounts Receivable</h4>
-                <p class="text-gray-600 mb-4">Diligent follow-ups and strategic appeals to reduce aging receivables and improve cash flow.</p>
-                <ul class="space-y-2 mb-6">
+                <h4
+                    class="font-montserrat font-semibold text-lg text-brand-dark mb-2"
+                >
+                    Accounts Receivable
+                </h4>
+                <p class="text-gray-600 text-sm mb-3">
+                    Diligent follow-ups and strategic appeals to reduce aging
+                    receivables and improve cash flow.
+                </p>
+                <ul class="space-y-1 mb-4">
                     <li class="flex items-start">
-                        <i class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2"></i>
-                        <span class="text-sm text-gray-600">Aging analysis & prioritization</span>
+                        <i
+                            class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"
+                        ></i>
+                        <span class="text-xs text-gray-600"
+                            >Aging analysis & prioritization</span
+                        >
                     </li>
                     <li class="flex items-start">
-                        <i class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2"></i>
-                        <span class="text-sm text-gray-600">Payer follow-up protocols</span>
+                        <i
+                            class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"
+                        ></i>
+                        <span class="text-xs text-gray-600"
+                            >Payer follow-up protocols</span
+                        >
                     </li>
                     <li class="flex items-start">
-                        <i class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2"></i>
-                        <span class="text-sm text-gray-600">Patient balance resolution</span>
+                        <i
+                            class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"
+                        ></i>
+                        <span class="text-xs text-gray-600"
+                            >Patient balance resolution</span
+                        >
                     </li>
                 </ul>
-                <a href="/accounts_receivable" class="inline-flex items-center text-brand-primary hover:text-brand-dark font-medium transition-colors">
+                <a
+                    href="/accounts_receivable"
+                    class="inline-flex items-center text-brand-primary hover:text-brand-dark font-medium transition-colors text-sm"
+                >
                     Learn More <i class="ri-arrow-right-line ml-1"></i>
                 </a>
             </div>
-            
-            <div class="group bg-white p-8 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-100">
-                <div class="inline-block bg-brand-secondary text-brand-primary p-4 rounded-full mb-6 group-hover:bg-brand-primary group-hover:text-white transition-all duration-300">
-                    <i class="ri-close-circle-line text-3xl"></i>
+
+            <div
+                class="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-100"
+            >
+                <div
+                    class="inline-block bg-brand-secondary text-brand-primary p-3 rounded-full mb-4 group-hover:bg-brand-primary group-hover:text-white transition-all duration-300"
+                >
+                    <i class="ri-close-circle-line text-2xl"></i>
                 </div>
-                <h4 class="font-montserrat font-semibold text-xl text-brand-dark mb-3">Denial Management</h4>
-                <p class="text-gray-600 mb-4">Identify root causes of denials to prevent recurrence and recover lost revenue.</p>
-                <ul class="space-y-2 mb-6">
+                <h4
+                    class="font-montserrat font-semibold text-lg text-brand-dark mb-2"
+                >
+                    Denial Management
+                </h4>
+                <p class="text-gray-600 text-sm mb-3">
+                    Identify root causes of denials to prevent recurrence and
+                    recover lost revenue.
+                </p>
+                <ul class="space-y-1 mb-4">
                     <li class="flex items-start">
-                        <i class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2"></i>
-                        <span class="text-sm text-gray-600">Denial root cause analysis</span>
+                        <i
+                            class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"
+                        ></i>
+                        <span class="text-xs text-gray-600"
+                            >Denial root cause analysis</span
+                        >
                     </li>
                     <li class="flex items-start">
-                        <i class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2"></i>
-                        <span class="text-sm text-gray-600">Appeal letter generation</span>
+                        <i
+                            class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"
+                        ></i>
+                        <span class="text-xs text-gray-600"
+                            >Appeal letter generation</span
+                        >
                     </li>
                     <li class="flex items-start">
-                        <i class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2"></i>
-                        <span class="text-sm text-gray-600">Prevention strategy implementation</span>
+                        <i
+                            class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"
+                        ></i>
+                        <span class="text-xs text-gray-600"
+                            >Prevention strategy implementation</span
+                        >
                     </li>
                 </ul>
-                <a href="/denial_management" class="inline-flex items-center text-brand-primary hover:text-brand-dark font-medium transition-colors">
+                <a
+                    href="/denial_management"
+                    class="inline-flex items-center text-brand-primary hover:text-brand-dark font-medium transition-colors text-sm"
+                >
                     Learn More <i class="ri-arrow-right-line ml-1"></i>
                 </a>
             </div>
-            
-            <div class="group bg-white p-8 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-100">
-                <div class="inline-block bg-brand-secondary text-brand-primary p-4 rounded-full mb-6 group-hover:bg-brand-primary group-hover:text-white transition-all duration-300">
-                    <i class="ri-money-dollar-circle-line text-3xl"></i>
+
+            <div
+                class="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-100"
+            >
+                <div
+                    class="inline-block bg-brand-secondary text-brand-primary p-3 rounded-full mb-4 group-hover:bg-brand-primary group-hover:text-white transition-all duration-300"
+                >
+                    <i class="ri-money-dollar-circle-line text-2xl"></i>
                 </div>
-                <h4 class="font-montserrat font-semibold text-xl text-brand-dark mb-3">Payment Posting</h4>
-                <p class="text-gray-600 mb-4">Accurate posting of manual and electronic payments for clear financial records and reporting.</p>
-                <ul class="space-y-2 mb-6">
+                <h4
+                    class="font-montserrat font-semibold text-lg text-brand-dark mb-2"
+                >
+                    Payment Posting
+                </h4>
+                <p class="text-gray-600 text-sm mb-3">
+                    Accurate posting of manual and electronic payments for clear
+                    financial records and reporting.
+                </p>
+                <ul class="space-y-1 mb-4">
                     <li class="flex items-start">
-                        <i class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2"></i>
-                        <span class="text-sm text-gray-600">ERA/EOB reconciliation</span>
+                        <i
+                            class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"
+                        ></i>
+                        <span class="text-xs text-gray-600"
+                            >ERA/EOB reconciliation</span
+                        >
                     </li>
                     <li class="flex items-start">
-                        <i class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2"></i>
-                        <span class="text-sm text-gray-600">Payment variance identification</span>
+                        <i
+                            class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"
+                        ></i>
+                        <span class="text-xs text-gray-600"
+                            >Payment variance identification</span
+                        >
                     </li>
                     <li class="flex items-start">
-                        <i class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2"></i>
-                        <span class="text-sm text-gray-600">Contractual adjustment analysis</span>
+                        <i
+                            class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"
+                        ></i>
+                        <span class="text-xs text-gray-600"
+                            >Contractual adjustment analysis</span
+                        >
                     </li>
                 </ul>
-                <a href="/payment_posting" class="inline-flex items-center text-brand-primary hover:text-brand-dark font-medium transition-colors">
+                <a
+                    href="/payment_posting"
+                    class="inline-flex items-center text-brand-primary hover:text-brand-dark font-medium transition-colors text-sm"
+                >
                     Learn More <i class="ri-arrow-right-line ml-1"></i>
                 </a>
             </div>
         </div>
-        
-        <div class="mt-12 text-center">
-            <a href="/services" class="inline-block bg-brand-primary text-white font-montserrat font-semibold px-8 py-3 rounded-full text-lg shadow-lg transform transition-all duration-300 ease-in-out hover:scale-105 hover:bg-brand-dark hover:shadow-xl">
+
+        <div class="mt-8 text-center">
+            <a
+                href="/services"
+                class="inline-block bg-brand-primary text-white font-montserrat font-semibold px-6 py-3 rounded-full shadow-lg transform transition-all duration-300 ease-in-out hover:scale-105 hover:bg-brand-dark hover:shadow-xl"
+            >
                 View All Services <i class="ri-arrow-right-line ml-2"></i>
             </a>
         </div>
     </div>
 </section>
 
-<section class="py-16 lg:py-24 bg-gray-50" data-aos="fade-up">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<!-- About Section -->
+<section class="py-12 lg:py-16 bg-gray-50" data-aos="fade-up">
+    <div class="container">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div class="order-2 lg:order-1">
-                <span class="inline-block bg-brand-secondary px-4 py-2 rounded-full text-brand-primary font-semibold text-sm mb-4">ABOUT US</span>
-                <h2 class="font-montserrat font-bold text-3xl sm:text-4xl text-brand-dark mb-6">
-                    <span class="text-brand-primary">Who We Are</span> - Your Trusted RCM Partner
+                <span
+                    class="inline-block bg-brand-secondary px-3 py-1 rounded-full text-brand-primary font-semibold text-sm mb-3"
+                    >ABOUT US</span
+                >
+                <h2
+                    class="font-montserrat font-bold text-2xl sm:text-3xl text-brand-dark mb-4"
+                >
+                    <span class="text-brand-primary">Who We Are</span> - Your
+                    Trusted RCM Partner
                 </h2>
-                <p class="text-gray-600 mb-6">
-                    Ardur Healthcare is a leading revenue cycle management company dedicated to optimizing the financial
-                    performance of healthcare providers. With over 15 years of industry experience, we've helped hundreds of medical
-                    practices increase collections by an average of 23% while reducing operational costs.
+                <p class="text-gray-600 text-sm lg:text-base mb-6">
+                    Ardur Healthcare is a leading revenue cycle management
+                    company dedicated to optimizing the financial performance of
+                    healthcare providers. With over 15 years of industry
+                    experience, we've helped hundreds of medical practices
+                    increase collections by an average of 23% while reducing
+                    operational costs.
                 </p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                        <div class="flex items-center mb-4">
-                            <div class="bg-brand-secondary p-3 rounded-full mr-4">
-                                <i class="ri-team-line text-2xl text-brand-primary"></i>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <div
+                        class="bg-white p-4 rounded-xl shadow-sm border border-gray-100"
+                    >
+                        <div class="flex items-center mb-3">
+                            <div
+                                class="bg-brand-secondary p-2 rounded-full mr-3"
+                            >
+                                <i
+                                    class="ri-team-line text-lg text-brand-primary"
+                                ></i>
                             </div>
-                            <h4 class="font-montserrat font-semibold text-lg text-brand-dark">Certified Specialists</h4>
+                            <h4
+                                class="font-montserrat font-semibold text-base text-brand-dark"
+                            >
+                                Certified Specialists
+                            </h4>
                         </div>
-                        <p class="text-gray-600">Our team of 50+ certified billing specialists have expertise across 20+ medical specialties.</p>
+                        <p class="text-gray-600 text-sm">
+                            Our team of 50+ certified billing specialists have
+                            expertise across 20+ medical specialties.
+                        </p>
                     </div>
-                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                        <div class="flex items-center mb-4">
-                            <div class="bg-brand-secondary p-3 rounded-full mr-4">
-                                <i class="ri-line-chart-line text-2xl text-brand-primary"></i>
+                    <div
+                        class="bg-white p-4 rounded-xl shadow-sm border border-gray-100"
+                    >
+                        <div class="flex items-center mb-3">
+                            <div
+                                class="bg-brand-secondary p-2 rounded-full mr-3"
+                            >
+                                <i
+                                    class="ri-line-chart-line text-lg text-brand-primary"
+                                ></i>
                             </div>
-                            <h4 class="font-montserrat font-semibold text-lg text-brand-dark">Proven Results</h4>
+                            <h4
+                                class="font-montserrat font-semibold text-base text-brand-dark"
+                            >
+                                Proven Results
+                            </h4>
                         </div>
-                        <p class="text-gray-600">Our clients see an average 15% reduction in denial rates within the first 90 days.</p>
+                        <p class="text-gray-600 text-sm">
+                            Our clients see an average 15% reduction in denial
+                            rates within the first 90 days.
+                        </p>
                     </div>
-                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                        <div class="flex items-center mb-4">
-                            <div class="bg-brand-secondary p-3 rounded-full mr-4">
-                                <i class="ri-computer-line text-2xl text-brand-primary"></i>
+                    <div
+                        class="bg-white p-4 rounded-xl shadow-sm border border-gray-100"
+                    >
+                        <div class="flex items-center mb-3">
+                            <div
+                                class="bg-brand-secondary p-2 rounded-full mr-3"
+                            >
+                                <i
+                                    class="ri-computer-line text-lg text-brand-primary"
+                                ></i>
                             </div>
-                            <h4 class="font-montserrat font-semibold text-lg text-brand-dark">Advanced Technology</h4>
+                            <h4
+                                class="font-montserrat font-semibold text-base text-brand-dark"
+                            >
+                                Advanced Technology
+                            </h4>
                         </div>
-                        <p class="text-gray-600">Our proprietary AI-powered analytics platform identifies revenue opportunities in real-time.</p>
+                        <p class="text-gray-600 text-sm">
+                            Our proprietary AI-powered analytics platform
+                            identifies revenue opportunities in real-time.
+                        </p>
                     </div>
-                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                        <div class="flex items-center mb-4">
-                            <div class="bg-brand-secondary p-3 rounded-full mr-4">
-                                <i class="ri-customer-service-2-line text-2xl text-brand-primary"></i>
+                    <div
+                        class="bg-white p-4 rounded-xl shadow-sm border border-gray-100"
+                    >
+                        <div class="flex items-center mb-3">
+                            <div
+                                class="bg-brand-secondary p-2 rounded-full mr-3"
+                            >
+                                <i
+                                    class="ri-customer-service-2-line text-lg text-brand-primary"
+                                ></i>
                             </div>
-                            <h4 class="font-montserrat font-semibold text-lg text-brand-dark">Dedicated Support</h4>
+                            <h4
+                                class="font-montserrat font-semibold text-base text-brand-dark"
+                            >
+                                Dedicated Support
+                            </h4>
                         </div>
-                        <p class="text-gray-600">Each client is assigned a dedicated account manager available 24/7 for support.</p>
+                        <p class="text-gray-600 text-sm">
+                            Each client is assigned a dedicated account manager
+                            available 24/7 for support.
+                        </p>
                     </div>
                 </div>
-                <div class="flex flex-wrap gap-4">
-                    <a href="/about" class="inline-flex items-center justify-center bg-brand-primary text-white font-montserrat font-semibold px-6 py-3 rounded-full text-base shadow-md hover:bg-brand-dark transition-colors duration-300">
-                        Learn More About Us <i class="ri-arrow-right-line ml-2"></i>
+                <div class="flex flex-wrap gap-3">
+                    <a
+                        href="/about"
+                        class="inline-flex items-center justify-center bg-brand-primary text-white font-montserrat font-semibold px-5 py-2 rounded-full shadow-md hover:bg-brand-dark transition-colors duration-300"
+                    >
+                        Learn More About Us
+                        <i class="ri-arrow-right-line ml-2"></i>
                     </a>
-                    <a href="/contact" class="inline-flex items-center justify-center bg-white text-brand-primary border border-brand-primary font-montserrat font-semibold px-6 py-3 rounded-full text-base hover:bg-brand-secondary transition-colors duration-300">
+                    <a
+                        href="/contact"
+                        class="inline-flex items-center justify-center bg-white text-brand-primary border border-brand-primary font-montserrat font-semibold px-5 py-2 rounded-full hover:bg-brand-secondary transition-colors duration-300"
+                    >
                         Schedule a Demo <i class="ri-calendar-line ml-2"></i>
                     </a>
                 </div>
             </div>
             <div class="order-1 lg:order-2 relative">
-                <div class="absolute -top-4 -left-4 w-24 h-24 bg-brand-secondary rounded-full opacity-50 z-0"></div>
-                <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-brand-primary rounded-full opacity-20 z-0"></div>
-                <img src="{{ url_for('static', filename='images/about-image.jpg') }}" alt="About Ardur Healthcare"
-                    class="rounded-xl shadow-xl w-full h-auto relative z-10">
-                <div class="absolute bottom-6 right-6 bg-white p-4 rounded-lg shadow-lg z-20">
-                    <div class="flex items-center space-x-4">
+                <div
+                    class="absolute -top-3 -left-3 w-20 h-20 bg-brand-secondary rounded-full opacity-50 z-0"
+                ></div>
+                <div
+                    class="absolute -bottom-3 -right-3 w-24 h-24 bg-brand-primary rounded-full opacity-20 z-0"
+                ></div>
+                <img
+                    src="{{ url_for('static', filename='images/about-image.jpg') }}"
+                    alt="About Ardur Healthcare"
+                    class="rounded-xl shadow-xl w-full h-auto relative z-10"
+                />
+                <div
+                    class="absolute bottom-4 right-4 bg-white p-3 rounded-lg shadow-lg z-20"
+                >
+                    <div class="flex items-center space-x-3">
                         <div class="text-center">
-                            <span class="block text-3xl font-bold text-brand-primary">98%</span>
-                            <span class="text-xs text-gray-600">Client Retention</span>
+                            <span
+                                class="block text-2xl font-bold text-brand-primary"
+                                >98%</span
+                            >
+                            <span class="text-xs text-gray-600"
+                                >Client Retention</span
+                            >
                         </div>
-                        <div class="h-10 w-px bg-gray-200"></div>
+                        <div class="h-8 w-px bg-gray-200"></div>
                         <div class="text-center">
-                            <span class="block text-3xl font-bold text-brand-primary">15+</span>
-                            <span class="text-xs text-gray-600">Years Experience</span>
+                            <span
+                                class="block text-2xl font-bold text-brand-primary"
+                                >15+</span
+                            >
+                            <span class="text-xs text-gray-600"
+                                >Years Experience</span
+                            >
                         </div>
                     </div>
                 </div>
@@ -313,93 +614,180 @@
     </div>
 </section>
 
-<section class="py-16 lg:py-24 bg-gradient-to-r from-brand-dark to-brand-dark/90" data-aos="fade-up">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div class="text-center mb-12">
-            <span class="inline-block bg-white/10 px-4 py-2 rounded-full text-brand-primary font-semibold text-sm mb-4">PERFORMANCE METRICS</span>
-            <h2 class="font-montserrat font-bold text-3xl sm:text-4xl text-white mb-4">
-                Real-Time <span class="text-brand-primary">Insights Dashboard</span>
+<!-- Performance Metrics Section -->
+<section
+    class="py-12 lg:py-16 bg-gradient-to-r from-brand-dark to-brand-dark/90"
+    data-aos="fade-up"
+>
+    <div class="container">
+        <div class="text-center mb-10">
+            <span
+                class="inline-block bg-white/10 px-3 py-1 rounded-full text-brand-primary font-semibold text-sm mb-3"
+                >PERFORMANCE METRICS</span
+            >
+            <h2
+                class="font-montserrat font-bold text-2xl sm:text-3xl text-white mb-3"
+            >
+                Real-Time
+                <span class="text-brand-primary">Insights Dashboard</span>
             </h2>
-            <p class="text-gray-300 max-w-3xl mx-auto">
-                Our advanced analytics dashboard provides real-time visibility into your revenue cycle performance,
-                allowing you to make data-driven decisions to optimize your financial outcomes.
+            <p class="text-gray-300 max-w-3xl mx-auto text-sm lg:text-base">
+                Our advanced analytics dashboard provides real-time visibility
+                into your revenue cycle performance, allowing you to make
+                data-driven decisions to optimize your financial outcomes.
             </p>
         </div>
-        
-        <div class="relative mb-16">
-            <div class="absolute inset-0 bg-brand-primary/5 rounded-2xl blur-3xl"></div>
-            <div class="relative bg-white/10 backdrop-blur-sm border border-white/10 rounded-2xl p-8 shadow-2xl">
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="bg-white rounded-xl shadow-xl p-6 text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
-                        <div class="inline-flex items-center justify-center w-16 h-16 bg-brand-secondary rounded-full mb-4">
-                            <i class="ri-file-list-3-line text-3xl text-brand-primary"></i>
+
+        <div class="relative mb-10">
+            <div
+                class="absolute inset-0 bg-brand-primary/5 rounded-2xl blur-3xl"
+            ></div>
+            <div
+                class="relative bg-white/10 backdrop-blur-sm border border-white/10 rounded-2xl p-6 shadow-2xl"
+            >
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+                >
+                    <div
+                        class="bg-white rounded-xl shadow-xl p-5 text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+                    >
+                        <div
+                            class="inline-flex items-center justify-center w-12 h-12 bg-brand-secondary rounded-full mb-3"
+                        >
+                            <i
+                                class="ri-file-list-3-line text-xl text-brand-primary"
+                            ></i>
                         </div>
-                        <div class="text-brand-primary text-5xl font-bold mb-2">
+                        <div class="text-brand-primary text-3xl font-bold mb-2">
                             <span class="counter" data-target="95">0</span>%
                         </div>
-                        <h4 class="font-montserrat font-semibold text-xl text-brand-dark mb-2">Clean Claims Rate</h4>
-                        <p class="text-gray-600">Industry average: 75-80%</p>
-                        <div class="w-full bg-gray-200 rounded-full h-2 mt-4">
-                            <div class="bg-brand-primary h-2 rounded-full" style="width: 95%"></div>
+                        <h4
+                            class="font-montserrat font-semibold text-base text-brand-dark mb-2"
+                        >
+                            Clean Claims Rate
+                        </h4>
+                        <p class="text-gray-600 text-sm">
+                            Industry average: 75-80%
+                        </p>
+                        <div class="w-full bg-gray-200 rounded-full h-2 mt-3">
+                            <div
+                                class="bg-brand-primary h-2 rounded-full"
+                                style="width: 95%"
+                            ></div>
                         </div>
                     </div>
-                    
-                    <div class="bg-white rounded-xl shadow-xl p-6 text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
-                        <div class="inline-flex items-center justify-center w-16 h-16 bg-brand-secondary rounded-full mb-4">
-                            <i class="ri-time-line text-3xl text-brand-primary"></i>
+
+                    <div
+                        class="bg-white rounded-xl shadow-xl p-5 text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+                    >
+                        <div
+                            class="inline-flex items-center justify-center w-12 h-12 bg-brand-secondary rounded-full mb-3"
+                        >
+                            <i
+                                class="ri-time-line text-xl text-brand-primary"
+                            ></i>
                         </div>
-                        <div class="text-brand-primary text-5xl font-bold mb-2">
+                        <div class="text-brand-primary text-3xl font-bold mb-2">
                             <span class="counter" data-target="24">0</span>h
                         </div>
-                        <h4 class="font-montserrat font-semibold text-xl text-brand-dark mb-2">Claim Resolution</h4>
-                        <p class="text-gray-600">Industry average: 72h</p>
-                        <div class="w-full bg-gray-200 rounded-full h-2 mt-4">
-                            <div class="bg-green-500 h-2 rounded-full" style="width: 75%"></div>
+                        <h4
+                            class="font-montserrat font-semibold text-base text-brand-dark mb-2"
+                        >
+                            Claim Resolution
+                        </h4>
+                        <p class="text-gray-600 text-sm">
+                            Industry average: 72h
+                        </p>
+                        <div class="w-full bg-gray-200 rounded-full h-2 mt-3">
+                            <div
+                                class="bg-green-500 h-2 rounded-full"
+                                style="width: 75%"
+                            ></div>
                         </div>
                     </div>
-                    
-                    <div class="bg-white rounded-xl shadow-xl p-6 text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
-                        <div class="inline-flex items-center justify-center w-16 h-16 bg-brand-secondary rounded-full mb-4">
-                            <i class="ri-close-circle-line text-3xl text-brand-primary"></i>
+
+                    <div
+                        class="bg-white rounded-xl shadow-xl p-5 text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+                    >
+                        <div
+                            class="inline-flex items-center justify-center w-12 h-12 bg-brand-secondary rounded-full mb-3"
+                        >
+                            <i
+                                class="ri-close-circle-line text-xl text-brand-primary"
+                            ></i>
                         </div>
-                        <div class="text-brand-primary text-5xl font-bold mb-2">
+                        <div class="text-brand-primary text-3xl font-bold mb-2">
                             <span class="counter" data-target="4">0</span>%
                         </div>
-                        <h4 class="font-montserrat font-semibold text-xl text-brand-dark mb-2">Denial Rate</h4>
-                        <p class="text-gray-600">Industry average: 10-15%</p>
-                        <div class="w-full bg-gray-200 rounded-full h-2 mt-4">
-                            <div class="bg-green-500 h-2 rounded-full" style="width: 85%"></div>
+                        <h4
+                            class="font-montserrat font-semibold text-base text-brand-dark mb-2"
+                        >
+                            Denial Rate
+                        </h4>
+                        <p class="text-gray-600 text-sm">
+                            Industry average: 10-15%
+                        </p>
+                        <div class="w-full bg-gray-200 rounded-full h-2 mt-3">
+                            <div
+                                class="bg-green-500 h-2 rounded-full"
+                                style="width: 85%"
+                            ></div>
                         </div>
                     </div>
-                    
-                    <div class="bg-white rounded-xl shadow-xl p-6 text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
-                        <div class="inline-flex items-center justify-center w-16 h-16 bg-brand-secondary rounded-full mb-4">
-                            <i class="ri-money-dollar-circle-line text-3xl text-brand-primary"></i>
+
+                    <div
+                        class="bg-white rounded-xl shadow-xl p-5 text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+                    >
+                        <div
+                            class="inline-flex items-center justify-center w-12 h-12 bg-brand-secondary rounded-full mb-3"
+                        >
+                            <i
+                                class="ri-money-dollar-circle-line text-xl text-brand-primary"
+                            ></i>
                         </div>
-                        <div class="text-brand-primary text-5xl font-bold mb-2">
+                        <div class="text-brand-primary text-3xl font-bold mb-2">
                             $<span class="counter" data-target="1.2">0</span>M
                         </div>
-                        <h4 class="font-montserrat font-semibold text-xl text-brand-dark mb-2">Revenue Recovered</h4>
-                        <p class="text-gray-600">Average per client annually</p>
-                        <div class="w-full bg-gray-200 rounded-full h-2 mt-4">
-                            <div class="bg-brand-primary h-2 rounded-full" style="width: 90%"></div>
+                        <h4
+                            class="font-montserrat font-semibold text-base text-brand-dark mb-2"
+                        >
+                            Revenue Recovered
+                        </h4>
+                        <p class="text-gray-600 text-sm">
+                            Average per client annually
+                        </p>
+                        <div class="w-full bg-gray-200 rounded-full h-2 mt-3">
+                            <div
+                                class="bg-brand-primary h-2 rounded-full"
+                                style="width: 90%"
+                            ></div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="mt-10 text-center">
-                    <div class="inline-block bg-white/10 backdrop-blur-sm border border-white/10 rounded-lg p-4 text-white">
-                        <div class="flex flex-wrap justify-center items-center gap-6 sm:gap-10">
+
+                <div class="mt-8 text-center">
+                    <div
+                        class="inline-block bg-white/10 backdrop-blur-sm border border-white/10 rounded-lg p-3 text-white"
+                    >
+                        <div
+                            class="flex flex-wrap justify-center items-center gap-4 sm:gap-6 text-sm"
+                        >
                             <div class="flex items-center">
-                                <div class="w-3 h-3 bg-brand-primary rounded-full mr-2"></div>
+                                <div
+                                    class="w-3 h-3 bg-brand-primary rounded-full mr-2"
+                                ></div>
                                 <span>Our Performance</span>
                             </div>
                             <div class="flex items-center">
-                                <div class="w-3 h-3 bg-green-500 rounded-full mr-2"></div>
+                                <div
+                                    class="w-3 h-3 bg-green-500 rounded-full mr-2"
+                                ></div>
                                 <span>Above Industry Average</span>
                             </div>
                             <div class="flex items-center">
-                                <div class="w-3 h-3 bg-gray-200 rounded-full mr-2"></div>
+                                <div
+                                    class="w-3 h-3 bg-gray-200 rounded-full mr-2"
+                                ></div>
                                 <span>Industry Benchmark</span>
                             </div>
                         </div>
@@ -407,115 +795,179 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="text-center">
-            <a href="/contact" class="inline-flex items-center justify-center bg-brand-primary text-white font-montserrat font-semibold px-8 py-4 rounded-full text-lg shadow-lg transform transition-all duration-300 ease-in-out hover:scale-105 hover:bg-white hover:text-brand-primary hover:shadow-xl">
-                Request a Custom Dashboard Demo <i class="ri-arrow-right-line ml-2"></i>
+            <a
+                href="/contact"
+                class="inline-flex items-center justify-center bg-brand-primary text-white font-montserrat font-semibold px-6 py-3 rounded-full shadow-lg transform transition-all duration-300 ease-in-out hover:scale-105 hover:bg-white hover:text-brand-primary hover:shadow-xl"
+            >
+                Request a Custom Dashboard Demo
+                <i class="ri-arrow-right-line ml-2"></i>
             </a>
         </div>
     </div>
 </section>
 
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <!-- Testimonials Section -->
-<section class="py-16 lg:py-24 bg-gray-50" data-aos="fade-up">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <span class="inline-block bg-brand-secondary px-4 py-2 rounded-full text-brand-primary font-semibold text-sm mb-4">CLIENT SUCCESS STORIES</span>
-            <h2 class="font-montserrat font-bold text-3xl sm:text-4xl text-brand-dark mb-4">
-                What Our <span class="text-brand-primary">Clients Say</span> About Us
+<section class="py-12 lg:py-16 bg-gray-50" data-aos="fade-up">
+    <div class="container">
+        <div class="text-center max-w-3xl mx-auto mb-10">
+            <span
+                class="inline-block bg-brand-secondary px-3 py-1 rounded-full text-brand-primary font-semibold text-sm mb-3"
+                >CLIENT SUCCESS STORIES</span
+            >
+            <h2
+                class="font-montserrat font-bold text-2xl sm:text-3xl text-brand-dark mb-3"
+            >
+                What Our
+                <span class="text-brand-primary">Clients Say</span> About Us
             </h2>
-            <p class="text-gray-600">Don't just take our word for it. Hear from healthcare providers who have transformed their revenue cycle with our solutions.</p>
+            <p class="text-gray-600 text-sm lg:text-base">
+                Don't just take our word for it. Hear from healthcare providers
+                who have transformed their revenue cycle with our solutions.
+            </p>
         </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <!-- Testimonial 1 -->
-            <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 relative">
-                <div class="absolute -top-5 left-8 text-5xl text-brand-primary opacity-20">
+            <div
+                class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 relative"
+            >
+                <div
+                    class="absolute -top-4 left-6 text-4xl text-brand-primary opacity-20"
+                >
                     <i class="ri-double-quotes-l"></i>
                 </div>
-                <div class="flex items-center mb-6">
-                    <img src="{{ url_for('static', filename='images/testimonial-1.jpg') }}" alt="Dr. Sarah Johnson" class="w-16 h-16 rounded-full mr-4 object-cover border-2 border-brand-primary">
+                <div class="flex items-center mb-4">
+                    <img
+                        src="{{ url_for('static', filename='images/testimonial-1.jpg') }}"
+                        alt="Dr. Sarah Johnson"
+                        class="w-12 h-12 rounded-full mr-3 object-cover border-2 border-brand-primary"
+                    />
                     <div>
-                        <h4 class="font-montserrat font-semibold text-lg text-brand-dark">Dr. Sarah Johnson</h4>
-                        <p class="text-gray-600 text-sm">Family Practice, Chicago IL</p>
+                        <h4
+                            class="font-montserrat font-semibold text-base text-brand-dark"
+                        >
+                            Dr. Sarah Johnson
+                        </h4>
+                        <p class="text-gray-600 text-sm">
+                            Family Practice, Chicago IL
+                        </p>
                         <div class="flex mt-1">
-                            <i class="ri-star-fill text-yellow-400"></i>
-                            <i class="ri-star-fill text-yellow-400"></i>
-                            <i class="ri-star-fill text-yellow-400"></i>
-                            <i class="ri-star-fill text-yellow-400"></i>
-                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                            <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                            <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                            <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                            <i class="ri-star-fill text-yellow-400 text-sm"></i>
                         </div>
                     </div>
                 </div>
-                <p class="text-gray-600 mb-4">"Since partnering with Ardur Healthcare, our collections have increased by 32% and our denial rate has dropped to just 3%. Their team is responsive, knowledgeable, and truly feels like an extension of our practice. I can focus on patient care knowing our revenue cycle is in expert hands."</p>
-                <p class="text-brand-primary font-medium">23% increase in net collections</p>
+                <p class="text-gray-600 text-sm mb-3">
+                    "Since partnering with Ardur Healthcare, our collections
+                    have increased by 32% and our denial rate has dropped to
+                    just 3%. Their team is responsive, knowledgeable, and truly
+                    feels like an extension of our practice."
+                </p>
+                <p class="text-brand-primary font-medium text-sm">
+                    23% increase in net collections
+                </p>
             </div>
-            
+
             <!-- Testimonial 2 -->
-            <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 relative">
-                <div class="absolute -top-5 left-8 text-5xl text-brand-primary opacity-20">
+            <div
+                class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 relative"
+            >
+                <div
+                    class="absolute -top-4 left-6 text-4xl text-brand-primary opacity-20"
+                >
                     <i class="ri-double-quotes-l"></i>
                 </div>
-                <div class="flex items-center mb-6">
-                    <img src="{{ url_for('static', filename='images/testimonial-2.jpg') }}" alt="Dr. Michael Chen" class="w-16 h-16 rounded-full mr-4 object-cover border-2 border-brand-primary">
+                <div class="flex items-center mb-4">
+                    <img
+                        src="{{ url_for('static', filename='images/testimonial-2.jpg') }}"
+                        alt="Dr. Michael Chen"
+                        class="w-12 h-12 rounded-full mr-3 object-cover border-2 border-brand-primary"
+                    />
                     <div>
-                        <h4 class="font-montserrat font-semibold text-lg text-brand-dark">Dr. Michael Chen</h4>
-                        <p class="text-gray-600 text-sm">Orthopedic Surgery, Boston MA</p>
+                        <h4
+                            class="font-montserrat font-semibold text-base text-brand-dark"
+                        >
+                            Dr. Michael Chen
+                        </h4>
+                        <p class="text-gray-600 text-sm">
+                            Orthopedic Surgery, Boston MA
+                        </p>
                         <div class="flex mt-1">
-                            <i class="ri-star-fill text-yellow-400"></i>
-                            <i class="ri-star-fill text-yellow-400"></i>
-                            <i class="ri-star-fill text-yellow-400"></i>
-                            <i class="ri-star-fill text-yellow-400"></i>
-                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                            <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                            <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                            <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                            <i class="ri-star-fill text-yellow-400 text-sm"></i>
                         </div>
                     </div>
                 </div>
-                <p class="text-gray-600 mb-4">"The transparency and insights provided by Ardur's dashboard have been game-changing for our practice. We've reduced our A/R days by 45% and improved our cash flow significantly. Their specialty-specific knowledge in orthopedic billing has been invaluable."</p>
-                <p class="text-brand-primary font-medium">45% reduction in A/R days</p>
+                <p class="text-gray-600 text-sm mb-3">
+                    "The transparency and insights provided by Ardur's dashboard
+                    have been game-changing for our practice. We've reduced our
+                    A/R days by 45% and improved our cash flow significantly."
+                </p>
+                <p class="text-brand-primary font-medium text-sm">
+                    45% reduction in A/R days
+                </p>
             </div>
         </div>
-        
-        <div class="mt-12 text-center">
-            <a href="/case" class="inline-block bg-white text-brand-primary border-2 border-brand-primary font-montserrat font-semibold px-8 py-3 rounded-full text-lg shadow-sm transform transition-all duration-300 ease-in-out hover:scale-105 hover:bg-brand-secondary hover:shadow-md">
-                View All Success Stories <i class="ri-arrow-right-line ml-2"></i>
+
+        <div class="mt-8 text-center">
+            <a
+                href="/case"
+                class="inline-block bg-white text-brand-primary border-2 border-brand-primary font-montserrat font-semibold px-6 py-3 rounded-full shadow-sm transform transition-all duration-300 ease-in-out hover:scale-105 hover:bg-brand-secondary hover:shadow-md"
+            >
+                View All Success Stories
+                <i class="ri-arrow-right-line ml-2"></i>
             </a>
         </div>
     </div>
 </section>
 
+<!-- Scripts -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
     // Initialize AOS animation
     AOS.init({
         duration: 800,
-        easing: 'ease-in-out',
+        easing: "ease-in-out",
         once: true,
-        mirror: false
+        mirror: false,
     });
-    
+
     // Counter animation
-    const counters = document.querySelectorAll('.counter');
+    const counters = document.querySelectorAll(".counter");
     const speed = 200;
-    
-    counters.forEach(counter => {
+
+    counters.forEach((counter) => {
         const animate = () => {
-            const target = +counter.getAttribute('data-target');
-            const count = +counter.innerText.replace(/[^\d.-]/g, '');
+            const target = +counter.getAttribute("data-target");
+            const count = +counter.innerText.replace(/[^\d.-]/g, "");
             const increment = target / speed;
-            
+
             if (count < target) {
-                // If target is a decimal number
                 if (target % 1 !== 0) {
-                    counter.innerText = (Math.min(count + increment, target)).toFixed(1);
+                    counter.innerText = Math.min(
+                        count + increment,
+                        target,
+                    ).toFixed(1);
                 } else {
-                    counter.innerText = Math.min(Math.ceil(count + increment), target);
+                    counter.innerText = Math.min(
+                        Math.ceil(count + increment),
+                        target,
+                    );
                 }
                 setTimeout(animate, 1);
             } else {
                 counter.innerText = target;
             }
         };
-        
+
         animate();
     });
 </script>
