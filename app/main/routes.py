@@ -19,6 +19,7 @@ def resources():
     return render_template('resources.html', title='Resources')
 
 
+
 @main.route('/specialities')
 def specialities():
     return render_template('specialities.html', title='Specialities')

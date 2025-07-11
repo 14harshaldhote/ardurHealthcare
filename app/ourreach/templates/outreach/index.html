@@ -1,0 +1,787 @@
+{% extends "base.html" %} {% block title %}Our Reach - Ardur Healthcare{%
+endblock %} {% block content %}
+<main class="min-h-screen bg-white">
+    <!-- Header Section - Kept as requested -->
+    <section class="text-center py-16 md:py-20 bg-brand-light">
+        <div class="max-w-5xl mx-auto px-6">
+            <h1
+                class="text-4xl md:text-6xl font-bold font-montserrat text-brand-dark mb-4"
+                data-aos="fade-down"
+            >
+                Our <span class="text-brand-primary">Nationwide</span> Reach
+            </h1>
+            <p
+                class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto"
+                data-aos="fade-up"
+                data-aos-delay="200"
+            >
+                Discover how Ardur Healthcare delivers specialized medical
+                billing services across the United States. Click on any state to
+                explore our localized expertise and services.
+            </p>
+        </div>
+    </section>
+
+    <!-- Redesigned Main Content -->
+    <div class="bg-gradient-to-br from-gray-50 to-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Interactive Map Section -->
+            <div
+                class="bg-white rounded-2xl shadow-xl overflow-hidden mb-12"
+                data-aos="fade-up"
+            >
+                <div
+                    class="px-8 py-6 bg-gradient-to-r from-brand-primary/90 to-brand-accent/90"
+                >
+                    <h2 class="text-2xl font-bold text-white text-center mb-2">
+                        Interactive U.S. Map
+                    </h2>
+                    <p class="text-brand-light text-center text-sm">
+                        Click on any state to explore our specialized services
+                    </p>
+                </div>
+
+                <div class="p-6">
+                    <div class="map-container-fixed" id="map-container">
+                        <div
+                            id="map-loading"
+                            class="map-loading"
+                            style="display: none"
+                        >
+                            <div class="loading-spinner">
+                                <div class="spinner"></div>
+                                <p class="mt-3 text-gray-600 text-sm">
+                                    Loading map...
+                                </p>
+                            </div>
+                        </div>
+
+                        <object
+                            data="{{ url_for('static', filename='maps/MapChart_Map.svg') }}"
+                            type="image/svg+xml"
+                            class="usa-map-object"
+                            id="usa-map"
+                            onload="initializeMap()"
+                        >
+                            <div class="map-fallback">
+                                <p class="text-gray-500">
+                                    Loading interactive map...
+                                </p>
+                            </div>
+                        </object>
+
+                        <div id="map-tooltip" class="map-tooltip"></div>
+                    </div>
+
+                    <!-- Map Legend -->
+                    <div class="flex justify-center mt-6">
+                        <div class="bg-gray-50 rounded-lg px-6 py-3">
+                            <div class="flex items-center gap-6 text-sm">
+                                <div class="flex items-center gap-2">
+                                    <div
+                                        class="w-4 h-4 bg-brand-primary rounded-full"
+                                    ></div>
+                                    <span class="text-gray-700"
+                                        >Available Services</span
+                                    >
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <div
+                                        class="w-4 h-4 bg-brand-accent rounded-full"
+                                    ></div>
+                                    <span class="text-gray-700"
+                                        >Featured States</span
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid lg:grid-cols-3 gap-8 mb-12">
+                <!-- Coverage Info -->
+                <div class="lg:col-span-1">
+                    <div
+                        class="bg-white rounded-xl shadow-lg p-6 h-full"
+                        data-aos="fade-right"
+                    >
+                        <div class="flex items-center mb-4">
+                            <div
+                                class="w-12 h-12 bg-brand-primary rounded-lg flex items-center justify-center mr-4"
+                            >
+                                <i class="ri-map-2-line text-white text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">
+                                Nationwide Coverage
+                            </h3>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            From coast to coast, we deliver consistent,
+                            high-quality medical billing services across all 50
+                            states.
+                        </p>
+                        <div class="space-y-2">
+                            <div
+                                class="flex items-center text-sm text-gray-600"
+                            >
+                                <i
+                                    class="ri-check-line text-brand-primary mr-2"
+                                ></i>
+                                <span>All 50 states covered</span>
+                            </div>
+                            <div
+                                class="flex items-center text-sm text-gray-600"
+                            >
+                                <i
+                                    class="ri-check-line text-brand-primary mr-2"
+                                ></i>
+                                <span>Local expertise in each region</span>
+                            </div>
+                            <div
+                                class="flex items-center text-sm text-gray-600"
+                            >
+                                <i
+                                    class="ri-check-line text-brand-primary mr-2"
+                                ></i>
+                                <span>24/7 support across time zones</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="lg:col-span-2">
+                    <div class="grid sm:grid-cols-2 gap-4 h-full">
+                        <div
+                            class="bg-gradient-to-br from-brand-primary to-brand-accent rounded-xl p-6 text-white"
+                            data-aos="fade-up"
+                            data-aos-delay="100"
+                        >
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-brand-light text-sm">
+                                        Active States
+                                    </p>
+                                    <p class="text-3xl font-bold">50+</p>
+                                </div>
+                                <div
+                                    class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center"
+                                >
+                                    <i class="ri-government-line text-2xl"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="bg-white rounded-xl shadow-lg p-6"
+                            data-aos="fade-up"
+                            data-aos-delay="200"
+                        >
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-gray-600 text-sm">
+                                        Time Zones
+                                    </p>
+                                    <p class="text-3xl font-bold text-gray-800">
+                                        4
+                                    </p>
+                                </div>
+                                <div
+                                    class="w-12 h-12 bg-brand-light rounded-lg flex items-center justify-center"
+                                >
+                                    <i
+                                        class="ri-time-line text-brand-primary text-2xl"
+                                    ></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="bg-white rounded-xl shadow-lg p-6"
+                            data-aos="fade-up"
+                            data-aos-delay="300"
+                        >
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-gray-600 text-sm">
+                                        Healthcare Providers
+                                    </p>
+                                    <p class="text-3xl font-bold text-gray-800">
+                                        500+
+                                    </p>
+                                </div>
+                                <div
+                                    class="w-12 h-12 bg-brand-light rounded-lg flex items-center justify-center"
+                                >
+                                    <i
+                                        class="ri-hospital-line text-brand-primary text-2xl"
+                                    ></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="bg-gradient-to-br from-brand-accent to-brand-primary rounded-xl p-6 text-white"
+                            data-aos="fade-up"
+                            data-aos-delay="400"
+                        >
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-brand-light text-sm">
+                                        Years Experience
+                                    </p>
+                                    <p class="text-3xl font-bold">15+</p>
+                                </div>
+                                <div
+                                    class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center"
+                                >
+                                    <i class="ri-award-line text-2xl"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Section -->
+            <div
+                class="bg-white rounded-2xl shadow-xl p-8 mb-12"
+                data-aos="fade-up"
+            >
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">
+                        Why Choose Our Services?
+                    </h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">
+                        Our comprehensive approach ensures consistent,
+                        high-quality medical billing services across all states.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div
+                        class="text-center group hover:scale-105 transition-transform duration-300"
+                        data-aos="fade-up"
+                        data-aos-delay="100"
+                    >
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-brand-primary to-brand-accent rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:shadow-lg transition-shadow"
+                        >
+                            <i class="ri-map-pin-line text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">
+                            Local Expertise
+                        </h3>
+                        <p class="text-gray-600 text-sm">
+                            Deep understanding of state-specific regulations and
+                            healthcare landscapes.
+                        </p>
+                    </div>
+
+                    <div
+                        class="text-center group hover:scale-105 transition-transform duration-300"
+                        data-aos="fade-up"
+                        data-aos-delay="200"
+                    >
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-brand-accent to-brand-primary rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:shadow-lg transition-shadow"
+                        >
+                            <i
+                                class="ri-shield-check-line text-white text-2xl"
+                            ></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">
+                            Compliance First
+                        </h3>
+                        <p class="text-gray-600 text-sm">
+                            Full compliance with federal and state regulations
+                            including HIPAA standards.
+                        </p>
+                    </div>
+
+                    <div
+                        class="text-center group hover:scale-105 transition-transform duration-300"
+                        data-aos="fade-up"
+                        data-aos-delay="300"
+                    >
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-brand-primary to-brand-accent rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:shadow-lg transition-shadow"
+                        >
+                            <i
+                                class="ri-customer-service-line text-white text-2xl"
+                            ></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">
+                            24/7 Support
+                        </h3>
+                        <p class="text-gray-600 text-sm">
+                            Round-the-clock support with dedicated account
+                            managers for every client.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div
+                class="bg-gradient-to-r from-brand-primary to-brand-accent rounded-2xl p-8 text-center text-white"
+                data-aos="fade-up"
+            >
+                <h2 class="text-3xl font-bold mb-4">Ready to Get Started?</h2>
+                <p class="text-brand-light mb-6 max-w-2xl mx-auto">
+                    Connect with us today to discover how we can elevate your
+                    organization's financial health across all U.S. time zones.
+                </p>
+                <a
+                    href="{{ url_for('contact.contact') }}"
+                    class="bg-white text-brand-primary font-semibold px-8 py-3 rounded-full hover:bg-gray-100 transition-all duration-300 inline-flex items-center gap-2"
+                >
+                    <span>Get in Touch</span>
+                    <i class="ri-arrow-right-line"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</main>
+
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+<link
+    href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+<link
+    href="{{ url_for('static', filename='css/map-styles.css') }}"
+    rel="stylesheet"
+/>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    // Initialize AOS
+    AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100,
+    });
+
+    // State abbreviation to full name mapping
+    const stateAbbreviationMap = {
+        AL: "Alabama",
+        AK: "Alaska",
+        AZ: "Arizona",
+        AR: "Arkansas",
+        CA: "California",
+        CO: "Colorado",
+        CT: "Connecticut",
+        DE: "Delaware",
+        FL: "Florida",
+        GA: "Georgia",
+        HI: "Hawaii",
+        ID: "Idaho",
+        IL: "Illinois",
+        IN: "Indiana",
+        IA: "Iowa",
+        KS: "Kansas",
+        KY: "Kentucky",
+        LA: "Louisiana",
+        ME: "Maine",
+        MD: "Maryland",
+        MA: "Massachusetts",
+        MI: "Michigan",
+        MN: "Minnesota",
+        MS: "Mississippi",
+        MO: "Missouri",
+        MT: "Montana",
+        NE: "Nebraska",
+        NV: "Nevada",
+        NH: "New Hampshire",
+        NJ: "New Jersey",
+        NM: "New Mexico",
+        NY: "New York",
+        NC: "North Carolina",
+        ND: "North Dakota",
+        OH: "Ohio",
+        OK: "Oklahoma",
+        OR: "Oregon",
+        PA: "Pennsylvania",
+        RI: "Rhode Island",
+        SC: "South Carolina",
+        SD: "South Dakota",
+        TN: "Tennessee",
+        TX: "Texas",
+        UT: "Utah",
+        VT: "Vermont",
+        VA: "Virginia",
+        WA: "Washington",
+        WV: "West Virginia",
+        WI: "Wisconsin",
+        WY: "Wyoming",
+        DC: "District of Columbia",
+    };
+
+    // State name to URL mapping
+    const stateUrlMap = {
+        Alabama: "alabama",
+        Alaska: "alaska",
+        Arizona: "arizona",
+        Arkansas: "arkansas",
+        California: "california",
+        Colorado: "colorado",
+        Connecticut: "connecticut",
+        Delaware: "delaware",
+        Florida: "florida",
+        Georgia: "georgia",
+        Hawaii: "hawaii",
+        Idaho: "idaho",
+        Illinois: "illinois",
+        Indiana: "indiana",
+        Iowa: "iowa",
+        Kansas: "kansas",
+        Kentucky: "kentucky",
+        Louisiana: "louisiana",
+        Maine: "maine",
+        Maryland: "maryland",
+        Massachusetts: "massachusetts",
+        Michigan: "michigan",
+        Minnesota: "minnesota",
+        Mississippi: "mississippi",
+        Missouri: "missouri",
+        Montana: "montana",
+        Nebraska: "nebraska",
+        Nevada: "nevada",
+        "New Hampshire": "new-hampshire",
+        "New Jersey": "new-jersey",
+        "New Mexico": "new-mexico",
+        "New York": "new-york",
+        "North Carolina": "north-carolina",
+        "North Dakota": "north-dakota",
+        Ohio: "ohio",
+        Oklahoma: "oklahoma",
+        Oregon: "oregon",
+        Pennsylvania: "pennsylvania",
+        "Rhode Island": "rhode-island",
+        "South Carolina": "south-carolina",
+        "South Dakota": "south-dakota",
+        Tennessee: "tennessee",
+        Texas: "texas",
+        Utah: "utah",
+        Vermont: "vermont",
+        Virginia: "virginia",
+        Washington: "washington",
+        "West Virginia": "west-virginia",
+        Wisconsin: "wisconsin",
+        Wyoming: "wyoming",
+        "District of Columbia": "district-of-columbia",
+    };
+
+    // Function to get full state name from abbreviation
+    function getFullStateName(abbreviation) {
+        const upperAbbr = abbreviation.toUpperCase();
+        return stateAbbreviationMap[upperAbbr] || abbreviation;
+    }
+
+    // Function to handle state clicks
+    function loadState(stateName) {
+        const urlStateName =
+            stateUrlMap[stateName] ||
+            stateName.toLowerCase().replace(/\s+/g, "-");
+        const url = `/state/medical-billing-services-in-${urlStateName}`;
+
+        showMapLoading();
+        window.location.href = url;
+    }
+
+    // Show loading overlay
+    function showMapLoading() {
+        const loadingOverlay = document.getElementById("map-loading");
+        if (loadingOverlay) {
+            loadingOverlay.style.display = "flex";
+        }
+    }
+
+    // Hide loading overlay
+    function hideMapLoading() {
+        const loadingOverlay = document.getElementById("map-loading");
+        if (loadingOverlay) {
+            loadingOverlay.style.display = "none";
+        }
+    }
+
+    // Show tooltip
+    function showTooltip(event, stateName) {
+        const tooltip = document.getElementById("map-tooltip");
+        if (tooltip) {
+            tooltip.textContent = `Medical Billing Services in ${stateName}`;
+            tooltip.style.left = event.pageX + 10 + "px";
+            tooltip.style.top = event.pageY - 40 + "px";
+            tooltip.classList.add("show");
+        }
+    }
+
+    // Hide tooltip
+    function hideTooltip() {
+        const tooltip = document.getElementById("map-tooltip");
+        if (tooltip) {
+            tooltip.classList.remove("show");
+        }
+    }
+
+    // Initialize map when SVG loads
+    function initializeMap() {
+        try {
+            const mapObject = document.getElementById("usa-map");
+            if (!mapObject || !mapObject.contentDocument) {
+                console.log("Map not yet loaded, retrying...");
+                setTimeout(initializeMap, 100);
+                return;
+            }
+
+            const svgDoc = mapObject.contentDocument;
+            const states = svgDoc.querySelectorAll("path[id], g[id]");
+            const featuredStates = ["CA", "TX", "FL", "NY", "AL"];
+
+            states.forEach((state) => {
+                const stateId = state.id;
+                const stateAbbr = stateId.toUpperCase();
+                const fullStateName = getFullStateName(stateAbbr);
+
+                if (!stateAbbreviationMap[stateAbbr]) {
+                    return;
+                }
+
+                if (featuredStates.includes(stateAbbr)) {
+                    state.classList.add("featured");
+                }
+
+                // Add event listeners
+                state.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    states.forEach((s) => s.classList.remove("active"));
+                    this.classList.add("active");
+                    loadState(fullStateName);
+                });
+
+                state.addEventListener("mouseenter", function (e) {
+                    if (!this.classList.contains("active")) {
+                        showTooltip(e, fullStateName);
+                    }
+                });
+
+                state.addEventListener("mouseleave", function () {
+                    hideTooltip();
+                });
+
+                state.addEventListener("mousemove", function (e) {
+                    if (!this.classList.contains("active")) {
+                        showTooltip(e, fullStateName);
+                    }
+                });
+
+                // Accessibility
+                state.setAttribute("tabindex", "0");
+                state.setAttribute("role", "button");
+                state.setAttribute(
+                    "aria-label",
+                    `Click to view Medical Billing Services in ${fullStateName}`,
+                );
+
+                state.addEventListener("keydown", function (e) {
+                    if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        loadState(fullStateName);
+                    }
+                });
+
+                if (!state.querySelector("title")) {
+                    const title = svgDoc.createElementNS(
+                        "http://www.w3.org/2000/svg",
+                        "title",
+                    );
+                    title.textContent = `Medical Billing Services in ${fullStateName}`;
+                    state.appendChild(title);
+                }
+            });
+
+            hideMapLoading();
+            console.log("Map initialized successfully");
+        } catch (error) {
+            console.error("Error initializing map:", error);
+            hideMapLoading();
+            setTimeout(initializeMap, 500);
+        }
+    }
+
+    // Initialize map on page load
+    document.addEventListener("DOMContentLoaded", function () {
+        showMapLoading();
+        setTimeout(() => {
+            if (document.getElementById("usa-map")) {
+                initializeMap();
+            } else {
+                hideMapLoading();
+            }
+        }, 1000);
+    });
+</script>
+
+<style>
+    /* Map Container - Fixed Height to Prevent Scroll */
+    /* Map Container - Fixed Height to Prevent Scroll */
+    /* Map Container - Fixed Height to Prevent Scroll */
+    .map-container-fixed {
+        position: relative;
+        width: 100%;
+        height: 600px;
+        overflow: hidden;
+        background: #f8f9fa;
+        border-radius: 12px;
+    }
+
+    .map-wrapper {
+        width: 90%;
+        height: 100%;
+        overflow: hidden;
+        /* Add these lines to center the map */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .usa-map-object {
+        width: 100%;
+        height: 120%;
+        object-fit: contain;
+        object-position: center;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .map-fallback {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        background: #f3f4f6;
+    }
+
+    /* Loading Overlay */
+    .map-loading {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(255, 255, 255, 0.95);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 100;
+        border-radius: 12px;
+    }
+
+    .loading-spinner {
+        text-align: center;
+    }
+
+    .spinner {
+        border: 4px solid #e5e7eb;
+        border-top: 4px solid #3b82f6;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+        margin: 0 auto;
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    .map-tooltip {
+        position: absolute;
+        backdrop-filter: blur(10px);
+        background: rgba(13, 148, 136, 0.85); /* 🟢 Teal background */
+        color: #ffffff;
+        padding: 10px 16px;
+        border-radius: 10px;
+        font-size: 14px;
+        font-weight: 600;
+        white-space: nowrap;
+        pointer-events: none;
+        opacity: 0;
+        transform: scale(0.95);
+        transition:
+            opacity 0.3s ease,
+            transform 0.3s ease;
+        z-index: 1000;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .map-tooltip.show {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    .map-tooltip::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 20px; /* ⬅️ Arrow moved to left */
+        transform: translateX(0);
+        border: 6px solid transparent;
+        border-top-color: rgba(13, 148, 136, 0.85); /* 🟢 Same as tooltip bg */
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .map-container-fixed {
+            height: 350px;
+        }
+
+        .grid.lg\\:grid-cols-3 {
+            grid-template-columns: 1fr;
+        }
+
+        .grid.md\\:grid-cols-3 {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .map-container-fixed {
+            height: 300px;
+            margin: 0 -1rem;
+            border-radius: 0;
+        }
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #c1c1c1;
+        border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #a8a8a8;
+    }
+</style>
+{% endblock %}

@@ -1,0 +1,552 @@
+{% extends "base.html" %} {% block title %}{{ state.title }} | Ardur
+Healthcare{% endblock %} {% block meta %}
+<meta
+    name="description"
+    content="{{ state.subtitle }}. {{ state.description[:150] }}..."
+/>
+<link rel="canonical" href="{{ request.url }}" />
+{% endblock %} {% block content %}
+<div class="bg-white">
+    <!-- Hero Section -->
+    <section class="container mx-auto px-4 text-center py-16 md:py-24">
+        <div class="max-w-4xl mx-auto">
+            <div
+                class="inline-flex items-center px-4 py-2 bg-brand-primary/10 rounded-full mb-6"
+                data-aos="fade-down"
+            >
+                <i class="ri-map-pin-line text-brand-primary mr-2"></i>
+                <span class="text-brand-primary font-semibold"
+                    >{{ state.name }} Healthcare</span
+                >
+            </div>
+            <h1
+                class="text-4xl md:text-6xl font-bold font-montserrat text-brand-dark mb-4"
+                data-aos="fade-up"
+            >
+                Medical Billing Services in
+                <span class="text-brand-primary">{{ state.name }}</span>
+            </h1>
+            <p
+                class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8"
+                data-aos="fade-up"
+                data-aos-delay="200"
+            >
+                {{ state.subtitle }}
+            </p>
+            <div
+                class="flex flex-col sm:flex-row gap-4 justify-center"
+                data-aos="fade-up"
+                data-aos-delay="300"
+            >
+                <a
+                    href="{{ url_for('contact.contact') }}"
+                    class="bg-brand-primary text-white font-montserrat font-semibold px-8 py-4 rounded-full hover:scale-105 hover:bg-brand-dark hover:shadow-xl transition duration-300 inline-flex items-center justify-center"
+                >
+                    <i class="ri-phone-line mr-2"></i>
+                    Get Free Consultation
+                </a>
+                <a
+                    href="{{ url_for('ourreach.states_list') }}"
+                    class="bg-white text-brand-primary border-2 border-brand-primary font-montserrat font-semibold px-8 py-4 rounded-full hover:bg-brand-primary hover:text-white transition duration-300 inline-flex items-center justify-center"
+                >
+                    <i class="ri-list-check mr-2"></i>
+                    View All States
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content with Two-Column Layout -->
+    <section class="py-16 md:py-24 bg-brand-light">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto">
+                <!-- Left Column - Scrollable Content -->
+                <div class="flex-1 lg:w-2/3">
+                    <div
+                        class="space-y-8 text-gray-700 text-left text-base leading-relaxed"
+                    >
+                        <!-- Introduction -->
+                        <div
+                            data-aos="fade-up"
+                            class="bg-white rounded-2xl p-8 shadow-lg"
+                        >
+                            <h2
+                                class="text-2xl md:text-3xl font-bold text-brand-dark mb-6"
+                            >
+                                {{ state.subtitle }}
+                            </h2>
+                            <p class="text-lg leading-relaxed">
+                                {{ state.description }}
+                            </p>
+                        </div>
+
+                        <!-- Why Choose Us -->
+                        <div
+                            data-aos="fade-up"
+                            class="bg-white rounded-2xl p-8 shadow-lg"
+                        >
+                            <h2
+                                class="text-2xl md:text-3xl font-bold text-brand-dark mb-6"
+                            >
+                                Why {{ state.name }} Providers Choose Ardur
+                                Healthcare
+                            </h2>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                {% for reason in state.why_choose_us %}
+                                <div class="flex items-start space-x-3">
+                                    <div
+                                        class="w-6 h-6 bg-brand-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1"
+                                    >
+                                        <i
+                                            class="ri-check-line text-brand-primary text-sm"
+                                        ></i>
+                                    </div>
+                                    <p class="text-gray-700">{{ reason }}</p>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <!-- Payers Section -->
+                        <div
+                            data-aos="fade-up"
+                            class="bg-white rounded-2xl p-8 shadow-lg"
+                        >
+                            <h2
+                                class="text-2xl md:text-3xl font-bold text-brand-dark mb-6"
+                            >
+                                Local Payer Knowledge That Drives Reimbursements
+                            </h2>
+                            <p class="text-lg mb-6">
+                                Billing policies and documentation standards
+                                vary across states. Ardur Healthcare stays
+                                current with {{ state.name }}'s payer guidelines
+                                to ensure clean, timely claims.
+                            </p>
+                            <p class="font-semibold text-brand-dark mb-4">
+                                We work with payers like:
+                            </p>
+                            <div
+                                class="grid md:grid-cols-2 lg:grid-cols-3 gap-3"
+                            >
+                                {% for payer in state.payers %}
+                                <div
+                                    class="flex items-center space-x-2 bg-brand-light p-3 rounded-lg"
+                                >
+                                    <i
+                                        class="ri-building-line text-brand-primary flex-shrink-0"
+                                    ></i>
+                                    <span class="text-sm text-gray-700"
+                                        >{{ payer }}</span
+                                    >
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <!-- Services Section -->
+                        <div
+                            data-aos="fade-up"
+                            class="bg-white rounded-2xl p-8 shadow-lg"
+                        >
+                            <h2
+                                class="text-2xl md:text-3xl font-bold text-brand-dark mb-6"
+                            >
+                                Our Medical Billing Services for {{ state.name
+                                }} Practices
+                            </h2>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                {% for service in state.services %}
+                                <div class="flex items-start space-x-3">
+                                    <div
+                                        class="w-6 h-6 bg-brand-secondary/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1"
+                                    >
+                                        <i
+                                            class="ri-service-line text-brand-primary text-sm"
+                                        ></i>
+                                    </div>
+                                    <div>
+                                        <h3
+                                            class="font-semibold text-brand-dark mb-2"
+                                        >
+                                            {{ service }}
+                                        </h3>
+                                        <p class="text-gray-600 text-sm">
+                                            Professional {{ service.lower() }}
+                                            services tailored to {{ state.name
+                                            }} healthcare providers.
+                                        </p>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <!-- Specialties and Software -->
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <!-- Specialties -->
+                            <div
+                                data-aos="fade-up"
+                                class="bg-white rounded-2xl p-8 shadow-lg"
+                            >
+                                <h2
+                                    class="text-xl md:text-2xl font-bold text-brand-dark mb-6"
+                                >
+                                    Specialty Billing Expertise
+                                </h2>
+                                <p class="text-gray-600 mb-4">
+                                    We support a wide range of specialties
+                                    across {{ state.name }}:
+                                </p>
+                                <div class="space-y-2">
+                                    {% for specialty in state.specialties %}
+                                    <div class="flex items-center space-x-2">
+                                        <i
+                                            class="ri-focus-line text-brand-primary text-sm"
+                                        ></i>
+                                        <span class="text-gray-700 capitalize"
+                                            >{{ specialty }}</span
+                                        >
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+
+                            <!-- Software Compatibility -->
+                            <div
+                                data-aos="fade-up"
+                                class="bg-white rounded-2xl p-8 shadow-lg"
+                            >
+                                <h2
+                                    class="text-xl md:text-2xl font-bold text-brand-dark mb-6"
+                                >
+                                    Software Compatibility
+                                </h2>
+                                <p class="text-gray-600 mb-4">
+                                    We work with leading EHR platforms:
+                                </p>
+                                <div class="space-y-2">
+                                    {% for software in
+                                    state.software_compatibility %}
+                                    <div class="flex items-center space-x-2">
+                                        <i
+                                            class="ri-computer-line text-brand-primary text-sm"
+                                        ></i>
+                                        <span class="text-gray-700"
+                                            >{{ software }}</span
+                                        >
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQs Section -->
+                        <div
+                            data-aos="fade-up"
+                            class="bg-white rounded-2xl p-8 shadow-lg"
+                        >
+                            <h2
+                                class="text-2xl md:text-3xl font-bold text-brand-dark mb-8"
+                            >
+                                FAQs for {{ state.name }} Healthcare Providers
+                            </h2>
+                            <div class="space-y-6">
+                                {% for faq in state.faqs %}
+                                <div
+                                    class="border-b border-gray-200 pb-4 last:border-b-0"
+                                >
+                                    <h3
+                                        class="font-semibold text-brand-dark mb-3 text-lg"
+                                    >
+                                        {{ faq.question }}
+                                    </h3>
+                                    <p class="text-gray-600 leading-relaxed">
+                                        {{ faq.answer }}
+                                    </p>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column - Fixed Contact Panel -->
+                <div class="lg:w-1/3">
+                    <div class="lg:sticky lg:top-8">
+                        <div
+                            data-aos="fade-up"
+                            class="bg-gradient-to-br from-brand-primary to-brand-dark rounded-2xl p-8 text-white shadow-2xl"
+                        >
+                            <div class="text-center mb-8">
+                                <div
+                                    class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4"
+                                >
+                                    <i
+                                        class="ri-customer-service-2-line text-3xl text-white"
+                                    ></i>
+                                </div>
+                                <h3 class="text-2xl font-bold mb-2">
+                                    Ready to Get Started?
+                                </h3>
+                                <p class="text-white/90">
+                                    Schedule your free consultation with our {{
+                                    state.name }} billing experts
+                                </p>
+                            </div>
+
+                            <!-- Contact Form -->
+                            <form
+                                class="space-y-4"
+                                action="{{ url_for('contact.contact') }}"
+                                method="GET"
+                            >
+                                <div>
+                                    <label
+                                        class="block text-sm font-medium mb-2"
+                                        for="name"
+                                    >
+                                        Full Name
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
+                                        placeholder="Enter your full name"
+                                        required
+                                    />
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-sm font-medium mb-2"
+                                        for="email"
+                                    >
+                                        Email Address
+                                    </label>
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
+                                        placeholder="Enter your email"
+                                        required
+                                    />
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-sm font-medium mb-2"
+                                        for="phone"
+                                    >
+                                        Phone Number
+                                    </label>
+                                    <input
+                                        type="tel"
+                                        id="phone"
+                                        name="phone"
+                                        class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
+                                        placeholder="Enter your phone number"
+                                        required
+                                    />
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-sm font-medium mb-2"
+                                        for="practice"
+                                    >
+                                        Practice Name
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="practice"
+                                        name="practice"
+                                        class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
+                                        placeholder="Enter your practice name"
+                                    />
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-sm font-medium mb-2"
+                                        for="message"
+                                    >
+                                        Message
+                                    </label>
+                                    <textarea
+                                        id="message"
+                                        name="message"
+                                        rows="3"
+                                        class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
+                                        placeholder="Tell us about your billing needs..."
+                                    ></textarea>
+                                </div>
+                                <button
+                                    type="submit"
+                                    class="w-full bg-white text-brand-primary font-semibold py-4 rounded-lg hover:bg-gray-100 transition duration-300 flex items-center justify-center"
+                                >
+                                    <i class="ri-send-plane-line mr-2"></i>
+                                    Get Free Consultation
+                                </button>
+                            </form>
+
+                            <!-- Contact Info -->
+                            <div class="mt-8 pt-6 border-t border-white/20">
+                                <div class="space-y-4">
+                                    <div class="flex items-center space-x-3">
+                                        <i
+                                            class="ri-phone-line text-white/80"
+                                        ></i>
+                                        <div>
+                                            <p class="text-sm text-white/80">
+                                                Call us directly
+                                            </p>
+                                            <p class="font-semibold">
+                                                (214) 800-6161
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center space-x-3">
+                                        <i
+                                            class="ri-time-line text-white/80"
+                                        ></i>
+                                        <div>
+                                            <p class="text-sm text-white/80">
+                                                Business Hours
+                                            </p>
+                                            <p class="font-semibold">
+                                                Mon-Fri: 8AM-6PM CST
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center space-x-3">
+                                        <i
+                                            class="ri-map-pin-line text-white/80"
+                                        ></i>
+                                        <div>
+                                            <p class="text-sm text-white/80">
+                                                Serving
+                                            </p>
+                                            <p class="font-semibold">
+                                                {{ state.name }} Healthcare
+                                                Providers
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Trust Indicators -->
+                            <div class="mt-6 pt-6 border-t border-white/20">
+                                <div class="grid grid-cols-2 gap-4 text-center">
+                                    <div>
+                                        <p class="text-2xl font-bold">500+</p>
+                                        <p class="text-xs text-white/80">
+                                            Happy Clients
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <p class="text-2xl font-bold">99%</p>
+                                        <p class="text-xs text-white/80">
+                                            Claim Accuracy
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <p class="text-2xl font-bold">15+</p>
+                                        <p class="text-xs text-white/80">
+                                            Years Experience
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <p class="text-2xl font-bold">24/7</p>
+                                        <p class="text-xs text-white/80">
+                                            Support
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="py-20 md:py-32 bg-brand-secondary text-center">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up">
+            <h2
+                class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark mb-6"
+            >
+                Transform Your {{ state.name }} Practice Today
+            </h2>
+            <p class="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
+                Join hundreds of {{ state.name }} healthcare providers who trust
+                Ardur Healthcare to maximize their revenue and streamline their
+                billing processes.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                    href="{{ url_for('contact.contact') }}"
+                    class="bg-brand-primary text-white font-montserrat font-semibold px-8 py-4 rounded-full hover:scale-105 hover:bg-brand-dark hover:shadow-xl transition duration-300 inline-flex items-center justify-center"
+                >
+                    <i class="ri-phone-line mr-2"></i>
+                    Call (214) 800-6161
+                </a>
+                <a
+                    href="{{ url_for('ourreach.index') }}"
+                    class="bg-white text-brand-primary border-2 border-brand-primary font-montserrat font-semibold px-8 py-4 rounded-full hover:bg-brand-primary hover:text-white transition duration-300 inline-flex items-center justify-center"
+                >
+                    <i class="ri-map-pin-line mr-2"></i>
+                    View Interactive Map
+                </a>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- AOS CSS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+<!-- Remix Icon CSS -->
+<link
+    href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+
+<!-- AOS JavaScript -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 800,
+        once: true,
+    });
+</script>
+
+<!-- Custom Styles for Enhanced Layout -->
+<style>
+    @media (min-width: 1024px) {
+        .lg\:sticky {
+            position: -webkit-sticky;
+            position: sticky;
+        }
+        .lg\:top-8 {
+            top: 2rem;
+        }
+    }
+
+    /* Smooth scrolling for better UX */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Enhanced form styling */
+    .form-input:focus {
+        box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+    }
+
+    /* Responsive improvements */
+    @media (max-width: 1023px) {
+        .lg\:sticky {
+            position: static;
+        }
+    }
+</style>
+{% endblock %}

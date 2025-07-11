@@ -1,0 +1,463 @@
+{% extends "base.html" %} {% block title %}Medical Billing Services by State -
+Ardur Healthcare{% endblock %} {% block content %}
+<main class="min-h-screen">
+    <!-- Hero Section -->
+    <section
+        class="relative overflow-hidden bg-gradient-to-br from-brand-light via-white to-brand-light py-20 md:py-32"
+    >
+        <div class="absolute inset-0 bg-white/50"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div
+                    class="inline-flex items-center px-4 py-2 bg-brand-primary/10 rounded-full mb-6"
+                    data-aos="fade-down"
+                >
+                    <i class="ri-map-2-line text-brand-primary mr-2"></i>
+                    <span class="text-brand-primary font-semibold"
+                        >Nationwide Coverage</span
+                    >
+                </div>
+                <h1
+                    class="text-4xl md:text-6xl lg:text-7xl font-bold font-montserrat text-brand-dark mb-6 leading-tight"
+                    data-aos="fade-up"
+                    data-aos-delay="100"
+                >
+                    Medical Billing Services by State
+                </h1>
+                <p
+                    class="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                >
+                    Discover specialized medical billing services tailored to
+                    your state's unique healthcare landscape, regulations, and
+                    payer requirements.
+                </p>
+                <div
+                    class="flex flex-col sm:flex-row gap-4 justify-center"
+                    data-aos="fade-up"
+                    data-aos-delay="300"
+                >
+                    <a
+                        href="{{ url_for('ourreach.index') }}"
+                        class="bg-brand-primary text-white font-montserrat font-semibold px-8 py-4 rounded-full hover:scale-105 hover:bg-brand-dark hover:shadow-xl transition duration-300 inline-flex items-center justify-center"
+                    >
+                        <i class="ri-map-pin-line mr-2"></i>
+                        View Interactive Map
+                    </a>
+                    <a
+                        href="#states-grid"
+                        class="bg-white text-brand-primary border-2 border-brand-primary font-montserrat font-semibold px-8 py-4 rounded-full hover:bg-brand-primary hover:text-white transition duration-300 inline-flex items-center justify-center"
+                    >
+                        <i class="ri-list-check mr-2"></i>
+                        Browse All States
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Decorative Elements -->
+        <div
+            class="absolute top-10 left-10 w-20 h-20 bg-brand-primary/10 rounded-full blur-xl"
+        ></div>
+        <div
+            class="absolute bottom-10 right-10 w-32 h-32 bg-brand-secondary/20 rounded-full blur-xl"
+        ></div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="text-white" data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="text-3xl md:text-4xl font-bold font-montserrat mb-2"
+                    >
+                        {{ states|length }}
+                    </div>
+                    <div class="text-gray-300">States Covered</div>
+                </div>
+                <div class="text-white" data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="text-3xl md:text-4xl font-bold font-montserrat mb-2"
+                    >
+                        99%+
+                    </div>
+                    <div class="text-gray-300">Clean Claim Rate</div>
+                </div>
+                <div class="text-white" data-aos="fade-up" data-aos-delay="300">
+                    <div
+                        class="text-3xl md:text-4xl font-bold font-montserrat mb-2"
+                    >
+                        24/7
+                    </div>
+                    <div class="text-gray-300">Support Available</div>
+                </div>
+                <div class="text-white" data-aos="fade-up" data-aos-delay="400">
+                    <div
+                        class="text-3xl md:text-4xl font-bold font-montserrat mb-2"
+                    >
+                        48hrs
+                    </div>
+                    <div class="text-gray-300">Claim Turnaround</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search and Filter Section -->
+    <section class="py-12 bg-white border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div
+                class="flex flex-col md:flex-row gap-4 items-center justify-between"
+            >
+                <div class="flex-1 max-w-md">
+                    <div class="relative">
+                        <input
+                            type="text"
+                            id="state-search"
+                            placeholder="Search states..."
+                            class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-primary focus:border-transparent"
+                        />
+                        <i
+                            class="ri-search-line absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+                        ></i>
+                    </div>
+                </div>
+                <div class="text-sm text-gray-600">
+                    <span id="state-count">{{ states|length }}</span> states
+                    available
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- States Grid Section -->
+    <section id="states-grid" class="py-20 md:py-32 bg-brand-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2
+                    class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark mb-4"
+                    data-aos="fade-up"
+                >
+                    Choose Your State
+                </h2>
+                <div
+                    class="w-24 h-1 bg-brand-primary mx-auto mb-8"
+                    data-aos="fade-up"
+                    data-aos-delay="100"
+                ></div>
+                <p
+                    class="text-lg text-gray-600 max-w-3xl mx-auto"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                >
+                    Select your state to learn about our specialized medical
+                    billing services, local payer expertise, and state-specific
+                    healthcare solutions.
+                </p>
+            </div>
+
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+                id="states-container"
+            >
+                {% for state in states %}
+                <div
+                    class="state-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition duration-300 p-6 border border-gray-100 hover:border-brand-primary/20 group"
+                    data-aos="fade-up"
+                    data-aos-delay="{{ loop.index * 50 }}"
+                    data-state-name="{{ state.name.lower() }}"
+                >
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center space-x-3">
+                            <div
+                                class="w-12 h-12 bg-brand-primary/10 rounded-full flex items-center justify-center group-hover:bg-brand-primary/20 transition duration-300"
+                            >
+                                <i
+                                    class="ri-map-pin-line text-brand-primary text-xl"
+                                ></i>
+                            </div>
+                            <div>
+                                <h3
+                                    class="text-xl font-bold font-montserrat text-brand-dark group-hover:text-brand-primary transition duration-300"
+                                >
+                                    {{ state.name }}
+                                </h3>
+                            </div>
+                        </div>
+                        <i
+                            class="ri-arrow-right-line text-gray-400 group-hover:text-brand-primary group-hover:transform group-hover:translate-x-1 transition duration-300"
+                        ></i>
+                    </div>
+
+                    <p class="text-gray-600 text-sm mb-6 line-clamp-3">
+                        {{ state.description[:120] }}{% if
+                        state.description|length > 120 %}...{% endif %}
+                    </p>
+
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-center text-sm text-gray-600">
+                            <i
+                                class="ri-building-line text-brand-primary mr-2 flex-shrink-0"
+                            ></i>
+                            <span>{{ state.payers|length }} Local Payers</span>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-600">
+                            <i
+                                class="ri-service-line text-brand-primary mr-2 flex-shrink-0"
+                            ></i>
+                            <span
+                                >{{ state.services|length }} Core Services</span
+                            >
+                        </div>
+                        <div class="flex items-center text-sm text-gray-600">
+                            <i
+                                class="ri-focus-line text-brand-primary mr-2 flex-shrink-0"
+                            ></i>
+                            <span
+                                >{{ state.specialties|length }}
+                                Specialties</span
+                            >
+                        </div>
+                    </div>
+
+                    <a
+                        href="{{ url_for('ourreach.state_page', state_slug=state.url_slug) }}"
+                        class="block w-full bg-brand-primary text-white text-center font-montserrat font-semibold py-3 rounded-lg hover:bg-brand-dark transition duration-300"
+                    >
+                        View Details
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- No Results Message -->
+            <div id="no-results" class="text-center py-16 hidden">
+                <div
+                    class="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6"
+                >
+                    <i class="ri-search-line text-gray-400 text-3xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-600 mb-2">
+                    No states found
+                </h3>
+                <p class="text-gray-500">Try adjusting your search terms</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-20 md:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2
+                    class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark mb-4"
+                    data-aos="fade-up"
+                >
+                    Why Choose Ardur Healthcare?
+                </h2>
+                <div
+                    class="w-24 h-1 bg-brand-primary mx-auto mb-8"
+                    data-aos="fade-up"
+                    data-aos-delay="100"
+                ></div>
+                <p
+                    class="text-lg text-gray-600 max-w-3xl mx-auto"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                >
+                    We understand that every state has unique healthcare
+                    challenges. Our tailored approach ensures you get the best
+                    results.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div
+                    class="text-center"
+                    data-aos="fade-up"
+                    data-aos-delay="100"
+                >
+                    <div
+                        class="w-16 h-16 bg-brand-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                    >
+                        <i
+                            class="ri-map-2-line text-brand-primary text-2xl"
+                        ></i>
+                    </div>
+                    <h3
+                        class="text-xl font-bold font-montserrat text-brand-dark mb-3"
+                    >
+                        Local Expertise
+                    </h3>
+                    <p class="text-gray-600">
+                        Deep understanding of state-specific regulations and
+                        payer requirements
+                    </p>
+                </div>
+                <div
+                    class="text-center"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                >
+                    <div
+                        class="w-16 h-16 bg-brand-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                    >
+                        <i
+                            class="ri-shield-check-line text-brand-primary text-2xl"
+                        ></i>
+                    </div>
+                    <h3
+                        class="text-xl font-bold font-montserrat text-brand-dark mb-3"
+                    >
+                        HIPAA Compliant
+                    </h3>
+                    <p class="text-gray-600">
+                        Fully secure systems with enterprise-grade data
+                        protection
+                    </p>
+                </div>
+                <div
+                    class="text-center"
+                    data-aos="fade-up"
+                    data-aos-delay="300"
+                >
+                    <div
+                        class="w-16 h-16 bg-brand-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                    >
+                        <i
+                            class="ri-customer-service-2-line text-brand-primary text-2xl"
+                        ></i>
+                    </div>
+                    <h3
+                        class="text-xl font-bold font-montserrat text-brand-dark mb-3"
+                    >
+                        24/7 Support
+                    </h3>
+                    <p class="text-gray-600">
+                        Round-the-clock assistance across all US time zones
+                    </p>
+                </div>
+                <div
+                    class="text-center"
+                    data-aos="fade-up"
+                    data-aos-delay="400"
+                >
+                    <div
+                        class="w-16 h-16 bg-brand-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                    >
+                        <i
+                            class="ri-line-chart-line text-brand-primary text-2xl"
+                        ></i>
+                    </div>
+                    <h3
+                        class="text-xl font-bold font-montserrat text-brand-dark mb-3"
+                    >
+                        Proven Results
+                    </h3>
+                    <p class="text-gray-600">
+                        Consistently delivering 30%+ revenue increases for our
+                        clients
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 md:py-32 bg-brand-secondary text-center">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up">
+            <h2
+                class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark mb-6"
+            >
+                Ready to Get Started?
+            </h2>
+            <p class="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
+                Connect with our healthcare billing experts today and discover
+                how we can transform your revenue cycle, regardless of your
+                location.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                    href="{{ url_for('contact.contact') }}"
+                    class="bg-brand-primary text-white font-montserrat font-semibold px-8 py-4 rounded-full hover:scale-105 hover:bg-brand-dark hover:shadow-xl transition duration-300 inline-flex items-center justify-center"
+                >
+                    <i class="ri-phone-line mr-2"></i>
+                    Get Free Consultation
+                </a>
+                <a
+                    href="{{ url_for('ourreach.index') }}"
+                    class="bg-white text-brand-primary border-2 border-brand-primary font-montserrat font-semibold px-8 py-4 rounded-full hover:bg-brand-primary hover:text-white transition duration-300 inline-flex items-center justify-center"
+                >
+                    <i class="ri-map-pin-line mr-2"></i>
+                    View Interactive Map
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- AOS CSS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+<!-- Remix Icon CSS -->
+<link
+    href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+
+<!-- AOS JavaScript -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100,
+    });
+
+    // Search functionality
+    document.addEventListener("DOMContentLoaded", function () {
+        const searchInput = document.getElementById("state-search");
+        const stateCards = document.querySelectorAll(".state-card");
+        const stateCount = document.getElementById("state-count");
+        const noResults = document.getElementById("no-results");
+        const statesContainer = document.getElementById("states-container");
+
+        searchInput.addEventListener("input", function () {
+            const searchTerm = this.value.toLowerCase().trim();
+            let visibleCount = 0;
+
+            stateCards.forEach((card) => {
+                const stateName = card.getAttribute("data-state-name");
+                const isVisible = stateName.includes(searchTerm);
+
+                if (isVisible) {
+                    card.style.display = "block";
+                    visibleCount++;
+                } else {
+                    card.style.display = "none";
+                }
+            });
+
+            stateCount.textContent = visibleCount;
+
+            if (visibleCount === 0) {
+                noResults.classList.remove("hidden");
+                statesContainer.classList.add("hidden");
+            } else {
+                noResults.classList.add("hidden");
+                statesContainer.classList.remove("hidden");
+            }
+        });
+    });
+</script>
+
+<style>
+    .line-clamp-3 {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+</style>
+{% endblock %}

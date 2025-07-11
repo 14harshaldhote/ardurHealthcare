@@ -14,7 +14,7 @@ def create_app(config_class=Config):
     # --- START OF REQUIRED CHANGE ---
     # Get the absolute path to the directory containing this __init__.py file (ardurHealthcare/app)
     app_dir = os.path.dirname(os.path.abspath(__file__))
-    
+
     # Go up one level to the project root (ardurHealthcare)
     project_root = os.path.join(app_dir, '..')
 
@@ -24,7 +24,7 @@ def create_app(config_class=Config):
         static_folder=os.path.join(project_root, 'static') # TELL FLASK WHERE YOUR STATIC FOLDER IS
     )
     # --- END OF REQUIRED CHANGE ---
-    
+
     print("🔑 Loading configuration...")
     app.config.from_object(config_class)
 
@@ -69,18 +69,22 @@ def create_app(config_class=Config):
         from .contact import contact as contact_blueprint
         app.register_blueprint(contact_blueprint)
         print("✅ Registered contact blueprint.")
-        
+
         from .services import services as services_blueprint
         app.register_blueprint(services_blueprint)
         print("✅ Registered services blueprint.")
-        
+
         from .resources import resources as resources_blueprint
         app.register_blueprint(resources_blueprint)
         print("✅ Registered resources blueprint.")
-        
+
         from .specialities import specialities as specialities_blueprint
         app.register_blueprint(specialities_blueprint)
         print("✅ Registered specialities blueprint.")
+
+        from .ourreach import ourreach as ourreach_blueprint
+        app.register_blueprint(ourreach_blueprint, url_prefix='/state')
+        print("✅ Registered ourreach blueprint.")
     except Exception as e:
         raise RuntimeError(f"❌ Failed to register blueprints: {str(e)}")
 
