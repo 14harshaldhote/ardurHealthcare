@@ -38,10 +38,6 @@ Services | Ardur Healthcare{% endblock %} {% block meta %}
                 At Ardur Healthcare, we provide specialty-specific medical
                 billing services tailored to the clinical workflows, coding
                 patterns, and reimbursement rules of medical specialties.
-                Whether you're managing mental health visits, chiropractic
-                adjustments, or wound debridement procedures, our billing team
-                understands how to code and submit claims accurately for your
-                specialty.
             </p>
             <div
                 class="flex flex-col sm:flex-row gap-4 justify-center"
@@ -55,7 +51,7 @@ Services | Ardur Healthcare{% endblock %} {% block meta %}
                     <i class="ri-phone-line mr-2"></i> Get Free Consultation
                 </a>
                 <a
-                    href="#specialties-grid"
+                    href="#specialties-table"
                     class="bg-white text-brand-primary border-2 border-brand-primary font-montserrat font-semibold px-8 py-4 rounded-full hover:bg-brand-primary hover:text-white transition duration-300 inline-flex items-center justify-center"
                 >
                     <i class="ri-arrow-down-line mr-2"></i> View Specialties
@@ -64,8 +60,8 @@ Services | Ardur Healthcare{% endblock %} {% block meta %}
         </div>
     </section>
 
-    <!-- Specialties Grid Section -->
-    <section id="specialties-grid" class="py-16 md:py-24 bg-brand-light">
+    <!-- Specialties Table Section -->
+    <section id="specialties-table" class="py-16 md:py-24 bg-white">
         <div class="container mx-auto px-4">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-12">
@@ -73,307 +69,172 @@ Services | Ardur Healthcare{% endblock %} {% block meta %}
                         class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark mb-4"
                         data-aos="fade-up"
                     >
-                        Our Most Popular Billing Services
+                        Our Specialty Billing Services
                     </h2>
                     <p
                         class="text-lg text-gray-600 max-w-3xl mx-auto"
                         data-aos="fade-up"
                         data-aos-delay="200"
                     >
-                        Start with our most requested specialty billing
-                        services, or explore our complete offerings below.
+                        Comprehensive medical billing services for over 40
+                        medical specialties. Find your specialty and learn how
+                        we can optimize your revenue cycle.
                     </p>
                 </div>
 
-                <!-- Priority Services Grid -->
-                {% set priority_services = [ "Mental Health", "Behavioral
-                Health", "Clinical Psychology", "Chiropractic", "Family
-                Practice", "Home Health", "Wound Care", "Physical Therapy",
-                "Massage Therapy", "Podiatry" ] %}
+                <!-- Search and Filter Controls -->
                 <div
-                    id="priority-services"
-                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8"
+                    class="bg-brand-light rounded-lg p-6 mb-8"
                     data-aos="fade-up"
                     data-aos-delay="300"
                 >
-                    {% for service in priority_services %}
                     <div
-                        class="specialty-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-gray-100 hover:border-brand-primary/30 transform hover:-translate-y-1"
+                        class="flex flex-col md:flex-row gap-4 items-center justify-between"
                     >
-                        <div class="flex items-center justify-between mb-4">
-                            <div
-                                class="w-12 h-12 bg-brand-primary/10 rounded-lg flex items-center justify-center"
-                            >
-                                {% if 'Mental Health' in service or 'Behavioral
-                                Health' in service or 'Clinical Psychology' in
-                                service %}
+                        <div class="flex-1 max-w-md">
+                            <div class="relative">
                                 <i
-                                    class="ri-mental-health-line text-brand-primary text-xl"
+                                    class="ri-search-line absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
                                 ></i>
-                                {% elif 'Family Practice' in service %}
-                                <i
-                                    class="ri-family-line text-brand-primary text-xl"
-                                ></i>
-                                {% elif 'Home Health' in service %}
-                                <i
-                                    class="ri-home-heart-line text-brand-primary text-xl"
-                                ></i>
-                                {% elif 'Wound Care' in service %}
-                                <i
-                                    class="ri-band-aid-line text-brand-primary text-xl"
-                                ></i>
-                                {% elif 'Physical Therapy' in service or
-                                'Massage Therapy' in service %}
-                                <i
-                                    class="ri-hand-heart-line text-brand-primary text-xl"
-                                ></i>
-                                {% elif 'Chiropractic' in service %}
-                                <i
-                                    class="ri-body-scan-line text-brand-primary text-xl"
-                                ></i>
-                                {% elif 'Podiatry' in service %}
-                                <i
-                                    class="ri-footprint-line text-brand-primary text-xl"
-                                ></i>
-                                {% else %}
-                                <i
-                                    class="ri-health-book-line text-brand-primary text-xl"
-                                ></i>
-                                {% endif %}
+                                <input
+                                    type="text"
+                                    id="specialty-search"
+                                    placeholder="Search specialties..."
+                                    class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-primary focus:border-transparent transition-all duration-200"
+                                />
                             </div>
-                            <span
-                                class="bg-brand-accent/20 text-brand-accent text-xs font-semibold px-2 py-1 rounded-full"
-                            >
-                                Popular
-                            </span>
                         </div>
-                        <h3 class="text-lg font-semibold text-brand-dark mb-3">
-                            {{ service }} Billing Services
-                        </h3>
-                        <p class="text-sm text-gray-600 mb-4">
-                            Specialized billing services tailored for {{
-                            service.lower() }} providers with industry-specific
-                            expertise and compliance.
-                        </p>
-                        <a
-                            href="{{ url_for('specialities.specialty', specialty_type=service.lower().replace(' ', '-').replace('(', '').replace(')', '').replace('/', '-').replace('&', 'and')) }}"
-                            class="inline-flex items-center text-brand-primary hover:text-brand-dark font-medium text-sm transition-colors duration-200 group"
-                        >
-                            Learn More
-                            <i
-                                class="ri-arrow-right-line ml-1 group-hover:translate-x-1 transition-transform duration-200"
-                            ></i>
-                        </a>
+                        <div class="flex gap-2">
+                            <select
+                                id="category-filter"
+                                class="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-primary focus:border-transparent transition-all duration-200"
+                            >
+                                <option value="">All Categories</option>
+                                <option value="popular">Popular</option>
+                                <option value="primary">Primary Care</option>
+                                <option value="specialty">
+                                    Specialty Care
+                                </option>
+                                <option value="therapy">
+                                    Therapy Services
+                                </option>
+                                <option value="surgical">Surgical</option>
+                            </select>
+                            <button
+                                id="clear-filters"
+                                class="px-6 py-3 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors duration-200"
+                            >
+                                <i class="ri-close-line mr-1"></i> Clear
+                            </button>
+                        </div>
                     </div>
-                    {% endfor %}
                 </div>
 
-                <!-- Expand Button -->
-                <div class="text-center mb-8">
-                    <button
-                        id="expand-btn"
-                        class="bg-brand-primary text-white font-montserrat font-semibold px-8 py-4 rounded-full hover:bg-brand-dark hover:shadow-xl transition duration-300 inline-flex items-center justify-center"
-                        onclick="toggleAllSpecialties()"
-                    >
-                        <i id="expand-icon" class="ri-add-line mr-2"></i>
-                        <span id="expand-text">View All Specialties</span>
-                    </button>
-                </div>
-
-                <!-- All Other Services Grid (Initially Hidden) -->
+                <!-- Specialties Data Table -->
                 <div
-                    id="all-services"
-                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 opacity-0 max-h-0 overflow-hidden transition-all duration-500"
-                    style="display: none"
+                    class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200"
+                    data-aos="fade-up"
+                    data-aos-delay="400"
                 >
-                    {% for service in main_services %} {% if service not in
-                    priority_services %}
-                    <div
-                        class="specialty-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-gray-100 hover:border-brand-primary/20"
-                    >
-                        <div class="flex items-center justify-between mb-4">
-                            <div
-                                class="w-12 h-12 bg-brand-primary/10 rounded-lg flex items-center justify-center"
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead class="bg-brand-primary text-white">
+                                <tr>
+                                    <th
+                                        class="px-6 py-4 text-left text-sm font-semibold uppercase tracking-wider cursor-pointer hover:bg-brand-dark transition-colors duration-200"
+                                        onclick="sortTable(0)"
+                                    >
+                                        <div class="flex items-center">
+                                            Specialty
+                                            <i
+                                                class="ri-arrow-up-down-line ml-2 text-xs"
+                                            ></i>
+                                        </div>
+                                    </th>
+                                    <th
+                                        class="px-6 py-4 text-left text-sm font-semibold uppercase tracking-wider cursor-pointer hover:bg-brand-dark transition-colors duration-200"
+                                        onclick="sortTable(1)"
+                                    >
+                                        <div class="flex items-center">
+                                            Category
+                                            <i
+                                                class="ri-arrow-up-down-line ml-2 text-xs"
+                                            ></i>
+                                        </div>
+                                    </th>
+                                    <th
+                                        class="px-6 py-4 text-left text-sm font-semibold uppercase tracking-wider cursor-pointer hover:bg-brand-dark transition-colors duration-200"
+                                        onclick="sortTable(2)"
+                                    >
+                                        <div class="flex items-center">
+                                            Collection Rate
+                                            <i
+                                                class="ri-arrow-up-down-line ml-2 text-xs"
+                                            ></i>
+                                        </div>
+                                    </th>
+                                    <th
+                                        class="px-6 py-4 text-left text-sm font-semibold uppercase tracking-wider cursor-pointer hover:bg-brand-dark transition-colors duration-200"
+                                        onclick="sortTable(3)"
+                                    >
+                                        <div class="flex items-center">
+                                            Avg. Processing Time
+                                            <i
+                                                class="ri-arrow-up-down-line ml-2 text-xs"
+                                            ></i>
+                                        </div>
+                                    </th>
+                                    <th
+                                        class="px-6 py-4 text-center text-sm font-semibold uppercase tracking-wider"
+                                    >
+                                        Actions
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody
+                                id="specialty-table-body"
+                                class="divide-y divide-gray-200"
                             >
-                                {% if 'Cardiology' in service %}
-                                <i
-                                    class="ri-heart-pulse-line text-brand-primary text-xl"
-                                ></i>
-                                {% elif 'Orthopedic' in service %}
-                                <i
-                                    class="ri-bone-line text-brand-primary text-xl"
-                                ></i>
-                                {% elif 'Dental' in service %}
-                                <i
-                                    class="ri-tooth-line text-brand-primary text-xl"
-                                ></i>
-                                {% elif 'Dermatology' in service %}
-                                <i
-                                    class="ri-skin-line text-brand-primary text-xl"
-                                ></i>
-                                {% elif 'Radiology' in service %}
-                                <i
-                                    class="ri-scan-line text-brand-primary text-xl"
-                                ></i>
-                                {% elif 'Emergency' in service %}
-                                <i
-                                    class="ri-emergency-line text-brand-primary text-xl"
-                                ></i>
-                                {% elif 'Surgery' in service %}
-                                <i
-                                    class="ri-scissors-cut-line text-brand-primary text-xl"
-                                ></i>
-                                {% elif 'Pediatrics' in service %}
-                                <i
-                                    class="ri-baby-line text-brand-primary text-xl"
-                                ></i>
-                                {% elif 'Neurology' in service %}
-                                <i
-                                    class="ri-brain-line text-brand-primary text-xl"
-                                ></i>
-                                {% elif 'Oncology' in service %}
-                                <i
-                                    class="ri-capsule-line text-brand-primary text-xl"
-                                ></i>
-                                {% elif 'Pharmacy' in service %}
-                                <i
-                                    class="ri-medicine-bottle-line text-brand-primary text-xl"
-                                ></i>
-                                {% elif 'Occupational Therapy' in service %}
-                                <i
-                                    class="ri-hand-heart-line text-brand-primary text-xl"
-                                ></i>
-                                {% elif 'Laboratory' in service %}
-                                <i
-                                    class="ri-test-tube-line text-brand-primary text-xl"
-                                ></i>
-                                {% elif 'Optometry' in service %}
-                                <i
-                                    class="ri-eye-line text-brand-primary text-xl"
-                                ></i>
-                                {% elif 'Urology' in service %}
-                                <i
-                                    class="ri-drop-line text-brand-primary text-xl"
-                                ></i>
-                                {% elif 'Sleep' in service %}
-                                <i
-                                    class="ri-moon-line text-brand-primary text-xl"
-                                ></i>
-                                {% elif 'Pain Management' in service %}
-                                <i
-                                    class="ri-healing-line text-brand-primary text-xl"
-                                ></i>
-                                {% elif 'Hospice' in service %}
-                                <i
-                                    class="ri-home-heart-line text-brand-primary text-xl"
-                                ></i>
-                                {% elif 'Anesthesia' in service %}
-                                <i
-                                    class="ri-syringe-line text-brand-primary text-xl"
-                                ></i>
-                                {% elif 'Primary Care' in service or 'Internal
-                                Medicine' in service %}
-                                <i
-                                    class="ri-user-heart-line text-brand-primary text-xl"
-                                ></i>
-                                {% elif 'Urgent Care' in service %}
-                                <i
-                                    class="ri-alarm-warning-line text-brand-primary text-xl"
-                                ></i>
-                                {% elif 'OB GYN' in service %}
-                                <i
-                                    class="ri-parent-line text-brand-primary text-xl"
-                                ></i>
-                                {% elif 'Allergy' in service %}
-                                <i
-                                    class="ri-virus-line text-brand-primary text-xl"
-                                ></i>
-                                {% elif 'Endocrinology' in service %}
-                                <i
-                                    class="ri-medicine-bottle-line text-brand-primary text-xl"
-                                ></i>
-                                {% elif 'Gastroenterology' in service %}
-                                <i
-                                    class="ri-stomach-line text-brand-primary text-xl"
-                                ></i>
-                                {% elif 'Pulmonology' in service %}
-                                <i
-                                    class="ri-lungs-line text-brand-primary text-xl"
-                                ></i>
-                                {% elif 'Rheumatology' in service %}
-                                <i
-                                    class="ri-bone-line text-brand-primary text-xl"
-                                ></i>
-                                {% elif 'Pathology' in service %}
-                                <i
-                                    class="ri-microscope-line text-brand-primary text-xl"
-                                ></i>
-                                {% elif 'Ambulatory' in service %}
-                                <i
-                                    class="ri-hospital-line text-brand-primary text-xl"
-                                ></i>
-                                {% elif 'DME' in service or 'Equipment' in
-                                service %}
-                                <i
-                                    class="ri-wheelchair-line text-brand-primary text-xl"
-                                ></i>
-                                {% elif 'Sports Medicine' in service %}
-                                <i
-                                    class="ri-football-line text-brand-primary text-xl"
-                                ></i>
-                                {% elif 'Skilled Nursing' in service or 'SNF' in
-                                service %}
-                                <i
-                                    class="ri-nurse-line text-brand-primary text-xl"
-                                ></i>
-                                {% elif 'Plastic Surgery' in service %}
-                                <i
-                                    class="ri-scissors-cut-line text-brand-primary text-xl"
-                                ></i>
-                                {% elif 'Otolaryngology' in service or 'ENT' in
-                                service %}
-                                <i
-                                    class="ri-ear-line text-brand-primary text-xl"
-                                ></i>
-                                {% elif 'Oral' in service or 'Maxillofacial' in
-                                service %}
-                                <i
-                                    class="ri-tooth-line text-brand-primary text-xl"
-                                ></i>
-                                {% else %}
-                                <i
-                                    class="ri-health-book-line text-brand-primary text-xl"
-                                ></i>
-                                {% endif %}
-                            </div>
-                        </div>
-                        <h3 class="text-lg font-semibold text-brand-dark mb-3">
-                            {{ service }}{% if 'Billing Services' not in service
-                            %} Billing Services{% endif %}
-                        </h3>
-                        <p class="text-sm text-gray-600 mb-4">
-                            Specialized billing services tailored for {{
-                            service.lower() }} providers with industry-specific
-                            expertise.
-                        </p>
-                        <a
-                            href="{{ url_for('specialities.specialty', specialty_type=service.lower().replace(' ', '-').replace('(', '').replace(')', '').replace('/', '-').replace('&', 'and')) }}"
-                            class="inline-flex items-center text-brand-primary hover:text-brand-dark font-medium text-sm transition-colors duration-200 group"
-                        >
-                            Learn More
-                            <i
-                                class="ri-arrow-right-line ml-1 group-hover:translate-x-1 transition-transform duration-200"
-                            ></i>
-                        </a>
+                                <!-- Data will be populated by JavaScript -->
+                            </tbody>
+                        </table>
                     </div>
-                    {% endif %} {% endfor %}
+                </div>
+
+                <!-- Table Info -->
+                <div
+                    class="flex flex-col md:flex-row justify-between items-center mt-6 text-sm text-gray-600"
+                >
+                    <div>
+                        Showing <span id="showing-count">0</span> of
+                        <span id="total-count">0</span> specialties
+                    </div>
+                    <div class="flex items-center space-x-2 mt-4 md:mt-0">
+                        <span>Rows per page:</span>
+                        <select
+                            id="rows-per-page"
+                            class="border border-gray-300 rounded px-2 py-1 focus:ring-2 focus:ring-brand-primary focus:border-transparent"
+                        >
+                            <option value="10">10</option>
+                            <option value="25" selected>25</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="flex justify-center mt-8">
+                    <nav id="pagination" class="flex items-center space-x-2">
+                        <!-- Pagination will be populated by JavaScript -->
+                    </nav>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Quick Stats Section -->
-    <section class="py-12 bg-white border-t border-gray-100">
+    <section class="py-12 bg-brand-light border-t border-gray-100">
         <div class="container mx-auto px-4">
             <div class="max-w-6xl mx-auto">
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
@@ -422,164 +283,67 @@ Services | Ardur Healthcare{% endblock %} {% block meta %}
         </div>
     </section>
 
-    <!-- Don't See Your Specialty Section -->
-    <section class="py-16 md:py-20 bg-brand-light">
+    <!-- CTA Section -->
+    <section class="py-16 md:py-20 bg-brand-primary text-white">
         <div class="container mx-auto px-4">
             <div class="max-w-4xl mx-auto text-center">
-                <div
-                    class="bg-gradient-to-r from-brand-primary/10 to-brand-accent/10 rounded-2xl p-8 md:p-12"
-                    data-aos="fade-up"
-                >
-                    <div
-                        class="w-16 h-16 bg-brand-primary/20 rounded-full flex items-center justify-center mx-auto mb-6"
+                <h2 class="text-3xl md:text-4xl font-bold font-montserrat mb-4">
+                    Don't See Your Specialty? We've Got You Covered.
+                </h2>
+                <p class="text-lg mb-8 max-w-3xl mx-auto opacity-90">
+                    We're always adding to our specialty offerings. If your
+                    field isn't listed above, chances are we already support it.
+                    Contact us today to find out how we can tailor our billing
+                    services to your unique clinical and operational needs.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a
+                        href="{{ url_for('contact.contact_form') }}"
+                        class="bg-white text-brand-primary font-montserrat font-semibold px-8 py-4 rounded-full hover:scale-105 hover:shadow-xl transition duration-300 inline-flex items-center justify-center"
                     >
-                        <i
-                            class="ri-search-line text-brand-primary text-2xl"
-                        ></i>
-                    </div>
-                    <h2
-                        class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark mb-4"
+                        <i class="ri-phone-line mr-2"></i> Request a Quote
+                    </a>
+                    <a
+                        href="tel:+1-555-ARDUR-HC"
+                        class="bg-transparent text-white border-2 border-white font-montserrat font-semibold px-8 py-4 rounded-full hover:bg-white hover:text-brand-primary transition duration-300 inline-flex items-center justify-center"
                     >
-                        Don't See Your Specialty? We've Got You Covered.
-                    </h2>
-                    <p class="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
-                        We're always adding to our specialty offerings. If your
-                        field isn't listed above, chances are we already support
-                        it. Contact us today to find out how we can tailor our
-                        billing services to your unique clinical and operational
-                        needs.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a
-                            href="{{ url_for('contact.contact_form') }}"
-                            class="bg-brand-primary text-white font-montserrat font-semibold px-8 py-4 rounded-full hover:scale-105 hover:bg-brand-dark hover:shadow-xl transition duration-300 inline-flex items-center justify-center"
-                        >
-                            <i class="ri-phone-line mr-2"></i> Request a Quote
-                        </a>
-                        <a
-                            href="tel:+1-555-ARDUR-HC"
-                            class="bg-white text-brand-primary border-2 border-brand-primary font-montserrat font-semibold px-8 py-4 rounded-full hover:bg-brand-primary hover:text-white transition duration-300 inline-flex items-center justify-center"
-                        >
-                            <i class="ri-phone-line mr-2"></i> Call Us Now
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Additional Benefits Section -->
-    <section class="py-16 md:py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="max-w-7xl mx-auto">
-                <div class="text-center mb-12">
-                    <h2
-                        class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark mb-4"
-                        data-aos="fade-up"
-                    >
-                        Why Choose Ardur Healthcare for Your Specialty?
-                    </h2>
-                    <p
-                        class="text-lg text-gray-600 max-w-3xl mx-auto"
-                        data-aos="fade-up"
-                        data-aos-delay="200"
-                    >
-                        Our specialized approach ensures maximum revenue and
-                        minimum hassle for your practice.
-                    </p>
-                </div>
-
-                <div
-                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-                    data-aos="fade-up"
-                    data-aos-delay="300"
-                >
-                    <div
-                        class="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300 border border-gray-100"
-                    >
-                        <div
-                            class="w-16 h-16 bg-brand-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"
-                        >
-                            <i
-                                class="ri-award-line text-brand-primary text-2xl"
-                            ></i>
-                        </div>
-                        <h3 class="text-xl font-semibold text-brand-dark mb-3">
-                            Specialty Expertise
-                        </h3>
-                        <p class="text-gray-600">
-                            Deep understanding of specialty-specific coding,
-                            billing patterns, and regulatory requirements.
-                        </p>
-                    </div>
-
-                    <div
-                        class="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300 border border-gray-100"
-                    >
-                        <div
-                            class="w-16 h-16 bg-brand-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"
-                        >
-                            <i
-                                class="ri-line-chart-line text-brand-primary text-2xl"
-                            ></i>
-                        </div>
-                        <h3 class="text-xl font-semibold text-brand-dark mb-3">
-                            Increased Revenue
-                        </h3>
-                        <p class="text-gray-600">
-                            Maximize collections and reduce claim denials with
-                            our proven billing strategies.
-                        </p>
-                    </div>
-
-                    <div
-                        class="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300 border border-gray-100"
-                    >
-                        <div
-                            class="w-16 h-16 bg-brand-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"
-                        >
-                            <i
-                                class="ri-shield-check-line text-brand-primary text-2xl"
-                            ></i>
-                        </div>
-                        <h3 class="text-xl font-semibold text-brand-dark mb-3">
-                            Compliance Assurance
-                        </h3>
-                        <p class="text-gray-600">
-                            Stay compliant with ever-changing healthcare
-                            regulations and specialty requirements.
-                        </p>
-                    </div>
+                        <i class="ri-phone-line mr-2"></i> Call Us Now
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 </div>
 
+<!-- Specialty Detail Modal -->
+<div
+    id="specialty-modal"
+    class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4"
+>
+    <div
+        class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+    >
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-4">
+                <h3
+                    id="modal-title"
+                    class="text-2xl font-bold text-brand-dark"
+                ></h3>
+                <button
+                    onclick="closeModal()"
+                    class="text-gray-500 hover:text-gray-700"
+                >
+                    <i class="ri-close-line text-2xl"></i>
+                </button>
+            </div>
+            <div id="modal-content" class="prose max-w-none">
+                <!-- Content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+</div>
+
 <style>
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    .specialty-card {
-        animation: fadeInUp 0.6s ease-out;
-    }
-
-    .specialty-card:nth-child(odd) {
-        animation-delay: 0.1s;
-    }
-
-    .specialty-card:nth-child(even) {
-        animation-delay: 0.2s;
-    }
-
     .specialty-stat {
         opacity: 0;
         animation: fadeInUp 0.8s ease-out forwards;
@@ -598,60 +362,399 @@ Services | Ardur Healthcare{% endblock %} {% block meta %}
         animation-delay: 0.4s;
     }
 
-    .hover\:scale-105:hover {
-        transform: scale(1.05);
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
-    /* Smooth transitions for expand/collapse */
-    .expanding {
-        display: grid !important;
-        opacity: 1 !important;
-        max-height: 2000px !important;
+    .table-row:hover {
+        background-color: #f8fafc;
+        cursor: pointer;
     }
 
-    .collapsing {
-        opacity: 0 !important;
-        max-height: 0 !important;
+    .status-badge {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.25rem 0.75rem;
+        font-size: 0.75rem;
+        font-weight: 600;
+        border-radius: 9999px;
+    }
+
+    .status-popular {
+        background-color: #fef3c7;
+        color: #d97706;
+    }
+
+    .status-primary {
+        background-color: #dbeafe;
+        color: #2563eb;
+    }
+
+    .status-specialty {
+        background-color: #f3e8ff;
+        color: #7c3aed;
+    }
+
+    .status-therapy {
+        background-color: #d1fae5;
+        color: #059669;
+    }
+
+    .status-surgical {
+        background-color: #fce7f3;
+        color: #be185d;
+    }
+
+    .collection-rate {
+        font-weight: 600;
+        color: #059669;
+    }
+
+    .processing-time {
+        color: #6b7280;
+        font-weight: 500;
+    }
+
+    .action-button {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        border-radius: 0.375rem;
+        transition: all 0.2s;
+        text-decoration: none;
+    }
+
+    .action-learn-more {
+        background-color: #3b82f6;
+        color: white;
+    }
+
+    .action-learn-more:hover {
+        background-color: #2563eb;
+        transform: translateY(-1px);
+    }
+
+    .action-quick-view {
+        background-color: #f3f4f6;
+        color: #374151;
+        margin-left: 0.5rem;
+    }
+
+    .action-quick-view:hover {
+        background-color: #e5e7eb;
+    }
+
+    .pagination-button {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.5rem 0.75rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        border: 1px solid #d1d5db;
+        background-color: white;
+        color: #374151;
+        border-radius: 0.375rem;
+        transition: all 0.2s;
+        cursor: pointer;
+    }
+
+    .pagination-button:hover:not(.disabled) {
+        background-color: #f3f4f6;
+    }
+
+    .pagination-button.active {
+        background-color: #3b82f6;
+        color: white;
+        border-color: #3b82f6;
+    }
+
+    .pagination-button.disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
     }
 </style>
 
 <script>
-    function toggleAllSpecialties() {
-        const allServices = document.getElementById("all-services");
-        const expandBtn = document.getElementById("expand-btn");
-        const expandIcon = document.getElementById("expand-icon");
-        const expandText = document.getElementById("expand-text");
+    // Specialty data structure
+    const specialtyData = [
+        {% set priority_services = ["Mental Health", "Behavioral Health", "Clinical Psychology", "Chiropractic", "Family Practice", "Home Health", "Wound Care", "Physical Therapy", "Massage Therapy", "Podiatry"] %}
+        {% for service in main_services %}
+        {
+            name: "{{ service }}",
+            category: "{% if service in priority_services %}popular{% elif 'Primary Care' in service or 'Family Practice' in service or 'Internal Medicine' in service %}primary{% elif 'Therapy' in service or 'Physical' in service or 'Massage' in service %}therapy{% elif 'Surgery' in service or 'Surgical' in service %}surgical{% else %}specialty{% endif %}",
+            collectionRate: "{% if service in priority_services %}98%{% else %}95-97%{% endif %}",
+            processingTime: "{% if service in priority_services %}24-48h{% else %}48-72h{% endif %}",
+            slug: "{{ service.lower().replace(' ', '-').replace('(', '').replace(')', '').replace('/', '-').replace('&', 'and') }}",
+            description: "Professional medical billing services for {{ service.lower() }} providers with specialty-specific expertise and compliance."
+        }{% if not loop.last %},{% endif %}
+        {% endfor %}
+    ];
 
-        if (
-            allServices.style.display === "none" ||
-            allServices.style.display === ""
-        ) {
-            // Show all services
-            allServices.style.display = "grid";
-            allServices.classList.remove("collapsing");
-            allServices.classList.add("expanding");
+    let currentPage = 1;
+    let rowsPerPage = 25;
+    let sortColumn = 0;
+    let sortDirection = 'asc';
+    let filteredData = [...specialtyData];
 
-            expandIcon.className = "ri-subtract-line mr-2";
-            expandText.textContent = "Show Less";
-            expandBtn.scrollIntoView({ behavior: "smooth", block: "center" });
-        } else {
-            // Hide all services
-            allServices.classList.remove("expanding");
-            allServices.classList.add("collapsing");
+    function initializeTable() {
+        updateTable();
+        updatePagination();
+        updateCounts();
+    }
 
-            setTimeout(() => {
-                allServices.style.display = "none";
-            }, 500);
+    function updateTable() {
+        const tbody = document.getElementById('specialty-table-body');
+        const start = (currentPage - 1) * rowsPerPage;
+        const end = start + rowsPerPage;
+        const pageData = filteredData.slice(start, end);
 
-            expandIcon.className = "ri-add-line mr-2";
-            expandText.textContent = "View All Specialties";
+        tbody.innerHTML = pageData.map(specialty => `
+            <tr class="table-row hover:bg-gray-50 transition-colors duration-200">
+                <td class="px-6 py-4">
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-brand-primary/10 rounded-lg flex items-center justify-center mr-3">
+                            <i class="ri-health-book-line text-brand-primary"></i>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-brand-dark">${specialty.name}</div>
+                            <div class="text-sm text-gray-600">${specialty.description}</div>
+                        </div>
+                    </div>
+                </td>
+                <td class="px-6 py-4">
+                    <span class="status-badge status-${specialty.category}">
+                        ${specialty.category.charAt(0).toUpperCase() + specialty.category.slice(1)}
+                    </span>
+                </td>
+                <td class="px-6 py-4">
+                    <span class="collection-rate">${specialty.collectionRate}</span>
+                </td>
+                <td class="px-6 py-4">
+                    <span class="processing-time">${specialty.processingTime}</span>
+                </td>
+                <td class="px-6 py-4 text-center">
+                    <div class="flex justify-center space-x-2">
+                        <a href="{{ url_for('specialities.specialty', specialty_type='') }}${specialty.slug}" class="action-button action-learn-more">
+                            <i class="ri-arrow-right-line mr-1"></i> Learn More
+                        </a>
+                        <button onclick="showQuickView('${specialty.slug}')" class="action-button action-quick-view">
+                            <i class="ri-eye-line mr-1"></i> Quick View
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        `).join('');
+    }
 
-            // Scroll back to priority services
-            document.getElementById("priority-services").scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-            });
+    function updatePagination() {
+        const totalPages = Math.ceil(filteredData.length / rowsPerPage);
+        const pagination = document.getElementById('pagination');
+
+        let paginationHTML = '';
+
+        // Previous button
+        paginationHTML += `
+            <button class="pagination-button ${currentPage === 1 ? 'disabled' : ''}" onclick="changePage(${currentPage - 1})" ${currentPage === 1 ? 'disabled' : ''}>
+                <i class="ri-arrow-left-line mr-1"></i> Previous
+            </button>
+        `;
+
+        // Page numbers
+        const startPage = Math.max(1, currentPage - 2);
+        const endPage = Math.min(totalPages, currentPage + 2);
+
+        for (let i = startPage; i <= endPage; i++) {
+            paginationHTML += `
+                <button class="pagination-button ${i === currentPage ? 'active' : ''}" onclick="changePage(${i})">
+                    ${i}
+                </button>
+            `;
+        }
+
+        // Next button
+        paginationHTML += `
+            <button class="pagination-button ${currentPage === totalPages ? 'disabled' : ''}" onclick="changePage(${currentPage + 1})" ${currentPage === totalPages ? 'disabled' : ''}>
+                Next <i class="ri-arrow-right-line ml-1"></i>
+            </button>
+        `;
+
+        pagination.innerHTML = paginationHTML;
+    }
+
+    function updateCounts() {
+        const showingCount = Math.min(currentPage * rowsPerPage, filteredData.length);
+        const startCount = filteredData.length === 0 ? 0 : (currentPage - 1) * rowsPerPage + 1;
+
+        document.getElementById('showing-count').textContent = `${startCount}-${showingCount}`;
+        document.getElementById('total-count').textContent = filteredData.length;
+    }
+
+    function changePage(page) {
+        const totalPages = Math.ceil(filteredData.length / rowsPerPage);
+        if (page >= 1 && page <= totalPages) {
+            currentPage = page;
+            updateTable();
+            updatePagination();
+            updateCounts();
         }
     }
+
+    function sortTable(column) {
+        if (sortColumn === column) {
+            sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
+        } else {
+            sortColumn = column;
+            sortDirection = 'asc';
+        }
+
+        filteredData.sort((a, b) => {
+            let aValue, bValue;
+
+            switch (column) {
+                case 0:
+                    aValue = a.name;
+                    bValue = b.name;
+                    break;
+                case 1:
+                    aValue = a.category;
+                    bValue = b.category;
+                    break;
+                case 2:
+                    aValue = a.collectionRate;
+                    bValue = b.collectionRate;
+                    break;
+                case 3:
+                    aValue = a.processingTime;
+                    bValue = b.processingTime;
+                    break;
+                default:
+                    return 0;
+            }
+
+            if (sortDirection === 'asc') {
+                return aValue > bValue ? 1 : -1;
+            } else {
+                return aValue < bValue ? 1 : -1;
+            }
+        });
+
+        currentPage = 1;
+        updateTable();
+        updatePagination();
+        updateCounts();
+    }
+
+    function filterTable() {
+        const searchTerm = document.getElementById('specialty-search').value.toLowerCase();
+        const categoryFilter = document.getElementById('category-filter').value;
+
+        filteredData = specialtyData.filter(specialty => {
+            const matchesSearch = specialty.name.toLowerCase().includes(searchTerm) ||
+                                 specialty.description.toLowerCase().includes(searchTerm);
+            const matchesCategory = !categoryFilter || specialty.category === categoryFilter;
+
+            return matchesSearch && matchesCategory;
+        });
+
+        currentPage = 1;
+        updateTable();
+        updatePagination();
+        updateCounts();
+    }
+
+    function clearFilters() {
+        document.getElementById('specialty-search').value = '';
+        document.getElementById('category-filter').value = '';
+        filteredData = [...specialtyData];
+        currentPage = 1;
+        updateTable();
+        updatePagination();
+        updateCounts();
+    }
+
+    function showQuickView(slug) {
+        const specialty = specialtyData.find(s => s.slug === slug);
+        if (!specialty) return;
+
+        document.getElementById('modal-title').textContent = specialty.name + ' Billing Services';
+        document.getElementById('modal-content').innerHTML = `
+            <div class="space-y-6">
+                <div>
+                    <h4 class="text-lg font-semibold text-brand-dark mb-2">Service Overview</h4>
+                    <p class="text-gray-600">${specialty.description}</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="text-lg font-semibold text-brand-dark mb-2">Key Metrics</h4>
+                        <ul class="space-y-2">
+                            <li class="flex justify-between">
+                                <span>Collection Rate:</span>
+                                <span class="font-semibold text-green-600">${specialty.collectionRate}</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Processing Time:</span>
+                                <span class="font-semibold">${specialty.processingTime}</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Category:</span>
+                                <span class="font-semibold">${specialty.category.charAt(0).toUpperCase() + specialty.category.slice(1)}</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold text-brand-dark mb-2">Why Choose Us</h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li>• Specialty-specific expertise</li>
+                            <li>• Proven revenue optimization</li>
+                            <li>• Compliance assurance</li>
+                            <li>• Dedicated support team</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="border-t pt-4">
+                    <a href="{{ url_for('specialities.specialty', specialty_type='') }}${specialty.slug}" class="inline-flex items-center px-6 py-3 bg-brand-primary text-white font-semibold rounded-lg hover:bg-brand-dark transition-colors duration-200">
+                        <i class="ri-arrow-right-line mr-2"></i> Learn More About ${specialty.name}
+                    </a>
+                </div>
+            </div>
+        `;
+
+        document.getElementById('specialty-modal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+        document.getElementById('specialty-modal').classList.add('hidden');
+    }
+
+    // Event listeners
+    document.getElementById('specialty-search').addEventListener('input', filterTable);
+    document.getElementById('category-filter').addEventListener('change', filterTable);
+    document.getElementById('clear-filters').addEventListener('click', clearFilters);
+    document.getElementById('rows-per-page').addEventListener('change', function() {
+        rowsPerPage = parseInt(this.value);
+        currentPage = 1;
+        updateTable();
+        updatePagination();
+        updateCounts();
+    });
+
+    // Close modal when clicking outside
+    document.getElementById('specialty-modal').addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeModal();
+        }
+    });
+
+    // Initialize table on page load
+    document.addEventListener('DOMContentLoaded', initializeTable);
 </script>
 {% endblock %}
