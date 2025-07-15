@@ -109,27 +109,6 @@ Services | Ardur Healthcare{% endblock %} {% block meta %}
                                 </div>
                             </div>
                             <div class="flex gap-3 items-center">
-                                <select
-                                    id="category-filter"
-                                    class="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-primary focus:border-transparent transition-all duration-200 text-sm"
-                                >
-                                    <option value="">All Categories</option>
-                                    <option value="popular">
-                                        Most Popular
-                                    </option>
-                                    <option value="primary">
-                                        Primary Care
-                                    </option>
-                                    <option value="specialty">
-                                        Specialty Care
-                                    </option>
-                                    <option value="therapy">
-                                        Therapy Services
-                                    </option>
-                                    <option value="surgical">
-                                        Surgical Services
-                                    </option>
-                                </select>
                                 <button
                                     id="clear-filters"
                                     class="px-4 py-3 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors duration-200 text-sm font-medium"
@@ -153,10 +132,10 @@ Services | Ardur Healthcare{% endblock %} {% block meta %}
                             </button>
                         </div>
                     </div>
-                    <div
+                    <!-- <div
                         class="mt-4 flex justify-between items-center text-sm text-gray-600 border-t pt-4"
                     >
-                        <span id="results-count"
+                        <!-- <span id="results-count"
                             >Showing
                             <span class="font-semibold text-brand-primary"
                                 >0</span
@@ -166,8 +145,8 @@ Services | Ardur Healthcare{% endblock %} {% block meta %}
                                 >0</span
                             >
                             specialties</span
-                        >
-                        <div class="flex items-center gap-3">
+                        > -->
+                    <!-- <div class="flex items-center gap-3">
                             <div class="flex items-center gap-2">
                                 <div
                                     class="w-3 h-3 bg-brand-primary/20 border border-brand-primary rounded-full"
@@ -187,7 +166,7 @@ Services | Ardur Healthcare{% endblock %} {% block meta %}
                                 <span class="text-xs">Specialty Care</span>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
                 <!-- Specialties Grid -->
@@ -475,8 +454,8 @@ Services | Ardur Healthcare{% endblock %} {% block meta %}
         justify-content: center;
         color: white;
         font-size: 1.2rem;
-        margin-bottom: 0.75rem;
         transition: all 0.3s ease;
+        flex-shrink: 0;
     }
 
     .specialty-card:hover .specialty-icon {
@@ -574,16 +553,13 @@ Services | Ardur Healthcare{% endblock %} {% block meta %}
         const highlightedName = highlightSearchTerm(specialty.name);
         return `
             <div class="specialty-card">
-                <div class="specialty-icon">
-                    <i class="${specialty.icon}"></i>
+                <div class="flex items-center mb-3">
+                    <div class="specialty-icon mr-3">
+                        <i class="${specialty.icon}"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-brand-dark font-montserrat leading-tight flex-1">${highlightedName}</h3>
                 </div>
-                <div class="mb-2">
-                    <span class="category-badge category-${specialty.category}">
-                        <div class="w-2 h-2 bg-current rounded-full"></div>
-                        ${getCategoryDisplay(specialty.category)}
-                    </span>
-                </div>
-                <h3 class="text-base font-bold text-brand-dark mb-2 font-montserrat leading-tight">${highlightedName}</h3>
+
                 <p class="text-gray-600 text-sm mb-3 leading-relaxed line-clamp-3">
                     Expert billing services for ${specialty.name.toLowerCase()} providers with specialty-specific compliance.
                 </p>
@@ -595,6 +571,7 @@ Services | Ardur Healthcare{% endblock %} {% block meta %}
             </div>
         `;
     }
+
 
     function highlightSearchTerm(text) {
         const searchTerm = document.getElementById('specialty-search').value.toLowerCase();
@@ -674,12 +651,10 @@ Services | Ardur Healthcare{% endblock %} {% block meta %}
 
     function filterSpecialties() {
         const searchTerm = document.getElementById('specialty-search').value.toLowerCase();
-        const categoryFilter = document.getElementById('category-filter').value;
 
         filteredData = specialtyData.filter(specialty => {
             const matchesSearch = specialty.name.toLowerCase().includes(searchTerm);
-            const matchesCategory = !categoryFilter || specialty.category === categoryFilter;
-            return matchesSearch && matchesCategory;
+            return matchesSearch;
         });
 
         isExpanded = false;
@@ -689,7 +664,6 @@ Services | Ardur Healthcare{% endblock %} {% block meta %}
 
     function clearFilters() {
         document.getElementById('specialty-search').value = '';
-        document.getElementById('category-filter').value = '';
         filteredData = [...specialtyData];
         isExpanded = false;
         currentDisplayCount = 10;
@@ -712,7 +686,6 @@ Services | Ardur Healthcare{% endblock %} {% block meta %}
 
     // Event listeners
     document.getElementById('specialty-search').addEventListener('input', filterSpecialties);
-    document.getElementById('category-filter').addEventListener('change', filterSpecialties);
     document.getElementById('clear-filters').addEventListener('click', clearFilters);
     document.getElementById('expand-btn').addEventListener('click', toggleExpansion);
 

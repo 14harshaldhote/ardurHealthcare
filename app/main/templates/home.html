@@ -1,107 +1,467 @@
 {% extends "base.html" %} {% block title %}Home - Ardur Healthcare{% endblock %}
 {% block content %}
 <!-- Hero Section -->
-<section
-    class="relative overflow-hidden bg-gradient-to-br from-brand-light to-white"
->
-    <div class="container py-12 lg:py-16">
-        <div class="grid lg:grid-cols-2 gap-8 items-center">
-            <div class="text-center lg:text-left" data-aos="fade-right">
-                <div
-                    class="inline-block bg-brand-primary/10 px-3 py-1 rounded-full mb-4"
+<!-- Hero Section -->
+<section class="relative overflow-hidden">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0 z-0">
+        <img
+            src="{{ url_for('static', filename='images/hero.jpeg') }}"
+            alt="Healthcare Background"
+            class="w-full h-full object-cover"
+        />
+        <!-- Subtle Gradient Overlay -->
+        <div
+            class="absolute inset-0 bg-gradient-to-br from-brand-dark/60 via-brand-primary/40 to-transparent"
+        ></div>
+        <div
+            class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"
+        ></div>
+    </div>
+
+    <!-- Floating Decorative Elements -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div
+            class="absolute top-16 left-8 w-12 h-12 bg-white/10 rounded-full animate-pulse"
+        ></div>
+        <div
+            class="absolute top-32 right-16 w-8 h-8 bg-brand-primary/20 rounded-full animate-bounce delay-1000"
+        ></div>
+        <div
+            class="absolute bottom-24 left-1/4 w-6 h-6 bg-white/5 rounded-full animate-pulse delay-2000"
+        ></div>
+    </div>
+
+    <div class="container relative z-10 py-8 lg:py-12">
+        <div class="grid lg:grid-cols-2 gap-4 items-center">
+            <!-- Left Column - Content -->
+            <div class="text-center lg:text-left p-6" data-aos="fade-right">
+                <!-- Trust Badge -->
+                <!-- <div
+                    class="inline-flex items-center bg-white/15 px-3 py-1.5 rounded-full mb-4 border border-white/20"
                 >
-                    <span class="text-brand-primary font-semibold text-sm"
+                    <i
+                        class="ri-shield-check-line text-green-400 mr-2 text-sm"
+                    ></i>
+                    <span class="text-white font-thin text-sm"
                         >Trusted by 500+ Healthcare Providers</span
                     >
-                </div>
+                </div> -->
+
+                <!-- Main Heading -->
                 <h1
-                    class="font-montserrat font-extrabold text-3xl sm:text-4xl lg:text-5xl text-brand-dark tracking-tight mb-4"
+                    class="font-montserrat font-thin text-2xl sm:text-4xl lg:text-5xl text-white tracking-tight mb-4"
                 >
                     <span class="relative inline-block">
                         <i
-                            class="ri-double-quotes-l absolute -top-3 -left-5 text-3xl text-brand-primary opacity-30"
+                            class="absolute -top-3 -left-4 text-4xl text-brand-secondary opacity-50"
                         ></i>
-                        Maximize Your<br />
-                        <span class="text-brand-primary">Revenue Cycle</span>
+                        Maximize Your
+                        <span class="relative">
+                            <span class="text-brand-secondary"
+                                >Revenue Cycle</span
+                            >
+                            <!-- Animated underline -->
+                            <span
+                                class="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-brand-secondary to-brand-primary rounded-full animate-pulse"
+                            ></span>
+                        </span>
                         <i
-                            class="ri-double-quotes-r absolute -bottom-3 -right-3 text-3xl text-brand-primary opacity-30"
+                            class="absolute -bottom-2 -right-3 text-2xl text-brand-secondary opacity-50"
                         ></i>
                     </span>
                 </h1>
+
+                <!-- Description -->
                 <p
-                    class="max-w-xl mx-auto lg:mx-0 text-base lg:text-lg text-gray-600 leading-relaxed mb-6"
+                    class="pt-4 max-w-xl mx-auto lg:mx-0 text-base lg:text-lg text-gray-200 leading-relaxed mb-6"
                 >
-                    Boost your practice's financial performance with our
-                    comprehensive revenue cycle management solutions. Our
-                    technology-enabled services deliver up to 30% increase in
-                    collections and 40% reduction in denials.
+                    Boost your practice's financial performance with our revenue
+                    cycle solutions. Enjoy up to
+                    <span class="text-brand-secondary font-semibold"
+                        >30% more collections</span
+                    >
+                    and
+                    <span class="text-brand-secondary font-semibold"
+                        >40% fewer denials</span
+                    >.
                 </p>
+
+                <!-- Action Buttons -->
                 <div
                     class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-6"
                 >
                     <a
                         href="/contact"
-                        class="inline-block bg-brand-primary text-white font-montserrat font-semibold px-6 py-3 rounded-full shadow-lg transform transition-all duration-300 ease-in-out hover:scale-105 hover:bg-brand-dark hover:shadow-xl"
+                        class="group relative overflow-hidden bg-brand-primary text-white font-montserrat font-semibold px-6 py-3 rounded-full shadow-lg transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl"
                     >
-                        Free Consultation
-                        <i class="ri-arrow-right-line ml-2"></i>
+                        <span
+                            class="absolute inset-0 bg-brand-primary opacity-0 group-hover:opacity-10 transition-opacity duration-300"
+                        ></span>
+                        <span class="relative flex items-center justify-center">
+                            Free Consultation
+                            <i
+                                class="ri-arrow-right-line ml-2 group-hover:translate-x-1 transition-transform duration-300"
+                            ></i>
+                        </span>
                     </a>
+
                     <a
                         href="/services"
-                        class="inline-block bg-white text-brand-primary border-2 border-brand-primary font-montserrat font-semibold px-6 py-3 rounded-full shadow-sm transform transition-all duration-300 ease-in-out hover:scale-105 hover:bg-brand-secondary hover:shadow-md"
+                        class="group bg-white/20 text-white border-2 border-white/30 font-montserrat font-semibold px-6 py-3 rounded-full shadow-sm transform transition-all duration-300 ease-in-out hover:scale-105 hover:bg-white/30 hover:shadow-md"
                     >
-                        Explore Services <i class="ri-service-line ml-2"></i>
+                        Explore Services
+                        <i
+                            class="ri-service-line ml-2 group-hover:rotate-12 transition-transform duration-300"
+                        ></i>
                     </a>
                 </div>
+
+                <!-- Social Proof -->
                 <div class="flex items-center justify-center lg:justify-start">
-                    <div class="flex -space-x-3">
+                    <div class="flex -space-x-2">
                         <img
                             src="{{ url_for('static', filename='images/testimonial-1.jpg') }}"
                             alt="Client"
-                            class="w-8 h-8 rounded-full border-2 border-white"
+                            class="w-8 h-8 rounded-full border-2 border-white shadow-md hover:scale-110 transition-transform duration-300"
                         />
                         <img
                             src="{{ url_for('static', filename='images/testimonial-2.jpg') }}"
                             alt="Client"
-                            class="w-8 h-8 rounded-full border-2 border-white"
+                            class="w-8 h-8 rounded-full border-2 border-white shadow-md hover:scale-110 transition-transform duration-300"
                         />
                         <img
                             src="{{ url_for('static', filename='images/testimonial-3.jpg') }}"
                             alt="Client"
-                            class="w-8 h-8 rounded-full border-2 border-white"
+                            class="w-8 h-8 rounded-full border-2 border-white shadow-md hover:scale-110 transition-transform duration-300"
                         />
                     </div>
                     <div class="ml-3">
-                        <div class="flex items-center">
+                        <div class="flex items-center mb-1">
                             <i class="ri-star-fill text-yellow-400 text-sm"></i>
                             <i class="ri-star-fill text-yellow-400 text-sm"></i>
                             <i class="ri-star-fill text-yellow-400 text-sm"></i>
                             <i class="ri-star-fill text-yellow-400 text-sm"></i>
                             <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                            <span class="ml-1 text-white font-semibold text-sm"
+                                >4.9/5</span
+                            >
                         </div>
-                        <p class="text-xs text-gray-600">
+                        <p class="text-xs text-gray-300">
                             Trusted by 500+ providers
                         </p>
                     </div>
                 </div>
             </div>
+
+            <!-- Right Column - Enhanced Visual Element with Healthcare SVGs -->
             <div
                 class="relative hidden lg:flex justify-center items-center"
                 data-aos="fade-left"
             >
+                <!-- Background Decorative Elements -->
                 <div
-                    class="absolute w-64 h-64 bg-brand-primary/20 rounded-full -z-10"
+                    class="absolute w-72 h-72 bg-gradient-to-br from-brand-primary/20 to-brand-secondary/20 rounded-full -z-10 animate-pulse"
                 ></div>
-                <img
-                    src="{{ url_for('static', filename='images/header-bg.png') }}"
-                    alt="Healthcare Revenue Management"
-                    class="w-auto h-auto max-w-md rounded-2xl shadow-2xl mx-auto z-10"
-                    loading="lazy"
-                />
+                <div
+                    class="absolute w-56 h-56 bg-white/5 rounded-full -z-10 animate-spin-slow"
+                ></div>
+
+                <!-- Main Image Container -->
+                <div class="relative group">
+                    <!-- Healthcare Analytics SVG - Top Left -->
+                    <!-- <div
+                        class="absolute -top-12 -left-12 z-20 bg-white/20 p-3 rounded-xl border border-white/30 shadow-lg animate-float"
+                    >
+                        <svg
+                            width="32"
+                            height="32"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            class="text-blue-400"
+                        >
+                            <path
+                                d="M3 3v18h18"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                            <path
+                                d="M9 9l1.5 1.5L16 5"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                            <path
+                                d="M7 14h10"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                            />
+                            <path
+                                d="M7 18h6"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                            />
+                        </svg>
+                    </div>
+
+                    <!-- Revenue Growth Chart SVG - Top Right -->
+                    <!-- <div
+                        class="absolute -top-8 -right-16 z-20 bg-white/20 p-3 rounded-xl border border-white/30 shadow-lg animate-float delay-500"
+                    >
+                        <svg
+                            width="36"
+                            height="36"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            class="text-green-400"
+                        >
+                            <path
+                                d="M3 17l6-6 4 4 8-8"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                            <path
+                                d="M21 7v2h-2"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                            <circle cx="7" cy="12" r="1" fill="currentColor" />
+                            <circle cx="12" cy="8" r="1" fill="currentColor" />
+                            <circle cx="17" cy="4" r="1" fill="currentColor" />
+                        </svg>
+                    </div> -->
+
+                    <!-- Stethoscope SVG - Left Side -->
+                    <!-- <div
+                        class="absolute -left-16 top-4 z-20 bg-white/20 p-3 rounded-xl border border-white/30 shadow-lg animate-float delay-1000"
+                    >
+                        <svg
+                            width="28"
+                            height="28"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            class="text-red-400"
+                        >
+                            <path
+                                d="M11 2a2 2 0 0 1 2 2v4H9V4a2 2 0 0 1 2 0z"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                            <path
+                                d="M9 8v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V8"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                            <circle
+                                cx="20"
+                                cy="16"
+                                r="2"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            />
+                            <path
+                                d="M7 8h10"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                            />
+                        </svg>
+                    </div> -->
+
+                    <!-- Medical Report SVG - Bottom Left -->
+                    <!-- <div
+                        class="absolute -bottom-12 -left-8 z-20 bg-white/20 p-3 rounded-xl border border-white/30 shadow-lg animate-float delay-1500"
+                    >
+                        <svg
+                            width="30"
+                            height="30"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            class="text-purple-400"
+                        >
+                            <path
+                                d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                            <polyline
+                                points="14,2 14,8 20,8"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                            <line
+                                x1="16"
+                                y1="13"
+                                x2="8"
+                                y2="13"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                            />
+                            <line
+                                x1="16"
+                                y1="17"
+                                x2="8"
+                                y2="17"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                            />
+                            <polyline
+                                points="10,9 9,9 8,9"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg> -->
+                    <!-- </div> -->
+
+                    <!-- Dollar Analytics SVG - Bottom Right -->
+                    <!-- <div
+                        class="absolute -bottom-8 -right-12 z-20 bg-white/20 p-3 rounded-xl border border-white/30 shadow-lg animate-float delay-2000"
+                    >
+                        <svg
+                            width="34"
+                            height="34"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            class="text-yellow-400"
+                        >
+                            <line
+                                x1="12"
+                                y1="1"
+                                x2="12"
+                                y2="23"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                            <path
+                                d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                            <path
+                                d="M8 21l4-4 4 4"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                    </div> -->
+
+                    <!-- Heart Monitor SVG - Right Side -->
+                    <!-- <div
+                        class="absolute -right-16 top-12 z-20 bg-white/20 p-3 rounded-xl border border-white/30 shadow-lg animate-float delay-2500"
+                    >
+                        <svg
+                            width="32"
+                            height="32"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            class="text-pink-400"
+                        >
+                            <path
+                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                            <path
+                                d="M12 5.67L8.5 9.17l2 2 1.5-1.5 2 2 2-2"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                    </div> -->
+
+                    <!-- Main Image -->
+                    <img
+                        src="{{ url_for('static', filename='images/header-bg.png') }}"
+                        alt="Healthcare Revenue Management"
+                        class="w-auto h-auto max-w-md rounded-xl mx-auto transform transition-transform duration-500 custom-glass-effect"
+                        loading="lazy"
+                    />
+                </div>
             </div>
         </div>
     </div>
 </section>
+
+<!-- Additional CSS for custom animations -->
+<style>
+    @keyframes float {
+        0%,
+        100% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(-15px);
+        }
+    }
+
+    @keyframes spin-slow {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    .animate-float {
+        animation: float 4s ease-in-out infinite;
+    }
+
+    .animate-spin-slow {
+        animation: spin-slow 25s linear infinite;
+    }
+
+    .delay-500 {
+        animation-delay: 0.5s;
+    }
+
+    .delay-1000 {
+        animation-delay: 1s;
+    }
+
+    .delay-1500 {
+        animation-delay: 1.5s;
+    }
+
+    .delay-2000 {
+        animation-delay: 2s;
+    }
+
+    .delay-2500 {
+        animation-delay: 2.5s;
+    }
+</style>
 
 <!-- Services Section -->
 <section class="py-12 lg:py-16 bg-white" data-aos="fade-up">

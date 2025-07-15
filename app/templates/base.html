@@ -33,7 +33,7 @@
                 theme: {
                     extend: {
                         fontFamily: {
-                            montserrat: ["Montserrat", "sans-serif"],
+                            montserrat: ["Epilogue", "sans-serif"],
                             inter: ["Inter", "sans-serif"],
                         },
                         colors: {
@@ -71,7 +71,7 @@
             }
 
             .font-montserrat {
-                font-family: "Montserrat", sans-serif;
+                font-family: "Epilogue", sans-serif;
             }
 
             .nav-link {
@@ -197,15 +197,15 @@
                         >
                             <div class="flex flex-col items-center text-center">
                                 <img
-                                    src="{{ url_for('static', filename='images/logo2.png') }}"
+                                    src="{{ url_for('static', filename='images/logoog.png') }}"
                                     alt="Ardur Healthcare Logo"
-                                    class="h-12 sm:h-14 transition-transform duration-300 group-hover:scale-105"
+                                    class="h-16 sm:h-24 sm:w-64 w-48 transition-transform duration-300 group-hover:scale-105 p-2"
                                 />
-                                <span
+                                <!-- <span
                                     class="mt-1 text-xs sm:text-sm text-slate-600 font-medium tracking-wide group-hover:text-brand-accent transition-colors duration-300"
                                 >
                                     Quality Outcomes, Modern Healthcare
-                                </span>
+                                </span> -->
                             </div>
                         </a>
                     </div>
@@ -229,9 +229,9 @@
                                 class="nav-link {% if request.endpoint.startswith('specialities.') %}active{% endif %} flex items-center"
                             >
                                 Specialities
-                                <i class="ri-arrow-down-s-line ml-1"></i>
+                                <!-- <i class="ri-arrow-down-s-line ml-1"></i> -->
                             </a>
-                            <div
+                            <!-- <div
                                 class="absolute mt-2 w-64 bg-white rounded-lg shadow-xl p-4 z-20 dropdown-menu"
                             >
                                 <h3
@@ -293,7 +293,7 @@
                                     ></i>
                                     General Surgery
                                 </a>
-                            </div>
+                            </div> -->
                         </div>
 
                         <div class="relative desktop-dropdown">
@@ -668,11 +668,16 @@
                     class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
                 >
                     <div class="md:col-span-2 lg:col-span-1">
-                        <img
+                        <!-- <img
                             src="{{ url_for('static', filename='images/white-logo.png') }}"
                             alt="Ardur Healthcare Logo"
                             class="h-10 mb-4"
-                        />
+                        /> -->
+                        <p
+                            class="h-10 mb-4 text-brand-secondary fond-thin text-xl"
+                        >
+                            @Ardur Healthcare
+                        </p>
                         <p class="text-gray-400 text-sm leading-relaxed">
                             Technology-enabled medical billing and revenue cycle
                             management services for healthcare providers
