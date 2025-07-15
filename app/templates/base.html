@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -27,10 +27,6 @@
         />
 
         <script src="https://cdn.tailwindcss.com"></script>
-        <script
-            defer
-            src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
-        ></script>
 
         <script>
             tailwind.config = {
@@ -229,7 +225,7 @@
 
                         <div class="relative desktop-dropdown">
                             <a
-                                href="{{ url_for('main.specialities') }}"
+                                href="{{ url_for('specialities.specialities_main') }}"
                                 class="nav-link {% if request.endpoint.startswith('specialities.') %}active{% endif %} flex items-center"
                             >
                                 Specialities
@@ -822,5 +818,34 @@
                 </div>
             </div>
         </footer>
+
+        <!-- JavaScript Detection for Progressive Enhancement -->
+        <script>
+            // Add 'js' class to html element to enable JS-specific styles
+            document.documentElement.classList.remove("no-js");
+            document.documentElement.classList.add("js");
+        </script>
+
+        <!-- JavaScript Libraries -->
+        <script
+            defer
+            src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+        ></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+        <!-- Initialize AOS -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                AOS.init({
+                    duration: 800,
+                    easing: "ease-in-out",
+                    once: true,
+                    mirror: false,
+                });
+            });
+        </script>
+
+        <!-- Custom Scripts Block -->
+        {% block scripts %}{% endblock %}
     </body>
 </html>

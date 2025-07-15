@@ -1,0 +1,657 @@
+{% extends "base.html" %} {% block title %}Specialty-Specific Medical Billing
+Services | Ardur Healthcare{% endblock %} {% block meta %}
+<meta
+    name="description"
+    content="Tailored medical billing services for over 40 medical specialties including mental health, chiropractic, wound care, and more. Expert billing solutions for your specialty."
+/>
+<link rel="canonical" href="{{ request.url }}" />
+{% endblock %} {% block stylesheets %} {{ super() }}
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/specialities/specialty.css') }}"
+/>
+{% endblock %} {% block content %}
+<div class="bg-white">
+    <!-- Hero Section -->
+    <section class="container px-4 text-center py-16 md:py-24">
+        <div class="max-w-4xl mx-auto">
+            <div
+                class="inline-flex items-center px-4 py-2 bg-brand-primary/10 rounded-full mb-6"
+                data-aos="fade-down"
+            >
+                <i class="ri-stethoscope-line text-brand-primary mr-2"></i>
+                <span class="text-brand-primary font-semibold"
+                    >Medical Specialties</span
+                >
+            </div>
+            <h1
+                class="text-4xl md:text-6xl font-bold font-montserrat text-brand-dark mb-4"
+                data-aos="fade-up"
+            >
+                Specialty-Specific Medical Billing Services
+            </h1>
+            <p
+                class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8"
+                data-aos="fade-up"
+                data-aos-delay="200"
+            >
+                At Ardur Healthcare, we provide specialty-specific medical
+                billing services tailored to the clinical workflows, coding
+                patterns, and reimbursement rules of medical specialties.
+                Whether you're managing mental health visits, chiropractic
+                adjustments, or wound debridement procedures, our billing team
+                understands how to code and submit claims accurately for your
+                specialty.
+            </p>
+            <div
+                class="flex flex-col sm:flex-row gap-4 justify-center"
+                data-aos="fade-up"
+                data-aos-delay="300"
+            >
+                <a
+                    href="{{ url_for('contact.contact_form') }}"
+                    class="bg-brand-primary text-white font-montserrat font-semibold px-8 py-4 rounded-full hover:scale-105 hover:bg-brand-dark hover:shadow-xl transition duration-300 inline-flex items-center justify-center"
+                >
+                    <i class="ri-phone-line mr-2"></i> Get Free Consultation
+                </a>
+                <a
+                    href="#specialties-grid"
+                    class="bg-white text-brand-primary border-2 border-brand-primary font-montserrat font-semibold px-8 py-4 rounded-full hover:bg-brand-primary hover:text-white transition duration-300 inline-flex items-center justify-center"
+                >
+                    <i class="ri-arrow-down-line mr-2"></i> View Specialties
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialties Grid Section -->
+    <section id="specialties-grid" class="py-16 md:py-24 bg-brand-light">
+        <div class="container mx-auto px-4">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2
+                        class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark mb-4"
+                        data-aos="fade-up"
+                    >
+                        Our Most Popular Billing Services
+                    </h2>
+                    <p
+                        class="text-lg text-gray-600 max-w-3xl mx-auto"
+                        data-aos="fade-up"
+                        data-aos-delay="200"
+                    >
+                        Start with our most requested specialty billing
+                        services, or explore our complete offerings below.
+                    </p>
+                </div>
+
+                <!-- Priority Services Grid -->
+                {% set priority_services = [ "Mental Health", "Behavioral
+                Health", "Clinical Psychology", "Chiropractic", "Family
+                Practice", "Home Health", "Wound Care", "Physical Therapy",
+                "Massage Therapy", "Podiatry" ] %}
+                <div
+                    id="priority-services"
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8"
+                    data-aos="fade-up"
+                    data-aos-delay="300"
+                >
+                    {% for service in priority_services %}
+                    <div
+                        class="specialty-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-gray-100 hover:border-brand-primary/30 transform hover:-translate-y-1"
+                    >
+                        <div class="flex items-center justify-between mb-4">
+                            <div
+                                class="w-12 h-12 bg-brand-primary/10 rounded-lg flex items-center justify-center"
+                            >
+                                {% if 'Mental Health' in service or 'Behavioral
+                                Health' in service or 'Clinical Psychology' in
+                                service %}
+                                <i
+                                    class="ri-mental-health-line text-brand-primary text-xl"
+                                ></i>
+                                {% elif 'Family Practice' in service %}
+                                <i
+                                    class="ri-family-line text-brand-primary text-xl"
+                                ></i>
+                                {% elif 'Home Health' in service %}
+                                <i
+                                    class="ri-home-heart-line text-brand-primary text-xl"
+                                ></i>
+                                {% elif 'Wound Care' in service %}
+                                <i
+                                    class="ri-band-aid-line text-brand-primary text-xl"
+                                ></i>
+                                {% elif 'Physical Therapy' in service or
+                                'Massage Therapy' in service %}
+                                <i
+                                    class="ri-hand-heart-line text-brand-primary text-xl"
+                                ></i>
+                                {% elif 'Chiropractic' in service %}
+                                <i
+                                    class="ri-body-scan-line text-brand-primary text-xl"
+                                ></i>
+                                {% elif 'Podiatry' in service %}
+                                <i
+                                    class="ri-footprint-line text-brand-primary text-xl"
+                                ></i>
+                                {% else %}
+                                <i
+                                    class="ri-health-book-line text-brand-primary text-xl"
+                                ></i>
+                                {% endif %}
+                            </div>
+                            <span
+                                class="bg-brand-accent/20 text-brand-accent text-xs font-semibold px-2 py-1 rounded-full"
+                            >
+                                Popular
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-brand-dark mb-3">
+                            {{ service }} Billing Services
+                        </h3>
+                        <p class="text-sm text-gray-600 mb-4">
+                            Specialized billing services tailored for {{
+                            service.lower() }} providers with industry-specific
+                            expertise and compliance.
+                        </p>
+                        <a
+                            href="{{ url_for('specialities.specialty', specialty_type=service.lower().replace(' ', '-').replace('(', '').replace(')', '').replace('/', '-').replace('&', 'and')) }}"
+                            class="inline-flex items-center text-brand-primary hover:text-brand-dark font-medium text-sm transition-colors duration-200 group"
+                        >
+                            Learn More
+                            <i
+                                class="ri-arrow-right-line ml-1 group-hover:translate-x-1 transition-transform duration-200"
+                            ></i>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <!-- Expand Button -->
+                <div class="text-center mb-8">
+                    <button
+                        id="expand-btn"
+                        class="bg-brand-primary text-white font-montserrat font-semibold px-8 py-4 rounded-full hover:bg-brand-dark hover:shadow-xl transition duration-300 inline-flex items-center justify-center"
+                        onclick="toggleAllSpecialties()"
+                    >
+                        <i id="expand-icon" class="ri-add-line mr-2"></i>
+                        <span id="expand-text">View All Specialties</span>
+                    </button>
+                </div>
+
+                <!-- All Other Services Grid (Initially Hidden) -->
+                <div
+                    id="all-services"
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 opacity-0 max-h-0 overflow-hidden transition-all duration-500"
+                    style="display: none"
+                >
+                    {% for service in main_services %} {% if service not in
+                    priority_services %}
+                    <div
+                        class="specialty-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-gray-100 hover:border-brand-primary/20"
+                    >
+                        <div class="flex items-center justify-between mb-4">
+                            <div
+                                class="w-12 h-12 bg-brand-primary/10 rounded-lg flex items-center justify-center"
+                            >
+                                {% if 'Cardiology' in service %}
+                                <i
+                                    class="ri-heart-pulse-line text-brand-primary text-xl"
+                                ></i>
+                                {% elif 'Orthopedic' in service %}
+                                <i
+                                    class="ri-bone-line text-brand-primary text-xl"
+                                ></i>
+                                {% elif 'Dental' in service %}
+                                <i
+                                    class="ri-tooth-line text-brand-primary text-xl"
+                                ></i>
+                                {% elif 'Dermatology' in service %}
+                                <i
+                                    class="ri-skin-line text-brand-primary text-xl"
+                                ></i>
+                                {% elif 'Radiology' in service %}
+                                <i
+                                    class="ri-scan-line text-brand-primary text-xl"
+                                ></i>
+                                {% elif 'Emergency' in service %}
+                                <i
+                                    class="ri-emergency-line text-brand-primary text-xl"
+                                ></i>
+                                {% elif 'Surgery' in service %}
+                                <i
+                                    class="ri-scissors-cut-line text-brand-primary text-xl"
+                                ></i>
+                                {% elif 'Pediatrics' in service %}
+                                <i
+                                    class="ri-baby-line text-brand-primary text-xl"
+                                ></i>
+                                {% elif 'Neurology' in service %}
+                                <i
+                                    class="ri-brain-line text-brand-primary text-xl"
+                                ></i>
+                                {% elif 'Oncology' in service %}
+                                <i
+                                    class="ri-capsule-line text-brand-primary text-xl"
+                                ></i>
+                                {% elif 'Pharmacy' in service %}
+                                <i
+                                    class="ri-medicine-bottle-line text-brand-primary text-xl"
+                                ></i>
+                                {% elif 'Occupational Therapy' in service %}
+                                <i
+                                    class="ri-hand-heart-line text-brand-primary text-xl"
+                                ></i>
+                                {% elif 'Laboratory' in service %}
+                                <i
+                                    class="ri-test-tube-line text-brand-primary text-xl"
+                                ></i>
+                                {% elif 'Optometry' in service %}
+                                <i
+                                    class="ri-eye-line text-brand-primary text-xl"
+                                ></i>
+                                {% elif 'Urology' in service %}
+                                <i
+                                    class="ri-drop-line text-brand-primary text-xl"
+                                ></i>
+                                {% elif 'Sleep' in service %}
+                                <i
+                                    class="ri-moon-line text-brand-primary text-xl"
+                                ></i>
+                                {% elif 'Pain Management' in service %}
+                                <i
+                                    class="ri-healing-line text-brand-primary text-xl"
+                                ></i>
+                                {% elif 'Hospice' in service %}
+                                <i
+                                    class="ri-home-heart-line text-brand-primary text-xl"
+                                ></i>
+                                {% elif 'Anesthesia' in service %}
+                                <i
+                                    class="ri-syringe-line text-brand-primary text-xl"
+                                ></i>
+                                {% elif 'Primary Care' in service or 'Internal
+                                Medicine' in service %}
+                                <i
+                                    class="ri-user-heart-line text-brand-primary text-xl"
+                                ></i>
+                                {% elif 'Urgent Care' in service %}
+                                <i
+                                    class="ri-alarm-warning-line text-brand-primary text-xl"
+                                ></i>
+                                {% elif 'OB GYN' in service %}
+                                <i
+                                    class="ri-parent-line text-brand-primary text-xl"
+                                ></i>
+                                {% elif 'Allergy' in service %}
+                                <i
+                                    class="ri-virus-line text-brand-primary text-xl"
+                                ></i>
+                                {% elif 'Endocrinology' in service %}
+                                <i
+                                    class="ri-medicine-bottle-line text-brand-primary text-xl"
+                                ></i>
+                                {% elif 'Gastroenterology' in service %}
+                                <i
+                                    class="ri-stomach-line text-brand-primary text-xl"
+                                ></i>
+                                {% elif 'Pulmonology' in service %}
+                                <i
+                                    class="ri-lungs-line text-brand-primary text-xl"
+                                ></i>
+                                {% elif 'Rheumatology' in service %}
+                                <i
+                                    class="ri-bone-line text-brand-primary text-xl"
+                                ></i>
+                                {% elif 'Pathology' in service %}
+                                <i
+                                    class="ri-microscope-line text-brand-primary text-xl"
+                                ></i>
+                                {% elif 'Ambulatory' in service %}
+                                <i
+                                    class="ri-hospital-line text-brand-primary text-xl"
+                                ></i>
+                                {% elif 'DME' in service or 'Equipment' in
+                                service %}
+                                <i
+                                    class="ri-wheelchair-line text-brand-primary text-xl"
+                                ></i>
+                                {% elif 'Sports Medicine' in service %}
+                                <i
+                                    class="ri-football-line text-brand-primary text-xl"
+                                ></i>
+                                {% elif 'Skilled Nursing' in service or 'SNF' in
+                                service %}
+                                <i
+                                    class="ri-nurse-line text-brand-primary text-xl"
+                                ></i>
+                                {% elif 'Plastic Surgery' in service %}
+                                <i
+                                    class="ri-scissors-cut-line text-brand-primary text-xl"
+                                ></i>
+                                {% elif 'Otolaryngology' in service or 'ENT' in
+                                service %}
+                                <i
+                                    class="ri-ear-line text-brand-primary text-xl"
+                                ></i>
+                                {% elif 'Oral' in service or 'Maxillofacial' in
+                                service %}
+                                <i
+                                    class="ri-tooth-line text-brand-primary text-xl"
+                                ></i>
+                                {% else %}
+                                <i
+                                    class="ri-health-book-line text-brand-primary text-xl"
+                                ></i>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-semibold text-brand-dark mb-3">
+                            {{ service }}{% if 'Billing Services' not in service
+                            %} Billing Services{% endif %}
+                        </h3>
+                        <p class="text-sm text-gray-600 mb-4">
+                            Specialized billing services tailored for {{
+                            service.lower() }} providers with industry-specific
+                            expertise.
+                        </p>
+                        <a
+                            href="{{ url_for('specialities.specialty', specialty_type=service.lower().replace(' ', '-').replace('(', '').replace(')', '').replace('/', '-').replace('&', 'and')) }}"
+                            class="inline-flex items-center text-brand-primary hover:text-brand-dark font-medium text-sm transition-colors duration-200 group"
+                        >
+                            Learn More
+                            <i
+                                class="ri-arrow-right-line ml-1 group-hover:translate-x-1 transition-transform duration-200"
+                            ></i>
+                        </a>
+                    </div>
+                    {% endif %} {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Stats Section -->
+    <section class="py-12 bg-white border-t border-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div class="specialty-stat">
+                        <div
+                            class="text-3xl md:text-4xl font-bold text-brand-primary mb-2"
+                        >
+                            40+
+                        </div>
+                        <div class="text-gray-600 font-medium">
+                            Medical Specialties
+                        </div>
+                    </div>
+                    <div class="specialty-stat">
+                        <div
+                            class="text-3xl md:text-4xl font-bold text-brand-primary mb-2"
+                        >
+                            98%
+                        </div>
+                        <div class="text-gray-600 font-medium">
+                            Collection Rate
+                        </div>
+                    </div>
+                    <div class="specialty-stat">
+                        <div
+                            class="text-3xl md:text-4xl font-bold text-brand-primary mb-2"
+                        >
+                            24-48h
+                        </div>
+                        <div class="text-gray-600 font-medium">
+                            Claim Submission
+                        </div>
+                    </div>
+                    <div class="specialty-stat">
+                        <div
+                            class="text-3xl md:text-4xl font-bold text-brand-primary mb-2"
+                        >
+                            15+
+                        </div>
+                        <div class="text-gray-600 font-medium">
+                            Years Experience
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Don't See Your Specialty Section -->
+    <section class="py-16 md:py-20 bg-brand-light">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <div
+                    class="bg-gradient-to-r from-brand-primary/10 to-brand-accent/10 rounded-2xl p-8 md:p-12"
+                    data-aos="fade-up"
+                >
+                    <div
+                        class="w-16 h-16 bg-brand-primary/20 rounded-full flex items-center justify-center mx-auto mb-6"
+                    >
+                        <i
+                            class="ri-search-line text-brand-primary text-2xl"
+                        ></i>
+                    </div>
+                    <h2
+                        class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark mb-4"
+                    >
+                        Don't See Your Specialty? We've Got You Covered.
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
+                        We're always adding to our specialty offerings. If your
+                        field isn't listed above, chances are we already support
+                        it. Contact us today to find out how we can tailor our
+                        billing services to your unique clinical and operational
+                        needs.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a
+                            href="{{ url_for('contact.contact_form') }}"
+                            class="bg-brand-primary text-white font-montserrat font-semibold px-8 py-4 rounded-full hover:scale-105 hover:bg-brand-dark hover:shadow-xl transition duration-300 inline-flex items-center justify-center"
+                        >
+                            <i class="ri-phone-line mr-2"></i> Request a Quote
+                        </a>
+                        <a
+                            href="tel:+1-555-ARDUR-HC"
+                            class="bg-white text-brand-primary border-2 border-brand-primary font-montserrat font-semibold px-8 py-4 rounded-full hover:bg-brand-primary hover:text-white transition duration-300 inline-flex items-center justify-center"
+                        >
+                            <i class="ri-phone-line mr-2"></i> Call Us Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Benefits Section -->
+    <section class="py-16 md:py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2
+                        class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark mb-4"
+                        data-aos="fade-up"
+                    >
+                        Why Choose Ardur Healthcare for Your Specialty?
+                    </h2>
+                    <p
+                        class="text-lg text-gray-600 max-w-3xl mx-auto"
+                        data-aos="fade-up"
+                        data-aos-delay="200"
+                    >
+                        Our specialized approach ensures maximum revenue and
+                        minimum hassle for your practice.
+                    </p>
+                </div>
+
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                    data-aos="fade-up"
+                    data-aos-delay="300"
+                >
+                    <div
+                        class="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300 border border-gray-100"
+                    >
+                        <div
+                            class="w-16 h-16 bg-brand-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"
+                        >
+                            <i
+                                class="ri-award-line text-brand-primary text-2xl"
+                            ></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-brand-dark mb-3">
+                            Specialty Expertise
+                        </h3>
+                        <p class="text-gray-600">
+                            Deep understanding of specialty-specific coding,
+                            billing patterns, and regulatory requirements.
+                        </p>
+                    </div>
+
+                    <div
+                        class="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300 border border-gray-100"
+                    >
+                        <div
+                            class="w-16 h-16 bg-brand-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"
+                        >
+                            <i
+                                class="ri-line-chart-line text-brand-primary text-2xl"
+                            ></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-brand-dark mb-3">
+                            Increased Revenue
+                        </h3>
+                        <p class="text-gray-600">
+                            Maximize collections and reduce claim denials with
+                            our proven billing strategies.
+                        </p>
+                    </div>
+
+                    <div
+                        class="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300 border border-gray-100"
+                    >
+                        <div
+                            class="w-16 h-16 bg-brand-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"
+                        >
+                            <i
+                                class="ri-shield-check-line text-brand-primary text-2xl"
+                            ></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-brand-dark mb-3">
+                            Compliance Assurance
+                        </h3>
+                        <p class="text-gray-600">
+                            Stay compliant with ever-changing healthcare
+                            regulations and specialty requirements.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<style>
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .specialty-card {
+        animation: fadeInUp 0.6s ease-out;
+    }
+
+    .specialty-card:nth-child(odd) {
+        animation-delay: 0.1s;
+    }
+
+    .specialty-card:nth-child(even) {
+        animation-delay: 0.2s;
+    }
+
+    .specialty-stat {
+        opacity: 0;
+        animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    .specialty-stat:nth-child(1) {
+        animation-delay: 0.1s;
+    }
+    .specialty-stat:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+    .specialty-stat:nth-child(3) {
+        animation-delay: 0.3s;
+    }
+    .specialty-stat:nth-child(4) {
+        animation-delay: 0.4s;
+    }
+
+    .hover\:scale-105:hover {
+        transform: scale(1.05);
+    }
+
+    /* Smooth transitions for expand/collapse */
+    .expanding {
+        display: grid !important;
+        opacity: 1 !important;
+        max-height: 2000px !important;
+    }
+
+    .collapsing {
+        opacity: 0 !important;
+        max-height: 0 !important;
+    }
+</style>
+
+<script>
+    function toggleAllSpecialties() {
+        const allServices = document.getElementById("all-services");
+        const expandBtn = document.getElementById("expand-btn");
+        const expandIcon = document.getElementById("expand-icon");
+        const expandText = document.getElementById("expand-text");
+
+        if (
+            allServices.style.display === "none" ||
+            allServices.style.display === ""
+        ) {
+            // Show all services
+            allServices.style.display = "grid";
+            allServices.classList.remove("collapsing");
+            allServices.classList.add("expanding");
+
+            expandIcon.className = "ri-subtract-line mr-2";
+            expandText.textContent = "Show Less";
+            expandBtn.scrollIntoView({ behavior: "smooth", block: "center" });
+        } else {
+            // Hide all services
+            allServices.classList.remove("expanding");
+            allServices.classList.add("collapsing");
+
+            setTimeout(() => {
+                allServices.style.display = "none";
+            }, 500);
+
+            expandIcon.className = "ri-add-line mr-2";
+            expandText.textContent = "View All Specialties";
+
+            // Scroll back to priority services
+            document.getElementById("priority-services").scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+            });
+        }
+    }
+</script>
+{% endblock %}

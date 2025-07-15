@@ -5,4 +5,4 @@ from flask import Blueprint
 specialities = Blueprint('specialities', __name__, template_folder='templates')
 
 # Import routes AFTER the blueprint is defined.
-from . import routes
+from . import routes  # noqa: F401
