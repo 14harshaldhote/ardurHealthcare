@@ -13,12 +13,12 @@ Ardur Healthcare{% endblock %} {% block content %}
                     data-aos="fade-down"
                 >
                     <i class="ri-map-2-line text-brand-primary mr-2"></i>
-                    <span class="text-brand-primary font-semibold"
+                    <span class="text-brand-primary font-light"
                         >Nationwide Coverage</span
                     >
                 </div>
                 <h1
-                    class="text-4xl md:text-6xl lg:text-7xl font-bold font-montserrat text-brand-dark mb-6 leading-tight"
+                    class="text-4xl md:text-6xl lg:text-7xl font-light font-montserrat text-brand-dark mb-6 leading-tight"
                     data-aos="fade-up"
                     data-aos-delay="100"
                 >
@@ -40,14 +40,14 @@ Ardur Healthcare{% endblock %} {% block content %}
                 >
                     <a
                         href="{{ url_for('ourreach.index') }}"
-                        class="bg-brand-primary text-white font-montserrat font-semibold px-8 py-4 rounded-full hover:scale-105 hover:bg-brand-dark hover:shadow-xl transition duration-300 inline-flex items-center justify-center"
+                        class="bg-brand-primary text-white font-montserrat font-light px-8 py-4 rounded-full hover:scale-105 hover:bg-brand-dark hover:shadow-xl transition duration-300 inline-flex items-center justify-center"
                     >
                         <i class="ri-map-pin-line mr-2"></i>
                         View Interactive Map
                     </a>
                     <a
                         href="#states-grid"
-                        class="bg-white text-brand-primary border-2 border-brand-primary font-montserrat font-semibold px-8 py-4 rounded-full hover:bg-brand-primary hover:text-white transition duration-300 inline-flex items-center justify-center"
+                        class="bg-white text-brand-primary border-2 border-brand-primary font-montserrat font-light px-8 py-4 rounded-full hover:bg-brand-primary hover:text-white transition duration-300 inline-flex items-center justify-center"
                     >
                         <i class="ri-list-check mr-2"></i>
                         Browse All States
@@ -71,7 +71,7 @@ Ardur Healthcare{% endblock %} {% block content %}
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                 <div class="text-white" data-aos="fade-up" data-aos-delay="100">
                     <div
-                        class="text-3xl md:text-4xl font-bold font-montserrat mb-2"
+                        class="text-3xl md:text-4xl font-light font-montserrat mb-2"
                     >
                         {{ states|length }}
                     </div>
@@ -79,7 +79,7 @@ Ardur Healthcare{% endblock %} {% block content %}
                 </div>
                 <div class="text-white" data-aos="fade-up" data-aos-delay="200">
                     <div
-                        class="text-3xl md:text-4xl font-bold font-montserrat mb-2"
+                        class="text-3xl md:text-4xl font-light font-montserrat mb-2"
                     >
                         99%+
                     </div>
@@ -87,7 +87,7 @@ Ardur Healthcare{% endblock %} {% block content %}
                 </div>
                 <div class="text-white" data-aos="fade-up" data-aos-delay="300">
                     <div
-                        class="text-3xl md:text-4xl font-bold font-montserrat mb-2"
+                        class="text-3xl md:text-4xl font-light font-montserrat mb-2"
                     >
                         24/7
                     </div>
@@ -95,7 +95,7 @@ Ardur Healthcare{% endblock %} {% block content %}
                 </div>
                 <div class="text-white" data-aos="fade-up" data-aos-delay="400">
                     <div
-                        class="text-3xl md:text-4xl font-bold font-montserrat mb-2"
+                        class="text-3xl md:text-4xl font-light font-montserrat mb-2"
                     >
                         48hrs
                     </div>
@@ -137,7 +137,7 @@ Ardur Healthcare{% endblock %} {% block content %}
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2
-                    class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark mb-4"
+                    class="text-3xl md:text-4xl font-light font-montserrat text-brand-dark mb-4"
                     data-aos="fade-up"
                 >
                     Choose Your State
@@ -180,7 +180,7 @@ Ardur Healthcare{% endblock %} {% block content %}
                             </div>
                             <div>
                                 <h3
-                                    class="text-xl font-bold font-montserrat text-brand-dark group-hover:text-brand-primary transition duration-300"
+                                    class="text-xl font-light font-montserrat text-brand-dark group-hover:text-brand-primary transition duration-300"
                                 >
                                     {{ state.name }}
                                 </h3>
@@ -224,7 +224,7 @@ Ardur Healthcare{% endblock %} {% block content %}
 
                     <a
                         href="{{ url_for('ourreach.state_page', state_slug=state.url_slug) }}"
-                        class="block w-full bg-brand-primary text-white text-center font-montserrat font-semibold py-3 rounded-lg hover:bg-brand-dark transition duration-300"
+                        class="block w-full bg-brand-primary text-white text-center font-montserrat font-light py-3 rounded-lg hover:bg-brand-dark transition duration-300"
                     >
                         View Details
                     </a>
@@ -239,7 +239,7 @@ Ardur Healthcare{% endblock %} {% block content %}
                 >
                     <i class="ri-search-line text-gray-400 text-3xl"></i>
                 </div>
-                <h3 class="text-xl font-semibold text-gray-600 mb-2">
+                <h3 class="text-xl font-light text-gray-600 mb-2">
                     No states found
                 </h3>
                 <p class="text-gray-500">Try adjusting your search terms</p>
@@ -252,7 +252,7 @@ Ardur Healthcare{% endblock %} {% block content %}
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2
-                    class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark mb-4"
+                    class="text-3xl md:text-4xl font-light font-montserrat text-brand-dark mb-4"
                     data-aos="fade-up"
                 >
                     Why Choose Ardur Healthcare?
@@ -287,7 +287,7 @@ Ardur Healthcare{% endblock %} {% block content %}
                         ></i>
                     </div>
                     <h3
-                        class="text-xl font-bold font-montserrat text-brand-dark mb-3"
+                        class="text-xl font-light font-montserrat text-brand-dark mb-3"
                     >
                         Local Expertise
                     </h3>
@@ -309,7 +309,7 @@ Ardur Healthcare{% endblock %} {% block content %}
                         ></i>
                     </div>
                     <h3
-                        class="text-xl font-bold font-montserrat text-brand-dark mb-3"
+                        class="text-xl font-light font-montserrat text-brand-dark mb-3"
                     >
                         HIPAA Compliant
                     </h3>
@@ -331,7 +331,7 @@ Ardur Healthcare{% endblock %} {% block content %}
                         ></i>
                     </div>
                     <h3
-                        class="text-xl font-bold font-montserrat text-brand-dark mb-3"
+                        class="text-xl font-light font-montserrat text-brand-dark mb-3"
                     >
                         24/7 Support
                     </h3>
@@ -352,7 +352,7 @@ Ardur Healthcare{% endblock %} {% block content %}
                         ></i>
                     </div>
                     <h3
-                        class="text-xl font-bold font-montserrat text-brand-dark mb-3"
+                        class="text-xl font-light font-montserrat text-brand-dark mb-3"
                     >
                         Proven Results
                     </h3>
@@ -369,7 +369,7 @@ Ardur Healthcare{% endblock %} {% block content %}
     <section class="py-20 md:py-32 bg-brand-secondary text-center">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up">
             <h2
-                class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark mb-6"
+                class="text-3xl md:text-4xl font-light font-montserrat text-brand-dark mb-6"
             >
                 Ready to Get Started?
             </h2>
@@ -381,14 +381,14 @@ Ardur Healthcare{% endblock %} {% block content %}
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                     href="{{ url_for('contact.contact_form') }}"
-                    class="bg-brand-primary text-white font-montserrat font-semibold px-8 py-4 rounded-full hover:scale-105 hover:bg-brand-dark hover:shadow-xl transition duration-300 inline-flex items-center justify-center"
+                    class="bg-brand-primary text-white font-montserrat font-light px-8 py-4 rounded-full hover:scale-105 hover:bg-brand-dark hover:shadow-xl transition duration-300 inline-flex items-center justify-center"
                 >
                     <i class="ri-phone-line mr-2"></i>
                     Get Free Consultation
                 </a>
                 <a
                     href="{{ url_for('ourreach.index') }}"
-                    class="bg-white text-brand-primary border-2 border-brand-primary font-montserrat font-semibold px-8 py-4 rounded-full hover:bg-brand-primary hover:text-white transition duration-300 inline-flex items-center justify-center"
+                    class="bg-white text-brand-primary border-2 border-brand-primary font-montserrat font-light px-8 py-4 rounded-full hover:bg-brand-primary hover:text-white transition duration-300 inline-flex items-center justify-center"
                 >
                     <i class="ri-map-pin-line mr-2"></i>
                     View Interactive Map

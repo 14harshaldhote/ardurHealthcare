@@ -12,7 +12,7 @@ Healthcare{% endblock %} {% block content %}
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div class="text-left">
                     <h1
-                        class="text-4xl md:text-6xl font-bold font-montserrat text-brand-dark mb-6"
+                        class="text-4xl md:text-6xl font-light font-montserrat text-brand-dark mb-6"
                         data-aos="fade-right"
                     >
                         {% if service.title %} {{ service.title }} {% else %}
@@ -36,13 +36,13 @@ Healthcare{% endblock %} {% block content %}
                     >
                         <a
                             href="{{ url_for('contact.contact_form') }}"
-                            class="bg-brand-primary text-white font-montserrat font-semibold px-8 py-4 rounded-full hover:scale-105 hover:bg-brand-dark hover:shadow-xl transition duration-300 text-center"
+                            class="bg-brand-primary text-white font-montserrat font-light px-8 py-4 rounded-full hover:scale-105 hover:bg-brand-dark hover:shadow-xl transition duration-300 text-center"
                         >
                             Get Started Today
                         </a>
                         <a
                             href="#learn-more"
-                            class="border-2 border-brand-primary text-brand-primary font-montserrat font-semibold px-8 py-4 rounded-full hover:bg-brand-primary hover:text-white transition duration-300 text-center"
+                            class="border-2 border-brand-primary text-brand-primary font-montserrat font-light px-8 py-4 rounded-full hover:bg-brand-primary hover:text-white transition duration-300 text-center"
                         >
                             Learn More
                         </a>
@@ -82,7 +82,7 @@ Healthcare{% endblock %} {% block content %}
                         data-aos="fade-{% if loop.index % 2 == 0 %}left{% else %}right{% endif %}"
                     >
                         <h2
-                            class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark mb-6"
+                            class="text-3xl md:text-4xl font-light font-montserrat text-brand-dark mb-6"
                         >
                             {{ section.heading }}
                         </h2>
@@ -113,7 +113,7 @@ Healthcare{% endblock %} {% block content %}
                                     class="flex-shrink-0 w-8 h-8 bg-brand-secondary rounded-full flex items-center justify-center mr-4 mt-1"
                                 >
                                     <span
-                                        class="text-brand-primary font-bold text-sm"
+                                        class="text-brand-primary font-light text-sm"
                                         >{{ loop.index }}</span
                                     >
                                 </div>
@@ -125,7 +125,7 @@ Healthcare{% endblock %} {% block content %}
                         <div class="mt-8">
                             <a
                                 href="{{ section.cta.link or url_for('contact.contact_form') }}"
-                                class="bg-brand-primary text-white font-montserrat font-semibold px-8 py-4 rounded-full hover:scale-105 hover:bg-brand-dark transition duration-300 inline-block"
+                                class="bg-brand-primary text-white font-montserrat font-light px-8 py-4 rounded-full hover:scale-105 hover:bg-brand-dark transition duration-300 inline-block"
                             >
                                 {{ section.cta.text }}
                             </a>
@@ -147,7 +147,7 @@ Healthcare{% endblock %} {% block content %}
                                 <div class="grid grid-cols-2 gap-4">
                                     <div class="text-center">
                                         <div
-                                            class="text-3xl font-bold text-brand-primary"
+                                            class="text-3xl font-light text-brand-primary"
                                         >
                                             99%
                                         </div>
@@ -157,7 +157,7 @@ Healthcare{% endblock %} {% block content %}
                                     </div>
                                     <div class="text-center">
                                         <div
-                                            class="text-3xl font-bold text-brand-primary"
+                                            class="text-3xl font-light text-brand-primary"
                                         >
                                             24hr
                                         </div>
@@ -167,7 +167,7 @@ Healthcare{% endblock %} {% block content %}
                                     </div>
                                     <div class="text-center">
                                         <div
-                                            class="text-3xl font-bold text-brand-primary"
+                                            class="text-3xl font-light text-brand-primary"
                                         >
                                             15%
                                         </div>
@@ -177,7 +177,7 @@ Healthcare{% endblock %} {% block content %}
                                     </div>
                                     <div class="text-center">
                                         <div
-                                            class="text-3xl font-bold text-brand-primary"
+                                            class="text-3xl font-light text-brand-primary"
                                         >
                                             50+
                                         </div>
@@ -197,7 +197,7 @@ Healthcare{% endblock %} {% block content %}
                 <div data-aos="fade-right">
                     {% if service.features %}
                     <h2
-                        class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark mb-6"
+                        class="text-3xl md:text-4xl font-light font-montserrat text-brand-dark mb-6"
                     >
                         Key Features
                     </h2>
@@ -215,7 +215,7 @@ Healthcare{% endblock %} {% block content %}
                     </div>
                     {% endif %} {% if service.services %}
                     <h2
-                        class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark mb-6"
+                        class="text-3xl md:text-4xl font-light font-montserrat text-brand-dark mb-6"
                     >
                         Our Services Include
                     </h2>
@@ -257,7 +257,7 @@ Healthcare{% endblock %} {% block content %}
             <div class="bg-brand-light rounded-2xl p-12 mb-16">
                 <div class="text-center mb-12">
                     <h2
-                        class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark mb-4"
+                        class="text-3xl md:text-4xl font-light font-montserrat text-brand-dark mb-4"
                         data-aos="fade-up"
                     >
                         Our Process
@@ -282,12 +282,12 @@ Healthcare{% endblock %} {% block content %}
                         <div
                             class="flex justify-center items-center h-16 w-16 bg-brand-primary rounded-full mx-auto mb-6"
                         >
-                            <span class="text-2xl font-bold text-white"
+                            <span class="text-2xl font-light text-white"
                                 >{{ loop.index }}</span
                             >
                         </div>
                         <h3
-                            class="text-xl font-bold font-montserrat text-brand-dark mb-3"
+                            class="text-xl font-light font-montserrat text-brand-dark mb-3"
                         >
                             Step {{ loop.index }}
                         </h3>
@@ -303,7 +303,7 @@ Healthcare{% endblock %} {% block content %}
             <div class="mb-16">
                 <div class="text-center mb-12">
                     <h2
-                        class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark mb-4"
+                        class="text-3xl md:text-4xl font-light font-montserrat text-brand-dark mb-4"
                         data-aos="fade-up"
                     >
                         Why Choose Ardur Healthcare
@@ -334,7 +334,7 @@ Healthcare{% endblock %} {% block content %}
                             ></i>
                         </div>
                         <h3
-                            class="text-lg font-bold font-montserrat text-brand-dark mb-3 text-center"
+                            class="text-lg font-light font-montserrat text-brand-dark mb-3 text-center"
                         >
                             Benefit {{ loop.index }}
                         </h3>
@@ -350,7 +350,7 @@ Healthcare{% endblock %} {% block content %}
             <div class="bg-gray-50 rounded-2xl p-12">
                 <div class="text-center mb-12">
                     <h2
-                        class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark mb-4"
+                        class="text-3xl md:text-4xl font-light font-montserrat text-brand-dark mb-4"
                         data-aos="fade-up"
                     >
                         Frequently Asked Questions
@@ -377,7 +377,7 @@ Healthcare{% endblock %} {% block content %}
                         >
                             <div class="flex justify-between items-center">
                                 <h3
-                                    class="text-lg font-semibold text-brand-dark pr-8"
+                                    class="text-lg font-light text-brand-dark pr-8"
                                 >
                                     {{ faq.question }}
                                 </h3>
@@ -410,7 +410,7 @@ Healthcare{% endblock %} {% block content %}
         <div class="absolute inset-0 bg-black/10"></div>
         <div class="relative max-w-4xl mx-auto px-6" data-aos="fade-up">
             <h2
-                class="text-3xl md:text-4xl font-bold font-montserrat text-white mb-6"
+                class="text-3xl md:text-4xl font-light font-montserrat text-white mb-6"
             >
                 Ready to Transform Your {{ service.title or 'Medical Billing'
                 }}?

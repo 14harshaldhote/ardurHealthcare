@@ -5,7 +5,7 @@ endblock %} {% block content %}
     <section class="text-center py-16 md:py-20 bg-brand-light">
         <div class="max-w-5xl mx-auto px-6">
             <h1
-                class="text-4xl md:text-6xl font-bold font-montserrat text-brand-dark mb-4"
+                class="text-4xl md:text-6xl font-light font-montserrat text-brand-dark mb-4"
                 data-aos="fade-down"
             >
                 State-Specific
@@ -33,7 +33,7 @@ endblock %} {% block content %}
                 <div
                     class="px-8 py-6 bg-gradient-to-r from-brand-primary/90 to-brand-accent/90"
                 >
-                    <h2 class="text-2xl font-bold text-white text-center mb-2">
+                    <h2 class="text-2xl font-light text-white text-center mb-2">
                         U.S. Billing Map
                     </h2>
                     <h3 class="text-brand-light text-center text-sm">
@@ -113,7 +113,7 @@ endblock %} {% block content %}
                             >
                                 <i class="ri-map-2-line text-white text-xl"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-gray-800">
+                            <h3 class="text-xl font-light text-gray-800">
                                 Nationwide Coverage
                             </h3>
                         </div>
@@ -154,7 +154,7 @@ endblock %} {% block content %}
                 <!-- Quick Stats -->
                 <div class="lg:col-span-2">
                     <div class="text-center mb-6">
-                        <h2 class="text-2xl font-bold text-gray-800 mb-2">
+                        <h2 class="text-2xl font-light text-gray-800 mb-2">
                             Service Footprint at a Glance
                         </h2>
                     </div>
@@ -169,7 +169,7 @@ endblock %} {% block content %}
                                     <p class="text-brand-light text-sm">
                                         Active States
                                     </p>
-                                    <p class="text-3xl font-bold">50</p>
+                                    <p class="text-3xl font-light">50</p>
                                 </div>
                                 <div
                                     class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center"
@@ -189,7 +189,9 @@ endblock %} {% block content %}
                                     <p class="text-gray-600 text-sm">
                                         Time Zones
                                     </p>
-                                    <p class="text-3xl font-bold text-gray-800">
+                                    <p
+                                        class="text-3xl font-light text-gray-800"
+                                    >
                                         4
                                     </p>
                                 </div>
@@ -213,7 +215,9 @@ endblock %} {% block content %}
                                     <p class="text-gray-600 text-sm">
                                         Healthcare Providers
                                     </p>
-                                    <p class="text-3xl font-bold text-gray-800">
+                                    <p
+                                        class="text-3xl font-light text-gray-800"
+                                    >
                                         500+
                                     </p>
                                 </div>
@@ -237,7 +241,7 @@ endblock %} {% block content %}
                                     <p class="text-brand-light text-sm">
                                         Years Experience
                                     </p>
-                                    <p class="text-3xl font-bold">15+</p>
+                                    <p class="text-3xl font-light">15+</p>
                                 </div>
                                 <div
                                     class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center"
@@ -256,7 +260,7 @@ endblock %} {% block content %}
                 data-aos="fade-up"
             >
                 <div class="text-center mb-8">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-4">
+                    <h2 class="text-3xl font-light text-gray-800 mb-4">
                         Why Choose Our Services?
                     </h2>
                     <h3 class="text-gray-600 max-w-2xl mx-auto">
@@ -277,7 +281,7 @@ endblock %} {% block content %}
                         >
                             <i class="ri-map-pin-line text-white text-2xl"></i>
                         </div>
-                        <h3 class="text-lg font-semibold text-gray-800 mb-2">
+                        <h3 class="text-lg font-light text-gray-800 mb-2">
                             Local Expertise
                         </h3>
                         <p class="text-gray-600 text-sm">
@@ -298,7 +302,7 @@ endblock %} {% block content %}
                                 class="ri-shield-check-line text-white text-2xl"
                             ></i>
                         </div>
-                        <h3 class="text-lg font-semibold text-gray-800 mb-2">
+                        <h3 class="text-lg font-light text-gray-800 mb-2">
                             Compliance First
                         </h3>
                         <p class="text-gray-600 text-sm">
@@ -319,7 +323,7 @@ endblock %} {% block content %}
                                 class="ri-customer-service-line text-white text-2xl"
                             ></i>
                         </div>
-                        <h3 class="text-lg font-semibold text-gray-800 mb-2">
+                        <h3 class="text-lg font-light text-gray-800 mb-2">
                             24/7 Support
                         </h3>
                         <p class="text-gray-600 text-sm">
@@ -335,14 +339,14 @@ endblock %} {% block content %}
                 class="bg-gradient-to-r from-brand-primary to-brand-accent rounded-2xl p-8 text-center text-white"
                 data-aos="fade-up"
             >
-                <h2 class="text-3xl font-bold mb-4">Ready to Get Started?</h2>
+                <h2 class="text-3xl font-light mb-4">Ready to Get Started?</h2>
                 <h3 class="text-brand-light mb-6 max-w-2xl mx-auto">
                     Contact us to learn how our state-specific medical billing
                     services can boost your revenue across all U.S. time zones.
                 </h3>
                 <a
                     href="{{ url_for('contact.contact_form') }}"
-                    class="bg-white text-brand-primary font-semibold px-8 py-3 rounded-full hover:bg-gray-100 transition-all duration-300 inline-flex items-center gap-2"
+                    class="bg-white text-brand-primary font-light px-8 py-3 rounded-full hover:bg-gray-100 transition-all duration-300 inline-flex items-center gap-2"
                 >
                     <span>Get in Touch</span>
                     <i class="ri-arrow-right-line"></i>

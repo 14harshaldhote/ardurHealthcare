@@ -20,12 +20,12 @@ Services | Ardur Healthcare{% endblock %} {% block meta %}
                 data-aos="fade-down"
             >
                 <i class="ri-stethoscope-line text-brand-primary mr-2"></i>
-                <span class="text-brand-primary font-semibold"
+                <span class="text-brand-primary font-light"
                     >Medical Specialties</span
                 >
             </div>
             <h1
-                class="text-4xl md:text-6xl font-bold font-montserrat text-brand-dark mb-4"
+                class="text-4xl md:text-6xl font-light font-montserrat text-brand-dark mb-4"
                 data-aos="fade-up"
             >
                 Specialty-Specific Medical Billing Services
@@ -47,13 +47,13 @@ Services | Ardur Healthcare{% endblock %} {% block meta %}
             >
                 <a
                     href="{{ url_for('contact.contact_form') }}"
-                    class="bg-brand-primary text-white font-montserrat font-semibold px-8 py-4 rounded-full hover:scale-105 hover:bg-brand-dark hover:shadow-xl transition duration-300 inline-flex items-center justify-center"
+                    class="bg-brand-primary text-white font-montserrat font-light px-8 py-4 rounded-full hover:scale-105 hover:bg-brand-dark hover:shadow-xl transition duration-300 inline-flex items-center justify-center"
                 >
                     <i class="ri-phone-line mr-2"></i> Get Free Consultation
                 </a>
                 <a
                     href="#specialties-section"
-                    class="bg-white text-brand-primary border-2 border-brand-primary font-montserrat font-semibold px-8 py-4 rounded-full hover:bg-brand-primary hover:text-white transition duration-300 inline-flex items-center justify-center"
+                    class="bg-white text-brand-primary border-2 border-brand-primary font-montserrat font-light px-8 py-4 rounded-full hover:bg-brand-primary hover:text-white transition duration-300 inline-flex items-center justify-center"
                 >
                     <i class="ri-arrow-down-line mr-2"></i> View Specialties
                 </a>
@@ -67,7 +67,7 @@ Services | Ardur Healthcare{% endblock %} {% block meta %}
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-12">
                     <h2
-                        class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark mb-4"
+                        class="text-3xl md:text-4xl font-light font-montserrat text-brand-dark mb-4"
                         data-aos="fade-up"
                     >
                         Find Your Medical Specialty
@@ -111,7 +111,7 @@ Services | Ardur Healthcare{% endblock %} {% block meta %}
                             <div class="flex gap-3 items-center">
                                 <button
                                     id="clear-filters"
-                                    class="px-4 py-3 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors duration-200 text-sm font-medium"
+                                    class="px-4 py-3 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors duration-200 text-sm"
                                 >
                                     <i class="ri-close-line"></i>
                                 </button>
@@ -120,7 +120,7 @@ Services | Ardur Healthcare{% endblock %} {% block meta %}
                         <div class="flex items-center gap-4">
                             <button
                                 id="expand-btn"
-                                class="bg-brand-primary text-white font-montserrat font-semibold px-6 py-3 rounded-lg hover:bg-brand-dark hover:shadow-lg transition-all duration-300 inline-flex items-center group"
+                                class="bg-brand-primary text-white font-montserrat font-light px-6 py-3 rounded-lg hover:bg-brand-dark hover:shadow-lg transition-all duration-300 inline-flex items-center group"
                             >
                                 <i
                                     id="expand-icon"
@@ -185,7 +185,7 @@ Services | Ardur Healthcare{% endblock %} {% block meta %}
                         <i
                             class="ri-search-2-line text-gray-400 text-5xl mb-4"
                         ></i>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                        <h3 class="text-xl font-light text-gray-800 mb-2">
                             No specialties found
                         </h3>
                         <p class="text-gray-600 mb-6">
@@ -210,43 +210,35 @@ Services | Ardur Healthcare{% endblock %} {% block meta %}
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                     <div class="specialty-stat">
                         <div
-                            class="text-4xl md:text-5xl font-bold text-brand-primary mb-2"
+                            class="text-4xl md:text-5xl font-light text-brand-primary mb-2"
                         >
                             40+
                         </div>
-                        <div class="text-gray-600 font-medium">
-                            Medical Specialties
-                        </div>
+                        <div class="text-gray-600">Medical Specialties</div>
                     </div>
                     <div class="specialty-stat">
                         <div
-                            class="text-4xl md:text-5xl font-bold text-brand-primary mb-2"
+                            class="text-4xl md:text-5xl font-light text-brand-primary mb-2"
                         >
                             98%
                         </div>
-                        <div class="text-gray-600 font-medium">
-                            Average Collection Rate
-                        </div>
+                        <div class="text-gray-600">Average Collection Rate</div>
                     </div>
                     <div class="specialty-stat">
                         <div
-                            class="text-4xl md:text-5xl font-bold text-brand-primary mb-2"
+                            class="text-4xl md:text-5xl font-light text-brand-primary mb-2"
                         >
                             24-48h
                         </div>
-                        <div class="text-gray-600 font-medium">
-                            Claim Submission
-                        </div>
+                        <div class="text-gray-600">Claim Submission</div>
                     </div>
                     <div class="specialty-stat">
                         <div
-                            class="text-4xl md:text-5xl font-bold text-brand-primary mb-2"
+                            class="text-4xl md:text-5xl font-light text-brand-primary mb-2"
                         >
                             15+
                         </div>
-                        <div class="text-gray-600 font-medium">
-                            Years Experience
-                        </div>
+                        <div class="text-gray-600">Years Experience</div>
                     </div>
                 </div>
             </div>
@@ -261,7 +253,7 @@ Services | Ardur Healthcare{% endblock %} {% block meta %}
                     class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-white/20"
                 >
                     <h2
-                        class="text-3xl md:text-4xl font-bold font-montserrat mb-4"
+                        class="text-3xl md:text-4xl font-light font-montserrat mb-4"
                     >
                         Don't See Your Specialty? We've Got You Covered.
                     </h2>
@@ -274,14 +266,14 @@ Services | Ardur Healthcare{% endblock %} {% block meta %}
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
                         <a
                             href="{{ url_for('contact.contact_form') }}"
-                            class="bg-white text-brand-primary font-montserrat font-semibold px-8 py-4 rounded-xl hover:scale-105 hover:shadow-xl transition-all duration-300 inline-flex items-center justify-center"
+                            class="bg-white text-brand-primary font-montserrat font-light px-8 py-4 rounded-xl hover:scale-105 hover:shadow-xl transition-all duration-300 inline-flex items-center justify-center"
                         >
                             <i class="ri-phone-line mr-2"></i> Get Free
                             Consultation
                         </a>
                         <a
                             href="tel:+1-555-ARDUR-HC"
-                            class="bg-transparent text-white border-2 border-white font-montserrat font-semibold px-8 py-4 rounded-xl hover:bg-white hover:text-brand-primary transition-all duration-300 inline-flex items-center justify-center"
+                            class="bg-transparent text-white border-2 border-white font-montserrat font-light px-8 py-4 rounded-xl hover:bg-white hover:text-brand-primary transition-all duration-300 inline-flex items-center justify-center"
                         >
                             <i class="ri-phone-line mr-2"></i> Call (555)
                             ARDUR-HC
@@ -557,7 +549,7 @@ Services | Ardur Healthcare{% endblock %} {% block meta %}
                     <div class="specialty-icon mr-3">
                         <i class="${specialty.icon}"></i>
                     </div>
-                    <h3 class="text-base font-bold text-brand-dark font-montserrat leading-tight flex-1">${highlightedName}</h3>
+                    <h3 class="text-base font-light text-brand-dark font-montserrat leading-tight flex-1">${highlightedName}</h3>
                 </div>
 
                 <p class="text-gray-600 text-sm mb-3 leading-relaxed line-clamp-3">
@@ -643,9 +635,9 @@ Services | Ardur Healthcare{% endblock %} {% block meta %}
         const total = filteredData.length;
 
         if (isExpanded) {
-            resultsCount.innerHTML = `Showing <span class="font-semibold text-brand-primary">${total}</span> of <span class="font-semibold text-brand-primary">${specialtyData.length}</span> specialties`;
+            resultsCount.innerHTML = `Showing <span class="font-light text-brand-primary">${total}</span> of <span class="font-light text-brand-primary">${specialtyData.length}</span> specialties`;
         } else {
-            resultsCount.innerHTML = `Showing <span class="font-semibold text-brand-primary">${showing}</span> of <span class="font-semibold text-brand-primary">${total}</span> specialties`;
+            resultsCount.innerHTML = `Showing <span class="font-light text-brand-primary">${showing}</span> of <span class="font-light text-brand-primary">${total}</span> specialties`;
         }
     }
 

@@ -1,0 +1,461 @@
+{% extends "base.html" %} {% block title %}{{ post.title }} - Ardur Healthcare{%
+endblock %} {% block meta %}
+<meta name="description" content="{{ post.meta_description }}" />
+<meta name="keywords" content="{{ post.keywords | join(', ') }}" />
+<meta property="og:title" content="{{ post.title }}" />
+<meta property="og:description" content="{{ post.meta_description }}" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="{{ request.url }}" />
+<meta property="article:author" content="{{ post.author }}" />
+<meta property="article:published_time" content="{{ post.date.isoformat() }}" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ post.title }}" />
+<meta name="twitter:description" content="{{ post.meta_description }}" />
+{% endblock %} {% block content %}
+<main class="min-h-screen">
+    <!-- Blog Post Header -->
+    <section class="py-16 md:py-24 bg-brand-light">
+        <div class="max-w-4xl mx-auto px-4">
+            <!-- Breadcrumb -->
+            <nav class="text-sm text-gray-600 mb-8" data-aos="fade-down">
+                <a
+                    href="{{ url_for('main.home') }}"
+                    class="hover:text-brand-primary"
+                    >Home</a
+                >
+                <span class="mx-2">/</span>
+                <a
+                    href="{{ url_for('resources.blog') }}"
+                    class="hover:text-brand-primary"
+                    >Blog</a
+                >
+                <span class="mx-2">/</span>
+                <span class="text-gray-900">{{ post.title }}</span>
+            </nav>
+
+            <!-- Category Badge -->
+            <div class="mb-4" data-aos="fade-up">
+                <span
+                    class="inline-block bg-brand-primary text-white text-sm font-semibold px-4 py-2 rounded-full"
+                >
+                    {{ post.category }}
+                </span>
+            </div>
+
+            <!-- Title -->
+            <h1
+                class="text-4xl md:text-5xl font-bold font-montserrat text-brand-dark mb-6 leading-tight"
+                data-aos="fade-up"
+                data-aos-delay="100"
+            >
+                {{ post.title }}
+            </h1>
+
+            <!-- Meta Information -->
+            <div
+                class="flex flex-wrap items-center gap-6 text-gray-600 mb-8"
+                data-aos="fade-up"
+                data-aos-delay="200"
+            >
+                <div class="flex items-center">
+                    <div
+                        class="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center mr-3"
+                    >
+                        <span class="text-white font-semibold">AH</span>
+                    </div>
+                    <div>
+                        <p class="font-medium text-gray-900">
+                            {{ post.author }}
+                        </p>
+                        <p class="text-sm text-gray-600">
+                            Healthcare Revenue Cycle Expert
+                        </p>
+                    </div>
+                </div>
+                <div class="flex items-center text-sm">
+                    <i class="ri-calendar-line mr-2 text-brand-primary"></i>
+                    {{ post.date.strftime('%B %d, %Y') }}
+                </div>
+                <div class="flex items-center text-sm">
+                    <i class="ri-time-line mr-2 text-brand-primary"></i>
+                    {{ post.read_time }}
+                </div>
+            </div>
+
+            <!-- Keywords/Tags -->
+            <div
+                class="flex flex-wrap gap-2 mb-8"
+                data-aos="fade-up"
+                data-aos-delay="300"
+            >
+                {% for keyword in post.keywords %}
+                <span
+                    class="bg-white text-brand-primary text-sm px-3 py-1 rounded-full border border-brand-primary"
+                >
+                    {{ keyword }}
+                </span>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Content -->
+    <article class="py-16">
+        <div class="max-w-4xl mx-auto px-4">
+            <!-- Introduction -->
+            <div class="prose prose-lg max-w-none mb-12" data-aos="fade-up">
+                <p class="text-xl text-gray-700 leading-relaxed font-light">
+                    {{ post.content.introduction }}
+                </p>
+            </div>
+
+            <!-- Table of Contents -->
+            <div class="bg-gray-50 rounded-lg p-6 mb-12" data-aos="fade-up">
+                <h3
+                    class="text-xl font-bold font-montserrat text-brand-dark mb-4"
+                >
+                    Table of Contents
+                </h3>
+                <ul class="space-y-2">
+                    {% for section in post.content.sections %}
+                    <li>
+                        <a
+                            href="#section-{{ loop.index }}"
+                            class="text-brand-primary hover:text-brand-dark transition-colors duration-200 flex items-center"
+                        >
+                            <span
+                                class="w-2 h-2 bg-brand-primary rounded-full mr-3"
+                            ></span>
+                            {{ section.title }}
+                        </a>
+                        {% if section.get('subsections') %}
+                        <ul class="ml-8 mt-2 space-y-1">
+                            {% for subsection in section.subsections %}
+                            <li>
+                                <a
+                                    href="#subsection-{{ loop.index0 }}-{{ loop.index }}"
+                                    class="text-gray-600 hover:text-brand-primary transition-colors duration-200 text-sm"
+                                >
+                                    {{ subsection.title }}
+                                </a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <!-- Main Content Sections -->
+            {% for section in post.content.sections %}
+            <section
+                id="section-{{ loop.index }}"
+                class="mb-12"
+                data-aos="fade-up"
+            >
+                <h2
+                    class="text-3xl font-bold font-montserrat text-brand-dark mb-6"
+                >
+                    {{ section.title }}
+                </h2>
+
+                <div class="prose prose-lg max-w-none">
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        {{ section.content | replace('\n\n', '
+                    </p>
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        ') | safe }}
+                    </p>
+                </div>
+
+                <!-- Subsections if they exist -->
+                {% if section.get('subsections') %} {% for subsection in
+                section.subsections %}
+                <div
+                    id="subsection-{{ loop.index0 }}-{{ loop.index }}"
+                    class="ml-6 mb-8 border-l-4 border-brand-primary pl-6"
+                >
+                    <h3
+                        class="text-xl font-bold font-montserrat text-brand-dark mb-4"
+                    >
+                        {{ subsection.title }}
+                    </h3>
+                    <div class="prose prose-lg max-w-none">
+                        <p class="text-gray-700 leading-relaxed">
+                            {{ subsection.content | replace('\n\n', '
+                        </p>
+                        <p class="text-gray-700 leading-relaxed">
+                            ') | safe }}
+                        </p>
+                    </div>
+                </div>
+                {% endfor %} {% endif %}
+            </section>
+            {% endfor %}
+
+            <!-- Conclusion -->
+            <section class="mb-12" data-aos="fade-up">
+                <h2
+                    class="text-3xl font-bold font-montserrat text-brand-dark mb-6"
+                >
+                    Conclusion
+                </h2>
+                <div class="prose prose-lg max-w-none">
+                    <p class="text-gray-700 leading-relaxed text-lg">
+                        {{ post.content.conclusion }}
+                    </p>
+                </div>
+            </section>
+
+            <!-- About Ardur Healthcare -->
+            <section
+                class="bg-brand-light rounded-lg p-8 mb-12"
+                data-aos="fade-up"
+            >
+                <h3
+                    class="text-2xl font-bold font-montserrat text-brand-dark mb-4"
+                >
+                    About Ardur Healthcare
+                </h3>
+                <p class="text-gray-700 leading-relaxed mb-6">
+                    At Ardur Healthcare, we understand that mastering the
+                    complexities of medical billing and coding is crucial for
+                    the financial health of your practice. With expertise
+                    spanning over 50 medical specialties across the USA, we
+                    streamline your revenue cycle, reduce denials, and ensure
+                    maximum reimbursement, allowing you to focus on providing
+                    exceptional patient care. Let us handle the minor details of
+                    medical billing and coding so you don't have to.
+                </p>
+                <p class="text-gray-700 leading-relaxed mb-6">
+                    Ready to optimize your practice's financial performance?
+                </p>
+                <a
+                    href="{{ url_for('contact.contact_form') }}"
+                    class="inline-flex items-center bg-brand-primary text-white font-montserrat font-semibold px-6 py-3 rounded-lg hover:bg-brand-dark transition duration-300"
+                >
+                    Contact Ardur Healthcare for a Free Consultation
+                    <i class="ri-arrow-right-line ml-2"></i>
+                </a>
+            </section>
+
+            <!-- Social Sharing -->
+            <div
+                class="flex items-center justify-between border-t border-b border-gray-200 py-6 mb-12"
+                data-aos="fade-up"
+            >
+                <div>
+                    <h4 class="text-lg font-semibold text-brand-dark mb-2">
+                        Share this article
+                    </h4>
+                    <p class="text-gray-600 text-sm">
+                        Help others learn about medical billing best practices
+                    </p>
+                </div>
+                <div class="flex space-x-4">
+                    <a
+                        href="https://www.linkedin.com/sharing/share-offsite/?url={{ request.url }}"
+                        target="_blank"
+                        class="flex items-center justify-center w-10 h-10 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors duration-200"
+                    >
+                        <i class="ri-linkedin-fill"></i>
+                    </a>
+                    <a
+                        href="https://twitter.com/intent/tweet?url={{ request.url }}&text={{ post.twitter_post }}"
+                        target="_blank"
+                        class="flex items-center justify-center w-10 h-10 bg-blue-400 text-white rounded-full hover:bg-blue-500 transition-colors duration-200"
+                    >
+                        <i class="ri-twitter-fill"></i>
+                    </a>
+                    <a
+                        href="mailto:?subject={{ post.title }}&body=I thought you might find this article interesting: {{ request.url }}"
+                        class="flex items-center justify-center w-10 h-10 bg-gray-600 text-white rounded-full hover:bg-gray-700 transition-colors duration-200"
+                    >
+                        <i class="ri-mail-fill"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- Related Posts Section -->
+    {% if related_posts %}
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2
+                class="text-3xl font-bold font-montserrat text-brand-dark text-center mb-12"
+                data-aos="fade-up"
+            >
+                Related Articles
+            </h2>
+            <div
+                class="grid grid-cols-1 md:grid-cols-{{ related_posts|length }} gap-8"
+            >
+                {% for related_post in related_posts %}
+                <article
+                    class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+                    data-aos="fade-up"
+                    data-aos-delay="{{ loop.index0 * 100 }}"
+                >
+                    <!-- Featured Image -->
+                    <div
+                        class="h-48 bg-gradient-to-r from-brand-primary to-brand-secondary relative overflow-hidden"
+                    >
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-20"
+                        ></div>
+                        <div class="absolute bottom-4 left-4">
+                            <span
+                                class="inline-block bg-white bg-opacity-90 text-brand-primary text-xs font-semibold px-3 py-1 rounded-full"
+                            >
+                                {{ related_post.category }}
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Card Content -->
+                    <div class="p-6">
+                        <h3
+                            class="text-lg font-bold font-montserrat text-brand-dark mb-3 hover:text-brand-primary transition-colors duration-200 line-clamp-2"
+                        >
+                            <a
+                                href="{{ url_for('resources.blog_post', slug=related_post.slug) }}"
+                            >
+                                {{ related_post.title }}
+                            </a>
+                        </h3>
+
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+                            {{ related_post.excerpt }}
+                        </p>
+
+                        <div
+                            class="flex items-center justify-between text-xs text-gray-500 mb-4"
+                        >
+                            <span
+                                >{{ related_post.date.strftime('%B %d, %Y')
+                                }}</span
+                            >
+                            <span class="text-brand-primary font-medium"
+                                >{{ related_post.read_time }}</span
+                            >
+                        </div>
+
+                        <a
+                            href="{{ url_for('resources.blog_post', slug=related_post.slug) }}"
+                            class="inline-flex items-center text-sm font-medium text-brand-primary hover:text-brand-dark transition-colors duration-200"
+                        >
+                            Read Article
+                            <i class="ri-arrow-right-line ml-1"></i>
+                        </a>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- Newsletter CTA -->
+    <section class="py-16 bg-brand-dark">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2
+                class="text-3xl font-bold font-montserrat text-white mb-4"
+                data-aos="fade-up"
+            >
+                Get More Healthcare Billing Insights
+            </h2>
+            <p
+                class="text-lg text-gray-300 mb-8"
+                data-aos="fade-up"
+                data-aos-delay="100"
+            >
+                Subscribe to our newsletter for the latest tips, updates, and
+                best practices in medical billing and coding.
+            </p>
+            <div
+                class="max-w-md mx-auto"
+                data-aos="fade-up"
+                data-aos-delay="200"
+            >
+                <form class="flex gap-4" action="#" method="POST">
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Your email address"
+                        required
+                        class="flex-grow px-4 py-3 rounded-lg border-0 focus:outline-none focus:ring-2 focus:ring-brand-primary"
+                    />
+                    <button
+                        type="submit"
+                        class="bg-brand-primary text-white font-montserrat font-semibold px-6 py-3 rounded-lg hover:bg-white hover:text-brand-primary transition duration-300"
+                    >
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Blog -->
+    <section class="py-8 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <a
+                href="{{ url_for('resources.blog') }}"
+                class="inline-flex items-center text-brand-primary hover:text-brand-dark transition-colors duration-200 font-medium"
+            >
+                <i class="ri-arrow-left-line mr-2"></i>
+                Back to All Articles
+            </a>
+        </div>
+    </section>
+
+    <!-- AOS Animation Scripts -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+            anchor.addEventListener("click", function (e) {
+                e.preventDefault();
+                document
+                    .querySelector(this.getAttribute("href"))
+                    .scrollIntoView({
+                        behavior: "smooth",
+                    });
+            });
+        });
+    </script>
+
+    <!-- Custom Styles -->
+    <style>
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .prose p {
+            margin-bottom: 1.5rem;
+        }
+
+        .prose p:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+</main>
+{% endblock %}

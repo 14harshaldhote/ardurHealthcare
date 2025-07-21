@@ -1,13 +1,359 @@
-<!-- 500.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>500 - Server Error</title>
-</head>
-<body>
-  <h1>500 - Something went wrong</h1>
-  <p>We're working on it. Please try again later.</p>
-</body>
-</html>
+{% extends "base.html" %} {% block title %}Server Error - Ardur Healthcare{%
+endblock %} {% block content %}
+<main class="min-h-screen flex items-center justify-center">
+    <section class="py-16 md:py-24">
+        <div class="container mx-auto px-4 text-center">
+            <!-- 500 Illustration -->
+            <div class="mb-12" data-aos="fade-down">
+                <div
+                    class="inline-flex items-center justify-center w-32 h-32 bg-red-50 rounded-full mb-8"
+                >
+                    <i class="ri-alert-line text-6xl text-red-500"></i>
+                </div>
+                <h1
+                    class="text-8xl md:text-9xl font-bold font-montserrat text-red-500 mb-4"
+                >
+                    500
+                </h1>
+                <h2
+                    class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark mb-4"
+                >
+                    Server Error
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+                    Oops! Something went wrong on our end. Our technical team
+                    has been notified and is working to resolve this issue. Your
+                    revenue cycle management is still secure!
+                </p>
+            </div>
 
+            <!-- Status Information -->
+            <div
+                class="bg-yellow-50 border border-yellow-200 rounded-lg p-6 mb-12 max-w-2xl mx-auto"
+                data-aos="fade-up"
+                data-aos-delay="100"
+            >
+                <div class="flex items-center justify-center mb-4">
+                    <i
+                        class="ri-information-line text-2xl text-yellow-600 mr-3"
+                    ></i>
+                    <h3
+                        class="text-xl font-bold font-montserrat text-yellow-800"
+                    >
+                        What's Happening?
+                    </h3>
+                </div>
+                <p class="text-yellow-700">
+                    We're experiencing a temporary technical issue. Our
+                    monitoring systems have detected the problem and our
+                    development team is actively working on a fix. Your data
+                    remains safe and secure.
+                </p>
+            </div>
+
+            <!-- Helpful Actions -->
+            <div
+                class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12"
+                data-aos="fade-up"
+                data-aos-delay="200"
+            >
+                <!-- Try Again Card -->
+                <div
+                    class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
+                >
+                    <div
+                        class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4"
+                    >
+                        <i class="ri-refresh-line text-2xl text-green-600"></i>
+                    </div>
+                    <h3
+                        class="text-xl font-bold font-montserrat text-brand-dark mb-3"
+                    >
+                        Try Again
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Sometimes a simple refresh can resolve temporary issues.
+                    </p>
+                    <button
+                        onclick="window.location.reload()"
+                        class="inline-flex items-center text-green-600 hover:text-green-700 font-medium transition-colors duration-200"
+                    >
+                        Refresh Page
+                        <i class="ri-arrow-right-line ml-2"></i>
+                    </button>
+                </div>
+
+                <!-- Contact Support Card -->
+                <div
+                    class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
+                >
+                    <div
+                        class="w-16 h-16 bg-brand-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4"
+                    >
+                        <i
+                            class="ri-customer-service-2-line text-2xl text-brand-primary"
+                        ></i>
+                    </div>
+                    <h3
+                        class="text-xl font-bold font-montserrat text-brand-dark mb-3"
+                    >
+                        Contact Support
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Need immediate assistance? Our support team is standing
+                        by.
+                    </p>
+                    <a
+                        href="tel:(214)800-6161"
+                        class="inline-flex items-center text-brand-primary hover:text-brand-dark font-medium transition-colors duration-200"
+                    >
+                        Call Now
+                        <i class="ri-arrow-right-line ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Status Updates Card -->
+                <div
+                    class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
+                >
+                    <div
+                        class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
+                    >
+                        <i
+                            class="ri-notification-3-line text-2xl text-blue-600"
+                        ></i>
+                    </div>
+                    <h3
+                        class="text-xl font-bold font-montserrat text-brand-dark mb-3"
+                    >
+                        Get Updates
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Stay informed about service status and maintenance
+                        updates.
+                    </p>
+                    <a
+                        href="{{ url_for('contact.contact_form') }}"
+                        class="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200"
+                    >
+                        Subscribe
+                        <i class="ri-arrow-right-line ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Alternative Actions -->
+            <div
+                class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
+                data-aos="fade-up"
+                data-aos-delay="400"
+            >
+                <a
+                    href="{{ url_for('main.home') }}"
+                    class="bg-brand-primary text-white font-montserrat font-semibold px-8 py-3 rounded-lg hover:bg-brand-dark transition duration-300 inline-flex items-center"
+                >
+                    <i class="ri-home-line mr-2"></i>
+                    Return to Home
+                </a>
+                <button
+                    onclick="history.back()"
+                    class="border-2 border-brand-primary text-brand-primary font-montserrat font-semibold px-8 py-3 rounded-lg hover:bg-brand-primary hover:text-white transition duration-300 inline-flex items-center"
+                >
+                    <i class="ri-arrow-left-line mr-2"></i>
+                    Go Back
+                </button>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="mb-12" data-aos="fade-up" data-aos-delay="600">
+                <h3
+                    class="text-xl font-bold font-montserrat text-brand-dark mb-6"
+                >
+                    While We Fix This, You Can Still...
+                </h3>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a
+                        href="{{ url_for('resources.blog') }}"
+                        class="bg-gray-100 text-gray-700 px-4 py-2 rounded-full hover:bg-brand-primary hover:text-white transition-colors duration-200"
+                    >
+                        Read Our Blog
+                    </a>
+                    <a
+                        href="{{ url_for('services.index') }}"
+                        class="bg-gray-100 text-gray-700 px-4 py-2 rounded-full hover:bg-brand-primary hover:text-white transition-colors duration-200"
+                    >
+                        Browse Services
+                    </a>
+                    <a
+                        href="{{ url_for('specialities.specialities_main') }}"
+                        class="bg-gray-100 text-gray-700 px-4 py-2 rounded-full hover:bg-brand-primary hover:text-white transition-colors duration-200"
+                    >
+                        View Specialties
+                    </a>
+                    <a
+                        href="{{ url_for('main.about') }}"
+                        class="bg-gray-100 text-gray-700 px-4 py-2 rounded-full hover:bg-brand-primary hover:text-white transition-colors duration-200"
+                    >
+                        About Us
+                    </a>
+                </div>
+            </div>
+
+            <!-- Emergency Contact -->
+            <div
+                class="p-8 bg-red-50 border border-red-200 rounded-lg max-w-2xl mx-auto"
+                data-aos="fade-up"
+                data-aos-delay="800"
+            >
+                <div class="flex items-center justify-center mb-4">
+                    <i
+                        class="ri-alarm-warning-line text-2xl text-red-600 mr-3"
+                    ></i>
+                    <h3 class="text-xl font-bold font-montserrat text-red-800">
+                        Urgent Support Needed?
+                    </h3>
+                </div>
+                <p class="text-red-700 mb-6">
+                    If you're experiencing urgent billing issues or need
+                    immediate assistance, please contact us directly.
+                </p>
+                <div
+                    class="flex flex-col sm:flex-row justify-center items-center gap-6"
+                >
+                    <div class="flex items-center text-red-700">
+                        <i class="ri-phone-line text-xl mr-3 text-red-600"></i>
+                        <span class="font-medium">(214) 800-6161</span>
+                    </div>
+                    <div class="flex items-center text-red-700">
+                        <i class="ri-mail-line text-xl mr-3 text-red-600"></i>
+                        <span class="font-medium"
+                            >support@ardurhealthcare.com</span
+                        >
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Information -->
+            <div
+                class="mt-12 text-sm text-gray-500"
+                data-aos="fade-up"
+                data-aos-delay="1000"
+            >
+                <p>Error Code: 500 | Timestamp: <span id="timestamp"></span></p>
+                <p class="mt-2">
+                    If this problem persists, please include this information
+                    when contacting support.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- AOS Animation Scripts -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+
+        // Set timestamp
+        document.getElementById("timestamp").textContent =
+            new Date().toLocaleString();
+
+        // Auto-refresh option
+        let refreshTimer;
+        function startAutoRefresh() {
+            const button = document.createElement("button");
+            button.textContent = "Auto-refresh in 30s";
+            button.className =
+                "mt-4 bg-gray-200 text-gray-700 px-4 py-2 rounded hover:bg-gray-300 transition-colors duration-200";
+
+            let countdown = 30;
+            const interval = setInterval(() => {
+                countdown--;
+                button.textContent = `Auto-refresh in ${countdown}s`;
+                if (countdown === 0) {
+                    window.location.reload();
+                }
+            }, 1000);
+
+            button.onclick = () => {
+                clearInterval(interval);
+                window.location.reload();
+            };
+
+            // Add button after a delay
+            setTimeout(() => {
+                const container = document.querySelector(".container");
+                container.appendChild(button);
+            }, 5000);
+        }
+
+        // Start auto-refresh after 5 seconds
+        setTimeout(startAutoRefresh, 5000);
+
+        // Add hover effects to cards
+        document.addEventListener("DOMContentLoaded", function () {
+            const cards = document.querySelectorAll(".shadow-lg");
+            cards.forEach((card) => {
+                card.addEventListener("mouseenter", function () {
+                    this.style.transform = "translateY(-5px)";
+                });
+                card.addEventListener("mouseleave", function () {
+                    this.style.transform = "translateY(0)";
+                });
+            });
+        });
+
+        // Report error function
+        function reportError() {
+            const errorData = {
+                timestamp: new Date().toISOString(),
+                url: window.location.href,
+                userAgent: navigator.userAgent,
+            };
+
+            // You can implement error reporting here
+            console.log("Error reported:", errorData);
+        }
+    </script>
+
+    <!-- Custom Styles -->
+    <style>
+        .shadow-lg {
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .shadow-lg:hover {
+            box-shadow:
+                0 20px 25px -5px rgba(0, 0, 0, 0.1),
+                0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 4rem !important;
+            }
+        }
+
+        /* Pulse animation for urgent contact */
+        @keyframes pulse {
+            0%,
+            100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        .bg-red-50 {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</main>
+{% endblock %}

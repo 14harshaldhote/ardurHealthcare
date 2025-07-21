@@ -29,7 +29,7 @@ endblock %} {% block content %}
                             class="ri-phone-line text-brand-primary text-3xl mr-5 flex-shrink-0"
                         ></i>
                         <div>
-                            <h4 class="font-bold text-brand-dark text-xl">
+                            <h4 class="font-light text-brand-dark text-xl">
                                 Call Us Anytime
                             </h4>
                             <a
@@ -45,7 +45,7 @@ endblock %} {% block content %}
                             class="ri-mail-send-line text-brand-primary text-3xl mr-5 flex-shrink-0"
                         ></i>
                         <div>
-                            <h4 class="font-bold text-brand-dark text-xl">
+                            <h4 class="font-light text-brand-dark text-xl">
                                 Email Us
                             </h4>
                             <a
@@ -61,7 +61,7 @@ endblock %} {% block content %}
                             class="ri-map-pin-line text-brand-primary text-3xl mr-5 flex-shrink-0"
                         ></i>
                         <div>
-                            <h4 class="font-bold text-brand-dark text-xl">
+                            <h4 class="font-light text-brand-dark text-xl">
                                 Our Location (Optional)
                             </h4>
                             <p class="text-gray-700 text-lg">
@@ -82,7 +82,9 @@ endblock %} {% block content %}
         </div>
 
         <div class="p-8 md:p-12 bg-white">
-            <h2 class="font-montserrat font-bold text-3xl text-brand-dark mb-8">
+            <h2
+                class="font-montserrat font-light text-3xl text-brand-dark mb-8"
+            >
                 Send us a Message
             </h2>
             {% with messages = get_flashed_messages(with_categories=true) %} {%
@@ -93,7 +95,7 @@ endblock %} {% block content %}
                     class="bg-green-50 border-l-4 border-green-500 text-green-800 p-4 rounded-md shadow-sm"
                     role="alert"
                 >
-                    <p class="font-medium">{{ message }}</p>
+                    <p>{{ message }}</p>
                 </div>
                 {% endfor %}
             </div>
@@ -107,13 +109,12 @@ endblock %} {% block content %}
                 {{ form.hidden_tag() }}
                 <div class="relative">
                     {{ form.name.label(class="absolute -top-2 left-3
-                    inline-block bg-white px-1 text-xs font-medium
-                    text-gray-700") }} {{ form.name(class="block w-full
-                    rounded-lg border-gray-300 shadow-sm py-3 px-4 text-gray-900
-                    placeholder:text-gray-400 focus:ring-2
-                    focus:ring-brand-primary focus:border-brand-primary
-                    sm:text-base transition-all duration-200") }} {% if
-                    form.name.errors %}
+                    inline-block bg-white px-1 text-xs text-gray-700") }} {{
+                    form.name(class="block w-full rounded-lg border-gray-300
+                    shadow-sm py-3 px-4 text-gray-900 placeholder:text-gray-400
+                    focus:ring-2 focus:ring-brand-primary
+                    focus:border-brand-primary sm:text-base transition-all
+                    duration-200") }} {% if form.name.errors %}
                     <div class="text-red-600 text-sm mt-2">
                         {% for error in form.name.errors %}<span
                             >{{ error }}</span
@@ -124,13 +125,12 @@ endblock %} {% block content %}
 
                 <div class="relative">
                     {{ form.email.label(class="absolute -top-2 left-3
-                    inline-block bg-white px-1 text-xs font-medium
-                    text-gray-700") }} {{ form.email(class="block w-full
-                    rounded-lg border-gray-300 shadow-sm py-3 px-4 text-gray-900
-                    placeholder:text-gray-400 focus:ring-2
-                    focus:ring-brand-primary focus:border-brand-primary
-                    sm:text-base transition-all duration-200") }} {% if
-                    form.email.errors %}
+                    inline-block bg-white px-1 text-xs text-gray-700") }} {{
+                    form.email(class="block w-full rounded-lg border-gray-300
+                    shadow-sm py-3 px-4 text-gray-900 placeholder:text-gray-400
+                    focus:ring-2 focus:ring-brand-primary
+                    focus:border-brand-primary sm:text-base transition-all
+                    duration-200") }} {% if form.email.errors %}
                     <div class="text-red-600 text-sm mt-2">
                         {% for error in form.email.errors %}<span
                             >{{ error }}</span
@@ -143,7 +143,7 @@ endblock %} {% block content %}
                     <div class="relative">
                         <label
                             for="phone_country_code"
-                            class="absolute -top-2 left-3 inline-block bg-white px-1 text-xs font-medium text-gray-700"
+                            class="absolute -top-2 left-3 inline-block bg-white px-1 text-xs text-gray-700"
                             >Country Code</label
                         >
                         <select
@@ -165,10 +165,10 @@ endblock %} {% block content %}
                     </div>
                     <div class="relative">
                         {{ form.phone_number.label(class="absolute -top-2 left-3
-                        inline-block bg-white px-1 text-xs font-medium
-                        text-gray-700") }} {{ form.phone_number(class="block
-                        w-full rounded-lg border-gray-300 shadow-sm py-3 px-4
-                        text-gray-900 placeholder:text-gray-400 focus:ring-2
+                        inline-block bg-white px-1 text-xs text-gray-700") }} {{
+                        form.phone_number(class="block w-full rounded-lg
+                        border-gray-300 shadow-sm py-3 px-4 text-gray-900
+                        placeholder:text-gray-400 focus:ring-2
                         focus:ring-brand-primary focus:border-brand-primary
                         sm:text-base transition-all duration-200") }} {% if
                         form.phone_number.errors %}
@@ -183,13 +183,12 @@ endblock %} {% block content %}
 
                 <div class="relative">
                     {{ form.state.label(class="absolute -top-2 left-3
-                    inline-block bg-white px-1 text-xs font-medium
-                    text-gray-700") }} {{ form.state(class="block w-full
-                    rounded-lg border-gray-300 shadow-sm py-3 px-4 text-gray-900
-                    placeholder:text-gray-400 focus:ring-2
-                    focus:ring-brand-primary focus:border-brand-primary
-                    sm:text-base transition-all duration-200") }} {% if
-                    form.state.errors %}
+                    inline-block bg-white px-1 text-xs text-gray-700") }} {{
+                    form.state(class="block w-full rounded-lg border-gray-300
+                    shadow-sm py-3 px-4 text-gray-900 placeholder:text-gray-400
+                    focus:ring-2 focus:ring-brand-primary
+                    focus:border-brand-primary sm:text-base transition-all
+                    duration-200") }} {% if form.state.errors %}
                     <div class="text-red-600 text-sm mt-2">
                         {% for error in form.state.errors %}<span
                             >{{ error }}</span
@@ -200,9 +199,9 @@ endblock %} {% block content %}
 
                 <div class="relative">
                     {{ form.specialties.label(class="absolute -top-2 left-3
-                    inline-block bg-white px-1 text-xs font-medium
-                    text-gray-700") }} {{ form.specialties(class="block w-full
-                    rounded-lg border-gray-300 shadow-sm py-3 px-4 text-gray-900
+                    inline-block bg-white px-1 text-xs text-gray-700") }} {{
+                    form.specialties(class="block w-full rounded-lg
+                    border-gray-300 shadow-sm py-3 px-4 text-gray-900
                     placeholder:text-gray-400 focus:ring-2
                     focus:ring-brand-primary focus:border-brand-primary
                     sm:text-base transition-all duration-200") }} {% if
@@ -217,10 +216,10 @@ endblock %} {% block content %}
 
                 <div class="relative">
                     {{ form.monthly_insurance.label(class="absolute -top-2
-                    left-3 inline-block bg-white px-1 text-xs font-medium
-                    text-gray-700") }} {{ form.monthly_insurance(class="block
-                    w-full rounded-lg border-gray-300 shadow-sm py-3 px-4
-                    text-gray-900 placeholder:text-gray-400 focus:ring-2
+                    left-3 inline-block bg-white px-1 text-xs text-gray-700") }}
+                    {{ form.monthly_insurance(class="block w-full rounded-lg
+                    border-gray-300 shadow-sm py-3 px-4 text-gray-900
+                    placeholder:text-gray-400 focus:ring-2
                     focus:ring-brand-primary focus:border-brand-primary
                     sm:text-base transition-all duration-200") }} {% if
                     form.monthly_insurance.errors %}
@@ -236,7 +235,7 @@ endblock %} {% block content %}
                     <div class="relative">
                         {{ form.preferred_appointment_date.label(class="absolute
                         -top-2 left-3 inline-block bg-white px-1 text-xs
-                        font-medium text-gray-700") }} {{
+                        text-gray-700") }} {{
                         form.preferred_appointment_date(type="date",
                         class="block w-full rounded-lg border-gray-300 shadow-sm
                         py-3 px-4 text-gray-900 focus:ring-2
@@ -254,7 +253,7 @@ endblock %} {% block content %}
 
                     <div class="relative">
                         {{ form.preferred_time_slot.label(class="absolute -top-2
-                        left-3 inline-block bg-white px-1 text-xs font-medium
+                        left-3 inline-block bg-white px-1 text-xs
                         text-gray-700") }} {{
                         form.preferred_time_slot(class="block w-full rounded-lg
                         border-gray-300 shadow-sm py-3 px-4 text-gray-900
@@ -272,13 +271,12 @@ endblock %} {% block content %}
 
                 <div class="relative">
                     {{ form.subject.label(class="absolute -top-2 left-3
-                    inline-block bg-white px-1 text-xs font-medium
-                    text-gray-700") }} {{ form.subject(class="block w-full
-                    rounded-lg border-gray-300 shadow-sm py-3 px-4 text-gray-900
-                    placeholder:text-gray-400 focus:ring-2
-                    focus:ring-brand-primary focus:border-brand-primary
-                    sm:text-base transition-all duration-200") }} {% if
-                    form.subject.errors %}
+                    inline-block bg-white px-1 text-xs text-gray-700") }} {{
+                    form.subject(class="block w-full rounded-lg border-gray-300
+                    shadow-sm py-3 px-4 text-gray-900 placeholder:text-gray-400
+                    focus:ring-2 focus:ring-brand-primary
+                    focus:border-brand-primary sm:text-base transition-all
+                    duration-200") }} {% if form.subject.errors %}
                     <div class="text-red-600 text-sm mt-2">
                         {% for error in form.subject.errors %}<span
                             >{{ error }}</span
@@ -289,10 +287,10 @@ endblock %} {% block content %}
 
                 <div class="relative">
                     {{ form.message.label(class="absolute -top-2 left-3
-                    inline-block bg-white px-1 text-xs font-medium
-                    text-gray-700") }} {{ form.message(rows=6, class="block
-                    w-full rounded-lg border-gray-300 shadow-sm py-3 px-4
-                    text-gray-900 placeholder:text-gray-400 focus:ring-2
+                    inline-block bg-white px-1 text-xs text-gray-700") }} {{
+                    form.message(rows=6, class="block w-full rounded-lg
+                    border-gray-300 shadow-sm py-3 px-4 text-gray-900
+                    placeholder:text-gray-400 focus:ring-2
                     focus:ring-brand-primary focus:border-brand-primary
                     sm:text-base transition-all duration-200") }} {% if
                     form.message.errors %}
@@ -306,7 +304,7 @@ endblock %} {% block content %}
 
                 <div>
                     {{ form.submit(class="w-full bg-brand-primary text-white
-                    font-montserrat font-bold text-lg px-6 py-4 rounded-lg
+                    font-montserrat font-light text-lg px-6 py-4 rounded-lg
                     hover:scale-105 hover:bg-brand-dark hover:shadow-xl
                     transition duration-300 cursor-pointer focus:outline-none
                     focus:ring-2 focus:ring-brand-primary focus:ring-offset-2")

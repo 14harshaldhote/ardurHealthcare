@@ -1,12 +1,299 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>404 - Page Not Found</title>
-</head>
-<body>
-  <h1>404 - Page Not Found</h1>
-  <p>The page you are looking for does not exist.</p>
-  <a href="/">Go to Home</a>
-</body>
-</html>
+{% extends "base.html" %} {% block title %}Page Not Found - Ardur Healthcare{%
+endblock %} {% block content %}
+<main class="min-h-screen flex items-center justify-center">
+    <section class="py-16 md:py-24">
+        <div class="container mx-auto px-4 text-center">
+            <!-- 404 Illustration -->
+            <div class="mb-12" data-aos="fade-down">
+                <div
+                    class="inline-flex items-center justify-center w-32 h-32 bg-brand-light rounded-full mb-8"
+                >
+                    <i
+                        class="ri-error-warning-line text-6xl text-brand-primary"
+                    ></i>
+                </div>
+                <h1
+                    class="text-8xl md:text-9xl font-bold font-montserrat text-brand-primary mb-4"
+                >
+                    404
+                </h1>
+                <h2
+                    class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark mb-4"
+                >
+                    Page Not Found
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+                    Oops! The page you're looking for seems to have wandered
+                    off. Don't worry, even the best revenue cycles sometimes
+                    need a redirect.
+                </p>
+            </div>
+
+            <!-- Helpful Links -->
+            <div
+                class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12"
+                data-aos="fade-up"
+                data-aos-delay="200"
+            >
+                <!-- Services Card -->
+                <div
+                    class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
+                >
+                    <div
+                        class="w-16 h-16 bg-brand-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4"
+                    >
+                        <i
+                            class="ri-service-line text-2xl text-brand-primary"
+                        ></i>
+                    </div>
+                    <h3
+                        class="text-xl font-bold font-montserrat text-brand-dark mb-3"
+                    >
+                        Our Services
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Explore our comprehensive medical billing and coding
+                        solutions.
+                    </p>
+                    <a
+                        href="{{ url_for('services.index') }}"
+                        class="inline-flex items-center text-brand-primary hover:text-brand-dark font-medium transition-colors duration-200"
+                    >
+                        View Services
+                        <i class="ri-arrow-right-line ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Blog Card -->
+                <div
+                    class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
+                >
+                    <div
+                        class="w-16 h-16 bg-brand-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4"
+                    >
+                        <i
+                            class="ri-article-line text-2xl text-brand-primary"
+                        ></i>
+                    </div>
+                    <h3
+                        class="text-xl font-bold font-montserrat text-brand-dark mb-3"
+                    >
+                        Healthcare Blog
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Read our latest insights on medical billing and
+                        healthcare trends.
+                    </p>
+                    <a
+                        href="{{ url_for('resources.blog') }}"
+                        class="inline-flex items-center text-brand-primary hover:text-brand-dark font-medium transition-colors duration-200"
+                    >
+                        Read Blog
+                        <i class="ri-arrow-right-line ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Contact Card -->
+                <div
+                    class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
+                >
+                    <div
+                        class="w-16 h-16 bg-brand-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4"
+                    >
+                        <i
+                            class="ri-customer-service-2-line text-2xl text-brand-primary"
+                        ></i>
+                    </div>
+                    <h3
+                        class="text-xl font-bold font-montserrat text-brand-dark mb-3"
+                    >
+                        Get Help
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Need assistance? Our team is here to help with your
+                        questions.
+                    </p>
+                    <a
+                        href="{{ url_for('contact.contact_form') }}"
+                        class="inline-flex items-center text-brand-primary hover:text-brand-dark font-medium transition-colors duration-200"
+                    >
+                        Contact Us
+                        <i class="ri-arrow-right-line ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div
+                class="flex flex-col sm:flex-row gap-4 justify-center items-center"
+                data-aos="fade-up"
+                data-aos-delay="400"
+            >
+                <a
+                    href="{{ url_for('main.home') }}"
+                    class="bg-brand-primary text-white font-montserrat font-semibold px-8 py-3 rounded-lg hover:bg-brand-dark transition duration-300 inline-flex items-center"
+                >
+                    <i class="ri-home-line mr-2"></i>
+                    Back to Home
+                </a>
+                <button
+                    onclick="history.back()"
+                    class="border-2 border-brand-primary text-brand-primary font-montserrat font-semibold px-8 py-3 rounded-lg hover:bg-brand-primary hover:text-white transition duration-300 inline-flex items-center"
+                >
+                    <i class="ri-arrow-left-line mr-2"></i>
+                    Go Back
+                </button>
+            </div>
+
+            <!-- Search Box -->
+            <div
+                class="mt-12 max-w-md mx-auto"
+                data-aos="fade-up"
+                data-aos-delay="600"
+            >
+                <p class="text-gray-600 mb-4">
+                    Looking for something specific?
+                </p>
+                <div class="relative">
+                    <input
+                        type="text"
+                        placeholder="Search our website..."
+                        class="w-full px-4 py-3 pl-12 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-primary focus:border-transparent"
+                        onkeypress="if(event.key==='Enter') searchSite(this.value)"
+                    />
+                    <i
+                        class="ri-search-line absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"
+                    ></i>
+                </div>
+            </div>
+
+            <!-- Popular Pages -->
+            <div class="mt-12" data-aos="fade-up" data-aos-delay="800">
+                <h3
+                    class="text-xl font-bold font-montserrat text-brand-dark mb-6"
+                >
+                    Popular Pages
+                </h3>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a
+                        href="{{ url_for('services.index') }}"
+                        class="bg-gray-100 text-gray-700 px-4 py-2 rounded-full hover:bg-brand-primary hover:text-white transition-colors duration-200"
+                    >
+                        Medical Billing Services
+                    </a>
+                    <a
+                        href="{{ url_for('specialities.specialities_main') }}"
+                        class="bg-gray-100 text-gray-700 px-4 py-2 rounded-full hover:bg-brand-primary hover:text-white transition-colors duration-200"
+                    >
+                        Specialties
+                    </a>
+                    <a
+                        href="{{ url_for('resources.blog') }}"
+                        class="bg-gray-100 text-gray-700 px-4 py-2 rounded-full hover:bg-brand-primary hover:text-white transition-colors duration-200"
+                    >
+                        Healthcare Blog
+                    </a>
+                    <a
+                        href="{{ url_for('main.about') }}"
+                        class="bg-gray-100 text-gray-700 px-4 py-2 rounded-full hover:bg-brand-primary hover:text-white transition-colors duration-200"
+                    >
+                        About Us
+                    </a>
+                </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div
+                class="mt-16 p-8 bg-brand-light rounded-lg"
+                data-aos="fade-up"
+                data-aos-delay="1000"
+            >
+                <h3
+                    class="text-2xl font-bold font-montserrat text-brand-dark mb-4"
+                >
+                    Still Need Help?
+                </h3>
+                <p class="text-gray-600 mb-6">
+                    Our team is ready to assist you with any questions about our
+                    medical billing services.
+                </p>
+                <div
+                    class="flex flex-col sm:flex-row justify-center items-center gap-6"
+                >
+                    <div class="flex items-center text-brand-dark">
+                        <i
+                            class="ri-phone-line text-xl mr-3 text-brand-primary"
+                        ></i>
+                        <span class="font-medium">(214) 800-6161</span>
+                    </div>
+                    <div class="flex items-center text-brand-dark">
+                        <i
+                            class="ri-mail-line text-xl mr-3 text-brand-primary"
+                        ></i>
+                        <span class="font-medium"
+                            >info@ardurhealthcare.com</span
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AOS Animation Scripts -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+
+        // Simple search function
+        function searchSite(query) {
+            if (query.trim()) {
+                // You can implement actual search functionality here
+                // For now, redirect to contact page with the query
+                window.location.href =
+                    "{{ url_for('contact.contact_form') }}?search=" +
+                    encodeURIComponent(query);
+            }
+        }
+
+        // Add some interactivity
+        document.addEventListener("DOMContentLoaded", function () {
+            // Add hover effects to cards
+            const cards = document.querySelectorAll(".shadow-lg");
+            cards.forEach((card) => {
+                card.addEventListener("mouseenter", function () {
+                    this.style.transform = "translateY(-5px)";
+                });
+                card.addEventListener("mouseleave", function () {
+                    this.style.transform = "translateY(0)";
+                });
+            });
+        });
+    </script>
+
+    <!-- Custom Styles -->
+    <style>
+        .shadow-lg {
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .shadow-lg:hover {
+            box-shadow:
+                0 20px 25px -5px rgba(0, 0, 0, 0.1),
+                0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 4rem !important;
+            }
+        }
+    </style>
+</main>
+{% endblock %}

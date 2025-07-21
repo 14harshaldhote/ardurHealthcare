@@ -62,16 +62,37 @@
                 box-sizing: border-box;
             }
 
+            /* Global Font Rules - Only font weights, preserve existing sizes */
+            html,
             body {
                 font-family: "Inter", sans-serif;
                 color: #334155;
                 -webkit-font-smoothing: antialiased;
                 -moz-osx-font-smoothing: grayscale;
                 line-height: 1.6;
+                font-weight: 300; /* font-light */
             }
 
             .font-montserrat {
                 font-family: "Epilogue", sans-serif;
+            }
+
+            /* Light font weight for text elements */
+            p,
+            span,
+            li,
+            td,
+            th {
+                font-weight: 300; /* font-light */
+            }
+
+            /* Medium font weight for form elements */
+            button,
+            label,
+            input,
+            select,
+            textarea {
+                font-weight: 500; /* font-medium */
             }
 
             .nav-link {
@@ -413,7 +434,7 @@
                                     Knowledge Center
                                 </h3>
                                 <a
-                                    href="{{ url_for('resources.article') }}"
+                                    href="{{ url_for('resources.blog') }}"
                                     class="flex items-center px-3 py-2 text-sm rounded-md hover:bg-brand-secondary hover:text-brand-primary transition-colors duration-200"
                                 >
                                     <i
@@ -631,7 +652,7 @@
                             :class="{'mobile-dropdown-menu-open': openMobileDropdown === 'resources'}"
                         >
                             <a
-                                href="{{ url_for('resources.article') }}"
+                                href="{{ url_for('resources.blog') }}"
                                 class="mobile-nav-link text-sm text-gray-600 hover:text-brand-primary"
                                 >Blog</a
                             >
