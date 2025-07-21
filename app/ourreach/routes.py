@@ -39,7 +39,9 @@ def load_state_data():
 
 def generate_state_url(state_name):
     """Generate SEO-friendly URL for a state"""
-    return f"medical-billing-services-in-{slugify(state_name)}"
+    # Use underscores to match JSON data structure
+    state_slug = state_name.lower().replace(' ', '_').replace(',', '').replace('.', '')
+    return f"medical-billing-services-in-{state_slug}"
 
 def get_state_by_url(url_slug):
     """Get state data by URL slug"""

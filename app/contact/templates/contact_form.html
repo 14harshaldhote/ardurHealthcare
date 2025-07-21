@@ -208,9 +208,9 @@ endblock %} {% block content %}
                     sm:text-base transition-all duration-200") }} {% if
                     form.specialties.errors %}
                     <div class="text-red-600 text-sm mt-2">
-                        {% for error in form.specialties.errors %}<span
-                            >{{ error }}</span
-                        >{% endfor %}
+                        {% for error in form.specialties.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
                     </div>
                     {% endif %}
                 </div>

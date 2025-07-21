@@ -313,16 +313,7 @@
                                     Revenue Cycle Management
                                 </h3>
                                 <a
-                                    href="{{ url_for('services.enrollment') }}"
-                                    class="flex items-center px-3 py-2 text-sm rounded-md hover:bg-brand-secondary hover:text-brand-primary transition-colors duration-200"
-                                >
-                                    <i
-                                        class="ri-user-add-line mr-3 text-brand-primary"
-                                    ></i>
-                                    Provider Credentialing
-                                </a>
-                                <a
-                                    href="{{ url_for('services.verification') }}"
+                                    href="{{ url_for('services.service_detail', service_name='eligibility_verification') }}"
                                     class="flex items-center px-3 py-2 text-sm rounded-md hover:bg-brand-secondary hover:text-brand-primary transition-colors duration-200"
                                 >
                                     <i
@@ -331,25 +322,61 @@
                                     Eligibility Verification
                                 </a>
                                 <a
-                                    href="{{ url_for('services.billing') }}"
+                                    href="{{ url_for('services.service_detail', service_name='prior_authorization') }}"
                                     class="flex items-center px-3 py-2 text-sm rounded-md hover:bg-brand-secondary hover:text-brand-primary transition-colors duration-200"
                                 >
                                     <i
-                                        class="ri-bill-line mr-3 text-brand-primary"
+                                        class="ri-file-check-line mr-3 text-brand-primary"
                                     ></i>
-                                    Medical Billing & Coding
+                                    Prior Authorization
                                 </a>
                                 <a
-                                    href="{{ url_for('services.accounts_receivable') }}"
+                                    href="{{ url_for('services.service_detail', service_name='provider_credentialing') }}"
                                     class="flex items-center px-3 py-2 text-sm rounded-md hover:bg-brand-secondary hover:text-brand-primary transition-colors duration-200"
                                 >
                                     <i
-                                        class="ri-line-chart-line mr-3 text-brand-primary"
+                                        class="ri-user-add-line mr-3 text-brand-primary"
                                     ></i>
-                                    Accounts Receivable
+                                    Provider Credentialing
                                 </a>
                                 <a
-                                    href="{{ url_for('services.denial_management') }}"
+                                    href="{{ url_for('services.service_detail', service_name='charge_entry') }}"
+                                    class="flex items-center px-3 py-2 text-sm rounded-md hover:bg-brand-secondary hover:text-brand-primary transition-colors duration-200"
+                                >
+                                    <i
+                                        class="ri-file-edit-line mr-3 text-brand-primary"
+                                    ></i>
+                                    Charge Entry
+                                </a>
+                                <a
+                                    href="{{ url_for('services.service_detail', service_name='medical_coding') }}"
+                                    class="flex items-center px-3 py-2 text-sm rounded-md hover:bg-brand-secondary hover:text-brand-primary transition-colors duration-200"
+                                >
+                                    <i
+                                        class="ri-code-line mr-3 text-brand-primary"
+                                    ></i>
+                                    Medical Coding
+                                </a>
+                                <a
+                                    href="{{ url_for('services.service_detail', service_name='claim_submission_follow_up') }}"
+                                    class="flex items-center px-3 py-2 text-sm rounded-md hover:bg-brand-secondary hover:text-brand-primary transition-colors duration-200"
+                                >
+                                    <i
+                                        class="ri-send-plane-line mr-3 text-brand-primary"
+                                    ></i>
+                                    Claim Submission
+                                </a>
+                                <a
+                                    href="{{ url_for('services.service_detail', service_name='payment_posting_reconciliation') }}"
+                                    class="flex items-center px-3 py-2 text-sm rounded-md hover:bg-brand-secondary hover:text-brand-primary transition-colors duration-200"
+                                >
+                                    <i
+                                        class="ri-bank-card-line mr-3 text-brand-primary"
+                                    ></i>
+                                    Payment Posting
+                                </a>
+                                <a
+                                    href="{{ url_for('services.service_detail', service_name='denial_management') }}"
                                     class="flex items-center px-3 py-2 text-sm rounded-md hover:bg-brand-secondary hover:text-brand-primary transition-colors duration-200"
                                 >
                                     <i
@@ -358,13 +385,13 @@
                                     Denial Management
                                 </a>
                                 <a
-                                    href="{{ url_for('services.payment_posting') }}"
+                                    href="{{ url_for('services.service_detail', service_name='ar_management') }}"
                                     class="flex items-center px-3 py-2 text-sm rounded-md hover:bg-brand-secondary hover:text-brand-primary transition-colors duration-200"
                                 >
                                     <i
-                                        class="ri-bank-card-line mr-3 text-brand-primary"
+                                        class="ri-line-chart-line mr-3 text-brand-primary"
                                     ></i>
-                                    Payment Posting
+                                    Accounts Receivable
                                 </a>
                             </div>
                         </div>
@@ -540,34 +567,49 @@
                             :class="{'mobile-dropdown-menu-open': openMobileDropdown === 'services'}"
                         >
                             <a
-                                href="{{ url_for('services.enrollment') }}"
-                                class="mobile-nav-link text-sm text-gray-600 hover:text-brand-primary"
-                                >Provider Credentialing</a
-                            >
-                            <a
-                                href="{{ url_for('services.verification') }}"
+                                href="{{ url_for('services.service_detail', service_name='eligibility_verification') }}"
                                 class="mobile-nav-link text-sm text-gray-600 hover:text-brand-primary"
                                 >Eligibility Verification</a
                             >
                             <a
-                                href="{{ url_for('services.billing') }}"
+                                href="{{ url_for('services.service_detail', service_name='prior_authorization') }}"
                                 class="mobile-nav-link text-sm text-gray-600 hover:text-brand-primary"
-                                >Medical Billing & Coding</a
+                                >Prior Authorization</a
                             >
                             <a
-                                href="{{ url_for('services.accounts_receivable') }}"
+                                href="{{ url_for('services.service_detail', service_name='provider_credentialing') }}"
                                 class="mobile-nav-link text-sm text-gray-600 hover:text-brand-primary"
-                                >Accounts Receivable</a
+                                >Provider Credentialing</a
                             >
                             <a
-                                href="{{ url_for('services.denial_management') }}"
+                                href="{{ url_for('services.service_detail', service_name='charge_entry') }}"
+                                class="mobile-nav-link text-sm text-gray-600 hover:text-brand-primary"
+                                >Charge Entry</a
+                            >
+                            <a
+                                href="{{ url_for('services.service_detail', service_name='medical_coding') }}"
+                                class="mobile-nav-link text-sm text-gray-600 hover:text-brand-primary"
+                                >Medical Coding</a
+                            >
+                            <a
+                                href="{{ url_for('services.service_detail', service_name='claim_submission_follow_up') }}"
+                                class="mobile-nav-link text-sm text-gray-600 hover:text-brand-primary"
+                                >Claim Submission</a
+                            >
+                            <a
+                                href="{{ url_for('services.service_detail', service_name='payment_posting_reconciliation') }}"
+                                class="mobile-nav-link text-sm text-gray-600 hover:text-brand-primary"
+                                >Payment Posting</a
+                            >
+                            <a
+                                href="{{ url_for('services.service_detail', service_name='denial_management') }}"
                                 class="mobile-nav-link text-sm text-gray-600 hover:text-brand-primary"
                                 >Denial Management</a
                             >
                             <a
-                                href="{{ url_for('services.payment_posting') }}"
+                                href="{{ url_for('services.service_detail', service_name='ar_management') }}"
                                 class="mobile-nav-link text-sm text-gray-600 hover:text-brand-primary"
-                                >Payment Posting</a
+                                >Accounts Receivable</a
                             >
                         </div>
                     </div>

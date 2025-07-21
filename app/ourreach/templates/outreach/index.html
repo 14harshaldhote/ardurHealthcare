@@ -8,16 +8,17 @@ endblock %} {% block content %}
                 class="text-4xl md:text-6xl font-bold font-montserrat text-brand-dark mb-4"
                 data-aos="fade-down"
             >
-                Our <span class="text-brand-primary">Nationwide</span> Reach
+                State-Specific
+                <span class="text-brand-primary">Medical Billing Services</span>
             </h1>
             <p
                 class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto"
                 data-aos="fade-up"
                 data-aos-delay="200"
             >
-                Discover how Ardur Healthcare delivers specialized medical
-                billing services across the United States. Click on any state to
-                explore our localized expertise and services.
+                Explore Ardur Healthcare's state-specific medical billing
+                services across the U.S. Click your state to discover our local
+                expertise and tailored RCM solutions.
             </p>
         </div>
     </section>
@@ -33,11 +34,12 @@ endblock %} {% block content %}
                     class="px-8 py-6 bg-gradient-to-r from-brand-primary/90 to-brand-accent/90"
                 >
                     <h2 class="text-2xl font-bold text-white text-center mb-2">
-                        Interactive U.S. Map
+                        U.S. Billing Map
                     </h2>
-                    <p class="text-brand-light text-center text-sm">
-                        Click on any state to explore our specialized services
-                    </p>
+                    <h3 class="text-brand-light text-center text-sm">
+                        Select your state to explore state-specific medical
+                        billing services from Ardur Healthcare.
+                    </h3>
                 </div>
 
                 <div class="">
@@ -116,9 +118,9 @@ endblock %} {% block content %}
                             </h3>
                         </div>
                         <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                            From coast to coast, we deliver consistent,
-                            high-quality medical billing services across all 50
-                            states.
+                            From coast to coast, we provide state-specific
+                            medical billing services with consistent quality and
+                            local insight.
                         </p>
                         <div class="space-y-2">
                             <div
@@ -151,6 +153,11 @@ endblock %} {% block content %}
 
                 <!-- Quick Stats -->
                 <div class="lg:col-span-2">
+                    <div class="text-center mb-6">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-2">
+                            Service Footprint at a Glance
+                        </h2>
+                    </div>
                     <div class="grid sm:grid-cols-2 gap-4 h-full">
                         <div
                             class="bg-gradient-to-br from-brand-primary to-brand-accent rounded-xl p-6 text-white"
@@ -162,7 +169,7 @@ endblock %} {% block content %}
                                     <p class="text-brand-light text-sm">
                                         Active States
                                     </p>
-                                    <p class="text-3xl font-bold">50+</p>
+                                    <p class="text-3xl font-bold">50</p>
                                 </div>
                                 <div
                                     class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center"
@@ -245,17 +252,18 @@ endblock %} {% block content %}
 
             <!-- Features Section -->
             <div
-                class="bg-white rounded-2xl shadow-xl p-8 mb-12"
+                class="bg-white rounded-2xl shadow-xl p-8 pt-8 mb-12"
                 data-aos="fade-up"
             >
                 <div class="text-center mb-8">
                     <h2 class="text-3xl font-bold text-gray-800 mb-4">
                         Why Choose Our Services?
                     </h2>
-                    <p class="text-gray-600 max-w-2xl mx-auto">
-                        Our comprehensive approach ensures consistent,
-                        high-quality medical billing services across all states.
-                    </p>
+                    <h3 class="text-gray-600 max-w-2xl mx-auto">
+                        Our state-specific billing approach ensures
+                        high-quality, compliant medical billing across all U.S.
+                        states.
+                    </h3>
                 </div>
 
                 <div class="grid md:grid-cols-3 gap-6">
@@ -273,8 +281,8 @@ endblock %} {% block content %}
                             Local Expertise
                         </h3>
                         <p class="text-gray-600 text-sm">
-                            Deep understanding of state-specific regulations and
-                            healthcare landscapes.
+                            In-depth understanding of state-specific billing
+                            regulations and payer networks.
                         </p>
                     </div>
 
@@ -294,8 +302,8 @@ endblock %} {% block content %}
                             Compliance First
                         </h3>
                         <p class="text-gray-600 text-sm">
-                            Full compliance with federal and state regulations
-                            including HIPAA standards.
+                            Full compliance with HIPAA and each state's
+                            regulatory requirements.
                         </p>
                     </div>
 
@@ -315,8 +323,8 @@ endblock %} {% block content %}
                             24/7 Support
                         </h3>
                         <p class="text-gray-600 text-sm">
-                            Round-the-clock support with dedicated account
-                            managers for every client.
+                            Dedicated account managers available across time
+                            zones and regions.
                         </p>
                     </div>
                 </div>
@@ -328,10 +336,10 @@ endblock %} {% block content %}
                 data-aos="fade-up"
             >
                 <h2 class="text-3xl font-bold mb-4">Ready to Get Started?</h2>
-                <p class="text-brand-light mb-6 max-w-2xl mx-auto">
-                    Connect with us today to discover how we can elevate your
-                    organization's financial health across all U.S. time zones.
-                </p>
+                <h3 class="text-brand-light mb-6 max-w-2xl mx-auto">
+                    Contact us to learn how our state-specific medical billing
+                    services can boost your revenue across all U.S. time zones.
+                </h3>
                 <a
                     href="{{ url_for('contact.contact_form') }}"
                     class="bg-white text-brand-primary font-semibold px-8 py-3 rounded-full hover:bg-gray-100 transition-all duration-300 inline-flex items-center gap-2"
@@ -444,29 +452,29 @@ endblock %} {% block content %}
         Montana: "montana",
         Nebraska: "nebraska",
         Nevada: "nevada",
-        "New Hampshire": "new-hampshire",
-        "New Jersey": "new-jersey",
-        "New Mexico": "new-mexico",
-        "New York": "new-york",
-        "North Carolina": "north-carolina",
-        "North Dakota": "north-dakota",
+        "New Hampshire": "new_hampshire", // Changed from new-hampshire
+        "New Jersey": "new_jersey", // Already correct
+        "New Mexico": "new_mexico", // Already correct
+        "New York": "new_york", // Already correct
+        "North Carolina": "north_carolina", // Changed from north-carolina
+        "North Dakota": "north_dakota", // Changed from north-dakota
         Ohio: "ohio",
         Oklahoma: "oklahoma",
         Oregon: "oregon",
         Pennsylvania: "pennsylvania",
-        "Rhode Island": "rhode-island",
-        "South Carolina": "south-carolina",
-        "South Dakota": "south-dakota",
+        "Rhode Island": "rhode_island", // Changed from rhode-island
+        "South Carolina": "south_carolina", // Changed from south-carolina
+        "South Dakota": "south_dakota", // Changed from south-dakota
         Tennessee: "tennessee",
         Texas: "texas",
         Utah: "utah",
         Vermont: "vermont",
         Virginia: "virginia",
         Washington: "washington",
-        "West Virginia": "west-virginia",
+        "West Virginia": "west_virginia", // Changed from west-virginia
         Wisconsin: "wisconsin",
         Wyoming: "wyoming",
-        "District of Columbia": "district-of-columbia",
+        "District of Columbia": "district_of_columbia", // Changed from district-of-columbia
     };
 
     // Function to get full state name from abbreviation

@@ -24,7 +24,7 @@ def about():
 
 @main.route('/services')
 def services():
-    return render_template('services.html', title='Services')
+    return redirect(url_for('services.index'))
 
 @main.route('/resources')
 def resources():

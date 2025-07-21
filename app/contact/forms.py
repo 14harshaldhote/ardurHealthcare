@@ -19,22 +19,8 @@ class ContactForm(FlaskForm):
     practice = StringField('Practice Name', validators=[DataRequired(), Length(max=200)])
     state = StringField('State', validators=[DataRequired(), Length(max=100)]) # Made required
 
-    # Multi-select specialties field
-    specialties = SelectMultipleField('Specialties', choices=[
-        ('mental-health', 'Mental Health'),
-        ('chiropractic', 'Chiropractic'),
-        ('podiatry', 'Podiatry'),
-        ('cardiology', 'Cardiology'),
-        ('wound-care', 'Wound Care'),
-        ('physical-therapy', 'Physical Therapy'),
-        ('family-medicine', 'Family Medicine'),
-        ('internal-medicine', 'Internal Medicine'),
-        ('pediatrics', 'Pediatrics'),
-        ('orthopedics', 'Orthopedics'),
-        ('dermatology', 'Dermatology'),
-        ('gastroenterology', 'Gastroenterology'),
-        ('other', 'Other')
-    ], validators=[DataRequired()])
+    # Changed from SelectMultipleField to StringField
+    specialties = StringField('Specialties', validators=[DataRequired(), Length(max=200)])
 
     # Service type field
     service_type = SelectField('Service Type', choices=[

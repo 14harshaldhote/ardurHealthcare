@@ -77,7 +77,7 @@ def create_app(config_class=Config):
         print("✅ Registered contact blueprint.")
 
         from .services import services as services_blueprint
-        app.register_blueprint(services_blueprint)
+        app.register_blueprint(services_blueprint, url_prefix='/services')
         print("✅ Registered services blueprint.")
 
         from .resources import resources as resources_blueprint
