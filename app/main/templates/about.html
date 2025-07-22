@@ -1,25 +1,50 @@
 {% extends "base.html" %} {% block title %}About Us - Ardur Healthcare{%
 endblock %} {% block content %}
 
-<section class="text-center py-12 md:py-16">
-    <div class="max-w-4xl mx-auto">
-        <h1
-            class="text-4xl md:text-6xl font-light font-montserrat text-brand-dark mb-4"
-            data-aos="fade-down"
-        >
-            Your Partners in
-            <span class="text-brand-primary">Healthcare Success</span>
-        </h1>
-        <p
-            class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto"
-            data-aos="fade-up"
-            data-aos-delay="200"
-        >
-            We are a leading provider of technology-enabled healthcare services,
-            dedicated to strengthening the financial performance of your
-            practice. Our mission is to streamline your revenue cycle, so you
-            can focus on what matters most: exceptional patient care.
-        </p>
+<section
+    class="relative bg-gradient-to-br from-brand-primary via-brand-secondary to-brand-dark overflow-hidden"
+>
+    <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+
+    <!-- Decorative Elements -->
+    <div
+        class="absolute top-10 left-10 w-20 h-20 bg-white bg-opacity-10 rounded-full blur-xl"
+    ></div>
+    <div
+        class="absolute bottom-20 right-20 w-32 h-32 bg-white bg-opacity-5 rounded-full blur-2xl"
+    ></div>
+    <div
+        class="absolute top-1/2 left-1/4 w-16 h-16 bg-white bg-opacity-5 rounded-full blur-lg"
+    ></div>
+
+    <div class="relative z-10 container mx-auto px-6 py-20 md:py-28">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="mb-8" data-aos="fade-down">
+                <div
+                    class="inline-flex items-center px-4 py-2 bg-black/30 backdrop-blur-sm rounded-full mb-6"
+                >
+                    <i class="ri-team-line text-brand-accent mr-2"></i>
+                    <span class="text-brand-accent font-light">About Us</span>
+                </div>
+                <h1
+                    class="text-4xl md:text-6xl font-thin font-montserrat text-white mb-4 drop-shadow-lg"
+                >
+                    Your Partners in
+                    <span class="text-brand-accent drop-shadow-lg"
+                        >Healthcare Success</span
+                    >
+                </h1>
+                <p
+                    class="text-lg md:text-xl text-white mb-8 leading-relaxed max-w-4xl mx-auto drop-shadow-md"
+                >
+                    We are a leading provider of technology-enabled healthcare
+                    services, dedicated to strengthening the financial
+                    performance of your practice. Our mission is to streamline
+                    your revenue cycle, so you can focus on what matters most:
+                    exceptional patient care.
+                </p>
+            </div>
+        </div>
     </div>
 </section>
 

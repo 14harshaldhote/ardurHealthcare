@@ -13,51 +13,71 @@ Services | Ardur Healthcare{% endblock %} {% block meta %}
 {% endblock %} {% block content %}
 <div class="bg-white">
     <!-- Hero Section -->
-    <section class="container px-4 text-center py-16 md:py-24">
-        <div class="max-w-4xl mx-auto">
-            <div
-                class="inline-flex items-center px-4 py-2 bg-brand-primary/10 rounded-full mb-6"
-                data-aos="fade-down"
-            >
-                <i class="ri-stethoscope-line text-brand-primary mr-2"></i>
-                <span class="text-brand-primary font-light"
-                    >Medical Specialties</span
-                >
-            </div>
-            <h1
-                class="text-4xl md:text-6xl font-light font-montserrat text-brand-dark mb-4"
-                data-aos="fade-up"
-            >
-                <span class="text-brand-primary">Specialty</span>-Specific
-                Medical Billing Services
-            </h1>
-            <p
-                class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8"
-                data-aos="fade-up"
-                data-aos-delay="200"
-            >
-                At Ardur Healthcare, we provide specialty-specific medical
-                billing services tailored to the clinical workflows, coding
-                patterns, and reimbursement rules of over 40 medical
-                specialties.
-            </p>
-            <div
-                class="flex flex-col sm:flex-row gap-4 justify-center"
-                data-aos="fade-up"
-                data-aos-delay="300"
-            >
-                <a
-                    href="{{ url_for('contact.contact_form') }}"
-                    class="bg-brand-primary text-white font-montserrat font-light px-8 py-4 rounded-full hover:scale-105 hover:bg-brand-dark hover:shadow-xl transition duration-300 inline-flex items-center justify-center"
-                >
-                    <i class="ri-phone-line mr-2"></i> Get Free Consultation
-                </a>
-                <a
-                    href="#specialties-section"
-                    class="bg-white text-brand-primary border-2 border-brand-primary font-montserrat font-light px-8 py-4 rounded-full hover:bg-brand-primary hover:text-white transition duration-300 inline-flex items-center justify-center"
-                >
-                    <i class="ri-arrow-down-line mr-2"></i> View Specialties
-                </a>
+    <section
+        class="relative bg-gradient-to-br from-brand-primary via-brand-secondary to-brand-dark overflow-hidden"
+    >
+        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+
+        <!-- Decorative Elements -->
+        <div
+            class="absolute top-10 left-10 w-20 h-20 bg-white bg-opacity-10 rounded-full blur-xl"
+        ></div>
+        <div
+            class="absolute bottom-20 right-20 w-32 h-32 bg-white bg-opacity-5 rounded-full blur-2xl"
+        ></div>
+        <div
+            class="absolute top-1/2 left-1/4 w-16 h-16 bg-white bg-opacity-5 rounded-full blur-lg"
+        ></div>
+
+        <div class="relative z-10 container mx-auto px-6 py-20 md:py-28">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="mb-8" data-aos="fade-down">
+                    <div
+                        class="inline-flex items-center px-4 py-2 bg-black/30 backdrop-blur-sm rounded-full mb-6"
+                    >
+                        <i
+                            class="ri-stethoscope-line text-brand-accent mr-2"
+                        ></i>
+                        <span class="text-brand-accent font-light"
+                            >Medical Specialties</span
+                        >
+                    </div>
+                    <h1
+                        class="text-4xl md:text-6xl font-thin font-montserrat text-white mb-4 drop-shadow-lg"
+                    >
+                        <span class="text-brand-accent drop-shadow-lg"
+                            >Specialty</span
+                        >-Specific Medical Billing Services
+                    </h1>
+                    <p
+                        class="text-lg md:text-xl text-white mb-8 leading-relaxed max-w-4xl mx-auto drop-shadow-md"
+                    >
+                        At Ardur Healthcare, we provide specialty-specific
+                        medical billing services tailored to the clinical
+                        workflows, coding patterns, and reimbursement rules of
+                        over 40 medical specialties.
+                    </p>
+                    <div
+                        class="flex flex-col sm:flex-row gap-4 justify-center"
+                        data-aos="fade-up"
+                        data-aos-delay="300"
+                    >
+                        <a
+                            href="{{ url_for('contact.contact_form') }}"
+                            class="bg-brand-accent text-white font-montserrat font-light px-8 py-4 rounded-full hover:scale-105 hover:bg-white hover:text-brand-accent hover:shadow-xl transition duration-300 inline-flex items-center justify-center"
+                        >
+                            <i class="ri-phone-line mr-2"></i> Get Free
+                            Consultation
+                        </a>
+                        <a
+                            href="#specialties-section"
+                            class="bg-black/30 backdrop-blur-sm text-white border-2 border-white/50 font-montserrat font-light px-8 py-4 rounded-full hover:bg-white hover:text-brand-primary transition duration-300 inline-flex items-center justify-center"
+                        >
+                            <i class="ri-arrow-down-line mr-2"></i> View
+                            Specialties
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -247,40 +267,35 @@ Services | Ardur Healthcare{% endblock %} {% block meta %}
     </section>
 
     <!-- CTA Section -->
-    <section class="py-16 md:py-20 bg-brand-primary text-white">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto text-center">
-                <div
-                    class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-white/20"
+    <section
+        class="py-16 md:py-24 bg-brand-secondary text-center relative overflow-hidden"
+    >
+        <div class="absolute inset-0 bg-black/5"></div>
+        <div class="relative max-w-4xl mx-auto px-6" data-aos="fade-up">
+            <h2
+                class="text-3xl md:text-4xl font-thin font-montserrat text-brand-dark mb-6"
+            >
+                Don't See Your Specialty? We've Got You Covered.
+            </h2>
+            <p class="text-lg mb-8 max-w-3xl mx-auto opacity-90">
+                We're constantly expanding our specialty offerings. If your
+                medical field isn't listed above, we likely already support it.
+                Contact us today to discover how we can optimize your billing
+                process.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                    href="{{ url_for('contact.contact_form') }}"
+                    class="bg-brand-primary text-white font-montserrat font-light px-8 py-4 rounded-full hover:scale-105 hover:shadow-xl hover:bg-brand-dark transition duration-300 inline-block"
                 >
-                    <h2
-                        class="text-3xl md:text-4xl font-light font-montserrat mb-4"
-                    >
-                        Don't See Your Specialty? We've Got You Covered.
-                    </h2>
-                    <p class="text-lg mb-8 max-w-3xl mx-auto opacity-90">
-                        We're constantly expanding our specialty offerings. If
-                        your medical field isn't listed above, we likely already
-                        support it. Contact us today to discover how we can
-                        optimize your billing process.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a
-                            href="{{ url_for('contact.contact_form') }}"
-                            class="bg-white text-brand-primary font-montserrat font-light px-8 py-4 rounded-xl hover:scale-105 hover:shadow-xl transition-all duration-300 inline-flex items-center justify-center"
-                        >
-                            <i class="ri-phone-line mr-2"></i> Get Free
-                            Consultation
-                        </a>
-                        <a
-                            href="tel:+1-555-ARDUR-HC"
-                            class="bg-transparent text-white border-2 border-white font-montserrat font-light px-8 py-4 rounded-xl hover:bg-white hover:text-brand-primary transition-all duration-300 inline-flex items-center justify-center"
-                        >
-                            <i class="ri-phone-line mr-2"></i> Call (555)
-                            ARDUR-HC
-                        </a>
-                    </div>
-                </div>
+                    <i class="ri-phone-line mr-2"></i> Get Free Consultation
+                </a>
+                <a
+                    href="tel:+1-555-ARDUR-HC"
+                    class="bg-transparent text-brand-primary border-2 border-brand-primary font-montserrat font-light px-8 py-4 rounded-xl hover:bg-white hover:text-brand-primary transition-all duration-300 inline-flex items-center justify-center"
+                >
+                    <i class="ri-phone-line mr-2"></i> Call (555) ARDUR-HC
+                </a>
             </div>
         </div>
     </section>

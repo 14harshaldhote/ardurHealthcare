@@ -1,47 +1,78 @@
 {% extends "base.html" %} {% block title %}Our Reach - Ardur Healthcare{%
 endblock %} {% block content %}
 <main class="min-h-screen bg-white">
-    <!-- Header Section - Kept as requested -->
-    <section class="text-center py-16 md:py-20 bg-brand-light">
-        <div class="max-w-5xl mx-auto px-6">
-            <h1
-                class="text-4xl md:text-6xl font-light font-montserrat text-brand-dark mb-4"
-                data-aos="fade-down"
-            >
-                State-Specific
-                <span class="text-brand-primary">Medical Billing Services</span>
-            </h1>
-            <p
-                class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto"
-                data-aos="fade-up"
-                data-aos-delay="200"
-            >
-                Explore Ardur Healthcare's state-specific medical billing
-                services across the U.S. Click your state to discover our local
-                expertise and tailored RCM solutions.
-            </p>
+    <!-- Header Section -->
+    <section
+        class="relative bg-gradient-to-br from-brand-primary via-brand-secondary to-brand-dark overflow-hidden"
+    >
+        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+
+        <!-- Decorative Elements -->
+        <div
+            class="absolute top-10 left-10 w-20 h-20 bg-white bg-opacity-10 rounded-full blur-xl"
+        ></div>
+        <div
+            class="absolute bottom-20 right-20 w-32 h-32 bg-white bg-opacity-5 rounded-full blur-2xl"
+        ></div>
+        <div
+            class="absolute top-1/2 left-1/4 w-16 h-16 bg-white bg-opacity-5 rounded-full blur-lg"
+        ></div>
+
+        <div class="relative z-10 container mx-auto px-6 py-20 md:py-28">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="mb-8" data-aos="fade-down">
+                    <div
+                        class="inline-flex items-center px-4 py-2 bg-black/30 backdrop-blur-sm rounded-full mb-6"
+                    >
+                        <i class="ri-map-pin-line text-brand-accent mr-2"></i>
+                        <span class="text-brand-accent font-light"
+                            >Our Reach</span
+                        >
+                    </div>
+                    <h1
+                        class="text-4xl md:text-6xl font-thin font-montserrat text-white mb-4 drop-shadow-lg"
+                    >
+                        State-Specific
+                        <span class="text-brand-accent drop-shadow-lg"
+                            >Medical Billing Services</span
+                        >
+                    </h1>
+                    <p
+                        class="text-lg md:text-xl text-white mb-8 leading-relaxed max-w-4xl mx-auto drop-shadow-md"
+                    >
+                        Explore Ardur Healthcare's state-specific medical
+                        billing services across the U.S. Click your state to
+                        discover our local expertise and tailored RCM solutions.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Redesigned Main Content -->
-    <div class="bg-gradient-to-br from-gray-50 to-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Map Section -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2
+                    class="text-3xl md:text-4xl font-light font-montserrat text-brand-dark mb-4"
+                    data-aos="fade-up"
+                >
+                    Interactive U.S. Billing Map
+                </h2>
+                <p
+                    class="text-lg text-gray-700 max-w-4xl mx-auto"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                >
+                    Select your state to explore state-specific medical billing
+                    services from Ardur Healthcare.
+                </p>
+            </div>
+
             <div
-                class="bg-white rounded-2xl shadow-xl overflow-hidden mb-12"
+                class="bg-white rounded-xl shadow-lg overflow-hidden"
                 data-aos="fade-up"
             >
-                <div
-                    class="px-8 py-6 bg-gradient-to-r from-brand-primary/90 to-brand-accent/90"
-                >
-                    <h2 class="text-2xl font-light text-white text-center mb-2">
-                        U.S. Billing Map
-                    </h2>
-                    <h3 class="text-brand-light text-center text-sm">
-                        Select your state to explore state-specific medical
-                        billing services from Ardur Healthcare.
-                    </h3>
-                </div>
-
                 <div class="">
                     <div class="map-container-fixed h-auto" id="map-container">
                         <div
@@ -57,303 +88,355 @@ endblock %} {% block content %}
                             </div>
                         </div>
 
-                        <object
-                            data="{{ url_for('static', filename='maps/MapChart_Map.svg') }}"
-                            type="image/svg+xml"
-                            class="usa-map-object"
-                            id="usa-map"
-                            onload="initializeMap()"
-                        >
+                        <div id="usa-map" class="usa-map-container">
                             <div class="map-fallback">
                                 <p class="text-gray-500">
                                     Loading interactive map...
                                 </p>
+                                <button
+                                    onclick="testMapLoad()"
+                                    class="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors"
+                                >
+                                    Test Map Load
+                                </button>
                             </div>
-                        </object>
+                            <!-- Fallback image for when fetch fails -->
+                            <img
+                                id="usa-map-fallback"
+                                src="{{ url_for('static', filename='maps/MapChart_Map.svg') }}"
+                                alt="USA Map"
+                                style="
+                                    display: none;
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: contain;
+                                "
+                                onload="handleFallbackImageLoad()"
+                                onerror="handleFallbackImageError()"
+                            />
+                        </div>
 
                         <div id="map-tooltip" class="map-tooltip"></div>
                     </div>
 
-                    <div class="flex justify-center mt-6">
-                        <div class="bg-gray-50 rounded-lg px-6 py-3">
-                            <div class="flex items-center gap-6 text-sm">
-                                <div class="flex items-center gap-2">
-                                    <div
-                                        class="w-4 h-4 bg-brand-primary rounded-full"
-                                    ></div>
-                                    <span class="text-gray-700"
-                                        >Available Services</span
-                                    >
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <div
-                                        class="w-4 h-4 bg-brand-accent rounded-full"
-                                    ></div>
-                                    <span class="text-gray-700"
-                                        >Featured States</span
-                                    >
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Services Grid -->
-            <div class="grid lg:grid-cols-3 gap-8 mb-12">
-                <!-- Coverage Info -->
-                <div class="lg:col-span-1">
-                    <div
-                        class="bg-white rounded-xl shadow-lg p-6 h-full"
-                        data-aos="fade-right"
-                    >
-                        <div class="flex items-center mb-4">
-                            <div
-                                class="w-12 h-12 bg-brand-primary rounded-lg flex items-center justify-center mr-4"
-                            >
-                                <i class="ri-map-2-line text-white text-xl"></i>
-                            </div>
-                            <h3 class="text-xl font-light text-gray-800">
-                                Nationwide Coverage
-                            </h3>
-                        </div>
-                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                            From coast to coast, we provide state-specific
-                            medical billing services with consistent quality and
-                            local insight.
-                        </p>
-                        <div class="space-y-2">
-                            <div
-                                class="flex items-center text-sm text-gray-600"
-                            >
-                                <i
-                                    class="ri-check-line text-brand-primary mr-2"
-                                ></i>
-                                <span>All 50 states covered</span>
-                            </div>
-                            <div
-                                class="flex items-center text-sm text-gray-600"
-                            >
-                                <i
-                                    class="ri-check-line text-brand-primary mr-2"
-                                ></i>
-                                <span>Local expertise in each region</span>
-                            </div>
-                            <div
-                                class="flex items-center text-sm text-gray-600"
-                            >
-                                <i
-                                    class="ri-check-line text-brand-primary mr-2"
-                                ></i>
-                                <span>24/7 support across time zones</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Quick Stats -->
-                <div class="lg:col-span-2">
-                    <div class="text-center mb-6">
-                        <h2 class="text-2xl font-light text-gray-800 mb-2">
-                            Service Footprint at a Glance
-                        </h2>
-                    </div>
-                    <div class="grid sm:grid-cols-2 gap-4 h-full">
-                        <div
-                            class="bg-gradient-to-br from-brand-primary to-brand-accent rounded-xl p-6 text-white"
-                            data-aos="fade-up"
-                            data-aos-delay="100"
-                        >
-                            <div class="flex items-center justify-between">
-                                <div>
-                                    <p class="text-brand-light text-sm">
-                                        Active States
-                                    </p>
-                                    <p class="text-3xl font-light">50</p>
-                                </div>
-                                <div
-                                    class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center"
-                                >
-                                    <i class="ri-government-line text-2xl"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div
-                            class="bg-white rounded-xl shadow-lg p-6"
-                            data-aos="fade-up"
-                            data-aos-delay="200"
-                        >
-                            <div class="flex items-center justify-between">
-                                <div>
-                                    <p class="text-gray-600 text-sm">
-                                        Time Zones
-                                    </p>
-                                    <p
-                                        class="text-3xl font-light text-gray-800"
-                                    >
-                                        4
-                                    </p>
-                                </div>
-                                <div
-                                    class="w-12 h-12 bg-brand-light rounded-lg flex items-center justify-center"
-                                >
-                                    <i
-                                        class="ri-time-line text-brand-primary text-2xl"
-                                    ></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div
-                            class="bg-white rounded-xl shadow-lg p-6"
-                            data-aos="fade-up"
-                            data-aos-delay="300"
-                        >
-                            <div class="flex items-center justify-between">
-                                <div>
-                                    <p class="text-gray-600 text-sm">
-                                        Healthcare Providers
-                                    </p>
-                                    <p
-                                        class="text-3xl font-light text-gray-800"
-                                    >
-                                        500+
-                                    </p>
-                                </div>
-                                <div
-                                    class="w-12 h-12 bg-brand-light rounded-lg flex items-center justify-center"
-                                >
-                                    <i
-                                        class="ri-hospital-line text-brand-primary text-2xl"
-                                    ></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div
-                            class="bg-gradient-to-br from-brand-accent to-brand-primary rounded-xl p-6 text-white"
-                            data-aos="fade-up"
-                            data-aos-delay="400"
-                        >
-                            <div class="flex items-center justify-between">
-                                <div>
-                                    <p class="text-brand-light text-sm">
-                                        Years Experience
-                                    </p>
-                                    <p class="text-3xl font-light">15+</p>
-                                </div>
-                                <div
-                                    class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center"
-                                >
-                                    <i class="ri-award-line text-2xl"></i>
+                    <div class="p-6">
+                        <div class="flex justify-center">
+                            <div class="bg-brand-light rounded-lg px-6 py-3">
+                                <div class="flex items-center gap-6 text-sm">
+                                    <div class="flex items-center gap-2">
+                                        <div
+                                            class="w-4 h-4 bg-brand-primary rounded-full"
+                                        ></div>
+                                        <span class="text-gray-700"
+                                            >Available Services</span
+                                        >
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <div
+                                            class="w-4 h-4 bg-brand-accent rounded-full"
+                                        ></div>
+                                        <span class="text-gray-700"
+                                            >Featured States</span
+                                        >
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Features Section -->
-            <div
-                class="bg-white rounded-2xl shadow-xl p-8 pt-8 mb-12"
-                data-aos="fade-up"
-            >
-                <div class="text-center mb-8">
-                    <h2 class="text-3xl font-light text-gray-800 mb-4">
-                        Why Choose Our Services?
-                    </h2>
-                    <h3 class="text-gray-600 max-w-2xl mx-auto">
-                        Our state-specific billing approach ensures
-                        high-quality, compliant medical billing across all U.S.
-                        states.
-                    </h3>
-                </div>
-
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div
-                        class="text-center group hover:scale-105 transition-transform duration-300"
-                        data-aos="fade-up"
-                        data-aos-delay="100"
-                    >
-                        <div
-                            class="w-16 h-16 bg-gradient-to-br from-brand-primary to-brand-accent rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:shadow-lg transition-shadow"
-                        >
-                            <i class="ri-map-pin-line text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-lg font-light text-gray-800 mb-2">
-                            Local Expertise
-                        </h3>
-                        <p class="text-gray-600 text-sm">
-                            In-depth understanding of state-specific billing
-                            regulations and payer networks.
-                        </p>
-                    </div>
-
-                    <div
-                        class="text-center group hover:scale-105 transition-transform duration-300"
-                        data-aos="fade-up"
-                        data-aos-delay="200"
-                    >
-                        <div
-                            class="w-16 h-16 bg-gradient-to-br from-brand-accent to-brand-primary rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:shadow-lg transition-shadow"
-                        >
-                            <i
-                                class="ri-shield-check-line text-white text-2xl"
-                            ></i>
-                        </div>
-                        <h3 class="text-lg font-light text-gray-800 mb-2">
-                            Compliance First
-                        </h3>
-                        <p class="text-gray-600 text-sm">
-                            Full compliance with HIPAA and each state's
-                            regulatory requirements.
-                        </p>
-                    </div>
-
-                    <div
-                        class="text-center group hover:scale-105 transition-transform duration-300"
-                        data-aos="fade-up"
-                        data-aos-delay="300"
-                    >
-                        <div
-                            class="w-16 h-16 bg-gradient-to-br from-brand-primary to-brand-accent rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:shadow-lg transition-shadow"
-                        >
-                            <i
-                                class="ri-customer-service-line text-white text-2xl"
-                            ></i>
-                        </div>
-                        <h3 class="text-lg font-light text-gray-800 mb-2">
-                            24/7 Support
-                        </h3>
-                        <p class="text-gray-600 text-sm">
-                            Dedicated account managers available across time
-                            zones and regions.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CTA Section -->
-            <div
-                class="bg-gradient-to-r from-brand-primary to-brand-accent rounded-2xl p-8 text-center text-white"
-                data-aos="fade-up"
-            >
-                <h2 class="text-3xl font-light mb-4">Ready to Get Started?</h2>
-                <h3 class="text-brand-light mb-6 max-w-2xl mx-auto">
-                    Contact us to learn how our state-specific medical billing
-                    services can boost your revenue across all U.S. time zones.
-                </h3>
-                <a
-                    href="{{ url_for('contact.contact_form') }}"
-                    class="bg-white text-brand-primary font-light px-8 py-3 rounded-full hover:bg-gray-100 transition-all duration-300 inline-flex items-center gap-2"
-                >
-                    <span>Get in Touch</span>
-                    <i class="ri-arrow-right-line"></i>
-                </a>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="py-16 md:py-24 bg-brand-light">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2
+                    class="text-3xl md:text-4xl font-light font-montserrat text-brand-dark mb-4"
+                    data-aos="fade-up"
+                >
+                    Our Nationwide Reach at a Glance
+                </h2>
+                <p
+                    class="text-lg text-gray-700 max-w-4xl mx-auto"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                >
+                    From coast to coast, we provide state-specific medical
+                    billing services with consistent quality and local insight.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div
+                    class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 text-center"
+                    data-aos="fade-up"
+                    data-aos-delay="100"
+                >
+                    <div
+                        class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-6"
+                    >
+                        <i
+                            class="ri-government-line text-2xl text-brand-primary"
+                        ></i>
+                    </div>
+                    <h3
+                        class="text-3xl font-light font-montserrat text-brand-dark mb-2"
+                    >
+                        50
+                    </h3>
+                    <p class="text-gray-700">Active States</p>
+                </div>
+
+                <div
+                    class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 text-center"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                >
+                    <div
+                        class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-6"
+                    >
+                        <i class="ri-time-line text-2xl text-brand-primary"></i>
+                    </div>
+                    <h3
+                        class="text-3xl font-light font-montserrat text-brand-dark mb-2"
+                    >
+                        4
+                    </h3>
+                    <p class="text-gray-700">Time Zones</p>
+                </div>
+
+                <div
+                    class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 text-center"
+                    data-aos="fade-up"
+                    data-aos-delay="300"
+                >
+                    <div
+                        class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-6"
+                    >
+                        <i
+                            class="ri-hospital-line text-2xl text-brand-primary"
+                        ></i>
+                    </div>
+                    <h3
+                        class="text-3xl font-light font-montserrat text-brand-dark mb-2"
+                    >
+                        500+
+                    </h3>
+                    <p class="text-gray-700">Healthcare Providers</p>
+                </div>
+
+                <div
+                    class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 text-center"
+                    data-aos="fade-up"
+                    data-aos-delay="400"
+                >
+                    <div
+                        class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-6"
+                    >
+                        <i
+                            class="ri-award-line text-2xl text-brand-primary"
+                        ></i>
+                    </div>
+                    <h3
+                        class="text-3xl font-light font-montserrat text-brand-dark mb-2"
+                    >
+                        15+
+                    </h3>
+                    <p class="text-gray-700">Years Experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2
+                    class="text-3xl md:text-4xl font-light font-montserrat text-brand-dark mb-4"
+                    data-aos="fade-up"
+                >
+                    Why Choose Our State-Specific Services?
+                </h2>
+                <p
+                    class="text-lg text-gray-700 max-w-4xl mx-auto"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                >
+                    Our state-specific billing approach ensures high-quality,
+                    compliant medical billing across all U.S. states.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div
+                    class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300"
+                    data-aos="fade-up"
+                    data-aos-delay="100"
+                >
+                    <div
+                        class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-6"
+                    >
+                        <i
+                            class="ri-map-pin-line text-2xl text-brand-primary"
+                        ></i>
+                    </div>
+                    <h3
+                        class="text-lg font-light font-montserrat text-brand-dark mb-3 text-center"
+                    >
+                        Local Expertise
+                    </h3>
+                    <p class="text-gray-700 text-center">
+                        In-depth understanding of state-specific billing
+                        regulations and payer networks.
+                    </p>
+                </div>
+
+                <div
+                    class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                >
+                    <div
+                        class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-6"
+                    >
+                        <i
+                            class="ri-shield-check-line text-2xl text-brand-primary"
+                        ></i>
+                    </div>
+                    <h3
+                        class="text-lg font-light font-montserrat text-brand-dark mb-3 text-center"
+                    >
+                        Compliance First
+                    </h3>
+                    <p class="text-gray-700 text-center">
+                        Full compliance with HIPAA and each state's regulatory
+                        requirements.
+                    </p>
+                </div>
+
+                <div
+                    class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300"
+                    data-aos="fade-up"
+                    data-aos-delay="300"
+                >
+                    <div
+                        class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-6"
+                    >
+                        <i
+                            class="ri-customer-service-line text-2xl text-brand-primary"
+                        ></i>
+                    </div>
+                    <h3
+                        class="text-lg font-light font-montserrat text-brand-dark mb-3 text-center"
+                    >
+                        24/7 Support
+                    </h3>
+                    <p class="text-gray-700 text-center">
+                        Dedicated account managers available across time zones
+                        and regions.
+                    </p>
+                </div>
+
+                <div
+                    class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300"
+                    data-aos="fade-up"
+                    data-aos-delay="400"
+                >
+                    <div
+                        class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-6"
+                    >
+                        <i
+                            class="ri-check-line text-2xl text-brand-primary"
+                        ></i>
+                    </div>
+                    <h3
+                        class="text-lg font-light font-montserrat text-brand-dark mb-3 text-center"
+                    >
+                        All 50 States Covered
+                    </h3>
+                    <p class="text-gray-700 text-center">
+                        Complete coverage across all U.S. states with local
+                        expertise in each region.
+                    </p>
+                </div>
+
+                <div
+                    class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300"
+                    data-aos="fade-up"
+                    data-aos-delay="500"
+                >
+                    <div
+                        class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-6"
+                    >
+                        <i
+                            class="ri-map-2-line text-2xl text-brand-primary"
+                        ></i>
+                    </div>
+                    <h3
+                        class="text-lg font-light font-montserrat text-brand-dark mb-3 text-center"
+                    >
+                        Regional Payer Networks
+                    </h3>
+                    <p class="text-gray-700 text-center">
+                        Deep knowledge of regional insurance networks and
+                        billing requirements.
+                    </p>
+                </div>
+
+                <div
+                    class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300"
+                    data-aos="fade-up"
+                    data-aos-delay="600"
+                >
+                    <div
+                        class="flex justify-center items-center h-16 w-16 bg-brand-secondary rounded-full mx-auto mb-6"
+                    >
+                        <i
+                            class="ri-settings-line text-2xl text-brand-primary"
+                        ></i>
+                    </div>
+                    <h3
+                        class="text-lg font-light font-montserrat text-brand-dark mb-3 text-center"
+                    >
+                        Customized Solutions
+                    </h3>
+                    <p class="text-gray-700 text-center">
+                        Tailored billing solutions that adapt to your state's
+                        specific requirements and regulations.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section
+        class="py-16 md:py-24 bg-brand-secondary text-center relative overflow-hidden"
+    >
+        <div class="absolute inset-0 bg-black/5"></div>
+        <div class="relative max-w-4xl mx-auto px-6" data-aos="fade-up">
+            <h2
+                class="text-3xl md:text-4xl font-thin font-montserrat text-brand-dark mb-6"
+            >
+                Ready to Get Started?
+            </h2>
+            <p
+                class="text-xl text-brand-dark/80 font-light mb-8 max-w-2xl mx-auto"
+            >
+                Contact us to learn how our state-specific medical billing
+                services can boost your revenue across all U.S. time zones.
+            </p>
+            <a
+                href="{{ url_for('contact.contact_form') }}"
+                class="bg-brand-primary text-white font-montserrat font-light px-8 py-4 rounded-full hover:scale-105 hover:shadow-xl hover:bg-brand-dark transition duration-300 inline-block"
+            >
+                Get in Touch with Our Team
+            </a>
+        </div>
+    </section>
 </main>
 
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
@@ -500,17 +583,23 @@ endblock %} {% block content %}
 
     // Show loading overlay
     function showMapLoading() {
+        console.log("⏳ Showing map loading...");
         const loadingOverlay = document.getElementById("map-loading");
         if (loadingOverlay) {
             loadingOverlay.style.display = "flex";
+        } else {
+            console.warn("⚠️ Loading overlay element not found");
         }
     }
 
     // Hide loading overlay
     function hideMapLoading() {
+        console.log("✅ Hiding map loading...");
         const loadingOverlay = document.getElementById("map-loading");
         if (loadingOverlay) {
             loadingOverlay.style.display = "none";
+        } else {
+            console.warn("⚠️ Loading overlay element not found for hiding");
         }
     }
 
@@ -533,49 +622,286 @@ endblock %} {% block content %}
         }
     }
 
-    // Initialize map when SVG loads
-    function initializeMap() {
+    // Handle fallback image loading
+    function handleFallbackImageLoad() {
+        console.log("📸 Fallback image loaded successfully");
+        const mapContainer = document.getElementById("usa-map");
+        const fallbackImg = document.getElementById("usa-map-fallback");
+
+        if (mapContainer && fallbackImg) {
+            // Hide loading and show image
+            hideMapLoading();
+            fallbackImg.style.display = "block";
+
+            // Add basic click handler for fallback
+            fallbackImg.addEventListener("click", function () {
+                alert(
+                    "Interactive features require JavaScript. Please refresh the page or enable JavaScript for full functionality.",
+                );
+            });
+        }
+    }
+
+    // Handle fallback image error
+    function handleFallbackImageError() {
+        console.error("❌ Fallback image also failed to load");
+        hideMapLoading();
+        showStateListFallback();
+    }
+
+    // Show state list as ultimate fallback
+    function showStateListFallback() {
+        console.log("📋 Showing state list fallback");
+        const mapContainer = document.getElementById("usa-map");
+        if (mapContainer) {
+            const featuredStates = ["CA", "TX", "FL", "NY", "AL"];
+            const stateList = Object.entries(stateAbbreviationMap)
+                .map(([abbr, name]) => {
+                    const isFeatured = featuredStates.includes(abbr);
+                    return `
+                        <div class="state-item ${isFeatured ? "featured" : ""}" onclick="loadState('${name}')">
+                            <div style="font-weight: bold; margin-bottom: 0.5rem;">${abbr}</div>
+                            <div style="font-size: 0.875rem;">${name}</div>
+                        </div>
+                    `;
+                })
+                .join("");
+
+            mapContainer.innerHTML = `
+                <div style="text-align: center; padding: 2rem;">
+                    <h3 style="margin-bottom: 1rem; color: #374151;">Select Your State</h3>
+                    <p style="margin-bottom: 2rem; color: #6b7280;">Interactive map unavailable. Click on any state below:</p>
+                    <div class="state-list-fallback">
+                        ${stateList}
+                    </div>
+                </div>
+            `;
+        }
+    }
+
+    // Manual test function
+    function testMapLoad() {
+        console.log("🧪 Manual test triggered");
+        const mapContainer = document.getElementById("usa-map");
+        if (mapContainer) {
+            mapContainer.innerHTML =
+                '<div class="map-fallback"><p class="text-gray-500">Testing map load...</p></div>';
+            showMapLoading();
+            setTimeout(() => {
+                initializeMap().catch((error) => {
+                    console.error("Manual test failed:", error);
+                    showStateListFallback();
+                });
+            }, 1000);
+        }
+    }
+
+    // Fetch and initialize SVG map
+    async function initializeMap() {
+        console.log("🗺️ Starting map initialization...");
+
         try {
-            const mapObject = document.getElementById("usa-map");
-            if (!mapObject || !mapObject.contentDocument) {
-                console.log("Map not yet loaded, retrying...");
-                setTimeout(initializeMap, 100);
+            const mapContainer = document.getElementById("usa-map");
+            if (!mapContainer) {
+                console.error("❌ Map container not found");
+                hideMapLoading();
                 return;
             }
 
-            const svgDoc = mapObject.contentDocument;
-            const states = svgDoc.querySelectorAll("path[id], g[id]");
+            console.log("📦 Map container found, fetching SVG...");
+
+            // Add timeout for fetch
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 10000);
+
+            // Fetch SVG content
+            const svgUrl =
+                "{{ url_for('static', filename='maps/MapChart_Map.svg') }}";
+            console.log("🔗 Fetching from:", svgUrl);
+
+            const response = await fetch(svgUrl, {
+                signal: controller.signal,
+            });
+
+            clearTimeout(timeoutId);
+
+            if (!response.ok) {
+                throw new Error(
+                    `Failed to fetch SVG: ${response.status} ${response.statusText}`,
+                );
+            }
+
+            const svgText = await response.text();
+            console.log(
+                "✅ SVG content fetched successfully, length:",
+                svgText.length,
+            );
+            console.log("📝 SVG content preview:", svgText.substring(0, 200));
+
+            if (!svgText || svgText.length < 100) {
+                throw new Error("SVG content appears to be empty or invalid");
+            }
+
+            // Validate SVG content
+            if (!svgText.includes("<svg") && !svgText.includes("<?xml")) {
+                console.error("❌ Content does not appear to be valid SVG");
+                throw new Error("Invalid SVG content - missing SVG tags");
+            }
+
+            // Inject SVG into container
+            mapContainer.innerHTML = svgText;
+
+            // Find the SVG element and make it responsive
+            const svgElement = mapContainer.querySelector("svg");
+            if (svgElement) {
+                svgElement.style.width = "100%";
+                svgElement.style.height = "100%";
+                svgElement.style.display = "block";
+            }
+
+            // Find all state elements
+            const states = mapContainer.querySelectorAll("path[id], g[id]");
             const featuredStates = ["CA", "TX", "FL", "NY", "AL"];
 
+            console.log("Found states:", states.length);
+
+            if (states.length === 0) {
+                console.warn("No state elements found in SVG");
+                return;
+            }
+
+            // Process each state element
             states.forEach((state) => {
                 const stateId = state.id;
-                const stateAbbr = stateId.toUpperCase();
-                const fullStateName = getFullStateName(stateAbbr);
 
-                if (!stateAbbreviationMap[stateAbbr]) {
+                // Skip if no ID or invalid ID
+                if (!stateId || stateId.length < 2) {
                     return;
                 }
 
-                if (featuredStates.includes(stateAbbr)) {
-                    state.classList.add("featured");
+                // Extract state abbreviation from various ID formats
+                let stateAbbr = "";
+
+                // Handle different ID formats: "CA", "MN_S", "OH_E", "california", etc.
+                if (stateId.includes("_")) {
+                    stateAbbr = stateId.split("_")[0].toUpperCase();
+                } else if (stateId.length === 2) {
+                    stateAbbr = stateId.toUpperCase();
+                } else {
+                    // Try to match full state names or find abbreviation
+                    const idUpper = stateId.toUpperCase();
+                    for (const [abbr, fullName] of Object.entries(
+                        stateAbbreviationMap,
+                    )) {
+                        if (
+                            idUpper.includes(abbr) ||
+                            idUpper.includes(
+                                fullName.toUpperCase().replace(/\s+/g, ""),
+                            )
+                        ) {
+                            stateAbbr = abbr;
+                            break;
+                        }
+                    }
                 }
 
-                // Add event listeners
+                // Validate state abbreviation
+                if (!stateAbbr || !stateAbbreviationMap[stateAbbr]) {
+                    console.log(
+                        "Skipping element with invalid state:",
+                        stateId,
+                    );
+                    return;
+                }
+
+                const fullStateName = stateAbbreviationMap[stateAbbr];
+                console.log(
+                    `Processing: ${stateId} -> ${stateAbbr} -> ${fullStateName}`,
+                );
+
+                // Set initial styles - make element visible and interactive
+                state.style.display = "block";
+                state.style.visibility = "visible";
+                state.style.fill = "#e5e7eb";
+                state.style.stroke = "#ffffff";
+                state.style.strokeWidth = "1";
+                state.style.cursor = "pointer";
+                state.style.transition = "all 0.3s ease";
+                state.style.pointerEvents = "all";
+
+                // Mark featured states
+                if (featuredStates.includes(stateAbbr)) {
+                    state.classList.add("featured");
+                    state.style.fill = "#f59e0b";
+                    state.style.strokeWidth = "1.5";
+                }
+
+                // Add click handler
                 state.addEventListener("click", function (e) {
+                    console.log("State clicked:", stateId, "->", fullStateName);
                     e.preventDefault();
                     e.stopPropagation();
-                    states.forEach((s) => s.classList.remove("active"));
+
+                    // Reset all states
+                    states.forEach((s) => {
+                        s.classList.remove("active");
+                        const sId = s.id;
+                        let sAbbr = "";
+                        if (sId.includes("_")) {
+                            sAbbr = sId.split("_")[0].toUpperCase();
+                        } else if (sId.length === 2) {
+                            sAbbr = sId.toUpperCase();
+                        }
+
+                        if (featuredStates.includes(sAbbr)) {
+                            s.style.fill = "#f59e0b";
+                            s.style.strokeWidth = "1.5";
+                        } else {
+                            s.style.fill = "#e5e7eb";
+                            s.style.strokeWidth = "1";
+                        }
+                        s.style.filter = "none";
+                    });
+
+                    // Highlight clicked state
                     this.classList.add("active");
+                    this.style.fill = "#065f46";
+                    this.style.strokeWidth = "2";
+                    this.style.filter =
+                        "drop-shadow(0 4px 12px rgba(6, 95, 70, 0.5))";
+
+                    // Navigate to state page
                     loadState(fullStateName);
                 });
 
+                // Add hover handlers
                 state.addEventListener("mouseenter", function (e) {
                     if (!this.classList.contains("active")) {
+                        if (this.classList.contains("featured")) {
+                            this.style.fill = "#d97706";
+                            this.style.filter =
+                                "drop-shadow(0 4px 8px rgba(245, 158, 11, 0.4))";
+                        } else {
+                            this.style.fill = "#008ba3";
+                            this.style.filter =
+                                "drop-shadow(0 4px 8px rgba(0, 139, 163, 0.3))";
+                        }
+                        this.style.strokeWidth = "2";
                         showTooltip(e, fullStateName);
                     }
                 });
 
                 state.addEventListener("mouseleave", function () {
+                    if (!this.classList.contains("active")) {
+                        if (this.classList.contains("featured")) {
+                            this.style.fill = "#f59e0b";
+                            this.style.strokeWidth = "1.5";
+                        } else {
+                            this.style.fill = "#e5e7eb";
+                            this.style.strokeWidth = "1";
+                        }
+                        this.style.filter = "none";
+                    }
                     hideTooltip();
                 });
 
@@ -599,36 +925,92 @@ endblock %} {% block content %}
                         loadState(fullStateName);
                     }
                 });
-
-                if (!state.querySelector("title")) {
-                    const title = svgDoc.createElementNS(
-                        "http://www.w3.org/2000/svg",
-                        "title",
-                    );
-                    title.textContent = `Medical Billing Services in ${fullStateName}`;
-                    state.appendChild(title);
-                }
             });
 
             hideMapLoading();
-            console.log("Map initialized successfully");
+            console.log(
+                "Map initialized successfully with",
+                states.length,
+                "interactive states",
+            );
         } catch (error) {
-            console.error("Error initializing map:", error);
-            hideMapLoading();
-            setTimeout(initializeMap, 500);
+            console.error("❌ Error initializing map:", error);
+            console.log("🔄 Attempting fallback image method...");
+
+            // Try fallback image method
+            const fallbackImg = document.getElementById("usa-map-fallback");
+            if (fallbackImg) {
+                // Force trigger fallback image load
+                fallbackImg.style.display = "block";
+
+                // If image is already loaded
+                if (fallbackImg.complete) {
+                    handleFallbackImageLoad();
+                } else {
+                    // Wait for image to load or error
+                    setTimeout(() => {
+                        if (!fallbackImg.complete) {
+                            handleFallbackImageError();
+                        }
+                    }, 5000);
+                }
+            } else {
+                hideMapLoading();
+                // Show state list fallback as final option
+                showStateListFallback();
+            }
         }
     }
 
-    // Initialize map on page load
-    document.addEventListener("DOMContentLoaded", function () {
+    // Handle browser navigation and initialization
+    function handlePageNavigation() {
+        console.log("🚀 Handling page navigation...");
         showMapLoading();
-        setTimeout(() => {
-            if (document.getElementById("usa-map")) {
-                initializeMap();
-            } else {
-                hideMapLoading();
+
+        // Add safety timeout
+        const safetyTimeout = setTimeout(() => {
+            console.warn("⚠️ Map initialization timeout reached");
+            hideMapLoading();
+        }, 15000);
+
+        // Initialize immediately
+        initializeMap().finally(() => {
+            clearTimeout(safetyTimeout);
+        });
+    }
+
+    // Initialize map on page load with multiple triggers
+    document.addEventListener("DOMContentLoaded", function () {
+        console.log("📄 DOM Content Loaded");
+        handlePageNavigation();
+    });
+
+    // Backup initialization for faster loading
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", handlePageNavigation);
+    } else {
+        console.log("📄 DOM already ready, initializing immediately");
+        handlePageNavigation();
+    }
+
+    // Handle back/forward navigation
+    window.addEventListener("pageshow", function (event) {
+        console.log("👀 Page show event", { persisted: event.persisted });
+        if (event.persisted) {
+            handlePageNavigation();
+        }
+    });
+
+    // Handle visibility change (when tab becomes visible again)
+    document.addEventListener("visibilitychange", function () {
+        if (!document.hidden) {
+            console.log("👁️ Page became visible");
+            const mapContainer = document.getElementById("usa-map");
+            if (mapContainer && !mapContainer.querySelector("svg")) {
+                console.log("🔄 Re-initializing map after visibility change");
+                handlePageNavigation();
             }
-        }, 1000);
+        }
     });
 </script>
 
@@ -643,11 +1025,15 @@ endblock %} {% block content %}
         border-radius: 12px;
     }
 
-    .usa-map-object {
+    .usa-map-container {
         width: 100%;
         height: 100%;
-        object-fit: contain;
-        object-position: center;
+        display: block;
+    }
+
+    .usa-map-container svg {
+        width: 100%;
+        height: 100%;
         display: block;
     }
 
@@ -704,7 +1090,7 @@ endblock %} {% block content %}
         position: absolute;
         backdrop-filter: blur(10px);
         background: rgba(13, 148, 136, 0.85);
-        color: #ffffff;
+        color: #077fff;
         padding: 10px 16px;
         border-radius: 10px;
         font-size: 14px;
@@ -736,6 +1122,22 @@ endblock %} {% block content %}
         border-top-color: rgba(13, 148, 136, 0.85);
     }
 
+    .state {
+        fill: #e5e7eb;
+        stroke: #ffffff;
+        stroke-width: 1;
+        cursor: pointer;
+        transition:
+            fill 0.3s ease,
+            stroke-width 0.3s ease;
+    }
+
+    .state:hover {
+        fill: #008ba3;
+        stroke-width: 2;
+        filter: drop-shadow(0 4px 8px rgba(0, 139, 163, 0.3));
+    }
+
     /* ===== RESPONSIVE DESIGN ===== */
     @media (max-width: 768px) {
         .map-container-fixed {
@@ -761,50 +1163,25 @@ endblock %} {% block content %}
     }
 
     /* ===== MAP STATE INTERACTION STYLES ===== */
-    .usa-map-object svg path,
-    .usa-map-object svg g {
+    .usa-map-container svg path,
+    .usa-map-container svg g {
         cursor: pointer;
         transition: all 0.3s ease;
-        fill: #e5e7eb;
         stroke: #ffffff;
-        stroke-width: 1;
     }
 
-    .usa-map-object svg path:hover,
-    .usa-map-object svg g:hover {
-        fill: #008ba3;
-        stroke: #ffffff;
-        stroke-width: 2;
-        filter: drop-shadow(0 4px 8px rgba(0, 139, 163, 0.3));
-    }
-
-    .usa-map-object svg path.featured,
-    .usa-map-object svg g.featured {
-        fill: #f59e0b;
-        stroke: #ffffff;
-        stroke-width: 1.5;
-    }
-
-    .usa-map-object svg path.featured:hover,
-    .usa-map-object svg g.featured:hover {
-        fill: #d97706;
-        stroke: #ffffff;
-        stroke-width: 2;
-        filter: drop-shadow(0 4px 8px rgba(245, 158, 11, 0.4));
-    }
-
-    .usa-map-object svg path.active,
-    .usa-map-object svg g.active {
-        fill: #065f46;
-        stroke: #ffffff;
-        stroke-width: 2;
-        filter: drop-shadow(0 4px 12px rgba(6, 95, 70, 0.5));
-    }
-
-    .usa-map-object svg path:focus,
-    .usa-map-object svg g:focus {
+    .usa-map-container svg path:focus,
+    .usa-map-container svg g:focus {
         outline: 2px solid #008ba3;
         outline-offset: 2px;
+    }
+
+    /* Ensure all state elements are properly styled */
+    .usa-map-container svg [id],
+    .usa-map-container svg .state {
+        cursor: pointer;
+        transition: all 0.3s ease;
+        stroke: #ffffff;
     }
 
     /* ===== CUSTOM SCROLLBAR ===== */
@@ -823,6 +1200,41 @@ endblock %} {% block content %}
 
     ::-webkit-scrollbar-thumb:hover {
         background: #a8a8a8;
+    }
+
+    /* ===== FALLBACK STATE LIST ===== */
+    .state-list-fallback {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1rem;
+        padding: 2rem;
+    }
+
+    .state-item {
+        background: #f3f4f6;
+        border: 2px solid #e5e7eb;
+        border-radius: 8px;
+        padding: 1rem;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .state-item:hover {
+        background: #008ba3;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 139, 163, 0.3);
+    }
+
+    .state-item.featured {
+        background: #f59e0b;
+        color: white;
+        border-color: #d97706;
+    }
+
+    .state-item.featured:hover {
+        background: #d97706;
     }
 </style>
 {% endblock %}

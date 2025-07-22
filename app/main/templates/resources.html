@@ -1,22 +1,50 @@
 {% extends "base.html" %} {% block title %}Healthcare Resources - Ardur
 Healthcare{% endblock %} {% block content %}
 <main class="min-h-screen">
-    <section class="text-center py-12 md:py-16 bg-brand-light">
-        <div class="max-w-4xl mx-auto px-4">
-            <h1
-                class="text-4xl md:text-6xl font-bold font-montserrat text-brand-dark mb-4"
-                data-aos="fade-down"
-            >
-                Healthcare Knowledge <span class="text-brand-primary">Hub</span>
-            </h1>
-            <p
-                class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto"
-                data-aos="fade-up"
-                data-aos-delay="200"
-            >
-                Explore expert insights, billing best practices, case studies,
-                and the latest healthcare trends to stay informed and empowered.
-            </p>
+    <section
+        class="relative bg-gradient-to-br from-brand-primary via-brand-secondary to-brand-dark overflow-hidden"
+    >
+        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+
+        <!-- Decorative Elements -->
+        <div
+            class="absolute top-10 left-10 w-20 h-20 bg-white bg-opacity-10 rounded-full blur-xl"
+        ></div>
+        <div
+            class="absolute bottom-20 right-20 w-32 h-32 bg-white bg-opacity-5 rounded-full blur-2xl"
+        ></div>
+        <div
+            class="absolute top-1/2 left-1/4 w-16 h-16 bg-white bg-opacity-5 rounded-full blur-lg"
+        ></div>
+
+        <div class="relative z-10 container mx-auto px-6 py-20 md:py-28">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="mb-8" data-aos="fade-down">
+                    <div
+                        class="inline-flex items-center px-4 py-2 bg-black/30 backdrop-blur-sm rounded-full mb-6"
+                    >
+                        <i class="ri-book-line text-brand-accent mr-2"></i>
+                        <span class="text-brand-accent font-light"
+                            >Resources</span
+                        >
+                    </div>
+                    <h1
+                        class="text-4xl md:text-6xl font-thin font-montserrat text-white mb-4 drop-shadow-lg"
+                    >
+                        Healthcare Knowledge
+                        <span class="text-brand-accent drop-shadow-lg"
+                            >Hub</span
+                        >
+                    </h1>
+                    <p
+                        class="text-lg md:text-xl text-white mb-8 leading-relaxed max-w-4xl mx-auto drop-shadow-md"
+                    >
+                        Explore expert insights, billing best practices, case
+                        studies, and the latest healthcare trends to stay
+                        informed and empowered.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 

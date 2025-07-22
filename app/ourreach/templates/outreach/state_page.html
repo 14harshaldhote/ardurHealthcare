@@ -415,37 +415,36 @@ Healthcare{% endblock %} {% block meta %}
                         </div>
                     </div>
                 </div>
-
                 <div class="lg:w-1/4">
                     <div class="lg:sticky lg:top-32">
                         <div
                             data-aos="fade-up"
-                            class="bg-gradient-to-br from-brand-primary to-brand-dark rounded-2xl p-8 text-white shadow-2xl"
+                            class="bg-gradient-to-br from-brand-primary to-brand-dark rounded-2xl p-4 text-white shadow-2xl"
                         >
-                            <div class="text-center mb-8">
+                            <div class="text-center mb-4">
                                 <div
-                                    class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4"
+                                    class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-2"
                                 >
                                     <i
-                                        class="ri-customer-service-2-line text-3xl text-white"
+                                        class="ri-customer-service-2-line text-2xl text-white"
                                     ></i>
                                 </div>
-                                <h3 class="text-2xl font-bold mb-2">
+                                <h3 class="text-xl font-bold mb-1">
                                     Ready to Get Started?
                                 </h3>
-                                <p class="text-white/90">
+                                <p class="text-white/90 text-sm">
                                     Schedule your free consultation with our {{
                                     state.name }} billing experts
                                 </p>
                             </div>
                             <form
-                                class="space-y-4"
+                                class="space-y-2"
                                 action="{{ url_for('contact.contact_form') }}"
                                 method="POST"
                             >
                                 <div>
                                     <label
-                                        class="block text-sm font-medium mb-2"
+                                        class="block text-xs font-medium mb-1"
                                         for="name"
                                     >
                                         Full Name *
@@ -454,14 +453,14 @@ Healthcare{% endblock %} {% block meta %}
                                         type="text"
                                         id="name"
                                         name="name"
-                                        class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
+                                        class="w-full px-3 py-2 text-sm rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
                                         placeholder="Enter your full name"
                                         required
                                     />
                                 </div>
                                 <div>
                                     <label
-                                        class="block text-sm font-medium mb-2"
+                                        class="block text-xs font-medium mb-1"
                                         for="email"
                                     >
                                         Email Address *
@@ -470,14 +469,14 @@ Healthcare{% endblock %} {% block meta %}
                                         type="email"
                                         id="email"
                                         name="email"
-                                        class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
+                                        class="w-full px-3 py-2 text-sm rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
                                         placeholder="Enter your email"
                                         required
                                     />
                                 </div>
                                 <div>
                                     <label
-                                        class="block text-sm font-medium mb-2"
+                                        class="block text-xs font-medium mb-1"
                                         for="phone"
                                     >
                                         Phone Number *
@@ -486,14 +485,14 @@ Healthcare{% endblock %} {% block meta %}
                                         type="tel"
                                         id="phone"
                                         name="phone"
-                                        class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
+                                        class="w-full px-3 py-2 text-sm rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
                                         placeholder="Enter your phone number"
                                         required
                                     />
                                 </div>
                                 <div>
                                     <label
-                                        class="block text-sm font-medium mb-2"
+                                        class="block text-xs font-medium mb-1"
                                         for="practice"
                                     >
                                         Practice Name *
@@ -502,14 +501,14 @@ Healthcare{% endblock %} {% block meta %}
                                         type="text"
                                         id="practice"
                                         name="practice"
-                                        class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
+                                        class="w-full px-3 py-2 text-sm rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
                                         placeholder="Enter your practice name"
                                         required
                                     />
                                 </div>
                                 <div>
                                     <label
-                                        class="block text-sm font-medium mb-2"
+                                        class="block text-xs font-medium mb-1"
                                         for="state_field"
                                     >
                                         State *
@@ -518,7 +517,7 @@ Healthcare{% endblock %} {% block meta %}
                                         type="text"
                                         id="state_field"
                                         name="state"
-                                        class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
+                                        class="w-full px-3 py-2 text-sm rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
                                         placeholder="Enter your state"
                                         value="{{ state.name }}"
                                         required
@@ -526,78 +525,23 @@ Healthcare{% endblock %} {% block meta %}
                                 </div>
                                 <div>
                                     <label
-                                        class="block text-sm font-medium mb-2"
+                                        class="block text-xs font-medium mb-1"
                                         for="specialties"
                                     >
                                         Specialties *
                                     </label>
-                                    <select
+                                    <input
+                                        type="text"
                                         id="specialties"
                                         name="specialties"
-                                        multiple
-                                        class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-white/50"
+                                        class="w-full px-3 py-2 text-sm rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
+                                        placeholder="Enter your specialties"
                                         required
-                                        size="4"
-                                    >
-                                        {% for specialty in state.specialties %}
-                                        <option
-                                            value="{{ specialty }}"
-                                            class="text-black bg-white"
-                                        >
-                                            {{ specialty|title }}
-                                        </option>
-                                        {% endfor %}
-                                        <option
-                                            value="family-medicine"
-                                            class="text-black bg-white"
-                                        >
-                                            Family Medicine
-                                        </option>
-                                        <option
-                                            value="internal-medicine"
-                                            class="text-black bg-white"
-                                        >
-                                            Internal Medicine
-                                        </option>
-                                        <option
-                                            value="pediatrics"
-                                            class="text-black bg-white"
-                                        >
-                                            Pediatrics
-                                        </option>
-                                        <option
-                                            value="orthopedics"
-                                            class="text-black bg-white"
-                                        >
-                                            Orthopedics
-                                        </option>
-                                        <option
-                                            value="dermatology"
-                                            class="text-black bg-white"
-                                        >
-                                            Dermatology
-                                        </option>
-                                        <option
-                                            value="gastroenterology"
-                                            class="text-black bg-white"
-                                        >
-                                            Gastroenterology
-                                        </option>
-                                        <option
-                                            value="other"
-                                            class="text-black bg-white"
-                                        >
-                                            Other
-                                        </option>
-                                    </select>
-                                    <p class="text-xs text-white/70 mt-1">
-                                        Hold Ctrl/Cmd to select multiple
-                                        specialties
-                                    </p>
+                                    />
                                 </div>
                                 <div>
                                     <label
-                                        class="block text-sm font-medium mb-2"
+                                        class="block text-xs font-medium mb-1"
                                         for="service_type"
                                     >
                                         Service Type *
@@ -605,7 +549,7 @@ Healthcare{% endblock %} {% block meta %}
                                     <select
                                         id="service_type"
                                         name="service_type"
-                                        class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-white/50"
+                                        class="w-full px-3 py-2 text-sm rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-white/50"
                                         required
                                     >
                                         <option
@@ -660,7 +604,7 @@ Healthcare{% endblock %} {% block meta %}
                                 </div>
                                 <div>
                                     <label
-                                        class="block text-sm font-medium mb-2"
+                                        class="block text-xs font-medium mb-1"
                                         for="message"
                                     >
                                         Message *
@@ -668,57 +612,57 @@ Healthcare{% endblock %} {% block meta %}
                                     <textarea
                                         id="message"
                                         name="message"
-                                        rows="3"
-                                        class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
+                                        rows="2"
+                                        class="w-full px-3 py-2 text-sm rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
                                         placeholder="Tell us about your billing needs..."
                                         required
                                     ></textarea>
                                 </div>
                                 <button
                                     type="submit"
-                                    class="w-full bg-white text-brand-primary font-semibold py-4 rounded-lg hover:bg-gray-100 transition duration-300 flex items-center justify-center"
+                                    class="w-full bg-white text-brand-primary font-semibold py-2 text-sm rounded-lg hover:bg-gray-100 transition duration-300 flex items-center justify-center"
                                 >
                                     <i class="ri-send-plane-line mr-2"></i> Get
                                     Free Consultation
                                 </button>
                             </form>
-                            <div class="mt-8 pt-6 border-t border-white/20">
-                                <div class="space-y-4">
-                                    <div class="flex items-center space-x-3">
+                            <div class="mt-4 pt-4 border-t border-white/20">
+                                <div class="space-y-2">
+                                    <div class="flex items-center space-x-2">
                                         <i
-                                            class="ri-phone-line text-white/80"
+                                            class="ri-phone-line text-white/80 text-sm"
                                         ></i>
                                         <div>
-                                            <p class="text-sm text-white/80">
+                                            <p class="text-xs text-white/80">
                                                 Call us directly
                                             </p>
-                                            <p class="font-semibold">
+                                            <p class="font-semibold text-sm">
                                                 (214) 800-6161
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="flex items-center space-x-3">
+                                    <div class="flex items-center space-x-2">
                                         <i
-                                            class="ri-time-line text-white/80"
+                                            class="ri-time-line text-white/80 text-sm"
                                         ></i>
                                         <div>
-                                            <p class="text-sm text-white/80">
+                                            <p class="text-xs text-white/80">
                                                 Business Hours
                                             </p>
-                                            <p class="font-semibold">
+                                            <p class="font-semibold text-sm">
                                                 Mon-Fri: 8AM-6PM CST
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="flex items-center space-x-3">
+                                    <div class="flex items-center space-x-2">
                                         <i
-                                            class="ri-map-pin-line text-white/80"
+                                            class="ri-map-pin-line text-white/80 text-sm"
                                         ></i>
                                         <div>
-                                            <p class="text-sm text-white/80">
+                                            <p class="text-xs text-white/80">
                                                 Serving
                                             </p>
-                                            <p class="font-semibold">
+                                            <p class="font-semibold text-sm">
                                                 {{ state.name }} Healthcare
                                                 Providers
                                             </p>
