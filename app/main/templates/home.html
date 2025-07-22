@@ -5,41 +5,24 @@
 <section class="relative overflow-hidden">
     <!-- Background Image with Overlay -->
     <div class="absolute inset-0 z-0">
-        <img
-            src="{{ url_for('static', filename='images/hero.jpeg') }}"
-            alt="Healthcare Background"
-            class="w-full h-full object-cover"
-        />
+        <img src="{{ url_for('static', filename='images/hero.jpeg') }}" alt="Healthcare Background"
+            class="w-full h-full object-cover" />
         <!-- Subtle Gradient Overlay -->
-        <div
-            class="absolute inset-0 bg-gradient-to-br from-brand-dark/60 via-brand-primary/40 to-transparent"
-        ></div>
-        <div
-            class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"
-        ></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-brand-dark/60 via-brand-primary/40 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
     </div>
 
     <!-- Floating Decorative Elements -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
-        <div
-            class="absolute top-16 left-8 w-12 h-12 bg-white/10 rounded-full animate-pulse delay-2000"
-        ></div>
-        <div
-            class="absolute top-32 right-16 w-8 h-8 bg-brand-primary/20 rounded-full animate-bounce delay-3000"
-        ></div>
-        <div
-            class="absolute bottom-24 left-1/4 w-6 h-6 bg-white/5 rounded-full animate-pulse delay-4000"
-        ></div>
+        <div class="absolute top-16 left-8 w-12 h-12 bg-white/10 rounded-full animate-pulse delay-2000"></div>
+        <div class="absolute top-32 right-16 w-8 h-8 bg-brand-primary/20 rounded-full animate-bounce delay-3000"></div>
+        <div class="absolute bottom-24 left-1/4 w-6 h-6 bg-white/5 rounded-full animate-pulse delay-4000"></div>
     </div>
 
     <div class="container relative z-10 py-8 lg:py-12">
         <div class="grid lg:grid-cols-2 gap-4 items-center">
             <!-- Left Column - Content -->
-            <div
-                class="text-center lg:text-left p-6"
-                data-aos="fade-right"
-                data-aos-delay="100"
-            >
+            <div class="text-center lg:text-left p-6" data-aos="fade-right" data-aos-delay="100">
                 <!-- Trust Badge -->
                 <!-- <div
                     class="inline-flex items-center bg-white/15 px-3 py-1.5 rounded-full mb-4 border border-white/20"
@@ -53,90 +36,58 @@
                 </div> -->
 
                 <!-- Main Heading -->
-                <h1
-                    class="font-montserrat font-light text-2xl sm:text-4xl lg:text-5xl text-white tracking-tight mb-4"
-                >
+                <h1 class="font-montserrat font-light text-2xl sm:text-4xl lg:text-5xl text-white tracking-tight mb-4">
                     <span class="relative inline-block">
-                        <i
-                            class="absolute -top-3 -left-4 text-4xl text-brand-secondary opacity-50"
-                        ></i>
+                        <i class="absolute -top-3 -left-4 text-4xl text-brand-secondary opacity-50"></i>
                         Maximize Your
                         <span class="relative">
-                            <span class="text-brand-secondary"
-                                >Revenue Cycle</span
-                            >
+                            <span class="text-brand-secondary">Revenue Cycle</span>
                             <!-- Animated underline -->
                             <span
-                                class="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-brand-secondary to-brand-primary rounded-full animate-pulse"
-                            ></span>
+                                class="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-brand-secondary to-brand-primary rounded-full animate-pulse"></span>
                         </span>
-                        <i
-                            class="absolute -bottom-2 -right-3 text-2xl text-brand-secondary opacity-50"
-                        ></i>
+                        <i class="absolute -bottom-2 -right-3 text-2xl text-brand-secondary opacity-50"></i>
                     </span>
                 </h1>
 
                 <!-- Description -->
-                <p
-                    class="pt-4 max-w-xl mx-auto lg:mx-0 text-base lg:text-lg text-gray-200 leading-relaxed mb-6"
-                >
+                <p class="pt-4 max-w-xl mx-auto lg:mx-0 text-base lg:text-lg text-gray-200 leading-relaxed mb-6">
                     Boost your practice's financial performance with our revenue
                     cycle solutions. Enjoy up to
-                    <span class="text-brand-secondary"
-                        >30% more collections</span
-                    >
+                    <span class="text-brand-secondary">30% more collections</span>
                     and
                     <span class="text-brand-secondary">40% fewer denials</span>.
                 </p>
 
                 <!-- Action Buttons -->
-                <div
-                    class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-6"
-                >
-                    <a
-                        href="/contact"
-                        class="group relative overflow-hidden bg-brand-primary text-white px-6 py-3 rounded-full shadow-lg transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl"
-                    >
+                <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-6">
+                    <a href="/contact"
+                        class="group relative overflow-hidden bg-brand-primary text-white px-6 py-3 rounded-full shadow-lg transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl">
                         <span
-                            class="absolute inset-0 bg-brand-primary opacity-0 group-hover:opacity-10 transition-opacity duration-300"
-                        ></span>
+                            class="absolute inset-0 bg-brand-primary opacity-0 group-hover:opacity-10 transition-opacity duration-300"></span>
                         <span class="relative flex items-center justify-center">
                             Free Consultation
                             <i
-                                class="ri-arrow-right-line ml-2 group-hover:translate-x-1 transition-transform duration-300"
-                            ></i>
+                                class="ri-arrow-right-line ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
                         </span>
                     </a>
 
-                    <a
-                        href="/services"
-                        class="group bg-white/20 text-white border-2 border-white/30 px-6 py-3 rounded-full shadow-sm transform transition-all duration-300 ease-in-out hover:scale-105 hover:bg-white/30 hover:shadow-md"
-                    >
+                    <a href="/services"
+                        class="group bg-white/20 text-white border-2 border-white/30 px-6 py-3 rounded-full shadow-sm transform transition-all duration-300 ease-in-out hover:scale-105 hover:bg-white/30 hover:shadow-md">
                         Explore Services
-                        <i
-                            class="ri-service-line ml-2 group-hover:rotate-12 transition-transform duration-300"
-                        ></i>
+                        <i class="ri-service-line ml-2 group-hover:rotate-12 transition-transform duration-300"></i>
                     </a>
                 </div>
 
                 <!-- Social Proof -->
                 <div class="flex items-center justify-center lg:justify-start">
                     <div class="flex -space-x-2">
-                        <img
-                            src="{{ url_for('static', filename='images/testimonial-1.jpg') }}"
-                            alt="Client"
-                            class="w-8 h-8 rounded-full border-2 border-white shadow-md hover:scale-110 transition-transform duration-300"
-                        />
-                        <img
-                            src="{{ url_for('static', filename='images/testimonial-2.jpg') }}"
-                            alt="Client"
-                            class="w-8 h-8 rounded-full border-2 border-white shadow-md hover:scale-110 transition-transform duration-300"
-                        />
-                        <img
-                            src="{{ url_for('static', filename='images/testimonial-3.jpg') }}"
-                            alt="Client"
-                            class="w-8 h-8 rounded-full border-2 border-white shadow-md hover:scale-110 transition-transform duration-300"
-                        />
+                        <img src="{{ url_for('static', filename='images/testimonial-1.jpg') }}" alt="Client"
+                            class="w-8 h-8 rounded-full border-2 border-white shadow-md hover:scale-110 transition-transform duration-300" />
+                        <img src="{{ url_for('static', filename='images/testimonial-2.jpg') }}" alt="Client"
+                            class="w-8 h-8 rounded-full border-2 border-white shadow-md hover:scale-110 transition-transform duration-300" />
+                        <img src="{{ url_for('static', filename='images/testimonial-3.jpg') }}" alt="Client"
+                            class="w-8 h-8 rounded-full border-2 border-white shadow-md hover:scale-110 transition-transform duration-300" />
                     </div>
                     <div class="ml-3">
                         <div class="flex items-center mb-1">
@@ -155,28 +106,20 @@
             </div>
 
             <!-- Right Column - Enhanced Visual Element with Healthcare SVGs -->
-            <div
-                class="relative hidden lg:flex justify-center items-center"
-                data-aos="fade-left"
-                data-aos-delay="100"
-            >
+            <div class="relative hidden lg:flex justify-center items-center" data-aos="fade-left" data-aos-delay="100">
                 <!-- Background Decorative Elements -->
                 <div
-                    class="absolute w-72 h-72 bg-gradient-to-br from-brand-primary/20 to-brand-secondary/20 rounded-full -z-10 animate-pulse"
-                ></div>
-                <div
-                    class="absolute w-56 h-56 bg-white/5 rounded-full -z-10 animate-spin-slow"
-                ></div>
+                    class="absolute w-72 h-72 bg-gradient-to-br from-brand-primary/20 to-brand-secondary/20 rounded-full -z-10 animate-pulse">
+                </div>
+                <div class="absolute w-56 h-56 bg-white/5 rounded-full -z-10 animate-spin-slow"></div>
 
                 <!-- Main Image Container -->
                 <div class="relative group">
                     <!-- Main Image -->
-                    <img
-                        src="{{ url_for('static', filename='images/header-bg.png') }}"
+                    <img src="{{ url_for('static', filename='images/header-bg.png') }}"
                         alt="Healthcare Revenue Management"
                         class="w-auto h-auto max-w-md rounded-xl mx-auto transform transition-transform duration-500 custom-glass-effect"
-                        loading="lazy"
-                    />
+                        loading="lazy" />
                 </div>
             </div>
         </div>
@@ -186,10 +129,12 @@
 <!-- Additional CSS for custom animations -->
 <style>
     @keyframes float {
+
         0%,
         100% {
             transform: translateY(0px);
         }
+
         50% {
             transform: translateY(-15px);
         }
@@ -199,6 +144,7 @@
         from {
             transform: rotate(0deg);
         }
+
         to {
             transform: rotate(360deg);
         }
@@ -246,12 +192,9 @@
     <div class="container">
         <div class="text-center max-w-3xl mx-auto mb-10">
             <span
-                class="inline-block bg-brand-secondary px-3 py-1 rounded-full text-brand-primary text-sm mb-3"
-                >END-TO-END SOLUTIONS</span
-            >
-            <h2
-                class="font-montserrat font-light text-2xl sm:text-3xl text-brand-dark mb-3"
-            >
+                class="inline-block bg-brand-secondary px-3 py-1 rounded-full text-brand-primary text-sm mb-3">END-TO-END
+                SOLUTIONS</span>
+            <h2 class="font-montserrat font-light text-2xl sm:text-3xl text-brand-dark mb-3">
                 <span class="text-brand-primary">Comprehensive Services</span>
                 Tailored to Your Healthcare Needs
             </h2>
@@ -264,16 +207,12 @@
 
         <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <div
-                class="group bg-white hover:bg-brand-secondary p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-100"
-            >
+                class="group bg-white hover:bg-brand-secondary p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-100">
                 <div
-                    class="inline-block bg-brand-secondary text-brand-primary p-3 rounded-full mb-4 group-hover:bg-brand-primary group-hover:text-white transition-all duration-300"
-                >
+                    class="inline-block bg-brand-secondary text-brand-primary p-3 rounded-full mb-4 group-hover:bg-brand-primary group-hover:text-white transition-all duration-300">
                     <i class="ri-user-settings-line text-2xl"></i>
                 </div>
-                <h4
-                    class="font-montserrat font-light text-lg text-brand-dark mb-2"
-                >
+                <h4 class="font-montserrat font-light text-lg text-brand-dark mb-2">
                     Provider Credentialing
                 </h4>
                 <p class="text-gray-600 text-sm mb-3">
@@ -282,49 +221,31 @@
                 </p>
                 <ul class="space-y-1 mb-4">
                     <li class="flex items-start">
-                        <i
-                            class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"
-                        ></i>
-                        <span class="text-xs text-gray-600"
-                            >CAQH profile management</span
-                        >
+                        <i class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"></i>
+                        <span class="text-xs text-gray-600">CAQH profile management</span>
                     </li>
                     <li class="flex items-start">
-                        <i
-                            class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"
-                        ></i>
-                        <span class="text-xs text-gray-600"
-                            >Payer enrollment tracking</span
-                        >
+                        <i class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"></i>
+                        <span class="text-xs text-gray-600">Payer enrollment tracking</span>
                     </li>
                     <li class="flex items-start">
-                        <i
-                            class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"
-                        ></i>
-                        <span class="text-xs text-gray-600"
-                            >Credential expiration monitoring</span
-                        >
+                        <i class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"></i>
+                        <span class="text-xs text-gray-600">Credential expiration monitoring</span>
                     </li>
                 </ul>
-                <a
-                    href="/enrollment"
-                    class="inline-flex items-center text-brand-primary hover:text-brand-dark transition-colors text-sm"
-                >
+                <a href="/enrollment"
+                    class="inline-flex items-center text-brand-primary hover:text-brand-dark transition-colors text-sm">
                     Learn More <i class="ri-arrow-right-line ml-1"></i>
                 </a>
             </div>
 
             <div
-                class="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-100"
-            >
-                <div
-                    class="inline-block bg-brand-secondary text-brand-primary p-3 rounded-full mb-4 group-hover:bg-brand-primary group-hover:text-white transition-all duration-300"
-                >
+            class="group bg-white hover:bg-brand-secondary p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-100">
+            <div
+                    class="inline-block bg-brand-secondary text-brand-primary p-3 rounded-full mb-4 group-hover:bg-brand-primary group-hover:text-white transition-all duration-300">
                     <i class="ri-check-double-line text-2xl"></i>
                 </div>
-                <h4
-                    class="font-montserrat font-light text-lg text-brand-dark mb-2"
-                >
+                <h4 class="font-montserrat font-light text-lg text-brand-dark mb-2">
                     Eligibility Verification
                 </h4>
                 <p class="text-gray-600 text-sm mb-3">
@@ -333,49 +254,31 @@
                 </p>
                 <ul class="space-y-1 mb-4">
                     <li class="flex items-start">
-                        <i
-                            class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"
-                        ></i>
-                        <span class="text-xs text-gray-600"
-                            >Real-time benefit verification</span
-                        >
+                        <i class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"></i>
+                        <span class="text-xs text-gray-600">Real-time benefit verification</span>
                     </li>
                     <li class="flex items-start">
-                        <i
-                            class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"
-                        ></i>
-                        <span class="text-xs text-gray-600"
-                            >Coverage details confirmation</span
-                        >
+                        <i class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"></i>
+                        <span class="text-xs text-gray-600">Coverage details confirmation</span>
                     </li>
                     <li class="flex items-start">
-                        <i
-                            class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"
-                        ></i>
-                        <span class="text-xs text-gray-600"
-                            >Prior authorization management</span
-                        >
+                        <i class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"></i>
+                        <span class="text-xs text-gray-600">Prior authorization management</span>
                     </li>
                 </ul>
-                <a
-                    href="/verification"
-                    class="inline-flex items-center text-brand-primary hover:text-brand-dark transition-colors text-sm"
-                >
+                <a href="/verification"
+                    class="inline-flex items-center text-brand-primary hover:text-brand-dark transition-colors text-sm">
                     Learn More <i class="ri-arrow-right-line ml-1"></i>
                 </a>
             </div>
 
             <div
-                class="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-100"
-            >
-                <div
-                    class="inline-block bg-brand-secondary text-brand-primary p-3 rounded-full mb-4 group-hover:bg-brand-primary group-hover:text-white transition-all duration-300"
-                >
+            class="group bg-white hover:bg-brand-secondary p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-100">
+            <div
+                    class="inline-block bg-brand-secondary text-brand-primary p-3 rounded-full mb-4 group-hover:bg-brand-primary group-hover:text-white transition-all duration-300">
                     <i class="ri-file-list-3-line text-2xl"></i>
                 </div>
-                <h4
-                    class="font-montserrat font-light text-lg text-brand-dark mb-2"
-                >
+                <h4 class="font-montserrat font-light text-lg text-brand-dark mb-2">
                     Medical Billing
                 </h4>
                 <p class="text-gray-600 text-sm mb-3">
@@ -384,49 +287,31 @@
                 </p>
                 <ul class="space-y-1 mb-4">
                     <li class="flex items-start">
-                        <i
-                            class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"
-                        ></i>
-                        <span class="text-xs text-gray-600"
-                            >Charge entry & coding review</span
-                        >
+                        <i class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"></i>
+                        <span class="text-xs text-gray-600">Charge entry & coding review</span>
                     </li>
                     <li class="flex items-start">
-                        <i
-                            class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"
-                        ></i>
-                        <span class="text-xs text-gray-600"
-                            >Claim scrubbing & submission</span
-                        >
+                        <i class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"></i>
+                        <span class="text-xs text-gray-600">Claim scrubbing & submission</span>
                     </li>
                     <li class="flex items-start">
-                        <i
-                            class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"
-                        ></i>
-                        <span class="text-xs text-gray-600"
-                            >Rejection resolution</span
-                        >
+                        <i class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"></i>
+                        <span class="text-xs text-gray-600">Rejection resolution</span>
                     </li>
                 </ul>
-                <a
-                    href="/billing"
-                    class="inline-flex items-center text-brand-primary hover:text-brand-dark transition-colors text-sm"
-                >
+                <a href="/billing"
+                    class="inline-flex items-center text-brand-primary hover:text-brand-dark transition-colors text-sm">
                     Learn More <i class="ri-arrow-right-line ml-1"></i>
                 </a>
             </div>
 
             <div
-                class="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-100"
-            >
-                <div
-                    class="inline-block bg-brand-secondary text-brand-primary p-3 rounded-full mb-4 group-hover:bg-brand-primary group-hover:text-white transition-all duration-300"
-                >
+            class="group bg-white hover:bg-brand-secondary p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-100">
+            <div
+                    class="inline-block bg-brand-secondary text-brand-primary p-3 rounded-full mb-4 group-hover:bg-brand-primary group-hover:text-white transition-all duration-300">
                     <i class="ri-bank-line text-2xl"></i>
                 </div>
-                <h4
-                    class="font-montserrat font-light text-lg text-brand-dark mb-2"
-                >
+                <h4 class="font-montserrat font-light text-lg text-brand-dark mb-2">
                     Accounts Receivable
                 </h4>
                 <p class="text-gray-600 text-sm mb-3">
@@ -435,49 +320,31 @@
                 </p>
                 <ul class="space-y-1 mb-4">
                     <li class="flex items-start">
-                        <i
-                            class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"
-                        ></i>
-                        <span class="text-xs text-gray-600"
-                            >Aging analysis & prioritization</span
-                        >
+                        <i class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"></i>
+                        <span class="text-xs text-gray-600">Aging analysis & prioritization</span>
                     </li>
                     <li class="flex items-start">
-                        <i
-                            class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"
-                        ></i>
-                        <span class="text-xs text-gray-600"
-                            >Payer follow-up protocols</span
-                        >
+                        <i class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"></i>
+                        <span class="text-xs text-gray-600">Payer follow-up protocols</span>
                     </li>
                     <li class="flex items-start">
-                        <i
-                            class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"
-                        ></i>
-                        <span class="text-xs text-gray-600"
-                            >Patient balance resolution</span
-                        >
+                        <i class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"></i>
+                        <span class="text-xs text-gray-600">Patient balance resolution</span>
                     </li>
                 </ul>
-                <a
-                    href="/accounts_receivable"
-                    class="inline-flex items-center text-brand-primary hover:text-brand-dark transition-colors text-sm"
-                >
+                <a href="/accounts_receivable"
+                    class="inline-flex items-center text-brand-primary hover:text-brand-dark transition-colors text-sm">
                     Learn More <i class="ri-arrow-right-line ml-1"></i>
                 </a>
             </div>
 
             <div
-                class="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-100"
-            >
-                <div
-                    class="inline-block bg-brand-secondary text-brand-primary p-3 rounded-full mb-4 group-hover:bg-brand-primary group-hover:text-white transition-all duration-300"
-                >
+            class="group bg-white hover:bg-brand-secondary p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-100">
+            <div
+                    class="inline-block bg-brand-secondary text-brand-primary p-3 rounded-full mb-4 group-hover:bg-brand-primary group-hover:text-white transition-all duration-300">
                     <i class="ri-close-circle-line text-2xl"></i>
                 </div>
-                <h4
-                    class="font-montserrat font-light text-lg text-brand-dark mb-2"
-                >
+                <h4 class="font-montserrat font-light text-lg text-brand-dark mb-2">
                     Denial Management
                 </h4>
                 <p class="text-gray-600 text-sm mb-3">
@@ -486,49 +353,31 @@
                 </p>
                 <ul class="space-y-1 mb-4">
                     <li class="flex items-start">
-                        <i
-                            class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"
-                        ></i>
-                        <span class="text-xs text-gray-600"
-                            >Denial root cause analysis</span
-                        >
+                        <i class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"></i>
+                        <span class="text-xs text-gray-600">Denial root cause analysis</span>
                     </li>
                     <li class="flex items-start">
-                        <i
-                            class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"
-                        ></i>
-                        <span class="text-xs text-gray-600"
-                            >Appeal letter generation</span
-                        >
+                        <i class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"></i>
+                        <span class="text-xs text-gray-600">Appeal letter generation</span>
                     </li>
                     <li class="flex items-start">
-                        <i
-                            class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"
-                        ></i>
-                        <span class="text-xs text-gray-600"
-                            >Prevention strategy implementation</span
-                        >
+                        <i class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"></i>
+                        <span class="text-xs text-gray-600">Prevention strategy implementation</span>
                     </li>
                 </ul>
-                <a
-                    href="/denial_management"
-                    class="inline-flex items-center text-brand-primary hover:text-brand-dark transition-colors text-sm"
-                >
+                <a href="/denial_management"
+                    class="inline-flex items-center text-brand-primary hover:text-brand-dark transition-colors text-sm">
                     Learn More <i class="ri-arrow-right-line ml-1"></i>
                 </a>
             </div>
 
             <div
-                class="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-100"
-            >
-                <div
-                    class="inline-block bg-brand-secondary text-brand-primary p-3 rounded-full mb-4 group-hover:bg-brand-primary group-hover:text-white transition-all duration-300"
-                >
+            class="group bg-white hover:bg-brand-secondary p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-100">
+            <div
+                    class="inline-block bg-brand-secondary text-brand-primary p-3 rounded-full mb-4 group-hover:bg-brand-primary group-hover:text-white transition-all duration-300">
                     <i class="ri-money-dollar-circle-line text-2xl"></i>
                 </div>
-                <h4
-                    class="font-montserrat font-light text-lg text-brand-dark mb-2"
-                >
+                <h4 class="font-montserrat font-light text-lg text-brand-dark mb-2">
                     Payment Posting
                 </h4>
                 <p class="text-gray-600 text-sm mb-3">
@@ -537,44 +386,28 @@
                 </p>
                 <ul class="space-y-1 mb-4">
                     <li class="flex items-start">
-                        <i
-                            class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"
-                        ></i>
-                        <span class="text-xs text-gray-600"
-                            >ERA/EOB reconciliation</span
-                        >
+                        <i class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"></i>
+                        <span class="text-xs text-gray-600">ERA/EOB reconciliation</span>
                     </li>
                     <li class="flex items-start">
-                        <i
-                            class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"
-                        ></i>
-                        <span class="text-xs text-gray-600"
-                            >Payment variance identification</span
-                        >
+                        <i class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"></i>
+                        <span class="text-xs text-gray-600">Payment variance identification</span>
                     </li>
                     <li class="flex items-start">
-                        <i
-                            class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"
-                        ></i>
-                        <span class="text-xs text-gray-600"
-                            >Contractual adjustment analysis</span
-                        >
+                        <i class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2 text-sm"></i>
+                        <span class="text-xs text-gray-600">Contractual adjustment analysis</span>
                     </li>
                 </ul>
-                <a
-                    href="/payment_posting"
-                    class="inline-flex items-center text-brand-primary hover:text-brand-dark transition-colors text-sm"
-                >
+                <a href="/payment_posting"
+                    class="inline-flex items-center text-brand-primary hover:text-brand-dark transition-colors text-sm">
                     Learn More <i class="ri-arrow-right-line ml-1"></i>
                 </a>
             </div>
         </div>
 
         <div class="mt-8 text-center">
-            <a
-                href="/services"
-                class="inline-block bg-brand-primary text-white px-6 py-3 rounded-full shadow-lg transform transition-all duration-300 ease-in-out hover:scale-105 hover:bg-brand-dark hover:shadow-xl"
-            >
+            <a href="/services"
+                class="inline-block bg-brand-primary text-white px-6 py-3 rounded-full shadow-lg transform transition-all duration-300 ease-in-out hover:scale-105 hover:bg-brand-dark hover:shadow-xl">
                 View All Services <i class="ri-arrow-right-line ml-2"></i>
             </a>
         </div>
@@ -587,12 +420,9 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div class="order-2 lg:order-1">
                 <span
-                    class="inline-block bg-brand-secondary px-3 py-1 rounded-full text-brand-primary text-sm mb-3"
-                    >ABOUT US</span
-                >
-                <h2
-                    class="font-montserrat font-light text-2xl sm:text-3xl text-brand-dark mb-4"
-                >
+                    class="inline-block bg-brand-secondary px-3 py-1 rounded-full text-brand-primary text-sm mb-3">ABOUT
+                    US</span>
+                <h2 class="font-montserrat font-light text-2xl sm:text-3xl text-brand-dark mb-4">
                     <span class="text-brand-primary">Who We Are</span> - Your
                     Trusted RCM Partner
                 </h2>
@@ -605,20 +435,12 @@
                     operational costs.
                 </p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                    <div
-                        class="bg-white p-4 rounded-xl shadow-sm border border-gray-100"
-                    >
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
                         <div class="flex items-center mb-3">
-                            <div
-                                class="bg-brand-secondary p-2 rounded-full mr-3"
-                            >
-                                <i
-                                    class="ri-team-line text-lg text-brand-primary"
-                                ></i>
+                            <div class="bg-brand-secondary p-2 rounded-full mr-3">
+                                <i class="ri-team-line text-lg text-brand-primary"></i>
                             </div>
-                            <h4
-                                class="font-montserrat font-semibold text-base text-brand-dark"
-                            >
+                            <h4 class="font-montserrat font-semibold text-base text-brand-dark">
                                 Certified Specialists
                             </h4>
                         </div>
@@ -627,20 +449,12 @@
                             expertise across 20+ medical specialties.
                         </p>
                     </div>
-                    <div
-                        class="bg-white p-4 rounded-xl shadow-sm border border-gray-100"
-                    >
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
                         <div class="flex items-center mb-3">
-                            <div
-                                class="bg-brand-secondary p-2 rounded-full mr-3"
-                            >
-                                <i
-                                    class="ri-line-chart-line text-lg text-brand-primary"
-                                ></i>
+                            <div class="bg-brand-secondary p-2 rounded-full mr-3">
+                                <i class="ri-line-chart-line text-lg text-brand-primary"></i>
                             </div>
-                            <h4
-                                class="font-montserrat font-semibold text-base text-brand-dark"
-                            >
+                            <h4 class="font-montserrat font-semibold text-base text-brand-dark">
                                 Proven Results
                             </h4>
                         </div>
@@ -649,20 +463,12 @@
                             rates within the first 90 days.
                         </p>
                     </div>
-                    <div
-                        class="bg-white p-4 rounded-xl shadow-sm border border-gray-100"
-                    >
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
                         <div class="flex items-center mb-3">
-                            <div
-                                class="bg-brand-secondary p-2 rounded-full mr-3"
-                            >
-                                <i
-                                    class="ri-computer-line text-lg text-brand-primary"
-                                ></i>
+                            <div class="bg-brand-secondary p-2 rounded-full mr-3">
+                                <i class="ri-computer-line text-lg text-brand-primary"></i>
                             </div>
-                            <h4
-                                class="font-montserrat font-semibold text-base text-brand-dark"
-                            >
+                            <h4 class="font-montserrat font-semibold text-base text-brand-dark">
                                 Advanced Technology
                             </h4>
                         </div>
@@ -671,20 +477,12 @@
                             identifies revenue opportunities in real-time.
                         </p>
                     </div>
-                    <div
-                        class="bg-white p-4 rounded-xl shadow-sm border border-gray-100"
-                    >
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
                         <div class="flex items-center mb-3">
-                            <div
-                                class="bg-brand-secondary p-2 rounded-full mr-3"
-                            >
-                                <i
-                                    class="ri-customer-service-2-line text-lg text-brand-primary"
-                                ></i>
+                            <div class="bg-brand-secondary p-2 rounded-full mr-3">
+                                <i class="ri-customer-service-2-line text-lg text-brand-primary"></i>
                             </div>
-                            <h4
-                                class="font-montserrat font-semibold text-base text-brand-dark"
-                            >
+                            <h4 class="font-montserrat font-semibold text-base text-brand-dark">
                                 Dedicated Support
                             </h4>
                         </div>
@@ -695,55 +493,32 @@
                     </div>
                 </div>
                 <div class="flex flex-wrap gap-3">
-                    <a
-                        href="/about"
-                        class="inline-flex items-center justify-center bg-brand-primary text-white font-montserrat font-semibold px-5 py-2 rounded-full shadow-md hover:bg-brand-dark transition-colors duration-300"
-                    >
+                    <a href="/about"
+                        class="inline-flex items-center justify-center bg-brand-primary text-white font-montserrat font-semibold px-5 py-2 rounded-full shadow-md hover:bg-brand-dark transition-colors duration-300">
                         Learn More About Us
                         <i class="ri-arrow-right-line ml-2"></i>
                     </a>
-                    <a
-                        href="/contact"
-                        class="inline-flex items-center justify-center bg-white text-brand-primary border border-brand-primary font-montserrat font-semibold px-5 py-2 rounded-full hover:bg-brand-secondary transition-colors duration-300"
-                    >
+                    <a href="/contact"
+                        class="inline-flex items-center justify-center bg-white text-brand-primary border border-brand-primary font-montserrat font-semibold px-5 py-2 rounded-full hover:bg-brand-secondary transition-colors duration-300">
                         Schedule a Demo <i class="ri-calendar-line ml-2"></i>
                     </a>
                 </div>
             </div>
             <div class="order-1 lg:order-2 relative">
-                <div
-                    class="absolute -top-3 -left-3 w-20 h-20 bg-brand-secondary rounded-full opacity-50 z-0"
-                ></div>
-                <div
-                    class="absolute -bottom-3 -right-3 w-24 h-24 bg-brand-primary rounded-full opacity-20 z-0"
-                ></div>
-                <img
-                    src="{{ url_for('static', filename='images/about-image.jpg') }}"
-                    alt="About Ardur Healthcare"
-                    class="rounded-xl shadow-xl w-full h-auto relative z-10"
-                />
-                <div
-                    class="absolute bottom-4 right-4 bg-white p-3 rounded-lg shadow-lg z-20"
-                >
+                <div class="absolute -top-3 -left-3 w-20 h-20 bg-brand-secondary rounded-full opacity-50 z-0"></div>
+                <div class="absolute -bottom-3 -right-3 w-24 h-24 bg-brand-primary rounded-full opacity-20 z-0"></div>
+                <img src="{{ url_for('static', filename='images/about-image.jpg') }}" alt="About Ardur Healthcare"
+                    class="rounded-xl shadow-xl w-full h-auto relative z-10" />
+                <div class="absolute bottom-4 right-4 bg-white p-3 rounded-lg shadow-lg z-20">
                     <div class="flex items-center space-x-3">
                         <div class="text-center">
-                            <span
-                                class="block text-2xl font-light text-brand-primary"
-                                >98%</span
-                            >
-                            <span class="text-xs text-gray-600"
-                                >Client Retention</span
-                            >
+                            <span class="block text-2xl font-light text-brand-primary">98%</span>
+                            <span class="text-xs text-gray-600">Client Retention</span>
                         </div>
                         <div class="h-8 w-px bg-gray-200"></div>
                         <div class="text-center">
-                            <span
-                                class="block text-2xl font-light text-brand-primary"
-                                >15+</span
-                            >
-                            <span class="text-xs text-gray-600"
-                                >Years Experience</span
-                            >
+                            <span class="block text-2xl font-light text-brand-primary">15+</span>
+                            <span class="text-xs text-gray-600">Years Experience</span>
                         </div>
                     </div>
                 </div>
@@ -753,19 +528,13 @@
 </section>
 
 <!-- Performance Metrics Section -->
-<section
-    class="py-12 lg:py-16 bg-gradient-to-r from-brand-dark to-brand-dark/90"
-    data-aos="fade-up"
->
+<section class="py-12 lg:py-16 bg-gradient-to-r from-brand-dark to-brand-dark/90" data-aos="fade-up">
     <div class="container">
         <div class="text-center mb-10">
             <span
-                class="inline-block bg-white/10 px-3 py-1 rounded-full text-brand-primary font-semibold text-sm mb-3"
-                >PERFORMANCE METRICS</span
-            >
-            <h2
-                class="font-montserrat font-light text-2xl sm:text-3xl text-white mb-3"
-            >
+                class="inline-block bg-white/10 px-3 py-1 rounded-full text-brand-primary font-semibold text-sm mb-3">PERFORMANCE
+                METRICS</span>
+            <h2 class="font-montserrat font-light text-2xl sm:text-3xl text-white mb-3">
                 Real-Time
                 <span class="text-brand-primary">Insights Dashboard</span>
             </h2>
@@ -777,163 +546,104 @@
         </div>
 
         <div class="relative mb-10">
-            <div
-                class="absolute inset-0 bg-brand-primary/5 rounded-2xl blur-3xl"
-            ></div>
-            <div
-                class="relative bg-white/10 backdrop-blur-sm border border-white/10 rounded-2xl p-6 shadow-2xl"
-            >
-                <div
-                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-                >
+            <div class="absolute inset-0 bg-brand-primary/5 rounded-2xl blur-3xl"></div>
+            <div class="relative bg-white/10 backdrop-blur-sm border border-white/10 rounded-2xl p-6 shadow-2xl">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     <div
-                        class="bg-white rounded-xl shadow-xl p-5 text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
-                    >
+                        class="bg-white rounded-xl shadow-xl p-5 text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
                         <div
-                            class="inline-flex items-center justify-center w-12 h-12 bg-brand-secondary rounded-full mb-3"
-                        >
-                            <i
-                                class="ri-file-list-3-line text-xl text-brand-primary"
-                            ></i>
+                            class="inline-flex items-center justify-center w-12 h-12 bg-brand-secondary rounded-full mb-3">
+                            <i class="ri-file-list-3-line text-xl text-brand-primary"></i>
                         </div>
-                        <div
-                            class="text-brand-primary text-3xl font-light mb-2"
-                        >
+                        <div class="text-brand-primary text-3xl font-light mb-2">
                             <span class="counter" data-target="95">0</span>%
                         </div>
-                        <h4
-                            class="font-montserrat font-light text-base text-brand-dark mb-2"
-                        >
+                        <h4 class="font-montserrat font-light text-base text-brand-dark mb-2">
                             Clean Claims Rate
                         </h4>
                         <p class="text-gray-600 text-sm">
                             Industry average: 75-80%
                         </p>
                         <div class="w-full bg-gray-200 rounded-full h-2 mt-3">
-                            <div
-                                class="bg-brand-primary h-2 rounded-full"
-                                style="width: 95%"
-                            ></div>
+                            <div class="bg-brand-primary h-2 rounded-full" style="width: 95%"></div>
                         </div>
                     </div>
 
                     <div
-                        class="bg-white rounded-xl shadow-xl p-5 text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
-                    >
+                        class="bg-white rounded-xl shadow-xl p-5 text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
                         <div
-                            class="inline-flex items-center justify-center w-12 h-12 bg-brand-secondary rounded-full mb-3"
-                        >
-                            <i
-                                class="ri-time-line text-xl text-brand-primary"
-                            ></i>
+                            class="inline-flex items-center justify-center w-12 h-12 bg-brand-secondary rounded-full mb-3">
+                            <i class="ri-time-line text-xl text-brand-primary"></i>
                         </div>
-                        <div
-                            class="text-brand-primary text-3xl font-light mb-2"
-                        >
+                        <div class="text-brand-primary text-3xl font-light mb-2">
                             <span class="counter" data-target="24">0</span>h
                         </div>
-                        <h4
-                            class="font-montserrat font-light text-base text-brand-dark mb-2"
-                        >
+                        <h4 class="font-montserrat font-light text-base text-brand-dark mb-2">
                             Claim Resolution
                         </h4>
                         <p class="text-gray-600 text-sm">
                             Industry average: 72h
                         </p>
                         <div class="w-full bg-gray-200 rounded-full h-2 mt-3">
-                            <div
-                                class="bg-green-500 h-2 rounded-full"
-                                style="width: 75%"
-                            ></div>
+                            <div class="bg-green-500 h-2 rounded-full" style="width: 75%"></div>
                         </div>
                     </div>
 
                     <div
-                        class="bg-white rounded-xl shadow-xl p-5 text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
-                    >
+                        class="bg-white rounded-xl shadow-xl p-5 text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
                         <div
-                            class="inline-flex items-center justify-center w-12 h-12 bg-brand-secondary rounded-full mb-3"
-                        >
-                            <i
-                                class="ri-close-circle-line text-xl text-brand-primary"
-                            ></i>
+                            class="inline-flex items-center justify-center w-12 h-12 bg-brand-secondary rounded-full mb-3">
+                            <i class="ri-close-circle-line text-xl text-brand-primary"></i>
                         </div>
-                        <div
-                            class="text-brand-primary text-3xl font-light mb-2"
-                        >
+                        <div class="text-brand-primary text-3xl font-light mb-2">
                             <span class="counter" data-target="4">0</span>%
                         </div>
-                        <h4
-                            class="font-montserrat font-light text-base text-brand-dark mb-2"
-                        >
+                        <h4 class="font-montserrat font-light text-base text-brand-dark mb-2">
                             Denial Rate
                         </h4>
                         <p class="text-gray-600 text-sm">
                             Industry average: 10-15%
                         </p>
                         <div class="w-full bg-gray-200 rounded-full h-2 mt-3">
-                            <div
-                                class="bg-green-500 h-2 rounded-full"
-                                style="width: 85%"
-                            ></div>
+                            <div class="bg-green-500 h-2 rounded-full" style="width: 85%"></div>
                         </div>
                     </div>
 
                     <div
-                        class="bg-white rounded-xl shadow-xl p-5 text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
-                    >
+                        class="bg-white rounded-xl shadow-xl p-5 text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
                         <div
-                            class="inline-flex items-center justify-center w-12 h-12 bg-brand-secondary rounded-full mb-3"
-                        >
-                            <i
-                                class="ri-money-dollar-circle-line text-xl text-brand-primary"
-                            ></i>
+                            class="inline-flex items-center justify-center w-12 h-12 bg-brand-secondary rounded-full mb-3">
+                            <i class="ri-money-dollar-circle-line text-xl text-brand-primary"></i>
                         </div>
-                        <div
-                            class="text-brand-primary text-3xl font-light mb-2"
-                        >
+                        <div class="text-brand-primary text-3xl font-light mb-2">
                             $<span class="counter" data-target="1.2">0</span>M
                         </div>
-                        <h4
-                            class="font-montserrat font-light text-base text-brand-dark mb-2"
-                        >
+                        <h4 class="font-montserrat font-light text-base text-brand-dark mb-2">
                             Revenue Recovered
                         </h4>
                         <p class="text-gray-600 text-sm">
                             Average per client annually
                         </p>
                         <div class="w-full bg-gray-200 rounded-full h-2 mt-3">
-                            <div
-                                class="bg-brand-primary h-2 rounded-full"
-                                style="width: 90%"
-                            ></div>
+                            <div class="bg-brand-primary h-2 rounded-full" style="width: 90%"></div>
                         </div>
                     </div>
                 </div>
 
                 <div class="mt-8 text-center">
                     <div
-                        class="inline-block bg-white/10 backdrop-blur-sm border border-white/10 rounded-lg p-3 text-white"
-                    >
-                        <div
-                            class="flex flex-wrap justify-center items-center gap-4 sm:gap-6 text-sm"
-                        >
+                        class="inline-block bg-white/10 backdrop-blur-sm border border-white/10 rounded-lg p-3 text-white">
+                        <div class="flex flex-wrap justify-center items-center gap-4 sm:gap-6 text-sm">
                             <div class="flex items-center">
-                                <div
-                                    class="w-3 h-3 bg-brand-primary rounded-full mr-2"
-                                ></div>
+                                <div class="w-3 h-3 bg-brand-primary rounded-full mr-2"></div>
                                 <span>Our Performance</span>
                             </div>
                             <div class="flex items-center">
-                                <div
-                                    class="w-3 h-3 bg-green-500 rounded-full mr-2"
-                                ></div>
+                                <div class="w-3 h-3 bg-green-500 rounded-full mr-2"></div>
                                 <span>Above Industry Average</span>
                             </div>
                             <div class="flex items-center">
-                                <div
-                                    class="w-3 h-3 bg-gray-200 rounded-full mr-2"
-                                ></div>
+                                <div class="w-3 h-3 bg-gray-200 rounded-full mr-2"></div>
                                 <span>Industry Benchmark</span>
                             </div>
                         </div>
@@ -943,10 +653,8 @@
         </div>
 
         <div class="text-center">
-            <a
-                href="/contact"
-                class="inline-flex items-center justify-center bg-brand-primary text-white px-6 py-3 rounded-full shadow-lg transform transition-all duration-300 ease-in-out hover:scale-105 hover:bg-white hover:text-brand-primary hover:shadow-xl"
-            >
+            <a href="/contact"
+                class="inline-flex items-center justify-center bg-brand-primary text-white px-6 py-3 rounded-full shadow-lg transform transition-all duration-300 ease-in-out hover:scale-105 hover:bg-white hover:text-brand-primary hover:shadow-xl">
                 Request a Custom Dashboard Demo
                 <i class="ri-arrow-right-line ml-2"></i>
             </a>
@@ -958,13 +666,9 @@
 <section class="py-12 lg:py-16 bg-gray-50" data-aos="fade-up">
     <div class="container">
         <div class="text-center max-w-3xl mx-auto mb-10">
-            <span
-                class="inline-block bg-brand-secondary px-3 py-1 rounded-full text-brand-primary text-sm mb-3"
-                >CLIENT SUCCESS STORIES</span
-            >
-            <h2
-                class="font-montserrat font-light text-2xl sm:text-3xl text-brand-dark mb-3"
-            >
+            <span class="inline-block bg-brand-secondary px-3 py-1 rounded-full text-brand-primary text-sm mb-3">CLIENT
+                SUCCESS STORIES</span>
+            <h2 class="font-montserrat font-light text-2xl sm:text-3xl text-brand-dark mb-3">
                 What Our
                 <span class="text-brand-primary">Clients Say</span> About Us
             </h2>
@@ -977,23 +681,15 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <!-- Testimonial 1 -->
             <div
-                class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 relative"
-            >
-                <div
-                    class="absolute -top-4 left-6 text-4xl text-brand-primary opacity-20"
-                >
+                class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 relative">
+                <div class="absolute -top-4 left-6 text-4xl text-brand-primary opacity-20">
                     <i class="ri-double-quotes-l"></i>
                 </div>
                 <div class="flex items-center mb-4">
-                    <img
-                        src="{{ url_for('static', filename='images/testimonial-1.jpg') }}"
-                        alt="Dr. Sarah Johnson"
-                        class="w-12 h-12 rounded-full mr-3 object-cover border-2 border-brand-primary"
-                    />
+                    <img src="{{ url_for('static', filename='images/testimonial-1.jpg') }}" alt="Dr. Sarah Johnson"
+                        class="w-12 h-12 rounded-full mr-3 object-cover border-2 border-brand-primary" />
                     <div>
-                        <h4
-                            class="font-montserrat font-light text-base text-brand-dark"
-                        >
+                        <h4 class="font-montserrat font-light text-base text-brand-dark">
                             Dr. Sarah Johnson
                         </h4>
                         <p class="text-gray-600 text-sm">
@@ -1021,23 +717,15 @@
 
             <!-- Testimonial 2 -->
             <div
-                class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 relative"
-            >
-                <div
-                    class="absolute -top-4 left-6 text-4xl text-brand-primary opacity-20"
-                >
+                class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 relative">
+                <div class="absolute -top-4 left-6 text-4xl text-brand-primary opacity-20">
                     <i class="ri-double-quotes-l"></i>
                 </div>
                 <div class="flex items-center mb-4">
-                    <img
-                        src="{{ url_for('static', filename='images/testimonial-2.jpg') }}"
-                        alt="Dr. Michael Chen"
-                        class="w-12 h-12 rounded-full mr-3 object-cover border-2 border-brand-primary"
-                    />
+                    <img src="{{ url_for('static', filename='images/testimonial-2.jpg') }}" alt="Dr. Michael Chen"
+                        class="w-12 h-12 rounded-full mr-3 object-cover border-2 border-brand-primary" />
                     <div>
-                        <h4
-                            class="font-montserrat font-light text-base text-brand-dark"
-                        >
+                        <h4 class="font-montserrat font-light text-base text-brand-dark">
                             Dr. Michael Chen
                         </h4>
                         <p class="text-gray-600 text-sm">
@@ -1064,10 +752,8 @@
         </div>
 
         <div class="mt-8 text-center">
-            <a
-                href="/case"
-                class="inline-block bg-white text-brand-primary border-2 border-brand-primary px-6 py-3 rounded-full shadow-sm transform transition-all duration-300 ease-in-out hover:scale-105 hover:bg-brand-secondary hover:shadow-md"
-            >
+            <a href="/case"
+                class="inline-block bg-white text-brand-primary border-2 border-brand-primary px-6 py-3 rounded-full shadow-sm transform transition-all duration-300 ease-in-out hover:scale-105 hover:bg-brand-secondary hover:shadow-md">
                 View All Success Stories
                 <i class="ri-arrow-right-line ml-2"></i>
             </a>

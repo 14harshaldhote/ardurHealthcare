@@ -109,12 +109,13 @@ endblock %} {% block content %}
                 {{ form.hidden_tag() }}
                 <div class="relative">
                     {{ form.name.label(class="absolute -top-2 left-3
-                    inline-block bg-white px-1 text-xs text-gray-700") }} {{
+                    inline-block text-xs text-gray-700") }} {{
                     form.name(class="block w-full rounded-lg border-gray-300
                     shadow-sm py-3 px-4 text-gray-900 placeholder:text-gray-400
                     focus:ring-2 focus:ring-brand-primary
                     focus:border-brand-primary sm:text-base transition-all
-                    duration-200") }} {% if form.name.errors %}
+                    duration-200 bg-brand-secondary border-black") }} {% if
+                    form.name.errors %}
                     <div class="text-red-600 text-sm mt-2">
                         {% for error in form.name.errors %}<span
                             >{{ error }}</span
@@ -125,12 +126,13 @@ endblock %} {% block content %}
 
                 <div class="relative">
                     {{ form.email.label(class="absolute -top-2 left-3
-                    inline-block bg-white px-1 text-xs text-gray-700") }} {{
+                    inline-block text-xs text-gray-700") }} {{
                     form.email(class="block w-full rounded-lg border-gray-300
                     shadow-sm py-3 px-4 text-gray-900 placeholder:text-gray-400
                     focus:ring-2 focus:ring-brand-primary
                     focus:border-brand-primary sm:text-base transition-all
-                    duration-200") }} {% if form.email.errors %}
+                    duration-200 bg-brand-secondary border-black") }} {% if
+                    form.email.errors %}
                     <div class="text-red-600 text-sm mt-2">
                         {% for error in form.email.errors %}<span
                             >{{ error }}</span
@@ -143,13 +145,13 @@ endblock %} {% block content %}
                     <div class="relative">
                         <label
                             for="phone_country_code"
-                            class="absolute -top-2 left-3 inline-block bg-white px-1 text-xs text-gray-700"
+                            class="absolute -top-2 left-3 inline-block text-xs text-gray-700"
                             >Country Code</label
                         >
                         <select
                             id="phone_country_code"
                             name="phone_country_code"
-                            class="block w-full rounded-lg border-gray-300 shadow-sm py-3 px-4 text-gray-900 focus:ring-2 focus:ring-brand-primary focus:border-brand-primary sm:text-base transition-all duration-200"
+                            class="block w-full rounded-lg border-gray-300 shadow-sm py-3 px-4 text-gray-900 focus:ring-2 focus:ring-brand-primary focus:border-brand-primary sm:text-base transition-all duration-200 bg-brand-secondary border-black"
                         >
                             <option value="+1">+1 (USA)</option>
                             <option value="+91">+91 (India)</option>
@@ -165,12 +167,13 @@ endblock %} {% block content %}
                     </div>
                     <div class="relative">
                         {{ form.phone_number.label(class="absolute -top-2 left-3
-                        inline-block bg-white px-1 text-xs text-gray-700") }} {{
+                        inline-block text-xs text-gray-700") }} {{
                         form.phone_number(class="block w-full rounded-lg
                         border-gray-300 shadow-sm py-3 px-4 text-gray-900
                         placeholder:text-gray-400 focus:ring-2
                         focus:ring-brand-primary focus:border-brand-primary
-                        sm:text-base transition-all duration-200") }} {% if
+                        sm:text-base transition-all duration-200
+                        bg-brand-secondary border-black") }} {% if
                         form.phone_number.errors %}
                         <div class="text-red-600 text-sm mt-2">
                             {% for error in form.phone_number.errors %}<span
@@ -183,12 +186,13 @@ endblock %} {% block content %}
 
                 <div class="relative">
                     {{ form.state.label(class="absolute -top-2 left-3
-                    inline-block bg-white px-1 text-xs text-gray-700") }} {{
+                    inline-block text-xs text-gray-700") }} {{
                     form.state(class="block w-full rounded-lg border-gray-300
                     shadow-sm py-3 px-4 text-gray-900 placeholder:text-gray-400
                     focus:ring-2 focus:ring-brand-primary
                     focus:border-brand-primary sm:text-base transition-all
-                    duration-200") }} {% if form.state.errors %}
+                    duration-200 bg-brand-secondary border-black") }} {% if
+                    form.state.errors %}
                     <div class="text-red-600 text-sm mt-2">
                         {% for error in form.state.errors %}<span
                             >{{ error }}</span
@@ -199,13 +203,13 @@ endblock %} {% block content %}
 
                 <div class="relative">
                     {{ form.specialties.label(class="absolute -top-2 left-3
-                    inline-block bg-white px-1 text-xs text-gray-700") }} {{
+                    inline-block text-xs text-gray-700") }} {{
                     form.specialties(class="block w-full rounded-lg
                     border-gray-300 shadow-sm py-3 px-4 text-gray-900
                     placeholder:text-gray-400 focus:ring-2
                     focus:ring-brand-primary focus:border-brand-primary
-                    sm:text-base transition-all duration-200") }} {% if
-                    form.specialties.errors %}
+                    sm:text-base transition-all duration-200 bg-brand-secondary
+                    border-black") }} {% if form.specialties.errors %}
                     <div class="text-red-600 text-sm mt-2">
                         {% for error in form.specialties.errors %}
                         <span>{{ error }}</span>
@@ -216,13 +220,13 @@ endblock %} {% block content %}
 
                 <div class="relative">
                     {{ form.monthly_insurance.label(class="absolute -top-2
-                    left-3 inline-block bg-white px-1 text-xs text-gray-700") }}
-                    {{ form.monthly_insurance(class="block w-full rounded-lg
+                    left-3 inline-block text-xs text-gray-700") }} {{
+                    form.monthly_insurance(class="block w-full rounded-lg
                     border-gray-300 shadow-sm py-3 px-4 text-gray-900
                     placeholder:text-gray-400 focus:ring-2
                     focus:ring-brand-primary focus:border-brand-primary
-                    sm:text-base transition-all duration-200") }} {% if
-                    form.monthly_insurance.errors %}
+                    sm:text-base transition-all duration-200 bg-brand-secondary
+                    border-black") }} {% if form.monthly_insurance.errors %}
                     <div class="text-red-600 text-sm mt-2">
                         {% for error in form.monthly_insurance.errors %}<span
                             >{{ error }}</span
@@ -234,13 +238,13 @@ endblock %} {% block content %}
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div class="relative">
                         {{ form.preferred_appointment_date.label(class="absolute
-                        -top-2 left-3 inline-block bg-white px-1 text-xs
-                        text-gray-700") }} {{
+                        -top-2 left-3 inline-block text-xs text-gray-700") }} {{
                         form.preferred_appointment_date(type="date",
                         class="block w-full rounded-lg border-gray-300 shadow-sm
                         py-3 px-4 text-gray-900 focus:ring-2
                         focus:ring-brand-primary focus:border-brand-primary
-                        sm:text-base transition-all duration-200") }} {% if
+                        sm:text-base transition-all duration-200
+                        bg-brand-secondary border-black") }} {% if
                         form.preferred_appointment_date.errors %}
                         <div class="text-red-600 text-sm mt-2">
                             {% for error in
@@ -253,14 +257,13 @@ endblock %} {% block content %}
 
                     <div class="relative">
                         {{ form.preferred_time_slot.label(class="absolute -top-2
-                        left-3 inline-block bg-white px-1 text-xs
-                        text-gray-700") }} {{
+                        left-3 inline-block text-xs text-gray-700") }} {{
                         form.preferred_time_slot(class="block w-full rounded-lg
                         border-gray-300 shadow-sm py-3 px-4 text-gray-900
                         focus:ring-2 focus:ring-brand-primary
                         focus:border-brand-primary sm:text-base transition-all
-                        duration-200") }} {% if form.preferred_time_slot.errors
-                        %}
+                        duration-200 bg-brand-secondary border-black") }} {% if
+                        form.preferred_time_slot.errors %}
                         <div class="text-red-600 text-sm mt-2">
                             {% for error in form.preferred_time_slot.errors
                             %}<span>{{ error }}</span>{% endfor %}
@@ -271,12 +274,13 @@ endblock %} {% block content %}
 
                 <div class="relative">
                     {{ form.subject.label(class="absolute -top-2 left-3
-                    inline-block bg-white px-1 text-xs text-gray-700") }} {{
+                    inline-block text-xs text-gray-700") }} {{
                     form.subject(class="block w-full rounded-lg border-gray-300
                     shadow-sm py-3 px-4 text-gray-900 placeholder:text-gray-400
                     focus:ring-2 focus:ring-brand-primary
                     focus:border-brand-primary sm:text-base transition-all
-                    duration-200") }} {% if form.subject.errors %}
+                    duration-200 bg-brand-secondary border-black") }} {% if
+                    form.subject.errors %}
                     <div class="text-red-600 text-sm mt-2">
                         {% for error in form.subject.errors %}<span
                             >{{ error }}</span
@@ -287,13 +291,13 @@ endblock %} {% block content %}
 
                 <div class="relative">
                     {{ form.message.label(class="absolute -top-2 left-3
-                    inline-block bg-white px-1 text-xs text-gray-700") }} {{
+                    inline-block text-xs text-gray-700") }} {{
                     form.message(rows=6, class="block w-full rounded-lg
                     border-gray-300 shadow-sm py-3 px-4 text-gray-900
                     placeholder:text-gray-400 focus:ring-2
                     focus:ring-brand-primary focus:border-brand-primary
-                    sm:text-base transition-all duration-200") }} {% if
-                    form.message.errors %}
+                    sm:text-base transition-all duration-200 bg-brand-secondary
+                    border-black") }} {% if form.message.errors %}
                     <div class="text-red-600 text-sm mt-2">
                         {% for error in form.message.errors %}<span
                             >{{ error }}</span
