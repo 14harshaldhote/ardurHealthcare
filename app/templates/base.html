@@ -247,7 +247,7 @@
                         <div class="relative desktop-dropdown">
                             <a
                                 href="{{ url_for('specialities.specialities_main') }}"
-                                class="nav-link {% if request.endpoint.startswith('specialities.') %}active{% endif %} flex items-center"
+                                class="nav-link {% if request.endpoint and request.endpoint.startswith('specialities.') %}active{% endif %} flex items-center"
                             >
                                 Specialities
                                 <!-- <i class="ri-arrow-down-s-line ml-1"></i> -->
@@ -320,7 +320,7 @@
                         <div class="relative desktop-dropdown">
                             <a
                                 href="{{ url_for('main.services') }}"
-                                class="nav-link {% if request.endpoint.startswith('services.') %}active{% endif %} flex items-center"
+                                class="nav-link {% if request.endpoint and request.endpoint.startswith('services.') %}active{% endif %} flex items-center"
                             >
                                 Services
                                 <i class="ri-arrow-down-s-line ml-1"></i>
@@ -420,7 +420,7 @@
                         <div class="relative desktop-dropdown">
                             <a
                                 href="{{ url_for('main.resources') }}"
-                                class="nav-link {% if request.endpoint.startswith('resources.') %}active{% endif %} flex items-center"
+                                class="nav-link {% if request.endpoint and request.endpoint.startswith('resources.') %}active{% endif %} flex items-center"
                             >
                                 Resources
                                 <i class="ri-arrow-down-s-line ml-1"></i>
@@ -465,7 +465,7 @@
 
                         <a
                             href="{{ url_for('ourreach.index') }}"
-                            class="nav-link {% if request.endpoint.startswith('ourreach.') %}active{% endif %}"
+                            class="nav-link {% if request.endpoint and request.endpoint.startswith('ourreach.') %}active{% endif %}"
                             >Our Reach</a
                         >
 
@@ -525,7 +525,7 @@
                     <div>
                         <button
                             @click="openMobileDropdown = (openMobileDropdown === 'specialities' ? null : 'specialities')"
-                            class="w-full flex justify-between items-center mobile-nav-link text-gray-700 hover:text-brand-primary mobile-dropdown-toggle {% if request.endpoint.startswith('specialities.') %}bg-brand-secondary text-brand-primary font-semibold{% endif %}"
+                            class="w-full flex justify-between items-center mobile-nav-link text-gray-700 hover:text-brand-primary mobile-dropdown-toggle {% if request.endpoint and request.endpoint.startswith('specialities.') %}bg-brand-secondary text-brand-primary font-semibold{% endif %}"
                         >
                             <span>Specialities</span>
                             <i
@@ -574,7 +574,7 @@
                     <div>
                         <button
                             @click="openMobileDropdown = (openMobileDropdown === 'services' ? null : 'services')"
-                            class="w-full flex justify-between items-center mobile-nav-link text-gray-700 hover:text-brand-primary mobile-dropdown-toggle {% if request.endpoint.startswith('services.') %}bg-brand-secondary text-brand-primary font-semibold{% endif %}"
+                            class="w-full flex justify-between items-center mobile-nav-link text-gray-700 hover:text-brand-primary mobile-dropdown-toggle {% if request.endpoint and request.endpoint.startswith('services.') %}bg-brand-secondary text-brand-primary font-semibold{% endif %}"
                         >
                             <span>Services</span>
                             <i
@@ -638,7 +638,7 @@
                     <div>
                         <button
                             @click="openMobileDropdown = (openMobileDropdown === 'resources' ? null : 'resources')"
-                            class="w-full flex justify-between items-center mobile-nav-link text-gray-700 hover:text-brand-primary mobile-dropdown-toggle {% if request.endpoint.startswith('resources.') %}bg-brand-secondary text-brand-primary font-semibold{% endif %}"
+                            class="w-full flex justify-between items-center mobile-nav-link text-gray-700 hover:text-brand-primary mobile-dropdown-toggle {% if request.endpoint and request.endpoint.startswith('resources.') %}bg-brand-secondary text-brand-primary font-semibold{% endif %}"
                         >
                             <span>Resources</span>
                             <i
@@ -671,7 +671,7 @@
 
                     <a
                         href="{{ url_for('ourreach.index') }}"
-                        class="mobile-nav-link text-gray-700 hover:text-brand-primary {% if request.endpoint.startswith('ourreach.') %}bg-brand-secondary text-brand-primary font-semibold{% endif %}"
+                        class="mobile-nav-link text-gray-700 hover:text-brand-primary {% if request.endpoint and request.endpoint.startswith('ourreach.') %}bg-brand-secondary text-brand-primary font-semibold{% endif %}"
                         >Our Reach</a
                     >
 

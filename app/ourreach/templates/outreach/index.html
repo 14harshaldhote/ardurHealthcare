@@ -125,18 +125,10 @@ endblock %} {% block content %}
                                 <div class="flex items-center gap-6 text-sm">
                                     <div class="flex items-center gap-2">
                                         <div
-                                            class="w-4 h-4 bg-brand-primary rounded-full"
+                                            class="w-4 h-4 bg-teal-300 rounded-full"
                                         ></div>
                                         <span class="text-gray-700"
                                             >Available Services</span
-                                        >
-                                    </div>
-                                    <div class="flex items-center gap-2">
-                                        <div
-                                            class="w-4 h-4 bg-brand-accent rounded-full"
-                                        ></div>
-                                        <span class="text-gray-700"
-                                            >Featured States</span
                                         >
                                     </div>
                                 </div>
@@ -654,28 +646,26 @@ endblock %} {% block content %}
         console.log("📋 Showing state list fallback");
         const mapContainer = document.getElementById("usa-map");
         if (mapContainer) {
-            const featuredStates = ["CA", "TX", "FL", "NY", "AL"];
             const stateList = Object.entries(stateAbbreviationMap)
                 .map(([abbr, name]) => {
-                    const isFeatured = featuredStates.includes(abbr);
                     return `
-                        <div class="state-item ${isFeatured ? "featured" : ""}" onclick="loadState('${name}')">
-                            <div style="font-weight: bold; margin-bottom: 0.5rem;">${abbr}</div>
-                            <div style="font-size: 0.875rem;">${name}</div>
-                        </div>
-                    `;
+                                <div class="state-item" onclick="loadState('${name}')">
+                                    <div style="font-weight: bold; margin-bottom: 0.5rem;">${abbr}</div>
+                                    <div style="font-size: 0.875rem;">${name}</div>
+                                </div>
+                            `;
                 })
                 .join("");
 
             mapContainer.innerHTML = `
-                <div style="text-align: center; padding: 2rem;">
-                    <h3 style="margin-bottom: 1rem; color: #374151;">Select Your State</h3>
-                    <p style="margin-bottom: 2rem; color: #6b7280;">Interactive map unavailable. Click on any state below:</p>
-                    <div class="state-list-fallback">
-                        ${stateList}
+                    <div style="text-align: center; padding: 2rem;">
+                        <h3 style="margin-bottom: 1rem; color: #374151;">Select Your State</h3>
+                        <p style="margin-bottom: 2rem; color: #6b7280;">Interactive map unavailable. Click on any state below:</p>
+                        <div class="state-list-fallback">
+                            ${stateList}
+                        </div>
                     </div>
-                </div>
-            `;
+                `;
         }
     }
 
@@ -761,7 +751,6 @@ endblock %} {% block content %}
 
             // Find all state elements
             const states = mapContainer.querySelectorAll("path[id], g[id]");
-            const featuredStates = ["CA", "TX", "FL", "NY", "AL"];
 
             console.log("Found states:", states.length);
 
@@ -822,19 +811,13 @@ endblock %} {% block content %}
                 // Set initial styles - make element visible and interactive
                 state.style.display = "block";
                 state.style.visibility = "visible";
-                state.style.fill = "#e5e7eb";
+                state.style.fill = "#a7daf3"; // Light teal color
                 state.style.stroke = "#ffffff";
                 state.style.strokeWidth = "1";
                 state.style.cursor = "pointer";
                 state.style.transition = "all 0.3s ease";
                 state.style.pointerEvents = "all";
-
-                // Mark featured states
-                if (featuredStates.includes(stateAbbr)) {
-                    state.classList.add("featured");
-                    state.style.fill = "#f59e0b";
-                    state.style.strokeWidth = "1.5";
-                }
+                state.style.color = "#000000"; // Black text
 
                 // Add click handler
                 state.addEventListener("click", function (e) {
@@ -845,27 +828,14 @@ endblock %} {% block content %}
                     // Reset all states
                     states.forEach((s) => {
                         s.classList.remove("active");
-                        const sId = s.id;
-                        let sAbbr = "";
-                        if (sId.includes("_")) {
-                            sAbbr = sId.split("_")[0].toUpperCase();
-                        } else if (sId.length === 2) {
-                            sAbbr = sId.toUpperCase();
-                        }
-
-                        if (featuredStates.includes(sAbbr)) {
-                            s.style.fill = "#f59e0b";
-                            s.style.strokeWidth = "1.5";
-                        } else {
-                            s.style.fill = "#e5e7eb";
-                            s.style.strokeWidth = "1";
-                        }
+                        s.style.fill = "#a7daf3"; // Light teal color
+                        s.style.strokeWidth = "1";
                         s.style.filter = "none";
                     });
 
                     // Highlight clicked state
                     this.classList.add("active");
-                    this.style.fill = "#065f46";
+                    this.style.fill = "#065f46"; // Dark green for selected
                     this.style.strokeWidth = "2";
                     this.style.filter =
                         "drop-shadow(0 4px 12px rgba(6, 95, 70, 0.5))";
@@ -877,15 +847,9 @@ endblock %} {% block content %}
                 // Add hover handlers
                 state.addEventListener("mouseenter", function (e) {
                     if (!this.classList.contains("active")) {
-                        if (this.classList.contains("featured")) {
-                            this.style.fill = "#d97706";
-                            this.style.filter =
-                                "drop-shadow(0 4px 8px rgba(245, 158, 11, 0.4))";
-                        } else {
-                            this.style.fill = "#008ba3";
-                            this.style.filter =
-                                "drop-shadow(0 4px 8px rgba(0, 139, 163, 0.3))";
-                        }
+                        this.style.fill = "#0d9488"; // Darker teal on hover
+                        this.style.filter =
+                            "drop-shadow(0 4px 8px rgba(13, 148, 136, 0.4))";
                         this.style.strokeWidth = "2";
                         showTooltip(e, fullStateName);
                     }
@@ -893,13 +857,8 @@ endblock %} {% block content %}
 
                 state.addEventListener("mouseleave", function () {
                     if (!this.classList.contains("active")) {
-                        if (this.classList.contains("featured")) {
-                            this.style.fill = "#f59e0b";
-                            this.style.strokeWidth = "1.5";
-                        } else {
-                            this.style.fill = "#e5e7eb";
-                            this.style.strokeWidth = "1";
-                        }
+                        this.style.fill = "#a7daf3"; // Return to light teal
+                        this.style.strokeWidth = "1";
                         this.style.filter = "none";
                     }
                     hideTooltip();
@@ -1123,7 +1082,8 @@ endblock %} {% block content %}
     }
 
     .state {
-        fill: #e5e7eb;
+        fill: #a7daf3 !important; /* Light teal */
+        color: #000000 !important; /* Black text */
         stroke: #ffffff;
         stroke-width: 1;
         cursor: pointer;
@@ -1133,9 +1093,10 @@ endblock %} {% block content %}
     }
 
     .state:hover {
-        fill: #008ba3;
+        fill: #0d9488 !important; /* Darker teal on hover */
+        color: #000000 !important; /* Keep black text */
         stroke-width: 2;
-        filter: drop-shadow(0 4px 8px rgba(0, 139, 163, 0.3));
+        filter: drop-shadow(0 4px 8px rgba(13, 148, 136, 0.4));
     }
 
     /* ===== RESPONSIVE DESIGN ===== */
@@ -1211,7 +1172,7 @@ endblock %} {% block content %}
     }
 
     .state-item {
-        background: #f3f4f6;
+        background: #a7daf3;
         border: 2px solid #e5e7eb;
         border-radius: 8px;
         padding: 1rem;
@@ -1221,20 +1182,10 @@ endblock %} {% block content %}
     }
 
     .state-item:hover {
-        background: #008ba3;
+        background: #a7e0f3;
         color: white;
         transform: translateY(-2px);
-        box-shadow: 0 4px 8px rgba(0, 139, 163, 0.3);
-    }
-
-    .state-item.featured {
-        background: #f59e0b;
-        color: white;
-        border-color: #d97706;
-    }
-
-    .state-item.featured:hover {
-        background: #d97706;
+        box-shadow: 0 4px 8px rgba(13, 148, 136, 0.3);
     }
 </style>
 {% endblock %}

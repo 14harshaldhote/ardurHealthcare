@@ -43,20 +43,6 @@
     transform-origin: center;
 }
 
-/* Featured states */
-.map-container path.featured,
-.map-container g.featured > path {
-    fill: #00a9c7;
-    stroke: #ffffff;
-    stroke-width: 2;
-}
-
-.map-container path.featured:hover,
-.map-container g.featured > path:hover {
-    fill: #008ba3;
-    filter: drop-shadow(0 3px 6px rgba(0, 139, 163, 0.4));
-}
-
 /* Active state */
 .map-container path.active,
 .map-container g.active > path {
@@ -104,13 +90,17 @@
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* Tooltip styling */
 .map-tooltip {
-    position: absolute;
+    position: fixed;
     background: #013237;
     color: white;
     padding: 8px 12px;
@@ -120,12 +110,16 @@
     pointer-events: none;
     z-index: 1000;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    visibility: hidden;
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    max-width: 250px;
 }
 
 .map-tooltip::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 100%;
     left: 50%;
@@ -136,6 +130,7 @@
 
 .map-tooltip.show {
     opacity: 1;
+    visibility: visible;
 }
 
 /* Legend styling */
@@ -168,10 +163,6 @@
 
 .legend-color.available {
     background-color: #e2e8f0;
-}
-
-.legend-color.featured {
-    background-color: #00a9c7;
 }
 
 .legend-color.active {
@@ -243,6 +234,13 @@
     .map-loading .spinner {
         animation: none;
     }
+}
+
+/* SVG text styling */
+.map-container svg text,
+.map-container svg tspan {
+    fill: #000000 !important;
+    color: #000000 !important;
 }
 
 /* Print styles */
