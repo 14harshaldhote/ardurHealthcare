@@ -2,28 +2,57 @@
 Healthcare{% endblock %} {% block content %}
 <main class="min-h-screen bg-white">
     <!-- Hero Section -->
-    <section class="text-center py-16 md:py-20 bg-brand-light">
-        <div class="max-w-5xl mx-auto px-6">
-            <h1
-                class="text-4xl md:text-6xl font-light font-montserrat text-brand-dark mb-4"
-                data-aos="fade-right"
-            >
-                Medical Billing
-                <span class="text-brand-primary">Services</span>
-            </h1>
-            <p
-                class="text-lg md:text-xl text-gray-700 mb-8 leading-relaxed"
-                data-aos="fade-right"
-                data-aos-delay="200"
-            >
-                Behind every successful practice is a medical billing company
-                that ensures timely reimbursements and clean claims. At Ardur
-                Healthcare, we offer complete, end-to-end medical billing
-                services tailored to healthcare providers across the U.S.
-                Whether you're running a solo practice or a specialty group, we
-                manage your revenue cycle from start to finish, accurately,
-                securely, and efficiently.
-            </p>
+    <section
+        class="relative bg-gradient-to-br from-brand-primary via-brand-secondary to-brand-dark overflow-hidden"
+    >
+        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+
+        <!-- Decorative Elements -->
+        <div
+            class="absolute top-10 left-10 w-20 h-20 bg-white bg-opacity-10 rounded-full blur-xl"
+        ></div>
+        <div
+            class="absolute bottom-20 right-20 w-32 h-32 bg-white bg-opacity-5 rounded-full blur-2xl"
+        ></div>
+        <div
+            class="absolute top-1/2 left-1/4 w-16 h-16 bg-white bg-opacity-5 rounded-full blur-lg"
+        ></div>
+
+        <div class="relative z-10 container mx-auto px-6 py-20 md:py-28">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="mb-8" data-aos="fade-down">
+                    <div
+                        class="inline-flex items-center px-4 py-2 bg-black/30 backdrop-blur-sm rounded-full mb-6"
+                    >
+                        <i
+                            class="ri-stethoscope-line text-brand-accent mr-2"
+                        ></i>
+                        <span class="text-brand-accent font-light"
+                            >Medical Services</span
+                        >
+                    </div>
+                    <h1
+                        class="text-4xl md:text-6xl font-thin font-montserrat text-white mb-4 drop-shadow-lg"
+                    >
+                        Medical Billing
+                        <span class="text-brand-accent drop-shadow-lg"
+                            >Services</span
+                        >
+                    </h1>
+                    <p
+                        class="text-lg md:text-xl text-white mb-8 leading-relaxed max-w-4xl mx-auto drop-shadow-md"
+                    >
+                        Behind every successful practice is a medical billing
+                        company that ensures timely reimbursements and clean
+                        claims. At Ardur Healthcare, we offer complete,
+                        end-to-end medical billing services tailored to
+                        healthcare providers across the U.S. Whether you're
+                        running a solo practice or a specialty group, we manage
+                        your revenue cycle from start to finish, accurately,
+                        securely, and efficiently.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -214,276 +243,217 @@ Healthcare{% endblock %} {% block content %}
                     your revenue:
                 </p>
             </div>
-
-            <div class="space-y-8">
+            <!-- Sticky Notes Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Service Item 1 -->
-                <div
-                    class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+                <a
+                    href="{{ url_for('services.service_detail', service_name='eligibility_verification') }}"
+                    class="relative bg-brand-accent/10 p-6 rounded-lg shadow-md transform hover:rotate-2 hover:scale-105 hover:bg-brand-accent/20 transition-all duration-300 border-l-4 border-brand-accent block cursor-pointer h-full flex flex-col"
                     data-aos="fade-up"
                     data-aos-delay="100"
                 >
-                    <div class="grid lg:grid-cols-3 gap-8 items-center">
-                        <div class="lg:col-span-2">
-                            <h3
-                                class="text-2xl font-light font-montserrat text-brand-dark mb-4"
-                            >
-                                Eligibility and Benefits Verification Services
-                            </h3>
-                            <p class="text-gray-700 leading-relaxed">
-                                We confirm patient coverage and benefit details
-                                before the visit, even across complex payer
-                                systems.
-                            </p>
-                        </div>
-                        <div class="flex justify-center">
-                            <a
-                                href="{{ url_for('services.service_detail', service_name='eligibility_verification') }}"
-                                class="bg-brand-primary text-white font-montserrat font-light px-6 py-3 rounded-full hover:bg-brand-dark transition duration-300"
-                            >
-                                Learn More
-                            </a>
-                        </div>
+                    <div
+                        class="absolute top-2 right-2 w-6 h-6 bg-brand-primary/30 rounded-full opacity-70"
+                    ></div>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">
+                        Eligibility and Benefits Verification Services
+                    </h3>
+                    <p class="text-sm text-gray-700 flex-grow">
+                        We confirm patient coverage and benefit details before
+                        the visit, even across complex payer systems.
+                    </p>
+                    <div class="text-brand-primary mt-4 flex items-center">
+                        Learn More
+                        <i class="ri-arrow-right-line ml-1"></i>
                     </div>
-                </div>
+                </a>
 
                 <!-- Service Item 2 -->
-                <div
-                    class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+                <a
+                    href="{{ url_for('services.service_detail', service_name='prior_authorization') }}"
+                    class="relative bg-brand-accent/10 p-6 rounded-lg shadow-md transform hover:rotate-2 hover:scale-105 hover:bg-brand-accent/20 transition-all duration-300 border-l-4 border-brand-accent block cursor-pointer h-full flex flex-col"
                     data-aos="fade-up"
                     data-aos-delay="200"
                 >
-                    <div class="grid lg:grid-cols-3 gap-8 items-center">
-                        <div class="lg:col-span-2">
-                            <h3
-                                class="text-2xl font-light font-montserrat text-brand-dark mb-4"
-                            >
-                                Prior Authorization Services
-                            </h3>
-                            <p class="text-gray-700 leading-relaxed">
-                                Authorizations for medications, referrals, or
-                                procedures are obtained in advance, reducing
-                                delays and ensuring timely care.
-                            </p>
-                        </div>
-                        <div class="flex justify-center">
-                            <a
-                                href="{{ url_for('services.service_detail', service_name='prior_authorization') }}"
-                                class="bg-brand-primary text-white font-montserrat font-light px-6 py-3 rounded-full hover:bg-brand-dark transition duration-300"
-                            >
-                                Learn More
-                            </a>
-                        </div>
+                    <div
+                        class="absolute top-2 right-2 w-6 h-6 bg-brand-secondary/40 rounded-full opacity-70"
+                    ></div>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">
+                        Prior Authorization Services
+                    </h3>
+                    <p class="text-sm text-gray-700 flex-grow">
+                        Authorizations for medications, referrals, or procedures
+                        are obtained in advance, reducing delays and ensuring
+                        timely care.
+                    </p>
+                    <div class="text-brand-primary mt-4 flex items-center">
+                        Learn More
+                        <i class="ri-arrow-right-line ml-1"></i>
                     </div>
-                </div>
+                </a>
 
                 <!-- Service Item 3 -->
-                <div
-                    class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+                <a
+                    href="{{ url_for('services.service_detail', service_name='provider_credentialing') }}"
+                    class="relative bg-brand-accent/10 p-6 rounded-lg shadow-md transform hover:rotate-2 hover:scale-105 hover:bg-brand-accent/20 transition-all duration-300 border-l-4 border-brand-accent block cursor-pointer h-full flex flex-col"
                     data-aos="fade-up"
                     data-aos-delay="300"
                 >
-                    <div class="grid lg:grid-cols-3 gap-8 items-center">
-                        <div class="lg:col-span-2">
-                            <h3
-                                class="text-2xl font-light font-montserrat text-brand-dark mb-4"
-                            >
-                                Provider Credentialing and Enrollment Services
-                            </h3>
-                            <p class="text-gray-700 leading-relaxed">
-                                Our team manages enrollment applications,
-                                updates, and revalidations, keeping you
-                                network-ready at all times.
-                            </p>
-                        </div>
-                        <div class="flex justify-center">
-                            <a
-                                href="{{ url_for('services.service_detail', service_name='provider_credentialing') }}"
-                                class="bg-brand-primary text-white font-montserrat font-light px-6 py-3 rounded-full hover:bg-brand-dark transition duration-300"
-                            >
-                                Learn More
-                            </a>
-                        </div>
+                    <div
+                        class="absolute top-2 right-2 w-6 h-6 bg-brand-accent/30 rounded-full opacity-70"
+                    ></div>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">
+                        Provider Credentialing and Enrollment Services
+                    </h3>
+                    <p class="text-sm text-gray-700 flex-grow">
+                        Our team manages enrollment applications, updates, and
+                        revalidations, keeping you network-ready at all times.
+                    </p>
+                    <div class="text-brand-primary mt-4 flex items-center">
+                        Learn More
+                        <i class="ri-arrow-right-line ml-1"></i>
                     </div>
-                </div>
+                </a>
 
                 <!-- Service Item 4 -->
-                <div
-                    class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+                <a
+                    href="{{ url_for('services.service_detail', service_name='charge_entry') }}"
+                    class="relative bg-brand-accent/10 p-6 rounded-lg shadow-md transform hover:rotate-2 hover:scale-105 hover:bg-brand-accent/20 transition-all duration-300 border-l-4 border-brand-accent block cursor-pointer h-full flex flex-col"
                     data-aos="fade-up"
                     data-aos-delay="400"
                 >
-                    <div class="grid lg:grid-cols-3 gap-8 items-center">
-                        <div class="lg:col-span-2">
-                            <h3
-                                class="text-2xl font-light font-montserrat text-brand-dark mb-4"
-                            >
-                                Charge Entry Services
-                            </h3>
-                            <p class="text-gray-700 leading-relaxed">
-                                Charges are carefully entered from your EMR or
-                                superbills with all necessary modifiers and
-                                units in place.
-                            </p>
-                        </div>
-                        <div class="flex justify-center">
-                            <a
-                                href="{{ url_for('services.service_detail', service_name='charge_entry') }}"
-                                class="bg-brand-primary text-white font-montserrat font-light px-6 py-3 rounded-full hover:bg-brand-dark transition duration-300"
-                            >
-                                Learn More
-                            </a>
-                        </div>
+                    <div
+                        class="absolute top-2 right-2 w-6 h-6 bg-brand-dark/20 rounded-full opacity-70"
+                    ></div>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">
+                        Charge Entry Services
+                    </h3>
+                    <p class="text-sm text-gray-700 flex-grow">
+                        Charges are carefully entered from your EMR or
+                        superbills with all necessary modifiers and units in
+                        place.
+                    </p>
+                    <div class="text-brand-primary mt-4 flex items-center">
+                        Learn More
+                        <i class="ri-arrow-right-line ml-1"></i>
                     </div>
-                </div>
+                </a>
 
                 <!-- Service Item 5 -->
-                <div
-                    class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+                <a
+                    href="{{ url_for('services.service_detail', service_name='medical_coding') }}"
+                    class="relative bg-brand-accent/10 p-6 rounded-lg shadow-md transform hover:rotate-2 hover:scale-105 hover:bg-brand-accent/20 transition-all duration-300 border-l-4 border-brand-accent block cursor-pointer h-full flex flex-col"
                     data-aos="fade-up"
                     data-aos-delay="500"
                 >
-                    <div class="grid lg:grid-cols-3 gap-8 items-center">
-                        <div class="lg:col-span-2">
-                            <h3
-                                class="text-2xl font-light font-montserrat text-brand-dark mb-4"
-                            >
-                                Medical Coding Services
-                            </h3>
-                            <p class="text-gray-700 leading-relaxed">
-                                Certified coders assign CPT, ICD-10, and HCPCS
-                                codes that meet payer rules and maximize
-                                reimbursement.
-                            </p>
-                        </div>
-                        <div class="flex justify-center">
-                            <a
-                                href="{{ url_for('services.service_detail', service_name='medical_coding') }}"
-                                class="bg-brand-primary text-white font-montserrat font-light px-6 py-3 rounded-full hover:bg-brand-dark transition duration-300"
-                            >
-                                Learn More
-                            </a>
-                        </div>
+                    <div
+                        class="absolute top-2 right-2 w-6 h-6 bg-brand-primary/30 rounded-full opacity-70"
+                    ></div>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">
+                        Medical Coding Services
+                    </h3>
+                    <p class="text-sm text-gray-700 flex-grow">
+                        Certified coders assign CPT, ICD-10, and HCPCS codes
+                        that meet payer rules and maximize reimbursement.
+                    </p>
+                    <div class="text-brand-primary mt-4 flex items-center">
+                        Learn More
+                        <i class="ri-arrow-right-line ml-1"></i>
                     </div>
-                </div>
+                </a>
 
                 <!-- Service Item 6 -->
-                <div
-                    class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+                <a
+                    href="{{ url_for('services.service_detail', service_name='claim_submission_follow_up') }}"
+                    class="relative bg-brand-accent/10 p-6 rounded-lg shadow-md transform hover:rotate-2 hover:scale-105 hover:bg-brand-accent/20 transition-all duration-300 border-l-4 border-brand-accent block cursor-pointer h-full flex flex-col"
                     data-aos="fade-up"
                     data-aos-delay="600"
                 >
-                    <div class="grid lg:grid-cols-3 gap-8 items-center">
-                        <div class="lg:col-span-2">
-                            <h3
-                                class="text-2xl font-light font-montserrat text-brand-dark mb-4"
-                            >
-                                Claim Submission and Follow-Up Services
-                            </h3>
-                            <p class="text-gray-700 leading-relaxed">
-                                Every claim is scrubbed, submitted, and tracked.
-                                From initial EDI submission to payer follow-up,
-                                we ensure no claim goes unanswered.
-                            </p>
-                        </div>
-                        <div class="flex justify-center">
-                            <a
-                                href="{{ url_for('services.service_detail', service_name='claim_submission_follow_up') }}"
-                                class="bg-brand-primary text-white font-montserrat font-light px-6 py-3 rounded-full hover:bg-brand-dark transition duration-300"
-                            >
-                                Learn More
-                            </a>
-                        </div>
+                    <div
+                        class="absolute top-2 right-2 w-6 h-6 bg-brand-secondary/40 rounded-full opacity-70"
+                    ></div>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">
+                        Claim Submission and Follow-Up Services
+                    </h3>
+                    <p class="text-sm text-gray-700 flex-grow">
+                        Every claim is scrubbed, submitted, and tracked. From
+                        initial EDI submission to payer follow-up, we ensure no
+                        claim goes unanswered.
+                    </p>
+                    <div class="text-brand-primary mt-4 flex items-center">
+                        Learn More
+                        <i class="ri-arrow-right-line ml-1"></i>
                     </div>
-                </div>
+                </a>
 
                 <!-- Service Item 7 -->
-                <div
-                    class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+                <a
+                    href="{{ url_for('services.service_detail', service_name='payment_posting_reconciliation') }}"
+                    class="relative bg-brand-accent/10 p-6 rounded-lg shadow-md transform hover:rotate-2 hover:scale-105 hover:bg-brand-accent/20 transition-all duration-300 border-l-4 border-brand-accent block cursor-pointer h-full flex flex-col"
                     data-aos="fade-up"
                     data-aos-delay="700"
                 >
-                    <div class="grid lg:grid-cols-3 gap-8 items-center">
-                        <div class="lg:col-span-2">
-                            <h3
-                                class="text-2xl font-light font-montserrat text-brand-dark mb-4"
-                            >
-                                Payment Posting and Reconciliation Services
-                            </h3>
-                            <p class="text-gray-700 leading-relaxed">
-                                We reconcile ERAs, handle patient balances, and
-                                flag any shortfalls for immediate attention.
-                            </p>
-                        </div>
-                        <div class="flex justify-center">
-                            <a
-                                href="{{ url_for('services.service_detail', service_name='payment_posting_reconciliation') }}"
-                                class="bg-brand-primary text-white font-montserrat font-light px-6 py-3 rounded-full hover:bg-brand-dark transition duration-300"
-                            >
-                                Learn More
-                            </a>
-                        </div>
+                    <div
+                        class="absolute top-2 right-2 w-6 h-6 bg-brand-accent/30 rounded-full opacity-70"
+                    ></div>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">
+                        Payment Posting and Reconciliation Services
+                    </h3>
+                    <p class="text-sm text-gray-700 flex-grow">
+                        We reconcile ERAs, handle patient balances, and flag any
+                        shortfalls for immediate attention.
+                    </p>
+                    <div class="text-brand-primary mt-4 flex items-center">
+                        Learn More
+                        <i class="ri-arrow-right-line ml-1"></i>
                     </div>
-                </div>
+                </a>
 
                 <!-- Service Item 8 -->
-                <div
-                    class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+                <a
+                    href="{{ url_for('services.service_detail', service_name='denial_management') }}"
+                    class="relative bg-brand-accent/10 p-6 rounded-lg shadow-md transform hover:rotate-2 hover:scale-105 hover:bg-brand-accent/20 transition-all duration-300 border-l-4 border-brand-accent block cursor-pointer h-full flex flex-col"
                     data-aos="fade-up"
                     data-aos-delay="800"
                 >
-                    <div class="grid lg:grid-cols-3 gap-8 items-center">
-                        <div class="lg:col-span-2">
-                            <h3
-                                class="text-2xl font-light font-montserrat text-brand-dark mb-4"
-                            >
-                                Denial Management Services
-                            </h3>
-                            <p class="text-gray-700 leading-relaxed">
-                                We analyze denial trends, correct root causes,
-                                and submit timely appeals to protect your
-                                revenue.
-                            </p>
-                        </div>
-                        <div class="flex justify-center">
-                            <a
-                                href="{{ url_for('services.service_detail', service_name='denial_management') }}"
-                                class="bg-brand-primary text-white font-montserrat font-light px-6 py-3 rounded-full hover:bg-brand-dark transition duration-300"
-                            >
-                                Learn More
-                            </a>
-                        </div>
+                    <div
+                        class="absolute top-2 right-2 w-6 h-6 bg-brand-dark/20 rounded-full opacity-70"
+                    ></div>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">
+                        Denial Management Services
+                    </h3>
+                    <p class="text-sm text-gray-700 flex-grow">
+                        We analyze denial trends, correct root causes, and
+                        submit timely appeals to protect your revenue.
+                    </p>
+                    <div class="text-brand-primary mt-4 flex items-center">
+                        Learn More
+                        <i class="ri-arrow-right-line ml-1"></i>
                     </div>
-                </div>
+                </a>
 
                 <!-- Service Item 9 -->
-                <div
-                    class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+                <a
+                    href="{{ url_for('services.service_detail', service_name='ar_management') }}"
+                    class="relative bg-brand-accent/10 p-6 rounded-lg shadow-md transform hover:rotate-2 hover:scale-105 hover:bg-brand-accent/20 transition-all duration-300 border-l-4 border-brand-accent block cursor-pointer h-full flex flex-col"
                     data-aos="fade-up"
                     data-aos-delay="900"
                 >
-                    <div class="grid lg:grid-cols-3 gap-8 items-center">
-                        <div class="lg:col-span-2">
-                            <h3
-                                class="text-2xl font-light font-montserrat text-brand-dark mb-4"
-                            >
-                                Accounts Receivable Management Services
-                            </h3>
-                            <p class="text-gray-700 leading-relaxed">
-                                Our AR specialists pursue outstanding balances,
-                                minimize aging buckets, and keep your cash flow
-                                steady.
-                            </p>
-                        </div>
-                        <div class="flex justify-center">
-                            <a
-                                href="{{ url_for('services.service_detail', service_name='ar_management') }}"
-                                class="bg-brand-primary text-white font-montserrat font-light px-6 py-3 rounded-full hover:bg-brand-dark transition duration-300"
-                            >
-                                Learn More
-                            </a>
-                        </div>
+                    <div
+                        class="absolute top-2 right-2 w-6 h-6 bg-brand-primary/30 rounded-full opacity-70"
+                    ></div>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">
+                        Accounts Receivable Management Services
+                    </h3>
+                    <p class="text-sm text-gray-700 flex-grow">
+                        Our AR specialists pursue outstanding balances, minimize
+                        aging buckets, and keep your cash flow steady.
+                    </p>
+                    <div class="text-brand-primary mt-4 flex items-center">
+                        Learn More
+                        <i class="ri-arrow-right-line ml-1"></i>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </section>
@@ -622,22 +592,24 @@ Healthcare{% endblock %} {% block content %}
 
     <!-- Final CTA Section -->
     <section
-        class="py-16 md:py-24 bg-gradient-to-r from-brand-primary to-brand-accent text-center relative overflow-hidden"
+        class="py-16 md:py-24 bg-brand-secondary text-center relative overflow-hidden"
     >
-        <div class="absolute inset-0 bg-black/10"></div>
+        <div class="absolute inset-0 bg-black/5"></div>
         <div class="relative max-w-4xl mx-auto px-6" data-aos="fade-up">
             <h2
-                class="text-3xl md:text-4xl font-bold font-montserrat text-white mb-6"
+                class="text-3xl md:text-4xl font-thin font-montserrat text-brand-dark mb-6"
             >
                 Ready to Simplify Your Medical Billing?
             </h2>
-            <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+            <p
+                class="text-xl text-brand-dark/80 font-light mb-8 max-w-2xl mx-auto"
+            >
                 Let's make your billing work better, faster, and easier, so you
                 can focus on patient care, not payer policies.
             </p>
             <a
                 href="{{ url_for('contact.contact_form') }}"
-                class="bg-white text-brand-primary font-montserrat font-semibold px-8 py-4 rounded-full hover:scale-105 hover:shadow-xl transition duration-300 inline-block"
+                class="bg-brand-primary text-white font-montserrat font-light px-8 py-4 rounded-full hover:scale-105 hover:shadow-xl hover:bg-brand-dark transition duration-300 inline-block"
             >
                 Get in Touch with Our Team
             </a>
