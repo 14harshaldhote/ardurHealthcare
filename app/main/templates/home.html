@@ -1068,11 +1068,11 @@ Ardur Healthcare{% endblock %} {% block meta %}
             .logo-scroller-track {
                 display: flex;
                 /* Aligns logos in a row */
-                gap: 3rem;
+                gap: 4rem;
                 /* Space between logos */
                 /* This calculation is (width_of_one_logo + gap) * number_of_logos_doubled */
                 /* Adjust if you change logo size or count */
-                width: calc(200px * 12);
+                width: calc(288px * 12);
                 animation: scroll 30s linear infinite;
             }
 
@@ -1085,7 +1085,7 @@ Ardur Healthcare{% endblock %} {% block meta %}
                 to {
                     /* This moves the track by the width of the original set of logos */
                     /* (width_of_one_logo + gap) * number_of_original_logos */
-                    transform: translateX(calc(-200px * 6));
+                    transform: translateX(calc(-288px * 6));
                 }
             }
 
@@ -1096,19 +1096,27 @@ Ardur Healthcare{% endblock %} {% block meta %}
 
             /* Individual logo container */
             .logo-scroller .slide {
-                width: 160px;
-                /* Fixed width for each logo's container */
+                width: 240px;
+                /* Increased width for larger logos */
+                height: 120px;
+                /* Increased height for better visibility */
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                padding: 15px;
+                /* Increased padding around logos */
             }
 
             /* The logo image itself */
             .logo-scroller .slide img {
-                height: 45px;
-                /* Adjust height as needed */
+                height: 80px;
+                /* Significantly increased height for better visibility */
                 width: auto;
                 /* Maintain aspect ratio */
+                max-width: 200px;
+                /* Increased max width for larger logos */
+                object-fit: contain;
+                /* Ensure proper scaling */
                 filter: grayscale(100%);
                 /* Start as grayscale */
                 opacity: 0.8;
@@ -1127,74 +1135,74 @@ Ardur Healthcare{% endblock %} {% block meta %}
             <div class="logo-scroller-track">
                 <div class="slide">
                     <img
-                        src="https://assets-global.website-files.com/60871ea52655933399a8f278/60871ea5265593922fa8f328_AdvancedMD-logo.svg"
+                        src="{{ url_for('static', filename='images/iconsCompany/advancedmd-logo.png') }}"
                         alt="AdvancedMD Logo"
                     />
                 </div>
                 <div class="slide">
                     <img
-                        src="https://www.tebra.com/content/images/tebra-logo-lockup.svg"
+                        src="{{ url_for('static', filename='images/iconsCompany/Tebra_Primary.png') }}"
                         alt="Tebra (Kareo) Logo"
                     />
                 </div>
                 <div class="slide">
                     <img
-                        src="https://assets-global.website-files.com/621570176865324520935127/621570176865325b39935165_Logo.svg"
+                        src="{{ url_for('static', filename='images/iconsCompany/simple-practice.png') }}"
                         alt="SimplePractice Logo"
                     />
                 </div>
                 <div class="slide">
                     <img
-                        src="https://www.logo.wine/a/logo/eClinicalWorks/eClinicalWorks-Logo.wine.svg"
+                        src="{{ url_for('static', filename='images/iconsCompany/ecw.png') }}"
                         alt="eClinicalWorks Logo"
                     />
                 </div>
                 <div class="slide">
                     <img
-                        src="https://www.logo.wine/a/logo/Athenahealth/Athenahealth-Logo.wine.svg"
+                        src="{{ url_for('static', filename='images/iconsCompany/athena-health.png') }}"
                         alt="Athenahealth Logo"
                     />
                 </div>
                 <div class="slide">
                     <img
-                        src="https://assets-global.website-files.com/63d03a4cb1b72e5192186259/63d03a74b1b72e79e6186b85_drchrono-by-everhealth-logo-horizontal-blue.svg"
+                        src="{{ url_for('static', filename='images/iconsCompany/drchrono.png') }}"
                         alt="DrChrono Logo"
                     />
                 </div>
 
                 <div class="slide">
                     <img
-                        src="https://assets-global.website-files.com/60871ea52655933399a8f278/60871ea5265593922fa8f328_AdvancedMD-logo.svg"
+                        src="{{ url_for('static', filename='images/iconsCompany/advancedmd-logo.png') }}"
                         alt="AdvancedMD Logo"
                     />
                 </div>
                 <div class="slide">
                     <img
-                        src="https://www.tebra.com/content/images/tebra-logo-lockup.svg"
+                        src="{{ url_for('static', filename='images/iconsCompany/Tebra_Primary.png') }}"
                         alt="Tebra (Kareo) Logo"
                     />
                 </div>
                 <div class="slide">
                     <img
-                        src="https://assets-global.website-files.com/621570176865324520935127/621570176865325b39935165_Logo.svg"
+                        src="{{ url_for('static', filename='images/iconsCompany/simple-practice.png') }}"
                         alt="SimplePractice Logo"
                     />
                 </div>
                 <div class="slide">
                     <img
-                        src="https://www.logo.wine/a/logo/eClinicalWorks/eClinicalWorks-Logo.wine.svg"
+                        src="{{ url_for('static', filename='images/iconsCompany/ecw.png') }}"
                         alt="eClinicalWorks Logo"
                     />
                 </div>
                 <div class="slide">
                     <img
-                        src="https://www.logo.wine/a/logo/Athenahealth/Athenahealth-Logo.wine.svg"
+                        src="{{ url_for('static', filename='images/iconsCompany/athena-health.png') }}"
                         alt="Athenahealth Logo"
                     />
                 </div>
                 <div class="slide">
                     <img
-                        src="https://assets-global.website-files.com/63d03a4cb1b72e5192186259/63d03a74b1b72e79e6186b85_drchrono-by-everhealth-logo-horizontal-blue.svg"
+                        src="{{ url_for('static', filename='images/iconsCompany/drchrono.png') }}"
                         alt="DrChrono Logo"
                     />
                 </div>
