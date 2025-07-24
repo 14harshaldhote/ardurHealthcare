@@ -60,21 +60,46 @@ endblock %} {% block content %}
                     Interactive U.S. Billing Map
                 </h2>
                 <p
-                    class="text-lg text-gray-700 max-w-4xl mx-auto"
+                    class="text-lg text-gray-700 max-w-4xl mx-auto mb-8"
                     data-aos="fade-up"
                     data-aos-delay="200"
                 >
                     Select your state to explore state-specific medical billing
                     services from Ardur Healthcare.
                 </p>
+
+                <!-- Toggle Switch -->
+                <div
+                    class="flex justify-center mb-8"
+                    data-aos="fade-up"
+                    data-aos-delay="300"
+                >
+                    <div class="bg-gray-100 rounded-full p-1 flex items-center">
+                        <button
+                            id="map-view-btn"
+                            class="px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-brand-primary text-white"
+                            onclick="switchToMapView()"
+                        >
+                            <i class="ri-map-line mr-2"></i>Map View
+                        </button>
+                        <button
+                            id="list-view-btn"
+                            class="px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 text-gray-600 hover:text-brand-primary"
+                            onclick="switchToListView()"
+                        >
+                            <i class="ri-list-unordered mr-2"></i>List View
+                        </button>
+                    </div>
+                </div>
             </div>
 
             <div
-                class="bg-white rounded-xl shadow-lg overflow-hidden"
+                class="bg-white rounded-xl border border-gray-200 overflow-hidden"
                 data-aos="fade-up"
             >
-                <div class="">
-                    <div class="map-container-fixed h-auto" id="map-container">
+                <!-- Map View Container -->
+                <div id="map-view-container" class="map-view-active">
+                    <div class="map-container-flexible" id="map-container">
                         <div
                             id="map-loading"
                             class="map-loading"
@@ -108,7 +133,8 @@ endblock %} {% block content %}
                                 style="
                                     display: none;
                                     width: 100%;
-                                    height: 100%;
+                                    height: auto;
+                                    max-height: 600px;
                                     object-fit: contain;
                                 "
                                 onload="handleFallbackImageLoad()"
@@ -133,6 +159,27 @@ endblock %} {% block content %}
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- List View Container -->
+                <div id="list-view-container" class="list-view-hidden">
+                    <div class="p-6">
+                        <div class="mb-6">
+                            <input
+                                type="text"
+                                id="state-search"
+                                placeholder="Search states..."
+                                class="w-full md:w-auto px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-primary focus:border-transparent"
+                                onkeyup="filterStates()"
+                            />
+                        </div>
+                        <div
+                            id="states-list"
+                            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
+                        >
+                            <!-- States will be populated by JavaScript -->
                         </div>
                     </div>
                 </div>
@@ -162,7 +209,7 @@ endblock %} {% block content %}
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div
-                    class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 text-center"
+                    class="bg-white p-8 rounded-xl border border-gray-200 hover:border-brand-primary transition-all duration-300 text-center"
                     data-aos="fade-up"
                     data-aos-delay="100"
                 >
@@ -182,7 +229,7 @@ endblock %} {% block content %}
                 </div>
 
                 <div
-                    class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 text-center"
+                    class="bg-white p-8 rounded-xl border border-gray-200 hover:border-brand-primary transition-all duration-300 text-center"
                     data-aos="fade-up"
                     data-aos-delay="200"
                 >
@@ -200,7 +247,7 @@ endblock %} {% block content %}
                 </div>
 
                 <div
-                    class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 text-center"
+                    class="bg-white p-8 rounded-xl border border-gray-200 hover:border-brand-primary transition-all duration-300 text-center"
                     data-aos="fade-up"
                     data-aos-delay="300"
                 >
@@ -220,7 +267,7 @@ endblock %} {% block content %}
                 </div>
 
                 <div
-                    class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 text-center"
+                    class="bg-white p-8 rounded-xl border border-gray-200 hover:border-brand-primary transition-all duration-300 text-center"
                     data-aos="fade-up"
                     data-aos-delay="400"
                 >
@@ -264,7 +311,7 @@ endblock %} {% block content %}
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div
-                    class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300"
+                    class="bg-white p-8 rounded-xl border border-gray-200 hover:border-brand-primary transition-all duration-300"
                     data-aos="fade-up"
                     data-aos-delay="100"
                 >
@@ -287,7 +334,7 @@ endblock %} {% block content %}
                 </div>
 
                 <div
-                    class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300"
+                    class="bg-white p-8 rounded-xl border border-gray-200 hover:border-brand-primary transition-all duration-300"
                     data-aos="fade-up"
                     data-aos-delay="200"
                 >
@@ -310,7 +357,7 @@ endblock %} {% block content %}
                 </div>
 
                 <div
-                    class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300"
+                    class="bg-white p-8 rounded-xl border border-gray-200 hover:border-brand-primary transition-all duration-300"
                     data-aos="fade-up"
                     data-aos-delay="300"
                 >
@@ -333,7 +380,7 @@ endblock %} {% block content %}
                 </div>
 
                 <div
-                    class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300"
+                    class="bg-white p-8 rounded-xl border border-gray-200 hover:border-brand-primary transition-all duration-300"
                     data-aos="fade-up"
                     data-aos-delay="400"
                 >
@@ -356,7 +403,7 @@ endblock %} {% block content %}
                 </div>
 
                 <div
-                    class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300"
+                    class="bg-white p-8 rounded-xl border border-gray-200 hover:border-brand-primary transition-all duration-300"
                     data-aos="fade-up"
                     data-aos-delay="500"
                 >
@@ -379,7 +426,7 @@ endblock %} {% block content %}
                 </div>
 
                 <div
-                    class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300"
+                    class="bg-white p-8 rounded-xl border border-gray-200 hover:border-brand-primary transition-all duration-300"
                     data-aos="fade-up"
                     data-aos-delay="600"
                 >
@@ -403,39 +450,7 @@ endblock %} {% block content %}
             </div>
         </div>
     </section>
-
-    <!-- Final CTA Section -->
-    <section
-        class="py-16 md:py-24 bg-brand-secondary text-center relative overflow-hidden"
-    >
-        <div class="absolute inset-0 bg-black/5"></div>
-        <div class="relative max-w-4xl mx-auto px-6" data-aos="fade-up">
-            <h2
-                class="text-3xl md:text-4xl font-thin font-montserrat text-brand-dark mb-6"
-            >
-                Ready to Get Started?
-            </h2>
-            <p
-                class="text-xl text-brand-dark/80 font-light mb-8 max-w-2xl mx-auto"
-            >
-                Contact us to learn how our state-specific medical billing
-                services can boost your revenue across all U.S. time zones.
-            </p>
-            <a
-                href="{{ url_for('contact.contact_form') }}"
-                class="bg-brand-primary text-white font-montserrat font-light px-8 py-4 rounded-full hover:scale-105 hover:shadow-xl hover:bg-brand-dark transition duration-300 inline-block"
-            >
-                Get in Touch with Our Team
-            </a>
-        </div>
-    </section>
 </main>
-
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-<link
-    href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
-    rel="stylesheet"
-/>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
@@ -531,30 +546,112 @@ endblock %} {% block content %}
         Montana: "montana",
         Nebraska: "nebraska",
         Nevada: "nevada",
-        "New Hampshire": "new_hampshire", // Changed from new-hampshire
-        "New Jersey": "new_jersey", // Already correct
-        "New Mexico": "new_mexico", // Already correct
-        "New York": "new_york", // Already correct
-        "North Carolina": "north_carolina", // Changed from north-carolina
-        "North Dakota": "north_dakota", // Changed from north-dakota
+        "New Hampshire": "new_hampshire",
+        "New Jersey": "new_jersey",
+        "New Mexico": "new_mexico",
+        "New York": "new_york",
+        "North Carolina": "north_carolina",
+        "North Dakota": "north_dakota",
         Ohio: "ohio",
         Oklahoma: "oklahoma",
         Oregon: "oregon",
         Pennsylvania: "pennsylvania",
-        "Rhode Island": "rhode_island", // Changed from rhode-island
-        "South Carolina": "south_carolina", // Changed from south-carolina
-        "South Dakota": "south_dakota", // Changed from south-dakota
+        "Rhode Island": "rhode_island",
+        "South Carolina": "south_carolina",
+        "South Dakota": "south_dakota",
         Tennessee: "tennessee",
         Texas: "texas",
         Utah: "utah",
         Vermont: "vermont",
         Virginia: "virginia",
         Washington: "washington",
-        "West Virginia": "west_virginia", // Changed from west-virginia
+        "West Virginia": "west_virginia",
         Wisconsin: "wisconsin",
         Wyoming: "wyoming",
-        "District of Columbia": "district_of_columbia", // Changed from district-of-columbia
+        "District of Columbia": "district_of_columbia",
     };
+
+    // View toggle functions
+    function switchToMapView() {
+        const mapContainer = document.getElementById("map-view-container");
+        const listContainer = document.getElementById("list-view-container");
+        const mapBtn = document.getElementById("map-view-btn");
+        const listBtn = document.getElementById("list-view-btn");
+
+        mapContainer.className = "map-view-active";
+        listContainer.className = "list-view-hidden";
+
+        mapBtn.className =
+            "px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-brand-primary text-white";
+        listBtn.className =
+            "px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 text-gray-600 hover:text-brand-primary";
+    }
+
+    function switchToListView() {
+        const mapContainer = document.getElementById("map-view-container");
+        const listContainer = document.getElementById("list-view-container");
+        const mapBtn = document.getElementById("map-view-btn");
+        const listBtn = document.getElementById("list-view-btn");
+
+        mapContainer.className = "map-view-hidden";
+        listContainer.className = "list-view-active";
+
+        mapBtn.className =
+            "px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 text-gray-600 hover:text-brand-primary";
+        listBtn.className =
+            "px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-brand-primary text-white";
+
+        // Populate list if not already done
+        populateStatesList();
+    }
+
+    // Function to populate states list
+    function populateStatesList() {
+        const statesList = document.getElementById("states-list");
+        if (statesList.children.length > 0) return; // Already populated
+
+        const statesArray = Object.entries(stateAbbreviationMap)
+            .map(([abbr, name]) => ({
+                abbr,
+                name,
+            }))
+            .sort((a, b) => a.name.localeCompare(b.name));
+
+        statesList.innerHTML = statesArray
+            .map(
+                (state) => `
+            <div class="state-list-item  border-gray-200 rounded-lg p-2 hover:border-brand-primary transition-all duration-300 cursor-pointer"
+                 onclick="loadState('${state.name}')"
+                 data-state-name="${state.name.toLowerCase()}">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h3 class="font-medium text-brand-dark">${state.name}</h3>
+                        <p class="text-sm text-gray-600">${state.abbr}</p>
+                    </div>
+                    <i class="ri-arrow-right-line text-brand-primary"></i>
+                </div>
+            </div>
+        `,
+            )
+            .join("");
+    }
+
+    // Function to filter states in list view
+    function filterStates() {
+        const searchTerm = document
+            .getElementById("state-search")
+            .value.toLowerCase();
+        const stateItems = document.querySelectorAll(".state-list-item");
+
+        stateItems.forEach((item) => {
+            const stateName = item.getAttribute("data-state-name");
+            if (stateName.includes(searchTerm)) {
+                item.style.display = "block";
+            } else {
+                item.style.display = "none";
+            }
+        });
+    }
 
     // Function to get full state name from abbreviation
     function getFullStateName(abbreviation) {
@@ -726,7 +823,6 @@ endblock %} {% block content %}
                 "✅ SVG content fetched successfully, length:",
                 svgText.length,
             );
-            console.log("📝 SVG content preview:", svgText.substring(0, 200));
 
             if (!svgText || svgText.length < 100) {
                 throw new Error("SVG content appears to be empty or invalid");
@@ -745,14 +841,24 @@ endblock %} {% block content %}
             const svgElement = mapContainer.querySelector("svg");
             if (svgElement) {
                 svgElement.style.width = "100%";
-                svgElement.style.height = "100%";
+                svgElement.style.height = "auto";
+                svgElement.style.maxHeight = "650px";
                 svgElement.style.display = "block";
+                svgElement.style.transform = "scaleX(1.1)";
+                svgElement.style.transformOrigin = "center";
+                svgElement.setAttribute("preserveAspectRatio", "xMidYMid meet");
             }
 
             // Find all state elements
             const states = mapContainer.querySelectorAll("path[id], g[id]");
 
+            // Find all text elements (state labels)
+            const stateTexts = mapContainer.querySelectorAll(
+                "tspan[id*='_tspan'], text[id*='_tspan']",
+            );
+
             console.log("Found states:", states.length);
+            console.log("Found state texts:", stateTexts.length);
 
             if (states.length === 0) {
                 console.warn("No state elements found in SVG");
@@ -819,6 +925,21 @@ endblock %} {% block content %}
                 state.style.pointerEvents = "all";
                 state.style.color = "#000000"; // Black text
 
+                // Find corresponding text element for this state
+                const correspondingText = mapContainer.querySelector(
+                    `tspan[id="${stateId}_tspan"], text[id="${stateId}_tspan"]`,
+                );
+                if (correspondingText) {
+                    correspondingText.style.fill =
+                        "var(--brand-primary, #1e40af)"; // Dark primary color
+                    correspondingText.style.transition = "fill 0.3s ease";
+                    correspondingText.style.fontSize = "14px";
+                    correspondingText.style.fontWeight = "600";
+                }
+
+                // Store reference to corresponding text for this specific state
+                state.correspondingText = correspondingText;
+
                 // Add click handler
                 state.addEventListener("click", function (e) {
                     console.log("State clicked:", stateId, "->", fullStateName);
@@ -831,6 +952,12 @@ endblock %} {% block content %}
                         s.style.fill = "#a7daf3"; // Light teal color
                         s.style.strokeWidth = "1";
                         s.style.filter = "none";
+
+                        // Reset corresponding text color for each state
+                        if (s.correspondingText) {
+                            s.correspondingText.style.fill =
+                                "var(--brand-primary, #1e40af)";
+                        }
                     });
 
                     // Highlight clicked state
@@ -839,6 +966,11 @@ endblock %} {% block content %}
                     this.style.strokeWidth = "2";
                     this.style.filter =
                         "drop-shadow(0 4px 12px rgba(6, 95, 70, 0.5))";
+
+                    // Highlight corresponding text for clicked state
+                    if (this.correspondingText) {
+                        this.correspondingText.style.fill = "#ffffff";
+                    }
 
                     // Navigate to state page
                     loadState(fullStateName);
@@ -851,6 +983,12 @@ endblock %} {% block content %}
                         this.style.filter =
                             "drop-shadow(0 4px 8px rgba(13, 148, 136, 0.4))";
                         this.style.strokeWidth = "2";
+
+                        // Change text color to white on hover for THIS specific state only
+                        if (this.correspondingText) {
+                            this.correspondingText.style.fill = "#ffffff";
+                        }
+
                         showTooltip(e, fullStateName);
                     }
                 });
@@ -860,12 +998,22 @@ endblock %} {% block content %}
                         this.style.fill = "#a7daf3"; // Return to light teal
                         this.style.strokeWidth = "1";
                         this.style.filter = "none";
+
+                        // Return text color to dark primary for THIS specific state only
+                        if (this.correspondingText) {
+                            this.correspondingText.style.fill =
+                                "var(--brand-primary, #1e40af)";
+                        }
                     }
                     hideTooltip();
                 });
 
                 state.addEventListener("mousemove", function (e) {
                     if (!this.classList.contains("active")) {
+                        // Ensure text stays white while moving cursor over this state
+                        if (this.correspondingText) {
+                            this.correspondingText.style.fill = "#ffffff";
+                        }
                         showTooltip(e, fullStateName);
                     }
                 });
@@ -974,33 +1122,76 @@ endblock %} {% block content %}
 </script>
 
 <style>
+    /* ===== CSS CUSTOM PROPERTIES ===== */
+    :root {
+        --brand-primary: #1e40af;
+        --brand-secondary: #3b82f6;
+        --brand-dark: #1e3a8a;
+        --brand-accent: #06b6d4;
+        --brand-light: #f0f9ff;
+    }
+
+    /* ===== VIEW TOGGLE STYLES ===== */
+    .map-view-active {
+        display: block;
+        opacity: 1;
+        transition: opacity 0.3s ease;
+    }
+
+    .map-view-hidden {
+        display: none;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .list-view-active {
+        display: block;
+        opacity: 1;
+        transition: opacity 0.3s ease;
+    }
+
+    .list-view-hidden {
+        display: none;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
     /* ===== MAP CONTAINER STYLES ===== */
-    .map-container-fixed {
+    .map-container-flexible {
         position: relative;
         width: 100%;
-        height: 900px;
+        min-height: 450px;
+        max-height: 650px;
         overflow: hidden;
         background: #f8f9fa;
         border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .usa-map-container {
         width: 100%;
         height: 100%;
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .usa-map-container svg {
         width: 100%;
-        height: 100%;
+        height: auto;
+        max-height: 650px;
         display: block;
+        transform: scaleX(1.1);
+        transform-origin: center;
     }
 
     .map-fallback {
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 100%;
+        height: 400px;
         background: #f3f4f6;
         color: #6b7280;
     }
@@ -1049,7 +1240,7 @@ endblock %} {% block content %}
         position: absolute;
         backdrop-filter: blur(10px);
         background: rgba(13, 148, 136, 0.85);
-        color: #077fff;
+        color: #ffffff;
         padding: 10px 16px;
         border-radius: 10px;
         font-size: 14px;
@@ -1099,10 +1290,21 @@ endblock %} {% block content %}
         filter: drop-shadow(0 4px 8px rgba(13, 148, 136, 0.4));
     }
 
+    /* ===== LIST VIEW STYLES ===== */
+    .state-list-item {
+        transition: all 0.3s ease;
+    }
+
+    .state-list-item:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
     /* ===== RESPONSIVE DESIGN ===== */
     @media (max-width: 768px) {
-        .map-container-fixed {
-            height: 350px;
+        .map-container-flexible {
+            min-height: 300px;
+            max-height: 400px;
         }
 
         .grid.lg\\:grid-cols-3 {
@@ -1116,8 +1318,9 @@ endblock %} {% block content %}
     }
 
     @media (max-width: 480px) {
-        .map-container-fixed {
-            height: 300px;
+        .map-container-flexible {
+            min-height: 250px;
+            max-height: 350px;
             margin: 0 -1rem;
             border-radius: 0;
         }
@@ -1130,6 +1333,18 @@ endblock %} {% block content %}
         transition: all 0.3s ease;
         stroke: #ffffff;
     }
+
+    /* State text labels styling */
+    .usa-map-container svg tspan,
+    .usa-map-container svg text {
+        transition: fill 0.3s ease;
+        font-weight: 600 !important;
+        font-size: 14px !important;
+        pointer-events: none;
+        fill: var(--brand-primary) !important;
+    }
+
+    /* Individual state text color changes are handled by JavaScript */
 
     .usa-map-container svg path:focus,
     .usa-map-container svg g:focus {
@@ -1182,10 +1397,17 @@ endblock %} {% block content %}
     }
 
     .state-item:hover {
-        background: #a7e0f3;
+        background: #0d9488;
         color: white;
         transform: translateY(-2px);
         box-shadow: 0 4px 8px rgba(13, 148, 136, 0.3);
     }
 </style>
+
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+<link
+    href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+
 {% endblock %}
