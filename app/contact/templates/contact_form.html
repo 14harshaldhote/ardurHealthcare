@@ -1,5 +1,11 @@
-{% extends "base.html" %} {% block title %}Contact Us - Ardur Healthcare{%
-endblock %} {% block content %}
+{% extends "base.html" %} {% block title %}Contact Ardur Healthcare{% endblock
+%} {% block meta %}
+<meta
+    name="description"
+    content="Contact Ardur Healthcare for expert billing and coding services. Get answers, request a demo, or schedule a free RCM consultation today."
+/>
+<link rel="canonical" href="{{ request.url }}" />
+{% endblock %} {% block content %}
 <div class="container mx-auto px-4 py-12">
     <div
         class="bg-white rounded-2xl shadow-2xl overflow-hidden lg:grid lg:grid-cols-2 lg:divide-x lg:divide-gray-200"
@@ -9,19 +15,35 @@ endblock %} {% block content %}
         >
             <div
                 class="absolute inset-0 opacity-20"
-                style="background-image: url('{{ url_for('static', filename='images/abstract-healthcare-bg.png') }}'); background-size: cover; background-position: center;"
+                style="
+                    background: linear-gradient(
+                        135deg,
+                        #f0f9ff 0%,
+                        #e0f2fe 50%,
+                        #dbeafe 100%
+                    );
+                    background-size: cover;
+                    background-position: center;
+                "
             ></div>
             <div class="relative z-10">
                 <h1
                     class="font-montserrat font-extrabold text-4xl md:text-5xl text-brand-dark mb-6 leading-tight"
                 >
-                    Get in Touch with Ardur Healthcare
+                    Connect with Ardur Healthcare
                 </h1>
                 <p class="text-gray-700 mb-10 text-lg leading-relaxed">
-                    We're here to help you navigate your healthcare needs.
-                    Whether you have a question about our comprehensive services
-                    or want to discuss your specific requirements, our dedicated
-                    team is ready to assist you with care and expertise.
+                    Have questions about our billing and coding services? Our
+                    team is ready to help your practice streamline revenue with
+                    confidence.
+                </p>
+                <p class="text-gray-600 mb-10 text-sm leading-relaxed">
+                    By clicking the "Send Message" button, you agree to our
+                    <a
+                        href="{{ url_for('main.privacy_policy') }}"
+                        class="text-brand-primary hover:underline"
+                        >Privacy Policy</a
+                    >.
                 </p>
                 <div class="space-y-6 mb-10">
                     <div class="flex items-center">
@@ -109,13 +131,13 @@ endblock %} {% block content %}
                 {{ form.hidden_tag() }}
                 <div class="relative">
                     {{ form.name.label(class="absolute -top-2 left-3
-                    inline-block text-xs text-gray-700") }} {{
-                    form.name(class="block w-full rounded-lg border-gray-300
-                    shadow-sm py-3 px-4 text-gray-900 placeholder:text-gray-400
-                    focus:ring-2 focus:ring-brand-primary
-                    focus:border-brand-primary sm:text-base transition-all
-                    duration-200 bg-brand-secondary border-black") }} {% if
-                    form.name.errors %}
+                    inline-block text-xs text-gray-700 bg-brand-secondary px-1
+                    z-10") }} {{ form.name(class="block w-full rounded-lg
+                    border-gray-300 shadow-sm py-3 px-4 text-gray-900
+                    placeholder:text-gray-400 focus:ring-2
+                    focus:ring-brand-primary focus:border-brand-primary
+                    sm:text-base transition-all duration-200 bg-brand-secondary
+                    border-black") }} {% if form.name.errors %}
                     <div class="text-red-600 text-sm mt-2">
                         {% for error in form.name.errors %}<span
                             >{{ error }}</span
@@ -126,13 +148,13 @@ endblock %} {% block content %}
 
                 <div class="relative">
                     {{ form.email.label(class="absolute -top-2 left-3
-                    inline-block text-xs text-gray-700") }} {{
-                    form.email(class="block w-full rounded-lg border-gray-300
-                    shadow-sm py-3 px-4 text-gray-900 placeholder:text-gray-400
-                    focus:ring-2 focus:ring-brand-primary
-                    focus:border-brand-primary sm:text-base transition-all
-                    duration-200 bg-brand-secondary border-black") }} {% if
-                    form.email.errors %}
+                    inline-block text-xs text-gray-700 bg-brand-secondary px-1
+                    z-10") }} {{ form.email(class="block w-full rounded-lg
+                    border-gray-300 shadow-sm py-3 px-4 text-gray-900
+                    placeholder:text-gray-400 focus:ring-2
+                    focus:ring-brand-primary focus:border-brand-primary
+                    sm:text-base transition-all duration-200 bg-brand-secondary
+                    border-black") }} {% if form.email.errors %}
                     <div class="text-red-600 text-sm mt-2">
                         {% for error in form.email.errors %}<span
                             >{{ error }}</span
@@ -145,7 +167,7 @@ endblock %} {% block content %}
                     <div class="relative">
                         <label
                             for="phone_country_code"
-                            class="absolute -top-2 left-3 inline-block text-xs text-gray-700"
+                            class="absolute -top-2 left-3 inline-block text-xs text-gray-700 bg-brand-secondary px-1 z-10"
                             >Country Code</label
                         >
                         <select
@@ -167,10 +189,10 @@ endblock %} {% block content %}
                     </div>
                     <div class="relative">
                         {{ form.phone_number.label(class="absolute -top-2 left-3
-                        inline-block text-xs text-gray-700") }} {{
-                        form.phone_number(class="block w-full rounded-lg
-                        border-gray-300 shadow-sm py-3 px-4 text-gray-900
-                        placeholder:text-gray-400 focus:ring-2
+                        inline-block text-xs text-gray-700 bg-brand-secondary
+                        px-1 z-10") }} {{ form.phone_number(class="block w-full
+                        rounded-lg border-gray-300 shadow-sm py-3 px-4
+                        text-gray-900 placeholder:text-gray-400 focus:ring-2
                         focus:ring-brand-primary focus:border-brand-primary
                         sm:text-base transition-all duration-200
                         bg-brand-secondary border-black") }} {% if
@@ -185,14 +207,31 @@ endblock %} {% block content %}
                 </div>
 
                 <div class="relative">
+                    {{ form.practice.label(class="absolute -top-2 left-3
+                    inline-block text-xs text-gray-700 bg-brand-secondary px-1
+                    z-10") }} {{ form.practice(class="block w-full rounded-lg
+                    border-gray-300 shadow-sm py-3 px-4 text-gray-900
+                    placeholder:text-gray-400 focus:ring-2
+                    focus:ring-brand-primary focus:border-brand-primary
+                    sm:text-base transition-all duration-200 bg-brand-secondary
+                    border-black") }} {% if form.practice.errors %}
+                    <div class="text-red-600 text-sm mt-2">
+                        {% for error in form.practice.errors %}<span
+                            >{{ error }}</span
+                        >{% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+
+                <div class="relative">
                     {{ form.state.label(class="absolute -top-2 left-3
-                    inline-block text-xs text-gray-700") }} {{
-                    form.state(class="block w-full rounded-lg border-gray-300
-                    shadow-sm py-3 px-4 text-gray-900 placeholder:text-gray-400
-                    focus:ring-2 focus:ring-brand-primary
-                    focus:border-brand-primary sm:text-base transition-all
-                    duration-200 bg-brand-secondary border-black") }} {% if
-                    form.state.errors %}
+                    inline-block text-xs text-gray-700 bg-brand-secondary px-1
+                    z-10") }} {{ form.state(class="block w-full rounded-lg
+                    border-gray-300 shadow-sm py-3 px-4 text-gray-900
+                    placeholder:text-gray-400 focus:ring-2
+                    focus:ring-brand-primary focus:border-brand-primary
+                    sm:text-base transition-all duration-200 bg-brand-secondary
+                    border-black") }} {% if form.state.errors %}
                     <div class="text-red-600 text-sm mt-2">
                         {% for error in form.state.errors %}<span
                             >{{ error }}</span
@@ -202,14 +241,45 @@ endblock %} {% block content %}
                 </div>
 
                 <div class="relative">
-                    {{ form.specialties.label(class="absolute -top-2 left-3
-                    inline-block text-xs text-gray-700") }} {{
-                    form.specialties(class="block w-full rounded-lg
-                    border-gray-300 shadow-sm py-3 px-4 text-gray-900
-                    placeholder:text-gray-400 focus:ring-2
-                    focus:ring-brand-primary focus:border-brand-primary
-                    sm:text-base transition-all duration-200 bg-brand-secondary
-                    border-black") }} {% if form.specialties.errors %}
+                    {{ form.service_type.label(class="absolute -top-2 left-3
+                    inline-block text-xs text-gray-700 bg-brand-secondary px-1
+                    z-10") }} {{ form.service_type(class="block w-full
+                    rounded-lg border-gray-300 shadow-sm py-3 px-4 text-gray-900
+                    focus:ring-2 focus:ring-brand-primary
+                    focus:border-brand-primary sm:text-base transition-all
+                    duration-200 bg-brand-secondary border-black") }} {% if
+                    form.service_type.errors %}
+                    <div class="text-red-600 text-sm mt-2">
+                        {% for error in form.service_type.errors %}<span
+                            >{{ error }}</span
+                        >{% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+
+                <div class="relative">
+                    <label
+                        for="specialties-search"
+                        class="absolute -top-2 left-3 inline-block text-xs text-gray-700 bg-brand-secondary px-1 z-10"
+                        >Specialties</label
+                    >
+                    <input
+                        type="text"
+                        id="specialties-search"
+                        name="specialties"
+                        value="{{ form.specialties.data or '' }}"
+                        placeholder="Type to search specialties..."
+                        class="block w-full rounded-lg border-gray-300 shadow-sm py-3 px-4 text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-brand-primary focus:border-brand-primary sm:text-base transition-all duration-200 bg-brand-secondary border-black"
+                        autocomplete="off"
+                        required
+                    />
+                    <div
+                        id="specialties-dropdown"
+                        class="absolute z-20 w-full bg-white border border-gray-300 rounded-lg shadow-lg mt-1 max-h-60 overflow-y-auto hidden"
+                    >
+                        <!-- Dynamic specialty options will be populated here -->
+                    </div>
+                    {% if form.specialties.errors %}
                     <div class="text-red-600 text-sm mt-2">
                         {% for error in form.specialties.errors %}
                         <span>{{ error }}</span>
@@ -220,9 +290,9 @@ endblock %} {% block content %}
 
                 <div class="relative">
                     {{ form.monthly_insurance.label(class="absolute -top-2
-                    left-3 inline-block text-xs text-gray-700") }} {{
-                    form.monthly_insurance(class="block w-full rounded-lg
-                    border-gray-300 shadow-sm py-3 px-4 text-gray-900
+                    left-3 inline-block text-xs text-gray-700 bg-brand-secondary
+                    px-1 z-10") }} {{ form.monthly_insurance(class="block w-full
+                    rounded-lg border-gray-300 shadow-sm py-3 px-4 text-gray-900
                     placeholder:text-gray-400 focus:ring-2
                     focus:ring-brand-primary focus:border-brand-primary
                     sm:text-base transition-all duration-200 bg-brand-secondary
@@ -238,7 +308,8 @@ endblock %} {% block content %}
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div class="relative">
                         {{ form.preferred_appointment_date.label(class="absolute
-                        -top-2 left-3 inline-block text-xs text-gray-700") }} {{
+                        -top-2 left-3 inline-block text-xs text-gray-700
+                        bg-brand-secondary px-1 z-10") }} {{
                         form.preferred_appointment_date(type="date",
                         class="block w-full rounded-lg border-gray-300 shadow-sm
                         py-3 px-4 text-gray-900 focus:ring-2
@@ -257,7 +328,8 @@ endblock %} {% block content %}
 
                     <div class="relative">
                         {{ form.preferred_time_slot.label(class="absolute -top-2
-                        left-3 inline-block text-xs text-gray-700") }} {{
+                        left-3 inline-block text-xs text-gray-700
+                        bg-brand-secondary px-1 z-10") }} {{
                         form.preferred_time_slot(class="block w-full rounded-lg
                         border-gray-300 shadow-sm py-3 px-4 text-gray-900
                         focus:ring-2 focus:ring-brand-primary
@@ -274,13 +346,13 @@ endblock %} {% block content %}
 
                 <div class="relative">
                     {{ form.subject.label(class="absolute -top-2 left-3
-                    inline-block text-xs text-gray-700") }} {{
-                    form.subject(class="block w-full rounded-lg border-gray-300
-                    shadow-sm py-3 px-4 text-gray-900 placeholder:text-gray-400
-                    focus:ring-2 focus:ring-brand-primary
-                    focus:border-brand-primary sm:text-base transition-all
-                    duration-200 bg-brand-secondary border-black") }} {% if
-                    form.subject.errors %}
+                    inline-block text-xs text-gray-700 bg-brand-secondary px-1
+                    z-10") }} {{ form.subject(class="block w-full rounded-lg
+                    border-gray-300 shadow-sm py-3 px-4 text-gray-900
+                    placeholder:text-gray-400 focus:ring-2
+                    focus:ring-brand-primary focus:border-brand-primary
+                    sm:text-base transition-all duration-200 bg-brand-secondary
+                    border-black") }} {% if form.subject.errors %}
                     <div class="text-red-600 text-sm mt-2">
                         {% for error in form.subject.errors %}<span
                             >{{ error }}</span
@@ -291,9 +363,9 @@ endblock %} {% block content %}
 
                 <div class="relative">
                     {{ form.message.label(class="absolute -top-2 left-3
-                    inline-block text-xs text-gray-700") }} {{
-                    form.message(rows=6, class="block w-full rounded-lg
-                    border-gray-300 shadow-sm py-3 px-4 text-gray-900
+                    inline-block text-xs text-gray-700 bg-brand-secondary px-1
+                    z-10") }} {{ form.message(rows=6, class="block w-full
+                    rounded-lg border-gray-300 shadow-sm py-3 px-4 text-gray-900
                     placeholder:text-gray-400 focus:ring-2
                     focus:ring-brand-primary focus:border-brand-primary
                     sm:text-base transition-all duration-200 bg-brand-secondary
@@ -302,6 +374,31 @@ endblock %} {% block content %}
                         {% for error in form.message.errors %}<span
                             >{{ error }}</span
                         >{% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+
+                <div class="flex items-center">
+                    {{ form.privacy_policy_agreement(class="mr-3 rounded
+                    border-gray-300 text-brand-primary
+                    focus:ring-brand-primary") }}
+                    <label
+                        for="privacy_policy_agreement"
+                        class="text-sm text-gray-700"
+                    >
+                        I agree to the
+                        <a
+                            href="{{ url_for('main.privacy_policy') }}"
+                            class="text-brand-primary hover:underline"
+                            target="_blank"
+                            >Privacy Policy</a
+                        >
+                    </label>
+                    {% if form.privacy_policy_agreement.errors %}
+                    <div class="text-red-600 text-sm mt-2 ml-6">
+                        {% for error in form.privacy_policy_agreement.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
                     </div>
                     {% endif %}
                 </div>
@@ -318,4 +415,187 @@ endblock %} {% block content %}
         </div>
     </div>
 </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const specialtiesInput = document.getElementById("specialties-search");
+        const dropdown = document.getElementById("specialties-dropdown");
+        let specialtiesList = [];
+        let selectedSpecialties = [];
+
+        // Load initial specialties data
+        fetch("/api/specialties")
+            .then((response) => response.json())
+            .then((data) => {
+                specialtiesList = data;
+            })
+            .catch((error) =>
+                console.error("Error loading specialties:", error),
+            );
+
+        // Initialize with existing value if any
+        if (specialtiesInput.value) {
+            selectedSpecialties = specialtiesInput.value
+                .split(",")
+                .map((s) => s.trim())
+                .filter((s) => s);
+            updateInputDisplay();
+        }
+
+        specialtiesInput.addEventListener("input", function () {
+            const query = this.value.toLowerCase();
+
+            if (query.length < 1) {
+                hideDropdown();
+                return;
+            }
+
+            // Filter specialties based on query
+            const filtered = specialtiesList
+                .filter(
+                    (specialty) =>
+                        specialty.toLowerCase().includes(query) &&
+                        !selectedSpecialties.includes(specialty),
+                )
+                .slice(0, 10);
+
+            showDropdown(filtered, query);
+        });
+
+        specialtiesInput.addEventListener("keydown", function (e) {
+            if (e.key === "Enter") {
+                e.preventDefault();
+                const query = this.value.trim();
+                if (query && !selectedSpecialties.includes(query)) {
+                    selectedSpecialties.push(query);
+                    updateInputDisplay();
+                    this.value = "";
+                    hideDropdown();
+                }
+            } else if (
+                e.key === "Backspace" &&
+                this.value === "" &&
+                selectedSpecialties.length > 0
+            ) {
+                selectedSpecialties.pop();
+                updateInputDisplay();
+            }
+        });
+
+        specialtiesInput.addEventListener("blur", function () {
+            // Delay hiding to allow clicking on dropdown items
+            setTimeout(() => hideDropdown(), 150);
+        });
+
+        function showDropdown(items, query) {
+            dropdown.innerHTML = "";
+
+            // Add filtered items
+            items.forEach((item) => {
+                const div = document.createElement("div");
+                div.className =
+                    "px-4 py-2 hover:bg-gray-100 cursor-pointer border-b border-gray-100";
+                div.textContent = item;
+                div.addEventListener("click", function () {
+                    if (!selectedSpecialties.includes(item)) {
+                        selectedSpecialties.push(item);
+                        updateInputDisplay();
+                        specialtiesInput.value = "";
+                        hideDropdown();
+                    }
+                });
+                dropdown.appendChild(div);
+            });
+
+            // Add option to add custom specialty if query doesn't match any existing
+            if (
+                query &&
+                !items.some(
+                    (item) => item.toLowerCase() === query.toLowerCase(),
+                ) &&
+                !selectedSpecialties.includes(query)
+            ) {
+                const customDiv = document.createElement("div");
+                customDiv.className =
+                    "px-4 py-2 hover:bg-blue-50 cursor-pointer border-b border-gray-100 text-blue-600 font-medium";
+                customDiv.innerHTML = `<i class="ri-add-line mr-2"></i>Add "${query}"`;
+                customDiv.addEventListener("click", function () {
+                    selectedSpecialties.push(query);
+                    updateInputDisplay();
+                    specialtiesInput.value = "";
+                    hideDropdown();
+                });
+                dropdown.appendChild(customDiv);
+            }
+
+            dropdown.classList.remove("hidden");
+        }
+
+        function hideDropdown() {
+            dropdown.classList.add("hidden");
+        }
+
+        function updateInputDisplay() {
+            // Create a hidden input with the actual form value
+            const existingHidden = document.querySelector(
+                'input[name="specialties"][type="hidden"]',
+            );
+            if (existingHidden) {
+                existingHidden.remove();
+            }
+
+            const hiddenInput = document.createElement("input");
+            hiddenInput.type = "hidden";
+            hiddenInput.name = "specialties";
+            hiddenInput.value = selectedSpecialties.join(", ");
+            specialtiesInput.parentNode.appendChild(hiddenInput);
+
+            // Update placeholder
+            if (selectedSpecialties.length > 0) {
+                specialtiesInput.placeholder = `${selectedSpecialties.length} specialties selected. Type to add more...`;
+            } else {
+                specialtiesInput.placeholder = "Type to search specialties...";
+            }
+
+            // Show selected specialties as tags below the input
+            let tagsContainer = document.getElementById("specialty-tags");
+            if (!tagsContainer) {
+                tagsContainer = document.createElement("div");
+                tagsContainer.id = "specialty-tags";
+                tagsContainer.className = "flex flex-wrap gap-2 mt-2";
+                specialtiesInput.parentNode.appendChild(tagsContainer);
+            }
+
+            tagsContainer.innerHTML = "";
+            selectedSpecialties.forEach((specialty, index) => {
+                const tag = document.createElement("span");
+                tag.className =
+                    "inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-brand-primary text-white";
+                tag.innerHTML = `
+                ${specialty}
+                <button type="button" class="ml-1 text-white hover:text-gray-200" onclick="removeSpecialty(${index})">
+                    <i class="ri-close-line"></i>
+                </button>
+            `;
+                tagsContainer.appendChild(tag);
+            });
+        }
+
+        // Global function to remove specialty
+        window.removeSpecialty = function (index) {
+            selectedSpecialties.splice(index, 1);
+            updateInputDisplay();
+        };
+
+        // Click outside to close dropdown
+        document.addEventListener("click", function (e) {
+            if (
+                !specialtiesInput.contains(e.target) &&
+                !dropdown.contains(e.target)
+            ) {
+                hideDropdown();
+            }
+        });
+    });
+</script>
 {% endblock %}

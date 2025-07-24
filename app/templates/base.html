@@ -5,6 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{% block title %}Ardur Healthcare{% endblock %}</title>
 
+        {% block meta %}
+        <meta
+            name="description"
+            content="Expert medical billing and coding services that help healthcare providers submit clean claims, reduce denials, and improve collections."
+        />
+        {% endblock %}
+
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -334,7 +341,7 @@
                                     Revenue Cycle Management
                                 </h3>
                                 <a
-                                    href="{{ url_for('services.service_detail', service_name='eligibility_verification') }}"
+                                    href="{{ url_for('services.service_detail', service_name='eligibility-and-benefits-verification') }}"
                                     class="flex items-center px-3 py-2 text-sm rounded-md hover:bg-brand-secondary hover:text-brand-primary transition-colors duration-200"
                                 >
                                     <i
@@ -397,7 +404,7 @@
                                     Payment Posting
                                 </a>
                                 <a
-                                    href="{{ url_for('services.service_detail', service_name='denial_management') }}"
+                                    href="{{ url_for('services.service_detail', service_name='denial-management-services') }}"
                                     class="flex items-center px-3 py-2 text-sm rounded-md hover:bg-brand-secondary hover:text-brand-primary transition-colors duration-200"
                                 >
                                     <i
@@ -419,7 +426,7 @@
 
                         <div class="relative desktop-dropdown">
                             <a
-                                href="{{ url_for('main.resources') }}"
+                                href="{{ url_for('resources.resources_index') }}"
                                 class="nav-link {% if request.endpoint and request.endpoint.startswith('resources.') %}active{% endif %} flex items-center"
                             >
                                 Resources
@@ -443,22 +450,22 @@
                                     Blog
                                 </a>
                                 <a
-                                    href="{{ url_for('main.resources') }}#faq"
+                                    href="{{ url_for('resources.case_studies') }}"
+                                    class="flex items-center px-3 py-2 text-sm rounded-md hover:bg-brand-secondary hover:text-brand-primary transition-colors duration-200"
+                                >
+                                    <i
+                                        class="ri-file-text-line mr-3 text-brand-primary"
+                                    ></i>
+                                    Case Studies
+                                </a>
+                                <a
+                                    href="{{ url_for('resources.faqs') }}"
                                     class="flex items-center px-3 py-2 text-sm rounded-md hover:bg-brand-secondary hover:text-brand-primary transition-colors duration-200"
                                 >
                                     <i
                                         class="ri-question-answer-line mr-3 text-brand-primary"
                                     ></i>
                                     FAQs
-                                </a>
-                                <a
-                                    href="{{ url_for('main.resources') }}#glossary"
-                                    class="flex items-center px-3 py-2 text-sm rounded-md hover:bg-brand-secondary hover:text-brand-primary transition-colors duration-200"
-                                >
-                                    <i
-                                        class="ri-book-2-line mr-3 text-brand-primary"
-                                    ></i>
-                                    Glossary
                                 </a>
                             </div>
                         </div>
@@ -588,7 +595,7 @@
                             :class="{'mobile-dropdown-menu-open': openMobileDropdown === 'services'}"
                         >
                             <a
-                                href="{{ url_for('services.service_detail', service_name='eligibility_verification') }}"
+                                href="{{ url_for('services.service_detail', service_name='eligibility-and-benefits-verification') }}"
                                 class="mobile-nav-link text-sm text-gray-600 hover:text-brand-primary"
                                 >Eligibility Verification</a
                             >
@@ -623,7 +630,7 @@
                                 >Payment Posting</a
                             >
                             <a
-                                href="{{ url_for('services.service_detail', service_name='denial_management') }}"
+                                href="{{ url_for('services.service_detail', service_name='denial-management-services') }}"
                                 class="mobile-nav-link text-sm text-gray-600 hover:text-brand-primary"
                                 >Denial Management</a
                             >
@@ -636,11 +643,17 @@
                     </div>
 
                     <div>
-                        <button
-                            @click="openMobileDropdown = (openMobileDropdown === 'resources' ? null : 'resources')"
-                            class="w-full flex justify-between items-center mobile-nav-link text-gray-700 hover:text-brand-primary mobile-dropdown-toggle {% if request.endpoint and request.endpoint.startswith('resources.') %}bg-brand-secondary text-brand-primary font-semibold{% endif %}"
+                        <a
+                            href="{{ url_for('resources.resources_index') }}"
+                            class="w-full flex justify-between items-center mobile-nav-link text-gray-700 hover:text-brand-primary {% if request.endpoint and request.endpoint.startswith('resources.') %}bg-brand-secondary text-brand-primary font-semibold{% endif %}"
                         >
                             <span>Resources</span>
+                        </a>
+                        <button
+                            @click="openMobileDropdown = (openMobileDropdown === 'resources' ? null : 'resources')"
+                            class="w-full flex justify-between items-center mobile-nav-link text-gray-700 hover:text-brand-primary mobile-dropdown-toggle"
+                        >
+                            <span>Show Sections</span>
                             <i
                                 class="ri-arrow-down-s-line ml-1 transform transition-transform duration-300"
                                 :class="{'rotate-180': openMobileDropdown === 'resources'}"
@@ -657,14 +670,14 @@
                                 >Blog</a
                             >
                             <a
-                                href="{{ url_for('main.resources') }}#faq"
+                                href="{{ url_for('resources.case_studies') }}"
                                 class="mobile-nav-link text-sm text-gray-600 hover:text-brand-primary"
-                                >FAQs</a
+                                >Case Studies</a
                             >
                             <a
-                                href="{{ url_for('main.resources') }}#glossary"
+                                href="{{ url_for('resources.faqs') }}"
                                 class="mobile-nav-link text-sm text-gray-600 hover:text-brand-primary"
-                                >Glossary</a
+                                >FAQs</a
                             >
                         </div>
                     </div>
@@ -779,10 +792,18 @@
                             </li>
                             <li>
                                 <a
-                                    href="{{ url_for('main.resources') }}"
+                                    href="{{ url_for('resources.resources_index') }}"
                                     class="hover:text-white transition duration-300"
                                 >
                                     Resources
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="{{ url_for('main.privacy_policy') }}"
+                                    class="hover:text-white transition duration-300"
+                                >
+                                    Privacy Policy
                                 </a>
                             </li>
                         </ul>
@@ -882,7 +903,14 @@
 
             <div class="bg-black/20 py-4">
                 <div class="container text-center text-gray-400 text-sm">
-                    <p>&copy; 2025 Ardur Healthcare. All rights reserved.</p>
+                    <p>
+                        &copy; 2025 Ardur Healthcare. All rights reserved. |
+                        <a
+                            href="{{ url_for('main.privacy_policy') }}"
+                            class="hover:text-white transition duration-300"
+                            >Privacy Policy</a
+                        >
+                    </p>
                 </div>
             </div>
         </footer>

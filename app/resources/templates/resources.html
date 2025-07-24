@@ -1,0 +1,356 @@
+{% extends "base.html" %} {% block title %}Resources | Ardur Healthcare{%
+endblock %} {% block meta_description %}Explore Ardur Healthcare's comprehensive
+resource center including medical billing blog, case studies, FAQs, and industry
+insights to help optimize your practice.{% endblock %} {% block content %}
+<section
+    class="relative bg-gradient-to-br from-brand-primary via-brand-secondary to-brand-dark overflow-hidden"
+>
+    <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+
+    <!-- Decorative Elements -->
+    <div
+        class="absolute top-10 left-10 w-20 h-20 bg-white bg-opacity-10 rounded-full blur-xl"
+    ></div>
+    <div
+        class="absolute bottom-20 right-20 w-32 h-32 bg-white bg-opacity-5 rounded-full blur-2xl"
+    ></div>
+    <div
+        class="absolute top-1/2 left-1/4 w-16 h-16 bg-white bg-opacity-5 rounded-full blur-lg"
+    ></div>
+
+    <div class="relative z-10 container mx-auto px-6 py-20 md:py-28">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="mb-8" data-aos="fade-down">
+                <div
+                    class="inline-flex items-center px-4 py-2 bg-black/30 backdrop-blur-sm rounded-full mb-6"
+                >
+                    <i class="ri-book-open-line text-brand-accent mr-2"></i>
+                    <span class="text-brand-accent font-light"
+                        >Knowledge Center</span
+                    >
+                </div>
+                <h1
+                    class="text-4xl md:text-6xl font-thin font-montserrat text-white mb-4 drop-shadow-lg"
+                >
+                    Your
+                    <span class="text-brand-accent drop-shadow-lg"
+                        >Resource</span
+                    >
+                    Center
+                </h1>
+                <p
+                    class="text-lg md:text-xl text-white mb-8 leading-relaxed max-w-4xl mx-auto drop-shadow-md"
+                >
+                    Access our comprehensive collection of medical billing
+                    resources, insights, and tools designed to help healthcare
+                    providers optimize their revenue cycle management.
+                </p>
+                <div
+                    class="flex flex-col sm:flex-row gap-4 justify-center"
+                    data-aos="fade-up"
+                    data-aos-delay="300"
+                >
+                    <a
+                        href="#resources"
+                        class="bg-brand-accent text-white font-montserrat font-light px-8 py-4 rounded-full hover:scale-105 hover:bg-white hover:text-brand-accent hover:shadow-xl transition duration-300 inline-flex items-center justify-center"
+                    >
+                        <i class="ri-arrow-down-line mr-2"></i> Explore
+                        Resources
+                    </a>
+                    <a
+                        href="{{ url_for('contact.contact_form') }}"
+                        class="bg-black/30 backdrop-blur-sm text-white border-2 border-white/50 font-montserrat font-light px-8 py-4 rounded-full hover:bg-white hover:text-brand-primary transition duration-300 inline-flex items-center justify-center"
+                    >
+                        <i class="ri-phone-line mr-2"></i> Get Expert Help
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Blog Section -->
+        <div
+            class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-8 border border-gray-100"
+        >
+            <div class="flex items-center mb-6">
+                <div
+                    class="w-12 h-12 bg-brand-primary rounded-lg flex items-center justify-center mr-4"
+                >
+                    <i class="ri-article-line text-white text-xl"></i>
+                </div>
+                <h2 class="text-2xl font-bold font-montserrat text-brand-dark">
+                    Blog
+                </h2>
+            </div>
+            <p class="text-gray-600 mb-6">
+                Stay updated with the latest medical billing insights, coding
+                updates, industry trends, and best practices from our expert
+                team.
+            </p>
+            <div class="space-y-3 mb-6">
+                <div class="flex items-center text-sm text-gray-500">
+                    <i class="ri-check-line text-brand-primary mr-2"></i>
+                    <span>Expert tips and strategies</span>
+                </div>
+                <div class="flex items-center text-sm text-gray-500">
+                    <i class="ri-check-line text-brand-primary mr-2"></i>
+                    <span>Coding updates and compliance</span>
+                </div>
+                <div class="flex items-center text-sm text-gray-500">
+                    <i class="ri-check-line text-brand-primary mr-2"></i>
+                    <span>Industry insights</span>
+                </div>
+            </div>
+            <a
+                href="{{ url_for('resources.blog') }}"
+                class="inline-flex items-center px-6 py-3 bg-brand-primary text-white font-medium rounded-lg hover:bg-brand-accent transition-colors duration-300"
+            >
+                Explore Blog
+                <i class="ri-arrow-right-line ml-2"></i>
+            </a>
+        </div>
+
+        <!-- Case Studies Section -->
+        <div
+            class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-8 border border-gray-100"
+        >
+            <div class="flex items-center mb-6">
+                <div
+                    class="w-12 h-12 bg-brand-primary rounded-lg flex items-center justify-center mr-4"
+                >
+                    <i class="ri-file-text-line text-white text-xl"></i>
+                </div>
+                <h2 class="text-2xl font-bold font-montserrat text-brand-dark">
+                    Case Studies
+                </h2>
+            </div>
+            <p class="text-gray-600 mb-6">
+                Discover real-world success stories showing how we've helped
+                healthcare providers reduce denials, increase collections, and
+                streamline operations.
+            </p>
+            <div class="space-y-3 mb-6">
+                <div class="flex items-center text-sm text-gray-500">
+                    <i class="ri-check-line text-brand-primary mr-2"></i>
+                    <span>Real client success stories</span>
+                </div>
+                <div class="flex items-center text-sm text-gray-500">
+                    <i class="ri-check-line text-brand-primary mr-2"></i>
+                    <span>Measurable results</span>
+                </div>
+                <div class="flex items-center text-sm text-gray-500">
+                    <i class="ri-check-line text-brand-primary mr-2"></i>
+                    <span>Process improvements</span>
+                </div>
+            </div>
+            <a
+                href="{{ url_for('resources.case_studies') }}"
+                class="inline-flex items-center px-6 py-3 bg-brand-primary text-white font-medium rounded-lg hover:bg-brand-accent transition-colors duration-300"
+            >
+                View Case Studies
+                <i class="ri-arrow-right-line ml-2"></i>
+            </a>
+        </div>
+
+        <!-- FAQs Section -->
+        <div
+            class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-8 border border-gray-100"
+        >
+            <div class="flex items-center mb-6">
+                <div
+                    class="w-12 h-12 bg-brand-primary rounded-lg flex items-center justify-center mr-4"
+                >
+                    <i class="ri-question-answer-line text-white text-xl"></i>
+                </div>
+                <h2 class="text-2xl font-bold font-montserrat text-brand-dark">
+                    FAQs
+                </h2>
+            </div>
+            <p class="text-gray-600 mb-6">
+                Find answers to common questions about medical billing, coding,
+                credentialing, compliance, and our services.
+            </p>
+            <div class="space-y-3 mb-6">
+                <div class="flex items-center text-sm text-gray-500">
+                    <i class="ri-check-line text-brand-primary mr-2"></i>
+                    <span>Comprehensive Q&A</span>
+                </div>
+                <div class="flex items-center text-sm text-gray-500">
+                    <i class="ri-check-line text-brand-primary mr-2"></i>
+                    <span>Expert answers</span>
+                </div>
+                <div class="flex items-center text-sm text-gray-500">
+                    <i class="ri-check-line text-brand-primary mr-2"></i>
+                    <span>Regular updates</span>
+                </div>
+            </div>
+            <a
+                href="{{ url_for('resources.faqs') }}"
+                class="inline-flex items-center px-6 py-3 bg-brand-primary text-white font-medium rounded-lg hover:bg-brand-accent transition-colors duration-300"
+            >
+                Browse FAQs
+                <i class="ri-arrow-right-line ml-2"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Featured Content Section -->
+<div class="bg-gray-50 py-16">
+    <div class="container">
+        <div class="text-center mb-12">
+            <h2
+                class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark mb-4"
+            >
+                Featured Resources
+            </h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                Quick access to our most popular and valuable resources for
+                healthcare providers.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Featured Blog Posts -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3
+                    class="text-xl font-bold font-montserrat text-brand-dark mb-4"
+                >
+                    Latest Blog Posts
+                </h3>
+                <div class="space-y-4">
+                    <a
+                        href="{{ url_for('resources.what_is_medical_billing') }}"
+                        class="block p-4 rounded-lg border border-gray-200 hover:border-brand-primary hover:bg-brand-secondary transition-colors duration-300"
+                    >
+                        <h4 class="font-semibold text-brand-dark mb-2">
+                            What Is Medical Billing?
+                        </h4>
+                        <p class="text-sm text-gray-600">
+                            A complete beginner's guide to understanding medical
+                            billing processes and importance.
+                        </p>
+                    </a>
+                    <a
+                        href="{{ url_for('resources.medical_coding_vs_billing') }}"
+                        class="block p-4 rounded-lg border border-gray-200 hover:border-brand-primary hover:bg-brand-secondary transition-colors duration-300"
+                    >
+                        <h4 class="font-semibold text-brand-dark mb-2">
+                            Medical Coding vs Billing
+                        </h4>
+                        <p class="text-sm text-gray-600">
+                            Understanding the key differences and how they work
+                            together in healthcare.
+                        </p>
+                    </a>
+                    <a
+                        href="{{ url_for('resources.medical_billing_denial_reasons') }}"
+                        class="block p-4 rounded-lg border border-gray-200 hover:border-brand-primary hover:bg-brand-secondary transition-colors duration-300"
+                    >
+                        <h4 class="font-semibold text-brand-dark mb-2">
+                            Medical Billing Denial Reasons
+                        </h4>
+                        <p class="text-sm text-gray-600">
+                            Common denial reasons and strategies for effective
+                            revenue cycle management.
+                        </p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3
+                    class="text-xl font-bold font-montserrat text-brand-dark mb-4"
+                >
+                    Quick Access
+                </h3>
+                <div class="space-y-4">
+                    <a
+                        href="{{ url_for('contact.contact_form') }}"
+                        class="flex items-center p-4 rounded-lg border border-gray-200 hover:border-brand-primary hover:bg-brand-secondary transition-colors duration-300"
+                    >
+                        <i
+                            class="ri-phone-line text-brand-primary mr-3 text-xl"
+                        ></i>
+                        <div>
+                            <h4 class="font-semibold text-brand-dark">
+                                Get Expert Consultation
+                            </h4>
+                            <p class="text-sm text-gray-600">
+                                Speak with our billing experts about your needs
+                            </p>
+                        </div>
+                    </a>
+                    <a
+                        href="{{ url_for('services.index') }}"
+                        class="flex items-center p-4 rounded-lg border border-gray-200 hover:border-brand-primary hover:bg-brand-secondary transition-colors duration-300"
+                    >
+                        <i
+                            class="ri-service-line text-brand-primary mr-3 text-xl"
+                        ></i>
+                        <div>
+                            <h4 class="font-semibold text-brand-dark">
+                                Explore Our Services
+                            </h4>
+                            <p class="text-sm text-gray-600">
+                                Complete revenue cycle management solutions
+                            </p>
+                        </div>
+                    </a>
+                    <a
+                        href="{{ url_for('specialities.specialities_main') }}"
+                        class="flex items-center p-4 rounded-lg border border-gray-200 hover:border-brand-primary hover:bg-brand-secondary transition-colors duration-300"
+                    >
+                        <i
+                            class="ri-heart-pulse-line text-brand-primary mr-3 text-xl"
+                        ></i>
+                        <div>
+                            <h4 class="font-semibold text-brand-dark">
+                                Medical Specialties
+                            </h4>
+                            <p class="text-sm text-gray-600">
+                                Specialized billing for various medical
+                                practices
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CTA Section -->
+<div class="bg-brand-secondary py-16">
+    <div class="container text-center">
+        <h2
+            class="text-3xl md:text-4xl font-thin font-montserrat text-brand-dark mb-6"
+        >
+            Ready to Optimize Your Revenue Cycle?
+        </h2>
+        <p class="text-lg text-brand-dark/80 mb-8 max-w-2xl mx-auto">
+            Let our experts help you streamline your medical billing processes
+            and maximize your practice's revenue potential.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+                href="{{ url_for('contact.contact_form') }}"
+                class="px-8 py-4 bg-brand-primary text-white font-semibold rounded-lg hover:bg-brand-accent transition-colors duration-300"
+            >
+                Get Started Today
+            </a>
+            <a
+                href="tel:+1 (702) 809-2713
+"
+                class="px-8 py-4 border-2 border-brand-primary font-brand-dark font-thin rounded-lg hover:bg-white hover:text-brand-dark transition-colors duration-300"
+            >
+                Call (702) 809-2713
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

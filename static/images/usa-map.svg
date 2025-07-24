@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="1000" height="600">
+  <defs>
+    <style>
+      .state { fill: #3b82f6; stroke: #1e40af; stroke-width: 1; opacity: 0.8; }
+      .state:hover { fill: #1d4ed8; opacity: 1; }
+      .water { fill: #e0f2fe; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="600" fill="#f8fafc"/>
+
+  <!-- Continental United States (simplified outline) -->
+  <path class="state" d="M 200 150
+                        L 180 200
+                        L 160 250
+                        L 140 300
+                        L 150 350
+                        L 180 380
+                        L 220 400
+                        L 280 410
+                        L 350 420
+                        L 450 415
+                        L 550 410
+                        L 650 405
+                        L 750 400
+                        L 820 380
+                        L 870 350
+                        L 880 300
+                        L 870 250
+                        L 850 200
+                        L 820 150
+                        L 750 120
+                        L 650 110
+                        L 550 105
+                        L 450 108
+                        L 350 115
+                        L 280 125
+                        L 220 140
+                        Z"/>
+
+  <!-- Florida -->
+  <path class="state" d="M 750 400 L 780 450 L 790 480 L 770 490 L 750 470 Z"/>
+
+  <!-- California -->
+  <path class="state" d="M 140 300 L 120 250 L 110 200 L 130 150 L 160 180 L 180 220 L 170 280 Z"/>
+
+  <!-- Texas -->
+  <path class="state" d="M 350 420 L 320 450 L 340 480 L 380 490 L 420 480 L 450 460 L 450 430 Z"/>
+
+  <!-- Alaska (simplified, positioned in bottom left) -->
+  <path class="state" d="M 80 450 L 60 480 L 70 510 L 100 520 L 130 510 L 140 480 L 120 450 Z"/>
+
+  <!-- Hawaii (simplified dots, positioned in bottom left) -->
+  <circle class="state" cx="200" cy="520" r="8"/>
+  <circle class="state" cx="220" cy="525" r="6"/>
+  <circle class="state" cx="240" cy="530" r="5"/>
+  <circle class="state" cx="255" cy="532" r="4"/>
+
+  <!-- Great Lakes (simplified) -->
+  <ellipse class="water" cx="600" cy="180" rx="40" ry="20"/>
+  <ellipse class="water" cx="650" cy="200" rx="25" ry="15"/>
+  <ellipse class="water" cx="580" cy="220" rx="30" ry="18"/>
+
+  <!-- Labels -->
+  <text x="500" y="300" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1e40af">UNITED STATES</text>
+  <text x="500" y="330" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#64748b">Nationwide Healthcare Billing Services</text>
+
+  <!-- Legend -->
+  <g transform="translate(50, 50)">
+    <rect x="0" y="0" width="200" height="80" fill="white" stroke="#e2e8f0" stroke-width="1" rx="5"/>
+    <text x="10" y="20" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1e40af">Coverage Areas</text>
+    <circle cx="20" cy="40" r="5" class="state"/>
+    <text x="35" y="45" font-family="Arial, sans-serif" font-size="12" fill="#64748b">All 50 States</text>
+    <circle cx="20" cy="60" r="5" fill="#10b981"/>
+    <text x="35" y="65" font-family="Arial, sans-serif" font-size="12" fill="#64748b">Active Clients</text>
+  </g>
+</svg>

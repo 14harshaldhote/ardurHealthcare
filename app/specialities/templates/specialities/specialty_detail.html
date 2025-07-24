@@ -1,8 +1,7 @@
-{% extends "base.html" %} {% block title %}{{ specialty.specialty }} Medical
-Billing Services | Ardur Healthcare{% endblock %} {% block meta %}
+{% extends "base.html" %} {% block title %}{{ specialty.meta_title or (specialty.specialty + ' Medical Billing Services | Ardur Healthcare') }}{% endblock %} {% block meta %}
 <meta
     name="description"
-    content="{{ specialty.description }} Professional medical billing services for {{ specialty.specialty.lower() }} providers."
+    content="{{ specialty.meta_description or (specialty.description + ' Professional medical billing services for ' + specialty.specialty.lower() + ' providers.') }}"
 />
 <link rel="canonical" href="{{ request.url }}" />
 {% endblock %} {% block stylesheets %} {{ super() }}
@@ -54,7 +53,7 @@ Billing Services | Ardur Healthcare{% endblock %} {% block meta %}
                 class="text-4xl md:text-6xl font-bold font-montserrat text-brand-dark mb-4"
                 data-aos="fade-up"
             >
-                {{ specialty.specialty }} Billing Services
+                {{ specialty.h1 or (specialty.specialty + ' Billing Services') }}
             </h1>
 
             <p

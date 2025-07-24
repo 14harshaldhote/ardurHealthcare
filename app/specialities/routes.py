@@ -26,14 +26,7 @@ def get_specialty_by_slug(slug):
         if create_url_slug(specialty['specialty']) == slug:
             return specialty
 
-    # Try matching with clean name (without " Billing Services")
-    for specialty in specialties:
-        clean_name = specialty['specialty'].replace(' Billing Services', '').strip()
-        if create_url_slug(clean_name) == slug:
-            # Return specialty data but use clean name for display
-            specialty_copy = specialty.copy()
-            specialty_copy['specialty'] = clean_name
-            return specialty_copy
+
 
     # If no match found, create a basic specialty object
     service_name = slug.replace('-', ' ').title()
@@ -105,7 +98,7 @@ def get_specialty_by_slug(slug):
 
     return basic_specialty
 
-@specialities.route('/specialities')
+@specialities.route('/')
 def specialities_main():
     """Main specialities page showing all available specialties"""
     specialties = load_specialty_data()
@@ -196,7 +189,7 @@ def specialities_main():
                          main_services=main_services,
                          priority_services=priority_services)
 
-@specialities.route('/specialities/<specialty_type>')
+@specialities.route('/<specialty_type>')
 def specialty(specialty_type):
     """Individual specialty page with dynamic content - matches base template calls"""
     specialty_data = get_specialty_by_slug(specialty_type)
@@ -208,7 +201,7 @@ def specialty(specialty_type):
                          title=specialty_data['specialty'],
                          specialty=specialty_data)
 
-@specialities.route('/specialities/<specialty_slug>/detail')
+@specialities.route('/<specialty_slug>/detail')
 def specialty_detail(specialty_slug):
     """Alternative route for specialty details"""
     specialty_data = get_specialty_by_slug(specialty_slug)
@@ -218,6 +211,87 @@ def specialty_detail(specialty_slug):
 
     return render_template('specialities/specialty_detail.html',
                          title=specialty_data['specialty'],
+                         specialty=specialty_data)
+
+# Specific specialty routes with SEO data
+@specialities.route('/mental-health-billing-services')
+def mental_health():
+    """Mental Health Billing Services page"""
+    specialty_data = get_specialty_by_slug('mental-health')
+    return render_template('specialities/specialty_detail.html',
+                         title=specialty_data.get('meta_title', specialty_data['specialty']),
+                         specialty=specialty_data)
+
+@specialities.route('/behavioral-health-billing-services')
+def behavioral_health():
+    """Behavioral Health Billing Services page"""
+    specialty_data = get_specialty_by_slug('behavioral-health')
+    return render_template('specialities/specialty_detail.html',
+                         title=specialty_data.get('meta_title', specialty_data['specialty']),
+                         specialty=specialty_data)
+
+@specialities.route('/clinical-psychology-billing-services')
+def clinical_psychology():
+    """Clinical Psychology Billing Services page"""
+    specialty_data = get_specialty_by_slug('clinical-psychology')
+    return render_template('specialities/specialty_detail.html',
+                         title=specialty_data.get('meta_title', specialty_data['specialty']),
+                         specialty=specialty_data)
+
+@specialities.route('/chiropractic-billing-services')
+def chiropractic():
+    """Chiropractic Billing Services page"""
+    specialty_data = get_specialty_by_slug('chiropractic')
+    return render_template('specialities/specialty_detail.html',
+                         title=specialty_data.get('meta_title', specialty_data['specialty']),
+                         specialty=specialty_data)
+
+@specialities.route('/family-practice-billing-services')
+def family_practice():
+    """Family Practice Billing Services page"""
+    specialty_data = get_specialty_by_slug('family-practice')
+    return render_template('specialities/specialty_detail.html',
+                         title=specialty_data.get('meta_title', specialty_data['specialty']),
+                         specialty=specialty_data)
+
+@specialities.route('/home-health-billing-services')
+def home_health():
+    """Home Health Billing Services page"""
+    specialty_data = get_specialty_by_slug('home-health')
+    return render_template('specialities/specialty_detail.html',
+                         title=specialty_data.get('meta_title', specialty_data['specialty']),
+                         specialty=specialty_data)
+
+@specialities.route('/podiatry-billing-services')
+def podiatry():
+    """Podiatry Billing Services page"""
+    specialty_data = get_specialty_by_slug('podiatry')
+    return render_template('specialities/specialty_detail.html',
+                         title=specialty_data.get('meta_title', specialty_data['specialty']),
+                         specialty=specialty_data)
+
+@specialities.route('/wound-care-billing-services')
+def wound_care():
+    """Wound Care Billing Services page"""
+    specialty_data = get_specialty_by_slug('wound-care')
+    return render_template('specialities/specialty_detail.html',
+                         title=specialty_data.get('meta_title', specialty_data['specialty']),
+                         specialty=specialty_data)
+
+@specialities.route('/physical-therapy-billing-services')
+def physical_therapy():
+    """Physical Therapy Billing Services page"""
+    specialty_data = get_specialty_by_slug('physical-therapy')
+    return render_template('specialities/specialty_detail.html',
+                         title=specialty_data.get('meta_title', specialty_data['specialty']),
+                         specialty=specialty_data)
+
+@specialities.route('/massage-therapy-billing-services')
+def massage_therapy():
+    """Massage Therapy Billing Services page"""
+    specialty_data = get_specialty_by_slug('massage-therapy')
+    return render_template('specialities/specialty_detail.html',
+                         title=specialty_data.get('meta_title', specialty_data['specialty']),
                          specialty=specialty_data)
 
 @specialities.route('/api/specialities')

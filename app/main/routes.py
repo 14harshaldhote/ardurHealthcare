@@ -18,7 +18,7 @@ def load_specialty_data():
 def home():
     return render_template('home.html')
 
-@main.route('/about')
+@main.route('/about-us')
 def about():
     return render_template('about.html')
 
@@ -26,6 +26,40 @@ def about():
 def services():
     return redirect(url_for('services.index'))
 
-@main.route('/resources')
-def resources():
-    return render_template('resources.html', title='Resources')
+
+
+
+@main.route('/enrollment')
+def enrollment_redirect():
+    return redirect(url_for('services.service_detail', service_name='provider-credentialing-and-enrollment'))
+
+@main.route('/verification')
+def verification_redirect():
+    return redirect(url_for('services.service_detail', service_name='eligibility-and-benefits-verification'))
+
+@main.route('/coding')
+def coding_redirect():
+    return redirect(url_for('services.service_detail', service_name='medical-coding-services'))
+
+@main.route('/claims')
+def claims_redirect():
+    return redirect(url_for('services.service_detail', service_name='claim-submission-and-follow-up-services'))
+
+@main.route('/accounts_receivable')
+def accounts_receivable_redirect():
+    return redirect(url_for('services.service_detail', service_name='accounts-receivable-management'))
+
+
+
+
+@main.route('/privacy-policy')
+def privacy_policy():
+    return render_template('privacy_policy.html',
+                         title='Privacy Policy | Ardur Healthcare Medical Billing',
+                         meta_description='Learn about privacy policy for Ardur Healthcare. What we collect, how we use collected data. We never share or sell your information to third party.')
+
+@main.route('/privacy-policy/')
+def privacy_policy_slash():
+    return render_template('privacy_policy.html',
+                         title='Privacy Policy | Ardur Healthcare Medical Billing',
+                         meta_description='Learn about privacy policy for Ardur Healthcare. What we collect, how we use collected data. We never share or sell your information to third party.')

@@ -1,5 +1,5 @@
 # app/contact/routes.py
-from flask import render_template, flash, redirect, url_for, current_app
+from flask import render_template, flash, redirect, url_for, current_app, jsonify, request
 from flask_mail import Mail, Message
 from datetime import datetime
 import json
@@ -14,7 +14,7 @@ from .forms import ContactForm
 # This route will handle both GET requests (to display the form)
 # and POST requests (to process the form submission).
 # The endpoint for this route will be 'contact.contact'.
-@contact.route('/contact', methods=['GET', 'POST'])
+@contact.route('/contact-us', methods=['GET', 'POST'])
 def contact_form():
     # Create an instance of the ContactForm.
     # Flask-WTF will automatically populate it with submitted data on POST requests.
@@ -34,6 +34,7 @@ def contact_form():
         service_type_value = service_type.data if service_type else None
         subject = form.subject.data if form.subject.data else f"Contact Form - {service_type_value or 'General Inquiry'}"
         message = form.message.data
+        privacy_policy_agreement = form.privacy_policy_agreement.data
 
         # Prepare form data for processing
         form_data = {
@@ -46,25 +47,52 @@ def contact_form():
             'service_type': service_type_value,
             'subject': subject,
             'message': message,
+            'privacy_policy_agreement': privacy_policy_agreement,
             'timestamp': datetime.utcnow().isoformat()
         }
 
+        # Track success of different operations
+        admin_email_sent = False
+        analytics_email_sent = False
+        data_logged = False
+
         try:
-            # Send admin email with complete form data
+            # Send admin email with complete form data (most important)
+            current_app.logger.info(f"Attempting to send admin email for {name} ({email})")
             send_admin_email(form_data)
-
-            # Send analytics email with non-personal data only
-            send_analytics_email(form_data)
-
-            # Log data for internal analytics
-            log_form_submission(form_data)
-
-            # Use Flask's flash system to show a success message to the user.
-            flash(f'Thank you, {name}! Your message has been sent successfully. We will contact you within 24 hours.', 'success')
+            admin_email_sent = True
+            current_app.logger.info(f"✅ Admin email sent successfully to {current_app.config.get('ADMIN_EMAIL')}")
 
         except Exception as e:
-            current_app.logger.error(f"Error processing contact form: {str(e)}")
-            flash('There was an error sending your message. Please try again or call us directly at (214) 800-6161.', 'error')
+            current_app.logger.error(f"❌ Failed to send admin email: {str(e)}")
+            # Continue processing even if admin email fails
+
+        try:
+            # Send analytics email with non-personal data only
+            send_analytics_email(form_data)
+            analytics_email_sent = True
+            current_app.logger.info("✅ Analytics email sent successfully")
+
+        except Exception as e:
+            current_app.logger.error(f"❌ Failed to send analytics email: {str(e)}")
+            # Continue processing even if analytics email fails
+
+        try:
+            # Log data for internal analytics
+            log_form_submission(form_data)
+            data_logged = True
+            current_app.logger.info("✅ Form data logged successfully")
+
+        except Exception as e:
+            current_app.logger.error(f"❌ Failed to log form data: {str(e)}")
+
+        # Provide feedback based on what succeeded
+        if admin_email_sent:
+            flash(f'Thank you, {name}! Your message has been sent successfully to our team. We will contact you within 24 hours.', 'success')
+            current_app.logger.info(f"✅ Contact form processed successfully for {name} ({email})")
+        else:
+            flash(f'Thank you, {name}! Your message has been received and logged. Due to a technical issue with email delivery, please also call us at (214) 800-6161 to ensure we received your message.', 'warning')
+            current_app.logger.warning(f"⚠️ Contact form processed with email delivery issues for {name} ({email})")
 
         # Redirect the user to the same contact page after successful submission.
         return redirect(url_for('contact.contact_form'))
@@ -81,45 +109,73 @@ def send_admin_email(form_data):
         # Initialize Flask-Mail if not already done
         mail = Mail(current_app)
 
+        # Check if email configuration is available
+        if not current_app.config.get('MAIL_USERNAME') or not current_app.config.get('MAIL_PASSWORD'):
+            error_msg = "Email credentials not configured. Set MAIL_USERNAME and MAIL_PASSWORD environment variables."
+            current_app.logger.error(error_msg)
+            raise Exception(error_msg)
+
         # Format specialties for better readability
         specialties_text = ', '.join(form_data['specialties']) if form_data['specialties'] else 'Not specified'
 
-        # Create email content
+        # Create enhanced email content
         email_body = f"""
-New Contact Form Submission - {form_data['timestamp']}
+🏥 NEW CONTACT FORM SUBMISSION
+========================================
 
-CONTACT INFORMATION:
-Name: {form_data['name']}
-Email: {form_data['email']}
-Phone: {form_data['phone']}
-Practice: {form_data['practice_name'] or 'Not specified'}
-State: {form_data['state']}
+📅 Submitted: {form_data['timestamp']}
 
-SERVICE DETAILS:
-Specialties: {specialties_text}
-Service Type: {form_data['service_type'] or 'Not specified'}
+👤 CONTACT INFORMATION:
+• Name: {form_data['name']}
+• Email: {form_data['email']}
+• Phone: {form_data['phone']}
+• Practice: {form_data['practice_name'] or 'Not specified'}
+• State: {form_data['state']}
 
-MESSAGE:
+💼 SERVICE DETAILS:
+• Specialties: {specialties_text}
+• Service Type: {form_data['service_type'] or 'Not specified'}
+
+💬 MESSAGE:
 {form_data['message']}
 
----
+✅ PRIVACY POLICY AGREEMENT: {'Agreed' if form_data['privacy_policy_agreement'] else 'Not Agreed'}
+
+========================================
+📧 Reply directly to this email to respond to {form_data['name']}
+📞 Or call them at {form_data['phone']}
+
 This message was sent from the Ardur Healthcare contact form.
+Generated: {form_data['timestamp']}
         """
+
+        # Get recipient email with fallback
+        admin_email = current_app.config.get('ADMIN_EMAIL', 'abhi@ardurtechnology.com')
+        sender_email = current_app.config.get('MAIL_DEFAULT_SENDER', current_app.config.get('MAIL_USERNAME'))
 
         # Create and send message
         msg = Message(
-            subject=f"New Contact Form: {form_data['subject']}",
-            sender=current_app.config.get('MAIL_DEFAULT_SENDER', 'noreply@ardurhealthcare.com'),
-            recipients=[current_app.config.get('ADMIN_EMAIL', 'admin@ardurhealthcare.com')],
+            subject=f"🏥 New Contact: {form_data['name']} - {form_data['service_type'] or 'General Inquiry'}",
+            sender=sender_email,
+            recipients=[admin_email],
+            reply_to=form_data['email'],  # Allow direct reply to customer
             body=email_body
         )
 
+        current_app.logger.info(f"Sending email from {sender_email} to {admin_email}")
         mail.send(msg)
-        current_app.logger.info(f"Admin email sent successfully for {form_data['name']}")
+        current_app.logger.info(f"✅ Admin email sent successfully to {admin_email} for {form_data['name']}")
 
     except Exception as e:
-        current_app.logger.error(f"Error sending admin email: {str(e)}")
-        raise
+        error_details = f"Error sending admin email: {str(e)}"
+        current_app.logger.error(error_details)
+
+        # Log email configuration for debugging
+        current_app.logger.error(f"Email config - Server: {current_app.config.get('MAIL_SERVER')}, "
+                                f"Port: {current_app.config.get('MAIL_PORT')}, "
+                                f"Username: {'SET' if current_app.config.get('MAIL_USERNAME') else 'NOT SET'}, "
+                                f"Password: {'SET' if current_app.config.get('MAIL_PASSWORD') else 'NOT SET'}")
+        raise Exception(error_details)
 
 
 def send_analytics_email(form_data):
@@ -209,3 +265,101 @@ def log_form_submission(form_data):
     except Exception as e:
         current_app.logger.error(f"Error logging analytics data: {str(e)}")
         # Don't raise here - logging failure shouldn't break the form submission
+
+
+def load_specialty_data():
+    """Load specialty data from JSON file"""
+    try:
+        json_path = os.path.join(current_app.root_path, '..', 'data', 'specialty', 'specialty_data.json')
+        with open(json_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        return data.get('services', [])
+    except (FileNotFoundError, json.JSONDecodeError):
+        return []
+
+
+@contact.route('/api/specialties')
+def api_specialties():
+    """API endpoint to get all specialties for dynamic search"""
+    try:
+        # Get specialties from JSON data
+        specialties = load_specialty_data()
+        json_specialty_names = []
+        for s in specialties:
+            clean_name = s['specialty'].replace(' Billing Services', '').strip()
+            json_specialty_names.append(clean_name)
+
+        # Additional services not in JSON
+        additional_services = [
+            "Allergy and Immunology",
+            "Ambulatory Surgical Center",
+            "Anesthesia",
+            "Behavioral Health",
+            "Cardiology",
+            "Chiropractic",
+            "Clinical Psychology",
+            "Dental",
+            "Dermatology",
+            "Durable Medical Equipment (DME)",
+            "Emergency Room",
+            "Endocrinology",
+            "Family Practice",
+            "Gastroenterology",
+            "General Surgery",
+            "Home Health",
+            "Hospice",
+            "Internal Medicine",
+            "Laboratory",
+            "Massage Therapy",
+            "Mental Health",
+            "Neurology",
+            "OB GYN",
+            "Occupational Therapy",
+            "Oncology",
+            "Optometry",
+            "Oral and Maxillofacial",
+            "Orthopedic",
+            "Otolaryngology (ENT)",
+            "Pain Management",
+            "Pathology",
+            "Pediatrics",
+            "Pharmacy",
+            "Physical Therapy",
+            "Plastic Surgery",
+            "Podiatry",
+            "Primary Care",
+            "Pulmonology",
+            "Radiation Oncology",
+            "Radiology",
+            "Rheumatology",
+            "Skilled Nursing Facility (SNF)",
+            "Sleep Disorder",
+            "Sports Medicine",
+            "Urgent Care",
+            "Urology",
+            "Wound Care"
+        ]
+
+        # Combine and remove duplicates
+        all_specialties = []
+        seen = set()
+
+        for name in json_specialty_names + additional_services:
+            if name not in seen:
+                all_specialties.append(name)
+                seen.add(name)
+
+        # Sort alphabetically
+        all_specialties = sorted(all_specialties)
+
+        # Filter based on search query if provided
+        query = request.args.get('q', '').lower()
+        if query:
+            filtered_specialties = [s for s in all_specialties if query in s.lower()]
+            return jsonify(filtered_specialties[:10])  # Limit to 10 results
+
+        return jsonify(all_specialties)
+
+    except Exception as e:
+        current_app.logger.error(f"Error loading specialties: {str(e)}")
+        return jsonify([]), 500

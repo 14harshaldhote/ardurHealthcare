@@ -1,12 +1,17 @@
-{% extends "base.html" %} {% block title %}About Us - Ardur Healthcare{%
-endblock %} {% block content %}
+{% extends "base.html" %} {% block title %}About Ardur Healthcare{% endblock %}
+{% block meta %}
+<meta
+    name="description"
+    content="Learn more about Ardur Healthcare, a trusted provider of smart revenue cycle solutions, offering medical billing and coding services with innovation and integrity."
+/>
+<link rel="canonical" href="{{ request.url }}" />
+{% endblock %} {% block content %}
 
 <section
     class="relative bg-gradient-to-br from-brand-primary via-brand-secondary to-brand-dark overflow-hidden"
 >
     <div class="absolute inset-0 bg-black bg-opacity-20"></div>
 
-    <!-- Decorative Elements -->
     <div
         class="absolute top-10 left-10 w-20 h-20 bg-white bg-opacity-10 rounded-full blur-xl"
     ></div>
@@ -29,71 +34,299 @@ endblock %} {% block content %}
                 <h1
                     class="text-4xl md:text-6xl font-thin font-montserrat text-white mb-4 drop-shadow-lg"
                 >
-                    Your Partners in
+                    Smart Revenue Cycle Solutions from
                     <span class="text-brand-accent drop-shadow-lg"
-                        >Healthcare Success</span
+                        >Ardur Healthcare</span
                     >
                 </h1>
                 <p
                     class="text-lg md:text-xl text-white mb-8 leading-relaxed max-w-4xl mx-auto drop-shadow-md"
                 >
-                    We are a leading provider of technology-enabled healthcare
-                    services, dedicated to strengthening the financial
-                    performance of your practice. Our mission is to streamline
-                    your revenue cycle, so you can focus on what matters most:
-                    exceptional patient care.
+                    Discover how Ardur Healthcare delivers tech-driven billing,
+                    coding & RCM solutions tailored to providers across the
+                    United States. We're dedicated to strengthening the
+                    financial performance of your practice.
                 </p>
             </div>
         </div>
     </div>
 </section>
 
-<section class="py-12 md:py-16 bg-white">
+<section class="py-12 md:py-16 bg-white container mx-auto px-6">
     <div class="grid md:grid-cols-2 gap-8 items-center">
-        <div data-aos="fade-right ">
+        <div data-aos="fade-right">
             <img
                 src="{{ url_for('static', filename='images/ar.webp') }}"
-                alt="About Ardur Healthcare"
-                class="w-full h-auto shadow-2xl"
+                alt="Who We Are - Ardur Healthcare"
+                class="w-full h-auto shadow-2xl rounded-lg"
             />
         </div>
         <div data-aos="fade-left">
             <h2
                 class="text-3xl md:text-4xl font-light font-montserrat text-brand-dark mb-6"
             >
-                Our Mission: Simplifying Your Success
+                Who We Are: Redefining Medical Billing
             </h2>
             <p class="text-gray-600 mb-4 leading-relaxed">
-                Our main aim is to bolster the financial strength of your
-                business, which is directly correlated to timely billing and
-                reimbursement. We provide a stress-free partnership, allowing
-                you to dedicate your full attention to providing outstanding
-                medical care.
+                At Ardur Healthcare, we are redefining how healthcare providers
+                experience medical billing and coding. Founded in 2023, we
+                envisioned a smarter, high-quality, technology-enabled Revenue
+                Cycle Management (RCM) solution for medical practices across the
+                United States.
             </p>
             <p class="text-gray-600 leading-relaxed">
-                We are committed to delivering top-notch services that ensure
-                accurate reimbursement, reduce administrative burdens, and
-                optimize your revenue cycle, all while maintaining the highest
-                standards of regulatory compliance.
+                We recognized early that providers were burdened by outdated
+                systems, claim delays, and revenue leaks. By combining deep
+                industry knowledge with intelligent automation, Ardur Healthcare
+                has emerged as a trusted partner for practices seeking
+                results-driven billing operations.
             </p>
         </div>
     </div>
 </section>
 
-<section class="py-10 md:py-14 bg-brand-light">
-    <div class="text-center mb-16">
+<section class="py-10 md:py-14 bg-brand-light container mx-auto px-6">
+    <div class="text-center mb-12">
+        <h2
+            class="text-3xl md:text-4xl font-light font-montserrat text-brand-dark"
+        >
+            Our Journey So Far
+        </h2>
+        <p class="text-lg text-gray-600 mt-2">Rapid growth, proven results.</p>
+    </div>
+    <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6 text-center"
+    >
+        <div class="p-4 bg-white rounded-lg shadow-md" data-aos="fade-up">
+            <i
+                class="ri-calendar-check-line text-4xl text-brand-primary mb-2"
+            ></i>
+            <h3 class="text-xl font-bold text-brand-dark">2023</h3>
+            <p class="text-gray-600">Established</p>
+        </div>
+        <div
+            class="p-4 bg-white rounded-lg shadow-md"
+            data-aos="fade-up"
+            data-aos-delay="100"
+        >
+            <i class="ri-flag-line text-4xl text-brand-primary mb-2"></i>
+            <h3 class="text-xl font-bold text-brand-dark">Q1 2023</h3>
+            <p class="text-gray-600">US RCM Entry</p>
+        </div>
+        <div
+            class="p-4 bg-white rounded-lg shadow-md"
+            data-aos="fade-up"
+            data-aos-delay="200"
+        >
+            <i class="ri-user-add-line text-4xl text-brand-primary mb-2"></i>
+            <h3 class="text-xl font-bold text-brand-dark">Within Q1</h3>
+            <p class="text-gray-600">First Client Onboarded</p>
+        </div>
+        <div
+            class="p-4 bg-white rounded-lg shadow-md"
+            data-aos="fade-up"
+            data-aos-delay="300"
+        >
+            <i class="ri-group-line text-4xl text-brand-primary mb-2"></i>
+            <h3 class="text-xl font-bold text-brand-dark">10+</h3>
+            <p class="text-gray-600">Providers Served</p>
+        </div>
+        <div
+            class="p-4 bg-white rounded-lg shadow-md"
+            data-aos="fade-up"
+            data-aos-delay="400"
+        >
+            <i class="ri-file-text-line text-4xl text-brand-primary mb-2"></i>
+            <h3 class="text-xl font-bold text-brand-dark">20,000+</h3>
+            <p class="text-gray-600">Monthly Claims</p>
+        </div>
+        <div
+            class="p-4 bg-white rounded-lg shadow-md"
+            data-aos="fade-up"
+            data-aos-delay="500"
+        >
+            <i class="ri-heart-pulse-line text-4xl text-brand-primary mb-2"></i>
+            <h3 class="text-xl font-bold text-brand-dark">98%</h3>
+            <p class="text-gray-600">Client Satisfaction</p>
+        </div>
+    </div>
+    <div class="mt-8 text-center" data-aos="fade-up">
+        <p class="text-gray-600">
+            In just one year, we’ve scaled rapidly across specialties,
+            delivering results that match and often exceed expectations. Our
+            24x7 delivery model, backed by skilled teams in India and a
+            responsive US-based client success team, ensures agility and
+            reliability.
+        </p>
+    </div>
+</section>
+
+<section class="py-10 md:py-14 bg-white container mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div data-aos="fade-right">
+            <h2
+                class="text-3xl md:text-4xl font-light font-montserrat text-brand-dark mb-6"
+            >
+                Our Mission & What Sets Us Apart
+            </h2>
+            <h3
+                class="text-2xl font-light font-montserrat text-brand-dark mb-4"
+            >
+                Our Mission
+            </h3>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+                To empower healthcare providers with intelligent, transparent,
+                and efficient RCM services that accelerate revenue realization
+                and free them to focus on delivering exceptional patient care.
+            </p>
+
+            <h3
+                class="text-2xl font-light font-montserrat text-brand-dark mb-4"
+            >
+                What Sets Ardur Healthcare Apart
+            </h3>
+            <p class="text-gray-600 leading-relaxed">
+                We’re not just another billing company; we are a
+                <strong class="font-semibold"
+                    >technology-first, client-obsessed RCM partner</strong
+                >
+                that brings measurable impact through innovation and expertise.
+            </p>
+        </div>
+        <div data-aos="fade-left">
+            <img
+                src="{{ url_for('static', filename='images/mission.webp') }}"
+                alt="Our Mission"
+                class="w-full h-auto rounded-lg shadow-lg"
+            />
+        </div>
+    </div>
+</section>
+
+<section class="py-10 md:py-14 bg-brand-light container mx-auto px-6">
+    <div class="text-center mb-12">
+        <h2
+            class="text-3xl md:text-4xl font-light font-montserrat text-brand-dark"
+        >
+            Key Differentiators
+        </h2>
+        <p class="text-lg text-gray-600 mt-2">
+            Why Ardur Healthcare is your ideal RCM partner.
+        </p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div
+            class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
+            data-aos="fade-up"
+        >
+            <i class="ri-user-star-line text-4xl text-brand-primary mb-4"></i>
+            <h3
+                class="text-xl font-montserrat font-semibold text-brand-dark mb-2"
+            >
+                Experienced Teams
+            </h3>
+            <p class="text-gray-600">
+                Certified coders (CPC, CRC), A/R experts, credentialing
+                professionals, and QA teams ensure top-notch service.
+            </p>
+        </div>
+        <div
+            class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
+            data-aos="fade-up"
+            data-aos-delay="100"
+        >
+            <i class="ri-settings-3-line text-4xl text-brand-primary mb-4"></i>
+            <h3
+                class="text-xl font-montserrat font-semibold text-brand-dark mb-2"
+            >
+                Custom Workflows
+            </h3>
+            <p class="text-gray-600">
+                Solutions meticulously tailored to each practice’s unique needs
+                and operational flow.
+            </p>
+        </div>
+        <div
+            class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
+            data-aos="fade-up"
+            data-aos-delay="200"
+        >
+            <i class="ri-contacts-line text-4xl text-brand-primary mb-4"></i>
+            <h3
+                class="text-xl font-montserrat font-semibold text-brand-dark mb-2"
+            >
+                Dedicated Account Management
+            </h3>
+            <p class="text-gray-600">
+                Personalized support with a single point of contact for seamless
+                communication.
+            </p>
+        </div>
+        <div
+            class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
+            data-aos="fade-up"
+            data-aos-delay="300"
+        >
+            <i class="ri-dashboard-line text-4xl text-brand-primary mb-4"></i>
+            <h3
+                class="text-xl font-montserrat font-semibold text-brand-dark mb-2"
+            >
+                Real-Time Reporting Dashboards
+            </h3>
+            <p class="text-gray-600">
+                Transparent insights into every step of your revenue cycle for
+                informed decisions.
+            </p>
+        </div>
+        <div
+            class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
+            data-aos="fade-up"
+            data-aos-delay="400"
+        >
+            <i class="ri-government-line text-4xl text-brand-primary mb-4"></i>
+            <h3
+                class="text-xl font-montserrat font-semibold text-brand-dark mb-2"
+            >
+                Compliance-Focused Operations
+            </h3>
+            <p class="text-gray-600">
+                HIPAA compliance, secure infrastructure, and audit-readiness
+                built into our processes.
+            </p>
+        </div>
+        <div
+            class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
+            data-aos="fade-up"
+            data-aos-delay="500"
+        >
+            <i class="ri-robot-line text-4xl text-brand-primary mb-4"></i>
+            <h3
+                class="text-xl font-montserrat font-semibold text-brand-dark mb-2"
+            >
+                AI/ML-Driven RCM Tools
+            </h3>
+            <p class="text-gray-600">
+                Proprietary automation for denial prediction, claim scrubbing,
+                and coding accuracy.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="py-10 md:py-14 bg-white container mx-auto px-6">
+    <div class="text-center mb-12">
         <h2
             class="text-3xl md:text-4xl font-light font-montserrat text-brand-dark"
         >
             Our Core Values
         </h2>
         <p class="text-lg text-gray-600 mt-2">
-            The principles that guide our partnership.
+            The principles that guide our partnership and operations.
         </p>
     </div>
     <div class="grid md:grid-cols-3 gap-6 text-center">
         <div
-            class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
+            class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-brand-secondary"
             data-aos="fade-up"
             data-aos-delay="100"
         >
@@ -106,13 +339,13 @@ endblock %} {% block content %}
                 Integrity
             </h3>
             <p class="text-gray-600">
-                Delivering transparent, ethical, and dependable service you can
-                count on.
+                Strict adherence to compliance and security standards,
+                delivering transparent, ethical, and dependable service.
             </p>
         </div>
 
         <div
-            class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
+            class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-brand-secondary"
             data-aos="fade-up"
             data-aos-delay="200"
         >
@@ -125,33 +358,357 @@ endblock %} {% block content %}
                 Excellence
             </h3>
             <p class="text-gray-600">
-                Upholding the highest professional standards to ensure
-                consistent accuracy and efficiency.
+                Quality-first approach in every service we deliver, upholding
+                the highest professional standards for accuracy and efficiency.
             </p>
         </div>
 
         <div
-            class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
+            class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-brand-secondary"
             data-aos="fade-up"
             data-aos-delay="300"
         >
             <div
                 class="flex justify-center items-center h-20 w-20 bg-brand-secondary rounded-full mx-auto mb-6"
             >
-                <i class="ri-lock-2-line text-4xl text-brand-primary"></i>
+                <i class="ri-lightbulb-line text-4xl text-brand-primary"></i>
             </div>
             <h3 class="text-xl font-light font-montserrat text-brand-dark mb-2">
-                Confidentiality
+                Innovation
             </h3>
             <p class="text-gray-600">
-                Adhering strictly to data privacy and compliance regulations to
-                protect your information.
+                Constantly evolving with AI, RPA, and predictive analytics to
+                bring measurable impact.
+            </p>
+        </div>
+
+        <div
+            class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-brand-secondary"
+            data-aos="fade-up"
+            data-aos-delay="400"
+        >
+            <div
+                class="flex justify-center items-center h-20 w-20 bg-brand-secondary rounded-full mx-auto mb-6"
+            >
+                <i class="ri-user-heart-line text-4xl text-brand-primary"></i>
+            </div>
+            <h3 class="text-xl font-light font-montserrat text-brand-dark mb-2">
+                Client-Centricity
+            </h3>
+            <p class="text-gray-600">
+                Your success is our mission. We are committed to a stress-free
+                partnership.
+            </p>
+        </div>
+
+        <div
+            class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-brand-secondary"
+            data-aos="fade-up"
+            data-aos-delay="500"
+        >
+            <div
+                class="flex justify-center items-center h-20 w-20 bg-brand-secondary rounded-full mx-auto mb-6"
+            >
+                <i class="ri-hand-coin-line text-4xl text-brand-primary"></i>
+            </div>
+            <h3 class="text-xl font-light font-montserrat text-brand-dark mb-2">
+                Accountability
+            </h3>
+            <p class="text-gray-600">
+                We take full ownership of results, ensuring accurate
+                reimbursement and reduced burdens.
             </p>
         </div>
     </div>
 </section>
 
-<section class="py-10 md:py-14">
+<section class="py-10 md:py-14 bg-brand-secondary container mx-auto px-6">
+    <div class="text-center mb-12">
+        <h2
+            class="text-3xl md:text-4xl font-light font-montserrat text-brand-dark"
+        >
+            Our Team & Leadership
+        </h2>
+        <p class="text-lg text-gray-600 mt-2">
+            Driving healthcare success with seasoned expertise.
+        </p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div data-aos="fade-right">
+            <p class="text-gray-700 mb-6 leading-relaxed">
+                Our leadership team brings over
+                <strong class="font-semibold"
+                    >15 years of combined experience</strong
+                >
+                in U.S. medical billing, healthcare BPO, and automation
+                strategy. This extensive experience fuels our client-first
+                philosophy, ensuring every decision is made with your success in
+                mind.
+            </p>
+            <h3
+                class="text-2xl font-light font-montserrat text-brand-dark mb-4"
+            >
+                Our Dedicated Delivery Team Includes:
+            </h3>
+            <ul class="space-y-3 text-gray-700">
+                <li class="flex items-center">
+                    <i
+                        class="ri-arrow-right-s-line text-brand-primary text-xl mr-2"
+                    ></i>
+                    Billing & A/R Management Specialists
+                </li>
+                <li class="flex items-center">
+                    <i
+                        class="ri-arrow-right-s-line text-brand-primary text-xl mr-2"
+                    ></i>
+                    Certified Coders (CPC, CRC)
+                </li>
+                <li class="flex items-center">
+                    <i
+                        class="ri-arrow-right-s-line text-brand-primary text-xl mr-2"
+                    ></i>
+                    Credentialing & Enrollment Experts
+                </li>
+                <li class="flex items-center">
+                    <i
+                        class="ri-arrow-right-s-line text-brand-primary text-xl mr-2"
+                    ></i>
+                    Eligibility Verification Teams
+                </li>
+                <li class="flex items-center">
+                    <i
+                        class="ri-arrow-right-s-line text-brand-primary text-xl mr-2"
+                    ></i>
+                    Quality Auditors
+                </li>
+                <li class="flex items-center">
+                    <i
+                        class="ri-arrow-right-s-line text-brand-primary text-xl mr-2"
+                    ></i>
+                    IT Support & Automation Engineers
+                </li>
+            </ul>
+        </div>
+        <div data-aos="fade-left">
+            <img
+                src="{{ url_for('static', filename='images/team.webp') }}"
+                alt="Ardur Healthcare Team"
+                class="w-full h-auto rounded-lg shadow-lg"
+            />
+        </div>
+    </div>
+</section>
+
+<section class="py-10 md:py-14 bg-white container mx-auto px-6">
+    <div class="text-center mb-12">
+        <h2
+            class="text-3xl md:text-4xl font-light font-montserrat text-brand-dark"
+        >
+            Who We Serve
+        </h2>
+        <p class="text-lg text-gray-600 mt-2">
+            Supporting a diverse range of healthcare providers.
+        </p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div
+            class="p-6 bg-brand-light rounded-lg shadow-md flex items-start"
+            data-aos="fade-up"
+        >
+            <i class="ri-user-line text-3xl text-brand-primary mr-4 mt-1"></i>
+            <div>
+                <h3
+                    class="text-xl font-montserrat font-semibold text-brand-dark mb-2"
+                >
+                    Solo & Small Group Practices
+                </h3>
+                <p class="text-gray-600">
+                    Tailored RCM solutions for independent and growing
+                    practices.
+                </p>
+            </div>
+        </div>
+        <div
+            class="p-6 bg-brand-light rounded-lg shadow-md flex items-start"
+            data-aos="fade-up"
+            data-aos-delay="100"
+        >
+            <i class="ri-brain-line text-3xl text-brand-primary mr-4 mt-1"></i>
+            <div>
+                <h3
+                    class="text-xl font-montserrat font-semibold text-brand-dark mb-2"
+                >
+                    Behavioral & Mental Health
+                </h3>
+                <p class="text-gray-600">
+                    Specialized billing for unique mental health service needs.
+                </p>
+            </div>
+        </div>
+        <div
+            class="p-6 bg-brand-light rounded-lg shadow-md flex items-start"
+            data-aos="fade-up"
+            data-aos-delay="200"
+        >
+            <i
+                class="ri-stethoscope-line text-3xl text-brand-primary mr-4 mt-1"
+            ></i>
+            <div>
+                <h3
+                    class="text-xl font-montserrat font-semibold text-brand-dark mb-2"
+                >
+                    Internal & Family Physicians
+                </h3>
+                <p class="text-gray-600">
+                    Comprehensive RCM for primary care and family medicine.
+                </p>
+            </div>
+        </div>
+        <div
+            class="p-6 bg-brand-light rounded-lg shadow-md flex items-start"
+            data-aos="fade-up"
+            data-aos-delay="300"
+        >
+            <i class="ri-parent-line text-3xl text-brand-primary mr-4 mt-1"></i>
+            <div>
+                <h3
+                    class="text-xl font-montserrat font-semibold text-brand-dark mb-2"
+                >
+                    Pediatricians
+                </h3>
+                <p class="text-gray-600">
+                    Expert billing services catering to pediatric practices.
+                </p>
+            </div>
+        </div>
+        <div
+            class="p-6 bg-brand-light rounded-lg shadow-md flex items-start"
+            data-aos="fade-up"
+            data-aos-delay="400"
+        >
+            <i
+                class="ri-smartphone-line text-3xl text-brand-primary mr-4 mt-1"
+            ></i>
+            <div>
+                <h3
+                    class="text-xl font-montserrat font-semibold text-brand-dark mb-2"
+                >
+                    Telehealth Practices
+                </h3>
+                <p class="text-gray-600">
+                    Streamlined billing for virtual healthcare services.
+                </p>
+            </div>
+        </div>
+        <div
+            class="p-6 bg-brand-light rounded-lg shadow-md flex items-start"
+            data-aos="fade-up"
+            data-aos-delay="500"
+        >
+            <i
+                class="ri-map-pin-line text-3xl text-brand-primary mr-4 mt-1"
+            ></i>
+            <div>
+                <h3
+                    class="text-xl font-montserrat font-semibold text-brand-dark mb-2"
+                >
+                    Nationwide Coverage
+                </h3>
+                <p class="text-gray-600">
+                    Equipped to handle payer-specific requirements in all 50
+                    states.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="mt-8 text-center" data-aos="fade-up">
+        <p class="text-gray-600">
+            Our current client base spans California, Texas, Florida, New York,
+            Illinois, and Arizona — and we’re equipped to handle payer-specific
+            requirements in all 50 states.
+        </p>
+    </div>
+</section>
+
+<section class="py-10 md:py-14 bg-brand-secondary container mx-auto px-6">
+    <div class="text-center mb-12">
+        <h2
+            class="text-3xl md:text-4xl font-light font-montserrat text-brand-dark"
+        >
+            Looking Ahead: Our Vision for the Future
+        </h2>
+        <p class="text-lg text-gray-600 mt-2">
+            Innovating for continuous client success.
+        </p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div
+            class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center"
+            data-aos="fade-up"
+        >
+            <i class="ri-cloud-line text-5xl text-brand-primary mb-4"></i>
+            <h3
+                class="text-xl font-montserrat font-semibold text-brand-dark mb-2"
+            >
+                Cloud-Based Platforms
+            </h3>
+            <p class="text-gray-600">
+                Developing intuitive billing platforms for small and mid-sized
+                practices.
+            </p>
+        </div>
+        <div
+            class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center"
+            data-aos="fade-up"
+            data-aos-delay="100"
+        >
+            <i class="ri-ai-generate text-5xl text-brand-primary mb-4"></i>
+            <h3
+                class="text-xl font-montserrat font-semibold text-brand-dark mb-2"
+            >
+                Advanced AI Audits
+            </h3>
+            <p class="text-gray-600">
+                Building cutting-edge AI for proactive denial prevention
+                systems.
+            </p>
+        </div>
+        <div
+            class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center"
+            data-aos="fade-up"
+            data-aos-delay="200"
+        >
+            <i class="ri-global-line text-5xl text-brand-primary mb-4"></i>
+            <h3
+                class="text-xl font-montserrat font-semibold text-brand-dark mb-2"
+            >
+                Expanded U.S. Presence
+            </h3>
+            <p class="text-gray-600">
+                Increasing our nearshore support and reach across the United
+                States.
+            </p>
+        </div>
+        <div
+            class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center"
+            data-aos="fade-up"
+            data-aos-delay="300"
+        >
+            <i class="ri-handshake-line text-5xl text-brand-primary mb-4"></i>
+            <h3
+                class="text-xl font-montserrat font-semibold text-brand-dark mb-2"
+            >
+                100+ Client Partnerships
+            </h3>
+            <p class="text-gray-600">
+                Our goal to expand our trusted partnerships in the next 3–5
+                years.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="py-10 md:py-14 bg-white container mx-auto px-6">
     <div class="grid md:grid-cols-2 gap-8 items-center">
         <div data-aos="fade-right">
             <h2
@@ -159,6 +716,14 @@ endblock %} {% block content %}
             >
                 Why Choose Ardur Healthcare?
             </h2>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+                Because we don’t just manage your revenue, we
+                <strong class="font-semibold">optimize it</strong>. Our agile,
+                AI-enabled workflows, personalized support, and industry-tested
+                systems deliver RCM results that are fast, transparent, and
+                dependable. When you work with Ardur Healthcare, you gain a
+                partner that’s fully aligned with your growth.
+            </p>
             <ul class="space-y-4">
                 <li class="flex items-start">
                     <i
@@ -167,7 +732,7 @@ endblock %} {% block content %}
                     <span class="text-gray-600"
                         ><strong>Certified & Experienced Team:</strong> Our
                         certified coders and billing specialists are experts in
-                        the field.</span
+                        the field, ensuring maximum accuracy.</span
                     >
                 </li>
                 <li class="flex items-start">
@@ -176,7 +741,8 @@ endblock %} {% block content %}
                     ></i>
                     <span class="text-gray-600"
                         ><strong>Reduce Denials:</strong> Our proactive approach
-                        and expertise significantly reduce claim denials.</span
+                        and expertise significantly reduce claim denials,
+                        preventing revenue leaks.</span
                     >
                 </li>
                 <li class="flex items-start">
@@ -186,7 +752,7 @@ endblock %} {% block content %}
                     <span class="text-gray-600"
                         ><strong>Ensure Accurate Reimbursement:</strong> We help
                         you avoid costly back-billing and ensure complete,
-                        accurate payments.</span
+                        accurate payments, improving your bottom line.</span
                     >
                 </li>
                 <li class="flex items-start">
@@ -195,7 +761,8 @@ endblock %} {% block content %}
                     ></i>
                     <span class="text-gray-600"
                         ><strong>Compliance Focused:</strong> We stay ahead of
-                        changing regulations so you don't have to.</span
+                        changing regulations so you don't have to worry about
+                        compliance issues.</span
                     >
                 </li>
             </ul>
@@ -203,7 +770,7 @@ endblock %} {% block content %}
         <div data-aos="fade-left">
             <img
                 src="{{ url_for('static', filename='images/why.jpg') }}"
-                alt="About Ardur Healthcare"
+                alt="Why Choose Ardur Healthcare"
                 class="w-full h-auto rounded-lg shadow-lg"
             />
         </div>
@@ -211,7 +778,7 @@ endblock %} {% block content %}
 </section>
 
 <section class="py-10 md:py-14 bg-brand-secondary text-center">
-    <h2 class="text-3xl font-bold font-montserrat text-brand-dark mb-4">
+    <h2 class="text-3xl font-thin font-montserrat text-brand-dark mb-4">
         Ready to Optimize Your Revenue Cycle?
     </h2>
     <p class="text-gray-600 max-w-2xl mx-auto mb-8">

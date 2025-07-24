@@ -1,0 +1,775 @@
+{% extends "base.html" %} {% block title %}{{ title or 'Medical Billing FAQs |
+Ardur Healthcare' }}{% endblock %} {% block meta %}
+<meta
+    name="description"
+    content="{{ meta_description or 'Find answers to common questions about medical billing, coding, credentialing, AR, compliance, and more. Explore our expert medical billing FAQs.' }}"
+/>
+<link rel="canonical" href="{{ request.url }}" />
+{% endblock %} {% block content %}
+<div class="bg-white">
+    <section class="container px-4 text-center py-16 md:py-24">
+        <div class="max-w-4xl mx-auto">
+            <div
+                class="inline-flex items-center px-4 py-2 bg-brand-primary/10 rounded-full mb-6"
+                data-aos="fade-down"
+            >
+                <i class="ri-question-line text-brand-primary mr-2"></i>
+                <span class="text-brand-primary font-light"
+                    >Frequently Asked Questions</span
+                >
+            </div>
+            <h1
+                class="text-4xl md:text-6xl font-light font-montserrat text-brand-dark mb-4"
+                data-aos="fade-up"
+            >
+                Medical Billing FAQs
+            </h1>
+            <p
+                class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8"
+                data-aos="fade-up"
+                data-aos-delay="200"
+            >
+                Whether you're a solo provider, group practice, or clinic
+                administrator, it's normal to have questions about medical
+                billing. This FAQ section is designed to provide clear,
+                straightforward answers on everything from billing processes to
+                credentialing, pricing, denials, compliance, and more. We’ve
+                also structured it to help you find what you need quickly.
+            </p>
+        </div>
+    </section>
+    <section class="py-16 md:py-24 bg-brand-light">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="mb-12">
+                <nav class="flex flex-wrap justify-center gap-4">
+                    <a
+                        href="#general"
+                        class="px-4 py-2 bg-white text-brand-primary border border-brand-primary rounded-full hover:bg-brand-primary hover:text-white transition duration-300"
+                    >
+                        General Billing
+                    </a>
+                    <a
+                        href="#services"
+                        class="px-4 py-2 bg-white text-brand-primary border border-brand-primary rounded-full hover:bg-brand-primary hover:text-white transition duration-300"
+                    >
+                        Our Services
+                    </a>
+                    <a
+                        href="#specialty"
+                        class="px-4 py-2 bg-white text-brand-primary border border-brand-primary rounded-full hover:bg-brand-primary hover:text-white transition duration-300"
+                    >
+                        Specialty Billing
+                    </a>
+                    <a
+                        href="#credentialing"
+                        class="px-4 py-2 bg-white text-brand-primary border border-brand-primary rounded-full hover:bg-brand-primary hover:text-white transition duration-300"
+                    >
+                        Credentialing
+                    </a>
+                    <a
+                        href="#claims"
+                        class="px-4 py-2 bg-white text-brand-primary border border-brand-primary rounded-full hover:bg-brand-primary hover:text-white transition duration-300"
+                    >
+                        Claims & AR
+                    </a>
+                    <a
+                        href="#compliance"
+                        class="px-4 py-2 bg-white text-brand-primary border border-brand-primary rounded-full hover:bg-brand-primary hover:text-white transition duration-300"
+                    >
+                        Compliance
+                    </a>
+                    <a
+                        href="#pricing"
+                        class="px-4 py-2 bg-white text-brand-primary border border-brand-primary rounded-full hover:bg-brand-primary hover:text-white transition duration-300"
+                    >
+                        Pricing
+                    </a>
+                </nav>
+            </div>
+            <div
+                id="general"
+                class="bg-white rounded-2xl shadow-lg p-8 mb-8"
+                data-aos="fade-up"
+            >
+                <h2
+                    class="text-2xl md:text-3xl font-light text-brand-dark mb-8"
+                >
+                    General Medical Billing
+                </h2>
+                <div class="space-y-6">
+                    <div class="border-b border-gray-200 pb-6 last:border-b-0">
+                        <h3
+                            class="font-semibold text-brand-dark mb-3 text-lg cursor-pointer flex items-center justify-between"
+                            onclick="toggleFAQ(this)"
+                        >
+                            What is medical billing, and how does it work?
+                            <i
+                                class="ri-arrow-down-s-line text-brand-primary"
+                            ></i>
+                        </h3>
+                        <div class="text-gray-600 leading-relaxed hidden">
+                            <p>
+                                Medical billing is the process of submitting and
+                                following up on claims with health insurance
+                                companies to receive payment for services
+                                rendered. It involves charge entry, coding,
+                                claim submission, payment posting, and AR
+                                follow-up.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="border-b border-gray-200 pb-6 last:border-b-0">
+                        <h3
+                            class="font-semibold text-brand-dark mb-3 text-lg cursor-pointer flex items-center justify-between"
+                            onclick="toggleFAQ(this)"
+                        >
+                            What’s the difference between medical billing and
+                            medical coding?
+                            <i
+                                class="ri-arrow-down-s-line text-brand-primary"
+                            ></i>
+                        </h3>
+                        <div class="text-gray-600 leading-relaxed hidden">
+                            <p>
+                                Medical billing involves submitting claims and
+                                handling payment processes, while medical coding
+                                is the translation of diagnoses and procedures
+                                into standardized codes (like CPT, ICD-10).
+                            </p>
+                        </div>
+                    </div>
+                    <div class="border-b border-gray-200 pb-6 last:border-b-0">
+                        <h3
+                            class="font-semibold text-brand-dark mb-3 text-lg cursor-pointer flex items-center justify-between"
+                            onclick="toggleFAQ(this)"
+                        >
+                            What are clean claims in medical billing?
+                            <i
+                                class="ri-arrow-down-s-line text-brand-primary"
+                            ></i>
+                        </h3>
+                        <div class="text-gray-600 leading-relaxed hidden">
+                            <p>
+                                Clean claims are those submitted without errors
+                                or omissions and are processed without the need
+                                for additional information.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="border-b border-gray-200 pb-6 last:border-b-0">
+                        <h3
+                            class="font-semibold text-brand-dark mb-3 text-lg cursor-pointer flex items-center justify-between"
+                            onclick="toggleFAQ(this)"
+                        >
+                            What causes claim denials in medical billing?
+                            <i
+                                class="ri-arrow-down-s-line text-brand-primary"
+                            ></i>
+                        </h3>
+                        <div class="text-gray-600 leading-relaxed hidden">
+                            <p>
+                                Common causes include coding errors, eligibility
+                                issues, missing information, and lack of prior
+                                authorization.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="border-b border-gray-200 pb-6 last:border-b-0">
+                        <h3
+                            class="font-semibold text-brand-dark mb-3 text-lg cursor-pointer flex items-center justify-between"
+                            onclick="toggleFAQ(this)"
+                        >
+                            How long does it take to get paid from insurance
+                            companies?
+                            <i
+                                class="ri-arrow-down-s-line text-brand-primary"
+                            ></i>
+                        </h3>
+                        <div class="text-gray-600 leading-relaxed hidden">
+                            <p>
+                                Most commercial insurers pay within 15–45 days
+                                of claim submission. Government payers like
+                                Medicare may take 10–30 days.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div
+                id="services"
+                class="bg-white rounded-2xl shadow-lg p-8 mb-8"
+                data-aos="fade-up"
+            >
+                <h2
+                    class="text-2xl md:text-3xl font-light text-brand-dark mb-8"
+                >
+                    Medical Billing Services We Offer
+                </h2>
+                <div class="space-y-6">
+                    <div class="border-b border-gray-200 pb-6 last:border-b-0">
+                        <h3
+                            class="font-semibold text-brand-dark mb-3 text-lg cursor-pointer flex items-center justify-between"
+                            onclick="toggleFAQ(this)"
+                        >
+                            What services are included in a full-service medical
+                            billing solution?
+                            <i
+                                class="ri-arrow-down-s-line text-brand-primary"
+                            ></i>
+                        </h3>
+                        <div class="text-gray-600 leading-relaxed hidden">
+                            <p>
+                                Our full-service billing includes eligibility
+                                verification, prior authorizations, charge
+                                entry, coding, claim submission, denial
+                                management, payment posting, AR follow-up, and
+                                credentialing.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="border-b border-gray-200 pb-6 last:border-b-0">
+                        <h3
+                            class="font-semibold text-brand-dark mb-3 text-lg cursor-pointer flex items-center justify-between"
+                            onclick="toggleFAQ(this)"
+                        >
+                            Do you offer standalone services like credentialing
+                            or coding?
+                            <i
+                                class="ri-arrow-down-s-line text-brand-primary"
+                            ></i>
+                        </h3>
+                        <div class="text-gray-600 leading-relaxed hidden">
+                            <p>
+                                Yes. While we recommend full-service billing, we
+                                also offer standalone services such as
+                                credentialing and coding support based on client
+                                needs.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="border-b border-gray-200 pb-6 last:border-b-0">
+                        <h3
+                            class="font-semibold text-brand-dark mb-3 text-lg cursor-pointer flex items-center justify-between"
+                            onclick="toggleFAQ(this)"
+                        >
+                            Can I choose only certain billing services instead
+                            of the full package?
+                            <i
+                                class="ri-arrow-down-s-line text-brand-primary"
+                            ></i>
+                        </h3>
+                        <div class="text-gray-600 leading-relaxed hidden">
+                            <p>
+                                Absolutely. We customize our offerings to align
+                                with your practice needs.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="border-b border-gray-200 pb-6 last:border-b-0">
+                        <h3
+                            class="font-semibold text-brand-dark mb-3 text-lg cursor-pointer flex items-center justify-between"
+                            onclick="toggleFAQ(this)"
+                        >
+                            Do you work with all EHR and billing platforms?
+                            <i
+                                class="ri-arrow-down-s-line text-brand-primary"
+                            ></i>
+                        </h3>
+                        <div class="text-gray-600 leading-relaxed hidden">
+                            <p>
+                                Yes, we work with the most popular EHRs and
+                                billing systems. Our team adapts to your
+                                existing setup.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div
+                id="specialty"
+                class="bg-white rounded-2xl shadow-lg p-8 mb-8"
+                data-aos="fade-up"
+            >
+                <h2
+                    class="text-2xl md:text-3xl font-light text-brand-dark mb-8"
+                >
+                    Specialty-Specific Billing
+                </h2>
+                <div class="space-y-6">
+                    <div class="border-b border-gray-200 pb-6 last:border-b-0">
+                        <h3
+                            class="font-semibold text-brand-dark mb-3 text-lg cursor-pointer flex items-center justify-between"
+                            onclick="toggleFAQ(this)"
+                        >
+                            Do you offer mental health billing services?
+                            <i
+                                class="ri-arrow-down-s-line text-brand-primary"
+                            ></i>
+                        </h3>
+                        <div class="text-gray-600 leading-relaxed hidden">
+                            <p>
+                                Yes, we specialize in mental health billing and
+                                understand the unique documentation, CPT codes,
+                                and payer policies involved.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="border-b border-gray-200 pb-6 last:border-b-0">
+                        <h3
+                            class="font-semibold text-brand-dark mb-3 text-lg cursor-pointer flex items-center justify-between"
+                            onclick="toggleFAQ(this)"
+                        >
+                            How is oncology billing different from primary care
+                            billing?
+                            <i
+                                class="ri-arrow-down-s-line text-brand-primary"
+                            ></i>
+                        </h3>
+                        <div class="text-gray-600 leading-relaxed hidden">
+                            <p>
+                                Oncology billing often involves more complex
+                                treatments, drug codes, and payer
+                                pre-authorizations. We tailor our process to
+                                each specialty.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="border-b border-gray-200 pb-6 last:border-b-0">
+                        <h3
+                            class="font-semibold text-brand-dark mb-3 text-lg cursor-pointer flex items-center justify-between"
+                            onclick="toggleFAQ(this)"
+                        >
+                            Do you handle physical therapy billing and
+                            authorizations?
+                            <i
+                                class="ri-arrow-down-s-line text-brand-primary"
+                            ></i>
+                        </h3>
+                        <div class="text-gray-600 leading-relaxed hidden">
+                            <p>
+                                Yes. We manage prior authorizations, CPT coding,
+                                and payer-specific rules for physical therapy
+                                practices.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="border-b border-gray-200 pb-6 last:border-b-0">
+                        <h3
+                            class="font-semibold text-brand-dark mb-3 text-lg cursor-pointer flex items-center justify-between"
+                            onclick="toggleFAQ(this)"
+                        >
+                            Can you support multi-specialty or group practices?
+                            <i
+                                class="ri-arrow-down-s-line text-brand-primary"
+                            ></i>
+                        </h3>
+                        <div class="text-gray-600 leading-relaxed hidden">
+                            <p>
+                                Definitely. Our workflows are scalable and
+                                designed to support single-specialty or
+                                multi-specialty groups.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div
+                id="credentialing"
+                class="bg-white rounded-2xl shadow-lg p-8 mb-8"
+                data-aos="fade-up"
+            >
+                <h2
+                    class="text-2xl md:text-3xl font-light text-brand-dark mb-8"
+                >
+                    Credentialing and Enrollment
+                </h2>
+                <div class="space-y-6">
+                    <div class="border-b border-gray-200 pb-6 last:border-b-0">
+                        <h3
+                            class="font-semibold text-brand-dark mb-3 text-lg cursor-pointer flex items-center justify-between"
+                            onclick="toggleFAQ(this)"
+                        >
+                            What is provider credentialing, and why is it
+                            important?
+                            <i
+                                class="ri-arrow-down-s-line text-brand-primary"
+                            ></i>
+                        </h3>
+                        <div class="text-gray-600 leading-relaxed hidden">
+                            <p>
+                                Credentialing is the process of verifying a
+                                provider’s qualifications with insurance
+                                networks. It's necessary for in-network
+                                participation and reimbursement.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="border-b border-gray-200 pb-6 last:border-b-0">
+                        <h3
+                            class="font-semibold text-brand-dark mb-3 text-lg cursor-pointer flex items-center justify-between"
+                            onclick="toggleFAQ(this)"
+                        >
+                            How long does credentialing typically take?
+                            <i
+                                class="ri-arrow-down-s-line text-brand-primary"
+                            ></i>
+                        </h3>
+                        <div class="text-gray-600 leading-relaxed hidden">
+                            <p>
+                                It usually takes 60–90 days, depending on the
+                                payer and completeness of documentation.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="border-b border-gray-200 pb-6 last:border-b-0">
+                        <h3
+                            class="font-semibold text-brand-dark mb-3 text-lg cursor-pointer flex items-center justify-between"
+                            onclick="toggleFAQ(this)"
+                        >
+                            Do you help with recredentialing or revalidation?
+                            <i
+                                class="ri-arrow-down-s-line text-brand-primary"
+                            ></i>
+                        </h3>
+                        <div class="text-gray-600 leading-relaxed hidden">
+                            <p>
+                                Yes, we manage all phases of credentialing:
+                                initial, recredentialing, and revalidation.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="border-b border-gray-200 pb-6 last:border-b-0">
+                        <h3
+                            class="font-semibold text-brand-dark mb-3 text-lg cursor-pointer flex items-center justify-between"
+                            onclick="toggleFAQ(this)"
+                        >
+                            Can I see patients while my credentialing is in
+                            process?
+                            <i
+                                class="ri-arrow-down-s-line text-brand-primary"
+                            ></i>
+                        </h3>
+                        <div class="text-gray-600 leading-relaxed hidden">
+                            <p>
+                                You can, but you may not receive reimbursement
+                                until credentialing is complete. Some payers
+                                allow retroactive billing.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div
+                id="claims"
+                class="bg-white rounded-2xl shadow-lg p-8 mb-8"
+                data-aos="fade-up"
+            >
+                <h2
+                    class="text-2xl md:text-3xl font-light text-brand-dark mb-8"
+                >
+                    Claims, Denials & AR
+                </h2>
+                <div class="space-y-6">
+                    <div class="border-b border-gray-200 pb-6 last:border-b-0">
+                        <h3
+                            class="font-semibold text-brand-dark mb-3 text-lg cursor-pointer flex items-center justify-between"
+                            onclick="toggleFAQ(this)"
+                        >
+                            What happens if a claim is denied?
+                            <i
+                                class="ri-arrow-down-s-line text-brand-primary"
+                            ></i>
+                        </h3>
+                        <div class="text-gray-600 leading-relaxed hidden">
+                            <p>
+                                We investigate the reason, correct the issue,
+                                and resubmit or appeal the claim promptly.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="border-b border-gray-200 pb-6 last:border-b-0">
+                        <h3
+                            class="font-semibold text-brand-dark mb-3 text-lg cursor-pointer flex items-center justify-between"
+                            onclick="toggleFAQ(this)"
+                        >
+                            How do you follow up on unpaid claims?
+                            <i
+                                class="ri-arrow-down-s-line text-brand-primary"
+                            ></i>
+                        </h3>
+                        <div class="text-gray-600 leading-relaxed hidden">
+                            <p>
+                                Our AR team reviews aging reports, contacts
+                                payers, and documents every interaction to
+                                ensure timely resolution.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="border-b border-gray-200 pb-6 last:border-b-0">
+                        <h3
+                            class="font-semibold text-brand-dark mb-3 text-lg cursor-pointer flex items-center justify-between"
+                            onclick="toggleFAQ(this)"
+                        >
+                            What’s included in denial management?
+                            <i
+                                class="ri-arrow-down-s-line text-brand-primary"
+                            ></i>
+                        </h3>
+                        <div class="text-gray-600 leading-relaxed hidden">
+                            <p>
+                                We review denial codes, identify trends, fix
+                                underlying issues, and submit corrected claims
+                                or appeals as needed.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="border-b border-gray-200 pb-6 last:border-b-0">
+                        <h3
+                            class="font-semibold text-brand-dark mb-3 text-lg cursor-pointer flex items-center justify-between"
+                            onclick="toggleFAQ(this)"
+                        >
+                            What is considered an acceptable AR aging
+                            percentage?
+                            <i
+                                class="ri-arrow-down-s-line text-brand-primary"
+                            ></i>
+                        </h3>
+                        <div class="text-gray-600 leading-relaxed hidden">
+                            <p>
+                                Typically, less than 20% of your AR should be
+                                over 90 days old. We aim to keep it lower.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div
+                id="compliance"
+                class="bg-white rounded-2xl shadow-lg p-8 mb-8"
+                data-aos="fade-up"
+            >
+                <h2
+                    class="text-2xl md:text-3xl font-light text-brand-dark mb-8"
+                >
+                    Compliance, Privacy & Security
+                </h2>
+                <div class="space-y-6">
+                    <div class="border-b border-gray-200 pb-6 last:border-b-0">
+                        <h3
+                            class="font-semibold text-brand-dark mb-3 text-lg cursor-pointer flex items-center justify-between"
+                            onclick="toggleFAQ(this)"
+                        >
+                            Are your billing services HIPAA-compliant?
+                            <i
+                                class="ri-arrow-down-s-line text-brand-primary"
+                            ></i>
+                        </h3>
+                        <div class="text-gray-600 leading-relaxed hidden">
+                            <p>
+                                Yes. We follow strict HIPAA guidelines and
+                                conduct regular audits to protect PHI.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="border-b border-gray-200 pb-6 last:border-b-0">
+                        <h3
+                            class="font-semibold text-brand-dark mb-3 text-lg cursor-pointer flex items-center justify-between"
+                            onclick="toggleFAQ(this)"
+                        >
+                            How do you ensure patient data is protected?
+                            <i
+                                class="ri-arrow-down-s-line text-brand-primary"
+                            ></i>
+                        </h3>
+                        <div class="text-gray-600 leading-relaxed hidden">
+                            <p>
+                                We use secure file transfer protocols, access
+                                controls, and encrypted communication tools.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="border-b border-gray-200 pb-6 last:border-b-0">
+                        <h3
+                            class="font-semibold text-brand-dark mb-3 text-lg cursor-pointer flex items-center justify-between"
+                            onclick="toggleFAQ(this)"
+                        >
+                            What security measures do you use for file sharing?
+                            <i
+                                class="ri-arrow-down-s-line text-brand-primary"
+                            ></i>
+                        </h3>
+                        <div class="text-gray-600 leading-relaxed hidden">
+                            <p>
+                                We use encrypted platforms and limit access to
+                                authorized team members only.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="border-b border-gray-200 pb-6 last:border-b-0">
+                        <h3
+                            class="font-semibold text-brand-dark mb-3 text-lg cursor-pointer flex items-center justify-between"
+                            onclick="toggleFAQ(this)"
+                        >
+                            Do you sign Business Associate Agreements (BAAs)?
+                            <i
+                                class="ri-arrow-down-s-line text-brand-primary"
+                            ></i>
+                        </h3>
+                        <div class="text-gray-600 leading-relaxed hidden">
+                            <p>
+                                Yes. We provide BAAs to ensure full HIPAA
+                                compliance in all data exchanges.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div
+                id="pricing"
+                class="bg-white rounded-2xl shadow-lg p-8 mb-8"
+                data-aos="fade-up"
+            >
+                <h2
+                    class="text-2xl md:text-3xl font-light text-brand-dark mb-8"
+                >
+                    Pricing & Getting Started
+                </h2>
+                <div class="space-y-6">
+                    <div class="border-b border-gray-200 pb-6 last:border-b-0">
+                        <h3
+                            class="font-semibold text-brand-dark mb-3 text-lg cursor-pointer flex items-center justify-between"
+                            onclick="toggleFAQ(this)"
+                        >
+                            How much do your medical billing services cost?
+                            <i
+                                class="ri-arrow-down-s-line text-brand-primary"
+                            ></i>
+                        </h3>
+                        <div class="text-gray-600 leading-relaxed hidden">
+                            <p>
+                                Pricing depends on claim volume, specialty, and
+                                scope. We offer both percentage and flat fee
+                                models.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="border-b border-gray-200 pb-6 last:border-b-0">
+                        <h3
+                            class="font-semibold text-brand-dark mb-3 text-lg cursor-pointer flex items-center justify-between"
+                            onclick="toggleFAQ(this)"
+                        >
+                            Do you charge a percentage or a flat fee?
+                            <i
+                                class="ri-arrow-down-s-line text-brand-primary"
+                            ></i>
+                        </h3>
+                        <div class="text-gray-600 leading-relaxed hidden">
+                            <p>
+                                We offer both. You can choose based on what
+                                works best for your practice.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="border-b border-gray-200 pb-6 last:border-b-0">
+                        <h3
+                            class="font-semibold text-brand-dark mb-3 text-lg cursor-pointer flex items-center justify-between"
+                            onclick="toggleFAQ(this)"
+                        >
+                            Is a long-term contract required?
+                            <i
+                                class="ri-arrow-down-s-line text-brand-primary"
+                            ></i>
+                        </h3>
+                        <div class="text-gray-600 leading-relaxed hidden">
+                            <p>
+                                No. We offer flexible agreements, including
+                                monthly and quarterly options.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="border-b border-gray-200 pb-6 last:border-b-0">
+                        <h3
+                            class="font-semibold text-brand-dark mb-3 text-lg cursor-pointer flex items-center justify-between"
+                            onclick="toggleFAQ(this)"
+                        >
+                            How do I get started with your services?
+                            <i
+                                class="ri-arrow-down-s-line text-brand-primary"
+                            ></i>
+                        </h3>
+                        <div class="text-gray-600 leading-relaxed hidden">
+                            <p>
+                                Simply contact us through our website or call
+                                our team. We'll schedule a discovery call and
+                                start with a tailored proposal.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-20 md:py-32 bg-brand-secondary text-center">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up">
+            <h2
+                class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark mb-6"
+            >
+                Still Have Questions?
+            </h2>
+            <p class="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
+                Our billing experts are here to help. Schedule a free
+                consultation to discuss your specific needs and get answers to
+                all your questions.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                    href="{{ url_for('contact.contact_form') }}"
+                    class="bg-brand-primary text-white font-montserrat font-semibold px-8 py-4 rounded-full hover:scale-105 hover:bg-brand-dark hover:shadow-xl transition duration-300 inline-flex items-center justify-center"
+                >
+                    <i class="ri-phone-line mr-2"></i> Schedule Consultation
+                </a>
+                <a
+                    href="tel:2148006161"
+                    class="bg-white text-brand-primary border-2 border-brand-primary font-montserrat font-semibold px-8 py-4 rounded-full hover:bg-brand-primary hover:text-white transition duration-300 inline-flex items-center justify-center"
+                >
+                    <i class="ri-phone-line mr-2"></i> Call (214) 800-6161
+                </a>
+            </div>
+        </div>
+    </section>
+</div>
+<script>
+    function toggleFAQ(element) {
+        const content = element.nextElementSibling;
+        const icon = element.querySelector("i");
+        if (content.classList.contains("hidden")) {
+            content.classList.remove("hidden");
+            icon.classList.remove("ri-arrow-down-s-line");
+            icon.classList.add("ri-arrow-up-s-line");
+        } else {
+            content.classList.add("hidden");
+            icon.classList.remove("ri-arrow-up-s-line");
+            icon.classList.add("ri-arrow-down-s-line");
+        }
+    }
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target) {
+                target.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+        });
+    });
+</script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 800,
+        once: true,
+    });
+</script>
+{% endblock %}

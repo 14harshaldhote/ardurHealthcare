@@ -1,5 +1,11 @@
-{% extends "base.html" %} {% block title %}{{ service.title }} - Ardur
-Healthcare{% endblock %} {% block content %}
+{% extends "base.html" %} {% block title %}{{ service.meta_title or
+(service.title + ' | Ardur Healthcare') }}{% endblock %} {% block meta %}
+<meta
+    name="description"
+    content="{{ service.meta_description or 'Expert medical billing services from Ardur Healthcare. Improve collections, reduce denials, and streamline your revenue cycle management.' }}"
+/>
+<link rel="canonical" href="{{ request.url }}" />
+{% endblock %} {% block content %}
 <main class="min-h-screen bg-white">
     <!-- Hero Section -->
     <section
@@ -15,8 +21,8 @@ Healthcare{% endblock %} {% block content %}
                         class="text-4xl md:text-6xl font-light font-montserrat text-brand-dark mb-6"
                         data-aos="fade-right"
                     >
-                        {% if service.title %} {{ service.title }} {% else %}
-                        Medical Billing Services {% endif %}
+                        {{ service.h1 or service.title or 'Medical Billing
+                        Services' }}
                     </h1>
                     <p
                         class="text-lg md:text-xl text-gray-700 mb-8 leading-relaxed"

@@ -1,4 +1,8 @@
 import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 class Config:
     # Base directory of the application
@@ -21,7 +25,7 @@ class Config:
     MAIL_DEFAULT_SENDER = os.environ.get('MAIL_DEFAULT_SENDER') or 'noreply@ardurhealthcare.com'
 
     # Email recipients
-    ADMIN_EMAIL = os.environ.get('ADMIN_EMAIL') or 'admin@ardurhealthcare.com'
+    ADMIN_EMAIL = os.environ.get('ADMIN_EMAIL') or 'abhi@ardurtechnology.com'
     ANALYTICS_EMAIL = os.environ.get('ANALYTICS_EMAIL') or 'analytics@ardurhealthcare.com'
 
     # Application configuration

@@ -1,615 +1,788 @@
-{% extends "base.html" %} {% block title %}{{ state.title }} | Ardur Healthcare{% endblock %} {% block meta %}
+{% extends "base.html" %} {% block title %}Medical Billing Services in {{
+state.name }} | Ardur Healthcare{% endblock %} {% block meta %}
 <meta
-  name="description"
-  content="{{ state.subtitle }}. {{ state.description[:150] }}..."
+    name="description"
+    content="Get expert medical billing services in {{ state.name }}. Reduce denials, improve revenue, and streamline your billing process with Ardur Healthcare."
 />
 <link rel="canonical" href="{{ request.url }}" />
 {% endblock %} {% block content %}
 <div class="bg-white">
-  <section class="container px-4 text-center py-16 md:py-24">
-    <div class="max-w-4xl mx-auto">
-      <div
-        class="inline-flex items-center px-4 py-2 bg-brand-primary/10 rounded-full mb-6"
-        data-aos="fade-down"
-      >
-        <i class="ri-map-pin-line text-brand-primary mr-2"></i>
-        <span class="text-brand-primary font-light"
-          >{{ state.name }} Healthcare</span
-        >
-      </div>
-      <h1
-        class="text-4xl md:text-6xl font-light font-montserrat text-brand-dark mb-4"
-        data-aos="fade-up"
-      >
-        Medical Billing Services in
-        <span class="text-brand-primary">{{ state.name }}</span>
-      </h1>
-      <p
-        class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8"
-        data-aos="fade-up"
-        data-aos-delay="200"
-      >
-        {{ state.subtitle }}
-      </p>
-      <div
-        class="flex flex-col sm:flex-row gap-4 justify-center"
-        data-aos="fade-up"
-        data-aos-delay="300"
-      >
-        <a
-          href="{{ url_for('contact.contact_form') }}"
-          class="bg-brand-primary text-white font-montserrat font-light px-8 py-4 rounded-full hover:scale-105 hover:bg-brand-dark hover:shadow-xl transition duration-300 inline-flex items-center justify-center"
-        >
-          <i class="ri-phone-line mr-2"></i> Get Free Consultation
-        </a>
-        <a
-          href="{{ url_for('ourreach.states_list') }}"
-          class="bg-white text-brand-primary border-2 border-brand-primary font-montserrat font-light px-8 py-4 rounded-full hover:bg-brand-primary hover:text-white transition duration-300 inline-flex items-center justify-center"
-        >
-          <i class="ri-list-check mr-2"></i> View All States
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-16 md:py-24 bg-brand-light">
-    <div class="container mx-auto px-4">
-      <div class="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto">
-        <div class="flex-1 lg:w-3/4 space-y-8">
-          <div class="bg-white rounded-2xl shadow-lg p-8" data-aos="fade-up">
-            <h2 class="text-2xl md:text-3xl font-light text-brand-dark mb-6">
-              {{ state.subtitle }}
-            </h2>
-            <p class="text-lg leading-relaxed text-gray-700">
-              {{ state.description }}
-            </p>
-          </div>
-
-          <div class="bg-white rounded-2xl shadow-lg p-8" data-aos="fade-up">
-            <h2 class="text-2xl md:text-3xl font-light text-brand-dark mb-6">
-              Why {{ state.name }} Providers Choose Ardur Healthcare
-            </h2>
-            <div class="grid md:grid-cols-2 gap-6">
-              {% for reason in state.why_choose_us %}
-              <div class="flex items-start space-x-3">
-                <div
-                  class="w-6 h-6 bg-brand-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1"
-                >
-                  <i class="ri-check-line text-brand-primary text-sm"></i>
-                </div>
-                <p class="text-gray-700">{{ reason }}</p>
-              </div>
-              {% endfor %}
-            </div>
-          </div>
-
-          <div class="bg-white rounded-2xl shadow-lg p-8" data-aos="fade-up">
-            <h2 class="text-2xl md:text-3xl font-light text-brand-dark mb-8">
-              Comprehensive Medical Billing & Coding Services
-            </h2>
-            <div class="mb-8">
-              <h3
-                class="text-xl font-semibold text-brand-dark mb-4 flex items-center"
-              >
-                <i class="ri-service-line text-brand-primary mr-2"></i> Our
-                Medical Billing Services for {{ state.name }} Practices
-              </h3>
-              <div class="grid md:grid-cols-2 gap-4">
-                {% for service in state.services %}
-                <div
-                  class="flex items-start space-x-3 p-4 bg-brand-light rounded-lg"
-                >
-                  <div
-                    class="w-6 h-6 bg-brand-secondary/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1"
-                  >
-                    <i
-                      class="ri-check-double-line text-brand-primary text-sm"
-                    ></i>
-                  </div>
-                  <div>
-                    <h4 class="font-semibold text-brand-dark mb-2">
-                      {{ service }}
-                    </h4>
-                    <p class="text-gray-600 text-sm">
-                      Professional {{ service.lower() }} services tailored to
-                      {{ state.name }} healthcare providers.
-                    </p>
-                  </div>
-                </div>
-                {% endfor %}
-              </div>
-            </div>
-            <div class="grid md:grid-cols-2 gap-8">
-              <div class="bg-brand-light rounded-xl p-6">
-                <h3
-                  class="text-lg font-semibold text-brand-dark mb-4 flex items-center"
-                >
-                  <i class="ri-focus-line text-brand-primary mr-2"></i>
-                  Specialty Billing Expertise
-                </h3>
-                <p class="text-gray-600 mb-4 text-sm">
-                  We support a wide range of specialties across
-                  {{ state.name }}:
-                </p>
-                <div class="grid grid-cols-2 gap-2">
-                  {% for specialty in state.specialties %}
-                  <div
-                    class="flex items-center space-x-2 bg-white p-2 rounded-lg"
-                  >
-                    <i
-                      class="ri-stethoscope-line text-brand-primary text-sm"
-                    ></i>
-                    <span class="text-gray-700 capitalize text-sm"
-                      >{{ specialty }}</span
-                    >
-                  </div>
-                  {% endfor %}
-                </div>
-              </div>
-              <div class="bg-brand-light rounded-xl p-6">
-                <h3
-                  class="text-lg font-semibold text-brand-dark mb-4 flex items-center"
-                >
-                  <i class="ri-computer-line text-brand-primary mr-2"></i>
-                  Software Compatibility
-                </h3>
-                <p class="text-gray-600 mb-4 text-sm">
-                  We work with leading EHR platforms:
-                </p>
-                <div class="space-y-2">
-                  {% for software in state.software_compatibility %}
-                  <div
-                    class="flex items-center space-x-2 bg-white p-2 rounded-lg"
-                  >
-                    <i class="ri-settings-line text-brand-primary text-sm"></i>
-                    <span class="text-gray-700 text-sm">{{ software }}</span>
-                  </div>
-                  {% endfor %}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-white rounded-2xl shadow-lg p-8" data-aos="fade-up">
-            <h2 class="text-2xl md:text-3xl font-bold text-brand-dark mb-6">
-              Local Payer Knowledge That Drives Reimbursements
-            </h2>
-            <p class="text-lg mb-6 text-gray-700">
-              Billing policies and documentation standards vary across states.
-              Ardur Healthcare stays current with {{ state.name }}'s payer
-              guidelines to ensure clean, timely claims.
-            </p>
-            <p class="font-semibold text-brand-dark mb-4">
-              We work with payers like:
-            </p>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
-              {% for payer in state.payers %}
-              <div
-                class="flex items-center space-x-2 bg-brand-light p-3 rounded-lg"
-              >
-                <i class="ri-building-line text-brand-primary flex-shrink-0"></i>
-                <span class="text-sm text-gray-700">{{ payer }}</span>
-              </div>
-              {% endfor %}
-            </div>
-          </div>
-
-          <div
-            data-aos="fade-up"
-            class="bg-gradient-to-r from-brand-primary/5 to-brand-secondary rounded-2xl p-8 shadow-lg"
-          >
-            <h2
-              class="text-2xl md:text-3xl font-bold text-brand-dark mb-8 text-center"
-            >
-              What {{ state.name }} Healthcare Providers Say
-            </h2>
-            <div class="grid md:grid-cols-2 gap-6">
-              <div class="bg-white rounded-xl p-6 shadow-md testimonial-card">
-                <div class="flex items-center mb-4">
-                  <div class="flex text-yellow-400">
-                    <i class="ri-star-fill"></i><i class="ri-star-fill"></i
-                    ><i class="ri-star-fill"></i><i class="ri-star-fill"></i
-                    ><i class="ri-star-fill"></i>
-                  </div>
-                  <span class="ml-2 text-sm text-gray-600">5.0 Rating</span>
-                </div>
-                <p class="text-gray-700 mb-4 italic">
-                  "Ardur Healthcare transformed our billing process. Our revenue
-                  increased by 25% and claim denials dropped significantly.
-                  Their team understands {{ state.name }} payer requirements
-                  perfectly."
-                </p>
-                <div class="flex items-center">
-                  <div
-                    class="w-10 h-10 bg-brand-primary/10 rounded-full flex items-center justify-center"
-                  >
-                    <i class="ri-user-line text-brand-primary"></i>
-                  </div>
-                  <div class="ml-3">
-                    <p class="font-semibold text-brand-dark">
-                      Dr. Sarah Johnson
-                    </p>
-                    <p class="text-sm text-gray-600">
-                      Family Medicine, {{ state.name }}
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="bg-white rounded-xl p-6 shadow-md testimonial-card">
-                <div class="flex items-center mb-4">
-                  <div class="flex text-yellow-400">
-                    <i class="ri-star-fill"></i><i class="ri-star-fill"></i
-                    ><i class="ri-star-fill"></i><i class="ri-star-fill"></i
-                    ><i class="ri-star-fill"></i>
-                  </div>
-                  <span class="ml-2 text-sm text-gray-600">5.0 Rating</span>
-                </div>
-                <p class="text-gray-700 mb-4 italic">
-                  "Professional, reliable, and results-driven. Ardur
-                  Healthcare's expertise in {{ state.name }} billing
-                  regulations has been invaluable for our practice growth."
-                </p>
-                <div class="flex items-center">
-                  <div
-                    class="w-10 h-10 bg-brand-primary/10 rounded-full flex items-center justify-center"
-                  >
-                    <i class="ri-user-line text-brand-primary"></i>
-                  </div>
-                  <div class="ml-3">
-                    <p class="font-semibold text-brand-dark">
-                      Dr. Michael Chen
-                    </p>
-                    <p class="text-sm text-gray-600">
-                      Cardiology Practice, {{ state.name }}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="mt-8 pt-6 border-t border-brand-primary/20">
-              <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-                <div>
-                  <p class="text-2xl font-bold text-brand-primary">500+</p>
-                  <p class="text-sm text-gray-600">Happy Clients</p>
-                </div>
-                <div>
-                  <p class="text-2xl font-bold text-brand-primary">99%</p>
-                  <p class="text-sm text-gray-600">Claim Accuracy</p>
-                </div>
-                <div>
-                  <p class="text-2xl font-bold text-brand-primary">25%</p>
-                  <p class="text-sm text-gray-600">Avg Revenue Increase</p>
-                </div>
-                <div>
-                  <p class="text-2xl font-bold text-brand-primary">24/7</p>
-                  <p class="text-sm text-gray-600">Support</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div data-aos="fade-up" class="bg-white rounded-2xl p-8 shadow-lg">
-            <h2 class="text-2xl md:text-3xl font-bold text-brand-dark mb-8">
-              FAQs for {{ state.name }} Healthcare Providers
-            </h2>
-            <div class="space-y-6">
-              {% for faq in state.faqs %}
-              <div class="border-b border-gray-200 pb-4 last:border-b-0">
-                <h3 class="font-semibold text-brand-dark mb-3 text-lg">
-                  {{ faq.question }}
-                </h3>
-                <p class="text-gray-600 leading-relaxed">{{ faq.answer }}</p>
-              </div>
-              {% endfor %}
-            </div>
-          </div>
-        </div>
-
-        <div class="lg:w-1/4">
-          <div class="lg:sticky lg:top-32">
+    <section class="container px-4 text-center py-16 md:py-24">
+        <div class="max-w-4xl mx-auto">
             <div
-              data-aos="fade-up"
-              class="bg-gradient-to-br from-brand-primary to-brand-dark rounded-2xl p-4 text-white shadow-2xl"
+                class="inline-flex items-center px-4 py-2 bg-brand-primary/10 rounded-full mb-6"
+                data-aos="fade-down"
             >
-              <div class="text-center mb-4">
-                <div
-                  class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-2"
+                <i class="ri-map-pin-line text-brand-primary mr-2"></i>
+                <span class="text-brand-primary font-light"
+                    >{{ state.name }} Healthcare</span
                 >
-                  <i
-                    class="ri-customer-service-2-line text-2xl text-white"
-                  ></i>
-                </div>
-                <h3 class="text-xl font-bold mb-1">Ready to Get Started?</h3>
-                <p class="text-white/90 text-sm">
-                  Schedule your free consultation with our
-                  {{ state.name }} billing experts
-                </p>
-              </div>
-              <form
-                class="space-y-2"
-                action="{{ url_for('contact.contact_form') }}"
-                method="POST"
-              >
-                <div>
-                  <label class="block text-xs font-medium mb-1" for="name">
-                    Full Name *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    class="w-full px-3 py-2 text-sm rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
-                    placeholder="Enter your full name"
-                    required
-                  />
-                </div>
-                <div>
-                  <label class="block text-xs font-medium mb-1" for="email">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    class="w-full px-3 py-2 text-sm rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
-                    placeholder="Enter your email"
-                    required
-                  />
-                </div>
-                <div>
-                  <label class="block text-xs font-medium mb-1" for="phone">
-                    Phone Number *
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    class="w-full px-3 py-2 text-sm rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
-                    placeholder="Enter your phone number"
-                    required
-                  />
-                </div>
-                <div>
-                  <label class="block text-xs font-medium mb-1" for="practice">
-                    Practice Name *
-                  </label>
-                  <input
-                    type="text"
-                    id="practice"
-                    name="practice"
-                    class="w-full px-3 py-2 text-sm rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
-                    placeholder="Enter your practice name"
-                    required
-                  />
-                </div>
-                <div>
-                  <label class="block text-xs font-medium mb-1" for="state_field">
-                    State *
-                  </label>
-                  <input
-                    type="text"
-                    id="state_field"
-                    name="state"
-                    class="w-full px-3 py-2 text-sm rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
-                    placeholder="Enter your state"
-                    value="{{ state.name }}"
-                    required
-                  />
-                </div>
-                <div>
-                  <label class="block text-xs font-medium mb-1" for="specialties">
-                    Specialties *
-                  </label>
-                  <input
-                    type="text"
-                    id="specialties"
-                    name="specialties"
-                    class="w-full px-3 py-2 text-sm rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
-                    placeholder="Enter your specialties"
-                    required
-                  />
-                </div>
-                <div>
-                  <label class="block text-xs font-medium mb-1" for="service_type">
-                    Service Type *
-                  </label>
-                  <select
-                    id="service_type"
-                    name="service_type"
-                    class="w-full px-3 py-2 text-sm rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-white/50"
-                    required
-                  >
-                    <option value="" class="text-black bg-white">
-                      Select service type
-                    </option>
-                    <option value="medical-billing" class="text-black bg-white">
-                      Medical Billing
-                    </option>
-                    <option value="coding-services" class="text-black bg-white">
-                      Coding Services
-                    </option>
-                    <option value="credentialing" class="text-black bg-white">
-                      Provider Credentialing
-                    </option>
-                    <option value="ar-management" class="text-black bg-white">
-                      AR Management
-                    </option>
-                    <option value="denial-management" class="text-black bg-white">
-                      Denial Management
-                    </option>
-                    <option value="full-service" class="text-black bg-white">
-                      Full Service Package
-                    </option>
-                    <option value="consultation" class="text-black bg-white">
-                      Consultation
-                    </option>
-                  </select>
-                </div>
-                <div>
-                  <label class="block text-xs font-medium mb-1" for="message">
-                    Message *
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows="2"
-                    class="w-full px-3 py-2 text-sm rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
-                    placeholder="Tell us about your billing needs..."
-                    required
-                  ></textarea>
-                </div>
-                <button
-                  type="submit"
-                  class="w-full bg-white text-brand-primary font-semibold py-2 text-sm rounded-lg hover:bg-gray-100 transition duration-300 flex items-center justify-center"
-                >
-                  <i class="ri-send-plane-line mr-2"></i> Get Free Consultation
-                </button>
-              </form>
-              <div class="mt-4 pt-4 border-t border-white/20">
-                <div class="space-y-2">
-                  <div class="flex items-center space-x-2">
-                    <i class="ri-phone-line text-white/80 text-sm"></i>
-                    <div>
-                      <p class="text-xs text-white/80">Call us directly</p>
-                      <p class="font-semibold text-sm">(214) 800-6161</p>
-                    </div>
-                  </div>
-                  <div class="flex items-center space-x-2">
-                    <i class="ri-time-line text-white/80 text-sm"></i>
-                    <div>
-                      <p class="text-xs text-white/80">Business Hours</p>
-                      <p class="font-semibold text-sm">Mon-Fri: 8AM-6PM CST</p>
-                    </div>
-                  </div>
-                  <div class="flex items-center space-x-2">
-                    <i class="ri-map-pin-line text-white/80 text-sm"></i>
-                    <div>
-                      <p class="text-xs text-white/80">Serving</p>
-                      <p class="font-semibold text-sm">
-                        {{ state.name }} Healthcare Providers
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
+            <h1
+                class="text-4xl md:text-6xl font-light font-montserrat text-brand-dark mb-4"
+                data-aos="fade-up"
+            >
+                Medical Billing Services in {{ state.name }}
+            </h1>
+            <p
+                class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8"
+                data-aos="fade-up"
+                data-aos-delay="200"
+            >
+                {{ state.subtitle }}
+            </p>
+            <div
+                class="flex flex-col sm:flex-row gap-4 justify-center"
+                data-aos="fade-up"
+                data-aos-delay="300"
+            >
+                <a
+                    href="{{ url_for('contact.contact_form') }}"
+                    class="bg-brand-primary text-white font-montserrat font-light px-8 py-4 rounded-full hover:scale-105 hover:bg-brand-dark hover:shadow-xl transition duration-300 inline-flex items-center justify-center"
+                >
+                    <i class="ri-phone-line mr-2"></i> Get Free Consultation
+                </a>
+                <a
+                    href="{{ url_for('ourreach.states_list') }}"
+                    class="bg-white text-brand-primary border-2 border-brand-primary font-montserrat font-light px-8 py-4 rounded-full hover:bg-brand-primary hover:text-white transition duration-300 inline-flex items-center justify-center"
+                >
+                    <i class="ri-list-check mr-2"></i> View All States
+                </a>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="py-20 md:py-32 bg-brand-secondary text-center">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up">
-      <h2
-        class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark mb-6"
-      >
-        Transform Your {{ state.name }} Practice Today
-      </h2>
-      <p class="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
-        Join hundreds of {{ state.name }} healthcare providers who trust Ardur
-        Healthcare to maximize their revenue and streamline their billing
-        processes.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a
-          href="{{ url_for('contact.contact_form') }}"
-          class="bg-brand-primary text-white font-montserrat font-semibold px-8 py-4 rounded-full hover:scale-105 hover:bg-brand-dark hover:shadow-xl transition duration-300 inline-flex items-center justify-center"
-        >
-          <i class="ri-phone-line mr-2"></i> Call (214) 800-6161
-        </a>
-        <a
-          href="{{ url_for('ourreach.index') }}"
-          class="bg-white text-brand-primary border-2 border-brand-primary font-montserrat font-semibold px-8 py-4 rounded-full hover:bg-brand-primary hover:text-white transition duration-300 inline-flex items-center justify-center"
-        >
-          <i class="ri-map-pin-line mr-2"></i> View Interactive Map
-        </a>
-      </div>
-    </div>
-  </section>
+    <section class="py-16 md:py-24 bg-brand-light">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto">
+                <div class="flex-1 lg:w-3/4 space-y-8">
+                    <div
+                        class="bg-white rounded-2xl shadow-lg p-8"
+                        data-aos="fade-up"
+                    >
+                        <h2
+                            class="text-2xl md:text-3xl font-light text-brand-dark mb-6"
+                        >
+                            Medical Billing &amp; Coding Services for {{
+                            state.name }} Healthcare Practices
+                        </h2>
+                        <p class="text-lg leading-relaxed text-gray-700">
+                            {{ state.description }}
+                        </p>
+                    </div>
+
+                    <div
+                        class="bg-white rounded-2xl shadow-lg p-8"
+                        data-aos="fade-up"
+                    >
+                        <h2
+                            class="text-2xl md:text-3xl font-light text-brand-dark mb-6"
+                        >
+                            Why {{ state.name }} Providers Choose Ardur
+                            Healthcare
+                        </h2>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            {% for reason in state.why_choose_us %}
+                            <div class="flex items-start space-x-3">
+                                <div
+                                    class="w-6 h-6 bg-brand-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1"
+                                >
+                                    <i
+                                        class="ri-check-line text-brand-primary text-sm"
+                                    ></i>
+                                </div>
+                                <p class="text-gray-700">{{ reason }}</p>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-white rounded-2xl shadow-lg p-8"
+                        data-aos="fade-up"
+                    >
+                        <h2
+                            class="text-2xl md:text-3xl font-light text-brand-dark mb-8"
+                        >
+                            Local Payer Knowledge That Drives Reimbursements
+                        </h2>
+                        <div class="mb-8">
+                            <h3
+                                class="text-xl font-semibold text-brand-dark mb-4 flex items-center"
+                            >
+                                <i
+                                    class="ri-service-line text-brand-primary mr-2"
+                                ></i>
+                                Our Medical Billing Services for {{ state.name
+                                }} Practices
+                            </h3>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                {% for service in state.services %}
+                                <div
+                                    class="flex items-start space-x-3 p-4 bg-brand-light rounded-lg"
+                                >
+                                    <div
+                                        class="w-6 h-6 bg-brand-secondary/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1"
+                                    >
+                                        <i
+                                            class="ri-check-double-line text-brand-primary text-sm"
+                                        ></i>
+                                    </div>
+                                    <div>
+                                        <h4
+                                            class="font-semibold text-brand-dark mb-2"
+                                        >
+                                            {{ service }}
+                                        </h4>
+                                        <p class="text-gray-600 text-sm">
+                                            Professional {{ service.lower() }}
+                                            services tailored to {{ state.name
+                                            }} healthcare providers.
+                                        </p>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="bg-brand-light rounded-xl p-6">
+                                <h3
+                                    class="text-lg font-semibold text-brand-dark mb-4 flex items-center"
+                                >
+                                    <i
+                                        class="ri-focus-line text-brand-primary mr-2"
+                                    ></i>
+                                    Specialty Billing Expertise
+                                </h3>
+                                <p class="text-gray-600 mb-4 text-sm">
+                                    We support a wide range of specialties
+                                    across {{ state.name }}:
+                                </p>
+                                <div class="grid grid-cols-2 gap-2">
+                                    {% for specialty in state.specialties %}
+                                    <div
+                                        class="flex items-center space-x-2 bg-white p-2 rounded-lg"
+                                    >
+                                        <i
+                                            class="ri-stethoscope-line text-brand-primary text-sm"
+                                        ></i>
+                                        <span
+                                            class="text-gray-700 capitalize text-sm"
+                                            >{{ specialty }}</span
+                                        >
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <div class="bg-brand-light rounded-xl p-6">
+                                <h3
+                                    class="text-lg font-semibold text-brand-dark mb-4 flex items-center"
+                                >
+                                    <i
+                                        class="ri-computer-line text-brand-primary mr-2"
+                                    ></i>
+                                    Software Compatibility
+                                </h3>
+                                <p class="text-gray-600 mb-4 text-sm">
+                                    We work with leading EHR platforms:
+                                </p>
+                                <div class="space-y-2">
+                                    {% for software in
+                                    state.software_compatibility %}
+                                    <div
+                                        class="flex items-center space-x-2 bg-white p-2 rounded-lg"
+                                    >
+                                        <i
+                                            class="ri-settings-line text-brand-primary text-sm"
+                                        ></i>
+                                        <span class="text-gray-700 text-sm"
+                                            >{{ software }}</span
+                                        >
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-white rounded-2xl shadow-lg p-8"
+                        data-aos="fade-up"
+                    >
+                        <h2
+                            class="text-2xl md:text-3xl font-bold text-brand-dark mb-6"
+                        >
+                            Local Payer Knowledge That Drives Reimbursements
+                        </h2>
+                        <p class="text-lg mb-6 text-gray-700">
+                            Billing policies and documentation standards vary
+                            across states. Ardur Healthcare stays current with
+                            {{ state.name }}'s payer guidelines to ensure clean,
+                            timely claims.
+                        </p>
+                        <p class="font-semibold text-brand-dark mb-4">
+                            We work with payers like:
+                        </p>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
+                            {% for payer in state.payers %}
+                            <div
+                                class="flex items-center space-x-2 bg-brand-light p-3 rounded-lg"
+                            >
+                                <i
+                                    class="ri-building-line text-brand-primary flex-shrink-0"
+                                ></i>
+                                <span class="text-sm text-gray-700"
+                                    >{{ payer }}</span
+                                >
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div
+                        data-aos="fade-up"
+                        class="bg-gradient-to-r from-brand-primary/5 to-brand-secondary rounded-2xl p-8 shadow-lg"
+                    >
+                        <h2
+                            class="text-2xl md:text-3xl font-bold text-brand-dark mb-8 text-center"
+                        >
+                            What {{ state.name }} Healthcare Providers Say
+                        </h2>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div
+                                class="bg-white rounded-xl p-6 shadow-md testimonial-card"
+                            >
+                                <div class="flex items-center mb-4">
+                                    <div class="flex text-yellow-400">
+                                        <i class="ri-star-fill"></i
+                                        ><i class="ri-star-fill"></i
+                                        ><i class="ri-star-fill"></i
+                                        ><i class="ri-star-fill"></i
+                                        ><i class="ri-star-fill"></i>
+                                    </div>
+                                    <span class="ml-2 text-sm text-gray-600"
+                                        >5.0 Rating</span
+                                    >
+                                </div>
+                                <p class="text-gray-700 mb-4 italic">
+                                    "Ardur Healthcare transformed our billing
+                                    process. Our revenue increased by 25% and
+                                    claim denials dropped significantly. Their
+                                    team understands {{ state.name }} payer
+                                    requirements perfectly."
+                                </p>
+                                <div class="flex items-center">
+                                    <div
+                                        class="w-10 h-10 bg-brand-primary/10 rounded-full flex items-center justify-center"
+                                    >
+                                        <i
+                                            class="ri-user-line text-brand-primary"
+                                        ></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p
+                                            class="font-semibold text-brand-dark"
+                                        >
+                                            Dr. Sarah Johnson
+                                        </p>
+                                        <p class="text-sm text-gray-600">
+                                            Family Medicine, {{ state.name }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="bg-white rounded-xl p-6 shadow-md testimonial-card"
+                            >
+                                <div class="flex items-center mb-4">
+                                    <div class="flex text-yellow-400">
+                                        <i class="ri-star-fill"></i
+                                        ><i class="ri-star-fill"></i
+                                        ><i class="ri-star-fill"></i
+                                        ><i class="ri-star-fill"></i
+                                        ><i class="ri-star-fill"></i>
+                                    </div>
+                                    <span class="ml-2 text-sm text-gray-600"
+                                        >5.0 Rating</span
+                                    >
+                                </div>
+                                <p class="text-gray-700 mb-4 italic">
+                                    "Professional, reliable, and results-driven.
+                                    Ardur Healthcare's expertise in {{
+                                    state.name }} billing regulations has been
+                                    invaluable for our practice growth."
+                                </p>
+                                <div class="flex items-center">
+                                    <div
+                                        class="w-10 h-10 bg-brand-primary/10 rounded-full flex items-center justify-center"
+                                    >
+                                        <i
+                                            class="ri-user-line text-brand-primary"
+                                        ></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p
+                                            class="font-semibold text-brand-dark"
+                                        >
+                                            Dr. Michael Chen
+                                        </p>
+                                        <p class="text-sm text-gray-600">
+                                            Cardiology Practice, {{ state.name
+                                            }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8 pt-6 border-t border-brand-primary/20">
+                            <div
+                                class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center"
+                            >
+                                <div>
+                                    <p
+                                        class="text-2xl font-bold text-brand-primary"
+                                    >
+                                        500+
+                                    </p>
+                                    <p class="text-sm text-gray-600">
+                                        Happy Clients
+                                    </p>
+                                </div>
+                                <div>
+                                    <p
+                                        class="text-2xl font-bold text-brand-primary"
+                                    >
+                                        99%
+                                    </p>
+                                    <p class="text-sm text-gray-600">
+                                        Claim Accuracy
+                                    </p>
+                                </div>
+                                <div>
+                                    <p
+                                        class="text-2xl font-bold text-brand-primary"
+                                    >
+                                        25%
+                                    </p>
+                                    <p class="text-sm text-gray-600">
+                                        Avg Revenue Increase
+                                    </p>
+                                </div>
+                                <div>
+                                    <p
+                                        class="text-2xl font-bold text-brand-primary"
+                                    >
+                                        24/7
+                                    </p>
+                                    <p class="text-sm text-gray-600">Support</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        data-aos="fade-up"
+                        class="bg-white rounded-2xl p-8 shadow-lg"
+                    >
+                        <h2
+                            class="text-2xl md:text-3xl font-bold text-brand-dark mb-8"
+                        >
+                            FAQs for {{ state.name }} Healthcare Providers
+                        </h2>
+                        <div class="space-y-6">
+                            {% for faq in state.faqs %}
+                            <div
+                                class="border-b border-gray-200 pb-4 last:border-b-0"
+                            >
+                                <h3
+                                    class="font-semibold text-brand-dark mb-3 text-lg"
+                                >
+                                    {{ faq.question }}
+                                </h3>
+                                <p class="text-gray-600 leading-relaxed">
+                                    {{ faq.answer }}
+                                </p>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:w-1/4">
+                    <div class="lg:sticky lg:top-32">
+                        <div
+                            data-aos="fade-up"
+                            class="bg-gradient-to-br from-brand-primary to-brand-dark rounded-2xl p-4 text-white shadow-2xl"
+                        >
+                            <div class="text-center mb-4">
+                                <div
+                                    class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-2"
+                                >
+                                    <i
+                                        class="ri-customer-service-2-line text-2xl text-white"
+                                    ></i>
+                                </div>
+                                <h3 class="text-xl font-bold mb-1">
+                                    Ready to Get Started?
+                                </h3>
+                                <p class="text-white/90 text-sm">
+                                    Schedule your free consultation with our {{
+                                    state.name }} billing experts
+                                </p>
+                            </div>
+                            <form
+                                class="space-y-2"
+                                action="{{ url_for('contact.contact_form') }}"
+                                method="POST"
+                            >
+                                <div>
+                                    <label
+                                        class="block text-xs font-medium mb-1"
+                                        for="name"
+                                    >
+                                        Full Name *
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        class="w-full px-3 py-2 text-sm rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
+                                        placeholder="Enter your full name"
+                                        required
+                                    />
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-xs font-medium mb-1"
+                                        for="email"
+                                    >
+                                        Email Address *
+                                    </label>
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        class="w-full px-3 py-2 text-sm rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
+                                        placeholder="Enter your email"
+                                        required
+                                    />
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-xs font-medium mb-1"
+                                        for="phone"
+                                    >
+                                        Phone Number *
+                                    </label>
+                                    <input
+                                        type="tel"
+                                        id="phone"
+                                        name="phone"
+                                        class="w-full px-3 py-2 text-sm rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
+                                        placeholder="Enter your phone number"
+                                        required
+                                    />
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-xs font-medium mb-1"
+                                        for="practice"
+                                    >
+                                        Practice Name *
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="practice"
+                                        name="practice"
+                                        class="w-full px-3 py-2 text-sm rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
+                                        placeholder="Enter your practice name"
+                                        required
+                                    />
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-xs font-medium mb-1"
+                                        for="state_field"
+                                    >
+                                        State *
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="state_field"
+                                        name="state"
+                                        class="w-full px-3 py-2 text-sm rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
+                                        placeholder="Enter your state"
+                                        value="{{ state.name }}"
+                                        required
+                                    />
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-xs font-medium mb-1"
+                                        for="specialties"
+                                    >
+                                        Specialties *
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="specialties"
+                                        name="specialties"
+                                        class="w-full px-3 py-2 text-sm rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
+                                        placeholder="Enter your specialties"
+                                        required
+                                    />
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-xs font-medium mb-1"
+                                        for="service_type"
+                                    >
+                                        Service Type *
+                                    </label>
+                                    <select
+                                        id="service_type"
+                                        name="service_type"
+                                        class="w-full px-3 py-2 text-sm rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-white/50"
+                                        required
+                                    >
+                                        <option
+                                            value=""
+                                            class="text-black bg-white"
+                                        >
+                                            Select service type
+                                        </option>
+                                        <option
+                                            value="medical-billing"
+                                            class="text-black bg-white"
+                                        >
+                                            Medical Billing
+                                        </option>
+                                        <option
+                                            value="coding-services"
+                                            class="text-black bg-white"
+                                        >
+                                            Coding Services
+                                        </option>
+                                        <option
+                                            value="credentialing"
+                                            class="text-black bg-white"
+                                        >
+                                            Provider Credentialing
+                                        </option>
+                                        <option
+                                            value="ar-management"
+                                            class="text-black bg-white"
+                                        >
+                                            AR Management
+                                        </option>
+                                        <option
+                                            value="denial-management"
+                                            class="text-black bg-white"
+                                        >
+                                            Denial Management
+                                        </option>
+                                        <option
+                                            value="full-service"
+                                            class="text-black bg-white"
+                                        >
+                                            Full Service Package
+                                        </option>
+                                        <option
+                                            value="consultation"
+                                            class="text-black bg-white"
+                                        >
+                                            Consultation
+                                        </option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-xs font-medium mb-1"
+                                        for="message"
+                                    >
+                                        Message *
+                                    </label>
+                                    <textarea
+                                        id="message"
+                                        name="message"
+                                        rows="2"
+                                        class="w-full px-3 py-2 text-sm rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
+                                        placeholder="Tell us about your billing needs..."
+                                        required
+                                    ></textarea>
+                                </div>
+                                <button
+                                    type="submit"
+                                    class="w-full bg-white text-brand-primary font-semibold py-2 text-sm rounded-lg hover:bg-gray-100 transition duration-300 flex items-center justify-center"
+                                >
+                                    <i class="ri-send-plane-line mr-2"></i> Get
+                                    Free Consultation
+                                </button>
+                            </form>
+                            <div class="mt-4 pt-4 border-t border-white/20">
+                                <div class="space-y-2">
+                                    <div class="flex items-center space-x-2">
+                                        <i
+                                            class="ri-phone-line text-white/80 text-sm"
+                                        ></i>
+                                        <div>
+                                            <p class="text-xs text-white/80">
+                                                Call us directly
+                                            </p>
+                                            <p class="font-semibold text-sm">
+                                                (214) 800-6161
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center space-x-2">
+                                        <i
+                                            class="ri-time-line text-white/80 text-sm"
+                                        ></i>
+                                        <div>
+                                            <p class="text-xs text-white/80">
+                                                Business Hours
+                                            </p>
+                                            <p class="font-semibold text-sm">
+                                                Mon-Fri: 8AM-6PM CST
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center space-x-2">
+                                        <i
+                                            class="ri-map-pin-line text-white/80 text-sm"
+                                        ></i>
+                                        <div>
+                                            <p class="text-xs text-white/80">
+                                                Serving
+                                            </p>
+                                            <p class="font-semibold text-sm">
+                                                {{ state.name }} Healthcare
+                                                Providers
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-32 bg-brand-secondary text-center">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up">
+            <h2
+                class="text-3xl md:text-4xl font-bold font-montserrat text-brand-dark mb-6"
+            >
+                Transform Your {{ state.name }} Practice Today
+            </h2>
+            <p class="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
+                Join hundreds of {{ state.name }} healthcare providers who trust
+                Ardur Healthcare to maximize their revenue and streamline their
+                billing processes.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                    href="{{ url_for('contact.contact_form') }}"
+                    class="bg-brand-primary text-white font-montserrat font-semibold px-8 py-4 rounded-full hover:scale-105 hover:bg-brand-dark hover:shadow-xl transition duration-300 inline-flex items-center justify-center"
+                >
+                    <i class="ri-phone-line mr-2"></i> Call (214) 800-6161
+                </a>
+                <a
+                    href="{{ url_for('ourreach.index') }}"
+                    class="bg-white text-brand-primary border-2 border-brand-primary font-montserrat font-semibold px-8 py-4 rounded-full hover:bg-brand-primary hover:text-white transition duration-300 inline-flex items-center justify-center"
+                >
+                    <i class="ri-map-pin-line mr-2"></i> View Interactive Map
+                </a>
+            </div>
+        </div>
+    </section>
 </div>
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 <link
-  href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
-  rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+    rel="stylesheet"
 />
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-  AOS.init({
-    duration: 800,
-    once: true,
-  });
+    AOS.init({
+        duration: 800,
+        once: true,
+    });
 </script>
 <style>
-  /* Fix for sticky form scroll visibility - adjusted to account for navbar */
-  @media (min-width: 1024px) {
-    .lg\:sticky {
-      position: -webkit-sticky;
-      position: sticky;
+    /* Fix for sticky form scroll visibility - adjusted to account for navbar */
+    @media (min-width: 1024px) {
+        .lg\:sticky {
+            position: -webkit-sticky;
+            position: sticky;
+        }
+        .lg\:top-32 {
+            top: 8rem; /* Adjusted from 2rem to 8rem to avoid navbar overlap */
+        }
     }
-    .lg\:top-32 {
-      top: 8rem; /* Adjusted from 2rem to 8rem to avoid navbar overlap */
+
+    /* Smooth scrolling for better UX */
+    html {
+        scroll-behavior: smooth;
     }
-  }
 
-  /* Smooth scrolling for better UX */
-  html {
-    scroll-behavior: smooth;
-  }
-
-  /* Enhanced form styling */
-  .form-input:focus {
-    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
-  }
-
-  /* Multi-select styling */
-  select[multiple] {
-    background-image: none;
-  }
-  select[multiple] option {
-    padding: 8px;
-    border-radius: 4px;
-    margin: 2px 0;
-  }
-  select[multiple] option:checked {
-    background-color: #008ba3 !important;
-    color: white !important;
-  }
-
-  /* Responsive improvements */
-  @media (max-width: 1023px) {
-    .lg\:sticky {
-      position: static;
+    /* Enhanced form styling */
+    .form-input:focus {
+        box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
     }
-    .lg\:top-32 {
-      top: 0;
+
+    /* Multi-select styling */
+    select[multiple] {
+        background-image: none;
     }
-  }
+    select[multiple] option {
+        padding: 8px;
+        border-radius: 4px;
+        margin: 2px 0;
+    }
+    select[multiple] option:checked {
+        background-color: #008ba3 !important;
+        color: white !important;
+    }
 
-  /* Form field animations */
-  .form-field {
-    transition: all 0.3s ease;
-  }
-  .form-field:focus-within {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 139, 163, 0.15);
-  }
+    /* Responsive improvements */
+    @media (max-width: 1023px) {
+        .lg\:sticky {
+            position: static;
+        }
+        .lg\:top-32 {
+            top: 0;
+        }
+    }
 
-  /* Enhanced testimonial cards */
-  .testimonial-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .testimonial-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  }
+    /* Form field animations */
+    .form-field {
+        transition: all 0.3s ease;
+    }
+    .form-field:focus-within {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 139, 163, 0.15);
+    }
 
-  /* Service card hover effects */
-  .service-card {
-    transition: all 0.3s ease;
-  }
-  .service-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0, 139, 163, 0.15);
-  }
+    /* Enhanced testimonial cards */
+    .testimonial-card {
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+    }
+    .testimonial-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Service card hover effects */
+    .service-card {
+        transition: all 0.3s ease;
+    }
+    .service-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(0, 139, 163, 0.15);
+    }
 </style>
 {% endblock %}

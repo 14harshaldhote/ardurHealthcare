@@ -1,0 +1,39 @@
+[
+  {
+    "timestamp": "2025-07-22T16:05:48.557744",
+    "state": "Florida",
+    "specialties": [
+      "family-medicine",
+      "internal-medicine"
+    ],
+    "service_type": "medical-billing",
+    "source": "contact_form"
+  },
+  {
+    "timestamp": "2025-07-22T16:08:09.483424",
+    "state": "Florida",
+    "specialties": [
+      "family-medicine",
+      "internal-medicine"
+    ],
+    "service_type": "medical-billing",
+    "source": "contact_form"
+  },
+  {
+    "timestamp": "2025-07-22T16:08:58.345873",
+    "state": "Florida",
+    "specialties": [
+      "family-medicine",
+      "internal-medicine"
+    ],
+    "service_type": "medical-billing",
+    "source": "contact_form"
+  },
+  {
+    "timestamp": "2025-07-24T10:03:05.641018",
+    "state": "California",
+    "specialties": "Cardiology",
+    "service_type": "medical-billing",
+    "source": "contact_form"
+  }
+]

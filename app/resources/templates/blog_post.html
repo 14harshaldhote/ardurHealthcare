@@ -6,8 +6,13 @@ endblock %} {% block meta %}
 <meta property="og:description" content="{{ post.meta_description }}" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="{{ request.url }}" />
-<meta property="article:author" content="{{ post.author }}" />
-<meta property="article:published_time" content="{{ post.date.isoformat() }}" />
+{% if post.author %}<meta
+    property="article:author"
+    content="{{ post.author }}"
+/>{% endif %} {% if post.date %}<meta
+    property="article:published_time"
+    content="{{ post.date.isoformat() }}"
+/>{% endif %}
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="{{ post.title }}" />
 <meta name="twitter:description" content="{{ post.meta_description }}" />

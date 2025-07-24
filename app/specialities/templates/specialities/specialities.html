@@ -291,10 +291,11 @@ Services | Ardur Healthcare{% endblock %} {% block meta %}
                     <i class="ri-phone-line mr-2"></i> Get Free Consultation
                 </a>
                 <a
-                    href="tel:+1-555-ARDUR-HC"
+                    href="tel:+1 (702) 809-2713
+"
                     class="bg-transparent text-brand-primary border-2 border-brand-primary font-montserrat font-light px-8 py-4 rounded-xl hover:bg-white hover:text-brand-primary transition-all duration-300 inline-flex items-center justify-center"
                 >
-                    <i class="ri-phone-line mr-2"></i> Call (555) ARDUR-HC
+                    <i class="ri-phone-line mr-2"></i> Call (702) 809-2713
                 </a>
             </div>
         </div>
@@ -536,7 +537,7 @@ Services | Ardur Healthcare{% endblock %} {% block meta %}
         {
             name: "{{ service }}",
             category: "{% if service in ["Mental Health", "Behavioral Health", "Clinical Psychology", "Chiropractic", "Family Practice", "Home Health", "Podiatry", "Wound Care", "Massage Therapy", "Physical Therapy"] %}popular{% elif 'Primary Care' in service or 'Family Practice' in service or 'Internal Medicine' in service %}primary{% elif 'Therapy' in service or 'Physical' in service or 'Massage' in service or 'Occupational' in service %}therapy{% elif 'Surgery' in service or 'Surgical' in service or 'Anesthesia' in service %}surgical{% else %}specialty{% endif %}",
-            slug: "{{ service.lower().replace(' ', '-').replace('(', '').replace(')', '').replace('/', '-').replace('&', 'and') }}",
+            slug: "{{ service.lower().replace(' ', '-').replace('(', '').replace(')', '').replace('/', '-').replace('&', 'and') }}-billing-services",
             icon: "{% if 'Mental Health' in service or 'Behavioral Health' in service or 'Clinical Psychology' in service %}ri-mental-health-line{% elif 'Family Practice' in service %}ri-family-line{% elif 'Home Health' in service %}ri-home-heart-line{% elif 'Wound Care' in service %}ri-band-aid-line{% elif 'Physical Therapy' in service or 'Massage Therapy' in service or 'Occupational' in service %}ri-hand-heart-line{% elif 'Chiropractic' in service %}ri-body-scan-line{% elif 'Podiatry' in service %}ri-footprint-line{% elif 'Cardiology' in service %}ri-heart-pulse-line{% elif 'Orthopedic' in service %}ri-bone-line{% elif 'Dental' in service %}ri-tooth-line{% elif 'Dermatology' in service %}ri-skin-line{% elif 'Radiology' in service %}ri-scan-line{% elif 'Emergency' in service %}ri-emergency-line{% elif 'Surgery' in service %}ri-scissors-cut-line{% elif 'Pediatrics' in service %}ri-baby-line{% elif 'Neurology' in service %}ri-brain-line{% elif 'Oncology' in service %}ri-capsule-line{% elif 'Pharmacy' in service %}ri-medicine-bottle-line{% elif 'Laboratory' in service %}ri-test-tube-line{% elif 'Optometry' in service %}ri-eye-line{% elif 'Urology' in service %}ri-drop-line{% elif 'Sleep' in service %}ri-moon-line{% elif 'Pain Management' in service %}ri-healing-line{% elif 'Hospice' in service %}ri-home-heart-line{% elif 'Anesthesia' in service %}ri-syringe-line{% elif 'Primary Care' in service or 'Internal Medicine' in service %}ri-user-heart-line{% elif 'Urgent Care' in service %}ri-alarm-warning-line{% elif 'OB GYN' in service %}ri-parent-line{% elif 'Allergy' in service %}ri-virus-line{% elif 'Endocrinology' in service %}ri-medicine-bottle-line{% elif 'Gastroenterology' in service %}ri-stomach-line{% elif 'Pulmonology' in service %}ri-lungs-line{% elif 'Rheumatology' in service %}ri-bone-line{% elif 'Pathology' in service %}ri-microscope-line{% elif 'Ambulatory' in service %}ri-hospital-line{% elif 'DME' in service or 'Equipment' in service %}ri-wheelchair-line{% elif 'Sports Medicine' in service %}ri-football-line{% elif 'Skilled Nursing' in service or 'SNF' in service %}ri-nurse-line{% elif 'Plastic Surgery' in service %}ri-scissors-cut-line{% elif 'Otolaryngology' in service or 'ENT' in service %}ri-ear-line{% elif 'Oral' in service or 'Maxillofacial' in service %}ri-tooth-line{% else %}ri-health-book-line{% endif %}"
         }{% if not loop.last %},{% endif %}
         {% endfor %}
@@ -571,7 +572,7 @@ Services | Ardur Healthcare{% endblock %} {% block meta %}
                 <p class="text-gray-600 text-sm mb-3 leading-relaxed line-clamp-3">
                     Expert billing services for ${specialty.name.toLowerCase()} providers with specialty-specific compliance.
                 </p>
-                <a href="{{ url_for('specialities.specialty', specialty_type='') }}${specialty.slug}"
+                <a href="/specialty/${specialty.slug}"
                    class="learn-more-btn">
                     Learn More
                     <i class="ri-arrow-right-line"></i>

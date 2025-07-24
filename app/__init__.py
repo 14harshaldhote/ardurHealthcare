@@ -81,11 +81,11 @@ def create_app(config_class=Config):
         print("✅ Registered services blueprint.")
 
         from .resources import resources as resources_blueprint
-        app.register_blueprint(resources_blueprint)
+        app.register_blueprint(resources_blueprint, url_prefix='/resources')
         print("✅ Registered resources blueprint.")
 
         from .specialities import specialities as specialities_blueprint
-        app.register_blueprint(specialities_blueprint)
+        app.register_blueprint(specialities_blueprint, url_prefix='/specialty')
         print("✅ Registered specialities blueprint.")
 
         from .ourreach import ourreach as ourreach_blueprint

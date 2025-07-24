@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, TextAreaField, SubmitField, SelectField, DateField, DecimalField, SelectMultipleField
+from wtforms import StringField, TextAreaField, SubmitField, SelectField, DateField, DecimalField, BooleanField
 from wtforms.validators import DataRequired, Email, Length, Optional
 
 class ContactForm(FlaskForm):
@@ -50,4 +50,5 @@ class ContactForm(FlaskForm):
 
     subject = StringField('Subject (Requirements)', validators=[Optional(), Length(max=200)])  # Made optional for state pages
     message = TextAreaField('Message', validators=[DataRequired(), Length(min=10, max=1000)])
+    privacy_policy_agreement = BooleanField('I agree to the Privacy Policy', validators=[DataRequired()])
     submit = SubmitField('Send Message')

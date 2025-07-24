@@ -2,23 +2,42 @@
   "services": [
     {
       "specialty": "Mental Health Billing Services",
-      "url": "https://ardurhealthcare.ardurtechnology.com/specialities/dermatology",
-      "description": "Expert billing support for psychiatrists, therapists, and mental health providers.",
+      "url": "https://ardurhealthcare.com/specialty/mental-health-billing-services",
+      "meta_title": "Mental Health Billing Services | Ardur Healthcare",
+      "meta_description": "Get expert mental health billing services for therapists, psychologists, and psychiatrists. Maximize revenue and reduce denials with Ardur Healthcare.",
+      "h1": "Mental Health Billing Services",
+      "h2_sections": [
+        "Reliable Mental Health Billing Services",
+        "Common Billing Challenges",
+        "Our Solutions",
+        "Why Choose Ardur Healthcare for Mental Health Billing?",
+        "Ready to Simplify Your Mental Health Billing?",
+        "Our Mental Health Billing Process",
+        "Who We Help with Mental Health Billing",
+        "Frequently Asked Questions - Mental Health Billing"
+      ],
+      "description": "Expert billing support for psychiatrists, therapists, and mental health providers with specialized knowledge of behavioral health coding and compliance requirements.",
       "services": [
         "Psychiatric Evaluations",
         "Psychotherapy Sessions",
         "Medication Management",
-        "Psychological Testing"
+        "Psychological Testing",
+        "Crisis Intervention Services",
+        "Group Therapy Sessions"
       ],
       "challenges": [
         "Managing time-based coding and session duration",
         "Claim denials for missing documentation or authorization",
-        "Minor billing details regarding psychologists vs. psychiatrists"
+        "Complex billing requirements for different therapy types",
+        "Prior authorization challenges for mental health services",
+        "Telehealth billing compliance and regulations"
       ],
       "solutions": [
         "Accurate CPT/ICD coding and documentation review",
         "Prior authorization and verification workflows",
-        "Specialty-driven workflows for psychologists and psychiatrists"
+        "Specialty-driven workflows for psychologists and psychiatrists",
+        "Telehealth billing compliance management",
+        "Proactive denial management and appeals process"
       ],
       "process": [
         "Insurance Verification",
@@ -26,13 +45,16 @@
         "Coding & Documentation",
         "Claim Submission",
         "Payment Posting",
-        "A/R Follow-Up"
+        "A/R Follow-Up",
+        "Compliance Monitoring"
       ],
       "who_we_help": [
         "Psychiatrists",
         "Psychologists",
         "Therapists (LCSWs, LMFTs, LPCs)",
-        "Behavioral Health Clinics"
+        "Behavioral Health Clinics",
+        "Mental Health Centers",
+        "Private Practice Providers"
       ],
       "faqs": [
         {
@@ -59,23 +81,42 @@
     },
     {
       "specialty": "Behavioral Health Billing Services",
-      "url": "https://ardurhealthcare.ardurtechnology.com/specialities/dermatology",
-      "description": "Specialized billing support for behavioral health and substance use providers.",
+      "url": "https://ardurhealthcare.com/specialty/behavioral-health-billing-services",
+      "meta_title": "Behavioral Health Billing Services | Ardur Healthcare",
+      "meta_description": "Expert behavioral health billing services for clinics, therapists, & addiction centers. Improve revenue, reduce denials, & stay compliant with Ardur Healthcare.",
+      "h1": "Behavioral Health Billing Services",
+      "h2_sections": [
+        "Expert Behavioral Health Billing Services",
+        "Common Billing Challenges",
+        "Our Solutions",
+        "Why Choose Ardur Healthcare for Behavioral Health Billing?",
+        "Ready to Streamline Your Behavioral Health Billing?",
+        "Our Behavioral Health Billing Process",
+        "Who We Help with Behavioral Health Billing",
+        "Frequently Asked Questions - Behavioral Health Billing"
+      ],
+      "description": "Specialized billing support for behavioral health and substance use providers with comprehensive knowledge of addiction treatment billing and compliance.",
       "services": [
         "Therapy Billing",
-        "Addiction Billing",
-        "Program Billing",
-        "Dual Diagnosis"
+        "Addiction Treatment Billing",
+        "Intensive Outpatient Program (IOP) Billing",
+        "Partial Hospitalization Program (PHP) Billing",
+        "Dual Diagnosis Treatment Billing",
+        "Crisis Intervention Services"
       ],
       "challenges": [
-        "Complex coding for behavioral interventions and SUD",
-        "Denials due to unclear documentation or level of care",
-        "Inconsistent payer rules across behavioral health services"
+        "Complex coding for behavioral interventions and substance use disorders",
+        "Denials due to unclear documentation or level of care issues",
+        "Inconsistent payer rules across behavioral health services",
+        "Prior authorization requirements for intensive programs",
+        "Compliance with state and federal addiction treatment regulations"
       ],
       "solutions": [
         "Accurate CPT/ICD coding for all behavioral health levels",
         "Templates for IOP, PHP, and SUD documentation compliance",
-        "Payer-specific edits and denial prevention workflows"
+        "Payer-specific edits and denial prevention workflows",
+        "Automated prior authorization management",
+        "Compliance monitoring and reporting systems"
       ],
       "process": [
         "Insurance Verification",
@@ -83,515 +124,751 @@
         "Coding & Compliance",
         "Claims Submission",
         "Payment Posting",
-        "A/R Management"
+        "A/R Management",
+        "Regulatory Compliance"
       ],
       "who_we_help": [
         "Outpatient Behavioral Clinics",
         "Addiction Treatment Centers",
         "Private Practice Therapists",
         "Psychiatrists & Psychologists",
-        "Telehealth Providers"
+        "Telehealth Providers",
+        "Residential Treatment Facilities"
       ],
       "faqs": [
         {
           "question": "What services are included in behavioral health billing?",
-          "answer": "We handle coding, claims, eligibility checks, A/R, and payer compliance for therapy, psychiatry, IOPs, and substance use programs."
+          "answer": "We handle coding, claims, eligibility checks, A/R, and payer compliance for therapy, psychiatry, IOPs, PHPs, and substance use programs."
         },
         {
-          "question": "What’s the difference between mental and behavioral health billing?",
-          "answer": "Behavioral health billing includes mental health services plus substance use, behavioral therapy, and broader interventions."
+          "question": "What's the difference between mental and behavioral health billing?",
+          "answer": "Behavioral health billing includes mental health services plus substance use disorders, behavioral therapy, and broader interventions."
         },
         {
           "question": "Do you work with behavioral health clinics and solo therapists?",
-          "answer": "Yes. We support all types, from single therapists to large group practices and IOP programs."
+          "answer": "Yes. We support all practice sizes, from single therapists to large group practices and intensive outpatient programs."
         },
         {
           "question": "Can you help with behavioral health billing software setup?",
-          "answer": "We integrate with major systems like TheraNest, TherapyNotes, Valant, and more."
+          "answer": "We integrate with major systems like TheraNest, TherapyNotes, Valant, and other behavioral health-specific platforms."
         },
         {
           "question": "What makes your billing solutions different?",
-          "answer": "Our behavioral health billing services are compliance-driven, specialty-specific, and focused on increasing collections."
+          "answer": "Our behavioral health billing services are compliance-driven, specialty-specific, and focused on maximizing collections while maintaining regulatory compliance."
         }
       ]
     },
     {
       "specialty": "Clinical Psychology Billing Services",
-      "url": "https://ardurhealthcare.ardurtechnology.com/specialities/dermatology",
-      "description": "Accurate billing support for licensed clinical psychologists and therapy practices.",
+      "url": "https://ardurhealthcare.com/specialty/clinical-psychology-billing-services",
+      "meta_title": "Clinical Psychology Billing Services | Ardur Healthcare",
+      "meta_description": "Specialized clinical psychology billing services for therapy, testing, and evaluations. Improve collections and reduce claim errors with Ardur Healthcare.",
+      "h1": "Clinical Psychology Billing Services",
+      "h2_sections": [
+        "Reliable Clinical Psychology Billing Services",
+        "Common Billing Challenges",
+        "Our Solutions",
+        "Why Choose Ardur Healthcare for Clinical Psychology Billing?",
+        "Ready to Optimize Your Clinical Psychology Billing?",
+        "Our Clinical Psychology Billing Process",
+        "Who We Help with Clinical Psychology Billing",
+        "Frequently Asked Questions - Clinical Psychology Billing"
+      ],
+      "description": "Expert billing services for clinical psychologists specializing in therapy, psychological testing, and evaluations with precise coding and documentation support.",
       "services": [
-        "Therapy Sessions",
-        "Psych Testing",
-        "Evaluations",
-        "Report Writing"
+        "Psychological Testing and Assessments",
+        "Individual Psychotherapy",
+        "Group Therapy Sessions",
+        "Family Therapy",
+        "Couples Therapy",
+        "Psychological Evaluations",
+        "Neuropsychological Testing"
       ],
       "challenges": [
-        "Complex time-based billing and modifier use",
-        "Underpayment for psychological testing services",
-        "Missed revenue due to incomplete documentation"
+        "Complex coding for psychological testing and assessments",
+        "Documentation requirements for different therapy modalities",
+        "Insurance coverage limitations for testing services",
+        "Time-based billing accuracy for therapy sessions",
+        "Prior authorization for psychological evaluations"
       ],
       "solutions": [
-        "Accurate coding for timed and testing-based services",
-        "Templates for test batteries and scoring time capture",
-        "Support with documentation and payer compliance"
+        "Specialized coding expertise for psychological testing",
+        "Comprehensive documentation review and support",
+        "Insurance verification and authorization management",
+        "Accurate time-based billing for all services",
+        "Proactive appeal process for denied claims"
       ],
       "process": [
-        "Patient Intake",
-        "Eligibility Check",
-        "Code Assignment",
-        "Claim Submission",
-        "Payment Posting",
-        "Denial Management"
+        "Insurance Verification",
+        "Patient Registration",
+        "Service Authorization",
+        "Coding & Documentation",
+        "Claims Submission",
+        "Payment Processing",
+        "Follow-up & Collections"
       ],
       "who_we_help": [
-        "Independent Psychologists",
-        "Group Psychology Practices",
-        "Educational Psychologists",
-        "Clinical Neuropsychologists",
-        "Integrated Care Providers"
+        "Clinical Psychologists",
+        "Neuropsychologists",
+        "Private Practice Psychologists",
+        "Psychology Group Practices",
+        "Hospital-Based Psychologists",
+        "University Psychology Clinics"
       ],
       "faqs": [
         {
-          "question": "What services do you bill for clinical psychologists?",
-          "answer": "We bill for therapy sessions, psychological testing, diagnostic evaluations, and more."
+          "question": "Do you handle billing for psychological testing?",
+          "answer": "Yes, we specialize in billing for all types of psychological testing including neuropsychological assessments, IQ testing, and diagnostic evaluations."
         },
         {
-          "question": "Do you help with time-based coding and CPT modifiers?",
-          "answer": "Yes. We apply correct codes and modifiers for session duration and test scoring time."
+          "question": "How do you ensure accurate coding for psychology services?",
+          "answer": "Our certified coders have specialized training in psychology CPT codes and stay current with APA billing guidelines and payer requirements."
         },
         {
-          "question": "How do you support psychological testing billing?",
-          "answer": "We ensure coding for test administration, scoring, interpretation, and report writing is accurate and compliant."
+          "question": "Can you help with insurance authorization for testing?",
+          "answer": "Absolutely. We handle prior authorization requests for psychological testing and evaluations, including appeals when necessary."
         },
         {
-          "question": "Are your services suitable for solo psychology practices?",
-          "answer": "Absolutely. We work with solo providers, group practices, and psychologists embedded in clinics."
+          "question": "What therapy types do you bill for?",
+          "answer": "We bill for individual, group, family, and couples therapy using appropriate CPT codes and time-based billing requirements."
         },
         {
-          "question": "Which EHRs do you support?",
-          "answer": "We integrate with major systems like TherapyNotes, Valant, SimplePractice, and more."
+          "question": "Do you work with all major insurance plans?",
+          "answer": "Yes, we work with all major insurance carriers and understand their specific requirements for psychology services billing."
         }
       ]
     },
     {
       "specialty": "Chiropractic Billing Services",
-      "url": "https://ardurhealthcare.ardurtechnology.com/specialities/dermatology",
-      "description": "Accurate and compliant billing for chiropractic practices of all sizes.",
+      "url": "https://ardurhealthcare.com/specialty/chiropractic-billing-services",
+      "meta_title": "Chiropractic Billing Services | Ardur Healthcare",
+      "meta_description": "Expert chiropractic billing services for solo practices and clinics. Reduce denials, apply correct modifiers, and improve collections with Ardur Healthcare.",
+      "h1": "Chiropractic Billing Services",
+      "h2_sections": [
+        "Customized Chiropractic Billing Services",
+        "Common Billing Challenges",
+        "Our Solutions",
+        "Why Choose Ardur Healthcare for Chiropractic Billing?",
+        "Need Reliable Chiropractic Billing Support?",
+        "Our Chiropractic Billing Process",
+        "Who We Help with Chiropractic Billing",
+        "Frequently Asked Questions - Chiropractic Billing"
+      ],
+      "description": "Comprehensive chiropractic billing services with expertise in spinal manipulation coding, modifier usage, and insurance compliance for optimal reimbursement.",
       "services": [
-        "Manual Therapy",
-        "New Patients",
-        "Maintenance Care",
-        "Insurance Billing"
+        "Spinal Manipulation Services",
+        "Physical Therapy Modalities",
+        "X-ray and Diagnostic Services",
+        "Massage Therapy",
+        "Therapeutic Exercise",
+        "Evaluation and Management Services"
       ],
       "challenges": [
-        "Frequent denials for maintenance vs. active care",
-        "Modifier misuse and incomplete charting",
-        "Limited coverage under many payer policies"
+        "Complex modifier requirements for chiropractic services",
+        "Documentation requirements for medical necessity",
+        "Insurance coverage limitations and visit caps",
+        "Proper coding for multiple treatment areas",
+        "Compliance with scope of practice regulations"
       ],
       "solutions": [
-        "Documentation templates for active vs. maintenance care",
-        "Correct use of AT, GA, GY, and GZ modifiers",
-        "Payer-specific chiropractic billing protocols"
+        "Expert modifier application and coding accuracy",
+        "Documentation templates for medical necessity",
+        "Proactive insurance verification and benefit checks",
+        "Specialized training in chiropractic coding guidelines",
+        "Compliance monitoring and audit protection"
       ],
       "process": [
-        "Eligibility Check",
-        "Patient Onboarding",
-        "Code Assignment",
-        "Claim Submission",
-        "Payment Posting",
-        "A/R Management"
+        "Insurance Verification",
+        "Patient Registration",
+        "Treatment Documentation",
+        "Coding & Modifier Application",
+        "Claims Submission",
+        "Payment Processing",
+        "Follow-up & Collections"
       ],
       "who_we_help": [
-        "Solo Chiropractors",
-        "Multi-Provider Clinics",
-        "Integrative Health Centers",
-        "Cash + Insurance Providers",
-        "Chiropractic Wellness Offices"
+        "Solo Chiropractic Practitioners",
+        "Multi-Doctor Chiropractic Clinics",
+        "Integrated Healthcare Practices",
+        "Sports Medicine Chiropractors",
+        "Rehabilitation Centers",
+        "Wellness Centers"
       ],
       "faqs": [
         {
-          "question": "What’s included in your chiropractic billing services?",
-          "answer": "We offer coding, claims submission, modifier usage, payment posting, and denial follow-up."
+          "question": "Do you understand chiropractic-specific coding requirements?",
+          "answer": "Yes, our team has extensive experience with chiropractic CPT codes, modifiers, and documentation requirements for optimal reimbursement."
         },
         {
-          "question": "How do you handle billing for maintenance care?",
-          "answer": "We use the correct modifiers (GA, GY, GZ) and ensure documentation supports the care level."
+          "question": "How do you handle insurance verification for chiropractic services?",
+          "answer": "We verify benefits, coverage limits, and visit caps upfront to prevent billing issues and ensure patients understand their coverage."
         },
         {
-          "question": "Do you work with small chiropractic offices?",
-          "answer": "Yes. We support solo providers, wellness clinics, and high-volume practices."
+          "question": "Can you help with documentation for medical necessity?",
+          "answer": "Absolutely. We provide documentation guidance and review to ensure medical necessity is clearly established for all services."
         },
         {
-          "question": "Are you familiar with chiropractic medical billing software?",
-          "answer": "Yes, we work with popular systems like ChiroTouch, Genesis, and Jane."
+          "question": "Do you handle billing for both treatment and X-rays?",
+          "answer": "Yes, we bill for all chiropractic services including adjustments, therapies, X-rays, and evaluation and management services."
         },
         {
-          "question": "What makes your chiropractic billing solutions different?",
-          "answer": "We offer niche expertise, fast turnaround, and tailored support for chiropractors."
+          "question": "What's your experience with chiropractic insurance denials?",
+          "answer": "We have extensive experience with chiropractic denial patterns and successful appeal strategies to maximize collections."
         }
       ]
     },
     {
       "specialty": "Family Practice Billing Services",
-      "url": "https://ardurhealthcare.ardurtechnology.com/specialities/dermatology",
-      "description": "End-to-end billing support for family medicine providers and group practices.",
+      "url": "https://ardurhealthcare.com/specialty/family-practice-billing-services",
+      "meta_title": "Family Practice Billing Services | Ardur Healthcare",
+      "meta_description": "Comprehensive family practice billing services for physicians and clinics. Improve collections, reduce errors, and stay compliant with Ardur Healthcare.",
+      "h1": "Family Practice Billing Services",
+      "h2_sections": [
+        "Comprehensive Family Practice Billing Services",
+        "Common Billing Challenges",
+        "Our Solutions",
+        "Why Choose Ardur Healthcare for Family Practice Billing?",
+        "Need Expert Billing for Your Family Practice?",
+        "Our Family Practice Billing Process",
+        "Who We Help with Family Practice Billing",
+        "Frequently Asked Questions - Family Practice Billing"
+      ],
+      "description": "Full-service billing solutions for family practice physicians with expertise in preventive care, chronic disease management, and comprehensive primary care coding.",
       "services": [
-        "Preventive Visits",
-        "Chronic Care",
-        "Acute Visits",
-        "E/M Coding"
+        "Preventive Care Services",
+        "Chronic Disease Management",
+        "Acute Care Visits",
+        "Well-Child Examinations",
+        "Immunizations",
+        "Minor Procedures",
+        "Annual Physical Exams"
       ],
       "challenges": [
-        "Complexity in selecting the correct E/M levels",
-        "Payer-specific preventive care rules",
-        "Denials due to overlapping chronic care codes"
+        "Complex coding for bundled preventive services",
+        "Managing multiple chronic conditions in single visits",
+        "Documentation requirements for quality measures",
+        "Insurance coverage variations for preventive care",
+        "Coordination of care billing complexities"
       ],
       "solutions": [
-        "E/M coding audits to avoid undercoding or overcoding",
-        "Preventive service rules mapped by payer and plan",
-        "Chronic care billing workflows with documentation checks"
+        "Expert preventive care coding and bundling",
+        "Chronic care management program billing",
+        "Quality measure documentation support",
+        "Comprehensive insurance verification processes",
+        "Coordinated care billing optimization"
       ],
       "process": [
-        "Eligibility Checks",
-        "Code Assignment",
-        "Claim Submission",
-        "Payment Posting",
-        "Denial Follow-Up",
-        "Ongoing Support"
+        "Insurance Verification",
+        "Patient Registration",
+        "Service Documentation",
+        "Coding & Compliance",
+        "Claims Submission",
+        "Payment Processing",
+        "Follow-up & Collections"
       ],
       "who_we_help": [
-        "Solo Family Physicians",
-        "Multi-Provider Family Clinics",
-        "Rural Health Clinics (RHCs)",
-        "FQHC-Based Providers",
-        "Hybrid Care Practices"
+        "Family Medicine Physicians",
+        "Internal Medicine Doctors",
+        "Primary Care Clinics",
+        "Multi-Specialty Groups",
+        "Federally Qualified Health Centers",
+        "Concierge Medicine Practices"
       ],
       "faqs": [
         {
-          "question": "What services are covered under family practice billing?",
-          "answer": "We bill for preventive care, immunizations, acute illness visits, E/M services, chronic care management, and wellness screenings."
+          "question": "Do you handle preventive care billing complexities?",
+          "answer": "Yes, we specialize in preventive care coding, including annual wellness visits, screening services, and immunization billing."
         },
         {
-          "question": "Do you support rural and multi-provider clinics?",
-          "answer": "Yes. We offer billing solutions for solo family doctors, multi-provider clinics, Rural Health Clinics (RHCs), and FQHCs."
+          "question": "Can you manage chronic care management billing?",
+          "answer": "Absolutely. We handle CCM, RPM, and other care coordination billing programs to maximize revenue opportunities."
         },
         {
-          "question": "How do you help with E/M coding?",
-          "answer": "We apply accurate E/M levels based on time or medical decision-making and audit documentation to ensure compliance."
+          "question": "How do you handle multiple diagnosis coding?",
+          "answer": "Our experienced coders accurately sequence multiple diagnoses and ensure proper linkage to services provided."
         },
         {
-          "question": "Are you a family practice medical billing company?",
-          "answer": "Yes. Ardur Healthcare offers end-to-end revenue cycle management for primary care providers and clinics of all sizes."
+          "question": "Do you support quality measure reporting?",
+          "answer": "Yes, we help with documentation and reporting for MIPS, quality measures, and value-based care programs."
         },
         {
-          "question": "What makes your billing services different?",
-          "answer": "We combine specialty-specific expertise with payer rule tracking, personalized workflows, and denial analytics."
+          "question": "What's your experience with family practice EHRs?",
+          "answer": "We work with all major family practice EHR systems and can integrate seamlessly with your existing workflows."
         }
       ]
     },
     {
       "specialty": "Home Health Billing Services",
-      "url": "https://ardurhealthcare.ardurtechnology.com/specialities/dermatology",
-      "description": "Accurate billing support for skilled nursing, therapy, and home-based care.",
+      "url": "https://ardurhealthcare.com/specialty/home-health-billing-services",
+      "meta_title": "Home Health Billing Services | Ardur Healthcare",
+      "meta_description": "Home health billing services for agencies and clinicians. Optimize coding, align with OASIS, and improve reimbursements with Ardur Healthcare.",
+      "h1": "Home Health Billing Services",
+      "h2_sections": [
+        "Reliable Home Health Billing Services",
+        "Common Billing Challenges",
+        "Our Solutions",
+        "Why Choose Ardur Healthcare for Home Health Billing?",
+        "Need Help Billing Your Home Health Services?",
+        "Our Home Health Billing Process",
+        "Who We Help with Home Health Billing",
+        "Frequently Asked Questions - Home Health Billing"
+      ],
+      "description": "Specialized home health billing services with expertise in OASIS compliance, episode-based billing, and Medicare home health regulations.",
       "services": [
-        "Skilled Nursing",
-        "Therapy Services",
-        "Home Visits",
-        "OASIS Alignment"
+        "Skilled Nursing Services",
+        "Physical Therapy",
+        "Occupational Therapy",
+        "Speech Therapy",
+        "Home Health Aide Services",
+        "Medical Social Services",
+        "Durable Medical Equipment"
       ],
       "challenges": [
-        "Incorrect use of CPT and HCPCS for home visits",
-        "Rejections due to OASIS and documentation mismatches",
-        "Delayed billing for recurring and missed visits"
+        "Complex OASIS documentation requirements",
+        "Episode-based billing and recertification timing",
+        "Medicare coverage and homebound status verification",
+        "Coordination between multiple disciplines",
+        "Compliance with home health regulations"
       ],
       "solutions": [
-        "Home health-specific code validation and claim audits",
-        "OASIS-trained billing experts for accurate claim alignment",
-        "Real-time visit tracking and streamlined billing workflows"
+        "Expert OASIS coding and compliance support",
+        "Automated episode tracking and billing",
+        "Homebound status documentation guidance",
+        "Interdisciplinary coordination workflows",
+        "Comprehensive regulatory compliance monitoring"
       ],
       "process": [
-        "Patient Intake",
-        "OASIS Review",
-        "Code Assignment",
-        "Claim Submission",
-        "Payment Posting",
-        "A/R Follow-Up"
+        "Referral Processing",
+        "Eligibility Verification",
+        "OASIS Assessment",
+        "Service Authorization",
+        "Episode Billing",
+        "Payment Processing",
+        "Recertification Management"
       ],
       "who_we_help": [
         "Home Health Agencies",
-        "Skilled Nurses",
-        "Therapists in the Field",
-        "Solo Home Health Providers",
-        "Post-Acute & Rehab Teams"
+        "Visiting Nurse Services",
+        "Rehabilitation Agencies",
+        "Home Care Providers",
+        "Hospice Organizations",
+        "Medicare Certified Agencies"
       ],
       "faqs": [
         {
-          "question": "What services do you cover under home health billing?",
-          "answer": "We bill for skilled nursing, physical therapy, occupational therapy, speech therapy, home health aide visits, and more."
+          "question": "Do you handle OASIS assessments and coding?",
+          "answer": "Yes, we provide comprehensive OASIS support including assessment review, coding accuracy, and compliance monitoring."
         },
         {
-          "question": "Do you handle CPT coding for home visits?",
-          "answer": "Yes. We use correct CPT codes for home visits (e.g., 99341–99350) and HCPCS codes based on visit type."
+          "question": "How do you manage episode-based billing?",
+          "answer": "We track episodes automatically, manage recertifications, and ensure timely billing for optimal cash flow."
         },
         {
-          "question": "What makes your home health billing services different?",
-          "answer": "We specialize in home health billing, understand PDGM billing cycles, and align claims with OASIS, POC, and visit documentation."
+          "question": "Can you help with Medicare compliance?",
+          "answer": "Absolutely. We stay current with Medicare home health regulations and ensure full compliance with all requirements."
         },
         {
-          "question": "Do you support both Medicare and private payers?",
-          "answer": "Absolutely. We handle Medicare Part A home health billing, Medicaid programs, and commercial payers."
+          "question": "Do you handle multiple therapy disciplines?",
+          "answer": "Yes, we manage billing for all home health disciplines including nursing, PT, OT, ST, and home health aide services."
         },
         {
-          "question": "Can you work with our home health software?",
-          "answer": "Yes. We integrate with platforms like Kinnser, WellSky, Axxess, and others."
+          "question": "What about DME billing in home health?",
+          "answer": "We handle DME billing coordination and ensure proper integration with home health episode billing when applicable."
         }
       ]
     },
     {
       "specialty": "Podiatry Billing Services",
-      "url": "https://ardurhealthcare.ardurtechnology.com/specialities/dermatology",
-      "description": "Specialized billing for foot and ankle care, wound treatment, and diabetic services.",
+      "url": "https://ardurhealthcare.com/specialty/podiatry-billing-services",
+      "meta_title": "Podiatry Billing Services | Ardur Healthcare",
+      "meta_description": "Expert podiatry billing services for solo providers and clinics. Reduce rejections, apply correct modifiers, and boost collections with Ardur Healthcare.",
+      "h1": "Podiatry Billing Services",
+      "h2_sections": [
+        "Expert Podiatry Billing Services",
+        "Common Billing Challenges",
+        "Our Solutions",
+        "Why Choose Ardur Healthcare for Podiatry Billing?",
+        "Looking for Reliable Podiatry Billing Experts?",
+        "Our Podiatry Billing Process",
+        "Who We Help with Podiatry Billing",
+        "Frequently Asked Questions - Podiatry Billing"
+      ],
+      "description": "Comprehensive podiatry billing services with specialized knowledge of foot and ankle procedures, diabetic care billing, and podiatric surgery coding.",
       "services": [
         "Diabetic Foot Care",
-        "Nail Procedures",
-        "Wound Management",
-        "Office Visits"
+        "Nail and Skin Procedures",
+        "Foot and Ankle Surgery",
+        "Biomechanical Assessments",
+        "Wound Care Services",
+        "Custom Orthotics",
+        "Diagnostic Imaging"
       ],
       "challenges": [
-        "Routine foot care denials without qualifying diagnoses",
-        "Incorrect use of Q modifiers (Q7–Q9)",
-        "Surgical coding confusion and bundled services"
+        "Complex coding for surgical and non-surgical procedures",
+        "Medicare coverage determinations for routine care",
+        "Modifier requirements for bilateral procedures",
+        "Documentation for diabetic care necessity",
+        "Prior authorization for advanced treatments"
       ],
       "solutions": [
-        "Medical necessity checks and ICD-10 validation",
-        "Accurate use of Q-modifiers for diabetic care",
-        "CPT guidance for minor surgeries and exclusions"
+        "Expert podiatric coding and modifier application",
+        "Medicare LCD compliance and documentation",
+        "Automated prior authorization management",
+        "Diabetic care documentation templates",
+        "Surgical billing optimization strategies"
       ],
       "process": [
-        "Patient Intake",
-        "Documentation Review",
-        "Code Selection",
-        "Claim Submission",
-        "Payment Posting",
-        "A/R Follow-Up"
+        "Insurance Verification",
+        "Patient Registration",
+        "Service Documentation",
+        "Coding & Modifier Review",
+        "Claims Submission",
+        "Payment Processing",
+        "Follow-up & Appeals"
       ],
       "who_we_help": [
-        "Solo Podiatrists",
-        "Multi-Provider Foot & Ankle Clinics",
+        "Podiatric Surgeons",
+        "General Podiatrists",
+        "Podiatry Group Practices",
+        "Hospital-Based Podiatrists",
         "Wound Care Specialists",
-        "Podiatry Surgical Practices",
-        "Diabetic Foot Care Providers"
+        "Sports Medicine Podiatrists"
       ],
       "faqs": [
         {
-          "question": "What services do you bill under podiatry?",
-          "answer": "We bill for diabetic foot care, wound debridement, nail procedures, office visits, injections, and minor surgeries."
+          "question": "Do you understand podiatric coding complexities?",
+          "answer": "Yes, our team specializes in podiatric CPT codes, surgical procedures, and the unique billing requirements for foot and ankle care."
         },
         {
-          "question": "How do you manage Q-modifier usage in podiatry billing?",
-          "answer": "We apply Q7, Q8, or Q9 modifiers based on qualifying diagnoses and physical findings."
+          "question": "How do you handle Medicare coverage for routine care?",
+          "answer": "We ensure compliance with Medicare LCD requirements and proper documentation for covered diabetic foot care services."
         },
         {
-          "question": "Are you familiar with podiatry billing software?",
-          "answer": "Yes. We work with podiatry-specific EHRs like TRAKnet, SammyEHR, and others."
+          "question": "Can you manage surgical billing for podiatry?",
+          "answer": "Absolutely. We handle all aspects of podiatric surgery billing including pre-authorization, coding, and post-operative care."
         },
         {
-          "question": "What makes your podiatry billing services different?",
-          "answer": "We specialize in podiatry billing, maintain compliance with LCD/NCD rules, and improve first-pass claim acceptance rates."
+          "question": "Do you handle billing for custom orthotics?",
+          "answer": "Yes, we manage orthotic billing including documentation requirements, coding, and insurance coverage verification."
         },
         {
-          "question": "Do you offer billing services for podiatry groups and surgery centers?",
-          "answer": "Absolutely. We handle billing for group practices and outpatient surgery centers with scalable workflows and custom reporting."
+          "question": "What about wound care billing in podiatry?",
+          "answer": "We have extensive experience with wound care billing and understand the intersection of podiatric and wound care services."
         }
       ]
     },
     {
       "specialty": "Wound Care Billing Services",
-      "url": "https://ardurhealthcare.ardurtechnology.com/specialities/dermatology",
-      "description": "Accurate billing for complex wounds, debridement procedures, and chronic care.",
+      "url": "https://ardurhealthcare.com/specialty/wound-care-billing-services",
+      "meta_title": "Wound Care Billing Services | Ardur Healthcare",
+      "meta_description": "Specialized wound care billing services for clinics, podiatrists, & long-term care. Boost accuracy, reduce denials, and maximize revenue with Ardur Healthcare.",
+      "h1": "Wound Care Billing Services",
+      "h2_sections": [
+        "Reliable Wound Care Billing Services",
+        "Common Billing Challenges",
+        "Our Solutions",
+        "Why Choose Ardur Healthcare for Wound Care Billing?",
+        "Need Help Billing Your Wound Care Services?",
+        "Our Wound Care Billing Process",
+        "Who We Serve in Wound Care Billing",
+        "Frequently Asked Questions - Wound Care Billing"
+      ],
+      "description": "Expert wound care billing services with specialized knowledge of advanced wound treatments, dressing applications, and hyperbaric oxygen therapy billing.",
       "services": [
+        "Advanced Wound Dressings",
         "Debridement Procedures",
-        "Wound Dressing Changes",
-        "Skin Substitutes & Grafts",
-        "Chronic Wound Management"
+        "Hyperbaric Oxygen Therapy",
+        "Negative Pressure Wound Therapy",
+        "Skin Substitutes",
+        "Compression Therapy",
+        "Wound Assessment and Documentation"
       ],
       "challenges": [
-        "Confusion around depth and type of debridement",
-        "Denials due to inadequate documentation or diagnosis",
-        "Improper use of modifiers and site-specific codes"
+        "Complex coding for advanced wound care products",
+        "Documentation requirements for medical necessity",
+        "Prior authorization for expensive treatments",
+        "Coordination between multiple providers",
+        "Compliance with LCD coverage requirements"
       ],
       "solutions": [
-        "Detailed code assignment for procedure depth and method",
-        "Documentation templates aligned with payer guidelines",
-        "Modifier support (59, 25, RT/LT) for multi-site billing accuracy"
+        "Expert wound care coding and product billing",
+        "Comprehensive documentation support systems",
+        "Automated prior authorization workflows",
+        "Multi-provider coordination billing",
+        "LCD compliance monitoring and updates"
       ],
       "process": [
-        "Patient Intake",
-        "Clinical Review",
-        "Coding & Modifiers",
-        "Claim Submission",
-        "Payment Posting",
-        "Denial Management"
+        "Wound Assessment Documentation",
+        "Insurance Verification",
+        "Prior Authorization Management",
+        "Service Coding & Billing",
+        "Product Billing Coordination",
+        "Payment Processing",
+        "Outcome Tracking"
       ],
       "who_we_help": [
-        "Wound Care Clinics",
-        "Podiatrists & Vascular Specialists",
-        "Skilled Nursing Facilities (SNFs)",
-        "Home Health Providers",
-        "Long-Term Care Settings"
+        "Wound Care Specialists",
+        "Podiatrists",
+        "Plastic Surgeons",
+        "Long-Term Care Facilities",
+        "Hospital Wound Centers",
+        "Home Health Agencies"
       ],
       "faqs": [
         {
-          "question": "What procedures are covered under wound care billing?",
-          "answer": "We bill for selective and excisional debridement, dressing changes, wound assessments, skin substitutes, and complex chronic wound care."
+          "question": "Do you handle billing for advanced wound care products?",
+          "answer": "Yes, we specialize in billing for skin substitutes, advanced dressings, and other complex wound care products with proper coding and documentation."
         },
         {
-          "question": "How do you ensure accurate coding for wound care?",
-          "answer": "Our team assigns codes based on the wound’s depth, location, and method of treatment, ensuring proper modifier use and payer compliance."
+          "question": "Can you manage hyperbaric oxygen therapy billing?",
+          "answer": "Absolutely. We handle HBOT billing including documentation requirements, treatment protocols, and insurance compliance."
         },
         {
-          "question": "Do you support billing for recurring wound care visits?",
-          "answer": "Yes. We track frequencies, apply correct date-of-service logic, and support billing for weekly or multiple visits per month."
+          "question": "How do you ensure medical necessity documentation?",
+          "answer": "We provide comprehensive documentation guidelines and review processes to ensure medical necessity is clearly established."
         },
         {
-          "question": "What makes your wound care billing services different?",
-          "answer": "We focus specifically on wound care billing, understand CPT codes, and proactively review documentation to reduce denials."
+          "question": "Do you work with multiple wound care providers?",
+          "answer": "Yes, we coordinate billing between wound care specialists, primary care providers, and facilities for comprehensive care."
         },
         {
-          "question": "Do you help with billing audits or overpayment issues?",
-          "answer": "Absolutely. We assist with payer audits, retroactive documentation reviews, and resolving overpayment or underpayment concerns."
-        }
-      ]
-    },
-    {
-      "specialty": "Massage Therapy Billing Services",
-      "url": "https://ardurhealthcare.ardurtechnology.com/specialities/dermatology",
-      "description": "Accurate insurance billing for therapeutic massage and bodywork providers.",
-      "services": [
-        "CPT Code Management",
-        "Medical Necessity Support",
-        "Insurance Billing",
-        "Payment Follow-Up"
-      ],
-      "challenges": [
-        "Limited coverage for massage therapy services",
-        "Incorrect CPT code use or missing documentation",
-        "Payer denials due to unclear medical necessity"
-      ],
-      "solutions": [
-        "Verification of payer policies and plan coverage",
-        "Use of correct CPT codes and modifier combinations",
-        "Documentation templates aligned with insurance standards"
-      ],
-      "process": [
-        "Eligibility Check",
-        "Documentation Review",
-        "Code Selection",
-        "Claim Submission",
-        "Payment Posting",
-        "Appeals & Follow-Up"
-      ],
-      "who_we_help": [
-        "Independent Massage Therapists",
-        "Medical Massage Clinics",
-        "Integrated Practices",
-        "Sports Rehab Providers",
-        "Wellness Centers (with coverage)"
-      ],
-      "faqs": [
-        {
-          "question": "Can massage therapy be billed to insurance?",
-          "answer": "Yes, if the service is medically necessary and covered by the payer. We verify eligibility and ensure documentation meets insurance standards."
-        },
-        {
-          "question": "What CPT codes are used for massage therapy billing?",
-          "answer": "The most common codes are 97124 (therapeutic massage) and 97140 (manual therapy), depending on the service and diagnosis."
-        },
-        {
-          "question": "How do you help prove medical necessity?",
-          "answer": "We provide documentation templates and help ensure your notes, referrals, and diagnosis codes justify the treatment for coverage."
-        },
-        {
-          "question": "Can I bill massage therapy under another provider’s NPI?",
-          "answer": "In integrated clinics, yes, such as billing under a chiropractor or physical therapist if allowed. We can guide you on the proper billing structure."
-        },
-        {
-          "question": "Do you support out-of-network or cash-based massage therapy billing?",
-          "answer": "Yes. We can generate superbills for patients or process OON claims for those seeking insurance reimbursement."
+          "question": "What about LCD compliance for wound care?",
+          "answer": "We stay current with all Local Coverage Determinations and ensure billing practices comply with payer-specific requirements."
         }
       ]
     },
     {
       "specialty": "Physical Therapy Billing Services",
-      "url": "https://ardurhealthcare.ardurtechnology.com/specialities/dermatology",
-      "description": "Accurate billing for rehab services, modalities, and Medicare compliance",
+      "url": "https://ardurhealthcare.com/specialty/physical-therapy-billing-services",
+      "meta_title": "Physical Therapy Billing Services | Ardur Healthcare",
+      "meta_description": "Specialized physical therapy billing services. Accurate coding, modifier use, and Medicare compliance to improve reimbursement and reduce denials.",
+      "h1": "Physical Therapy Billing Services",
+      "h2_sections": [
+        "Expert Physical Therapy Billing Services",
+        "Common Billing Challenges",
+        "Our Solutions",
+        "Why Choose Ardur Healthcare for Physical Therapy Billing?",
+        "Want Stress-Free Physical Therapy Billing?",
+        "Our Physical Therapy Billing Process",
+        "Who We Serve in Physical Therapy Billing",
+        "Frequently Asked Questions - Physical Therapy Billing"
+      ],
+      "description": "Comprehensive physical therapy billing services with expertise in timed procedures, Medicare therapy caps, and functional outcome reporting.",
       "services": [
-        "Time-Based Coding: Accurate billing for 97110, 97112, and other therapeutic procedures.",
-        "Modalities Billing: Support for supervised and constant attendance modalities like 97035.",
-        "Medicare PT Cap Tracking: Ensure compliance with therapy thresholds and KX modifier rules.",
-        "Plan of Care Reviews: We track re-certification timelines and documentation needs."
+        "Therapeutic Exercise",
+        "Manual Therapy",
+        "Neuromuscular Re-education",
+        "Therapeutic Activities",
+        "Modality Treatments",
+        "Evaluation and Re-evaluation",
+        "Group Therapy Sessions"
       ],
-      "common_challenges": [
-        "Misuse of time-based vs. service-based codes",
-        "Medicare denials due to missing plan of care or cert dates",
-        "Incomplete use of GP modifiers and functional limitations reporting"
+      "challenges": [
+        "Complex timed procedure calculations and documentation",
+        "Medicare therapy cap management and exceptions",
+        "Functional limitation reporting requirements",
+        "Modifier usage for therapy services",
+        "Insurance coverage variations for PT services"
       ],
-      "our_solutions": [
-        "Timed coding audits to ensure unit accuracy",
-        "Automated reminders for certification & POC updates",
-        "Proper use of GP, KX, and modifier 59 for clean claim submissions"
+      "solutions": [
+        "Automated timed procedure calculations",
+        "Therapy cap tracking and exception processing",
+        "Functional reporting compliance systems",
+        "Expert modifier application and review",
+        "Comprehensive insurance verification processes"
       ],
-      "why_choose_us": [
-        "PT Expertise: Dedicated billers trained in therapy-specific coding.",
-        "Medicare Knowledge: Up-to-date with cap limits, thresholds, and CCI edits.",
-        "Modifier Precision: Proper use of GP, KX, and 59 modifiers to reduce denials.",
-        "Clean Claims: 98%+ acceptance rate with pre-bill compliance reviews.",
-        "Documentation Alerts: Track expirations, missing notes, and evaluation gaps.",
-        "System Flexibility: Works with systems like WebPT, Kareo, PromptEMR, and others."
-      ],
-      "cta": {
-        "text": "Want Stress-Free Physical Therapy Billing?",
-        "description": "Request a quote and let us simplify your physical therapy billing, from time tracking to Medicare rules and modifier management.",
-        "button_text": "Request a Quote"
-      },
       "process": [
-        "Insurance Verification: Confirm coverage, therapy limits, and authorization.",
-        "Documentation Review: Ensure plan of care and therapy goals meet payer criteria.",
-        "Code Assignment: Time-based and service-based CPT code entry with modifier logic.",
-        "Claim Submission: Clean claims filed electronically with GP modifier accuracy.",
-        "Payment Posting: Track patient payments, deductibles, and payer reimbursements.",
-        "Denial Management: Appeal rejections related to therapy caps or code conflicts."
+        "Insurance Verification",
+        "Therapy Authorization",
+        "Treatment Documentation",
+        "Timed Procedure Calculation",
+        "Coding & Modifier Application",
+        "Claims Submission",
+        "Outcome Reporting"
       ],
-      "who_we_serve": {
-        "intro": "At Ardur Healthcare, we support a wide range of physical therapy providers, including independent PT clinics, hospital-based rehab departments, SNF contract therapists, and mobile therapy units. We understand that physical therapy billing involves more than just coding; it’s about navigating Medicare limitations, modifier usage, documentation compliance, and timed CPT services. We integrate with physical therapy EMRs like WebPT, PromptEMR, Tebra (Kareo), and more, ensuring seamless claim workflows and revenue improvement. Our clients consistently experience higher clean claim rates, faster reimbursement, and fewer compliance issues.",
-        "types": [
-          "Private PT Practices: Time-tracked billing for therapeutic exercise, neuromuscular reeducation, and manual therapy",
-          "Outpatient Rehab Centers: Billing for multiple disciplines and complex modality tracking",
-          "SNF and Contract Therapists: Therapy billing under consolidated billing and payer-specific rules",
-          "Pediatric & Geriatric Therapy: Age-specific billing with modifier logic and documentation support",
-          "Home-Based PT Providers: Coordination with home health plans and therapy caps"
-        ]
-      },
+      "who_we_help": [
+        "Physical Therapists",
+        "Rehabilitation Clinics",
+        "Hospital-Based Therapy",
+        "Sports Medicine Centers",
+        "Outpatient PT Clinics",
+        "Home Health Therapy Services"
+      ],
       "faqs": [
         {
-          "question": "What CPT codes do you handle in physical therapy billing?",
-          "answer": "We manage codes like 97110, 97112, 97140, 97530, 97035, and others, accurately distinguishing between time-based and modality procedures."
+          "question": "Do you handle timed procedure billing accurately?",
+          "answer": "Yes, we specialize in timed procedure calculations, unit billing, and proper documentation for all PT services."
         },
         {
-          "question": "How do you ensure compliance with Medicare therapy billing?",
-          "answer": "We monitor cap thresholds, apply the KX modifier when necessary, and ensure documentation supports medical necessity and plan-of-care updates."
+          "question": "Can you manage Medicare therapy caps?",
+          "answer": "Absolutely. We track therapy caps, manage exceptions, and ensure compliance with Medicare therapy billing requirements."
         },
         {
-          "question": "Can you integrate with my EMR like WebPT or PromptEMR?",
-          "answer": "Yes, we work with most leading physical therapy EMRs, ensuring a smooth data flow and claim processing experience."
+          "question": "How do you handle functional limitation reporting?",
+          "answer": "We provide comprehensive FLR support including G-code reporting and functional outcome documentation."
         },
         {
-          "question": "What modifiers are required for PT billing?",
-          "answer": "GP is essential for PT services. We also manage modifier 59 for distinct services and KX for therapy cap exceptions when needed."
+          "question": "Do you understand PT modifier requirements?",
+          "answer": "Yes, our team is expert in PT-specific modifiers including GP, GO, GN, and other therapy billing modifiers."
         },
         {
-          "question": "Do you help with audits or Medicare overpayment issues?",
-          "answer": "Absolutely. We support clients through payer audits, review documentation gaps, and ensure compliance to prevent overpayments or penalties."
+          "question": "Can you bill for group therapy sessions?",
+          "answer": "Yes, we handle group therapy billing with proper coding and documentation requirements for all group services."
+        }
+      ]
+    },
+    {
+      "specialty": "Massage Therapy Billing Services",
+      "url": "https://ardurhealthcare.com/specialty/massage-therapy-billing-services",
+      "meta_title": "Massage Therapy Billing Services | Ardur Healthcare",
+      "meta_description": "Specialized massage therapy billing services. Accurate CPT coding, insurance claim submission, and medical necessity support for licensed therapists.",
+      "h1": "Massage Therapy Billing Services",
+      "h2_sections": [
+        "Reliable Massage Therapy Billing Services",
+        "Common Billing Challenges",
+        "Our Solutions",
+        "Why Choose Ardur Healthcare for Massage Therapy Billing?",
+        "Need Help Billing Insurance for Massage Therapy?",
+        "Our Massage Therapy Billing Process",
+        "Who We Serve in Massage Therapy Billing",
+        "Frequently Asked Questions - Massage Therapy Billing"
+      ],
+      "description": "Specialized massage therapy billing services for licensed therapists with expertise in medical necessity documentation and insurance compliance.",
+      "services": [
+        "Therapeutic Massage",
+        "Medical Massage Therapy",
+        "Manual Therapy Techniques",
+        "Myofascial Release",
+        "Trigger Point Therapy",
+        "Sports Massage Therapy",
+        "Rehabilitative Massage"
+      ],
+      "challenges": [
+        "Limited insurance coverage for massage therapy services",
+        "Medical necessity documentation requirements",
+        "Proper CPT code selection and usage",
+        "Prior authorization requirements",
+        "Integration with other healthcare providers"
+      ],
+      "solutions": [
+        "Expert medical necessity documentation support",
+        "Accurate CPT coding and billing practices",
+        "Insurance verification and coverage determination",
+        "Prior authorization management and appeals",
+        "Coordinated billing with referring providers"
+      ],
+      "process": [
+        "Insurance Verification",
+        "Medical Necessity Review",
+        "Service Documentation",
+        "CPT Code Assignment",
+        "Claims Submission",
+        "Payment Processing",
+        "Follow-up & Appeals"
+      ],
+      "who_we_help": [
+        "Licensed Massage Therapists",
+        "Medical Massage Clinics",
+        "Integrated Healthcare Practices",
+        "Sports Medicine Centers",
+        "Rehabilitation Facilities",
+        "Wellness Centers"
+      ],
+      "faqs": [
+        {
+          "question": "Can massage therapy be billed to insurance?",
+          "answer": "Yes, when medically necessary and prescribed by a healthcare provider. We help verify coverage and ensure proper documentation."
+        },
+        {
+          "question": "What CPT codes are used for massage therapy?",
+          "answer": "Common codes include 97124 (massage) and 97140 (manual therapy), depending on the specific treatment and documentation."
+        },
+        {
+          "question": "How do you prove medical necessity for massage therapy?",
+          "answer": "We provide documentation templates and guidance to ensure medical necessity is clearly established with proper diagnosis codes and treatment plans."
+        },
+        {
+          "question": "Do you help with referral-based billing?",
+          "answer": "Yes, we coordinate with referring providers and ensure proper billing under physician supervision when required."
+        },
+        {
+          "question": "Can you handle out-of-network billing?",
+          "answer": "Absolutely. We can process out-of-network claims and provide superbills for patient reimbursement."
+        }
+      ]
+    },
+    {
+      "specialty": "Specialty-Specific Medical Billing Services",
+      "url": "https://ardurhealthcare.com/specialty/",
+      "meta_title": "Specialty-Specific Medical Billing Services | Ardur Healthcare",
+      "meta_description": "Explore specialty-specific medical billing services by Ardur Healthcare. Custom billing for 40+ specialties including mental health, PT, podiatry, and more.",
+      "h1": "Specialty-Specific Medical Billing Services",
+      "h2_sections": [
+        "Explore Our Specialty Medical Billing Services",
+        "Don't See Your Specialty? We've Got You Covered."
+      ],
+      "description": "Comprehensive medical billing services tailored to over 40 medical specialties with expert knowledge of specialty-specific coding, compliance, and revenue optimization.",
+      "services": [
+        "Specialty-Specific Coding",
+        "Insurance Verification & Authorization",
+        "Claims Processing & Submission",
+        "Denial Management & Appeals",
+        "Payment Posting & Reconciliation",
+        "Accounts Receivable Management",
+        "Compliance Monitoring",
+        "Revenue Cycle Optimization"
+      ],
+      "challenges": [
+        "Complex specialty-specific coding requirements",
+        "Varying insurance coverage by specialty",
+        "Unique documentation and compliance needs",
+        "Specialty-specific denial patterns",
+        "Keeping up with regulatory changes"
+      ],
+      "solutions": [
+        "Expert specialty-trained billing teams",
+        "Customized billing workflows by specialty",
+        "Specialty-specific compliance monitoring",
+        "Targeted denial management strategies",
+        "Continuous education and updates"
+      ],
+      "process": [
+        "Specialty Assessment",
+        "Custom Workflow Design",
+        "Team Training & Setup",
+        "Implementation & Testing",
+        "Ongoing Management",
+        "Performance Monitoring",
+        "Continuous Optimization"
+      ],
+      "who_we_help": [
+        "Solo Practitioners",
+        "Group Practices",
+        "Multi-Specialty Clinics",
+        "Healthcare Systems",
+        "Ambulatory Surgery Centers",
+        "Specialty Hospitals"
+      ],
+      "faqs": [
+        {
+          "question": "What medical specialties do you support?",
+          "answer": "We provide billing services for over 40 medical specialties including mental health, cardiology, orthopedics, dermatology, and many more."
+        },
+        {
+          "question": "How do you ensure specialty-specific compliance?",
+          "answer": "Our billing teams receive specialized training in each specialty's unique coding, documentation, and regulatory requirements."
+        },
+        {
+          "question": "Can you handle multiple specialties for one practice?",
+          "answer": "Yes, we can manage billing for multi-specialty practices with customized workflows for each specialty area."
+        },
+        {
+          "question": "What if my specialty isn't listed?",
+          "answer": "We work with virtually any medical specialty. Contact us to discuss your specific billing needs and requirements."
+        },
+        {
+          "question": "How quickly can you start billing for my specialty?",
+          "answer": "Typically within 1-2 weeks depending on specialty complexity and any required setup or credentialing."
         }
       ]
     }
