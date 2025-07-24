@@ -2,6 +2,9 @@
   "services": {
     "eligibility_verification": {
       "title": "Eligibility and Benefits Verification Services",
+      "meta_title": "Eligibility and Benefits Verification Services | Ardur Healthcare",
+      "meta_description": "Ensure real-time eligibility and benefits verification for all payers. Reduce claim denials and improve collections with Ardur's expert verification services.",
+      "h1": "Eligibility and Benefits Verification Services",
       "subtitle": "Verify insurance coverage in real-time to reduce denials and secure faster payments.",
       "sections": [
         {
@@ -73,6 +76,9 @@
     },
     "prior_authorization": {
       "title": "Prior Authorization Services",
+      "meta_title": "Prior Authorization Services | Ardur Healthcare",
+      "meta_description": "Prior authorization services that reduce delays and denials. We handle medication and procedure approvals quickly to keep your revenue cycle on track.",
+      "h1": "Prior Authorization Services",
       "subtitle": "Accelerate prior authorizations and reduce delays across payers and procedures.",
       "sections": [
         {
@@ -144,6 +150,9 @@
     },
     "provider_credentialing": {
       "title": "Provider Credentialing and Enrollment Services",
+      "meta_title": "Provider Credentialing and Enrollment Services | Ardur Healthcare",
+      "meta_description": "Accelerate payer approvals and reduce delays with expert provider credentialing and enrollment services. Get started with Ardur Healthcare today.",
+      "h1": "Provider Credentialing and Enrollment Services",
       "subtitle": "Simplify credentialing and enrollment to stay payer-connected and revenue-ready.",
       "sections": [
         {
@@ -215,6 +224,9 @@
     },
     "charge_entry": {
       "title": "Charge Entry Services",
+      "meta_title": "Charge Entry Services | Ardur Healthcare",
+      "meta_description": "Improve billing accuracy and speed up reimbursements with Ardur Healthcare's expert charge entry services. Start your clean claims journey with us today.",
+      "h1": "Charge Entry Services",
       "subtitle": "Accurate charge entry that drives clean claims, fewer errors, and faster payouts.",
       "description": "Charge entry is one of the most critical steps in the medical billing cycle. If charges aren’t entered correctly, even the best clinical care can go unpaid. At Ardur Healthcare, we help providers maintain clean claims, accurate records, and faster payments by meticulously managing every aspect of charge entry.",
       "features": [
@@ -265,6 +277,9 @@
 
     "medical_coding": {
       "title": "Medical Coding Services",
+      "meta_title": "Medical Coding Services | Ardur Healthcare",
+      "meta_description": "Ensure clean claims and full compliance with Ardur Healthcare's medical coding services. Certified coders, specialty expertise, and audit-ready processes.",
+      "h1": "Medical Coding Services",
       "subtitle": "Specialty-specific coding that ensures compliance and maximizes reimbursements.",
       "description": "At Ardur Healthcare, we offer certified medical coding services that support compliant, high-performing billing operations for healthcare providers nationwide. Our coders are trained in CPT, ICD-11, and HCPCS Level II codes, helping you avoid delays, denials, and audit risks. Whether you're an independent physician or a multi-provider group, we ensure that each encounter is translated into correct, reimbursable codes.",
       "features": [
@@ -315,6 +330,9 @@
     "claim_submission_follow_up": {
       "name": "Claim Submission and Follow-Up Services",
       "title": "Clean claim submissions and persistent follow-up to secure timely payments.",
+      "meta_title": "Claim Submission and Follow-Up Services | Ardur Healthcare",
+      "meta_description": "Speed up payments and reduce denials with Ardur Healthcare's claim submission and follow-up services. Clean claims, real-time tracking, and expert AR follow-up.",
+      "h1": "Claim Submission and Follow-Up Services",
       "subtitle": "Precision-Driven Claim Submission & Tracking",
       "description": "At Ardur Healthcare, we understand that even the smallest billing error can result in claim rejection or payment delays. Our claim submission and follow-up services ensure your claims are accurate, properly formatted, and followed up on every time. From CMS-1500 form accuracy to clearinghouse rejections, we proactively manage your claims until payment is received.",
       "services": [
@@ -365,6 +383,9 @@
     "payment_posting_reconciliation": {
       "name": "Payment Posting and Reconciliation Services",
       "title": "Track every payment with precise posting and full reconciliation accuracy.",
+      "meta_title": "Payment Posting and Reconciliation Services | Ardur Healthcare",
+      "meta_description": "Ensure accurate payment posting and reconciliation with Ardur Healthcare. We post ERAs, EOBs, and patient payments with speed and precision.",
+      "h1": "Payment Posting and Reconciliation Services",
       "subtitle": "Precision-Driven Payment Posting for Reliable Revenue",
       "description": "At Ardur Healthcare, our payment posting services transform EOBs, ERAs, and patient payments into accurate financial data that powers your revenue cycle. Whether payments come in electronically or manually, we post them with precision, ensuring your records are clean, your revenue is transparent, and your AR stays under control. Our reconciliation process ensures that your bank statements, payer deposits, and EHR ledgers all match.",
       "services": [
@@ -415,6 +436,9 @@
     "denial_management": {
       "name": "Denial Management Services",
       "title": "Resolve denials fast and recover lost revenue with expert denial management.",
+      "meta_title": "Denial Management Services | Ardur Healthcare",
+      "meta_description": "Recover lost revenue with Ardur Healthcare's denial management services. We resolve, appeal, and prevent medical billing denials across all payers.",
+      "h1": "Denial Management Services",
       "subtitle": "End-to-End Claim Denial Management for Healthcare Providers",
       "description": "Ardur Healthcare provides denial management services that help you recover what you’ve earned and prevent future denials through data-driven strategies. We work with all major payers, Medicare, Medicaid, commercial insurers, and regional MCOs, to deliver measurable improvements in claim denial management.",
       "services": [
@@ -463,8 +487,11 @@
       ]
     },
     "ar_management": {
-      "name": "Accounts Receivable Management",
+      "name": "Accounts Receivable Management Services",
       "title": "Accounts Receivable Management Services",
+      "meta_title": "Accounts Receivable Management Services | Ardur Healthcare",
+      "meta_description": "Streamline collections and reduce claim aging with Ardur Healthcare's accounts receivable management services. Improve your cash flow with proven AR strategies.",
+      "h1": "Accounts Receivable Management Services",
       "subtitle": "Recover aged claims and improve cash flow with expert AR follow-up support.",
       "description": "At Ardur Healthcare, our accounts receivable management services help you recover outstanding claims efficiently while maintaining compliance and payer relations. Whether you're a solo provider or a multi-specialty group, we bring structure and speed to your medical receivables management process.",
       "why_choose": [
