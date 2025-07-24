@@ -177,7 +177,7 @@ endblock %} {% block content %}
                         </div>
                         <div
                             id="states-list"
-                            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
+                            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-4"
                         >
                             <!-- States will be populated by JavaScript -->
                         </div>
@@ -625,8 +625,8 @@ endblock %} {% block content %}
                  data-state-name="${state.name.toLowerCase()}">
                 <div class="flex items-center justify-between">
                     <div>
-                        <h3 class="font-medium text-brand-dark">${state.name}</h3>
-                        <p class="text-sm text-gray-600">${state.abbr}</p>
+                        <h3 class="font-thin text-brand-dark">${state.name}  <span class="text-sm text-gray-600"> ( ${state.abbr} )</span>
+</h3>
                     </div>
                     <i class="ri-arrow-right-line text-brand-primary"></i>
                 </div>
