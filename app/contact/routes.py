@@ -86,7 +86,7 @@ def contact_form():
         # This allows immediate response to user while handling emails/logging asynchronously
         background_thread = threading.Thread(
             target=process_contact_form_background,
-            args=(form_data.copy(), current_app)
+            args=(form_data.copy(), current_app._get_current_object())
         )
         background_thread.daemon = True
         background_thread.start()
