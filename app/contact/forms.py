@@ -1,6 +1,11 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, TextAreaField, SubmitField, SelectField, DateField, DecimalField, BooleanField
-from wtforms.validators import DataRequired, Email, Length, Optional
+from wtforms.validators import DataRequired, Email, Length, Optional, ValidationError
+
+def validate_specialties(form, field):
+    """Custom validator for specialties field - ensures at least one specialty is selected"""
+    if not field.data or field.data.strip() == '':
+        raise ValidationError('Please select at least one specialty.')
 
 class ContactForm(FlaskForm):
     name = StringField('Name', validators=[DataRequired(), Length(max=100)])
@@ -13,14 +18,14 @@ class ContactForm(FlaskForm):
         ('+44', '+44 (UK)'),
         ('+61', '+61 (Australia)'),
         ('+971', '+971 (UAE)')
-    ], validators=[DataRequired()])
+    ], validators=[Optional()])
     phone_number = StringField('Phone Number', validators=[DataRequired(), Length(max=20)])
-    phone = StringField('Phone', validators=[DataRequired(), Length(max=20)])  # Alternative phone field for state pages
+    phone = StringField('Phone', validators=[Optional(), Length(max=20)])  # Alternative phone field for state pages
     practice = StringField('Practice Name', validators=[DataRequired(), Length(max=200)])
     state = StringField('State', validators=[DataRequired(), Length(max=100)]) # Made required
 
-    # Changed from SelectMultipleField to StringField
-    specialties = StringField('Specialties', validators=[DataRequired(), Length(max=200)])
+    # Changed from SelectMultipleField to StringField - custom validation for JavaScript handling
+    specialties = StringField('Specialties', validators=[validate_specialties, Length(max=500)])
 
     # Service type field
     service_type = SelectField('Service Type', choices=[
@@ -35,7 +40,7 @@ class ContactForm(FlaskForm):
     ], validators=[DataRequired()])
 
     # Optional fields for detailed contact form
-    monthly_insurance = DecimalField('Monthly Insurance', validators=[Optional()]) # Use DecimalField for currency
+    monthly_insurance = DecimalField('Monthly Insurance Collections ($)', validators=[Optional()]) # Use DecimalField for currency
     preferred_appointment_date = DateField('Preferred Appointment Date', format='%Y-%m-%d', validators=[Optional()])
     preferred_time_slot = SelectField('Preferred Time Slot', choices=[
         ('9:00 AM', '9:00 AM'),

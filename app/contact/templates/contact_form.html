@@ -84,12 +84,21 @@
                         ></i>
                         <div>
                             <h4 class="font-light text-brand-dark text-xl">
-                                Our Location (Optional)
+                                Our Location
                             </h4>
                             <p class="text-gray-700 text-lg">
-                                123 Healthcare Drive, Suite 456<br />
-                                Anytown, CA 90210, USA
+                                1964 Heritage Oaks St<br />
+                                Las Vegas, NV 89119, United States
                             </p>
+                            <a
+                                href="https://maps.google.com/?q=1964+Heritage+Oaks+St,+Las+Vegas,+NV+89119,+United+States"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="inline-flex items-center mt-2 text-brand-primary hover:text-brand-accent transition-colors duration-200"
+                            >
+                                <i class="ri-map-pin-fill mr-1"></i>
+                                View on Google Maps
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -112,14 +121,56 @@
             {% with messages = get_flashed_messages(with_categories=true) %} {%
             if messages %}
             <div class="mb-6">
-                {% for category, message in messages %}
+                {% for category, message in messages %}{% if category ==
+                'success' %}
                 <div
                     class="bg-green-50 border-l-4 border-green-500 text-green-800 p-4 rounded-md shadow-sm"
                     role="alert"
                 >
-                    <p>{{ message }}</p>
+                    <div class="flex">
+                        <i
+                            class="ri-check-circle-line text-green-500 text-xl mr-3 flex-shrink-0"
+                        ></i>
+                        <p class="font-medium">{{ message }}</p>
+                    </div>
                 </div>
-                {% endfor %}
+                {% elif category == 'warning' %}
+                <div
+                    class="bg-yellow-50 border-l-4 border-yellow-400 text-yellow-800 p-4 rounded-md shadow-sm"
+                    role="alert"
+                >
+                    <div class="flex">
+                        <i
+                            class="ri-alert-line text-yellow-500 text-xl mr-3 flex-shrink-0"
+                        ></i>
+                        <p class="font-medium">{{ message }}</p>
+                    </div>
+                </div>
+                {% elif category == 'error' or category == 'danger' %}
+                <div
+                    class="bg-red-50 border-l-4 border-red-500 text-red-800 p-4 rounded-md shadow-sm"
+                    role="alert"
+                >
+                    <div class="flex">
+                        <i
+                            class="ri-error-warning-line text-red-500 text-xl mr-3 flex-shrink-0"
+                        ></i>
+                        <p class="font-medium">{{ message }}</p>
+                    </div>
+                </div>
+                {% else %}
+                <div
+                    class="bg-blue-50 border-l-4 border-blue-500 text-blue-800 p-4 rounded-md shadow-sm"
+                    role="alert"
+                >
+                    <div class="flex">
+                        <i
+                            class="ri-information-line text-blue-500 text-xl mr-3 flex-shrink-0"
+                        ></i>
+                        <p class="font-medium">{{ message }}</p>
+                    </div>
+                </div>
+                {% endif %} {% endfor %}
             </div>
             {% endif %} {% endwith %}
             <form
@@ -180,7 +231,7 @@
                             <option value="+44">+44 (UK)</option>
                             <option value="+61">+61 (Australia)</option>
                             <option value="+971">+971 (UAE)</option>
-                            <option value="+ कनाडा">+1 (Canada)</option>
+                            <option value="+1">+1 (Canada)</option>
                             <option value="+52">+52 (Mexico)</option>
                             <option value="+49">+49 (Germany)</option>
                             <option value="+33">+33 (France)</option>
@@ -266,12 +317,16 @@
                     <input
                         type="text"
                         id="specialties-search"
-                        name="specialties"
-                        value="{{ form.specialties.data or '' }}"
                         placeholder="Type to search specialties..."
                         class="block w-full rounded-lg border-gray-300 shadow-sm py-3 px-4 text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-brand-primary focus:border-brand-primary sm:text-base transition-all duration-200 bg-brand-secondary border-black"
                         autocomplete="off"
-                        required
+                    />
+                    <!-- Hidden input for form submission -->
+                    <input
+                        type="hidden"
+                        name="specialties"
+                        id="specialties-hidden"
+                        value="{{ form.specialties.data or '' }}"
                     />
                     <div
                         id="specialties-dropdown"
@@ -296,13 +351,19 @@
                     placeholder:text-gray-400 focus:ring-2
                     focus:ring-brand-primary focus:border-brand-primary
                     sm:text-base transition-all duration-200 bg-brand-secondary
-                    border-black") }} {% if form.monthly_insurance.errors %}
+                    border-black", placeholder="Enter average monthly insurance
+                    collections (e.g., 25000)") }} {% if
+                    form.monthly_insurance.errors %}
                     <div class="text-red-600 text-sm mt-2">
                         {% for error in form.monthly_insurance.errors %}<span
                             >{{ error }}</span
                         >{% endfor %}
                     </div>
                     {% endif %}
+                    <div class="text-gray-500 text-xs mt-1">
+                        Please enter your practice's average monthly insurance
+                        collections in USD
+                    </div>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -404,12 +465,44 @@
                 </div>
 
                 <div>
-                    {{ form.submit(class="w-full bg-brand-primary text-white
-                    font-montserrat font-light text-lg px-6 py-4 rounded-lg
-                    hover:scale-105 hover:bg-brand-dark hover:shadow-xl
-                    transition duration-300 cursor-pointer focus:outline-none
-                    focus:ring-2 focus:ring-brand-primary focus:ring-offset-2")
-                    }}
+                    {{ form.submit(id="submit-btn", class="w-full
+                    bg-brand-primary text-white font-montserrat font-light
+                    text-lg px-6 py-4 rounded-lg hover:scale-105
+                    hover:bg-brand-dark hover:shadow-xl transition duration-300
+                    cursor-pointer focus:outline-none focus:ring-2
+                    focus:ring-brand-primary focus:ring-offset-2") }}
+
+                    <!-- Loading state button (hidden by default) -->
+                    <button
+                        type="button"
+                        id="loading-btn"
+                        class="w-full bg-gray-400 text-white font-montserrat font-light text-lg px-6 py-4 rounded-lg cursor-not-allowed hidden"
+                        disabled
+                    >
+                        <div class="flex items-center justify-center">
+                            <svg
+                                class="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                            >
+                                <circle
+                                    class="opacity-25"
+                                    cx="12"
+                                    cy="12"
+                                    r="10"
+                                    stroke="currentColor"
+                                    stroke-width="4"
+                                ></circle>
+                                <path
+                                    class="opacity-75"
+                                    fill="currentColor"
+                                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                                ></path>
+                            </svg>
+                            Sending Message...
+                        </div>
+                    </button>
                 </div>
             </form>
         </div>
@@ -418,8 +511,32 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
+        // 🚀 PERFORMANCE OPTIMIZATION: Add form submission loading state
+        const form = document.getElementById("contact-form");
+        const submitBtn = document.getElementById("submit-btn");
+        const loadingBtn = document.getElementById("loading-btn");
+
+        form.addEventListener("submit", function (e) {
+            // Show loading state immediately for better UX
+            submitBtn.classList.add("hidden");
+            loadingBtn.classList.remove("hidden");
+
+            // Disable form inputs to prevent double submission
+            const inputs = form.querySelectorAll(
+                "input, select, textarea, button",
+            );
+            inputs.forEach((input) => {
+                input.disabled = true;
+            });
+
+            // Add visual feedback to the form
+            form.style.opacity = "0.7";
+            form.style.pointerEvents = "none";
+        });
+
         const specialtiesInput = document.getElementById("specialties-search");
         const dropdown = document.getElementById("specialties-dropdown");
+        const hiddenInput = document.getElementById("specialties-hidden");
         let specialtiesList = [];
         let selectedSpecialties = [];
 
@@ -428,14 +545,15 @@
             .then((response) => response.json())
             .then((data) => {
                 specialtiesList = data;
+                console.log("Loaded specialties:", specialtiesList.length);
             })
             .catch((error) =>
                 console.error("Error loading specialties:", error),
             );
 
         // Initialize with existing value if any
-        if (specialtiesInput.value) {
-            selectedSpecialties = specialtiesInput.value
+        if (hiddenInput && hiddenInput.value.trim()) {
+            selectedSpecialties = hiddenInput.value
                 .split(",")
                 .map((s) => s.trim())
                 .filter((s) => s);
@@ -443,7 +561,10 @@
         }
 
         specialtiesInput.addEventListener("input", function () {
-            const query = this.value.toLowerCase();
+            const query = this.value.toLowerCase().trim();
+
+            // Clear validation errors
+            clearValidationErrors();
 
             if (query.length < 1) {
                 hideDropdown();
@@ -463,6 +584,8 @@
         });
 
         specialtiesInput.addEventListener("keydown", function (e) {
+            clearValidationErrors();
+
             if (e.key === "Enter") {
                 e.preventDefault();
                 const query = this.value.trim();
@@ -482,8 +605,11 @@
             }
         });
 
+        specialtiesInput.addEventListener("focus", function () {
+            clearValidationErrors();
+        });
+
         specialtiesInput.addEventListener("blur", function () {
-            // Delay hiding to allow clicking on dropdown items
             setTimeout(() => hideDropdown(), 150);
         });
 
@@ -497,17 +623,12 @@
                     "px-4 py-2 hover:bg-gray-100 cursor-pointer border-b border-gray-100";
                 div.textContent = item;
                 div.addEventListener("click", function () {
-                    if (!selectedSpecialties.includes(item)) {
-                        selectedSpecialties.push(item);
-                        updateInputDisplay();
-                        specialtiesInput.value = "";
-                        hideDropdown();
-                    }
+                    addSpecialty(item);
                 });
                 dropdown.appendChild(div);
             });
 
-            // Add option to add custom specialty if query doesn't match any existing
+            // Add option to add custom specialty
             if (
                 query &&
                 !items.some(
@@ -520,10 +641,7 @@
                     "px-4 py-2 hover:bg-blue-50 cursor-pointer border-b border-gray-100 text-blue-600 font-medium";
                 customDiv.innerHTML = `<i class="ri-add-line mr-2"></i>Add "${query}"`;
                 customDiv.addEventListener("click", function () {
-                    selectedSpecialties.push(query);
-                    updateInputDisplay();
-                    specialtiesInput.value = "";
-                    hideDropdown();
+                    addSpecialty(query);
                 });
                 dropdown.appendChild(customDiv);
             }
@@ -535,20 +653,21 @@
             dropdown.classList.add("hidden");
         }
 
-        function updateInputDisplay() {
-            // Create a hidden input with the actual form value
-            const existingHidden = document.querySelector(
-                'input[name="specialties"][type="hidden"]',
-            );
-            if (existingHidden) {
-                existingHidden.remove();
+        function addSpecialty(specialty) {
+            if (!selectedSpecialties.includes(specialty)) {
+                clearValidationErrors();
+                selectedSpecialties.push(specialty);
+                console.log("Added specialty:", specialty);
+                updateInputDisplay();
+                specialtiesInput.value = "";
+                hideDropdown();
             }
+        }
 
-            const hiddenInput = document.createElement("input");
-            hiddenInput.type = "hidden";
-            hiddenInput.name = "specialties";
+        function updateInputDisplay() {
+            // Update hidden input value
             hiddenInput.value = selectedSpecialties.join(", ");
-            specialtiesInput.parentNode.appendChild(hiddenInput);
+            console.log("Updated hidden input value:", hiddenInput.value);
 
             // Update placeholder
             if (selectedSpecialties.length > 0) {
@@ -557,7 +676,7 @@
                 specialtiesInput.placeholder = "Type to search specialties...";
             }
 
-            // Show selected specialties as tags below the input
+            // Show selected specialties as tags
             let tagsContainer = document.getElementById("specialty-tags");
             if (!tagsContainer) {
                 tagsContainer = document.createElement("div");
@@ -572,13 +691,36 @@
                 tag.className =
                     "inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-brand-primary text-white";
                 tag.innerHTML = `
-                ${specialty}
-                <button type="button" class="ml-1 text-white hover:text-gray-200" onclick="removeSpecialty(${index})">
-                    <i class="ri-close-line"></i>
-                </button>
-            `;
+                    ${specialty}
+                    <button type="button" class="ml-1 text-white hover:text-gray-200" onclick="removeSpecialty(${index})">
+                        <i class="ri-close-line"></i>
+                    </button>
+                `;
                 tagsContainer.appendChild(tag);
             });
+
+            clearValidationErrors();
+        }
+
+        function clearValidationErrors() {
+            const errorDiv = document.getElementById("specialties-error");
+            if (errorDiv) {
+                errorDiv.remove();
+            }
+            specialtiesInput.classList.remove("border-red-500");
+        }
+
+        function showValidationError() {
+            let errorDiv = document.getElementById("specialties-error");
+            if (!errorDiv) {
+                errorDiv = document.createElement("div");
+                errorDiv.id = "specialties-error";
+                errorDiv.className = "text-red-600 text-sm mt-2";
+                specialtiesInput.parentNode.appendChild(errorDiv);
+            }
+            errorDiv.innerHTML =
+                "<span>Please select at least one specialty.</span>";
+            specialtiesInput.classList.add("border-red-500");
         }
 
         // Global function to remove specialty
@@ -596,6 +738,34 @@
                 hideDropdown();
             }
         });
+
+        // Form validation
+        const form = document.getElementById("contact-form");
+        if (form) {
+            form.addEventListener("submit", function (e) {
+                console.log("Form submission started");
+                console.log("Selected specialties:", selectedSpecialties);
+
+                // Ensure hidden input is updated
+                hiddenInput.value = selectedSpecialties.join(", ");
+                console.log("Final hidden input value:", hiddenInput.value);
+
+                // Validate specialties
+                if (selectedSpecialties.length === 0) {
+                    console.log("Validation failed: No specialties selected");
+                    e.preventDefault();
+                    showValidationError();
+                    specialtiesInput.focus();
+                    return false;
+                } else {
+                    console.log("Validation passed: Specialties selected");
+                    clearValidationErrors();
+                }
+
+                // Form can proceed
+                return true;
+            });
+        }
     });
 </script>
 {% endblock %}

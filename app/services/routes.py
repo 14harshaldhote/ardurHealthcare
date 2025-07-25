@@ -16,15 +16,15 @@ def load_services_data():
 def get_service_url_mapping():
     """Map URL slugs to JSON keys"""
     return {
-        'eligibility-and-benefits-verification': 'eligibility_verification',
+        'eligibility-and-benefits-verification-services': 'eligibility_verification',
         'prior-authorization-services': 'prior_authorization',
-        'provider-credentialing-and-enrollment': 'provider_credentialing',
+        'provider-credentialing-and-enrollment-services': 'provider_credentialing',
         'charge-entry-services': 'charge_entry',
         'medical-coding-services': 'medical_coding',
         'claim-submission-and-follow-up-services': 'claim_submission_follow_up',
-        'payment-posting-and-reconciliation': 'payment_posting_reconciliation',
+        'payment-posting-and-reconciliation-services': 'payment_posting_reconciliation',
         'denial-management-services': 'denial_management',
-        'accounts-receivable-management': 'ar_management'
+        'accounts-receivable-management-services': 'ar_management'
     }
 
 @services.route('/')
@@ -56,12 +56,12 @@ def service_detail(service_name):
 @services.route('/enrollment')
 def enrollment():
     """Legacy route - redirects to provider credentialing"""
-    return redirect(url_for('services.service_detail', service_name='provider-credentialing-and-enrollment'))
+    return redirect(url_for('services.service_detail', service_name='provider-credentialing-and-enrollment-services'))
 
 @services.route('/verification')
 def verification():
     """Legacy route - redirects to eligibility verification"""
-    return redirect(url_for('services.service_detail', service_name='eligibility-and-benefits-verification'))
+    return redirect(url_for('services.service_detail', service_name='eligibility-and-benefits-verification-services'))
 
 @services.route('/billing')
 def billing():
@@ -71,19 +71,19 @@ def billing():
 @services.route('/accounts_receivable')
 def accounts_receivable():
     """Legacy route - redirects to accounts-receivable-management"""
-    return redirect(url_for('services.service_detail', service_name='accounts-receivable-management'))
+    return redirect(url_for('services.service_detail', service_name='accounts-receivable-management-services'))
 
 # denial_management route removed - conflicts with dynamic route since it exists in JSON
 
 @services.route('/payment_posting')
 def payment_posting():
     """Legacy route - redirects to payment-posting-and-reconciliation"""
-    return redirect(url_for('services.service_detail', service_name='payment-posting-and-reconciliation'))
+    return redirect(url_for('services.service_detail', service_name='payment-posting-and-reconciliation-services'))
 
 # Additional service routes for easy access and backward compatibility
 @services.route('/eligibility-verification')
 def eligibility_verification():
-    return redirect(url_for('services.service_detail', service_name='eligibility-and-benefits-verification'))
+    return redirect(url_for('services.service_detail', service_name='eligibility-and-benefits-verification-services'))
 
 @services.route('/prior-authorization')
 def prior_authorization():
@@ -91,7 +91,7 @@ def prior_authorization():
 
 @services.route('/provider-credentialing')
 def provider_credentialing():
-    return redirect(url_for('services.service_detail', service_name='provider-credentialing-and-enrollment'))
+    return redirect(url_for('services.service_detail', service_name='provider-credentialing-and-enrollment-services'))
 
 @services.route('/charge-entry')
 def charge_entry():
@@ -107,16 +107,24 @@ def claim_submission():
 
 @services.route('/payment-posting-reconciliation')
 def payment_posting_reconciliation():
-    return redirect(url_for('services.service_detail', service_name='payment-posting-and-reconciliation'))
+    return redirect(url_for('services.service_detail', service_name='payment-posting-and-reconciliation-services'))
 
 @services.route('/ar-management')
 def ar_management():
-    return redirect(url_for('services.service_detail', service_name='accounts-receivable-management'))
+    return redirect(url_for('services.service_detail', service_name='accounts-receivable-management-services'))
+
+@services.route('/accounts-receivable-management')
+def accounts_receivable_management():
+    return redirect(url_for('services.service_detail', service_name='accounts-receivable-management-services'))
+
+@services.route('/payment-posting-and-reconciliation')
+def payment_posting_and_reconciliation():
+    return redirect(url_for('services.service_detail', service_name='payment-posting-and-reconciliation-services'))
 
 # Old underscore-based routes for backward compatibility
 @services.route('/eligibility_verification')
 def eligibility_verification_old():
-    return redirect(url_for('services.service_detail', service_name='eligibility-and-benefits-verification'))
+    return redirect(url_for('services.service_detail', service_name='eligibility-and-benefits-verification-services'))
 
 @services.route('/prior_authorization')
 def prior_authorization_old():
@@ -124,7 +132,7 @@ def prior_authorization_old():
 
 @services.route('/provider_credentialing')
 def provider_credentialing_old():
-    return redirect(url_for('services.service_detail', service_name='provider-credentialing-and-enrollment'))
+    return redirect(url_for('services.service_detail', service_name='provider-credentialing-and-enrollment-services'))
 
 @services.route('/charge_entry')
 def charge_entry_old():
@@ -140,7 +148,7 @@ def claim_submission_follow_up_old():
 
 @services.route('/payment_posting_reconciliation')
 def payment_posting_reconciliation_old():
-    return redirect(url_for('services.service_detail', service_name='payment-posting-and-reconciliation'))
+    return redirect(url_for('services.service_detail', service_name='payment-posting-and-reconciliation-services'))
 
 @services.route('/denial_management')
 def denial_management_old():
@@ -148,7 +156,7 @@ def denial_management_old():
 
 @services.route('/ar_management')
 def ar_management_old():
-    return redirect(url_for('services.service_detail', service_name='accounts-receivable-management'))
+    return redirect(url_for('services.service_detail', service_name='accounts-receivable-management-services'))
 
 # All service routes are now handled by the dynamic route above
 # The JSON data contains all the necessary SEO and content information

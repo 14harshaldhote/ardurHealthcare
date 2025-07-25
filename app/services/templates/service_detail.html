@@ -62,8 +62,24 @@
                         <div
                             class="absolute inset-0 bg-gradient-to-r from-brand-primary/20 to-brand-accent/20 rounded-3xl transform rotate-3"
                         ></div>
+                        {% set service_images = {
+                        'eligibility-and-benefits-verification-services':
+                        'eligibility_verification.jpg',
+                        'prior-authorization-services':
+                        'prior_authorization.jpg',
+                        'provider-credentialing-and-enrollment-services':
+                        'provider_credentialing.jpg', 'charge-entry-services':
+                        'charge_entry.jpg', 'medical-coding-services':
+                        'medical_coding.jpg',
+                        'claim-submission-and-follow-up-services':
+                        'claim_submission.jpg',
+                        'payment-posting-and-reconciliation-services':
+                        'payment_posting.jpg', 'denial-management-services':
+                        'denial_management.jpg',
+                        'accounts-receivable-management-services':
+                        'ar_management.jpg' } %}
                         <img
-                            src="{{ url_for('static', filename='images/rcm_workflow.png') }}"
+                            src="{{ url_for('static', filename='images/' + service_images.get(service_name, 'rcm_workflow.png')) }}"
                             alt="{{ service.title or 'Medical Billing Services' }}"
                             class="relative w-full h-auto rounded-2xl shadow-2xl"
                         />
@@ -130,7 +146,7 @@
                         {% endif %} {% if section.cta %}
                         <div class="mt-8">
                             <a
-                                href="{{ section.cta.link or url_for('contact.contact_form') }}"
+                                href="{{ url_for('contact.contact_form') }}"
                                 class="bg-brand-primary text-white font-montserrat font-light px-8 py-4 rounded-full hover:scale-105 hover:bg-brand-dark transition duration-300 inline-block"
                             >
                                 {{ section.cta.text }}
@@ -248,8 +264,24 @@
                         <div
                             class="absolute inset-0 bg-gradient-to-br from-brand-primary/10 to-brand-accent/10 rounded-2xl transform rotate-3"
                         ></div>
+                        {% set process_images = {
+                        'eligibility-and-benefits-verification-services':
+                        'eligibility_process.jpg',
+                        'prior-authorization-services':
+                        'prior_auth_process.jpg',
+                        'provider-credentialing-and-enrollment-services':
+                        'credentialing_process.jpg', 'charge-entry-services':
+                        'charge_entry_process.jpg', 'medical-coding-services':
+                        'coding_process.jpg',
+                        'claim-submission-and-follow-up-services':
+                        'claims_process.jpg',
+                        'payment-posting-and-reconciliation-services':
+                        'payment_process.jpg', 'denial-management-services':
+                        'denial_process.jpg',
+                        'accounts-receivable-management-services':
+                        'ar_process.jpg' } %}
                         <img
-                            src="{{ url_for('static', filename='images/rcm_workflow.png') }}"
+                            src="{{ url_for('static', filename='images/' + process_images.get(service_name, 'rcm_workflow.png')) }}"
                             alt="Service Process"
                             class="relative w-full h-auto rounded-2xl shadow-xl"
                         />
@@ -352,7 +384,11 @@
             {% endif %}
 
             <!-- FAQs Section -->
-            {% if service.faqs %}
+            {% set all_faqs = [] %} {% if service.faqs %} {% set all_faqs =
+            all_faqs + service.faqs %} {% endif %} {% if service.sections %} {%
+            for section in service.sections %} {% if section.faqs %} {% set
+            all_faqs = all_faqs + section.faqs %} {% endif %} {% endfor %} {%
+            endif %} {% if all_faqs %}
             <div class="bg-gray-50 rounded-2xl p-12">
                 <div class="text-center mb-12">
                     <h2
@@ -371,7 +407,7 @@
                 </div>
 
                 <div class="max-w-4xl mx-auto space-y-6">
-                    {% for faq in service.faqs %}
+                    {% for faq in all_faqs %}
                     <div
                         class="bg-white rounded-xl shadow-md overflow-hidden"
                         data-aos="fade-up"

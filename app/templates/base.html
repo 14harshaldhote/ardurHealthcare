@@ -131,18 +131,40 @@
             }
 
             .desktop-dropdown .dropdown-menu {
-                display: none;
+                display: block;
                 opacity: 0;
+                visibility: hidden;
                 transform: translateY(10px);
+                pointer-events: none;
+                z-index: 50;
                 transition:
                     opacity 0.3s ease,
-                    transform 0.3s ease;
+                    transform 0.3s ease,
+                    visibility 0.3s ease;
+                transition-delay: 0s, 0s, 0.15s;
             }
 
-            .desktop-dropdown:hover .dropdown-menu {
-                display: block;
+            .desktop-dropdown:hover .dropdown-menu,
+            .desktop-dropdown .dropdown-menu:hover {
                 opacity: 1;
+                visibility: visible;
                 transform: translateY(0);
+                pointer-events: auto;
+                transition-delay: 0s, 0s, 0s;
+            }
+
+            .desktop-dropdown {
+                position: relative;
+            }
+
+            .desktop-dropdown::before {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                height: 10px;
+                z-index: 49;
             }
 
             .mobile-menu {
@@ -341,7 +363,7 @@
                                     Revenue Cycle Management
                                 </h3>
                                 <a
-                                    href="{{ url_for('services.service_detail', service_name='eligibility-and-benefits-verification') }}"
+                                    href="{{ url_for('services.service_detail', service_name='eligibility-and-benefits-verification-services') }}"
                                     class="flex items-center px-3 py-2 text-sm rounded-md hover:bg-brand-secondary hover:text-brand-primary transition-colors duration-200"
                                 >
                                     <i
@@ -350,31 +372,13 @@
                                     Eligibility Verification
                                 </a>
                                 <a
-                                    href="{{ url_for('services.service_detail', service_name='prior_authorization') }}"
-                                    class="flex items-center px-3 py-2 text-sm rounded-md hover:bg-brand-secondary hover:text-brand-primary transition-colors duration-200"
-                                >
-                                    <i
-                                        class="ri-file-check-line mr-3 text-brand-primary"
-                                    ></i>
-                                    Prior Authorization
-                                </a>
-                                <a
-                                    href="{{ url_for('services.service_detail', service_name='provider_credentialing') }}"
+                                    href="{{ url_for('services.service_detail', service_name='provider-credentialing-and-enrollment-services') }}"
                                     class="flex items-center px-3 py-2 text-sm rounded-md hover:bg-brand-secondary hover:text-brand-primary transition-colors duration-200"
                                 >
                                     <i
                                         class="ri-user-add-line mr-3 text-brand-primary"
                                     ></i>
                                     Provider Credentialing
-                                </a>
-                                <a
-                                    href="{{ url_for('services.service_detail', service_name='charge_entry') }}"
-                                    class="flex items-center px-3 py-2 text-sm rounded-md hover:bg-brand-secondary hover:text-brand-primary transition-colors duration-200"
-                                >
-                                    <i
-                                        class="ri-file-edit-line mr-3 text-brand-primary"
-                                    ></i>
-                                    Charge Entry
                                 </a>
                                 <a
                                     href="{{ url_for('services.service_detail', service_name='medical_coding') }}"
@@ -395,15 +399,6 @@
                                     Claim Submission
                                 </a>
                                 <a
-                                    href="{{ url_for('services.service_detail', service_name='payment_posting_reconciliation') }}"
-                                    class="flex items-center px-3 py-2 text-sm rounded-md hover:bg-brand-secondary hover:text-brand-primary transition-colors duration-200"
-                                >
-                                    <i
-                                        class="ri-bank-card-line mr-3 text-brand-primary"
-                                    ></i>
-                                    Payment Posting
-                                </a>
-                                <a
                                     href="{{ url_for('services.service_detail', service_name='denial-management-services') }}"
                                     class="flex items-center px-3 py-2 text-sm rounded-md hover:bg-brand-secondary hover:text-brand-primary transition-colors duration-200"
                                 >
@@ -413,13 +408,13 @@
                                     Denial Management
                                 </a>
                                 <a
-                                    href="{{ url_for('services.service_detail', service_name='ar_management') }}"
-                                    class="flex items-center px-3 py-2 text-sm rounded-md hover:bg-brand-secondary hover:text-brand-primary transition-colors duration-200"
+                                    href="{{ url_for('main.services') }}"
+                                    class="flex items-center px-3 py-2 text-sm rounded-md hover:bg-brand-secondary hover:text-brand-primary transition-colors duration-200 border-t border-slate-200 mt-2 pt-3"
                                 >
                                     <i
-                                        class="ri-line-chart-line mr-3 text-brand-primary"
+                                        class="ri-list-check mr-3 text-brand-primary"
                                     ></i>
-                                    Accounts Receivable
+                                    View All Services
                                 </a>
                             </div>
                         </div>
@@ -595,24 +590,14 @@
                             :class="{'mobile-dropdown-menu-open': openMobileDropdown === 'services'}"
                         >
                             <a
-                                href="{{ url_for('services.service_detail', service_name='eligibility-and-benefits-verification') }}"
+                                href="{{ url_for('services.service_detail', service_name='eligibility-and-benefits-verification-services') }}"
                                 class="mobile-nav-link text-sm text-gray-600 hover:text-brand-primary"
                                 >Eligibility Verification</a
                             >
                             <a
-                                href="{{ url_for('services.service_detail', service_name='prior_authorization') }}"
-                                class="mobile-nav-link text-sm text-gray-600 hover:text-brand-primary"
-                                >Prior Authorization</a
-                            >
-                            <a
-                                href="{{ url_for('services.service_detail', service_name='provider_credentialing') }}"
+                                href="{{ url_for('services.service_detail', service_name='provider-credentialing-and-enrollment-services') }}"
                                 class="mobile-nav-link text-sm text-gray-600 hover:text-brand-primary"
                                 >Provider Credentialing</a
-                            >
-                            <a
-                                href="{{ url_for('services.service_detail', service_name='charge_entry') }}"
-                                class="mobile-nav-link text-sm text-gray-600 hover:text-brand-primary"
-                                >Charge Entry</a
                             >
                             <a
                                 href="{{ url_for('services.service_detail', service_name='medical_coding') }}"
@@ -625,19 +610,14 @@
                                 >Claim Submission</a
                             >
                             <a
-                                href="{{ url_for('services.service_detail', service_name='payment_posting_reconciliation') }}"
-                                class="mobile-nav-link text-sm text-gray-600 hover:text-brand-primary"
-                                >Payment Posting</a
-                            >
-                            <a
                                 href="{{ url_for('services.service_detail', service_name='denial-management-services') }}"
                                 class="mobile-nav-link text-sm text-gray-600 hover:text-brand-primary"
                                 >Denial Management</a
                             >
                             <a
-                                href="{{ url_for('services.service_detail', service_name='ar_management') }}"
-                                class="mobile-nav-link text-sm text-gray-600 hover:text-brand-primary"
-                                >Accounts Receivable</a
+                                href="{{ url_for('main.services') }}"
+                                class="mobile-nav-link text-sm text-gray-600 hover:text-brand-primary border-t border-gray-200 mt-2 pt-2"
+                                >View All Services</a
                             >
                         </div>
                     </div>
@@ -937,6 +917,112 @@
                     easing: "ease-in-out",
                     once: true,
                     mirror: false,
+                });
+            });
+        </script>
+
+        <!-- Enhanced Dropdown Navigation -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const dropdowns =
+                    document.querySelectorAll(".desktop-dropdown");
+
+                dropdowns.forEach((dropdown) => {
+                    let hoverTimeout;
+                    let isHovering = false;
+
+                    const dropdownMenu =
+                        dropdown.querySelector(".dropdown-menu");
+                    const dropdownLink = dropdown.querySelector("a");
+
+                    function showDropdown() {
+                        clearTimeout(hoverTimeout);
+                        isHovering = true;
+                        dropdown.classList.add("dropdown-active");
+                        if (dropdownMenu) {
+                            dropdownMenu.style.display = "block";
+                            // Force reflow to ensure transition works
+                            dropdownMenu.offsetHeight;
+                            dropdownMenu.style.opacity = "1";
+                            dropdownMenu.style.visibility = "visible";
+                            dropdownMenu.style.transform = "translateY(0)";
+                            dropdownMenu.style.pointerEvents = "auto";
+                        }
+                    }
+
+                    function hideDropdown() {
+                        isHovering = false;
+                        hoverTimeout = setTimeout(() => {
+                            if (!isHovering) {
+                                dropdown.classList.remove("dropdown-active");
+                                if (dropdownMenu) {
+                                    dropdownMenu.style.opacity = "0";
+                                    dropdownMenu.style.visibility = "hidden";
+                                    dropdownMenu.style.transform =
+                                        "translateY(10px)";
+                                    dropdownMenu.style.pointerEvents = "none";
+                                    setTimeout(() => {
+                                        if (!isHovering) {
+                                            dropdownMenu.style.display = "none";
+                                        }
+                                    }, 300);
+                                }
+                            }
+                        }, 150);
+                    }
+
+                    // Add hover events to the dropdown container
+                    dropdown.addEventListener("mouseenter", showDropdown);
+                    dropdown.addEventListener("mouseleave", hideDropdown);
+
+                    // Add hover events to the dropdown menu itself for better stability
+                    if (dropdownMenu) {
+                        dropdownMenu.addEventListener("mouseenter", () => {
+                            clearTimeout(hoverTimeout);
+                            isHovering = true;
+                        });
+
+                        dropdownMenu.addEventListener(
+                            "mouseleave",
+                            hideDropdown,
+                        );
+                    }
+
+                    // Keyboard accessibility
+                    if (dropdownLink) {
+                        dropdownLink.addEventListener("focus", showDropdown);
+                        dropdownLink.addEventListener("blur", (e) => {
+                            // Only hide if focus is not moving to a child element
+                            setTimeout(() => {
+                                if (
+                                    !dropdown.contains(document.activeElement)
+                                ) {
+                                    hideDropdown();
+                                }
+                            }, 10);
+                        });
+                    }
+                });
+
+                // Close all dropdowns when clicking outside
+                document.addEventListener("click", (e) => {
+                    if (!e.target.closest(".desktop-dropdown")) {
+                        dropdowns.forEach((dropdown) => {
+                            dropdown.classList.remove("dropdown-active");
+                            const dropdownMenu =
+                                dropdown.querySelector(".dropdown-menu");
+                            if (dropdownMenu) {
+                                dropdownMenu.style.opacity = "0";
+                                dropdownMenu.style.visibility = "hidden";
+                                dropdownMenu.style.transform =
+                                    "translateY(10px)";
+                                dropdownMenu.style.pointerEvents = "none";
+                                setTimeout(() => {
+                                    dropdownMenu.style.display = "none";
+                                }, 300);
+                            }
+                        });
+                    }
                 });
             });
         </script>

@@ -1,0 +1,12 @@
+{
+  "timestamp": "2025-07-25T15:56:19.231328",
+  "base_url": "http://localhost:5000",
+  "results": {
+    "page_load": {
+      "average_ms": 0.75,
+      "target_ms": 2000,
+      "status": "\u2705 PASS"
+    }
+  },
+  "overall_status": "\u2705 ALL TESTS PASSED"
+}
