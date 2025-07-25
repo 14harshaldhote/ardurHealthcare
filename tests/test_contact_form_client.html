@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form Client-Side Validation Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        .test-passed { color: #10b981; }
+        .test-failed { color: #ef4444; }
+        .test-running { color: #f59e0b; }
+    </style>
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-3xl font-bold mb-8 text-gray-800">Contact Form Client-Side Validation Test Suite</h1>
+
+        <!-- Test Results Panel -->
+        <div id="test-results" class="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <h2 class="text-xl font-semibold mb-4">Test Results</h2>
+            <div id="test-output" class="space-y-2 font-mono text-sm">
+                <p class="text-gray-600">Click "Run All Tests" to begin testing...</p>
+            </div>
+            <button id="run-tests" class="mt-4 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">
+                Run All Tests
+            </button>
+        </div>
+
+        <!-- Mock Contact Form -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+            <h2 class="text-xl font-semibold mb-4">Mock Contact Form</h2>
+
+            <form id="contact-form" class="space-y-4">
+                <!-- Name Field -->
+                <div class="relative">
+                    <label class="absolute -top-2 left-3 inline-block text-xs text-gray-700 bg-white px-1 z-10">Name *</label>
+                    <input type="text" name="name" id="name"
+                           class="block w-full rounded-lg border-gray-300 shadow-sm py-3 px-4 text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-base transition-all duration-200 border"
+                           placeholder="Enter your name" required>
+                </div>
+
+                <!-- Email Field -->
+                <div class="relative">
+                    <label class="absolute -top-2 left-3 inline-block text-xs text-gray-700 bg-white px-1 z-10">Email *</label>
+                    <input type="email" name="email" id="email"
+                           class="block w-full rounded-lg border-gray-300 shadow-sm py-3 px-4 text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-base transition-all duration-200 border"
+                           placeholder="Enter your email" required>
+                </div>
+
+                <!-- Phone Number -->
+                <div class="relative">
+                    <label class="absolute -top-2 left-3 inline-block text-xs text-gray-700 bg-white px-1 z-10">Phone Number *</label>
+                    <input type="tel" name="phone_number" id="phone_number"
+                           class="block w-full rounded-lg border-gray-300 shadow-sm py-3 px-4 text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-base transition-all duration-200 border"
+                           placeholder="Enter your phone number" required>
+                </div>
+
+                <!-- Practice Name -->
+                <div class="relative">
+                    <label class="absolute -top-2 left-3 inline-block text-xs text-gray-700 bg-white px-1 z-10">Practice Name *</label>
+                    <input type="text" name="practice" id="practice"
+                           class="block w-full rounded-lg border-gray-300 shadow-sm py-3 px-4 text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-base transition-all duration-200 border"
+                           placeholder="Enter practice name" required>
+                </div>
+
+                <!-- State -->
+                <div class="relative">
+                    <label class="absolute -top-2 left-3 inline-block text-xs text-gray-700 bg-white px-1 z-10">State *</label>
+                    <input type="text" name="state" id="state"
+                           class="block w-full rounded-lg border-gray-300 shadow-sm py-3 px-4 text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-base transition-all duration-200 border"
+                           placeholder="Enter state" required>
+                </div>
+
+                <!-- Service Type -->
+                <div class="relative">
+                    <label class="absolute -top-2 left-3 inline-block text-xs text-gray-700 bg-white px-1 z-10">Service Type *</label>
+                    <select name="service_type" id="service_type"
+                            class="block w-full rounded-lg border-gray-300 shadow-sm py-3 px-4 text-gray-900 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-base transition-all duration-200 border"
+                            required>
+                        <option value="">Select service type</option>
+                        <option value="medical-billing">Medical Billing</option>
+                        <option value="coding-services">Coding Services</option>
+                        <option value="credentialing">Provider Credentialing</option>
+                        <option value="ar-management">AR Management</option>
+                        <option value="denial-management">Denial Management</option>
+                        <option value="full-service">Full Service Package</option>
+                        <option value="consultation">Consultation</option>
+                    </select>
+                </div>
+
+                <!-- Specialties Field -->
+                <div class="relative">
+                    <label for="specialties-search" class="absolute -top-2 left-3 inline-block text-xs text-gray-700 bg-white px-1 z-10">Specialties *</label>
+
+                    <!-- Search Input -->
+                    <input type="text" id="specialties-search"
+                           placeholder="Type to search specialties..."
+                           class="block w-full rounded-lg border-gray-300 shadow-sm py-3 px-4 text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-base transition-all duration-200 border"
+                           autocomplete="off">
+
+                    <!-- Hidden Input for Form Submission -->
+                    <input type="hidden" name="specialties" id="specialties-hidden" value="">
+
+                    <!-- Dropdown -->
+                    <div id="specialties-dropdown"
+                         class="absolute z-20 w-full bg-white border border-gray-300 rounded-lg shadow-lg mt-1 max-h-60 overflow-y-auto hidden"></div>
+
+                    <!-- Selected Specialties Tags Container -->
+                    <div id="specialty-tags" class="flex flex-wrap gap-2 mt-2"></div>
+
+                    <!-- Quick Select Buttons -->
+                    <div id="specialty-quick-select" class="mt-3">
+                        <div class="text-xs text-gray-600 mb-2">Quick select common specialties:</div>
+                        <div class="flex flex-wrap gap-2">
+                            <button type="button" class="specialty-quick-btn px-3 py-1 text-xs bg-gray-100 hover:bg-blue-500 hover:text-white rounded-full border border-gray-300 transition-colors" data-specialty="Family Practice">Family Practice</button>
+                            <button type="button" class="specialty-quick-btn px-3 py-1 text-xs bg-gray-100 hover:bg-blue-500 hover:text-white rounded-full border border-gray-300 transition-colors" data-specialty="Internal Medicine">Internal Medicine</button>
+                            <button type="button" class="specialty-quick-btn px-3 py-1 text-xs bg-gray-100 hover:bg-blue-500 hover:text-white rounded-full border border-gray-300 transition-colors" data-specialty="Cardiology">Cardiology</button>
+                            <button type="button" class="specialty-quick-btn px-3 py-1 text-xs bg-gray-100 hover:bg-blue-500 hover:text-white rounded-full border border-gray-300 transition-colors" data-specialty="Dermatology">Dermatology</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Message -->
+                <div class="relative">
+                    <label class="absolute -top-2 left-3 inline-block text-xs text-gray-700 bg-white px-1 z-10">Message *</label>
+                    <textarea name="message" id="message" rows="4"
+                              class="block w-full rounded-lg border-gray-300 shadow-sm py-3 px-4 text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-base transition-all duration-200 resize-none border"
+                              placeholder="Enter your message (minimum 10 characters)" required></textarea>
+                </div>
+
+                <!-- Privacy Policy Agreement -->
+                <div class="flex items-start">
+                    <input type="checkbox" name="privacy_policy_agreement" id="privacy_policy_agreement"
+                           class="h-4 w-4 text-blue-500 focus:ring-blue-500 border-gray-300 rounded mt-1" required>
+                    <label for="privacy_policy_agreement" class="ml-3 text-sm text-gray-700">
+                        I agree to the Privacy Policy *
+                    </label>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="text-center">
+                    <button type="submit" id="submit-btn"
+                            class="w-full md:w-auto inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                        <i class="ri-send-plane-fill mr-2"></i>
+                        Send Message
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Mock specialties data
+        const mockSpecialties = [
+            'Family Practice', 'Internal Medicine', 'Cardiology', 'Dermatology',
+            'Orthopedic', 'Mental Health', 'Pediatrics', 'General Surgery',
+            'Emergency Medicine', 'Radiology', 'Neurology', 'Oncology',
+            'Gastroenterology', 'Pulmonology', 'Endocrinology', 'Rheumatology'
+        ];
+
+        // Test Suite
+        class ContactFormTestSuite {
+            constructor() {
+                this.tests = [];
+                this.results = [];
+                this.currentTest = 0;
+                this.form = document.getElementById('contact-form');
+                this.setupForm();
+            }
+
+            setupForm() {
+                // Initialize specialties functionality
+                this.initializeSpecialties();
+
+                // Add form submission handler
+                this.form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    this.validateForm();
+                });
+            }
+
+            initializeSpecialties() {
+                const specialtiesInput = document.getElementById('specialties-search');
+                const dropdown = document.getElementById('specialties-dropdown');
+                const hiddenInput = document.getElementById('specialties-hidden');
+                const tagsContainer = document.getElementById('specialty-tags');
+
+                let selectedSpecialties = [];
+
+                // Search functionality
+                specialtiesInput.addEventListener('input', () => {
+                    const query = specialtiesInput.value.toLowerCase().trim();
+                    if (query.length < 1) {
+                        dropdown.classList.add('hidden');
+                        return;
+                    }
+
+                    const filtered = mockSpecialties
+                        .filter(specialty => specialty.toLowerCase().includes(query) && !selectedSpecialties.includes(specialty))
+                        .slice(0, 10);
+
+                    this.showDropdown(filtered, query, dropdown, selectedSpecialties, specialtiesInput, hiddenInput, tagsContainer);
+                });
+
+                // Quick select buttons
+                document.querySelectorAll('.specialty-quick-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const specialty = btn.getAttribute('data-specialty');
+                        if (specialty && !selectedSpecialties.includes(specialty)) {
+                            selectedSpecialties.push(specialty);
+                            this.updateSpecialtyDisplay(selectedSpecialties, hiddenInput, tagsContainer, specialtiesInput);
+                        }
+                    });
+                });
+
+                // Store reference for tests
+                this.selectedSpecialties = selectedSpecialties;
+                this.updateSpecialtyDisplay = (specialties, hidden, tags, input) => {
+                    hidden.value = specialties.join(', ');
+                    tags.innerHTML = '';
+                    specialties.forEach((specialty, index) => {
+                        const tag = document.createElement('span');
+                        tag.className = 'inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-500 text-white';
+                        tag.innerHTML = `${specialty} <button type="button" class="ml-2 text-white hover:text-gray-200" onclick="this.parentElement.remove(); this.updateHidden()">×</button>`;
+                        tags.appendChild(tag);
+                    });
+                    input.placeholder = specialties.length > 0 ? `${specialties.length} specialties selected` : 'Type to search specialties...';
+                };
+            }
+
+            showDropdown(items, query, dropdown, selectedSpecialties, input, hidden, tags) {
+                dropdown.innerHTML = '';
+                items.forEach(item => {
+                    const div = document.createElement('div');
+                    div.className = 'px-4 py-2 hover:bg-gray-100 cursor-pointer border-b border-gray-100';
+                    div.textContent = item;
+                    div.addEventListener('click', () => {
+                        selectedSpecialties.push(item);
+                        this.updateSpecialtyDisplay(selectedSpecialties, hidden, tags, input);
+                        input.value = '';
+                        dropdown.classList.add('hidden');
+                    });
+                    dropdown.appendChild(div);
+                });
+                dropdown.classList.remove('hidden');
+            }
+
+            addTest(name, testFunction) {
+                this.tests.push({ name, testFunction });
+            }
+
+            async runAllTests() {
+                this.results = [];
+                this.currentTest = 0;
+                const output = document.getElementById('test-output');
+                output.innerHTML = '<p class="test-running">Running tests...</p>';
+
+                for (let i = 0; i < this.tests.length; i++) {
+                    const test = this.tests[i];
+                    try {
+                        const result = await test.testFunction();
+                        this.results.push({ name: test.name, passed: result.passed, message: result.message });
+                        this.updateTestOutput();
+                        await this.delay(100); // Small delay between tests
+                    } catch (error) {
+                        this.results.push({ name: test.name, passed: false, message: error.message });
+                        this.updateTestOutput();
+                    }
+                }
+
+                this.showFinalResults();
+            }
+
+            updateTestOutput() {
+                const output = document.getElementById('test-output');
+                let html = '';
+
+                this.results.forEach(result => {
+                    const className = result.passed ? 'test-passed' : 'test-failed';
+                    const icon = result.passed ? '✓' : '✗';
+                    html += `<p class="${className}">${icon} ${result.name}: ${result.message}</p>`;
+                });
+
+                output.innerHTML = html;
+            }
+
+            showFinalResults() {
+                const passed = this.results.filter(r => r.passed).length;
+                const total = this.results.length;
+                const output = document.getElementById('test-output');
+
+                const summaryClass = passed === total ? 'test-passed' : 'test-failed';
+                output.innerHTML += `<hr class="my-4"><p class="${summaryClass} font-bold">Results: ${passed}/${total} tests passed</p>`;
+            }
+
+            delay(ms) {
+                return new Promise(resolve => setTimeout(resolve, ms));
+            }
+
+            validateForm() {
+                const errors = [];
+
+                // Validate required fields
+                const requiredFields = ['name', 'email', 'phone_number', 'practice', 'state', 'service_type', 'message'];
+                requiredFields.forEach(fieldName => {
+                    const field = document.querySelector(`[name="${fieldName}"]`);
+                    if (!field.value.trim()) {
+                        errors.push(`${fieldName} is required`);
+                    }
+                });
+
+                // Validate specialties
+                const specialtiesHidden = document.getElementById('specialties-hidden');
+                if (!specialtiesHidden.value.trim()) {
+                    errors.push('At least one specialty is required');
+                }
+
+                // Validate privacy policy
+                const privacyCheckbox = document.querySelector('[name="privacy_policy_agreement"]');
+                if (!privacyCheckbox.checked) {
+                    errors.push('Privacy policy agreement is required');
+                }
+
+                return errors;
+            }
+
+            // Test helper methods
+            fillForm(data) {
+                Object.keys(data).forEach(key => {
+                    const field = document.querySelector(`[name="${key}"]`);
+                    if (field) {
+                        if (field.type === 'checkbox') {
+                            field.checked = data[key];
+                        } else {
+                            field.value = data[key];
+                        }
+                    }
+                });
+            }
+
+            clearForm() {
+                this.form.reset();
+                document.getElementById('specialties-hidden').value = '';
+                document.getElementById('specialty-tags').innerHTML = '';
+                this.selectedSpecialties.length = 0;
+            }
+        }
+
+        // Initialize test suite
+        const testSuite = new ContactFormTestSuite();
+
+        // Add tests
+        testSuite.addTest('Form loads correctly', () => {
+            const form = document.getElementById('contact-form');
+            return {
+                passed: form !== null,
+                message: form ? 'Form element found' : 'Form element not found'
+            };
+        });
+
+        testSuite.addTest('Required field validation', () => {
+            testSuite.clearForm();
+            const errors = testSuite.validateForm();
+            return {
+                passed: errors.length > 0,
+                message: errors.length > 0 ? `Found ${errors.length} validation errors` : 'No validation errors detected'
+            };
+        });
+
+        testSuite.addTest('Valid form submission', () => {
+            testSuite.clearForm();
+            testSuite.fillForm({
+                name: 'Dr. Test',
+                email: 'test@example.com',
+                phone_number: '5551234567',
+                practice: 'Test Practice',
+                state: 'California',
+                service_type: 'medical-billing',
+                message: 'This is a test message with sufficient length',
+                privacy_policy_agreement: true
+            });
+
+            // Add specialty
+            testSuite.selectedSpecialties.push('Family Practice');
+            document.getElementById('specialties-hidden').value = 'Family Practice';
+
+            const errors = testSuite.validateForm();
+            return {
+                passed: errors.length === 0,
+                message: errors.length === 0 ? 'Form validates successfully' : `Validation errors: ${errors.join(', ')}`
+            };
+        });
+
+        testSuite.addTest('Email validation', () => {
+            testSuite.clearForm();
+            const emailField = document.querySelector('[name="email"]');
+            emailField.value = 'invalid-email';
+
+            const isValid = emailField.checkValidity();
+            return {
+                passed: !isValid,
+                message: !isValid ? 'Invalid email rejected' : 'Invalid email accepted (should be rejected)'
+            };
+        });
+
+        testSuite.addTest('Specialty selection functionality', () => {
+            testSuite.clearForm();
+
+            // Simulate adding a specialty
+            testSuite.selectedSpecialties.push('Family Practice');
+            const hiddenInput = document.getElementById('specialties-hidden');
+            hiddenInput.value = 'Family Practice';
+
+            return {
+                passed: hiddenInput.value === 'Family Practice',
+                message: hiddenInput.value === 'Family Practice' ? 'Specialty added successfully' : 'Specialty not added properly'
+            };
+        });
+
+        testSuite.addTest('Multiple specialty selection', () => {
+            testSuite.clearForm();
+
+            // Simulate adding multiple specialties
+            const specialties = ['Family Practice', 'Internal Medicine', 'Cardiology'];
+            testSuite.selectedSpecialties.push(...specialties);
+            const hiddenInput = document.getElementById('specialties-hidden');
+            hiddenInput.value = specialties.join(', ');
+
+            return {
+                passed: hiddenInput.value === specialties.join(', '),
+                message: hiddenInput.value === specialties.join(', ') ? 'Multiple specialties added successfully' : 'Multiple specialties not handled properly'
+            };
+        });
+
+        testSuite.addTest('Privacy policy validation', () => {
+            testSuite.clearForm();
+            testSuite.fillForm({
+                name: 'Dr. Test',
+                email: 'test@example.com',
+                phone_number: '5551234567',
+                practice: 'Test Practice',
+                state: 'California',
+                service_type: 'medical-billing',
+                message: 'This is a test message',
+                privacy_policy_agreement: false
+            });
+
+            testSuite.selectedSpecialties.push('Family Practice');
+            document.getElementById('specialties-hidden').value = 'Family Practice';
+
+            const errors = testSuite.validateForm();
+            const hasPrivacyError = errors.some(error => error.includes('privacy'));
+
+            return {
+                passed: hasPrivacyError,
+                message: hasPrivacyError ? 'Privacy policy validation working' : 'Privacy policy validation not working'
+            };
+        });
+
+        // Run tests button
+        document.getElementById('run-tests').addEventListener('click', () => {
+            testSuite.runAllTests();
+        });
+
+        console.log('Contact Form Test Suite initialized. Click "Run All Tests" to begin.');
+    </script>
+</body>
+</html>

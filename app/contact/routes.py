@@ -6,8 +6,6 @@ import json
 import os
 import openpyxl
 from openpyxl import Workbook
-from openpyxl.styles import Font, PatternFill
-from openpyxl.utils import get_column_letter
 import threading
 import time
 import socket
@@ -30,6 +28,11 @@ def contact_form():
     # Flask-WTF will automatically populate it with submitted data on POST requests.
     form = ContactForm()
 
+    # Add debug logging for form validation
+    if request.method == 'POST':
+        current_app.logger.info(f"Form submission attempt - Specialties raw data: {form.specialties.data}")
+        current_app.logger.info(f"Form validation errors: {form.errors}")
+
     # Check if the form was submitted via POST and if all validators passed.
     if form.validate_on_submit():
         # Retrieve data from the form fields.
@@ -48,6 +51,12 @@ def contact_form():
         state = form.state.data
         specialties = form.specialties.data
         service_type_value = form.service_type.data
+
+        # Debug logging for specialty field
+        current_app.logger.info(f"Successfully processed form - Specialties: '{specialties}' (type: {type(specialties)})")
+        if specialties:
+            specialties_list = [s.strip() for s in specialties.split(',') if s.strip()]
+            current_app.logger.info(f"Parsed specialties list: {specialties_list} (count: {len(specialties_list)})")
         subject = form.subject.data if form.subject.data else f"Contact Form - {service_type_value or 'General Inquiry'}"
         message = form.message.data
         privacy_policy_agreement = form.privacy_policy_agreement.data
@@ -86,6 +95,13 @@ def contact_form():
 
         # Redirect the user immediately - no waiting for emails/logging
         return redirect(url_for('contact.contact_form'))
+    else:
+        # Form validation failed - log the errors for debugging
+        if request.method == 'POST':
+            current_app.logger.warning(f"Form validation failed. Errors: {form.errors}")
+            if 'specialties' in form.errors:
+                current_app.logger.warning(f"Specialty field errors: {form.errors['specialties']}")
+                current_app.logger.warning(f"Specialty field data: '{form.specialties.data}'")
 
     # If the request is GET (initial load) or form validation failed (on POST),
     # render the contact_form.html template.

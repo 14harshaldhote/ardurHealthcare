@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form Debug Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        .debug-panel {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            width: 300px;
+            background: #1f2937;
+            color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            max-height: 400px;
+            overflow-y: auto;
+            z-index: 1000;
+        }
+        .debug-log {
+            margin-bottom: 5px;
+            padding: 3px;
+            border-left: 3px solid #10b981;
+        }
+        .debug-error {
+            border-left-color: #ef4444;
+            background-color: rgba(239, 68, 68, 0.1);
+        }
+        .debug-warning {
+            border-left-color: #f59e0b;
+            background-color: rgba(245, 158, 11, 0.1);
+        }
+        .debug-success {
+            border-left-color: #10b981;
+            background-color: rgba(16, 185, 129, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-8">
+    <!-- Debug Panel -->
+    <div id="debug-panel" class="debug-panel">
+        <h3 class="text-lg font-bold mb-3">Debug Console</h3>
+        <div id="debug-logs"></div>
+        <button onclick="clearDebugLogs()" class="mt-3 px-3 py-1 bg-red-600 text-white rounded text-xs">Clear</button>
+    </div>
+
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-3xl font-bold mb-8 text-gray-800">Contact Form Debug Test</h1>
+
+        <!-- Quick Fill Buttons -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <h2 class="text-xl font-semibold mb-4">Quick Fill Options</h2>
+            <div class="flex flex-wrap gap-4">
+                <button onclick="fillValidForm()" class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">
+                    Fill Valid Form
+                </button>
+                <button onclick="fillPartialForm()" class="px-4 py-2 bg-yellow-500 text-white rounded hover:bg-yellow-600">
+                    Fill Partial Form
+                </button>
+                <button onclick="clearForm()" class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">
+                    Clear Form
+                </button>
+                <button onclick="testValidation()" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+                    Test Validation
+                </button>
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+            <h2 class="text-xl font-semibold mb-4">Contact Form</h2>
+
+            <form id="contact-form" class="space-y-4">
+                <!-- Name Field -->
+                <div class="relative">
+                    <label class="absolute -top-2 left-3 inline-block text-xs text-gray-700 bg-white px-1 z-10">Name *</label>
+                    <input type="text" name="name" id="name"
+                           class="block w-full rounded-lg border-gray-300 shadow-sm py-3 px-4 text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-base transition-all duration-200 border"
+                           placeholder="Enter your name">
+                </div>
+
+                <!-- Email Field -->
+                <div class="relative">
+                    <label class="absolute -top-2 left-3 inline-block text-xs text-gray-700 bg-white px-1 z-10">Email *</label>
+                    <input type="email" name="email" id="email"
+                           class="block w-full rounded-lg border-gray-300 shadow-sm py-3 px-4 text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-base transition-all duration-200 border"
+                           placeholder="Enter your email">
+                </div>
+
+                <!-- Phone Number -->
+                <div class="grid grid-cols-3 gap-4">
+                    <div class="relative">
+                        <label class="absolute -top-2 left-3 inline-block text-xs text-gray-700 bg-white px-1 z-10">Country Code</label>
+                        <select name="phone_country_code" id="phone_country_code"
+                                class="block w-full rounded-lg border-gray-300 shadow-sm py-3 px-4 text-gray-900 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-base transition-all duration-200 border">
+                            <option value="+1">+1 (US)</option>
+                            <option value="+91">+91 (India)</option>
+                            <option value="+44">+44 (UK)</option>
+                        </select>
+                    </div>
+                    <div class="relative col-span-2">
+                        <label class="absolute -top-2 left-3 inline-block text-xs text-gray-700 bg-white px-1 z-10">Phone Number *</label>
+                        <input type="tel" name="phone_number" id="phone_number"
+                               class="block w-full rounded-lg border-gray-300 shadow-sm py-3 px-4 text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-base transition-all duration-200 border"
+                               placeholder="Enter your phone number">
+                    </div>
+                </div>
+
+                <!-- Practice Name -->
+                <div class="relative">
+                    <label class="absolute -top-2 left-3 inline-block text-xs text-gray-700 bg-white px-1 z-10">Practice Name *</label>
+                    <input type="text" name="practice" id="practice"
+                           class="block w-full rounded-lg border-gray-300 shadow-sm py-3 px-4 text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-base transition-all duration-200 border"
+                           placeholder="Enter practice name">
+                </div>
+
+                <!-- State -->
+                <div class="relative">
+                    <label class="absolute -top-2 left-3 inline-block text-xs text-gray-700 bg-white px-1 z-10">State *</label>
+                    <input type="text" name="state" id="state"
+                           class="block w-full rounded-lg border-gray-300 shadow-sm py-3 px-4 text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-base transition-all duration-200 border"
+                           placeholder="Enter state">
+                </div>
+
+                <!-- Service Type -->
+                <div class="relative">
+                    <label class="absolute -top-2 left-3 inline-block text-xs text-gray-700 bg-white px-1 z-10">Service Type *</label>
+                    <select name="service_type" id="service_type"
+                            class="block w-full rounded-lg border-gray-300 shadow-sm py-3 px-4 text-gray-900 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-base transition-all duration-200 border">
+                        <option value="">Select service type</option>
+                        <option value="medical-billing">Medical Billing</option>
+                        <option value="coding-services">Coding Services</option>
+                        <option value="credentialing">Provider Credentialing</option>
+                        <option value="ar-management">AR Management</option>
+                        <option value="consultation">Consultation</option>
+                    </select>
+                </div>
+
+                <!-- Specialties Field -->
+                <div class="relative">
+                    <label for="specialties-search" class="absolute -top-2 left-3 inline-block text-xs text-gray-700 bg-white px-1 z-10">Specialties *</label>
+
+                    <!-- Search Input -->
+                    <input type="text" id="specialties-search"
+                           placeholder="Type to search specialties..."
+                           class="block w-full rounded-lg border-gray-300 shadow-sm py-3 px-4 text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-base transition-all duration-200 border"
+                           autocomplete="off">
+
+                    <!-- Hidden Input -->
+                    <input type="hidden" name="specialties" id="specialties-hidden" value="">
+
+                    <!-- Dropdown -->
+                    <div id="specialties-dropdown"
+                         class="absolute z-20 w-full bg-white border border-gray-300 rounded-lg shadow-lg mt-1 max-h-60 overflow-y-auto hidden"></div>
+
+                    <!-- Selected Tags -->
+                    <div id="specialty-tags" class="flex flex-wrap gap-2 mt-2"></div>
+
+                    <!-- Quick Select -->
+                    <div class="mt-3">
+                        <div class="text-xs text-gray-600 mb-2">Quick select:</div>
+                        <div class="flex flex-wrap gap-2">
+                            <button type="button" class="specialty-quick-btn px-3 py-1 text-xs bg-gray-100 hover:bg-blue-500 hover:text-white rounded-full border transition-colors" data-specialty="Family Practice">Family Practice</button>
+                            <button type="button" class="specialty-quick-btn px-3 py-1 text-xs bg-gray-100 hover:bg-blue-500 hover:text-white rounded-full border transition-colors" data-specialty="Internal Medicine">Internal Medicine</button>
+                            <button type="button" class="specialty-quick-btn px-3 py-1 text-xs bg-gray-100 hover:bg-blue-500 hover:text-white rounded-full border transition-colors" data-specialty="Cardiology">Cardiology</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Message -->
+                <div class="relative">
+                    <label class="absolute -top-2 left-3 inline-block text-xs text-gray-700 bg-white px-1 z-10">Message *</label>
+                    <textarea name="message" id="message" rows="4"
+                              class="block w-full rounded-lg border-gray-300 shadow-sm py-3 px-4 text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-base transition-all duration-200 resize-none border"
+                              placeholder="Enter your message (minimum 10 characters)"></textarea>
+                </div>
+
+                <!-- Privacy Policy -->
+                <div class="flex items-start">
+                    <input type="checkbox" name="privacy_policy_agreement" id="privacy_policy_agreement"
+                           class="h-4 w-4 text-blue-500 focus:ring-blue-500 border-gray-300 rounded mt-1">
+                    <label for="privacy_policy_agreement" class="ml-3 text-sm text-gray-700">
+                        I agree to the Privacy Policy *
+                    </label>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="text-center">
+                    <button type="submit" id="submit-btn"
+                            class="w-full md:w-auto inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-200 shadow-lg">
+                        <i class="ri-send-plane-fill mr-2"></i>
+                        Send Message (Debug)
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Debug logging functions
+        let debugLogs = [];
+
+        function debugLog(message, type = 'info') {
+            const timestamp = new Date().toLocaleTimeString();
+            const log = { message, type, timestamp };
+            debugLogs.push(log);
+
+            const debugLogsContainer = document.getElementById('debug-logs');
+            const logElement = document.createElement('div');
+            logElement.className = `debug-log debug-${type}`;
+            logElement.innerHTML = `[${timestamp}] ${message}`;
+            debugLogsContainer.appendChild(logElement);
+
+            // Auto-scroll to bottom
+            debugLogsContainer.scrollTop = debugLogsContainer.scrollHeight;
+
+            // Console log as well
+            console.log(`[DEBUG] ${message}`);
+        }
+
+        function clearDebugLogs() {
+            debugLogs = [];
+            document.getElementById('debug-logs').innerHTML = '';
+        }
+
+        // Mock specialties data
+        const mockSpecialties = [
+            'Family Practice', 'Internal Medicine', 'Cardiology', 'Dermatology',
+            'Orthopedic', 'Mental Health', 'Pediatrics', 'General Surgery',
+            'Emergency Medicine', 'Radiology', 'Neurology', 'Oncology'
+        ];
+
+        // Form elements
+        let form, specialtiesInput, dropdown, hiddenInput, tagsContainer;
+        let selectedSpecialties = [];
+        let isLoading = false;
+
+        document.addEventListener('DOMContentLoaded', function() {
+            debugLog('DOM loaded, initializing form...', 'success');
+
+            // Get form elements
+            form = document.getElementById('contact-form');
+            specialtiesInput = document.getElementById('specialties-search');
+            dropdown = document.getElementById('specialties-dropdown');
+            hiddenInput = document.getElementById('specialties-hidden');
+            tagsContainer = document.getElementById('specialty-tags');
+
+            if (!form || !specialtiesInput || !hiddenInput) {
+                debugLog('ERROR: Required form elements not found!', 'error');
+                return;
+            }
+
+            debugLog('All form elements found successfully', 'success');
+
+            // Initialize specialties functionality
+            initializeSpecialties();
+
+            // Add form submission handler
+            form.addEventListener('submit', handleFormSubmit);
+
+            debugLog('Form initialization complete', 'success');
+        });
+
+        function initializeSpecialties() {
+            debugLog('Initializing specialties functionality...', 'info');
+
+            // Search functionality
+            specialtiesInput.addEventListener('input', handleSearch);
+            specialtiesInput.addEventListener('keydown', handleKeydown);
+            specialtiesInput.addEventListener('focus', () => {
+                debugLog('Specialties input focused', 'info');
+            });
+
+            // Quick select buttons
+            document.querySelectorAll('.specialty-quick-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const specialty = btn.getAttribute('data-specialty');
+                    if (specialty) {
+                        addSpecialty(specialty);
+                        debugLog(`Quick selected: ${specialty}`, 'info');
+                    }
+                });
+            });
+
+            debugLog('Specialties event listeners added', 'success');
+        }
+
+        function handleSearch() {
+            const query = specialtiesInput.value.toLowerCase().trim();
+            debugLog(`Search query: "${query}"`, 'info');
+
+            if (query.length < 1) {
+                hideDropdown();
+                return;
+            }
+
+            const filtered = mockSpecialties
+                .filter(specialty => specialty.toLowerCase().includes(query) && !selectedSpecialties.includes(specialty))
+                .slice(0, 10);
+
+            debugLog(`Found ${filtered.length} matching specialties`, 'info');
+            showDropdown(filtered, query);
+        }
+
+        function handleKeydown(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                const query = specialtiesInput.value.trim();
+                if (query && !selectedSpecialties.includes(query)) {
+                    addSpecialty(query);
+                    specialtiesInput.value = '';
+                    hideDropdown();
+                    debugLog(`Added specialty via Enter: ${query}`, 'success');
+                }
+            }
+        }
+
+        function showDropdown(items, query) {
+            dropdown.innerHTML = '';
+
+            items.forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'px-4 py-2 hover:bg-gray-100 cursor-pointer border-b border-gray-100';
+                div.textContent = item;
+                div.addEventListener('click', () => addSpecialty(item));
+                dropdown.appendChild(div);
+            });
+
+            dropdown.classList.remove('hidden');
+            debugLog(`Dropdown shown with ${items.length} items`, 'info');
+        }
+
+        function hideDropdown() {
+            dropdown.classList.add('hidden');
+        }
+
+        function addSpecialty(specialty) {
+            const trimmed = specialty.trim();
+            if (!trimmed || selectedSpecialties.includes(trimmed)) {
+                debugLog(`Specialty not added: ${trimmed} (empty or duplicate)`, 'warning');
+                return;
+            }
+
+            selectedSpecialties.push(trimmed);
+            updateDisplay();
+            specialtiesInput.value = '';
+            hideDropdown();
+
+            debugLog(`✓ Added specialty: ${trimmed}`, 'success');
+            debugLog(`Total specialties: ${selectedSpecialties.length}`, 'info');
+        }
+
+        function removeSpecialty(index) {
+            if (index >= 0 && index < selectedSpecialties.length) {
+                const removed = selectedSpecialties.splice(index, 1)[0];
+                updateDisplay();
+                debugLog(`✗ Removed specialty: ${removed}`, 'warning');
+            }
+        }
+
+        function updateDisplay() {
+            hiddenInput.value = selectedSpecialties.join(', ');
+            debugLog(`Hidden input updated: "${hiddenInput.value}"`, 'info');
+
+            // Update tags
+            tagsContainer.innerHTML = '';
+            selectedSpecialties.forEach((specialty, index) => {
+                const tag = document.createElement('span');
+                tag.className = 'inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-500 text-white';
+                tag.innerHTML = `${specialty} <button type="button" class="ml-2 text-white hover:text-gray-200" onclick="removeSpecialty(${index})">×</button>`;
+                tagsContainer.appendChild(tag);
+            });
+
+            // Update placeholder
+            if (selectedSpecialties.length > 0) {
+                specialtiesInput.placeholder = `${selectedSpecialties.length} specialties selected`;
+            } else {
+                specialtiesInput.placeholder = 'Type to search specialties...';
+            }
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            debugLog('🚀 Form submission started', 'info');
+
+            // Update hidden input
+            hiddenInput.value = selectedSpecialties.join(', ');
+
+            // Validate form
+            const errors = validateForm();
+
+            if (errors.length > 0) {
+                debugLog(`❌ Validation failed: ${errors.length} errors`, 'error');
+                errors.forEach(error => debugLog(`  - ${error}`, 'error'));
+                return false;
+            }
+
+            debugLog('✅ Form validation passed!', 'success');
+            debugLog('Form would be submitted in real environment', 'info');
+            return false; // Prevent actual submission in debug mode
+        }
+
+        function validateForm() {
+            const errors = [];
+
+            // Check required fields
+            const requiredFields = [
+                { name: 'name', label: 'Name' },
+                { name: 'email', label: 'Email' },
+                { name: 'phone_number', label: 'Phone Number' },
+                { name: 'practice', label: 'Practice Name' },
+                { name: 'state', label: 'State' },
+                { name: 'service_type', label: 'Service Type' },
+                { name: 'message', label: 'Message' }
+            ];
+
+            requiredFields.forEach(field => {
+                const element = form.querySelector(`[name="${field.name}"]`);
+                if (!element || !element.value.trim()) {
+                    errors.push(`${field.label} is required`);
+                }
+            });
+
+            // Check specialties
+            if (selectedSpecialties.length === 0) {
+                errors.push('At least one specialty is required');
+            }
+
+            // Check privacy policy
+            const privacyCheckbox = form.querySelector('[name="privacy_policy_agreement"]');
+            if (!privacyCheckbox || !privacyCheckbox.checked) {
+                errors.push('Privacy policy agreement is required');
+            }
+
+            // Check email format
+            const emailField = form.querySelector('[name="email"]');
+            if (emailField && emailField.value.trim()) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(emailField.value.trim())) {
+                    errors.push('Invalid email format');
+                }
+            }
+
+            // Check phone number
+            const phoneField = form.querySelector('[name="phone_number"]');
+            if (phoneField && phoneField.value.trim()) {
+                const cleanPhone = phoneField.value.replace(/[\s\-\(\)\+]/g, '');
+                if (!/^\d{10,}$/.test(cleanPhone)) {
+                    errors.push('Phone number must be at least 10 digits');
+                }
+            }
+
+            // Check message length
+            const messageField = form.querySelector('[name="message"]');
+            if (messageField && messageField.value.trim()) {
+                if (messageField.value.trim().length < 10) {
+                    errors.push('Message must be at least 10 characters');
+                }
+            }
+
+            return errors;
+        }
+
+        // Helper functions for testing
+        function fillValidForm() {
+            debugLog('Filling form with valid data...', 'info');
+
+            document.getElementById('name').value = 'Dr. John Smith';
+            document.getElementById('email').value = 'john.smith@example.com';
+            document.getElementById('phone_number').value = '5551234567';
+            document.getElementById('practice').value = 'Smith Medical Center';
+            document.getElementById('state').value = 'California';
+            document.getElementById('service_type').value = 'medical-billing';
+            document.getElementById('message').value = 'I am interested in your medical billing services for my practice. Please contact me to discuss our needs.';
+            document.getElementById('privacy_policy_agreement').checked = true;
+
+            // Add specialties
+            addSpecialty('Family Practice');
+            addSpecialty('Internal Medicine');
+
+            debugLog('✅ Valid form data filled', 'success');
+        }
+
+        function fillPartialForm() {
+            debugLog('Filling form with partial data...', 'warning');
+
+            document.getElementById('name').value = 'Dr. Jane';
+            document.getElementById('email').value = 'jane@example.com';
+            document.getElementById('practice').value = 'Jane Clinic';
+            // Leaving other fields empty to test validation
+
+            debugLog('⚠️ Partial form data filled', 'warning');
+        }
+
+        function clearForm() {
+            debugLog('Clearing form...', 'info');
+
+            form.reset();
+            selectedSpecialties = [];
+            updateDisplay();
+
+            debugLog('✅ Form cleared', 'success');
+        }
+
+        function testValidation() {
+            debugLog('Testing form validation...', 'info');
+
+            const errors = validateForm();
+            if (errors.length > 0) {
+                debugLog(`Found ${errors.length} validation errors:`, 'warning');
+                errors.forEach(error => debugLog(`  - ${error}`, 'error'));
+            } else {
+                debugLog('✅ No validation errors found', 'success');
+            }
+        }
+
+        // Make functions globally available
+        window.removeSpecialty = removeSpecialty;
+        window.fillValidForm = fillValidForm;
+        window.fillPartialForm = fillPartialForm;
+        window.clearForm = clearForm;
+        window.testValidation = testValidation;
+        window.clearDebugLogs = clearDebugLogs;
+
+        debugLog('Debug form loaded and ready', 'success');
+    </script>
+</body>
+</html>

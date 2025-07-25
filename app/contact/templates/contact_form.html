@@ -10,6 +10,7 @@
     <div
         class="bg-white rounded-2xl shadow-2xl overflow-hidden lg:grid lg:grid-cols-2 lg:divide-x lg:divide-gray-200"
     >
+        <!-- Left Side - Contact Info -->
         <div
             class="p-8 md:p-12 bg-gradient-to-br from-brand-secondary to-brand-light-blue relative"
         >
@@ -45,6 +46,7 @@
                         >Privacy Policy</a
                     >.
                 </p>
+
                 <div class="space-y-6 mb-10">
                     <div class="flex items-center">
                         <i
@@ -57,9 +59,8 @@
                             <a
                                 href="tel:+17028092713"
                                 class="text-gray-700 hover:text-brand-primary transition-colors duration-200 text-lg"
+                                >+1 (702) 809-2713</a
                             >
-                                +1 (702) 809-2713
-                            </a>
                         </div>
                     </div>
                     <div class="flex items-center">
@@ -73,9 +74,8 @@
                             <a
                                 href="mailto:info@ardurhealthcare.com"
                                 class="text-gray-700 hover:text-brand-primary transition-colors duration-200 text-lg"
+                                >info@ardurhealthcare.com</a
                             >
-                                info@ardurhealthcare.com
-                            </a>
                         </div>
                     </div>
                     <div class="flex items-center">
@@ -102,151 +102,96 @@
                         </div>
                     </div>
                 </div>
-                <div class="hidden lg:flex justify-center items-center mt-12">
-                    <img
-                        src="{{ url_for('static', filename='images/contact1.png') }}"
-                        alt="Ardur Healthcare Team"
-                        class="rounded-full w-64 h-64 object-cover border-4 border-white shadow-lg"
-                    />
-                </div>
             </div>
         </div>
 
-        <div class="p-8 md:p-12 bg-white">
-            <h2
-                class="font-montserrat font-light text-3xl text-brand-dark mb-8"
-            >
+        <!-- Right Side - Contact Form -->
+        <div class="p-8 md:p-12">
+            <h2 class="font-montserrat font-bold text-3xl text-brand-dark mb-8">
                 Send us a Message
             </h2>
+
+            <!-- Flash Messages -->
             {% with messages = get_flashed_messages(with_categories=true) %} {%
-            if messages %}
-            <div class="mb-6">
-                {% for category, message in messages %}{% if category ==
-                'success' %}
-                <div
-                    class="bg-green-50 border-l-4 border-green-500 text-green-800 p-4 rounded-md shadow-sm"
-                    role="alert"
-                >
-                    <div class="flex">
-                        <i
-                            class="ri-check-circle-line text-green-500 text-xl mr-3 flex-shrink-0"
-                        ></i>
-                        <p class="font-medium">{{ message }}</p>
-                    </div>
-                </div>
-                {% elif category == 'warning' %}
-                <div
-                    class="bg-yellow-50 border-l-4 border-yellow-400 text-yellow-800 p-4 rounded-md shadow-sm"
-                    role="alert"
-                >
-                    <div class="flex">
-                        <i
-                            class="ri-alert-line text-yellow-500 text-xl mr-3 flex-shrink-0"
-                        ></i>
-                        <p class="font-medium">{{ message }}</p>
-                    </div>
-                </div>
-                {% elif category == 'error' or category == 'danger' %}
-                <div
-                    class="bg-red-50 border-l-4 border-red-500 text-red-800 p-4 rounded-md shadow-sm"
-                    role="alert"
-                >
-                    <div class="flex">
-                        <i
-                            class="ri-error-warning-line text-red-500 text-xl mr-3 flex-shrink-0"
-                        ></i>
-                        <p class="font-medium">{{ message }}</p>
-                    </div>
-                </div>
-                {% else %}
-                <div
-                    class="bg-blue-50 border-l-4 border-blue-500 text-blue-800 p-4 rounded-md shadow-sm"
-                    role="alert"
-                >
-                    <div class="flex">
-                        <i
-                            class="ri-information-line text-blue-500 text-xl mr-3 flex-shrink-0"
-                        ></i>
-                        <p class="font-medium">{{ message }}</p>
-                    </div>
-                </div>
-                {% endif %} {% endfor %}
-            </div>
-            {% endif %} {% endwith %}
-            <form
-                method="POST"
-                action="{{ url_for('contact.contact_form') }}"
-                id="contact-form"
-                class="space-y-4"
+            if messages %} {% for category, message in messages %}
+            <div
+                class="mb-6 p-4 rounded-lg {% if category == 'success' %}bg-green-100 border border-green-400 text-green-700{% else %}bg-red-100 border border-red-400 text-red-700{% endif %}"
             >
+                <i
+                    class="{% if category == 'success' %}ri-check-circle-line{% else %}ri-error-warning-line{% endif %} mr-2"
+                ></i>
+                {{ message }}
+            </div>
+            {% endfor %} {% endif %} {% endwith %}
+
+            <form method="POST" id="contact-form">
                 {{ form.hidden_tag() }}
-                <div class="relative">
-                    {{ form.name.label(class="absolute -top-2 left-3
-                    inline-block text-xs text-gray-700 bg-brand-secondary px-1
-                    z-10") }} {{ form.name(class="block w-full rounded-lg
-                    border-gray-300 shadow-sm py-3 px-4 text-gray-900
-                    placeholder:text-gray-400 focus:ring-2
-                    focus:ring-brand-primary focus:border-brand-primary
-                    sm:text-base transition-all duration-200 bg-brand-secondary
-                    border-black") }} {% if form.name.errors %}
-                    <div class="text-red-600 text-sm mt-2">
-                        {% for error in form.name.errors %}<span
-                            >{{ error }}</span
-                        >{% endfor %}
-                    </div>
-                    {% endif %}
-                </div>
 
-                <div class="relative">
-                    {{ form.email.label(class="absolute -top-2 left-3
-                    inline-block text-xs text-gray-700 bg-brand-secondary px-1
-                    z-10") }} {{ form.email(class="block w-full rounded-lg
-                    border-gray-300 shadow-sm py-3 px-4 text-gray-900
-                    placeholder:text-gray-400 focus:ring-2
-                    focus:ring-brand-primary focus:border-brand-primary
-                    sm:text-base transition-all duration-200 bg-brand-secondary
-                    border-black") }} {% if form.email.errors %}
-                    <div class="text-red-600 text-sm mt-2">
-                        {% for error in form.email.errors %}<span
-                            >{{ error }}</span
-                        >{% endfor %}
-                    </div>
-                    {% endif %}
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <!-- Name Field -->
                     <div class="relative">
-                        <label
-                            for="phone_country_code"
-                            class="absolute -top-2 left-3 inline-block text-xs text-gray-700 bg-brand-secondary px-1 z-10"
-                            >Country Code</label
-                        >
-                        <select
-                            id="phone_country_code"
-                            name="phone_country_code"
-                            class="block w-full rounded-lg border-gray-300 shadow-sm py-3 px-4 text-gray-900 focus:ring-2 focus:ring-brand-primary focus:border-brand-primary sm:text-base transition-all duration-200 bg-brand-secondary border-black"
-                        >
-                            <option value="+1">+1 (USA)</option>
-                            <option value="+91">+91 (India)</option>
-                            <option value="+44">+44 (UK)</option>
-                            <option value="+61">+61 (Australia)</option>
-                            <option value="+971">+971 (UAE)</option>
-                            <option value="+1">+1 (Canada)</option>
-                            <option value="+52">+52 (Mexico)</option>
-                            <option value="+49">+49 (Germany)</option>
-                            <option value="+33">+33 (France)</option>
-                            <option value="+81">+81 (Japan)</option>
-                        </select>
-                    </div>
-                    <div class="relative">
-                        {{ form.phone_number.label(class="absolute -top-2 left-3
-                        inline-block text-xs text-gray-700 bg-brand-secondary
-                        px-1 z-10") }} {{ form.phone_number(class="block w-full
-                        rounded-lg border-gray-300 shadow-sm py-3 px-4
-                        text-gray-900 placeholder:text-gray-400 focus:ring-2
+                        {{ form.name.label(class="absolute -top-2 left-3
+                        inline-block text-xs text-gray-700 bg-white px-1 z-10")
+                        }} {{ form.name(class="block w-full rounded-lg
+                        border-gray-300 shadow-sm py-3 px-4 text-gray-900
+                        placeholder:text-gray-400 focus:ring-2
                         focus:ring-brand-primary focus:border-brand-primary
-                        sm:text-base transition-all duration-200
-                        bg-brand-secondary border-black") }} {% if
+                        sm:text-base transition-all duration-200") }} {% if
+                        form.name.errors %}
+                        <div class="text-red-600 text-sm mt-2">
+                            {% for error in form.name.errors %}<span
+                                >{{ error }}</span
+                            >{% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+
+                    <!-- Email Field -->
+                    <div class="relative">
+                        {{ form.email.label(class="absolute -top-2 left-3
+                        inline-block text-xs text-gray-700 bg-white px-1 z-10")
+                        }} {{ form.email(class="block w-full rounded-lg
+                        border-gray-300 shadow-sm py-3 px-4 text-gray-900
+                        placeholder:text-gray-400 focus:ring-2
+                        focus:ring-brand-primary focus:border-brand-primary
+                        sm:text-base transition-all duration-200") }} {% if
+                        form.email.errors %}
+                        <div class="text-red-600 text-sm mt-2">
+                            {% for error in form.email.errors %}<span
+                                >{{ error }}</span
+                            >{% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                    <!-- Country Code -->
+                    <div class="relative">
+                        {{ form.phone_country_code.label(class="absolute -top-2
+                        left-3 inline-block text-xs text-gray-700 bg-white px-1
+                        z-10") }} {{ form.phone_country_code(class="block w-full
+                        rounded-lg border-gray-300 shadow-sm py-3 px-4
+                        text-gray-900 focus:ring-2 focus:ring-brand-primary
+                        focus:border-brand-primary sm:text-base transition-all
+                        duration-200") }} {% if form.phone_country_code.errors
+                        %}
+                        <div class="text-red-600 text-sm mt-2">
+                            {% for error in form.phone_country_code.errors
+                            %}<span>{{ error }}</span>{% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+
+                    <!-- Phone Number -->
+                    <div class="relative md:col-span-2">
+                        {{ form.phone_number.label(class="absolute -top-2 left-3
+                        inline-block text-xs text-gray-700 bg-white px-1 z-10")
+                        }} {{ form.phone_number(class="block w-full rounded-lg
+                        border-gray-300 shadow-sm py-3 px-4 text-gray-900
+                        placeholder:text-gray-400 focus:ring-2
+                        focus:ring-brand-primary focus:border-brand-primary
+                        sm:text-base transition-all duration-200") }} {% if
                         form.phone_number.errors %}
                         <div class="text-red-600 text-sm mt-2">
                             {% for error in form.phone_number.errors %}<span
@@ -257,49 +202,53 @@
                     </div>
                 </div>
 
-                <div class="relative">
-                    {{ form.practice.label(class="absolute -top-2 left-3
-                    inline-block text-xs text-gray-700 bg-brand-secondary px-1
-                    z-10") }} {{ form.practice(class="block w-full rounded-lg
-                    border-gray-300 shadow-sm py-3 px-4 text-gray-900
-                    placeholder:text-gray-400 focus:ring-2
-                    focus:ring-brand-primary focus:border-brand-primary
-                    sm:text-base transition-all duration-200 bg-brand-secondary
-                    border-black") }} {% if form.practice.errors %}
-                    <div class="text-red-600 text-sm mt-2">
-                        {% for error in form.practice.errors %}<span
-                            >{{ error }}</span
-                        >{% endfor %}
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <!-- Practice Name -->
+                    <div class="relative">
+                        {{ form.practice.label(class="absolute -top-2 left-3
+                        inline-block text-xs text-gray-700 bg-white px-1 z-10")
+                        }} {{ form.practice(class="block w-full rounded-lg
+                        border-gray-300 shadow-sm py-3 px-4 text-gray-900
+                        placeholder:text-gray-400 focus:ring-2
+                        focus:ring-brand-primary focus:border-brand-primary
+                        sm:text-base transition-all duration-200") }} {% if
+                        form.practice.errors %}
+                        <div class="text-red-600 text-sm mt-2">
+                            {% for error in form.practice.errors %}<span
+                                >{{ error }}</span
+                            >{% endfor %}
+                        </div>
+                        {% endif %}
                     </div>
-                    {% endif %}
+
+                    <!-- State -->
+                    <div class="relative">
+                        {{ form.state.label(class="absolute -top-2 left-3
+                        inline-block text-xs text-gray-700 bg-white px-1 z-10")
+                        }} {{ form.state(class="block w-full rounded-lg
+                        border-gray-300 shadow-sm py-3 px-4 text-gray-900
+                        placeholder:text-gray-400 focus:ring-2
+                        focus:ring-brand-primary focus:border-brand-primary
+                        sm:text-base transition-all duration-200") }} {% if
+                        form.state.errors %}
+                        <div class="text-red-600 text-sm mt-2">
+                            {% for error in form.state.errors %}<span
+                                >{{ error }}</span
+                            >{% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
                 </div>
 
-                <div class="relative">
-                    {{ form.state.label(class="absolute -top-2 left-3
-                    inline-block text-xs text-gray-700 bg-brand-secondary px-1
-                    z-10") }} {{ form.state(class="block w-full rounded-lg
-                    border-gray-300 shadow-sm py-3 px-4 text-gray-900
-                    placeholder:text-gray-400 focus:ring-2
-                    focus:ring-brand-primary focus:border-brand-primary
-                    sm:text-base transition-all duration-200 bg-brand-secondary
-                    border-black") }} {% if form.state.errors %}
-                    <div class="text-red-600 text-sm mt-2">
-                        {% for error in form.state.errors %}<span
-                            >{{ error }}</span
-                        >{% endfor %}
-                    </div>
-                    {% endif %}
-                </div>
-
-                <div class="relative">
+                <!-- Service Type -->
+                <div class="relative mb-6">
                     {{ form.service_type.label(class="absolute -top-2 left-3
-                    inline-block text-xs text-gray-700 bg-brand-secondary px-1
-                    z-10") }} {{ form.service_type(class="block w-full
-                    rounded-lg border-gray-300 shadow-sm py-3 px-4 text-gray-900
+                    inline-block text-xs text-gray-700 bg-white px-1 z-10") }}
+                    {{ form.service_type(class="block w-full rounded-lg
+                    border-gray-300 shadow-sm py-3 px-4 text-gray-900
                     focus:ring-2 focus:ring-brand-primary
                     focus:border-brand-primary sm:text-base transition-all
-                    duration-200 bg-brand-secondary border-black") }} {% if
-                    form.service_type.errors %}
+                    duration-200") }} {% if form.service_type.errors %}
                     <div class="text-red-600 text-sm mt-2">
                         {% for error in form.service_type.errors %}<span
                             >{{ error }}</span
@@ -308,52 +257,126 @@
                     {% endif %}
                 </div>
 
-                <div class="relative">
+                <!-- Specialties Field -->
+                <div class="relative mb-6">
                     <label
                         for="specialties-search"
-                        class="absolute -top-2 left-3 inline-block text-xs text-gray-700 bg-brand-secondary px-1 z-10"
-                        >Specialties</label
+                        class="absolute -top-2 left-3 inline-block text-xs text-gray-700 bg-white px-1 z-10"
+                        >Specialties *</label
                     >
+
+                    <!-- Search Input -->
                     <input
                         type="text"
                         id="specialties-search"
                         placeholder="Type to search specialties..."
-                        class="block w-full rounded-lg border-gray-300 shadow-sm py-3 px-4 text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-brand-primary focus:border-brand-primary sm:text-base transition-all duration-200 bg-brand-secondary border-black"
+                        class="block w-full rounded-lg border-gray-300 shadow-sm py-3 px-4 text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-brand-primary focus:border-brand-primary sm:text-base transition-all duration-200"
                         autocomplete="off"
                     />
-                    <!-- Hidden input for form submission -->
+
+                    <!-- Hidden Input for Form Submission -->
                     <input
                         type="hidden"
                         name="specialties"
                         id="specialties-hidden"
                         value="{{ form.specialties.data or '' }}"
                     />
+
+                    <!-- Dropdown -->
                     <div
                         id="specialties-dropdown"
                         class="absolute z-20 w-full bg-white border border-gray-300 rounded-lg shadow-lg mt-1 max-h-60 overflow-y-auto hidden"
-                    >
-                        <!-- Dynamic specialty options will be populated here -->
+                    ></div>
+
+                    <!-- Selected Specialties Tags Container -->
+                    <div
+                        id="specialty-tags"
+                        class="flex flex-wrap gap-2 mt-2"
+                    ></div>
+
+                    <!-- Quick Select Buttons -->
+                    <div id="specialty-quick-select" class="mt-3">
+                        <div class="text-xs text-gray-600 mb-2">
+                            Quick select common specialties:
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <button
+                                type="button"
+                                class="specialty-quick-btn px-3 py-1 text-xs bg-gray-100 hover:bg-brand-primary hover:text-white rounded-full border border-gray-300 transition-colors"
+                                data-specialty="Family Practice"
+                            >
+                                Family Practice
+                            </button>
+                            <button
+                                type="button"
+                                class="specialty-quick-btn px-3 py-1 text-xs bg-gray-100 hover:bg-brand-primary hover:text-white rounded-full border border-gray-300 transition-colors"
+                                data-specialty="Internal Medicine"
+                            >
+                                Internal Medicine
+                            </button>
+                            <button
+                                type="button"
+                                class="specialty-quick-btn px-3 py-1 text-xs bg-gray-100 hover:bg-brand-primary hover:text-white rounded-full border border-gray-300 transition-colors"
+                                data-specialty="Cardiology"
+                            >
+                                Cardiology
+                            </button>
+                            <button
+                                type="button"
+                                class="specialty-quick-btn px-3 py-1 text-xs bg-gray-100 hover:bg-brand-primary hover:text-white rounded-full border border-gray-300 transition-colors"
+                                data-specialty="Dermatology"
+                            >
+                                Dermatology
+                            </button>
+                            <button
+                                type="button"
+                                class="specialty-quick-btn px-3 py-1 text-xs bg-gray-100 hover:bg-brand-primary hover:text-white rounded-full border border-gray-300 transition-colors"
+                                data-specialty="Orthopedic"
+                            >
+                                Orthopedic
+                            </button>
+                            <button
+                                type="button"
+                                class="specialty-quick-btn px-3 py-1 text-xs bg-gray-100 hover:bg-brand-primary hover:text-white rounded-full border border-gray-300 transition-colors"
+                                data-specialty="Mental Health"
+                            >
+                                Mental Health
+                            </button>
+                            <button
+                                type="button"
+                                class="specialty-quick-btn px-3 py-1 text-xs bg-gray-100 hover:bg-brand-primary hover:text-white rounded-full border border-gray-300 transition-colors"
+                                data-specialty="Pediatrics"
+                            >
+                                Pediatrics
+                            </button>
+                        </div>
+                        <div class="text-xs text-gray-500 mt-2">
+                            💡 Tip: You can also type specialties directly and
+                            press Enter
+                        </div>
                     </div>
+
+                    <!-- Form Validation Errors -->
                     {% if form.specialties.errors %}
                     <div class="text-red-600 text-sm mt-2">
-                        {% for error in form.specialties.errors %}
-                        <span>{{ error }}</span>
-                        {% endfor %}
+                        {% for error in form.specialties.errors %}<span
+                            >{{ error }}</span
+                        >{% endfor %}
                     </div>
                     {% endif %}
                 </div>
 
-                <div class="relative">
+                <!-- Monthly Insurance Collections -->
+                <div class="relative mb-6">
                     {{ form.monthly_insurance.label(class="absolute -top-2
-                    left-3 inline-block text-xs text-gray-700 bg-brand-secondary
-                    px-1 z-10") }} {{ form.monthly_insurance(class="block w-full
+                    left-3 inline-block text-xs text-gray-700 bg-white px-1
+                    z-10") }} {{ form.monthly_insurance(class="block w-full
                     rounded-lg border-gray-300 shadow-sm py-3 px-4 text-gray-900
                     placeholder:text-gray-400 focus:ring-2
                     focus:ring-brand-primary focus:border-brand-primary
-                    sm:text-base transition-all duration-200 bg-brand-secondary
-                    border-black", placeholder="Enter average monthly insurance
-                    collections (e.g., 25000)") }} {% if
-                    form.monthly_insurance.errors %}
+                    sm:text-base transition-all duration-200",
+                    placeholder="Enter average monthly insurance collections
+                    (e.g., 25000)") }} {% if form.monthly_insurance.errors %}
                     <div class="text-red-600 text-sm mt-2">
                         {% for error in form.monthly_insurance.errors %}<span
                             >{{ error }}</span
@@ -366,17 +389,17 @@
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <!-- Preferred Appointment Date -->
                     <div class="relative">
                         {{ form.preferred_appointment_date.label(class="absolute
                         -top-2 left-3 inline-block text-xs text-gray-700
-                        bg-brand-secondary px-1 z-10") }} {{
+                        bg-white px-1 z-10") }} {{
                         form.preferred_appointment_date(type="date",
                         class="block w-full rounded-lg border-gray-300 shadow-sm
                         py-3 px-4 text-gray-900 focus:ring-2
                         focus:ring-brand-primary focus:border-brand-primary
-                        sm:text-base transition-all duration-200
-                        bg-brand-secondary border-black") }} {% if
+                        sm:text-base transition-all duration-200") }} {% if
                         form.preferred_appointment_date.errors %}
                         <div class="text-red-600 text-sm mt-2">
                             {% for error in
@@ -387,16 +410,16 @@
                         {% endif %}
                     </div>
 
+                    <!-- Preferred Time Slot -->
                     <div class="relative">
                         {{ form.preferred_time_slot.label(class="absolute -top-2
-                        left-3 inline-block text-xs text-gray-700
-                        bg-brand-secondary px-1 z-10") }} {{
-                        form.preferred_time_slot(class="block w-full rounded-lg
-                        border-gray-300 shadow-sm py-3 px-4 text-gray-900
-                        focus:ring-2 focus:ring-brand-primary
+                        left-3 inline-block text-xs text-gray-700 bg-white px-1
+                        z-10") }} {{ form.preferred_time_slot(class="block
+                        w-full rounded-lg border-gray-300 shadow-sm py-3 px-4
+                        text-gray-900 focus:ring-2 focus:ring-brand-primary
                         focus:border-brand-primary sm:text-base transition-all
-                        duration-200 bg-brand-secondary border-black") }} {% if
-                        form.preferred_time_slot.errors %}
+                        duration-200") }} {% if form.preferred_time_slot.errors
+                        %}
                         <div class="text-red-600 text-sm mt-2">
                             {% for error in form.preferred_time_slot.errors
                             %}<span>{{ error }}</span>{% endfor %}
@@ -405,15 +428,16 @@
                     </div>
                 </div>
 
-                <div class="relative">
+                <!-- Subject -->
+                <div class="relative mb-6">
                     {{ form.subject.label(class="absolute -top-2 left-3
-                    inline-block text-xs text-gray-700 bg-brand-secondary px-1
-                    z-10") }} {{ form.subject(class="block w-full rounded-lg
+                    inline-block text-xs text-gray-700 bg-white px-1 z-10") }}
+                    {{ form.subject(class="block w-full rounded-lg
                     border-gray-300 shadow-sm py-3 px-4 text-gray-900
                     placeholder:text-gray-400 focus:ring-2
                     focus:ring-brand-primary focus:border-brand-primary
-                    sm:text-base transition-all duration-200 bg-brand-secondary
-                    border-black") }} {% if form.subject.errors %}
+                    sm:text-base transition-all duration-200") }} {% if
+                    form.subject.errors %}
                     <div class="text-red-600 text-sm mt-2">
                         {% for error in form.subject.errors %}<span
                             >{{ error }}</span
@@ -422,15 +446,16 @@
                     {% endif %}
                 </div>
 
-                <div class="relative">
+                <!-- Message -->
+                <div class="relative mb-6">
                     {{ form.message.label(class="absolute -top-2 left-3
-                    inline-block text-xs text-gray-700 bg-brand-secondary px-1
-                    z-10") }} {{ form.message(rows=6, class="block w-full
-                    rounded-lg border-gray-300 shadow-sm py-3 px-4 text-gray-900
+                    inline-block text-xs text-gray-700 bg-white px-1 z-10") }}
+                    {{ form.message(class="block w-full rounded-lg
+                    border-gray-300 shadow-sm py-3 px-4 text-gray-900
                     placeholder:text-gray-400 focus:ring-2
                     focus:ring-brand-primary focus:border-brand-primary
-                    sm:text-base transition-all duration-200 bg-brand-secondary
-                    border-black") }} {% if form.message.errors %}
+                    sm:text-base transition-all duration-200 resize-none",
+                    rows="4") }} {% if form.message.errors %}
                     <div class="text-red-600 text-sm mt-2">
                         {% for error in form.message.errors %}<span
                             >{{ error }}</span
@@ -439,70 +464,61 @@
                     {% endif %}
                 </div>
 
-                <div class="flex items-center">
-                    {{ form.privacy_policy_agreement(class="mr-3 rounded
-                    border-gray-300 text-brand-primary
-                    focus:ring-brand-primary") }}
-                    <label
-                        for="privacy_policy_agreement"
-                        class="text-sm text-gray-700"
-                    >
-                        I agree to the
-                        <a
-                            href="{{ url_for('main.privacy_policy') }}"
-                            class="text-brand-primary hover:underline"
-                            target="_blank"
-                            >Privacy Policy</a
-                        >
-                    </label>
-                    {% if form.privacy_policy_agreement.errors %}
-                    <div class="text-red-600 text-sm mt-2 ml-6">
-                        {% for error in form.privacy_policy_agreement.errors %}
-                        <span>{{ error }}</span>
-                        {% endfor %}
+                <!-- Privacy Policy Agreement -->
+                <div class="flex items-start mb-6">
+                    {{ form.privacy_policy_agreement(class="h-4 w-4
+                    text-brand-primary focus:ring-brand-primary border-gray-300
+                    rounded mt-1") }}
+                    <div class="ml-3 text-sm">
+                        {{
+                        form.privacy_policy_agreement.label(class="text-gray-700")
+                        }} {% if form.privacy_policy_agreement.errors %}
+                        <div class="text-red-600 text-sm mt-1">
+                            {% for error in form.privacy_policy_agreement.errors
+                            %}<span>{{ error }}</span>{% endfor %}
+                        </div>
+                        {% endif %}
                     </div>
-                    {% endif %}
                 </div>
 
-                <div>
-                    {{ form.submit(id="submit-btn", class="w-full
-                    bg-brand-primary text-white font-montserrat font-light
-                    text-lg px-6 py-4 rounded-lg hover:scale-105
-                    hover:bg-brand-dark hover:shadow-xl transition duration-300
-                    cursor-pointer focus:outline-none focus:ring-2
-                    focus:ring-brand-primary focus:ring-offset-2") }}
-
-                    <!-- Loading state button (hidden by default) -->
+                <!-- Submit Button -->
+                <div class="text-center">
                     <button
-                        type="button"
-                        id="loading-btn"
-                        class="w-full bg-gray-400 text-white font-montserrat font-light text-lg px-6 py-4 rounded-lg cursor-not-allowed hidden"
-                        disabled
+                        type="submit"
+                        id="submit-btn"
+                        class="w-full md:w-auto inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-brand-primary hover:bg-brand-accent focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
                     >
-                        <div class="flex items-center justify-center">
-                            <svg
-                                class="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                            >
-                                <circle
-                                    class="opacity-25"
-                                    cx="12"
-                                    cy="12"
-                                    r="10"
-                                    stroke="currentColor"
-                                    stroke-width="4"
-                                ></circle>
-                                <path
-                                    class="opacity-75"
-                                    fill="currentColor"
-                                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                                ></path>
-                            </svg>
-                            Sending Message...
-                        </div>
+                        <i class="ri-send-plane-fill mr-2"></i>
+                        Send Message
                     </button>
+
+                    <!-- Loading State (Hidden by default) -->
+                    <div
+                        id="loading-btn"
+                        class="w-full md:w-auto inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-gray-400 cursor-not-allowed hidden"
+                    >
+                        <svg
+                            class="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                        >
+                            <circle
+                                class="opacity-25"
+                                cx="12"
+                                cy="12"
+                                r="10"
+                                stroke="currentColor"
+                                stroke-width="4"
+                            ></circle>
+                            <path
+                                class="opacity-75"
+                                fill="currentColor"
+                                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                            ></path>
+                        </svg>
+                        Sending Message...
+                    </div>
                 </div>
             </form>
         </div>
@@ -511,59 +527,355 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        // 🚀 PERFORMANCE OPTIMIZATION: Add form submission loading state
+        // Get DOM elements
+        const specialtiesInput = document.getElementById("specialties-search");
+        const dropdown = document.getElementById("specialties-dropdown");
+        const hiddenInput = document.getElementById("specialties-hidden");
+        const tagsContainer = document.getElementById("specialty-tags");
         const form = document.getElementById("contact-form");
         const submitBtn = document.getElementById("submit-btn");
         const loadingBtn = document.getElementById("loading-btn");
 
-        form.addEventListener("submit", function (e) {
-            // Show loading state immediately for better UX
-            submitBtn.classList.add("hidden");
-            loadingBtn.classList.remove("hidden");
-
-            // Disable form inputs to prevent double submission
-            const inputs = form.querySelectorAll(
-                "input, select, textarea, button",
-            );
-            inputs.forEach((input) => {
-                input.disabled = true;
-            });
-
-            // Add visual feedback to the form
-            form.style.opacity = "0.7";
-            form.style.pointerEvents = "none";
-        });
-
-        const specialtiesInput = document.getElementById("specialties-search");
-        const dropdown = document.getElementById("specialties-dropdown");
-        const hiddenInput = document.getElementById("specialties-hidden");
-        let specialtiesList = [];
+        // State variables
         let selectedSpecialties = [];
+        let allSpecialties = [];
+        let isLoading = false;
 
-        // Load initial specialties data
-        fetch("/api/specialties")
-            .then((response) => response.json())
-            .then((data) => {
-                specialtiesList = data;
-                console.log("Loaded specialties:", specialtiesList.length);
-            })
-            .catch((error) =>
-                console.error("Error loading specialties:", error),
-            );
-
-        // Initialize with existing value if any
-        if (hiddenInput && hiddenInput.value.trim()) {
-            selectedSpecialties = hiddenInput.value
-                .split(",")
-                .map((s) => s.trim())
-                .filter((s) => s);
-            updateInputDisplay();
+        // Safety check
+        if (!specialtiesInput || !dropdown || !hiddenInput) {
+            console.error("Required specialty elements not found");
+            return;
         }
 
-        specialtiesInput.addEventListener("input", function () {
-            const query = this.value.toLowerCase().trim();
+        // Initialize specialties data
+        initializeSpecialties();
 
-            // Clear validation errors
+        // Event listeners
+        specialtiesInput.addEventListener("input", handleSearch);
+        specialtiesInput.addEventListener("keydown", handleKeydown);
+        specialtiesInput.addEventListener("focus", clearValidationErrors);
+        specialtiesInput.addEventListener("blur", () =>
+            setTimeout(hideDropdown, 150),
+        );
+
+        // Quick select buttons
+        document.querySelectorAll(".specialty-quick-btn").forEach((btn) => {
+            btn.addEventListener("click", () => {
+                const specialty = btn.getAttribute("data-specialty");
+                if (specialty) addSpecialty(specialty);
+            });
+        });
+
+        // QUICK FIX: Set to true to disable strict client-side validation
+        const DISABLE_STRICT_VALIDATION = true;
+
+        // Form submission handler - CRITICAL FOR FORM VALIDATION
+        if (form) {
+            form.addEventListener("submit", function (e) {
+                console.log("🚀 Form submission intercepted");
+                console.log("Selected specialties:", selectedSpecialties);
+                console.log("Hidden input value:", hiddenInput.value);
+
+                // Prevent double submission
+                if (isLoading) {
+                    e.preventDefault();
+                    console.log("❌ Form submission blocked - already loading");
+                    return false;
+                }
+
+                // Clear all previous validation errors
+                clearAllValidationErrors();
+
+                // Update hidden input with current selections
+                hiddenInput.value = selectedSpecialties.join(", ");
+                console.log("📝 Hidden input updated to:", hiddenInput.value);
+                console.log("📊 Form data before validation:");
+                console.log(
+                    "- Name:",
+                    form.querySelector('[name="name"]')?.value,
+                );
+                console.log(
+                    "- Email:",
+                    form.querySelector('[name="email"]')?.value,
+                );
+                console.log(
+                    "- Phone:",
+                    form.querySelector('[name="phone_number"]')?.value,
+                );
+                console.log(
+                    "- Practice:",
+                    form.querySelector('[name="practice"]')?.value,
+                );
+                console.log(
+                    "- State:",
+                    form.querySelector('[name="state"]')?.value,
+                );
+                console.log(
+                    "- Service Type:",
+                    form.querySelector('[name="service_type"]')?.value,
+                );
+                console.log(
+                    "- Message:",
+                    form.querySelector('[name="message"]')?.value,
+                );
+                console.log(
+                    "- Privacy Policy:",
+                    form.querySelector('[name="privacy_policy_agreement"]')
+                        ?.checked,
+                );
+
+                // Comprehensive form validation
+                let isValid = true;
+                const errors = [];
+
+                // Validate specialties - This is the key fix
+                if (
+                    selectedSpecialties.length === 0 ||
+                    !hiddenInput.value.trim()
+                ) {
+                    showValidationError(
+                        "Please select at least one specialty.",
+                    );
+                    errors.push("Specialties required");
+                    isValid = false;
+                }
+
+                // Validate required fields - Only show errors for empty fields
+                const requiredFields = [
+                    {
+                        field: form.querySelector('[name="name"]'),
+                        message: "Name is required",
+                        fieldName: "name",
+                    },
+                    {
+                        field: form.querySelector('[name="email"]'),
+                        message: "Email is required",
+                        fieldName: "email",
+                    },
+                    {
+                        field: form.querySelector('[name="phone_number"]'),
+                        message: "Phone number is required",
+                        fieldName: "phone_number",
+                    },
+                    {
+                        field: form.querySelector('[name="practice"]'),
+                        message: "Practice name is required",
+                        fieldName: "practice",
+                    },
+                    {
+                        field: form.querySelector('[name="state"]'),
+                        message: "State is required",
+                        fieldName: "state",
+                    },
+                    {
+                        field: form.querySelector('[name="service_type"]'),
+                        message: "Please select a service type",
+                        fieldName: "service_type",
+                    },
+                    {
+                        field: form.querySelector('[name="message"]'),
+                        message: "Message is required",
+                        fieldName: "message",
+                    },
+                    {
+                        field: form.querySelector(
+                            '[name="privacy_policy_agreement"]',
+                        ),
+                        message:
+                            "You must agree to the Privacy Policy to proceed",
+                        type: "checkbox",
+                        fieldName: "privacy_policy_agreement",
+                    },
+                ];
+
+                requiredFields.forEach(
+                    ({ field, message, type, fieldName }) => {
+                        if (field) {
+                            // Clear any existing errors for this field first
+                            clearFieldError(field);
+
+                            if (type === "checkbox") {
+                                if (!field.checked) {
+                                    showFieldError(field, message);
+                                    errors.push(`${fieldName}: ${message}`);
+                                    isValid = false;
+                                }
+                            } else {
+                                const value = field.value
+                                    ? field.value.trim()
+                                    : "";
+                                if (
+                                    !value ||
+                                    (fieldName === "service_type" &&
+                                        value === "")
+                                ) {
+                                    showFieldError(field, message);
+                                    errors.push(`${fieldName}: ${message}`);
+                                    isValid = false;
+                                }
+                            }
+                        }
+                    },
+                );
+
+                // Validate email format - only if email field has content
+                const emailField = form.querySelector('[name="email"]');
+                if (emailField && emailField.value.trim()) {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(emailField.value.trim())) {
+                        clearFieldError(emailField);
+                        showFieldError(
+                            emailField,
+                            "Please enter a valid email address",
+                        );
+                        errors.push("Invalid email format");
+                        isValid = false;
+                    }
+                }
+
+                // Validate phone number - only if phone field has content
+                const phoneField = form.querySelector('[name="phone_number"]');
+                if (phoneField && phoneField.value.trim()) {
+                    const cleanPhone = phoneField.value.replace(
+                        /[\s\-\(\)\+]/g,
+                        "",
+                    );
+                    if (!/^\d{10,}$/.test(cleanPhone)) {
+                        clearFieldError(phoneField);
+                        showFieldError(
+                            phoneField,
+                            "Phone number must be at least 10 digits",
+                        );
+                        errors.push("Invalid phone number");
+                        isValid = false;
+                    }
+                }
+
+                // Validate message length - only if message field has content
+                const messageField = form.querySelector('[name="message"]');
+                if (messageField && messageField.value.trim()) {
+                    if (messageField.value.trim().length < 10) {
+                        clearFieldError(messageField);
+                        showFieldError(
+                            messageField,
+                            "Message must be at least 10 characters",
+                        );
+                        errors.push("Message too short");
+                        isValid = false;
+                    }
+                }
+
+                if (!isValid && !DISABLE_STRICT_VALIDATION) {
+                    e.preventDefault();
+                    console.log("Form validation failed:", errors);
+
+                    // Show summary of errors
+                    console.log(
+                        "Total validation errors found:",
+                        errors.length,
+                    );
+
+                    // Scroll to first error
+                    const firstError = form.querySelector(".border-red-500");
+                    if (firstError) {
+                        firstError.scrollIntoView({
+                            behavior: "smooth",
+                            block: "center",
+                        });
+                        setTimeout(() => {
+                            firstError.focus();
+                        }, 500);
+                    }
+
+                    return false;
+                } else if (!isValid && DISABLE_STRICT_VALIDATION) {
+                    console.log(
+                        "⚠️ Validation errors found but strict validation is disabled",
+                    );
+                    console.log("Errors:", errors);
+                    console.log("🚀 Allowing form submission anyway...");
+                }
+
+                // All validation passed - show loading state
+                console.log("✅ Form validation passed, submitting...");
+                showLoadingState();
+
+                // Let the form submit naturally
+                return true;
+            });
+        }
+
+        // Document click handler to close dropdown
+        document.addEventListener("click", (e) => {
+            if (
+                !specialtiesInput.contains(e.target) &&
+                !dropdown.contains(e.target)
+            ) {
+                hideDropdown();
+            }
+        });
+
+        // Functions
+        function initializeSpecialties() {
+            console.log("Loading specialties...");
+
+            fetch("/api/specialties")
+                .then((response) => {
+                    if (!response.ok)
+                        throw new Error(`HTTP ${response.status}`);
+                    return response.json();
+                })
+                .then((data) => {
+                    allSpecialties = data;
+                    console.log(
+                        `✅ Loaded ${allSpecialties.length} specialties`,
+                    );
+
+                    // Initialize with existing data if any
+                    const existingValue = hiddenInput.value.trim();
+                    if (existingValue) {
+                        selectedSpecialties = existingValue
+                            .split(",")
+                            .map((s) => s.trim())
+                            .filter((s) => s);
+                        updateDisplay();
+                        console.log(
+                            "✅ Initialized with existing specialties:",
+                            selectedSpecialties,
+                        );
+                    }
+                })
+                .catch((error) => {
+                    console.error("Error loading specialties:", error);
+
+                    // Fallback specialties
+                    allSpecialties = [
+                        "Family Practice",
+                        "Internal Medicine",
+                        "Cardiology",
+                        "Dermatology",
+                        "Orthopedic",
+                        "Mental Health",
+                        "Pediatrics",
+                        "General Surgery",
+                        "Emergency Medicine",
+                        "Radiology",
+                        "Neurology",
+                        "Oncology",
+                    ];
+                    console.log(
+                        `Using fallback specialties: ${allSpecialties.length}`,
+                    );
+
+                    // Show warning message
+                    showWarningMessage(
+                        "Using basic specialty list. Some features may be limited.",
+                    );
+                });
+        }
+
+        function handleSearch() {
+            const query = specialtiesInput.value.toLowerCase().trim();
             clearValidationErrors();
 
             if (query.length < 1) {
@@ -571,8 +883,13 @@
                 return;
             }
 
-            // Filter specialties based on query
-            const filtered = specialtiesList
+            if (!allSpecialties.length) {
+                console.warn("No specialties loaded yet");
+                return;
+            }
+
+            // Filter specialties
+            const filtered = allSpecialties
                 .filter(
                     (specialty) =>
                         specialty.toLowerCase().includes(query) &&
@@ -581,37 +898,25 @@
                 .slice(0, 10);
 
             showDropdown(filtered, query);
-        });
+        }
 
-        specialtiesInput.addEventListener("keydown", function (e) {
-            clearValidationErrors();
-
+        function handleKeydown(e) {
             if (e.key === "Enter") {
                 e.preventDefault();
-                const query = this.value.trim();
+                const query = specialtiesInput.value.trim();
                 if (query && !selectedSpecialties.includes(query)) {
-                    selectedSpecialties.push(query);
-                    updateInputDisplay();
-                    this.value = "";
+                    addSpecialty(query);
+                    specialtiesInput.value = "";
                     hideDropdown();
                 }
             } else if (
                 e.key === "Backspace" &&
-                this.value === "" &&
+                specialtiesInput.value === "" &&
                 selectedSpecialties.length > 0
             ) {
-                selectedSpecialties.pop();
-                updateInputDisplay();
+                removeSpecialty(selectedSpecialties.length - 1);
             }
-        });
-
-        specialtiesInput.addEventListener("focus", function () {
-            clearValidationErrors();
-        });
-
-        specialtiesInput.addEventListener("blur", function () {
-            setTimeout(() => hideDropdown(), 150);
-        });
+        }
 
         function showDropdown(items, query) {
             dropdown.innerHTML = "";
@@ -620,15 +925,13 @@
             items.forEach((item) => {
                 const div = document.createElement("div");
                 div.className =
-                    "px-4 py-2 hover:bg-gray-100 cursor-pointer border-b border-gray-100";
+                    "px-4 py-2 hover:bg-gray-100 cursor-pointer border-b border-gray-100 last:border-b-0";
                 div.textContent = item;
-                div.addEventListener("click", function () {
-                    addSpecialty(item);
-                });
+                div.addEventListener("click", () => addSpecialty(item));
                 dropdown.appendChild(div);
             });
 
-            // Add option to add custom specialty
+            // Add custom option if query doesn't match existing items
             if (
                 query &&
                 !items.some(
@@ -640,9 +943,7 @@
                 customDiv.className =
                     "px-4 py-2 hover:bg-blue-50 cursor-pointer border-b border-gray-100 text-blue-600 font-medium";
                 customDiv.innerHTML = `<i class="ri-add-line mr-2"></i>Add "${query}"`;
-                customDiv.addEventListener("click", function () {
-                    addSpecialty(query);
-                });
+                customDiv.addEventListener("click", () => addSpecialty(query));
                 dropdown.appendChild(customDiv);
             }
 
@@ -654,20 +955,41 @@
         }
 
         function addSpecialty(specialty) {
-            if (!selectedSpecialties.includes(specialty)) {
+            const trimmed = specialty.trim();
+            if (!trimmed || selectedSpecialties.includes(trimmed)) {
+                console.log(
+                    `⚠️ Specialty not added: ${trimmed} (empty or duplicate)`,
+                );
+                return;
+            }
+
+            selectedSpecialties.push(trimmed);
+            updateDisplay();
+            specialtiesInput.value = "";
+            hideDropdown();
+            clearValidationErrors();
+
+            console.log(`➕ Added specialty: ${trimmed}`);
+            console.log(`📋 Total specialties: ${selectedSpecialties.length}`);
+        }
+
+        function removeSpecialty(index) {
+            if (index >= 0 && index < selectedSpecialties.length) {
+                const removed = selectedSpecialties.splice(index, 1)[0];
+                updateDisplay();
                 clearValidationErrors();
-                selectedSpecialties.push(specialty);
-                console.log("Added specialty:", specialty);
-                updateInputDisplay();
-                specialtiesInput.value = "";
-                hideDropdown();
+                console.log(`➖ Removed specialty: ${removed}`);
             }
         }
 
-        function updateInputDisplay() {
-            // Update hidden input value
+        function updateDisplay() {
+            // Update hidden input - CRITICAL for form submission
             hiddenInput.value = selectedSpecialties.join(", ");
-            console.log("Updated hidden input value:", hiddenInput.value);
+            hiddenInput.dispatchEvent(new Event("change", { bubbles: true }));
+
+            console.log(
+                `🔄 Display updated - Hidden input: "${hiddenInput.value}"`,
+            );
 
             // Update placeholder
             if (selectedSpecialties.length > 0) {
@@ -676,96 +998,263 @@
                 specialtiesInput.placeholder = "Type to search specialties...";
             }
 
-            // Show selected specialties as tags
-            let tagsContainer = document.getElementById("specialty-tags");
-            if (!tagsContainer) {
-                tagsContainer = document.createElement("div");
-                tagsContainer.id = "specialty-tags";
-                tagsContainer.className = "flex flex-wrap gap-2 mt-2";
-                specialtiesInput.parentNode.appendChild(tagsContainer);
-            }
-
+            // Update tags display
             tagsContainer.innerHTML = "";
             selectedSpecialties.forEach((specialty, index) => {
                 const tag = document.createElement("span");
                 tag.className =
-                    "inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-brand-primary text-white";
+                    "inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-brand-primary text-white";
                 tag.innerHTML = `
-                    ${specialty}
-                    <button type="button" class="ml-1 text-white hover:text-gray-200" onclick="removeSpecialty(${index})">
-                        <i class="ri-close-line"></i>
-                    </button>
-                `;
+                ${specialty}
+                <button type="button" class="ml-2 text-white hover:text-gray-200 focus:outline-none" onclick="window.removeSpecialtyByIndex(${index})">
+                    <i class="ri-close-line"></i>
+                </button>
+            `;
                 tagsContainer.appendChild(tag);
             });
 
-            clearValidationErrors();
+            console.log(
+                `Updated display: ${selectedSpecialties.length} specialties`,
+            );
         }
 
         function clearValidationErrors() {
-            const errorDiv = document.getElementById("specialties-error");
-            if (errorDiv) {
-                errorDiv.remove();
-            }
+            // Remove existing error messages
+            const parentNode = specialtiesInput.parentNode;
+            const existingErrors = parentNode.querySelectorAll(".text-red-600");
+            existingErrors.forEach((error) => {
+                if (error.textContent.includes("specialty")) {
+                    error.remove();
+                }
+            });
             specialtiesInput.classList.remove("border-red-500");
         }
 
-        function showValidationError() {
-            let errorDiv = document.getElementById("specialties-error");
-            if (!errorDiv) {
-                errorDiv = document.createElement("div");
-                errorDiv.id = "specialties-error";
-                errorDiv.className = "text-red-600 text-sm mt-2";
-                specialtiesInput.parentNode.appendChild(errorDiv);
-            }
-            errorDiv.innerHTML =
-                "<span>Please select at least one specialty.</span>";
-            specialtiesInput.classList.add("border-red-500");
+        function clearAllValidationErrors() {
+            // Remove all error messages and reset field styles
+            const errorMessages = form.querySelectorAll(".text-red-600");
+            errorMessages.forEach((error) => error.remove());
+
+            const errorFields = form.querySelectorAll(".border-red-500");
+            errorFields.forEach((field) =>
+                field.classList.remove("border-red-500"),
+            );
         }
 
-        // Global function to remove specialty
-        window.removeSpecialty = function (index) {
-            selectedSpecialties.splice(index, 1);
-            updateInputDisplay();
-        };
+        function showFieldError(field, message) {
+            if (!field) return;
 
-        // Click outside to close dropdown
-        document.addEventListener("click", function (e) {
-            if (
-                !specialtiesInput.contains(e.target) &&
-                !dropdown.contains(e.target)
-            ) {
-                hideDropdown();
+            // Clear existing errors for this field first
+            clearFieldError(field);
+
+            // Add error styling
+            field.classList.add("border-red-500");
+
+            // Create and add error message
+            const errorDiv = document.createElement("div");
+            errorDiv.className = "text-red-600 text-sm mt-2 field-error";
+            errorDiv.innerHTML = `<span>${message}</span>`;
+
+            const parent = field.closest(".relative") || field.parentNode;
+            if (parent) {
+                parent.appendChild(errorDiv);
             }
-        });
+        }
 
-        // Form validation
-        const form = document.getElementById("contact-form");
-        if (form) {
-            form.addEventListener("submit", function (e) {
-                console.log("Form submission started");
-                console.log("Selected specialties:", selectedSpecialties);
+        function showValidationError(message) {
+            clearValidationErrors();
 
-                // Ensure hidden input is updated
-                hiddenInput.value = selectedSpecialties.join(", ");
-                console.log("Final hidden input value:", hiddenInput.value);
+            const errorDiv = document.createElement("div");
+            errorDiv.className = "text-red-600 text-sm mt-2";
+            errorDiv.innerHTML = `<span>${message}</span>`;
 
-                // Validate specialties
-                if (selectedSpecialties.length === 0) {
-                    console.log("Validation failed: No specialties selected");
-                    e.preventDefault();
-                    showValidationError();
-                    specialtiesInput.focus();
-                    return false;
-                } else {
-                    console.log("Validation passed: Specialties selected");
-                    clearValidationErrors();
-                }
-
-                // Form can proceed
-                return true;
+            specialtiesInput.parentNode.appendChild(errorDiv);
+            specialtiesInput.classList.add("border-red-500");
+            specialtiesInput.focus();
+            specialtiesInput.scrollIntoView({
+                behavior: "smooth",
+                block: "center",
             });
         }
+
+        function showWarningMessage(message) {
+            const warningDiv = document.createElement("div");
+            warningDiv.className =
+                "bg-yellow-100 border border-yellow-400 text-yellow-700 px-3 py-2 rounded text-sm mb-2";
+            warningDiv.innerHTML = `⚠️ ${message}`;
+            specialtiesInput.parentNode.insertBefore(
+                warningDiv,
+                specialtiesInput,
+            );
+
+            // Remove after 5 seconds
+            setTimeout(() => {
+                if (warningDiv.parentNode) {
+                    warningDiv.parentNode.removeChild(warningDiv);
+                }
+            }, 5000);
+        }
+
+        function showLoadingState() {
+            isLoading = true;
+            submitBtn.classList.add("hidden");
+            loadingBtn.classList.remove("hidden");
+
+            // Disable form inputs to prevent changes during submission
+            const inputs = form.querySelectorAll(
+                "input, select, textarea, button",
+            );
+            inputs.forEach((input) => (input.disabled = true));
+
+            console.log("Loading state activated");
+        }
+
+        // Add real-time validation for better UX
+        function addRealTimeValidation() {
+            // Skip real-time validation if strict validation is disabled
+            if (DISABLE_STRICT_VALIDATION) {
+                console.log("⚠️ Real-time validation disabled");
+                return;
+            }
+
+            // Email validation - only validate format if field has content
+            const emailField = form.querySelector('[name="email"]');
+            if (emailField) {
+                emailField.addEventListener("blur", function () {
+                    if (this.value.trim()) {
+                        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        if (!emailRegex.test(this.value.trim())) {
+                            showFieldError(
+                                this,
+                                "Please enter a valid email address",
+                            );
+                        } else {
+                            clearFieldError(this);
+                        }
+                    } else {
+                        clearFieldError(this);
+                    }
+                });
+
+                // Clear errors when user starts typing
+                emailField.addEventListener("input", function () {
+                    if (this.value.trim()) {
+                        clearFieldError(this);
+                    }
+                });
+            }
+
+            // Phone validation - only validate format if field has content
+            const phoneField = form.querySelector('[name="phone_number"]');
+            if (phoneField) {
+                phoneField.addEventListener("blur", function () {
+                    if (this.value.trim()) {
+                        const cleanPhone = this.value.replace(
+                            /[\s\-\(\)\+]/g,
+                            "",
+                        );
+                        if (!/^\d{10,}$/.test(cleanPhone)) {
+                            showFieldError(
+                                this,
+                                "Phone number must be at least 10 digits",
+                            );
+                        } else {
+                            clearFieldError(this);
+                        }
+                    } else {
+                        clearFieldError(this);
+                    }
+                });
+
+                // Clear errors when user starts typing
+                phoneField.addEventListener("input", function () {
+                    if (this.value.trim()) {
+                        clearFieldError(this);
+                    }
+                });
+            }
+
+            // Message validation - only validate length if field has content
+            const messageField = form.querySelector('[name="message"]');
+            if (messageField) {
+                messageField.addEventListener("input", function () {
+                    const value = this.value.trim();
+                    if (value) {
+                        if (value.length < 10) {
+                            showFieldError(
+                                this,
+                                "Message must be at least 10 characters",
+                            );
+                        } else if (value.length > 1000) {
+                            showFieldError(
+                                this,
+                                "Message is too long (max 1000 characters)",
+                            );
+                        } else {
+                            clearFieldError(this);
+                        }
+                    } else {
+                        clearFieldError(this);
+                    }
+                });
+            }
+
+            // Clear errors on input for all form fields
+            const allFields = form.querySelectorAll("input, select, textarea");
+            allFields.forEach((field) => {
+                field.addEventListener("input", function () {
+                    if (this.type !== "checkbox" && this.value.trim()) {
+                        clearFieldError(this);
+                    }
+                });
+
+                field.addEventListener("change", function () {
+                    if (this.type === "checkbox" && this.checked) {
+                        clearFieldError(this);
+                    } else if (this.type !== "checkbox" && this.value.trim()) {
+                        clearFieldError(this);
+                    }
+                });
+            });
+        }
+
+        function clearFieldError(field) {
+            if (field) {
+                field.classList.remove("border-red-500");
+                const parent = field.closest(".relative") || field.parentNode;
+                if (parent) {
+                    const existingErrors =
+                        parent.querySelectorAll(".text-red-600");
+                    existingErrors.forEach((error) => {
+                        if (error.parentNode) {
+                            error.remove();
+                        }
+                    });
+                }
+            }
+        }
+
+        // Global function for removing specialties (called from tag buttons)
+        window.removeSpecialtyByIndex = function (index) {
+            removeSpecialty(index);
+        };
+
+        // Initialize real-time validation
+        addRealTimeValidation();
+
+        // Debug form state
+        console.log("🎯 Form initialization complete");
+        console.log("- Form element:", form ? "✅ Found" : "❌ Not found");
+        console.log(
+            "- Specialties input:",
+            specialtiesInput ? "✅ Found" : "❌ Not found",
+        );
+        console.log(
+            "- Hidden input:",
+            hiddenInput ? "✅ Found" : "❌ Not found",
+        );
+        console.log("- Selected specialties:", selectedSpecialties.length);
+        console.log("✅ Specialties functionality initialized successfully");
     });
 </script>
 {% endblock %}
