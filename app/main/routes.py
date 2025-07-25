@@ -26,8 +26,9 @@ def about():
 def services():
     return redirect(url_for('services.index'))
 
-
-
+@main.route('/coverage')
+def coverage():
+    return redirect(url_for('contact.contact_form'))
 
 @main.route('/enrollment')
 def enrollment_redirect():

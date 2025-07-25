@@ -6,10 +6,12 @@
       "meta_description": "Ensure real-time eligibility and benefits verification for all payers. Reduce claim denials and improve collections with Ardur's expert verification services.",
       "h1": "Eligibility and Benefits Verification Services",
       "subtitle": "Verify insurance coverage in real-time to reduce denials and secure faster payments.",
+      "url": "https://ardurhealthcare.com/services/eligibility-and-benefits-verification",
+      "primary_keyword": "Eligibility and Benefits Verification Services",
       "sections": [
         {
           "heading": "Optimize Revenue with Pre-Service Eligibility Checks",
-          "description": "Inaccurate or missing insurance information is one of the top reasons for denied or delayed claims. At Ardur Healthcare, our eligibility and benefits verification services help eliminate those problems before they occur. Whether you're verifying Medicaid, Medicare, or commercial plans, we ensure you have the information needed to bill correctly and get paid faster.",
+          "description": "Inaccurate or missing insurance information is one of the top reasons for denied or delayed claims. At Ardur Healthcare, our eligibility and benefits verification services help eliminate those problems before they occur. Whether you're verifying Medicaid, Medicare, or commercial plans, we ensure you have the information needed to bill correctly and get paid faster. Here's what our eligibility and benefits verification service includes:",
           "features": [
             "Coverage Confirmation: Real-time insurance eligibility verification for Medicare, Medicaid, and commercial payers.",
             "Benefit Details: Detailed summaries of co-pays, coinsurance, deductibles, and out-of-pocket max.",
@@ -26,14 +28,14 @@
             "Primary Source Verification: Cross-check eligibility via payer portals, EDI, and direct insurer calls.",
             "Documentation: Provide a structured, easy-to-read benefits breakdown for your front desk and billing team.",
             "Flagging Requirements: Highlight pre-authorization needs and missing data points.",
-            "Daily Reports: Deliver eligibility reports before each day’s appointments so your staff can stay ahead."
+            "Daily Reports: Deliver eligibility reports before each day's appointments so your staff can stay ahead."
           ]
         },
         {
           "heading": "Why Choose Ardur Healthcare for Benefits Verification?",
           "features": [
             "Specialty-Tailored Checks: We adapt our process to your specialty, mental health, ortho, physical therapy, etc.",
-            "Medicaid & Medicare Experts: From verifying Medicaid eligibility to navigating Medicare rules, we’ve got it covered.",
+            "Medicaid & Medicare Experts: From verifying Medicaid eligibility to navigating Medicare rules, we've got it covered.",
             "Custom Reporting: Daily and weekly verification summaries customized to your operations.",
             "Claim-Ready Data: We ensure your billing team receives clean, coded coverage info they can act on.",
             "Compliance Guaranteed: Fully HIPAA-compliant workflows and secure access protocols."
@@ -44,15 +46,14 @@
           "description": "Let our experts handle your insurance verification so your team can focus on care, not paperwork.",
           "cta": {
             "text": "Start Verification Services",
-            "link": "/start-verification"
+            "link": "/contact-us"
           }
         },
         {
-          "heading": "FAQs about Our Eligibility and Benefits Verification Services",
           "faqs": [
             {
               "question": "What is eligibility and benefits verification in medical billing?",
-              "answer": "It’s the process of confirming a patient’s insurance coverage, plan details, and prior authorization needs before rendering services to reduce denials and delays."
+              "answer": "It's the process of confirming a patient's insurance coverage, plan details, and prior authorization needs before rendering services to reduce denials and delays."
             },
             {
               "question": "Do you handle Medicaid eligibility verification?",
@@ -80,10 +81,12 @@
       "meta_description": "Prior authorization services that reduce delays and denials. We handle medication and procedure approvals quickly to keep your revenue cycle on track.",
       "h1": "Prior Authorization Services",
       "subtitle": "Accelerate prior authorizations and reduce delays across payers and procedures.",
+      "url": "https://ardurhealthcare.com/services/prior-authorization-services",
+      "primary_keyword": "Prior Authorization Services",
       "sections": [
         {
           "heading": "Eliminate Authorization Delays with Expert Support",
-          "description": "Insurance-mandated prior authorizations can disrupt care and cash flow if not managed properly. At Ardur Healthcare, our prior authorization services help reduce administrative burden, cut down approval time, and prevent claim denials. We handle the entire process, from payer communication to status tracking, so you can stay focused on patient care.",
+          "description": "Insurance-mandated prior authorizations can disrupt care and cash flow if not managed properly. At Ardur Healthcare, our prior authorization services help reduce administrative burden, cut down approval time, and prevent claim denials. We handle the entire process, from payer communication to status tracking, so you can stay focused on patient care. Here's what our prior authorization service includes:",
           "features": [
             "Procedure Approvals: Fast, accurate submissions for pharmacy and procedural authorizations.",
             "Multi-Payer Expertise: Familiarity with UHC, Humana, BCBS, TRICARE, Aetna, and Medicaid plans like Molina.",
@@ -106,7 +109,7 @@
         {
           "heading": "Why Choose Ardur Healthcare for Prior Authorizations?",
           "features": [
-            "Specialist-Level Payer Knowledge: From TRICARE to Molina, we know each payer’s playbook.",
+            "Specialist-Level Payer Knowledge: From TRICARE to Molina, we know each payer's playbook.",
             "Faster Turnaround Times: We cut authorization time with efficient workflows and aggressive follow-up.",
             "Dedicated Authorization Experts: Every request is handled by trained specialists who understand payer requirements and ensure faster, more accurate approvals.",
             "Full Integration with Your Billing: Our prior auth team coordinates with coding and claims to prevent downstream denials.",
@@ -118,11 +121,10 @@
           "description": "Let Ardur Healthcare take over your prior authorization process: minimize delays, improve patient access, and reduce denials.",
           "cta": {
             "text": "Start Prior Authorization Support",
-            "link": "/start-prior-authorization"
+            "link": "/contact-us"
           }
         },
         {
-          "heading": "FAQs about Our Prior Authorization Services",
           "faqs": [
             {
               "question": "Do you handle both pharmacy and medical prior authorizations?",
@@ -154,10 +156,12 @@
       "meta_description": "Accelerate payer approvals and reduce delays with expert provider credentialing and enrollment services. Get started with Ardur Healthcare today.",
       "h1": "Provider Credentialing and Enrollment Services",
       "subtitle": "Simplify credentialing and enrollment to stay payer-connected and revenue-ready.",
+      "url": "https://ardurhealthcare.com/services/provider-credentialing-and-enrollment-services",
+      "primary_keyword": "Provider Credentialing and Enrollment Services",
       "sections": [
         {
           "heading": "Efficient Credentialing That Keeps You In-Network",
-          "description": "Payer enrollment delays, form rejections, or outdated CAQH profiles can stall revenue and patient care. Our credentialing and enrollment services ensure your providers are accurately listed, properly credentialed, and ready to bill from day one.",
+          "description": "Payer enrollment delays, form rejections, or outdated CAQH profiles can stall revenue and patient care. Our credentialing and enrollment services ensure your providers are accurately listed, properly credentialed, and ready to bill from day one. Here's what our provider credentialing and enrollment service includes:",
           "features": [
             "Medicare and Medicaid Enrollment: Navigate complex Medicare/Medicaid rules, including PECOS and state-specific Medicaid systems.",
             "CAQH Management: Keep CAQH ProView and payer portals updated and attested on your behalf.",
@@ -184,7 +188,7 @@
             "Fewer Application Errors: We handle the paperwork and prevent costly delays.",
             "Unified Management: Credentialing and billing are managed under one roof for seamless operations.",
             "Audit-Ready Documentation: Every step is documented and stored securely for compliance readiness.",
-            "Multi-Payer Expertise: We’re experienced with national carriers and state-level variations."
+            "Multi-Payer Expertise: We're experienced with national carriers and state-level variations."
           ]
         },
         {
@@ -192,15 +196,14 @@
           "description": "Avoid delays that impact your revenue and reputation. Partner with Ardur Healthcare for efficient, error-free provider credentialing and enrollment support across the U.S.",
           "cta": {
             "text": "Start Credentialing Now",
-            "link": "/start-credentialing"
+            "link": "/contact-us"
           }
         },
         {
-          "heading": "FAQs about Our Provider Credentialing & Enrollment Services",
           "faqs": [
             {
-              "question": "What’s the difference between provider credentialing and enrollment?",
-              "answer": "Credentialing verifies a provider’s qualifications. Enrollment is the process of joining payer networks to bill for services. Both are essential to receive reimbursements."
+              "question": "What's the difference between provider credentialing and enrollment?",
+              "answer": "Credentialing verifies a provider's qualifications. Enrollment is the process of joining payer networks to bill for services. Both are essential to receive reimbursements."
             },
             {
               "question": "How long does the provider credentialing process take?",
@@ -223,12 +226,15 @@
       ]
     },
     "charge_entry": {
+      "name": "Charge Entry",
       "title": "Charge Entry Services",
       "meta_title": "Charge Entry Services | Ardur Healthcare",
       "meta_description": "Improve billing accuracy and speed up reimbursements with Ardur Healthcare's expert charge entry services. Start your clean claims journey with us today.",
       "h1": "Charge Entry Services",
       "subtitle": "Accurate charge entry that drives clean claims, fewer errors, and faster payouts.",
-      "description": "Charge entry is one of the most critical steps in the medical billing cycle. If charges aren’t entered correctly, even the best clinical care can go unpaid. At Ardur Healthcare, we help providers maintain clean claims, accurate records, and faster payments by meticulously managing every aspect of charge entry.",
+      "url": "https://ardurhealthcare.com/services/charge-entry-services",
+      "primary_keyword": "Charge Entry Services",
+      "description": "Charge entry is one of the most critical steps in the medical billing cycle. If charges aren't entered correctly, even the best clinical care can go unpaid. At Ardur Healthcare, we help providers maintain clean claims, accurate records, and faster payments by meticulously managing every aspect of charge entry. Here's what our charge entry service covers:",
       "features": [
         "Manual & Automated Charge Entry: We enter charges from super bills, EMRs, or encounter forms with exceptional accuracy.",
         "Demo Entry: Patient demographics, insurance, and provider information are properly linked to ensure clean billing.",
@@ -269,25 +275,27 @@
           "answer": "Absolutely. Our team is experienced across multiple specialties, applying appropriate modifiers, units, and payer-specific guidelines."
         },
         {
-          "question": "What makes Ardur’s charge entry services more reliable?",
+          "question": "What makes Ardur's charge entry services more reliable?",
           "answer": "We combine expert billing knowledge, system-specific proficiency, and stringent QA to ensure 99%+ accuracy and faster claim submission."
         }
       ]
     },
-
     "medical_coding": {
+      "name": "Medical Coding",
       "title": "Medical Coding Services",
       "meta_title": "Medical Coding Services | Ardur Healthcare",
       "meta_description": "Ensure clean claims and full compliance with Ardur Healthcare's medical coding services. Certified coders, specialty expertise, and audit-ready processes.",
       "h1": "Medical Coding Services",
       "subtitle": "Specialty-specific coding that ensures compliance and maximizes reimbursements.",
-      "description": "At Ardur Healthcare, we offer certified medical coding services that support compliant, high-performing billing operations for healthcare providers nationwide. Our coders are trained in CPT, ICD-11, and HCPCS Level II codes, helping you avoid delays, denials, and audit risks. Whether you're an independent physician or a multi-provider group, we ensure that each encounter is translated into correct, reimbursable codes.",
+      "url": "https://ardurhealthcare.com/services/medical-coding-services",
+      "primary_keyword": "Medical Coding Services",
+      "description": "At Ardur Healthcare, we offer certified medical coding services that support compliant, high-performing billing operations for healthcare providers nationwide. Our coders are trained in CPT, ICD-11, and HCPCS Level II codes, helping you avoid delays, denials, and audit risks. Whether you're an independent physician or a multi-provider group, we ensure that each encounter is translated into correct, reimbursable codes. Here's what our medical coding service includes:",
       "features": [
         "Procedure & Diagnosis Coding: Assign accurate CPT, ICD-11, and HCPCS codes aligned with payer guidelines.",
         "Specialty-Specific Coding: Coding expertise tailored to specialties like behavioral health, cardiology, dermatology, and more.",
         "Code Auditing: Identify under-coded or over-coded encounters and ensure documentation supports coding decisions.",
         "Modifiers & Bundling Checks: Prevent denials by applying correct modifiers and unbundling when appropriate.",
-        "Coding Updates & Compliance: We stay up to date with CMS, AMA, and payer-specific coding changes so you don’t have to."
+        "Coding Updates & Compliance: We stay up to date with CMS, AMA, and payer-specific coding changes so you don't have to."
       ],
       "process": [
         "Medical Record Review: Review clinical documentation or SOAP notes for coding accuracy.",
@@ -306,7 +314,7 @@
       "cta": "Get Expert Coding Support",
       "faqs": [
         {
-          "question": "What’s the difference between medical billing and medical coding?",
+          "question": "What's the difference between medical billing and medical coding?",
           "answer": "Coding involves translating clinical documentation into standardized CPT, ICD-11, and HCPCS codes. Billing uses those codes to submit claims for reimbursement. Both are essential parts of the revenue cycle."
         },
         {
@@ -328,33 +336,35 @@
       ]
     },
     "claim_submission_follow_up": {
-      "name": "Claim Submission and Follow-Up Services",
-      "title": "Clean claim submissions and persistent follow-up to secure timely payments.",
+      "name": "Claim Submission & Follow-Up",
+      "title": "Claim Submission and Follow-Up Services",
       "meta_title": "Claim Submission and Follow-Up Services | Ardur Healthcare",
       "meta_description": "Speed up payments and reduce denials with Ardur Healthcare's claim submission and follow-up services. Clean claims, real-time tracking, and expert AR follow-up.",
       "h1": "Claim Submission and Follow-Up Services",
-      "subtitle": "Precision-Driven Claim Submission & Tracking",
-      "description": "At Ardur Healthcare, we understand that even the smallest billing error can result in claim rejection or payment delays. Our claim submission and follow-up services ensure your claims are accurate, properly formatted, and followed up on every time. From CMS-1500 form accuracy to clearinghouse rejections, we proactively manage your claims until payment is received.",
+      "subtitle": "Clean claim submissions and persistent follow-up to secure timely payments.",
+      "url": "https://ardurhealthcare.com/services/claim-submission-and-follow-up-services",
+      "primary_keyword": "Claim Submission and Follow-Up Services",
+      "description": "At Ardur Healthcare, we understand that even the smallest billing error can result in claim rejection or payment delays. Our claim submission and follow-up services ensure your claims are accurate, properly formatted, and followed up on every time. From CMS-1500 form accuracy to clearinghouse rejections, we proactively manage your claims until payment is received. Here's what our claim submission and follow-up service includes:",
       "services": [
-        "Electronic & Paper Claim Submission",
-        "Claim Scrubbing",
-        "Clearinghouse Management",
-        "Primary & Secondary Claims",
-        "Claims Tracking & Status Checks"
+        "Electronic & Paper Claim Submission: Clean and timely submissions through clearinghouses and direct payer portals.",
+        "Claim Scrubbing: Identify errors or omissions before submission to reduce denials.",
+        "Clearinghouse Management: Handle rejections, edits, and resubmissions through leading platforms.",
+        "Primary & Secondary Claims: Submit both primary and secondary insurance claims with payer-specific formatting.",
+        "Claims Tracking & Status Checks: Real-time monitoring until each claim is resolved."
       ],
       "process": [
-        "Claim Status Inquiries",
-        "Denial Management & Appeals",
-        "Underpayment Reviews",
-        "Rejections vs. Denials",
-        "Aging AR Clean-Up"
+        "Claim Status Inquiries: Regular follow-ups with payers to check claim status.",
+        "Denial Management & Appeals: Identify the cause of denials, correct errors, and resubmit or appeal.",
+        "Underpayment Reviews: Analyze EOBs to uncover and challenge partial payments.",
+        "Rejections vs. Denials: Distinguish and act appropriately to recover faster.",
+        "Aging AR Clean-Up: Work on outstanding claims aged 30/60/90+ days with structured strategies."
       ],
       "why_choose": [
-        "99% Clean Claim Rate",
-        "Platform Agnostic: We work with AdvancedMD, Kareo, Tebra, Athenahealth, etc.",
-        "Experienced Billing Team trained in payer-specific rules (Medicare, Medicaid, Commercial)",
-        "HIPAA-Compliant Workflows with encrypted systems",
-        "Complete Visibility with transparent reporting and real-time updates"
+        "99% Clean Claim Rate: Our meticulous process results in fewer denials and faster reimbursements.",
+        "Platform Agnostic: We work with all major EHRs and billing systems, including AdvancedMD, Kareo, Tebra, Athenahealth, and more.",
+        "Experienced Billing Team: Trained in payer-specific rules, including Medicare, Medicaid, and commercial plans.",
+        "HIPAA-Compliant Workflows: Your data is secure with encrypted systems and compliant processes.",
+        "Complete Visibility: Transparent reporting and claim status updates so you always know what's happening."
       ],
       "cta": "Talk to Our Billing Experts",
       "faqs": [
@@ -381,33 +391,35 @@
       ]
     },
     "payment_posting_reconciliation": {
-      "name": "Payment Posting and Reconciliation Services",
-      "title": "Track every payment with precise posting and full reconciliation accuracy.",
+      "name": "Payment Posting & Reconciliation",
+      "title": "Payment Posting and Reconciliation Services",
       "meta_title": "Payment Posting and Reconciliation Services | Ardur Healthcare",
       "meta_description": "Ensure accurate payment posting and reconciliation with Ardur Healthcare. We post ERAs, EOBs, and patient payments with speed and precision.",
       "h1": "Payment Posting and Reconciliation Services",
-      "subtitle": "Precision-Driven Payment Posting for Reliable Revenue",
-      "description": "At Ardur Healthcare, our payment posting services transform EOBs, ERAs, and patient payments into accurate financial data that powers your revenue cycle. Whether payments come in electronically or manually, we post them with precision, ensuring your records are clean, your revenue is transparent, and your AR stays under control. Our reconciliation process ensures that your bank statements, payer deposits, and EHR ledgers all match.",
+      "subtitle": "Track every payment with precise posting and full reconciliation accuracy.",
+      "url": "https://ardurhealthcare.com/services/payment-posting-and-reconciliation-services",
+      "primary_keyword": "Payment Posting and Reconciliation Services",
+      "description": "At Ardur Healthcare, our payment posting services transform EOBs, ERAs, and patient payments into accurate financial data that powers your revenue cycle. Whether payments come in electronically or manually, we post them with precision, ensuring your records are clean, your revenue is transparent, and your AR stays under control. Here's what our payment posting and reconciliation service includes:",
       "services": [
-        "ERA/EOB Payment Posting",
-        "Insurance & Patient Payments",
-        "Secondary and Tertiary Payments",
-        "Write-Offs and Adjustments",
-        "Real-Time Ledger Updates"
+        "ERA/EOB Payment Posting: Process electronic and manual remits accurately.",
+        "Insurance & Patient Payments: Post all payer payments, co-pays, and patient balances.",
+        "Secondary and Tertiary Payments: Seamlessly post and reconcile layered claims.",
+        "Write-Offs and Adjustments: Apply contractual adjustments and reason codes correctly.",
+        "Real-Time Ledger Updates: Keep patient and payer ledgers fully updated."
       ],
       "process": [
-        "Daily Deposit Matching",
-        "Exception Reporting",
-        "Denial & Partial Payment Identification",
-        "Patient Balance Updates",
-        "Audit-Ready Records"
+        "Daily Deposit Matching: Match payments with actual deposits for accurate cash flow.",
+        "Exception Reporting: Flag mismatches or missing remits for quick resolution.",
+        "Denial & Partial Payment Identification: Spot underpayments immediately.",
+        "Patient Balance Updates: Ensure accurate out-of-pocket records for future collections.",
+        "Audit-Ready Records: Maintain clean and compliant financial documentation."
       ],
       "why_choose": [
-        "EHR/RCM Compatibility: We support systems like AdvancedMD, eClinicalWorks, Tebra, Kareo, NextGen, and more",
-        "Clean Reconciliation: Every payment is traceable—no gaps, no guesswork",
-        "ERA & Manual Posting Experts: Skilled in both electronic and paper-based posting",
-        "Fast Turnaround: Payments are posted within 24 - 48 hours of receipt",
-        "Insightful Reporting: Get real-time payment summaries and payer trend analysis"
+        "EHR/RCM Compatibility: We support leading systems like AdvancedMD, eClinicalWorks, Tebra, Kareo, NextGen, and more.",
+        "Clean Reconciliation: Every payment is traceable, no gaps, no guesswork.",
+        "ERA & Manual Posting Experts: Whether you're 100% electronic or still receive paper EOBs, we adapt seamlessly.",
+        "Fast Turnaround: Payments are posted within 24 - 48 hours of receipt.",
+        "Insightful Reporting: Get real-time payment summaries and payer trend analysis."
       ],
       "cta": "Optimize Your Payment Flow",
       "faqs": [
@@ -434,33 +446,35 @@
       ]
     },
     "denial_management": {
-      "name": "Denial Management Services",
-      "title": "Resolve denials fast and recover lost revenue with expert denial management.",
+      "name": "Denial Management",
+      "title": "Denial Management Services",
       "meta_title": "Denial Management Services | Ardur Healthcare",
       "meta_description": "Recover lost revenue with Ardur Healthcare's denial management services. We resolve, appeal, and prevent medical billing denials across all payers.",
       "h1": "Denial Management Services",
-      "subtitle": "End-to-End Claim Denial Management for Healthcare Providers",
-      "description": "Ardur Healthcare provides denial management services that help you recover what you’ve earned and prevent future denials through data-driven strategies. We work with all major payers, Medicare, Medicaid, commercial insurers, and regional MCOs, to deliver measurable improvements in claim denial management.",
+      "subtitle": "Resolve denials fast and recover lost revenue with expert denial management.",
+      "url": "https://ardurhealthcare.com/services/denial-management-services",
+      "primary_keyword": "Denial Management Services",
+      "description": "Ardur Healthcare provides denial management services that help you recover what you've earned and prevent future denials through data-driven strategies. We work with all major payers, Medicare, Medicaid, commercial insurers, and regional MCOs, to deliver measurable improvements in claim denial management. Here's what our denial management service includes:",
       "services": [
-        "Denial Identification & Classification",
-        "Claim Correction & Resubmission",
-        "Appeals Management",
-        "Root Cause Analysis",
-        "Denial Prevention Insights"
+        "Denial Identification & Classification: Group denials by reason code, payer, and service type.",
+        "Claim Correction & Resubmission: Amend errors and promptly resubmit clean claims.",
+        "Appeals Management: Draft, file, and follow up on appeals across all payers.",
+        "Root Cause Analysis: Identify trends behind denials to implement permanent solutions.",
+        "Denial Prevention Insights: Share actionable reports to reduce recurring issues."
       ],
       "process": [
-        "Denial Identification from ERAs, EOBs, and clearinghouses",
-        "Root Cause Categorization (coding, eligibility, authorization, documentation)",
-        "Resolution & Appeal with justifications and attachments",
-        "Process Improvement using payer-specific feedback",
-        "Regular Denial Reporting to billing and compliance teams"
+        "Denial Identification: Capture denials from ERAs, EOBs, and clearinghouse responses.",
+        "Root Cause Analysis: Categorize denials by coding, eligibility, authorization, or documentation issues.",
+        "Resolution & Appeal: Correct claims and submit appeals with proper justifications and attachments.",
+        "Process Improvement: Implement payer-specific feedback to reduce repeat denials.",
+        "Denial Reporting: Deliver regular insights to your billing and compliance teams."
       ],
       "why_choose": [
-        "Experienced Denial Analysts skilled in complex payer rules",
-        "Most denials processed within 48 hours",
-        "All-Payer Coverage: Medicare, Medicaid, UHC, Aetna, Cigna, and more",
-        "Certified Coders for high coding accuracy",
-        "Strategic Denial Prevention, not just rework"
+        "Experienced Denial Analysts: Skilled in working with complex payer rules.",
+        "Faster Turnaround: Most claims are corrected or appealed within 48 hours.",
+        "All-Payer Coverage: From Medicare and Medicaid to UHC, Cigna, Aetna, Anthem, and more.",
+        "Coding Accuracy: Certified coders prevent diagnosis- or CPT-related denials.",
+        "Strategic Prevention: We help reduce denial rates, not just react to them."
       ],
       "cta": "Schedule a Denial Review",
       "faqs": [
@@ -486,20 +500,22 @@
         }
       ]
     },
-    "ar_management": {
-      "name": "Accounts Receivable Management Services",
+    "accounts_receivable_management": {
+      "name": "Accounts Receivable (AR) Management",
       "title": "Accounts Receivable Management Services",
       "meta_title": "Accounts Receivable Management Services | Ardur Healthcare",
       "meta_description": "Streamline collections and reduce claim aging with Ardur Healthcare's accounts receivable management services. Improve your cash flow with proven AR strategies.",
       "h1": "Accounts Receivable Management Services",
       "subtitle": "Recover aged claims and improve cash flow with expert AR follow-up support.",
-      "description": "At Ardur Healthcare, our accounts receivable management services help you recover outstanding claims efficiently while maintaining compliance and payer relations. Whether you're a solo provider or a multi-specialty group, we bring structure and speed to your medical receivables management process.",
-      "why_choose": [
-        "Specialized AR Team: Experts in managing aged claims and difficult payers.",
-        "Reduced Aging AR: We aim to keep AR over 90 days below industry benchmarks.",
-        "End-to-End RCM Integration: Seamless coordination with coding, billing, and denial management.",
-        "Payer Expertise: Medicare, Medicaid, and commercial plans like UHC, Cigna, and Blue Cross.",
-        "Transparent Communication: Always know the status of your collections with real-time reporting."
+      "url": "https://ardurhealthcare.com/services/accounts-receivable-management-services",
+      "primary_keyword": "Accounts Receivable Management Services",
+      "description": "At Ardur Healthcare, our accounts receivable management services help you recover outstanding claims efficiently while maintaining compliance and payer relations. Whether you're a solo provider or a multi-specialty group, we bring structure and speed to your medical receivables management process. Here's what our accounts receivable management service includes:",
+      "services": [
+        "Aging AR Analysis: Prioritize claims based on age, value, and denial risk.",
+        "Insurance Follow-Up: Regular outreach to payers for claim status and resolution.",
+        "Appeals & Resubmissions: Rework denied claims and pursue timely appeals.",
+        "Patient Balance Management: Assist with statements and follow-up on out-of-pocket balances.",
+        "Reporting & Insights: Deliver detailed AR reports and recovery metrics by payer and aging bucket."
       ],
       "process": [
         "AR Review & Segmentation: Organize receivables by payer, age, balance, and denial reason.",
@@ -508,13 +524,14 @@
         "Patient Coordination: Assist patients with statements, payment plans, or secondary coverage guidance.",
         "AR Reporting: Share actionable monthly reports with key metrics and recovery outcomes."
       ],
-      "services": [
-        "Aging AR Analysis: Prioritize claims based on age, value, and denial risk.",
-        "Insurance Follow-Up: Regular outreach to payers for claim status and resolution.",
-        "Appeals & Resubmissions: Rework denied claims and pursue timely appeals.",
-        "Patient Balance Management: Assist with statements and follow-up on out-of-pocket balances.",
-        "Reporting & Insights: Deliver detailed AR reports and recovery metrics by payer and aging bucket."
+      "why_choose": [
+        "Specialized AR Team: Experts in managing aged claims and difficult payers.",
+        "Reduced Aging AR: We aim to keep AR over 90 days below industry benchmarks.",
+        "End-to-End RCM Integration: Seamless coordination with coding, billing, and denial management.",
+        "Payer Expertise: Medicare, Medicaid, and commercial plans like UHC, Cigna, and Blue Cross.",
+        "Transparent Communication: Always know the status of your collections with real-time reporting."
       ],
+      "cta": "Start Your AR Recovery Plan",
       "faqs": [
         {
           "question": "What is AR management in medical billing?",
@@ -529,12 +546,41 @@
           "answer": "Yes, we support patient balance follow-up with clear statements and friendly communication to improve collections."
         },
         {
-          "question": "What’s included in your AR reports?",
+          "question": "What's included in your AR reports?",
           "answer": "Reports include aging summaries, payer-specific trends, denial root causes, and recovery performance metrics."
         },
         {
           "question": "How does AR management support the overall revenue cycle?",
           "answer": "Effective AR management ensures timely reimbursement, reduces claim aging, improves cash flow, and supports long-term financial stability."
+        }
+      ]
+    },
+    "medical_billing_services": {
+      "name": "Medical Billing Services",
+      "title": "Medical Billing Services",
+      "meta_title": "Medical Billing Services | Ardur Healthcare",
+      "meta_description": "Get reliable medical billing services that help healthcare providers submit clean claims, reduce denials, and improve collections, without the hassle.",
+      "h1": "Medical Billing Services",
+      "subtitle": "Comprehensive medical billing solutions that streamline your revenue cycle and maximize reimbursements.",
+      "url": "https://ardurhealthcare.com/services/",
+      "primary_keyword": "Medical Billing Services",
+      "description": "At Ardur Healthcare, we provide end-to-end medical billing services that take the complexity out of revenue cycle management. Our comprehensive approach ensures clean claims, faster payments, and improved cash flow for healthcare providers across all specialties.",
+      "sections": [
+        {
+          "heading": "Why Choose Us for Your Medical Billing Services?",
+          "description": "Our team of certified billing professionals, coders, and AR specialists work together to optimize every aspect of your revenue cycle, from patient registration to final payment posting."
+        },
+        {
+          "heading": "What Our Comprehensive Medical Billing Services Include",
+          "description": "Complete revenue cycle management covering eligibility verification, coding, claim submission, payment posting, denial management, and accounts receivable follow-up."
+        },
+        {
+          "heading": "Let Us Handle the Billing, So You Can Focus on Your Patients",
+          "description": "With Ardur Healthcare managing your medical billing, you can concentrate on providing excellent patient care while we ensure your revenue cycle runs smoothly and efficiently."
+        },
+        {
+          "heading": "Ready to Simplify Your Medical Billing?",
+          "description": "Contact us today to learn how our medical billing services can improve your practice's financial performance and reduce administrative burden."
         }
       ]
     }

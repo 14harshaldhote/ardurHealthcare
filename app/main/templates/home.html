@@ -78,7 +78,7 @@ Ardur Healthcare{% endblock %} {% block meta %}
                     class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
                 >
                     <a
-                        href="/contact"
+                        href="{{ url_for('contact.contact_form') }}"
                         class="group relative overflow-hidden bg-brand-primary text-white px-8 py-4 rounded-full shadow-lg transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl"
                     >
                         <span class="relative flex items-center justify-center">
@@ -90,7 +90,7 @@ Ardur Healthcare{% endblock %} {% block meta %}
                     </a>
 
                     <a
-                        href="/services"
+                        href="{{ url_for('services.index') }}"
                         class="group bg-white/20 text-white border-2 border-white/30 px-8 py-4 rounded-full shadow-sm transform transition-all duration-300 ease-in-out hover:scale-105 hover:bg-white/30 hover:shadow-md"
                     >
                         Explore Services
@@ -228,7 +228,7 @@ Ardur Healthcare{% endblock %} {% block meta %}
 
         <div class="text-center">
             <a
-                href="/about"
+                href="{{ url_for('main.about') }}"
                 class="inline-block bg-brand-primary text-white px-8 py-4 rounded-full shadow-lg transform transition-all duration-300 ease-in-out hover:scale-105 hover:bg-brand-dark hover:shadow-xl"
             >
                 How We're Different <i class="ri-arrow-right-line ml-2"></i>
@@ -298,7 +298,7 @@ Ardur Healthcare{% endblock %} {% block meta %}
                     </li>
                 </ul>
                 <a
-                    href="{{ url_for('services.service_detail', service_name='provider-credentialing-and-enrollment') }}"
+                    href="{{ url_for('services.service_detail', service_name='provider-credentialing-and-enrollment-services') }}"
                     class="inline-flex items-center text-brand-primary hover:text-brand-dark transition-colors"
                 >
                     Learn More <i class="ri-arrow-right-line ml-1"></i>
@@ -349,7 +349,7 @@ Ardur Healthcare{% endblock %} {% block meta %}
                     </li>
                 </ul>
                 <a
-                    href="{{ url_for('services.service_detail', service_name='eligibility-and-benefits-verification') }}"
+                    href="{{ url_for('services.service_detail', service_name='eligibility-and-benefits-verification-services') }}"
                     class="inline-flex items-center text-brand-primary hover:text-brand-dark transition-colors"
                 >
                     Learn More <i class="ri-arrow-right-line ml-1"></i>
@@ -551,7 +551,7 @@ Ardur Healthcare{% endblock %} {% block meta %}
                     </li>
                 </ul>
                 <a
-                    href="{{ url_for('services.service_detail', service_name='accounts-receivable-management') }}"
+                    href="{{ url_for('services.service_detail', service_name='accounts-receivable-management-services') }}"
                     class="inline-flex items-center text-brand-primary hover:text-brand-dark transition-colors"
                 >
                     Learn More <i class="ri-arrow-right-line ml-1"></i>
@@ -561,7 +561,7 @@ Ardur Healthcare{% endblock %} {% block meta %}
 
         <div class="mt-12 text-center">
             <a
-                href="/services"
+                href="{{ url_for('services.index') }}"
                 class="inline-block bg-brand-primary text-white px-8 py-4 rounded-full shadow-lg transform transition-all duration-300 ease-in-out hover:scale-105 hover:bg-brand-dark hover:shadow-xl"
             >
                 View All Services <i class="ri-arrow-right-line ml-2"></i>
@@ -677,7 +677,7 @@ Ardur Healthcare{% endblock %} {% block meta %}
 
         <div class="text-center">
             <a
-                href="/specialties"
+                href="{{ url_for('specialities.specialities_main') }}"
                 class="inline-block bg-brand-primary text-white px-8 py-4 rounded-full shadow-lg transform transition-all duration-300 ease-in-out hover:scale-105 hover:bg-brand-dark hover:shadow-xl"
             >
                 Explore by Specialty <i class="ri-arrow-right-line ml-2"></i>
@@ -734,7 +734,7 @@ Ardur Healthcare{% endblock %} {% block meta %}
                 </div>
 
                 <a
-                    href="/coverage"
+                    href="{{ url_for('contact.contact_form') }}"
                     class="inline-block bg-brand-primary text-white px-8 py-4 rounded-full shadow-lg transform transition-all duration-300 ease-in-out hover:scale-105 hover:bg-brand-dark hover:shadow-xl"
                 >
                     See State-Specific Billing Services
@@ -750,7 +750,7 @@ Ardur Healthcare{% endblock %} {% block meta %}
                     class="absolute -bottom-4 -right-4 w-24 h-24 bg-brand-primary rounded-full opacity-10"
                 ></div>
                 <img
-                    src="{{ url_for('static', filename='') }}"
+                    src="{{ url_for('static', filename='images/usa-coverage-map.png') }}"
                     alt="USA Coverage Map"
                     class="rounded-xl shadow-xl w-full h-auto relative z-10"
                 />
@@ -911,7 +911,7 @@ Ardur Healthcare{% endblock %} {% block meta %}
 
         <div class="text-center">
             <a
-                href="/contact"
+                href="{{ url_for('contact.contact_form') }}"
                 class="inline-block bg-brand-primary text-white px-8 py-4 rounded-full shadow-lg transform transition-all duration-300 ease-in-out hover:scale-105 hover:bg-white hover:text-brand-primary hover:shadow-xl"
             >
                 Request a Custom Billing Quote
@@ -1000,7 +1000,7 @@ Ardur Healthcare{% endblock %} {% block meta %}
 
         <div class="text-center mt-12">
             <a
-                href="/contact"
+                href="{{ url_for('contact.contact_form') }}"
                 class="inline-block bg-brand-primary text-white px-8 py-4 rounded-full shadow-lg transform transition-all duration-300 ease-in-out hover:scale-105 hover:bg-brand-dark hover:shadow-xl"
             >
                 Get Started Today <i class="ri-arrow-right-line ml-2"></i>
@@ -1021,7 +1021,7 @@ Ardur Healthcare{% endblock %} {% block meta %}
                 collections, and make your billing seamless.
             </p>
             <a
-                href="/contact"
+                href="{{ url_for('contact.contact_form') }}"
                 class="inline-block bg-white text-brand-primary px-8 py-4 rounded-full shadow-lg transform transition-all duration-300 ease-in-out hover:scale-105 hover:bg-gray-100 hover:shadow-xl font-semibold"
             >
                 Free Consultation <i class="ri-arrow-right-line ml-2"></i>
