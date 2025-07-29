@@ -17,7 +17,7 @@ Ardur Healthcare{% endblock %} {% block meta %}
         />
         <!-- Subtle Gradient Overlay -->
         <div
-            class="absolute inset-0 bg-gradient-to-br from-brand-dark/60 via-brand-primary/40 to-transparent"
+            class="absolute inset-0 bg-gradient-to-br from-brand-dark/70 via-brand-primary/40 to-transparent"
         ></div>
         <div
             class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"
@@ -37,7 +37,7 @@ Ardur Healthcare{% endblock %} {% block meta %}
         ></div>
     </div>
 
-    <div class="container relative z-10 py-12 lg:py-16">
+    <div class="container relative z-10 py-10 lg:py-12">
         <div class="grid lg:grid-cols-2 gap-8 items-center">
             <!-- Left Column - Content -->
             <div
@@ -119,7 +119,7 @@ Ardur Healthcare{% endblock %} {% block meta %}
                     <img
                         src="{{ url_for('static', filename='images/header-bg.png') }}"
                         alt="Healthcare Revenue Management"
-                        class="w-auto h-auto max-w-md rounded-xl mx-auto transform transition-transform duration-500"
+                        class="w-auto h-auto max-w-sm rounded-xl mx-auto transform transition-transform duration-500"
                         loading="lazy"
                     />
                 </div>
@@ -253,58 +253,7 @@ Ardur Healthcare{% endblock %} {% block meta %}
         </div>
 
         <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            <!-- Credentialing & Enrollment -->
-            <div
-                class="group bg-white hover:bg-brand-secondary p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-100"
-            >
-                <div
-                    class="inline-block bg-brand-secondary text-brand-primary p-3 rounded-full mb-4 group-hover:bg-brand-primary group-hover:text-white transition-all duration-300"
-                >
-                    <i class="ri-user-settings-line text-2xl"></i>
-                </div>
-                <h4
-                    class="font-montserrat font-semibold text-xl text-brand-dark mb-3"
-                >
-                    Credentialing & Enrollment
-                </h4>
-                <p class="text-gray-600 mb-4">
-                    Speed up payer onboarding and start billing sooner.
-                </p>
-                <ul class="space-y-2 mb-6">
-                    <li class="flex items-start">
-                        <i
-                            class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2"
-                        ></i>
-                        <span class="text-sm text-gray-600"
-                            >CAQH & PECOS Support</span
-                        >
-                    </li>
-                    <li class="flex items-start">
-                        <i
-                            class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2"
-                        ></i>
-                        <span class="text-sm text-gray-600"
-                            >Enrollment Tracking</span
-                        >
-                    </li>
-                    <li class="flex items-start">
-                        <i
-                            class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2"
-                        ></i>
-                        <span class="text-sm text-gray-600"
-                            >Revalidation Monitoring</span
-                        >
-                    </li>
-                </ul>
-                <a
-                    href="{{ url_for('services.service_detail', service_name='provider-credentialing-and-enrollment-services') }}"
-                    class="inline-flex items-center text-brand-primary hover:text-brand-dark transition-colors"
-                >
-                    Learn More <i class="ri-arrow-right-line ml-1"></i>
-                </a>
-            </div>
-
-            <!-- Eligibility & Benefits Verification -->
+            <!-- Eligibility Verification -->
             <div
                 class="group bg-white hover:bg-brand-secondary p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-100"
             >
@@ -316,7 +265,7 @@ Ardur Healthcare{% endblock %} {% block meta %}
                 <h4
                     class="font-montserrat font-semibold text-xl text-brand-dark mb-3"
                 >
-                    Eligibility & Benefits Verification
+                    Eligibility Verification
                 </h4>
                 <p class="text-gray-600 mb-4">
                     Prevent denials before they happen.
@@ -349,6 +298,57 @@ Ardur Healthcare{% endblock %} {% block meta %}
                 </ul>
                 <a
                     href="{{ url_for('services.service_detail', service_name='eligibility-and-benefits-verification-services') }}"
+                    class="inline-flex items-center text-brand-primary hover:text-brand-dark transition-colors"
+                >
+                    Learn More <i class="ri-arrow-right-line ml-1"></i>
+                </a>
+            </div>
+
+            <!-- Provider Credentialing -->
+            <div
+                class="group bg-white hover:bg-brand-secondary p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-100"
+            >
+                <div
+                    class="inline-block bg-brand-secondary text-brand-primary p-3 rounded-full mb-4 group-hover:bg-brand-primary group-hover:text-white transition-all duration-300"
+                >
+                    <i class="ri-user-settings-line text-2xl"></i>
+                </div>
+                <h4
+                    class="font-montserrat font-semibold text-xl text-brand-dark mb-3"
+                >
+                    Provider Credentialing
+                </h4>
+                <p class="text-gray-600 mb-4">
+                    Speed up payer onboarding and start billing sooner.
+                </p>
+                <ul class="space-y-2 mb-6">
+                    <li class="flex items-start">
+                        <i
+                            class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2"
+                        ></i>
+                        <span class="text-sm text-gray-600"
+                            >CAQH & PECOS Support</span
+                        >
+                    </li>
+                    <li class="flex items-start">
+                        <i
+                            class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2"
+                        ></i>
+                        <span class="text-sm text-gray-600"
+                            >Enrollment Tracking</span
+                        >
+                    </li>
+                    <li class="flex items-start">
+                        <i
+                            class="ri-checkbox-circle-line text-brand-primary mt-1 mr-2"
+                        ></i>
+                        <span class="text-sm text-gray-600"
+                            >Revalidation Monitoring</span
+                        >
+                    </li>
+                </ul>
+                <a
+                    href="{{ url_for('services.service_detail', service_name='provider-credentialing-and-enrollment-services') }}"
                     class="inline-flex items-center text-brand-primary hover:text-brand-dark transition-colors"
                 >
                     Learn More <i class="ri-arrow-right-line ml-1"></i>
@@ -418,7 +418,7 @@ Ardur Healthcare{% endblock %} {% block meta %}
                 <h4
                     class="font-montserrat font-semibold text-xl text-brand-dark mb-3"
                 >
-                    Claims Submission & Follow-Up
+                    Claims Submission
                 </h4>
                 <p class="text-gray-600 mb-4">
                     Faster payments. Fewer rejections.
@@ -588,90 +588,116 @@ Ardur Healthcare{% endblock %} {% block meta %}
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-12">
             <!-- Behavioral Health -->
-            <div
-                class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 text-center border border-gray-100 hover:border-brand-primary"
+            <a
+                href="{{ url_for('specialities.specialty', specialty_type='mental-health') }}"
+                class="block"
             >
                 <div
-                    class="inline-block bg-brand-secondary p-4 rounded-full mb-4"
+                    class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 text-center border border-gray-100 hover:border-brand-primary"
                 >
-                    <i class="ri-brain-line text-2xl text-brand-primary"></i>
+                    <div
+                        class="inline-block bg-brand-secondary p-4 rounded-full mb-4"
+                    >
+                        <i
+                            class="ri-brain-line text-2xl text-brand-primary"
+                        ></i>
+                    </div>
+                    <h4
+                        class="font-montserrat font-semibold text-lg text-brand-dark"
+                    >
+                        Behavioral Health
+                    </h4>
                 </div>
-                <h4
-                    class="font-montserrat font-semibold text-lg text-brand-dark"
-                >
-                    Behavioral Health
-                </h4>
-            </div>
+            </a>
 
             <!-- Family Practice -->
-            <div
-                class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 text-center border border-gray-100 hover:border-brand-primary"
+            <a
+                href="{{ url_for('specialities.specialty', specialty_type='family-practice') }}"
+                class="block"
             >
                 <div
-                    class="inline-block bg-brand-secondary p-4 rounded-full mb-4"
+                    class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 text-center border border-gray-100 hover:border-brand-primary"
                 >
-                    <i
-                        class="ri-heart-pulse-line text-2xl text-brand-primary"
-                    ></i>
+                    <div
+                        class="inline-block bg-brand-secondary p-4 rounded-full mb-4"
+                    >
+                        <i
+                            class="ri-heart-pulse-line text-2xl text-brand-primary"
+                        ></i>
+                    </div>
+                    <h4
+                        class="font-montserrat font-semibold text-lg text-brand-dark"
+                    >
+                        Family Practice
+                    </h4>
                 </div>
-                <h4
-                    class="font-montserrat font-semibold text-lg text-brand-dark"
-                >
-                    Family Practice
-                </h4>
-            </div>
+            </a>
 
             <!-- Podiatry -->
-            <div
-                class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 text-center border border-gray-100 hover:border-brand-primary"
+            <a
+                href="{{ url_for('specialities.specialty', specialty_type='podiatry') }}"
+                class="block"
             >
                 <div
-                    class="inline-block bg-brand-secondary p-4 rounded-full mb-4"
+                    class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 text-center border border-gray-100 hover:border-brand-primary"
                 >
-                    <i
-                        class="ri-foot-print-line text-2xl text-brand-primary"
-                    ></i>
+                    <div
+                        class="inline-block bg-brand-secondary p-4 rounded-full mb-4"
+                    >
+                        <i
+                            class="ri-footprint-line text-2xl text-brand-primary"
+                        ></i>
+                    </div>
+                    <h4
+                        class="font-montserrat font-semibold text-lg text-brand-dark"
+                    >
+                        Podiatry
+                    </h4>
                 </div>
-                <h4
-                    class="font-montserrat font-semibold text-lg text-brand-dark"
-                >
-                    Podiatry
-                </h4>
-            </div>
-
+            </a>
             <!-- Wound Care -->
-            <div
-                class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 text-center border border-gray-100 hover:border-brand-primary"
+            <a
+                href="{{ url_for('specialities.specialty', specialty_type='wound-care') }}"
+                class="block"
             >
                 <div
-                    class="inline-block bg-brand-secondary p-4 rounded-full mb-4"
+                    class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 text-center border border-gray-100 hover:border-brand-primary"
                 >
-                    <i
-                        class="ri-first-aid-kit-line text-2xl text-brand-primary"
-                    ></i>
+                    <div
+                        class="inline-block bg-brand-secondary p-4 rounded-full mb-4"
+                    >
+                        <i
+                            class="ri-first-aid-kit-line text-2xl text-brand-primary"
+                        ></i>
+                    </div>
+                    <h4
+                        class="font-montserrat font-semibold text-lg text-brand-dark"
+                    >
+                        Wound Care
+                    </h4>
                 </div>
-                <h4
-                    class="font-montserrat font-semibold text-lg text-brand-dark"
-                >
-                    Wound Care
-                </h4>
-            </div>
+            </a>
 
             <!-- Physical Therapy -->
-            <div
-                class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 text-center border border-gray-100 hover:border-brand-primary"
+            <a
+                href="{{ url_for('specialities.specialty', specialty_type='physical-therapy') }}"
+                class="block"
             >
                 <div
-                    class="inline-block bg-brand-secondary p-4 rounded-full mb-4"
+                    class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 text-center border border-gray-100 hover:border-brand-primary"
                 >
-                    <i class="ri-run-line text-2xl text-brand-primary"></i>
+                    <div
+                        class="inline-block bg-brand-secondary p-4 rounded-full mb-4"
+                    >
+                        <i class="ri-run-line text-2xl text-brand-primary"></i>
+                    </div>
+                    <h4
+                        class="font-montserrat font-semibold text-lg text-brand-dark"
+                    >
+                        Physical Therapy
+                    </h4>
                 </div>
-                <h4
-                    class="font-montserrat font-semibold text-lg text-brand-dark"
-                >
-                    Physical Therapy
-                </h4>
-            </div>
+            </a>
         </div>
 
         <div class="text-center">
@@ -749,7 +775,7 @@ Ardur Healthcare{% endblock %} {% block meta %}
                     class="absolute -bottom-4 -right-4 w-24 h-24 bg-brand-primary rounded-full opacity-10"
                 ></div>
                 <img
-                    src="{{ url_for('static', filename='images/usa-coverage-map.png') }}"
+                    src="{{ url_for('static', filename='images/usa-map.svg') }}"
                     alt="USA Coverage Map"
                     class="rounded-xl shadow-xl w-full h-auto relative z-10"
                 />

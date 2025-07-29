@@ -1,436 +1,442 @@
-{% extends "base.html" %} {% block title %}{{ service.meta_title or
-(service.title + ' | Ardur Healthcare') }}{% endblock %} {% block meta %}
-<meta
-    name="description"
-    content="{{ service.meta_description or 'Expert medical billing services from Ardur Healthcare. Improve collections, reduce denials, and streamline your revenue cycle management.' }}"
-/>
-<link rel="canonical" href="{{ request.url }}" />
-{% endblock %} {% block content %}
-<main class="bg-white text-gray-800">
-    <!-- Hero Section -->
-    <section class="relative bg-gray-50/50">
-        <div class="max-w-7xl mx-auto px-6 py-20 md:py-28">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="text-center lg:text-left" data-aos="fade-right">
-                    <h1
-                        class="text-4xl md:text-5xl lg:text-6xl font-montserrat font-medium text-brand-dark mb-6"
-                    >
-                        {{ service.h1 or service.title }}
-                    </h1>
-                    <p
-                        class="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0"
-                    >
-                        {{ service.subtitle or service.description }}
-                    </p>
-                    <div
-                        class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
-                    >
-                        <a
-                            href="{{ url_for('contact.contact_form') }}"
-                            class="bg-brand-primary text-white font-montserrat px-8 py-3 rounded-lg hover:bg-brand-dark shadow-sm hover:shadow-md transition-all duration-300 text-center"
+{% extends "base.html" %} {% block title %} 
+{{ service.meta_title or (service.title + ' | Ardur Healthcare') }} {% endblock %} {% block meta %}
+    <meta
+        name="description"
+        content="{{ service.meta_description or 'Expert medical billing services from Ardur Healthcare. Improve collections, reduce denials, and streamline your revenue cycle management.' }}"
+    />
+    <link rel="canonical" href="{{ request.url }}" />
+    {% endblock %} {% block content %}
+    <main class="bg-white text-gray-800">
+        <!-- Hero Section -->
+        <section class="relative bg-gray-50/50">
+            <div class="max-w-7xl mx-auto px-6 py-20 md:py-28">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="text-center lg:text-left" data-aos="fade-right">
+                        <h1
+                            class="text-4xl md:text-5xl lg:text-6xl font-montserrat font-medium text-brand-dark mb-6"
                         >
-                            Get a Free Consultation
-                        </a>
-                        <a
-                            href="#learn-more"
-                            class="bg-white text-brand-primary border border-gray-300 font-montserrat px-8 py-3 rounded-lg hover:border-brand-primary hover:bg-brand-secondary/20 transition-colors duration-300 text-center"
+                            {{ service.h1 or service.title }}
+                        </h1>
+                        <p
+                            class="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0"
                         >
-                            Learn More
-                        </a>
-                    </div>
-                </div>
-                <div
-                    class="hidden lg:flex items-center justify-center"
-                    data-aos="fade-left"
-                    data-aos-delay="200"
-                >
-                    <div class="relative w-full max-w-md">
+                            {{ service.subtitle or service.description }}
+                        </p>
                         <div
-                            class="absolute -top-4 -left-4 w-full h-full bg-brand-secondary/30 rounded-2xl transform -rotate-3"
-                        ></div>
-                        {% set service_images = {
-                        'eligibility-and-benefits-verification-services':
-                        'eligibility_verification.jpg',
-                        'prior-authorization-services':
-                        'prior_authorization.jpg',
-                        'provider-credentialing-and-enrollment-services':
-                        'provider_credentialing.jpg', 'charge-entry-services':
-                        'charge_entry.jpg', 'medical-coding-services':
-                        'medical_coding.jpg',
-                        'claim-submission-and-follow-up-services':
-                        'claim_submission.jpg',
-                        'payment-posting-and-reconciliation-services':
-                        'payment_posting.jpg', 'denial-management-services':
-                        'denial_management.jpg',
-                        'accounts-receivable-management-services':
-                        'accounts_receivable_management.jpg',
-                        'medical-billing-services': 'medical_billing.jpg' } %}
-                        <img
-                            src="{{ url_for('static', filename='images/' + service_images.get(service_name, 'rcm_workflow.png')) }}"
-                            alt="{{ service.title }} Illustration"
-                            class="relative w-full h-auto rounded-xl shadow-xl"
-                        />
+                            class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+                        >
+                            <a
+                                href="{{ url_for('contact.contact_form') }}"
+                                class="bg-brand-primary text-white font-montserrat px-8 py-3 rounded-lg hover:bg-brand-dark shadow-sm hover:shadow-md transition-all duration-300 text-center"
+                            >
+                                Get a Free Consultation
+                            </a>
+                            <a
+                                href="#learn-more"
+                                class="bg-white text-brand-primary border border-gray-300 font-montserrat px-8 py-3 rounded-lg hover:border-brand-primary hover:bg-brand-secondary/20 transition-colors duration-300 text-center"
+                            >
+                                Learn More
+                            </a>
+                        </div>
+                    </div>
+                    <div
+                        class="hidden lg:flex items-center justify-center"
+                        data-aos="fade-left"
+                        data-aos-delay="200"
+                    >
+                        <div class="relative w-full max-w-md">
+                            <div
+                                class="absolute -top-4 -left-4 w-full h-full bg-brand-secondary/30 rounded-2xl transform -rotate-3"
+                            ></div>
+                            {% set service_images = {
+                            'eligibility-and-benefits-verification-services':
+                            'eligibility_verification.jpg',
+                            'prior-authorization-services':
+                            'prior_authorization.jpg',
+                            'provider-credentialing-and-enrollment-services':
+                            'provider_credentialing.jpg', 'charge-entry-services':
+                            'charge_entry.jpg', 'medical-coding-services':
+                            'medical_coding.jpg',
+                            'claim-submission-and-follow-up-services':
+                            'claim_submission.jpg',
+                            'payment-posting-and-reconciliation-services':
+                            'payment_posting.jpg', 'denial-management-services':
+                            'denial_management.jpg',
+                            'accounts-receivable-management-services':
+                            'accounts_receivable_management.jpg',
+                            'medical-billing-services': 'medical_billing.jpg' } %}
+                            <img
+                                src="{{ url_for('static', filename='images/' + service_images.get(service_name, 'rcm_workflow.png')) }}"
+                                alt="{{ service.title }} Illustration"
+                                class="relative w-full h-auto rounded-xl shadow-xl"
+                            />
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Content Section -->
-    <section id="learn-more" class="py-16 md:py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6 space-y-20">
-            {% if service.sections %}
-            <!-- Handle services with sections array (eligibility_verification, prior_authorization, provider_credentialing, medical_billing_services) -->
-            {% for section in service.sections %} {% if section.heading and
-            (section.features or section.steps or section.cta or section.faqs or
-            section.description) %}
-            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-                <div
-                    class="{% if loop.index is odd %}lg:order-1{% else %}lg:order-2{% endif %}"
-                    data-aos="fade-up"
-                >
-                    <h2
-                        class="text-3xl md:text-4xl font-montserrat font-medium text-brand-dark mb-5"
+        </section>
+    
+        <!-- Content Section -->
+        <section id="learn-more" class="py-16 md:py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-6 space-y-20">
+                {% if service.sections %}
+                <!-- Handle services with sections array -->
+                {% for section in service.sections %} {% if section.heading and
+                (section.features or section.steps or section.cta or section.faqs or
+                section.description) %}
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                    <div
+                        class="{% if loop.index is odd %}lg:order-1{% else %}lg:order-2{% endif %}"
+                        data-aos="fade-up"
                     >
-                        {{ section.heading }}
-                    </h2>
-                    {% if section.description %}
-                    <p class="text-gray-600 mb-8 text-lg leading-relaxed">
-                        {{ section.description }}
-                    </p>
-                    {% endif %} {% if section.cta %}
-                    <a
-                        href="{{ url_for('contact.contact_form') }}"
-                        class="inline-block bg-brand-primary text-white font-montserrat px-8 py-3 rounded-lg hover:bg-brand-dark transition-colors duration-300"
+                        <h2
+                            class="text-3xl md:text-4xl font-montserrat font-medium text-brand-dark mb-5"
+                        >
+                            {{ section.heading }}
+                        </h2>
+                        {% if section.description %}
+                        <p class="text-gray-600 mb-8 text-lg leading-relaxed">
+                            {{ section.description }}
+                        </p>
+                        {% endif %} {% if section.cta %}
+                        <a
+                            href="{{ section.cta.link or url_for('contact.contact_form') }}"
+                            class="inline-block bg-brand-primary text-white font-montserrat px-8 py-3 rounded-lg hover:bg-brand-dark transition-colors duration-300"
+                        >
+                            {{ section.cta.text or 'Get Started Today' }}
+                        </a>
+                        {% endif %}
+                    </div>
+    
+                    <!-- Only render the features/steps section if they exist -->
+                    {% if section.features or section.steps %}
+                    <div
+                        class="{% if loop.index is odd %}lg:order-2{% else %}lg:order-1{% endif %}"
+                        data-aos="fade-up"
+                        data-aos-delay="100"
                     >
-                        {{ section.cta.text or 'Get Started Today' }}
-                    </a>
+                        <div
+                            class="bg-gray-50/80 border border-gray-200/60 rounded-xl p-8 space-y-5"
+                        >
+                            {% if section.features %} {% for feature in
+                            section.features %}
+                            <div class="flex items-start">
+                                <div
+                                    class="flex-shrink-0 w-7 h-7 bg-brand-secondary/50 rounded-full flex items-center justify-center mr-4 mt-1"
+                                >
+                                    <i
+                                        class="ri-check-double-line text-lg text-brand-primary"
+                                    ></i>
+                                </div>
+                                <p class="text-gray-700 text-base flex-1">
+                                    {% if ':' in feature %}
+                                    <b>{{ feature.split(':')[0] }}:</b> {{
+                                    feature.split(':')[1] }} {% else %} {{ feature
+                                    }} {% endif %}
+                                </p>
+                            </div>
+                            {% endfor %} {% endif %} {% if section.steps %} {% for
+                            step in section.steps %}
+                            <div class="flex items-start">
+                                <div
+                                    class="flex-shrink-0 w-7 h-7 bg-brand-secondary/50 rounded-full flex items-center justify-center mr-4 mt-1"
+                                >
+                                    <span class="font-semibold text-brand-primary"
+                                        >{{ loop.index }}</span
+                                    >
+                                </div>
+                                <p class="text-gray-700 text-base flex-1">
+                                    {% if ':' in step %}
+                                    <b>{{ step.split(':')[0] }}:</b> {{
+                                    step.split(':')[1] }} {% else %} {{ step }} {%
+                                    endif %}
+                                </p>
+                            </div>
+                            {% endfor %} {% endif %}
+                        </div>
+                    </div>
                     {% endif %}
                 </div>
-
-                <div
-                    class="{% if loop.index is odd %}lg:order-2{% else %}lg:order-1{% endif %}"
-                    data-aos="fade-up"
-                    data-aos-delay="100"
-                >
-                    <div
-                        class="bg-gray-50/80 border border-gray-200/60 rounded-xl p-8 space-y-5"
-                    >
-                        {% if section.features %} {% for feature in
-                        section.features %}
-                        <div class="flex items-start">
-                            <div
-                                class="flex-shrink-0 w-7 h-7 bg-brand-secondary/50 rounded-full flex items-center justify-center mr-4 mt-1"
-                            >
-                                <i
-                                    class="ri-check-double-line text-lg text-brand-primary"
-                                ></i>
-                            </div>
-                            <p class="text-gray-700 text-base flex-1">
-                                {% if ':' in feature %}
-                                <b>{{ feature.split(':')[0] }}:</b> {{
-                                feature.split(':')[1] }} {% else %} {{ feature
-                                }} {% endif %}
-                            </p>
-                        </div>
-                        {% endfor %} {% endif %} {% if section.steps %} {% for
-                        step in section.steps %}
-                        <div class="flex items-start">
-                            <div
-                                class="flex-shrink-0 w-7 h-7 bg-brand-secondary/50 rounded-full flex items-center justify-center mr-4 mt-1"
-                            >
-                                <span class="font-semibold text-brand-primary"
-                                    >{{ loop.index }}</span
-                                >
-                            </div>
-                            <p class="text-gray-700 text-base flex-1">
-                                {% if ':' in step %}
-                                <b>{{ step.split(':')[0] }}:</b> {{
-                                step.split(':')[1] }} {% else %} {{ step }} {%
-                                endif %}
-                            </p>
-                        </div>
-                        {% endfor %} {% endif %}
-                    </div>
-                </div>
-            </div>
-            {% endif %} {% endfor %} {% else %}
-            <!-- Handle services with individual fields (charge_entry, medical_coding, etc.) -->
-
-            <!-- Features Section -->
-            {% if service.features %}
-            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-                <div class="lg:order-1" data-aos="fade-up">
-                    <h2
-                        class="text-3xl md:text-4xl font-montserrat font-medium text-brand-dark mb-5"
-                    >
-                        Key Features
-                    </h2>
-                    <p class="text-gray-600 mb-8 text-lg leading-relaxed">
-                        Our comprehensive {{ service.name or service.title }}
-                        solutions deliver accuracy and efficiency.
-                    </p>
-                </div>
-                <div class="lg:order-2" data-aos="fade-up" data-aos-delay="100">
-                    <div
-                        class="bg-gray-50/80 border border-gray-200/60 rounded-xl p-8 space-y-5"
-                    >
-                        {% for feature in service.features %}
-                        <div class="flex items-start">
-                            <div
-                                class="flex-shrink-0 w-7 h-7 bg-brand-secondary/50 rounded-full flex items-center justify-center mr-4 mt-1"
-                            >
-                                <i
-                                    class="ri-check-double-line text-lg text-brand-primary"
-                                ></i>
-                            </div>
-                            <p class="text-gray-700 text-base flex-1">
-                                {{ feature }}
-                            </p>
-                        </div>
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
-            {% endif %}
-
-            <!-- Services Section (for services like claim_submission_follow_up) -->
-            {% if service.services %}
-            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-                <div class="lg:order-2" data-aos="fade-up">
-                    <h2
-                        class="text-3xl md:text-4xl font-montserrat font-medium text-brand-dark mb-5"
-                    >
-                        Our Services
-                    </h2>
-                    <p class="text-gray-600 mb-8 text-lg leading-relaxed">
-                        Comprehensive {{ service.name or service.title }}
-                        tailored to your practice needs.
-                    </p>
-                </div>
-                <div class="lg:order-1" data-aos="fade-up" data-aos-delay="100">
-                    <div
-                        class="bg-gray-50/80 border border-gray-200/60 rounded-xl p-8 space-y-5"
-                    >
-                        {% for service_item in service.services %}
-                        <div class="flex items-start">
-                            <div
-                                class="flex-shrink-0 w-7 h-7 bg-brand-secondary/50 rounded-full flex items-center justify-center mr-4 mt-1"
-                            >
-                                <i
-                                    class="ri-check-double-line text-lg text-brand-primary"
-                                ></i>
-                            </div>
-                            <p class="text-gray-700 text-base flex-1">
-                                {{ service_item }}
-                            </p>
-                        </div>
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
-            {% endif %}
-
-            <!-- Process Section -->
-            {% if service.process %}
-            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-                <div class="lg:order-1" data-aos="fade-up">
-                    <h2
-                        class="text-3xl md:text-4xl font-montserrat font-medium text-brand-dark mb-5"
-                    >
-                        Our Process
-                    </h2>
-                    <p class="text-gray-600 mb-8 text-lg leading-relaxed">
-                        A streamlined approach to deliver optimal results for
-                        your practice.
-                    </p>
-                </div>
-                <div class="lg:order-2" data-aos="fade-up" data-aos-delay="100">
-                    <div
-                        class="bg-gray-50/80 border border-gray-200/60 rounded-xl p-8 space-y-5"
-                    >
-                        {% for step in service.process %}
-                        <div class="flex items-start">
-                            <div
-                                class="flex-shrink-0 w-7 h-7 bg-brand-secondary/50 rounded-full flex items-center justify-center mr-4 mt-1"
-                            >
-                                <span class="font-semibold text-brand-primary"
-                                    >{{ loop.index }}</span
-                                >
-                            </div>
-                            <p class="text-gray-700 text-base flex-1">
-                                {{ step }}
-                            </p>
-                        </div>
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
-            {% endif %}
-
-            <!-- Why Choose Section -->
-            {% if service.why_choose %}
-            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-                <div class="lg:order-2" data-aos="fade-up">
-                    <h2
-                        class="text-3xl md:text-4xl font-montserrat font-medium text-brand-dark mb-5"
-                    >
-                        Why Choose Ardur Healthcare?
-                    </h2>
-                    <p class="text-gray-600 mb-8 text-lg leading-relaxed">
-                        Partner with us for reliable, efficient, and
-                        cost-effective {{ service.name or service.title }}.
-                    </p>
-                    <a
-                        href="{{ url_for('contact.contact_form') }}"
-                        class="inline-block bg-brand-primary text-white font-montserrat px-8 py-3 rounded-lg hover:bg-brand-dark transition-colors duration-300"
-                    >
-                        {{ service.cta or 'Get Started Today' }}
-                    </a>
-                </div>
-                <div class="lg:order-1" data-aos="fade-up" data-aos-delay="100">
-                    <div
-                        class="bg-gray-50/80 border border-gray-200/60 rounded-xl p-8 space-y-5"
-                    >
-                        {% for reason in service.why_choose %}
-                        <div class="flex items-start">
-                            <div
-                                class="flex-shrink-0 w-7 h-7 bg-brand-secondary/50 rounded-full flex items-center justify-center mr-4 mt-1"
-                            >
-                                <i
-                                    class="ri-check-double-line text-lg text-brand-primary"
-                                ></i>
-                            </div>
-                            <p class="text-gray-700 text-base flex-1">
-                                {{ reason }}
-                            </p>
-                        </div>
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
-            {% endif %} {% endif %}
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    {% set ns = namespace(all_faqs=[]) %} {% if service.sections %} {% for
-    section in service.sections %} {% if section.faqs %} {% for faq in
-    section.faqs %} {% set ns.all_faqs = ns.all_faqs + [faq] %} {% endfor %} {%
-    endif %} {% endfor %} {% elif service.faqs %} {% set ns.all_faqs =
-    service.faqs %} {% endif %} {% if ns.all_faqs %}
-    <section class="py-16 md:py-24 bg-gray-50">
-        <div class="max-w-4xl mx-auto px-6">
-            <div class="text-center mb-12" data-aos="fade-up">
-                <h2
-                    class="text-3xl md:text-4xl font-montserrat font-medium text-brand-dark mb-4"
-                >
-                    Frequently Asked Questions
-                </h2>
-                <p class="text-lg text-gray-600">
-                    Everything you need to know about our {{ service.title }}.
-                </p>
-            </div>
-            <div class="space-y-4" data-aos="fade-up" data-aos-delay="100">
-                {% for faq in ns.all_faqs %}
-                <div class="bg-white rounded-lg border border-gray-200/80">
-                    <button
-                        class="w-full text-left p-6 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary rounded-lg"
-                        onclick="toggleFAQ({{ loop.index }})"
-                    >
-                        <div class="flex justify-between items-center">
-                            <h3
-                                class="text-lg font-medium text-brand-dark pr-4"
-                            >
-                                {{ faq.question }}
-                            </h3>
-                            <i
-                                class="ri-add-line text-2xl text-brand-primary transition-transform duration-300"
-                                id="faq-icon-{{ loop.index }}"
-                            ></i>
-                        </div>
-                    </button>
-                    <div
-                        class="px-6 pb-0 max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
-                        id="faq-answer-container-{{ loop.index }}"
-                    >
-                        <p
-                            class="text-gray-600 leading-relaxed border-t border-gray-200 pt-4 pb-6"
+                {% endif %} {% endfor %} {% else %}
+                <!-- Handle services with individual fields (legacy structure) -->
+    
+                <!-- Features Section -->
+                {% if service.features %}
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                    <div class="lg:order-1" data-aos="fade-up">
+                        <h2
+                            class="text-3xl md:text-4xl font-montserrat font-medium text-brand-dark mb-5"
                         >
-                            {{ faq.answer }}
+                            Key Features
+                        </h2>
+                        <p class="text-gray-600 mb-8 text-lg leading-relaxed">
+                            Our comprehensive {{ service.name or service.title }}
+                            solutions deliver accuracy and efficiency.
                         </p>
                     </div>
+                    <div class="lg:order-2" data-aos="fade-up" data-aos-delay="100">
+                        <div
+                            class="bg-gray-50/80 border border-gray-200/60 rounded-xl p-8 space-y-5"
+                        >
+                            {% for feature in service.features %}
+                            <div class="flex items-start">
+                                <div
+                                    class="flex-shrink-0 w-7 h-7 bg-brand-secondary/50 rounded-full flex items-center justify-center mr-4 mt-1"
+                                >
+                                    <i
+                                        class="ri-check-double-line text-lg text-brand-primary"
+                                    ></i>
+                                </div>
+                                <p class="text-gray-700 text-base flex-1">
+                                    {{ feature }}
+                                </p>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
                 </div>
-                {% endfor %}
+                {% endif %}
+    
+                <!-- Services Section (for services like claim_submission_follow_up) -->
+                {% if service.services %}
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                    <div class="lg:order-2" data-aos="fade-up">
+                        <h2
+                            class="text-3xl md:text-4xl font-montserrat font-medium text-brand-dark mb-5"
+                        >
+                            Our Services
+                        </h2>
+                        <p class="text-gray-600 mb-8 text-lg leading-relaxed">
+                            Comprehensive {{ service.name or service.title }}
+                            tailored to your practice needs.
+                        </p>
+                    </div>
+                    <div class="lg:order-1" data-aos="fade-up" data-aos-delay="100">
+                        <div
+                            class="bg-gray-50/80 border border-gray-200/60 rounded-xl p-8 space-y-5"
+                        >
+                            {% for service_item in service.services %}
+                            <div class="flex items-start">
+                                <div
+                                    class="flex-shrink-0 w-7 h-7 bg-brand-secondary/50 rounded-full flex items-center justify-center mr-4 mt-1"
+                                >
+                                    <i
+                                        class="ri-check-double-line text-lg text-brand-primary"
+                                    ></i>
+                                </div>
+                                <p class="text-gray-700 text-base flex-1">
+                                    {{ service_item }}
+                                </p>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+    
+                <!-- Process Section -->
+                {% if service.process %}
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                    <div class="lg:order-1" data-aos="fade-up">
+                        <h2
+                            class="text-3xl md:text-4xl font-montserrat font-medium text-brand-dark mb-5"
+                        >
+                            Our Process
+                        </h2>
+                        <p class="text-gray-600 mb-8 text-lg leading-relaxed">
+                            A streamlined approach to deliver optimal results for
+                            your practice.
+                        </p>
+                    </div>
+                    <div class="lg:order-2" data-aos="fade-up" data-aos-delay="100">
+                        <div
+                            class="bg-gray-50/80 border border-gray-200/60 rounded-xl p-8 space-y-5"
+                        >
+                            {% for step in service.process %}
+                            <div class="flex items-start">
+                                <div
+                                    class="flex-shrink-0 w-7 h-7 bg-brand-secondary/50 rounded-full flex items-center justify-center mr-4 mt-1"
+                                >
+                                    <span class="font-semibold text-brand-primary"
+                                        >{{ loop.index }}</span
+                                    >
+                                </div>
+                                <p class="text-gray-700 text-base flex-1">
+                                    {{ step }}
+                                </p>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+    
+                <!-- Why Choose Section -->
+                {% if service.why_choose %}
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                    <div class="lg:order-2" data-aos="fade-up">
+                        <h2
+                            class="text-3xl md:text-4xl font-montserrat font-medium text-brand-dark mb-5"
+                        >
+                            Why Choose Ardur Healthcare?
+                        </h2>
+                        <p class="text-gray-600 mb-8 text-lg leading-relaxed">
+                            Partner with us for reliable, efficient, and
+                            cost-effective {{ service.name or service.title }}.
+                        </p>
+                        <a
+                            href="{{ url_for('contact.contact_form') }}"
+                            class="inline-block bg-brand-primary text-white font-montserrat px-8 py-3 rounded-lg hover:bg-brand-dark transition-colors duration-300"
+                        >
+                            {{ service.cta or 'Get Started Today' }}
+                        </a>
+                    </div>
+                    <div class="lg:order-1" data-aos="fade-up" data-aos-delay="100">
+                        <div
+                            class="bg-gray-50/80 border border-gray-200/60 rounded-xl p-8 space-y-5"
+                        >
+                            {% for reason in service.why_choose %}
+                            <div class="flex items-start">
+                                <div
+                                    class="flex-shrink-0 w-7 h-7 bg-brand-secondary/50 rounded-full flex items-center justify-center mr-4 mt-1"
+                                >
+                                    <i
+                                        class="ri-check-double-line text-lg text-brand-primary"
+                                    ></i>
+                                </div>
+                                <p class="text-gray-700 text-base flex-1">
+                                    {{ reason }}
+                                </p>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                {% endif %} {% endif %}
             </div>
-        </div>
-    </section>
-    {% endif %}
-
-    <!-- CTA Section -->
-    <section class="py-16 md:py-24 bg-brand-secondary text-white">
-        <div class="max-w-4xl mx-auto px-6 text-center" data-aos="fade-up">
-            <h2
-                class="text-3xl md:text-4xl font-thin font-montserrat text-brand-dark mb-6"
-            >
-                Ready to Optimize Your Revenue Cycle?
-            </h2>
-            <p
-                class="text-xl text-brand-dark/80 font-light mb-8 max-w-2xl mx-auto"
-            >
-                Stop letting claim denials and administrative burdens slow you
-                down. Partner with Ardur Healthcare and focus on what matters
-                most—patient care.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                    href="{{ url_for('contact.contact_form') }}"
-                    class="bg-brand-primary text-white font-montserrat font-light px-8 py-4 rounded-full hover:scale-105 hover:shadow-xl hover:bg-brand-dark transition duration-300 inline-block"
-                >
-                    Request Your Free Analysis
-                </a>
-                <a
-                    href="{{ url_for('main.services') }}"
-                    class="bg-gray-700/50 text-brand-primary bg-white font-montserrat font-medium px-8 py-4 rounded-lg hover:bg-brand-primary hover:text-white transition-colors duration-300"
-                >
-                    Explore All Services
-                </a>
+        </section>
+    
+        <!-- FAQ Section -->
+        {% set ns = namespace(all_faqs=[]) %} {% if service.sections %} {% for
+        section in service.sections %} {% if section.faqs %} {% for faq in
+        section.faqs %} {% set ns.all_faqs = ns.all_faqs + [faq] %} {% endfor %} {%
+        endif %} {% endfor %} {% elif service.faqs %} {% set ns.all_faqs =
+        service.faqs %} {% endif %} {% if ns.all_faqs %}
+        <section class="py-16 md:py-24 bg-gray-50">
+            <div class="max-w-4xl mx-auto px-6">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h2
+                        class="text-3xl md:text-4xl font-montserrat font-medium text-brand-dark mb-4"
+                    >
+                        Frequently Asked Questions
+                    </h2>
+                    <p class="text-lg text-gray-600">
+                        Everything you need to know about our {{ service.title }}.
+                    </p>
+                </div>
+                <div class="space-y-4" data-aos="fade-up" data-aos-delay="100">
+                    {% for faq in ns.all_faqs %}
+                    <div class="bg-white rounded-lg border border-gray-200/80">
+                        <button
+                            class="w-full text-left p-6 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary rounded-lg"
+                            onclick="toggleFAQ({{ loop.index }})"
+                        >
+                            <div class="flex justify-between items-center">
+                                <h3
+                                    class="text-lg font-medium text-brand-dark pr-4"
+                                >
+                                    {{ faq.question }}
+                                </h3>
+                                <i
+                                    class="ri-add-line text-2xl text-brand-primary transition-transform duration-300"
+                                    id="faq-icon-{{ loop.index }}"
+                                ></i>
+                            </div>
+                        </button>
+                        <div
+                            class="px-6 pb-0 max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
+                            id="faq-answer-container-{{ loop.index }}"
+                        >
+                            <p
+                                class="text-gray-600 leading-relaxed border-t border-gray-200 pt-4 pb-6"
+                            >
+                                {{ faq.answer }}
+                            </p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
             </div>
-        </div>
-    </section>
-</main>
-
-<script>
-    function toggleFAQ(index) {
-        const container = document.getElementById(
-            `faq-answer-container-${index}`,
-        );
-        const icon = document.getElementById(`faq-icon-${index}`);
-        if (container.style.maxHeight && container.style.maxHeight !== "0px") {
-            container.style.maxHeight = "0px";
-            icon.classList.remove("ri-subtract-line");
-            icon.classList.add("ri-add-line");
-        } else {
-            container.style.maxHeight = container.scrollHeight + "px";
-            icon.classList.remove("ri-add-line");
-            icon.classList.add("ri-subtract-line");
+        </section>
+        {% endif %}
+    
+        <!-- CTA Section -->
+        <section class="py-16 md:py-24 bg-brand-secondary text-white">
+            <div class="max-w-4xl mx-auto px-6 text-center" data-aos="fade-up">
+                <h2
+                    class="text-3xl md:text-4xl font-thin font-montserrat text-brand-dark mb-6"
+                >
+                    Ready to Optimize Your Revenue Cycle?
+                </h2>
+                <p
+                    class="text-xl text-brand-dark/80 font-light mb-8 max-w-2xl mx-auto"
+                >
+                    Stop letting claim denials and administrative burdens slow you
+                    down. Partner with Ardur Healthcare and focus on what matters
+                    most—patient care.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a
+                        href="{{ url_for('contact.contact_form') }}"
+                        class="bg-brand-primary text-white font-montserrat font-light px-8 py-4 rounded-full hover:scale-105 hover:shadow-xl hover:bg-brand-dark transition duration-300 inline-block"
+                    >
+                        Request Your Free Analysis
+                    </a>
+                    <a
+                        href="{{ url_for('main.services') }}"
+                        class="bg-gray-700/50 text-brand-primary bg-white font-montserrat font-medium px-8 py-4 rounded-lg hover:bg-brand-primary hover:text-white transition-colors duration-300"
+                    >
+                        Explore All Services
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <script>
+        function toggleFAQ(index) {
+            const container = document.getElementById(
+                `faq-answer-container-${index}`,
+            );
+            const icon = document.getElementById(`faq-icon-${index}`);
+    
+            if (container.style.maxHeight && container.style.maxHeight !== "0px") {
+                container.style.maxHeight = "0px";
+                icon.classList.remove("ri-subtract-line");
+                icon.classList.add("ri-add-line");
+            } else {
+                container.style.maxHeight = container.scrollHeight + "px";
+                icon.classList.remove("ri-add-line");
+                icon.classList.add("ri-subtract-line");
+            }
         }
-    }
-
-    document.addEventListener("DOMContentLoaded", function () {
-        if (typeof AOS !== "undefined") {
-            AOS.init({
-                duration: 800,
-                once: true,
-                offset: 100,
-            });
-        }
-    });
-</script>
-<link
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
-    rel="stylesheet"
-/>
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-{% endblock %}
+    
+        document.addEventListener("DOMContentLoaded", function () {
+            if (typeof AOS !== "undefined") {
+                AOS.init({
+                    duration: 800,
+                    once: true,
+                    offset: 100,
+                });
+            }
+        });
+    </script>
+    
+    <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+        rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    {% endblock %}
+    

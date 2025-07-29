@@ -95,6 +95,14 @@ def create_app(config_class=Config):
         from .analytics import analytics as analytics_blueprint
         app.register_blueprint(analytics_blueprint)
         print("✅ Registered analytics blueprint.")
+        
+        from .crm import crm as crm_blueprint
+        app.register_blueprint(crm_blueprint)
+        print("✅ Registered CRM blueprint.")
+        
+        from .blog import blog as blog_blueprint
+        app.register_blueprint(blog_blueprint)
+        print("✅ Registered blog blueprint.")
     except Exception as e:
         raise RuntimeError(f"❌ Failed to register blueprints: {str(e)}")
 

@@ -15,6 +15,11 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
+            href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+            rel="stylesheet"
+        />
+
+        <link
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;700;800;900&display=swap"
             rel="stylesheet"
         />
@@ -240,24 +245,41 @@
         >
             <div class="container h-full">
                 <div class="flex justify-between items-center h-full">
-                    <div class="flex-shrink-0">
-                        <a
-                            href="{{ url_for('main.home') }}"
-                            class="group block"
-                        >
-                            <div class="flex flex-col items-center text-center">
-                                <img
-                                    src="{{ url_for('static', filename='images/logoog.png') }}"
-                                    alt="Ardur Healthcare Logo"
-                                    class="h-16 sm:h-24 sm:w-64 w-48 transition-transform duration-300 group-hover:scale-105 p-2"
-                                />
-                                <!-- <span
+                    <div class="flex items-center space-x-8">
+                        <div class="flex-shrink-0">
+                            <a
+                                href="{{ url_for('main.home') }}"
+                                class="group block"
+                            >
+                                <div
+                                    class="flex flex-col items-center text-center"
+                                >
+                                    <img
+                                        src="{{ url_for('static', filename='images/logoog.png') }}"
+                                        alt="Ardur Healthcare Logo"
+                                        class="h-16 sm:h-24 sm:w-64 w-48 transition-transform duration-300 group-hover:scale-105 p-2"
+                                    />
+                                    <!-- <span
                                     class="mt-1 text-xs sm:text-sm text-slate-600 font-medium tracking-wide group-hover:text-brand-accent transition-colors duration-300"
                                 >
                                     Quality Outcomes, Modern Healthcare
                                 </span> -->
-                            </div>
-                        </a>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Contact Number -->
+                        <div class="hidden lg:block">
+                            <a
+                                href="tel:+17028092713"
+                                class="flex items-center text-brand-dark hover:text-brand-primary transition-colors duration-300"
+                            >
+                                <i class="ri-phone-line text-lg mr-2"></i>
+                                <span class="font-medium"
+                                    >+1 (702) 809-2713</span
+                                >
+                            </a>
+                        </div>
                     </div>
 
                     <!-- Desktop Navigation -->
@@ -348,7 +370,7 @@
 
                         <div class="relative desktop-dropdown">
                             <a
-                                href="{{ url_for('main.services') }}"
+                                href="{{ url_for('services.index') }}"
                                 class="nav-link {% if request.endpoint and request.endpoint.startswith('services.') %}active{% endif %} flex items-center"
                             >
                                 Services
@@ -408,7 +430,7 @@
                                     Denial Management
                                 </a>
                                 <a
-                                    href="{{ url_for('main.services') }}"
+                                    href="{{ url_for('services.index') }}"
                                     class="flex items-center px-3 py-2 text-sm rounded-md hover:bg-brand-secondary hover:text-brand-primary transition-colors duration-200 border-t border-slate-200 mt-2 pt-3"
                                 >
                                     <i
@@ -615,7 +637,7 @@
                                 >Denial Management</a
                             >
                             <a
-                                href="{{ url_for('main.services') }}"
+                                href="{{ url_for('services.index') }}"
                                 class="mobile-nav-link text-sm text-gray-600 hover:text-brand-primary border-t border-gray-200 mt-2 pt-2"
                                 >View All Services</a
                             >
@@ -721,20 +743,13 @@
         <footer class="bg-brand-dark text-white font-montserrat">
             <div class="container py-12">
                 <div
-                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8"
                 >
-                    <div class="md:col-span-2 lg:col-span-1">
-                        <!-- <img
-                            src="{{ url_for('static', filename='images/white-logo.png') }}"
-                            alt="Ardur Healthcare Logo"
-                            class="h-10 mb-4"
-                        /> -->
-                        <p
-                            class="h-10 mb-4 text-brand-secondary fond-thin text-xl"
-                        >
-                            @Ardur Healthcare
-                        </p>
-                        <p class="text-gray-400 text-sm leading-relaxed">
+                    <div>
+                        <h4 class="font-semibold mb-4 tracking-wide">
+                            Ardur Healthcare
+                        </h4>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-4">
                             Technology-enabled medical billing and revenue cycle
                             management services for healthcare providers
                             globally.
@@ -743,47 +758,93 @@
 
                     <div>
                         <h4 class="font-semibold mb-4 tracking-wide">
-                            Quick Links
+                            Services
                         </h4>
                         <ul class="space-y-2 text-gray-300">
                             <li>
                                 <a
-                                    href="{{ url_for('main.home') }}"
+                                    href="{{ url_for('services.service_detail', service_name='eligibility-and-benefits-verification-services') }}"
                                     class="hover:text-white transition duration-300"
                                 >
-                                    Home
+                                    Eligibility Verification
                                 </a>
                             </li>
                             <li>
                                 <a
-                                    href="{{ url_for('main.about') }}"
+                                    href="{{ url_for('services.service_detail', service_name='provider-credentialing-and-enrollment-services') }}"
                                     class="hover:text-white transition duration-300"
                                 >
-                                    About Us
+                                    Provider Credentialing
                                 </a>
                             </li>
                             <li>
                                 <a
-                                    href="{{ url_for('main.services') }}"
+                                    href="{{ url_for('services.service_detail', service_name='medical-coding-services') }}"
                                     class="hover:text-white transition duration-300"
                                 >
-                                    Services
+                                    Medical Coding
                                 </a>
                             </li>
                             <li>
                                 <a
-                                    href="{{ url_for('resources.resources_index') }}"
+                                    href="{{ url_for('services.service_detail', service_name='denial-management-services') }}"
                                     class="hover:text-white transition duration-300"
                                 >
-                                    Resources
+                                    Denial Management
                                 </a>
                             </li>
                             <li>
                                 <a
-                                    href="{{ url_for('main.privacy_policy') }}"
+                                    href="{{ url_for('services.index') }}"
+                                    class="hover:text-brand-secondary transition duration-300 font-medium"
+                                >
+                                    View All →
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold mb-4 tracking-wide">State</h4>
+                        <ul class="space-y-2 text-gray-300">
+                            <li>
+                                <a
+                                    href="{{ url_for('ourreach.state_page', state_slug='medical-billing-services-in-california') }}"
                                     class="hover:text-white transition duration-300"
                                 >
-                                    Privacy Policy
+                                    California
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="{{ url_for('ourreach.state_page', state_slug='medical-billing-services-in-texas') }}"
+                                    class="hover:text-white transition duration-300"
+                                >
+                                    Texas
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="{{ url_for('ourreach.state_page', state_slug='medical-billing-services-in-florida') }}"
+                                    class="hover:text-white transition duration-300"
+                                >
+                                    Florida
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="{{ url_for('ourreach.state_page', state_slug='medical-billing-services-in-new_york') }}"
+                                    class="hover:text-white transition duration-300"
+                                >
+                                    New York
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="{{ url_for('ourreach.index') }}"
+                                    class="hover:text-brand-secondary transition duration-300 font-medium"
+                                >
+                                    View All →
                                 </a>
                             </li>
                         </ul>
@@ -791,39 +852,47 @@
 
                     <div>
                         <h4 class="font-semibold mb-4 tracking-wide">
-                            Our Services
+                            Specialty
                         </h4>
                         <ul class="space-y-2 text-gray-300">
                             <li>
                                 <a
-                                    href="#"
+                                    href="{{ url_for('specialities.specialty', specialty_type='mental-health') }}"
                                     class="hover:text-white transition duration-300"
                                 >
-                                    Medical Billing
+                                    Mental Health
                                 </a>
                             </li>
                             <li>
                                 <a
-                                    href="#"
+                                    href="{{ url_for('specialities.specialty', specialty_type='family-practice') }}"
                                     class="hover:text-white transition duration-300"
                                 >
-                                    Credentialing
+                                    Family Practice
                                 </a>
                             </li>
                             <li>
                                 <a
-                                    href="#"
+                                    href="{{ url_for('specialities.specialty', specialty_type='podiatry') }}"
                                     class="hover:text-white transition duration-300"
                                 >
-                                    Accounts Receivable
+                                    Podiatry
                                 </a>
                             </li>
                             <li>
                                 <a
-                                    href="#"
+                                    href="{{ url_for('specialities.specialty', specialty_type='physical-therapy') }}"
                                     class="hover:text-white transition duration-300"
                                 >
-                                    Denial Management
+                                    Physical Therapy
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="{{ url_for('specialities.specialities_main') }}"
+                                    class="hover:text-brand-secondary transition duration-300 font-medium"
+                                >
+                                    View All →
                                 </a>
                             </li>
                         </ul>
@@ -850,7 +919,7 @@
                                     class="ri-phone-line mr-3 mt-1 text-brand-primary"
                                 ></i>
                                 <a
-                                    href="tel:+1 (702) 809-2713"
+                                    href="tel:+17028092713"
                                     class="hover:text-white transition duration-300"
                                 >
                                     +1 (702) 809-2713

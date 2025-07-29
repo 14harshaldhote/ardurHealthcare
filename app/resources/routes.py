@@ -51,51 +51,77 @@ def article():
     """Redirect old article route to new blog route"""
     return redirect(url_for('resources.blog'))
 
-# Specific blog routes with SEO data
-@resources.route('/blog/what-is-medical-billing')
+# Specific blog routes with SEO data - Updated to match JSON slugs
+@resources.route('/blog/what-is-medical-billing-complete-beginners-guide')
 def what_is_medical_billing():
     """What Is Medical Billing blog post"""
-    post = get_blog_post('what-is-medical-billing')
+    post = get_blog_post('what-is-medical-billing-complete-beginners-guide')
     if not post:
         abort(404)
-    related_posts = get_related_posts('what-is-medical-billing', limit=3)
+    related_posts = get_related_posts('what-is-medical-billing-complete-beginners-guide', limit=3)
     return render_template('blog_post.html', post=post, related_posts=related_posts)
 
-@resources.route('/blog/medical-coding-vs-billing')
+@resources.route('/blog/medical-coding-vs-billing-whats-the-difference')
 def medical_coding_vs_billing():
     """Medical Coding vs Billing blog post"""
-    post = get_blog_post('medical-coding-vs-billing')
+    post = get_blog_post('medical-coding-vs-billing-whats-the-difference')
     if not post:
         abort(404)
-    related_posts = get_related_posts('medical-coding-vs-billing', limit=3)
+    related_posts = get_related_posts('medical-coding-vs-billing-whats-the-difference', limit=3)
     return render_template('blog_post.html', post=post, related_posts=related_posts)
 
-@resources.route('/blog/medical-billing-denial-reasons')
+@resources.route('/blog/understanding-medical-billing-denial-reasons')
 def medical_billing_denial_reasons():
     """Medical Billing Denial Reasons blog post"""
-    post = get_blog_post('medical-billing-denial-reasons')
+    post = get_blog_post('understanding-medical-billing-denial-reasons')
     if not post:
         abort(404)
-    related_posts = get_related_posts('medical-billing-denial-reasons', limit=3)
+    related_posts = get_related_posts('understanding-medical-billing-denial-reasons', limit=3)
     return render_template('blog_post.html', post=post, related_posts=related_posts)
 
-@resources.route('/blog/cpt-icd10-hcpcs-codes')
+@resources.route('/blog/understanding-cpt-icd-10-hcpcs-codes-medical-billing-basics')
 def cpt_icd10_hcpcs_codes():
     """CPT ICD-10 HCPCS Codes blog post"""
-    post = get_blog_post('cpt-icd10-hcpcs-codes')
+    post = get_blog_post('understanding-cpt-icd-10-hcpcs-codes-medical-billing-basics')
     if not post:
         abort(404)
-    related_posts = get_related_posts('cpt-icd10-hcpcs-codes', limit=3)
+    related_posts = get_related_posts('understanding-cpt-icd-10-hcpcs-codes-medical-billing-basics', limit=3)
     return render_template('blog_post.html', post=post, related_posts=related_posts)
 
-@resources.route('/blog/medical-billing-process-overview')
+@resources.route('/blog/medical-billing-process-step-by-step-overview')
 def medical_billing_process_overview():
     """Medical Billing Process blog post"""
-    post = get_blog_post('medical-billing-process-overview')
+    post = get_blog_post('medical-billing-process-step-by-step-overview')
     if not post:
         abort(404)
-    related_posts = get_related_posts('medical-billing-process-overview', limit=3)
+    related_posts = get_related_posts('medical-billing-process-step-by-step-overview', limit=3)
     return render_template('blog_post.html', post=post, related_posts=related_posts)
+
+# Legacy redirects for old URLs
+@resources.route('/blog/what-is-medical-billing')
+def redirect_what_is_medical_billing():
+    """Redirect old URL to new slug"""
+    return redirect(url_for('resources.blog_post', slug='what-is-medical-billing-complete-beginners-guide'), 301)
+
+@resources.route('/blog/medical-coding-vs-billing')
+def redirect_medical_coding_vs_billing():
+    """Redirect old URL to new slug"""
+    return redirect(url_for('resources.blog_post', slug='medical-coding-vs-billing-whats-the-difference'), 301)
+
+@resources.route('/blog/medical-billing-denial-reasons')
+def redirect_medical_billing_denial_reasons():
+    """Redirect old URL to new slug"""
+    return redirect(url_for('resources.blog_post', slug='understanding-medical-billing-denial-reasons'), 301)
+
+@resources.route('/blog/cpt-icd10-hcpcs-codes')
+def redirect_cpt_icd10_hcpcs_codes():
+    """Redirect old URL to new slug"""
+    return redirect(url_for('resources.blog_post', slug='understanding-cpt-icd-10-hcpcs-codes-medical-billing-basics'), 301)
+
+@resources.route('/blog/medical-billing-process-overview')
+def redirect_medical_billing_process_overview():
+    """Redirect old URL to new slug"""
+    return redirect(url_for('resources.blog_post', slug='medical-billing-process-step-by-step-overview'), 301)
 
 @resources.route('/case-studies/')
 def case_studies():

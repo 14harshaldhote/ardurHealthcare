@@ -1,6 +1,8 @@
 from flask import render_template, jsonify, request, current_app
 from flask_login import login_required
 from . import analytics
+from ..auth.models import Permission
+from ..auth.routes import require_permission
 import json
 import os
 from datetime import datetime, timedelta
@@ -9,6 +11,7 @@ from collections import Counter, defaultdict
 
 @analytics.route('/dashboard')
 @login_required
+@require_permission(Permission.ANALYTICS_VIEW)
 def dashboard():
     """Analytics dashboard showing form submission data"""
     try:
@@ -64,6 +67,7 @@ def dashboard():
 
 @analytics.route('/api/data')
 @login_required
+@require_permission(Permission.ANALYTICS_VIEW)
 def api_data():
     """API endpoint for analytics data"""
     try:
@@ -119,6 +123,7 @@ def api_data():
 
 @analytics.route('/reports/state-summary')
 @login_required
+@require_permission(Permission.ANALYTICS_VIEW)
 def state_summary():
     """Generate state-wise summary report"""
     try:
@@ -184,6 +189,7 @@ def load_analytics_data():
 
 @analytics.route('/export/csv')
 @login_required
+@require_permission(Permission.ANALYTICS_EXPORT)
 def export_csv():
     """Export analytics data as CSV"""
     try:

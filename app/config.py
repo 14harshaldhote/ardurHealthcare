@@ -15,6 +15,15 @@ class Config:
     JSON_STORAGE_PATH = os.path.join(BASEDIR, 'data')
     USERS_FILE = os.path.join(JSON_STORAGE_PATH, 'users.json')
     CONTACTS_FILE = os.path.join(JSON_STORAGE_PATH, 'contacts.json')
+    
+    # CRM storage configuration
+    LEADS_FILE = os.path.join(JSON_STORAGE_PATH, 'leads.json')
+    CLIENTS_FILE = os.path.join(JSON_STORAGE_PATH, 'clients.json')
+    ACTIVITIES_FILE = os.path.join(JSON_STORAGE_PATH, 'activities.json')
+    
+    # Blog storage configuration
+    BLOG_POSTS_FILE = os.path.join(JSON_STORAGE_PATH, 'blog_posts.json')
+    BLOG_COMMENTS_FILE = os.path.join(JSON_STORAGE_PATH, 'blog_comments.json')
 
     # Flask-Mail configuration with performance optimizations
     MAIL_SERVER = os.environ.get('MAIL_SERVER') or 'smtp.gmail.com'

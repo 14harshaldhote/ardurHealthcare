@@ -1,0 +1,16 @@
+{
+  "admin": {
+    "email": "admin@ardurhealthcare.com",
+    "password_hash": "scrypt:32768:8:1$W91fpqz3WYHklGqv$a739cff036b2418dfaf5043c828a3bd2e5acfd34f6c58f4bcaa06f800de1cc96365b893361e0eb72982fd0c36bf3ce9e9d1c097fd96e5a1a112a1ecc3482929d",
+    "role": "admin",
+    "created_at": "2025-07-28T16:35:31.717647",
+    "is_active": true,
+    "profile": {
+      "first_name": "Admin",
+      "last_name": "User",
+      "phone": "555-0123",
+      "company": "Ardur Healthcare",
+      "notes": "System Administrator"
+    }
+  }
+}
