@@ -1,0 +1,84 @@
+.specialty-detail {
+    padding-bottom: 60px;
+}
+
+.hero-section {
+    background-color: #f8f9fa;
+    padding: 60px 0;
+    margin-bottom: 40px;
+}
+
+.hero-section h1 {
+    margin-bottom: 20px;
+}
+
+.hero-section .lead {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+}
+
+.content-section {
+    padding: 40px 0;
+}
+
+.content-section h2 {
+    margin-bottom: 30px;
+}
+
+.section-content {
+    margin-bottom: 30px;
+}
+
+.bullet-item {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    height: 100%;
+}
+
+.bullet-item h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.bullet-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.bullet-list li {
+    padding: 10px 0;
+    padding-left: 25px;
+    position: relative;
+}
+
+.bullet-list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #28a745;
+}
+
+.faq-item {
+    margin-bottom: 30px;
+}
+
+.faq-item .question {
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.section-cta {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.section-closing {
+    margin-top: 40px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}

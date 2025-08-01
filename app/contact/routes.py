@@ -93,6 +93,13 @@ def contact_form():
 
         current_app.logger.info("🚀 Background processing started for {} ({})".format(name, form_data.get('email', 'unknown')))
 
+        # Check if this is an AJAX request (from modal)
+        if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+            return jsonify({
+                'success': True,
+                'message': 'Thank you, {}! Your message has been received successfully. We will contact you soon regarding your {}.'.format(name, inquiry_type)
+            })
+
         # Redirect the user immediately - no waiting for emails/logging
         return redirect(url_for('contact.contact_form'))
     else:
@@ -102,6 +109,14 @@ def contact_form():
             if 'specialties' in form.errors:
                 current_app.logger.warning(f"Specialty field errors: {form.errors['specialties']}")
                 current_app.logger.warning(f"Specialty field data: '{form.specialties.data}'")
+
+            # Handle AJAX form validation errors
+            if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+                return jsonify({
+                    'success': False,
+                    'errors': form.errors,
+                    'message': 'Please check the form for errors and try again.'
+                })
 
     # If the request is GET (initial load) or form validation failed (on POST),
     # render the contact_form.html template.

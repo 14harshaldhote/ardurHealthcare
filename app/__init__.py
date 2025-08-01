@@ -2,6 +2,7 @@
 from flask import Flask, session, flash, render_template
 from flask_login import LoginManager
 from flask_mail import Mail
+from flask_wtf.csrf import CSRFProtect
 from .config import Config
 import os
 
@@ -10,6 +11,7 @@ login_manager.login_view = 'auth.login'  # type: ignore
 login_manager.login_message_category = 'info'
 
 mail = Mail()
+csrf = CSRFProtect()
 
 def create_app(config_class=Config):
     print("🔧 Creating Flask app...")
@@ -26,6 +28,9 @@ def create_app(config_class=Config):
         template_folder=os.path.join(app_dir, 'templates'), # This is the default, but explicit is good
         static_folder=os.path.join(project_root, 'static') # TELL FLASK WHERE YOUR STATIC FOLDER IS
     )
+    
+    # Initialize CSRF protection
+    csrf.init_app(app)
     # --- END OF REQUIRED CHANGE ---
 
     print("🔑 Loading configuration...")

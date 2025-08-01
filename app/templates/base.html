@@ -312,7 +312,7 @@
                                     Medical Specialties
                                 </h3>
                                 <a
-                                    href="{{ url_for('specialities.specialty', specialty_type='family-practice') }}"
+                                    href="{{ url_for('specialities.specialty_page', specialty_slug='family-practice-billing-services') }}"
                                     class="flex items-center px-3 py-2 text-sm rounded-md hover:bg-brand-secondary hover:text-brand-primary transition-colors duration-200"
                                 >
                                     <i
@@ -321,7 +321,7 @@
                                     Family Practice
                                 </a>
                                 <a
-                                    href="{{ url_for('specialities.specialty', specialty_type='orthopedic') }}"
+                                    href="{{ url_for('specialities.specialty_page', specialty_slug='orthopedic-billing-services') }}"
                                     class="flex items-center px-3 py-2 text-sm rounded-md hover:bg-brand-secondary hover:text-brand-primary transition-colors duration-200"
                                 >
                                     <i
@@ -330,7 +330,7 @@
                                     Orthopedic
                                 </a>
                                 <a
-                                    href="{{ url_for('specialities.specialty', specialty_type='dermatology') }}"
+                                    href="{{ url_for('specialities.specialty_page', specialty_slug='dermatology-billing-services') }}"
                                     class="flex items-center px-3 py-2 text-sm rounded-md hover:bg-brand-secondary hover:text-brand-primary transition-colors duration-200"
                                 >
                                     <i
@@ -339,7 +339,7 @@
                                     Dermatology
                                 </a>
                                 <a
-                                    href="{{ url_for('specialities.specialty', specialty_type='optometry') }}"
+                                    href="{{ url_for('specialities.specialty_page', specialty_slug='optometry-billing-services') }}"
                                     class="flex items-center px-3 py-2 text-sm rounded-md hover:bg-brand-secondary hover:text-brand-primary transition-colors duration-200"
                                 >
                                     <i
@@ -348,7 +348,7 @@
                                     Optometry
                                 </a>
                                 <a
-                                    href="{{ url_for('specialities.specialty', specialty_type='wound-care') }}"
+                                    href="{{ url_for('specialities.specialty_page', specialty_slug='wound-care-billing-services') }}"
                                     class="flex items-center px-3 py-2 text-sm rounded-md hover:bg-brand-secondary hover:text-brand-primary transition-colors duration-200"
                                 >
                                     <i
@@ -357,7 +357,7 @@
                                     Wound Care
                                 </a>
                                 <a
-                                    href="{{ url_for('specialities.specialty', specialty_type='general-surgery') }}"
+                                    href="{{ url_for('specialities.specialty_page', specialty_slug='general-surgery-billing-services') }}"
                                     class="flex items-center px-3 py-2 text-sm rounded-md hover:bg-brand-secondary hover:text-brand-primary transition-colors duration-200"
                                 >
                                     <i
@@ -563,32 +563,32 @@
                             :class="{'mobile-dropdown-menu-open': openMobileDropdown === 'specialities'}"
                         >
                             <a
-                                href="{{ url_for('specialities.specialty', specialty_type='family-practice') }}"
+                                href="{{ url_for('specialities.specialty_page', specialty_slug='family-practice-billing-services') }}"
                                 class="mobile-nav-link text-sm text-gray-600 hover:text-brand-primary"
                                 >Family Practice</a
                             >
                             <a
-                                href="{{ url_for('specialities.specialty', specialty_type='orthopedic') }}"
+                                href="{{ url_for('specialities.specialty_page', specialty_slug='orthopedic-billing-services') }}"
                                 class="mobile-nav-link text-sm text-gray-600 hover:text-brand-primary"
                                 >Orthopedic</a
                             >
                             <a
-                                href="{{ url_for('specialities.specialty', specialty_type='dermatology') }}"
+                                href="{{ url_for('specialities.specialty_page', specialty_slug='dermatology-billing-services') }}"
                                 class="mobile-nav-link text-sm text-gray-600 hover:text-brand-primary"
                                 >Dermatology</a
                             >
                             <a
-                                href="{{ url_for('specialities.specialty', specialty_type='optometry') }}"
+                                href="{{ url_for('specialities.specialty_page', specialty_slug='optometry-billing-services') }}"
                                 class="mobile-nav-link text-sm text-gray-600 hover:text-brand-primary"
                                 >Optometry</a
                             >
                             <a
-                                href="{{ url_for('specialities.specialty', specialty_type='wound-care') }}"
+                                href="{{ url_for('specialities.specialty_page', specialty_slug='wound-care-billing-services') }}"
                                 class="mobile-nav-link text-sm text-gray-600 hover:text-brand-primary"
                                 >Wound Care</a
                             >
                             <a
-                                href="{{ url_for('specialities.specialty', specialty_type='general-surgery') }}"
+                                href="{{ url_for('specialities.specialty_page', specialty_slug='general-surgery-billing-services') }}"
                                 class="mobile-nav-link text-sm text-gray-600 hover:text-brand-primary"
                                 >General Surgery</a
                             >
@@ -851,13 +851,14 @@
                     </div>
 
                     <div>
+                                                <div>
                         <h4 class="font-semibold mb-4 tracking-wide">
                             Specialty
                         </h4>
                         <ul class="space-y-2 text-gray-300">
                             <li>
                                 <a
-                                    href="{{ url_for('specialities.specialty', specialty_type='mental-health') }}"
+                                    href="{{ url_for('specialities.specialty_page', specialty_slug='mental-health-billing-services') }}"
                                     class="hover:text-white transition duration-300"
                                 >
                                     Mental Health
@@ -865,7 +866,7 @@
                             </li>
                             <li>
                                 <a
-                                    href="{{ url_for('specialities.specialty', specialty_type='family-practice') }}"
+                                    href="{{ url_for('specialities.specialty_page', specialty_slug='family-practice-billing-services') }}"
                                     class="hover:text-white transition duration-300"
                                 >
                                     Family Practice
@@ -873,7 +874,7 @@
                             </li>
                             <li>
                                 <a
-                                    href="{{ url_for('specialities.specialty', specialty_type='podiatry') }}"
+                                    href="{{ url_for('specialities.specialty_page', specialty_slug='podiatry-billing-services') }}"
                                     class="hover:text-white transition duration-300"
                                 >
                                     Podiatry
@@ -881,7 +882,7 @@
                             </li>
                             <li>
                                 <a
-                                    href="{{ url_for('specialities.specialty', specialty_type='physical-therapy') }}"
+                                    href="{{ url_for('specialities.specialty_page', specialty_slug='physical-therapy-billing-services') }}"
                                     class="hover:text-white transition duration-300"
                                 >
                                     Physical Therapy
@@ -1098,5 +1099,8 @@
 
         <!-- Custom Scripts Block -->
         {% block scripts %}{% endblock %}
+
+        <!-- Contact Modal -->
+        {% include 'includes/contact_modal.html' %}
     </body>
 </html>

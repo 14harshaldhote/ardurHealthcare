@@ -589,7 +589,7 @@ Ardur Healthcare{% endblock %} {% block meta %}
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-12">
             <!-- Behavioral Health -->
             <a
-                href="{{ url_for('specialities.specialty', specialty_type='mental-health') }}"
+                href="{{ url_for('specialities.specialty_page', specialty_slug='mental-health-billing-services') }}"
                 class="block"
             >
                 <div
@@ -612,7 +612,7 @@ Ardur Healthcare{% endblock %} {% block meta %}
 
             <!-- Family Practice -->
             <a
-                href="{{ url_for('specialities.specialty', specialty_type='family-practice') }}"
+                href="{{ url_for('specialities.specialty_page', specialty_slug='family-practice-billing-services') }}"
                 class="block"
             >
                 <div
@@ -635,7 +635,7 @@ Ardur Healthcare{% endblock %} {% block meta %}
 
             <!-- Podiatry -->
             <a
-                href="{{ url_for('specialities.specialty', specialty_type='podiatry') }}"
+                href="{{ url_for('specialities.specialty_page', specialty_slug='podiatry-billing-services') }}"
                 class="block"
             >
                 <div
@@ -657,7 +657,7 @@ Ardur Healthcare{% endblock %} {% block meta %}
             </a>
             <!-- Wound Care -->
             <a
-                href="{{ url_for('specialities.specialty', specialty_type='wound-care') }}"
+                href="{{ url_for('specialities.specialty_page', specialty_slug='wound-care-billing-services') }}"
                 class="block"
             >
                 <div
@@ -680,7 +680,7 @@ Ardur Healthcare{% endblock %} {% block meta %}
 
             <!-- Physical Therapy -->
             <a
-                href="{{ url_for('specialities.specialty', specialty_type='physical-therapy') }}"
+                href="{{ url_for('specialities.specialty_page', specialty_slug='physical-therapy-billing-services') }}"
                 class="block"
             >
                 <div
@@ -775,9 +775,9 @@ Ardur Healthcare{% endblock %} {% block meta %}
                     class="absolute -bottom-4 -right-4 w-24 h-24 bg-brand-primary rounded-full opacity-10"
                 ></div>
                 <img
-                    src="{{ url_for('static', filename='images/usa-map.svg') }}"
+                    src="{{ url_for('static', filename='images/ussa-map.jpg') }}"
                     alt="USA Coverage Map"
-                    class="rounded-xl shadow-xl w-full h-auto relative z-10"
+                    class=" w-full h-auto "
                 />
             </div>
         </div>

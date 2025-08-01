@@ -1,84 +1,42 @@
-{% extends "base.html" %} {% block title %}{{ specialty.meta_title or (specialty.specialty + ' Medical Billing Services | Ardur Healthcare') }}{% endblock %} {% block meta %}
-<meta
-    name="description"
-    content="{{ specialty.meta_description or (specialty.description + ' Professional medical billing services for ' + specialty.specialty.lower() + ' providers.') }}"
-/>
-<link rel="canonical" href="{{ request.url }}" />
-{% endblock %} {% block stylesheets %} {{ super() }}
-<link
-    rel="stylesheet"
-    href="{{ url_for('static', filename='css/specialities/specialty.css') }}"
-/>
-{% endblock %} {% block content %}
+{% extends "base.html" %}
+
+{% block title %}{{ specialty.meta_title }}{% endblock %}
+
+{% block meta %}
+<meta name="description" content="{{ specialty.meta_description }}" />
+<link rel="canonical" href="{{ specialty.url }}" />
+{% endblock %}
+
+{% block stylesheets %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/specialities/specialty.css') }}" />
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
 <div class="bg-white">
-    <!-- Hero Section -->
     <section class="container px-4 text-center py-16 md:py-24">
         <div class="max-w-4xl mx-auto">
-            <!-- Breadcrumb -->
-            <!-- <nav class="mb-8" aria-label="Breadcrumb">
-                <ol class="flex items-center justify-center space-x-2 text-sm">
-                    <li>
-                        <a
-                            href="{{ url_for('main.home') }}"
-                            class="text-gray-500 hover:text-brand-primary transition-colors"
-                            >Home</a
-                        >
-                    </li>
-                    <li class="text-gray-400">/</li>
-                    <li>
-                        <a
-                            href="{{ url_for('specialities.specialities_main') }}"
-                            class="text-gray-500 hover:text-brand-primary transition-colors"
-                            >Specialities</a
-                        >
-                    </li>
-                    <li class="text-gray-400">/</li>
-                    <li class="text-brand-primary font-light">
-                        {{ specialty.specialty }}
-                    </li>
-                </ol>
-            </nav> -->
-
-            <div
-                class="inline-flex items-center px-4 py-2 bg-brand-primary/10 rounded-full mb-6"
-                data-aos="fade-down"
-            >
+            <div class="inline-flex items-center px-4 py-2 bg-brand-primary/10 rounded-full mb-6" data-aos="fade-down">
                 <i class="ri-health-book-line text-brand-primary mr-2"></i>
-                <span class="text-brand-primary font-light"
-                    >Specialty Billing Services</span
-                >
+                <span class="text-brand-primary font-light">Specialty Billing Services</span>
             </div>
 
-            <h1
-                class="text-4xl md:text-6xl font-bold font-montserrat text-brand-dark mb-4"
-                data-aos="fade-up"
-            >
-                {{ specialty.h1 or (specialty.specialty + ' Billing Services') }}
+            <h1 class="text-4xl md:text-6xl font-bold font-montserrat text-brand-dark mb-4" data-aos="fade-up">
+                {{ specialty.h1 }}
             </h1>
 
-            <p
-                class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8"
-                data-aos="fade-up"
-                data-aos-delay="200"
-            >
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8" data-aos="fade-up" data-aos-delay="200">
                 {{ specialty.description }}
             </p>
 
-            <div
-                class="flex flex-col sm:flex-row gap-4 justify-center"
-                data-aos="fade-up"
-                data-aos-delay="300"
-            >
-                <a
-                    href="{{ url_for('contact.contact_form') }}"
-                    class="bg-brand-primary text-white font-montserrat font-semibold px-8 py-4 rounded-full hover:scale-105 hover:bg-brand-dark hover:shadow-xl transition duration-300 inline-flex items-center justify-center"
-                >
-                    <i class="ri-phone-line mr-2"></i> Get Free Consultation
+            <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="300">
+                <a href="{{ url_for('contact.contact_form') }}"
+                    class="bg-brand-primary text-white font-montserrat font-semibold px-8 py-4 rounded-full hover:scale-105 hover:bg-brand-dark hover:shadow-xl transition duration-300 inline-flex items-center justify-center">
+                    <i class="ri-phone-line mr-2"></i> {{ specialty.cta }}
                 </a>
-                <a
-                    href="{{ url_for('specialities.specialities_main') }}"
-                    class="bg-white text-brand-primary border-2 border-brand-primary font-montserrat font-semibold px-8 py-4 rounded-full hover:bg-brand-primary hover:text-white transition duration-300 inline-flex items-center justify-center"
-                >
+                <a href="{{ url_for('specialities.specialities_main') }}"
+                    class="bg-white text-brand-primary border-2 border-brand-primary font-montserrat font-semibold px-8 py-4 rounded-full hover:bg-brand-primary hover:text-white transition duration-300 inline-flex items-center justify-center">
                     <i class="ri-list-check mr-2"></i> View All Specialties
                 </a>
             </div>
@@ -88,341 +46,192 @@
     <!-- Main Content Section -->
     <section class="py-16 md:py-24 bg-brand-light">
         <div class="container mx-auto px-4">
-            <div class="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto">
-                <!-- Main Content -->
-                <div class="flex-1 lg:w-3/4 space-y-8">
-                    <div
-                        class="bg-white rounded-2xl shadow-lg overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
-                        data-aos="fade-up"
-                    >
-                        <div class="p-8 space-y-8">
-                            <!-- Overview -->
-                            <div>
-                                <h2
-                                    class="text-2xl md:text-3xl font-bold text-brand-dark mb-6"
-                                >
-                                    Professional {{ specialty.specialty }}
-                                    Billing Solutions
-                                </h2>
-                                <p
-                                    class="text-lg leading-relaxed text-gray-700"
-                                >
-                                    {{ specialty.description }}
-                                </p>
+            <div class="flex flex-col lg:flex-row gap-12 max-w-7xl mx-auto">
+                <main class="flex-1 lg:w-3/4 space-y-12">
+                    <!-- Services Section -->
+                    {% if specialty.services %}
+                    <div id="services" class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+                        <h2 class="text-2xl md:text-3xl font-bold text-brand-dark mb-8">
+                            {{ specialty.h2_sections[0] }}
+                        </h2>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            {% for service in specialty.services %}
+                            <div class="p-6 bg-brand-light/30 rounded-xl">
+                                <h3 class="text-xl font-semibold text-brand-dark mb-3">{{ service.name }}</h3>
+                                <p class="text-gray-600">{{ service.description }}</p>
                             </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endif %}
 
-                            <!-- Why Choose Us for This Specialty -->
-                            {% if specialty.solutions %}
-                            <div>
-                                <h2
-                                    class="text-2xl md:text-3xl font-bold text-brand-dark mb-6"
-                                >
-                                    Why {{ specialty.specialty }} Providers
-                                    Choose Ardur Healthcare
-                                </h2>
-                                <div class="grid md:grid-cols-2 gap-6">
-                                    {% for solution in specialty.solutions %}
-                                    <div class="flex items-start space-x-3">
-                                        <div
-                                            class="w-6 h-6 bg-brand-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1"
-                                        >
-                                            <i
-                                                class="ri-check-line text-brand-primary text-sm"
-                                            ></i>
-                                        </div>
-                                        <p class="text-gray-700">
-                                            {{ solution }}
-                                        </p>
-                                    </div>
-                                    {% endfor %}
+                    <!-- Challenges Section -->
+                    {% if specialty.challenges %}
+                    <div id="challenges" class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+                        <h2 class="text-2xl md:text-3xl font-bold text-brand-dark mb-8">
+                            {{ specialty.h2_sections[1] }}
+                        </h2>
+                        <div class="space-y-4">
+                            {% for challenge in specialty.challenges %}
+                            <div class="flex items-start space-x-4 p-4 bg-red-50 rounded-xl">
+                                <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                    <i class="ri-error-warning-line text-red-500"></i>
+                                </div>
+                                <p class="text-gray-700">{{ challenge }}</p>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    <!-- Solutions Section -->
+                    {% if specialty.solutions %}
+                    <div id="solutions" class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+                        <h2 class="text-2xl md:text-3xl font-bold text-brand-dark mb-8">
+                            {{ specialty.h2_sections[2] }}
+                        </h2>
+                        <div class="space-y-4">
+                            {% for solution in specialty.solutions %}
+                            <div class="flex items-start space-x-4 p-4 bg-green-50 rounded-xl">
+                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                    <i class="ri-check-line text-green-500"></i>
+                                </div>
+                                <p class="text-gray-700">{{ solution }}</p>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    <!-- Why Choose Us Section -->
+                    {% if specialty.why_choose %}
+                    <div id="why-choose" class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+                        <h2 class="text-2xl md:text-3xl font-bold text-brand-dark mb-8">
+                            {{ specialty.h2_sections[3] }}
+                        </h2>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            {% for reason in specialty.why_choose %}
+                            <div class="flex items-start space-x-4 p-4 bg-brand-light/50 rounded-xl">
+                                <div class="w-8 h-8 bg-brand-primary/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                    <i class="ri-check-double-line text-brand-primary"></i>
+                                </div>
+                                <div>
+                                    {% set reason_parts = reason.split(': ') %}
+                                    <h4 class="font-semibold text-brand-dark mb-1">{{ reason_parts[0] }}</h4>
+                                    <p class="text-gray-600 text-sm">{{ reason_parts[1] }}</p>
                                 </div>
                             </div>
-                            {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endif %}
 
-                            <!-- Comprehensive Services -->
-                            <div>
-                                <h2
-                                    class="text-2xl md:text-3xl font-bold text-brand-dark mb-8"
-                                >
-                                    Comprehensive {{ specialty.specialty }}
-                                    Billing & Coding Services
-                                </h2>
-                                {% if specialty.services %}
-                                <div class="mb-8">
-                                    <h3
-                                        class="text-xl font-semibold text-brand-dark mb-4 flex items-center"
-                                    >
-                                        <i
-                                            class="ri-service-line text-brand-primary mr-2"
-                                        ></i>
-                                        Our {{ specialty.specialty }} Billing
-                                        Services
-                                    </h3>
-                                    <div class="grid md:grid-cols-2 gap-4">
-                                        {% for service in specialty.services %}
-                                        <div
-                                            class="flex items-start space-x-3 p-4 bg-brand-light rounded-lg"
-                                        >
-                                            <div
-                                                class="w-6 h-6 bg-brand-secondary/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1"
-                                            >
-                                                <i
-                                                    class="ri-check-double-line text-brand-primary text-sm"
-                                                ></i>
-                                            </div>
-                                            <div>
-                                                <h4
-                                                    class="font-semibold text-brand-dark mb-2"
-                                                >
-                                                    {{ service }}
-                                                </h4>
-                                                <p
-                                                    class="text-gray-600 text-sm"
-                                                >
-                                                    Professional {{
-                                                    service.lower() }} services
-                                                    tailored to {{
-                                                    specialty.specialty.lower()
-                                                    }} providers.
-                                                </p>
-                                            </div>
-                                        </div>
-                                        {% endfor %}
-                                    </div>
+                    <!-- Process Section -->
+                    {% if specialty.process %}
+                    <div id="process" class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+                        <h2 class="text-2xl md:text-3xl font-bold text-brand-dark mb-8">
+                            {{ specialty.h2_sections[4] }}
+                        </h2>
+                        <div class="space-y-6">
+                            {% for step in specialty.process %}
+                            <div class="flex items-start space-x-4">
+                                <div class="w-8 h-8 bg-brand-primary text-white rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                    {{ loop.index }}
                                 </div>
-                                {% endif %}
+                                <div>
+                                    {% set step_parts = step.split(': ') %}
+                                    <h4 class="font-semibold text-brand-dark mb-1">{{ step_parts[0] }}</h4>
+                                    <p class="text-gray-600">{{ step_parts[1] }}</p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endif %}
 
-                                <!-- Two-column layout for additional info -->
-                                <div class="grid md:grid-cols-2 gap-8">
-                                    {% if specialty.process %}
-                                    <div class="bg-brand-light rounded-xl p-6">
-                                        <h3
-                                            class="text-lg font-semibold text-brand-dark mb-4 flex items-center"
-                                        >
-                                            <i
-                                                class="ri-flow-chart text-brand-primary mr-2"
-                                            ></i>
-                                            Our Billing Process
-                                        </h3>
-                                        <p class="text-gray-600 mb-4 text-sm">
-                                            Streamlined workflow for {{
-                                            specialty.specialty.lower() }}
-                                            billing:
-                                        </p>
-                                        <div class="space-y-2">
-                                            {% for step in specialty.process %}
-                                            <div
-                                                class="flex items-center space-x-2 bg-white p-2 rounded-lg"
-                                            >
-                                                <div
-                                                    class="w-6 h-6 bg-brand-primary rounded-full flex items-center justify-center flex-shrink-0"
-                                                >
-                                                    <span
-                                                        class="text-white font-bold text-xs"
-                                                        >{{ loop.index }}</span
-                                                    >
-                                                </div>
-                                                <span
-                                                    class="text-gray-700 text-sm"
-                                                    >{{ step }}</span
-                                                >
-                                            </div>
-                                            {% endfor %}
-                                        </div>
-                                    </div>
-                                    {% endif %} {% if specialty.who_we_help %}
-                                    <div class="bg-brand-light rounded-xl p-6">
-                                        <h3
-                                            class="text-lg font-semibold text-brand-dark mb-4 flex items-center"
-                                        >
-                                            <i
-                                                class="ri-user-heart-line text-brand-primary mr-2"
-                                            ></i>
-                                            Who We Help
-                                        </h3>
-                                        <p class="text-gray-600 mb-4 text-sm">
-                                            We support a wide range of {{
-                                            specialty.specialty.lower() }}
-                                            providers:
-                                        </p>
-                                        <div class="space-y-2">
-                                            {% for provider in
-                                            specialty.who_we_help %}
-                                            <div
-                                                class="flex items-center space-x-2 bg-white p-2 rounded-lg"
-                                            >
-                                                <i
-                                                    class="ri-stethoscope-line text-brand-primary text-sm"
-                                                ></i>
-                                                <span
-                                                    class="text-gray-700 text-sm"
-                                                    >{{ provider }}</span
-                                                >
-                                            </div>
-                                            {% endfor %}
-                                        </div>
-                                    </div>
+                    <!-- Who We Help Section -->
+                    {% if specialty.who_we_help %}
+                    <div id="who-we-help" class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+                        <h2 class="text-2xl md:text-3xl font-bold text-brand-dark mb-8">
+                            {{ specialty.h2_sections[5] }}
+                        </h2>
+                        <p class="text-lg text-gray-700 mb-8">{{ specialty.who_we_help.description }}</p>
+                        <div class="space-y-4">
+                            {% for provider in specialty.who_we_help.providers %}
+                            <div class="flex items-start space-x-4 p-4 bg-brand-light/30 rounded-xl">
+                                <div class="w-8 h-8 bg-brand-primary/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                    <i class="ri-user-line text-brand-primary"></i>
+                                </div>
+                                {% set provider_parts = provider.split(': ') %}
+                                <div>
+                                    <h4 class="font-semibold text-brand-dark mb-1">{{ provider_parts[0] }}</h4>
+                                    {% if provider_parts|length > 1 %}
+                                    <p class="text-gray-600 text-sm">{{ provider_parts[1] }}</p>
                                     {% endif %}
                                 </div>
                             </div>
-
-                            <!-- Challenges Section -->
-                            {% if specialty.challenges %}
-                            <div>
-                                <h2
-                                    class="text-2xl md:text-3xl font-bold text-brand-dark mb-6"
-                                >
-                                    Common {{ specialty.specialty }} Billing
-                                    Challenges We Solve
-                                </h2>
-                                <div
-                                    class="bg-red-50 border-l-4 border-red-400 p-6 rounded-lg"
-                                >
-                                    <div class="grid md:grid-cols-2 gap-4">
-                                        {% for challenge in specialty.challenges
-                                        %}
-                                        <div class="flex items-start space-x-3">
-                                            <i
-                                                class="ri-error-warning-line text-red-500 mt-1 flex-shrink-0"
-                                            ></i>
-                                            <p class="text-gray-700 text-sm">
-                                                {{ challenge }}
-                                            </p>
-                                        </div>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                            </div>
-                            {% endif %}
-
-                            <!-- FAQ Section -->
-                            {% if specialty.faqs %}
-                            <div>
-                                <h2
-                                    class="text-2xl md:text-3xl font-bold text-brand-dark mb-8"
-                                >
-                                    Frequently Asked Questions
-                                </h2>
-                                <div class="space-y-6">
-                                    {% for faq in specialty.faqs %}
-                                    <div
-                                        class="border-b border-gray-200 pb-4 last:border-b-0"
-                                    >
-                                        <h3
-                                            class="font-semibold text-brand-dark mb-3 text-lg"
-                                        >
-                                            {{ faq.question }}
-                                        </h3>
-                                        <p
-                                            class="text-gray-600 leading-relaxed"
-                                        >
-                                            {{ faq.answer }}
-                                        </p>
-                                    </div>
-                                    {% endfor %}
-                                </div>
-                            </div>
-                            {% endif %}
+                            {% endfor %}
                         </div>
                     </div>
-                </div>
+                    {% endif %}
+
+                    <!-- FAQs Section -->
+                    {% if specialty.faqs %}
+                    <div id="faqs" class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+                        <h2 class="text-2xl md:text-3xl font-bold text-brand-dark mb-8">
+                            {{ specialty.h2_sections[6] }}
+                        </h2>
+                        <div class="space-y-6">
+                            {% for faq in specialty.faqs %}
+                            <div class="p-6 bg-brand-light/30 rounded-xl">
+                                <h3 class="text-lg font-semibold text-brand-dark mb-3">{{ faq.q }}</h3>
+                                <p class="text-gray-600">{{ faq.a }}</p>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endif %}
+
+                </main>
 
                 <!-- Sidebar -->
-
-                </div>
+                <aside class="lg:w-1/4">
+                    <div class="bg-white rounded-2xl shadow-lg p-6 sticky top-24">
+                        <h3 class="text-xl font-bold text-brand-dark mb-4">Quick Links</h3>
+                        <nav class="space-y-2">
+                            {% for section in specialty.h2_sections %}
+                            <a href="#{{ section.lower().replace(' ', '-') }}"
+                                class="block px-4 py-2 text-gray-600 hover:bg-brand-light/50 rounded-lg transition duration-200">
+                                {{ section }}
+                            </a>
+                            {% endfor %}
+                        </nav>
+                        
+                        <div class="mt-8 p-6 bg-brand-primary/10 rounded-xl text-center">
+                            <h4 class="font-semibold text-brand-dark mb-4">Ready to Get Started?</h4>
+                            <a href="{{ url_for('contact.contact_form') }}"
+                                class="inline-block w-full bg-brand-primary text-white font-semibold px-6 py-3 rounded-full hover:bg-brand-dark transition duration-300">
+                                {{ specialty.cta }}
+                            </a>
+                        </div>
+                    </div>
+                </aside>
             </div>
         </div>
     </section>
 </div>
 
 <style>
-    .scrollable-content-card {
-        max-height: 80vh;
+    /* Add smooth scrolling behavior */
+    html {
+        scroll-behavior: smooth;
     }
-
-    .scrollable-content-card::-webkit-scrollbar {
-        width: 8px;
-    }
-
-    .scrollable-content-card::-webkit-scrollbar-track {
-        background: #f1f1f1;
-        border-radius: 4px;
-    }
-
-    .scrollable-content-card::-webkit-scrollbar-thumb {
-        background: #c1c1c1;
-        border-radius: 4px;
-    }
-
-    .scrollable-content-card::-webkit-scrollbar-thumb:hover {
-        background: #a8a8a8;
-    }
-
-    @media (min-width: 1024px) {
-        .lg\:sticky {
-            position: sticky;
-        }
-
-        .lg\:top-32 {
-            top: 8rem;
-        }
-    }
-
-    .form-input:focus {
-        outline: none !important;
-    }
-
-    select[multiple] {
-        background-color: rgba(255, 255, 255, 0.1);
-    }
-    select[multiple] option {
-        padding: 8px 12px;
-        margin: 2px 0;
-        border-radius: 4px;
-    }
-    select[multiple] option:checked {
-        background-color: rgba(255, 255, 255, 0.9);
-        color: #1a202c;
-    }
-
-    @media (max-width: 1023px) {
-        .lg\:sticky {
-            position: static;
-        }
-
-        .lg\:top-32 {
-            top: auto;
-        }
-
-        .scrollable-content-card {
-            max-height: none;
-        }
-    }
-
-    .form-field {
-        position: relative;
-    }
-    .form-field:focus-within {
-        transform: translateY(-2px);
-        transition: transform 0.2s ease;
-    }
-
-    .testimonial-card {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        transition: all 0.3s ease;
-    }
-    .testimonial-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    }
-
-    .service-card {
-        transition: all 0.3s ease;
-    }
-    .service-card:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    
+    /* Offset for fixed header when jumping to an anchor */
+    [id] {
+       scroll-margin-top: 100px;
     }
 </style>
-
 {% endblock %}
+
+                    
