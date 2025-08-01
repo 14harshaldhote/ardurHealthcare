@@ -1,146 +1,88 @@
 <!-- Contact Modal -->
-<div id="contactModal" class="fixed inset-0 z-50 hidden overflow-y-auto" aria-labelledby="modal-title" role="dialog"
-    aria-modal="true">
-    <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-        <!-- Background overlay -->
-        <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true" id="modalOverlay">
+<div id="contactModal" class="fixed inset-0 z-50 hidden overflow-y-auto font-montserrat rounded-md" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+  <div class="flex items-center justify-center min-h-screen px-4 py-8 text-center sm:block sm:p-0 ">
+    <!-- Background overlay -->
+    <div class="fixed inset-0 bg-black bg-opacity-60 transition-opacity" aria-hidden="true" id="modalOverlay"></div>
+
+    <!-- Centering trick -->
+    <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
+    <!-- Modal panel -->
+    <div class="inline-block align-middle bg-white rounded-md shadow-xl transform transition-all sm:max-w-xl w-full">
+      <div class="bg-white px-6 py-6">
+        <div class="grid sm:grid-cols-[auto,1fr] gap-4 items-start">
+          <div class="flex-shrink-0 h-12 w-12 rounded-full bg-brand-secondary flex items-center justify-center">
+            <i class="ri-mail-send-line text-brand-primary text-xl"></i>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-1" id="modal-title">Get Expert Healthcare Solutions</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">Ready to streamline your revenue cycle? Let’s discuss how Ardur Healthcare can help your practice thrive.</p>
+          </div>
         </div>
 
-        <!-- This element is to trick the browser into centering the modal contents. -->
-        <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+        <!-- Contact Form -->
+        <form id="modalContactForm" class="mt-6 space-y-4" action="{{ url_for('contact.contact_form') }}" method="POST">
+          {% set form = contact_form if contact_form is defined else {} %}
+          {% if form.hidden_tag is defined %} {{ form.hidden_tag() }} {% else %}
+          <input type="hidden" name="csrf_token" value="{{ csrf_token }}" /> {% endif %}
 
-        <!-- Modal panel -->
-        <div
-            class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
-            <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                <div class="sm:flex sm:items-start">
-                    <div
-                        class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-brand-secondary sm:mx-0 sm:h-10 sm:w-10">
-                        <i class="ri-mail-send-line text-brand-primary text-xl"></i>
-                    </div>
-                    <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
-                        <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
-                            Get Expert Healthcare Solutions
-                        </h3>
-                        <div class="mt-2">
-                            <p class="text-sm text-gray-500">
-                                Ready to streamline your revenue cycle? Let's
-                                discuss how Ardur Healthcare can help your
-                                practice thrive.
-                            </p>
-                        </div>
+          <input type="text" name="name" id="modal_name" placeholder="Your Name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-primary focus:outline-none" />
 
-                        <!-- Contact Form -->
-                        <form id="modalContactForm" class="mt-4 space-y-4"
-                            action="{{ url_for('contact.contact_form') }}" method="POST">
-                            {% set form = contact_form if contact_form is
-                            defined else {} %} {% if form.hidden_tag is defined
-                            %} {{ form.hidden_tag() }} {% else %}
-                            <input type="hidden" name="csrf_token" value="{{ csrf_token }}" />
-                            {% endif %}
+          <input type="email" name="email" id="modal_email" placeholder="Your Email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-primary focus:outline-none" />
 
-                            <div>
-                                <input type="text" name="name" id="modal_name" placeholder="Your Name" required
-                                    class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-brand-primary focus:border-brand-primary" />
-                            </div>
+          <div class="flex flex-col sm:flex-row sm:space-x-2 space-y-2 sm:space-y-0">
+            <select name="phone_country_code" id="modal_phone_country_code" class="w-full sm:w-1/3 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-primary focus:outline-none">
+              <option value="+1">+1 (US)</option>
+              <option value="+91">+91 (India)</option>
+              <option value="+44">+44 (UK)</option>
+              <option value="+61">+61 (Australia)</option>
+              <option value="+971">+971 (UAE)</option>
+            </select>
+            <input type="tel" name="phone_number" id="modal_phone_number" placeholder="Phone Number" required class="w-full flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-primary focus:outline-none" />
+          </div>
 
-                            <div>
-                                <input type="email" name="email" id="modal_email" placeholder="Your Email" required
-                                    class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-brand-primary focus:border-brand-primary" />
-                            </div>
+          <input type="text" name="practice" id="modal_practice" placeholder="Practice Name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-primary focus:outline-none" />
 
-                            <div class="flex space-x-2">
-                                <select name="phone_country_code" id="modal_phone_country_code"
-                                    class="px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-brand-primary focus:border-brand-primary">
-                                    <option value="+1">+1 (US)</option>
-                                    <option value="+91">+91 (India)</option>
-                                    <option value="+44">+44 (UK)</option>
-                                    <option value="+61">+61 (Australia)</option>
-                                    <option value="+971">+971 (UAE)</option>
-                                </select>
-                                <input type="tel" name="phone_number" id="modal_phone_number" placeholder="Phone Number"
-                                    required
-                                    class="flex-1 px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-brand-primary focus:border-brand-primary" />
-                            </div>
+          <input type="text" name="state" id="modal_state" placeholder="State" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-primary focus:outline-none" />
 
-                            <div>
-                                <input type="text" name="practice" id="modal_practice" placeholder="Practice Name"
-                                    required
-                                    class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-brand-primary focus:border-brand-primary" />
-                            </div>
+          <select name="service_type" id="modal_service_type" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-primary focus:outline-none">
+            <option value="">Select service type</option>
+            <option value="medical-billing">Medical Billing</option>
+            <option value="coding-services">Coding Services</option>
+            <option value="credentialing">Provider Credentialing</option>
+            <option value="ar-management">AR Management</option>
+            <option value="denial-management">Denial Management</option>
+            <option value="full-service">Full Service Package</option>
+            <option value="consultation">Consultation</option>
+          </select>
 
-                            <div>
-                                <input type="text" name="state" id="modal_state" placeholder="State" required
-                                    class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-brand-primary focus:border-brand-primary" />
-                            </div>
+          <input type="hidden" name="specialties" id="modal_specialties" value="General Practice" />
 
-                            <div>
-                                <select name="service_type" id="modal_service_type" required
-                                    class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-brand-primary focus:border-brand-primary">
-                                    <option value="">
-                                        Select service type
-                                    </option>
-                                    <option value="medical-billing">
-                                        Medical Billing
-                                    </option>
-                                    <option value="coding-services">
-                                        Coding Services
-                                    </option>
-                                    <option value="credentialing">
-                                        Provider Credentialing
-                                    </option>
-                                    <option value="ar-management">
-                                        AR Management
-                                    </option>
-                                    <option value="denial-management">
-                                        Denial Management
-                                    </option>
-                                    <option value="full-service">
-                                        Full Service Package
-                                    </option>
-                                    <option value="consultation">
-                                        Consultation
-                                    </option>
-                                </select>
-                            </div>
+          <textarea name="message" id="modal_message" rows="3" placeholder="Tell us about your needs..." required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-primary focus:outline-none resize-none"></textarea>
 
-                            <div>
-                                <input type="hidden" name="specialties" id="modal_specialties"
-                                    value="General Practice" />
-                                <textarea name="message" id="modal_message" rows="3"
-                                    placeholder="Tell us about your needs..." required
-                                    class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-brand-primary focus:border-brand-primary resize-none"></textarea>
-                            </div>
+          <div class="flex items-start">
+            <input type="checkbox" name="privacy_policy_agreement" id="modal_privacy_policy" required class="h-4 w-4 text-brand-primary focus:ring-brand-primary border-gray-300 rounded mt-1" />
+            <label for="modal_privacy_policy" class="ml-2 text-sm text-gray-700">
+              I agree to the
+              <a href="{{ url_for('main.privacy_policy') }}" class="text-brand-primary hover:underline" target="_blank">Privacy Policy</a>
+            </label>
+          </div>
+        </form>
+      </div>
 
-                            <div class="flex items-center">
-                                <input type="checkbox" name="privacy_policy_agreement" id="modal_privacy_policy"
-                                    required
-                                    class="h-4 w-4 text-brand-primary focus:ring-brand-primary border-gray-300 rounded" />
-                                <label for="modal_privacy_policy" class="ml-2 block text-sm text-gray-900">
-                                    I agree to the
-                                    <a href="{{ url_for('main.privacy_policy') }}"
-                                        class="text-brand-primary hover:underline" target="_blank">Privacy Policy</a>
-                                </label>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Modal footer -->
-            <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-                <button type="submit" form="modalContactForm"
-                    class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-brand-primary text-base font-medium text-white hover:bg-brand-accent focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary sm:ml-3 sm:w-auto sm:text-sm transition-colors duration-200">
-                    Send Message
-                </button>
-                <button type="button" id="closeModalBtn"
-                    class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
-                    Maybe Later
-                </button>
-            </div>
-        </div>
+      <!-- Modal footer -->
+      <div class="bg-gray-50 px-6 py-4 flex justify-end space-x-3">
+        <button type="submit" form="modalContactForm" class="px-5 py-2 rounded-lg bg-brand-primary text-white hover:bg-brand-accent font-medium transition duration-150">
+          Send Message
+        </button>
+        <button type="button" id="closeModalBtn" class="px-5 py-2 rounded-lg border border-gray-300 bg-white text-gray-700 hover:bg-gray-100 font-medium transition duration-150">
+          Maybe Later
+        </button>
+      </div>
     </div>
+  </div>
 </div>
+
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -154,14 +96,9 @@
         let initialTimeout = null;
         let secondTimeout = null;
 
-        // Check if modal was already shown in this session
-        if (sessionStorage.getItem("contactModalShown")) {
-            modalShown = true;
-        }
-
         // Function to show modal
         function showModal() {
-            if (!modalShown && !modalClosed) {
+            if (!modalShown && !modalClosed && !sessionStorage.getItem("contactFormSubmitted")) {
                 modal.classList.remove("hidden");
                 modalShown = true;
                 sessionStorage.setItem("contactModalShown", "true");
@@ -204,13 +141,11 @@
             }, 40000); // 40 seconds
         }
 
-        // Initial popup after 15-20 seconds (random between 15-20)
-        const initialDelay = Math.floor(Math.random() * 6) + 15; // Random between 15-20 seconds
-
-        if (!modalShown) {
+        // Show modal after exactly 15 seconds if not already shown
+        if (!modalShown && !sessionStorage.getItem("contactFormSubmitted")) {
             initialTimeout = setTimeout(() => {
                 showModal();
-            }, initialDelay * 1000);
+            }, 15000); // Exactly 15 seconds
         }
 
         // Close modal event listeners

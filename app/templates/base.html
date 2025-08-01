@@ -741,229 +741,86 @@
         </main>
 
         <footer class="bg-brand-dark text-white font-montserrat">
-            <div class="container py-12">
-                <div
-                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8"
-                >
-                    <div>
-                        <h4 class="font-semibold mb-4 tracking-wide">
-                            Ardur Healthcare
-                        </h4>
-                        <p class="text-gray-400 text-sm leading-relaxed mb-4">
-                            Technology-enabled medical billing and revenue cycle
-                            management services for healthcare providers
-                            globally.
-                        </p>
-                    </div>
-
-                    <div>
-                        <h4 class="font-semibold mb-4 tracking-wide">
-                            Services
-                        </h4>
-                        <ul class="space-y-2 text-gray-300">
-                            <li>
-                                <a
-                                    href="{{ url_for('services.service_detail', service_name='eligibility-and-benefits-verification-services') }}"
-                                    class="hover:text-white transition duration-300"
-                                >
-                                    Eligibility Verification
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="{{ url_for('services.service_detail', service_name='provider-credentialing-and-enrollment-services') }}"
-                                    class="hover:text-white transition duration-300"
-                                >
-                                    Provider Credentialing
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="{{ url_for('services.service_detail', service_name='medical-coding-services') }}"
-                                    class="hover:text-white transition duration-300"
-                                >
-                                    Medical Coding
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="{{ url_for('services.service_detail', service_name='denial-management-services') }}"
-                                    class="hover:text-white transition duration-300"
-                                >
-                                    Denial Management
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="{{ url_for('services.index') }}"
-                                    class="hover:text-brand-secondary transition duration-300 font-medium"
-                                >
-                                    View All →
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h4 class="font-semibold mb-4 tracking-wide">State</h4>
-                        <ul class="space-y-2 text-gray-300">
-                            <li>
-                                <a
-                                    href="{{ url_for('ourreach.state_page', state_slug='medical-billing-services-in-california') }}"
-                                    class="hover:text-white transition duration-300"
-                                >
-                                    California
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="{{ url_for('ourreach.state_page', state_slug='medical-billing-services-in-texas') }}"
-                                    class="hover:text-white transition duration-300"
-                                >
-                                    Texas
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="{{ url_for('ourreach.state_page', state_slug='medical-billing-services-in-florida') }}"
-                                    class="hover:text-white transition duration-300"
-                                >
-                                    Florida
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="{{ url_for('ourreach.state_page', state_slug='medical-billing-services-in-new_york') }}"
-                                    class="hover:text-white transition duration-300"
-                                >
-                                    New York
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="{{ url_for('ourreach.index') }}"
-                                    class="hover:text-brand-secondary transition duration-300 font-medium"
-                                >
-                                    View All →
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div>
-                                                <div>
-                        <h4 class="font-semibold mb-4 tracking-wide">
-                            Specialty
-                        </h4>
-                        <ul class="space-y-2 text-gray-300">
-                            <li>
-                                <a
-                                    href="{{ url_for('specialities.specialty_page', specialty_slug='mental-health-billing-services') }}"
-                                    class="hover:text-white transition duration-300"
-                                >
-                                    Mental Health
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="{{ url_for('specialities.specialty_page', specialty_slug='family-practice-billing-services') }}"
-                                    class="hover:text-white transition duration-300"
-                                >
-                                    Family Practice
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="{{ url_for('specialities.specialty_page', specialty_slug='podiatry-billing-services') }}"
-                                    class="hover:text-white transition duration-300"
-                                >
-                                    Podiatry
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="{{ url_for('specialities.specialty_page', specialty_slug='physical-therapy-billing-services') }}"
-                                    class="hover:text-white transition duration-300"
-                                >
-                                    Physical Therapy
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="{{ url_for('specialities.specialities_main') }}"
-                                    class="hover:text-brand-secondary transition duration-300 font-medium"
-                                >
-                                    View All →
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h4 class="font-semibold mb-4 tracking-wide">
-                            Contact Us
-                        </h4>
-                        <ul class="space-y-2 text-gray-300">
-                            <li class="flex items-start">
-                                <i
-                                    class="ri-mail-send-line mr-3 mt-1 text-brand-primary"
-                                ></i>
-                                <a
-                                    href="mailto:info@ardurhealthcare.com"
-                                    class="hover:text-white transition duration-300"
-                                >
-                                    info@ardurhealthcare.com
-                                </a>
-                            </li>
-                            <li class="flex items-start">
-                                <i
-                                    class="ri-phone-line mr-3 mt-1 text-brand-primary"
-                                ></i>
-                                <a
-                                    href="tel:+17028092713"
-                                    class="hover:text-white transition duration-300"
-                                >
-                                    +1 (702) 809-2713
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="flex space-x-4 mt-4">
-                            <a
-                                href="#"
-                                class="text-xl text-gray-400 hover:text-white transition duration-300"
-                            >
-                                <i class="ri-facebook-circle-fill"></i>
-                            </a>
-                            <a
-                                href="#"
-                                class="text-xl text-gray-400 hover:text-white transition duration-300"
-                            >
-                                <i class="ri-linkedin-box-fill"></i>
-                            </a>
-                            <a
-                                href="#"
-                                class="text-xl text-gray-400 hover:text-white transition duration-300"
-                            >
-                                <i class="ri-instagram-fill"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+    <div class="container mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+            <!-- Brand Info -->
+            <div>
+                <h4 class="font-semibold mb-4 tracking-wide">Ardur Healthcare</h4>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Technology-enabled medical billing and revenue cycle management services for healthcare providers globally.
+                </p>
             </div>
 
-            <div class="bg-black/20 py-4">
-                <div class="container text-center text-gray-400 text-sm">
-                    <p>
-                        &copy; 2025 Ardur Healthcare. All rights reserved. |
-                        <a
-                            href="{{ url_for('main.privacy_policy') }}"
-                            class="hover:text-white transition duration-300"
-                            >Privacy Policy</a
-                        >
-                    </p>
+            <!-- Services -->
+            <div>
+                <h4 class="font-semibold mb-4 tracking-wide">Services</h4>
+                <ul class="space-y-2 text-gray-300 text-sm">
+                    <li><a href="{{ url_for('services.service_detail', service_name='eligibility-and-benefits-verification-services') }}" class="hover:text-white">Eligibility Verification</a></li>
+                    <li><a href="{{ url_for('services.service_detail', service_name='provider-credentialing-and-enrollment-services') }}" class="hover:text-white">Provider Credentialing</a></li>
+                    <li><a href="{{ url_for('services.service_detail', service_name='medical-coding-services') }}" class="hover:text-white">Medical Coding</a></li>
+                    <li><a href="{{ url_for('services.service_detail', service_name='denial-management-services') }}" class="hover:text-white">Denial Management</a></li>
+                    <li><a href="{{ url_for('services.index') }}" class="hover:text-brand-secondary font-medium">View All →</a></li>
+                </ul>
+            </div>
+
+            <!-- States -->
+            <div>
+                <h4 class="font-semibold mb-4 tracking-wide">State</h4>
+                <ul class="space-y-2 text-gray-300 text-sm">
+                    <li><a href="{{ url_for('ourreach.state_page', state_slug='medical-billing-services-in-california') }}" class="hover:text-white">California</a></li>
+                    <li><a href="{{ url_for('ourreach.state_page', state_slug='medical-billing-services-in-texas') }}" class="hover:text-white">Texas</a></li>
+                    <li><a href="{{ url_for('ourreach.state_page', state_slug='medical-billing-services-in-florida') }}" class="hover:text-white">Florida</a></li>
+                    <li><a href="{{ url_for('ourreach.state_page', state_slug='medical-billing-services-in-new_york') }}" class="hover:text-white">New York</a></li>
+                    <li><a href="{{ url_for('ourreach.index') }}" class="hover:text-brand-secondary font-medium">View All →</a></li>
+                </ul>
+            </div>
+
+            <!-- Specialties -->
+            <div>
+                <h4 class="font-semibold mb-4 tracking-wide">Specialty</h4>
+                <ul class="space-y-2 text-gray-300 text-sm">
+                    <li><a href="{{ url_for('specialities.specialty_page', specialty_slug='mental-health-billing-services') }}" class="hover:text-white">Mental Health</a></li>
+                    <li><a href="{{ url_for('specialities.specialty_page', specialty_slug='family-practice-billing-services') }}" class="hover:text-white">Family Practice</a></li>
+                    <li><a href="{{ url_for('specialities.specialty_page', specialty_slug='podiatry-billing-services') }}" class="hover:text-white">Podiatry</a></li>
+                    <li><a href="{{ url_for('specialities.specialty_page', specialty_slug='physical-therapy-billing-services') }}" class="hover:text-white">Physical Therapy</a></li>
+                    <li><a href="{{ url_for('specialities.specialities_main') }}" class="hover:text-brand-secondary font-medium">View All →</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div>
+                <h4 class="font-semibold mb-4 tracking-wide">Contact Us</h4>
+                <ul class="space-y-3 text-gray-300 text-sm">
+                    <li class="flex items-start">
+                        <i class="ri-mail-send-line mr-2 text-brand-primary"></i>
+                        <a href="mailto:info@ardurhealthcare.com" class="hover:text-white">info@ardurhealthcare.com</a>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="ri-phone-line mr-2 text-brand-primary"></i>
+                        <a href="tel:+17028092713" class="hover:text-white">+1 (702) 809-2713</a>
+                    </li>
+                </ul>
+                <!-- Social Links -->
+                <div class="flex space-x-4 mt-4 text-xl text-gray-400">
+                    <a href="#" class="hover:text-white"><i class="ri-facebook-circle-fill"></i></a>
+                    <a href="#" class="hover:text-white"><i class="ri-linkedin-box-fill"></i></a>
+                    <a href="#" class="hover:text-white"><i class="ri-instagram-fill"></i></a>
                 </div>
             </div>
-        </footer>
+        </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="bg-black/20 py-4">
+        <div class="container mx-auto px-4 text-center text-gray-400 text-sm">
+            <p>
+                &copy; 2025 Ardur Healthcare. All rights reserved. |
+                <a href="{{ url_for('main.privacy_policy') }}" class="hover:text-white">Privacy Policy</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
 
         <!-- JavaScript Detection for Progressive Enhancement -->
         <script>
